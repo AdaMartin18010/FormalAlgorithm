@@ -1,8 +1,10 @@
-# 8.1 Rust实现
+# Rust实现（说明性片段）
+
+> 说明：本文档中的代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
 
 ## 目录
 
-- [8.1 Rust实现](#81-rust实现)
+- [Rust实现（说明性片段）](#rust实现说明性片段)
   - [目录](#目录)
   - [1. 基本结构](#1-基本结构)
     - [1.1 项目结构](#11-项目结构)
@@ -22,6 +24,7 @@
     - [5.1 逻辑公式](#51-逻辑公式)
     - [5.2 证明规则](#52-证明规则)
   - [6. 参考文献](#6-参考文献)
+  - [7. 最小可运行Rust工作区与命令](#7-最小可运行rust工作区与命令)
 
 ---
 
@@ -638,3 +641,615 @@ impl ProofRule {
 ---
 
 *本文档提供了形式算法理论的Rust实现示例，所有代码均遵循Rust最佳实践和形式化规范。*
+
+---
+
+## 8. 新增基础理论实现示例 / New Fundamental Theory Implementations
+
+### 8.1 数论基础实现 / Number Theory Fundamentals
+
+```rust
+/// 数论基础算法集合
+/// Collection of number theory fundamental algorithms
+pub mod number_theory {
+    use std::collections::HashMap;
+
+    /// 扩展欧几里得算法
+    /// Extended Euclidean algorithm
+    pub fn extended_gcd(a: i64, b: i64) -> (i64, i64, i64) {
+        if b == 0 {
+            (a, 1, 0)
+        } else {
+            let (gcd, x, y) = extended_gcd(b, a % b);
+            (gcd, y, x - (a / b) * y)
+        }
+    }
+
+    /// 模逆元计算
+    /// Modular multiplicative inverse
+    pub fn mod_inverse(a: u64, m: u64) -> Option<u64> {
+        let (gcd, x, _) = extended_gcd(a as i64, m as i64);
+        if gcd != 1 {
+            None
+        } else {
+            Some(((x % m as i64 + m as i64) % m as i64) as u64)
+        }
+    }
+
+    /// 中国剩余定理
+    /// Chinese Remainder Theorem
+    pub fn chinese_remainder_theorem(remainders: &[i64], moduli: &[i64]) -> Option<i64> {
+        if remainders.len() != moduli.len() {
+            return None;
+        }
+        
+        let mut result = 0;
+        let mut product = 1;
+        
+        for &m in moduli {
+            product *= m;
+        }
+        
+        for i in 0..remainders.len() {
+            let pi = product / moduli[i];
+            let (_, inv, _) = extended_gcd(pi, moduli[i]);
+            result = (result + remainders[i] * pi * inv) % product;
+        }
+        
+        Some((result + product) % product)
+    }
+
+    /// 素数判定
+    /// Prime number testing
+    pub fn is_prime(n: u64) -> bool {
+        if n < 2 {
+            return false;
+        }
+        if n == 2 {
+            return true;
+        }
+        if n % 2 == 0 {
+            return false;
+        }
+        
+        let sqrt_n = (n as f64).sqrt() as u64;
+        for i in (3..=sqrt_n).step_by(2) {
+            if n % i == 0 {
+                return false;
+            }
+        }
+        true
+    }
+
+    /// 质因数分解
+    /// Prime factorization
+    pub fn prime_factorization(mut n: u64) -> HashMap<u64, u32> {
+        let mut factors = HashMap::new();
+        let mut d = 2;
+        
+        while d * d <= n {
+            let mut count = 0;
+            while n % d == 0 {
+                n /= d;
+                count += 1;
+            }
+            if count > 0 {
+                factors.insert(d, count);
+            }
+            d += 1;
+        }
+        
+        if n > 1 {
+            factors.insert(n, 1);
+        }
+        
+        factors
+    }
+
+    /// 欧拉函数计算
+    /// Euler's totient function
+    pub fn euler_totient(n: u64) -> u64 {
+        let factors = prime_factorization(n);
+        let mut result = n;
+        
+        for (prime, _) in factors {
+            result = result / prime * (prime - 1);
+        }
+        
+        result
+    }
+}
+```
+
+### 8.2 代数结构基础实现 / Algebraic Structure Fundamentals
+
+```rust
+/// 代数结构基础实现
+/// Algebraic structure fundamental implementations
+pub mod algebraic_structures {
+    use std::ops::{Add, Mul, Neg};
+
+    /// 群特征
+    /// Group trait
+    pub trait Group {
+        type Element: Clone + PartialEq;
+        
+        fn operation(&self, a: &Self::Element, b: &Self::Element) -> Self::Element;
+        fn identity(&self) -> Self::Element;
+        fn inverse(&self, a: &Self::Element) -> Self::Element;
+        
+        fn power(&self, a: &Self::Element, n: i64) -> Self::Element {
+            if n == 0 {
+                return self.identity();
+            }
+            
+            let mut result = if n > 0 { a.clone() } else { self.inverse(a) };
+            let abs_n = n.abs();
+            
+            for _ in 1..abs_n {
+                result = self.operation(&result, if n > 0 { a } else { &self.inverse(a) });
+            }
+            
+            result
+        }
+    }
+
+    /// 整数加法群
+    /// Integer addition group
+    pub struct IntegerAdditiveGroup;
+
+    impl Group for IntegerAdditiveGroup {
+        type Element = i64;
+        
+        fn operation(&self, a: &i64, b: &i64) -> i64 {
+            a + b
+        }
+        
+        fn identity(&self) -> i64 {
+            0
+        }
+        
+        fn inverse(&self, a: &i64) -> i64 {
+            -a
+        }
+    }
+
+    /// 模n乘法群
+    /// Multiplicative group modulo n
+    pub struct MultiplicativeGroupModN {
+        n: u64,
+    }
+
+    impl MultiplicativeGroupModN {
+        pub fn new(n: u64) -> Self {
+            Self { n }
+        }
+        
+        pub fn is_in_group(&self, a: &u64) -> bool {
+            crate::number_theory::extended_gcd(*a as i64, self.n as i64).0 == 1
+        }
+    }
+
+    impl Group for MultiplicativeGroupModN {
+        type Element = u64;
+        
+        fn operation(&self, a: &u64, b: &u64) -> u64 {
+            (a * b) % self.n
+        }
+        
+        fn identity(&self) -> u64 {
+            1
+        }
+        
+        fn inverse(&self, a: &u64) -> u64 {
+            crate::number_theory::mod_inverse(*a, self.n).unwrap_or(0)
+        }
+    }
+
+    /// 复数结构
+    /// Complex number structure
+    #[derive(Clone, PartialEq)]
+    pub struct Complex {
+        pub real: f64,
+        pub imag: f64,
+    }
+
+    impl Complex {
+        pub fn new(real: f64, imag: f64) -> Self {
+            Self { real, imag }
+        }
+        
+        pub fn conjugate(&self) -> Self {
+            Self::new(self.real, -self.imag)
+        }
+        
+        pub fn magnitude(&self) -> f64 {
+            (self.real * self.real + self.imag * self.imag).sqrt()
+        }
+    }
+
+    impl Add for Complex {
+        type Output = Self;
+        
+        fn add(self, other: Self) -> Self {
+            Self::new(self.real + other.real, self.imag + other.imag)
+        }
+    }
+
+    impl Mul for Complex {
+        type Output = Self;
+        
+        fn mul(self, other: Self) -> Self {
+            Self::new(
+                self.real * other.real - self.imag * other.imag,
+                self.real * other.imag + self.imag * other.real
+            )
+        }
+    }
+
+    /// 快速傅里叶变换
+    /// Fast Fourier Transform
+    pub fn fft(polynomial: &[Complex], inverse: bool) -> Vec<Complex> {
+        let n = polynomial.len();
+        if n == 1 {
+            return polynomial.to_vec();
+        }
+        
+        if n & (n - 1) != 0 {
+            panic!("Polynomial length must be a power of 2");
+        }
+        
+        let mut even = Vec::new();
+        let mut odd = Vec::new();
+        
+        for (i, &coeff) in polynomial.iter().enumerate() {
+            if i % 2 == 0 {
+                even.push(coeff);
+            } else {
+                odd.push(coeff);
+            }
+        }
+        
+        let even_fft = fft(&even, inverse);
+        let odd_fft = fft(&odd, inverse);
+        
+        let mut result = vec![Complex::new(0.0, 0.0); n];
+        let sign = if inverse { 1.0 } else { -1.0 };
+        
+        for k in 0..n/2 {
+            let angle = sign * 2.0 * std::f64::consts::PI * k as f64 / n as f64;
+            let w = Complex::new(angle.cos(), angle.sin());
+            let temp = w * odd_fft[k].clone();
+            
+            result[k] = even_fft[k].clone() + temp.clone();
+            result[k + n/2] = even_fft[k].clone() + temp.conjugate();
+        }
+        
+        if inverse {
+            for coeff in &mut result {
+                coeff.real /= n as f64;
+                coeff.imag /= n as f64;
+            }
+        }
+        
+        result
+    }
+}
+```
+
+### 8.3 概率统计基础实现 / Probability and Statistics Fundamentals
+
+```rust
+/// 概率统计基础实现
+/// Probability and statistics fundamental implementations
+pub mod probability_statistics {
+    use std::collections::HashMap;
+    use rand::Rng;
+
+    /// 概率分布特征
+    /// Probability distribution trait
+    pub trait Distribution {
+        type Sample;
+        
+        fn sample<R: Rng>(&self, rng: &mut R) -> Self::Sample;
+        fn pdf(&self, x: &Self::Sample) -> f64;
+        fn cdf(&self, x: &Self::Sample) -> f64;
+    }
+
+    /// 均匀分布
+    /// Uniform distribution
+    pub struct Uniform {
+        pub a: f64,
+        pub b: f64,
+    }
+
+    impl Uniform {
+        pub fn new(a: f64, b: f64) -> Self {
+            assert!(a < b);
+            Self { a, b }
+        }
+    }
+
+    impl Distribution for Uniform {
+        type Sample = f64;
+        
+        fn sample<R: Rng>(&self, rng: &mut R) -> f64 {
+            rng.gen_range(self.a..self.b)
+        }
+        
+        fn pdf(&self, x: &f64) -> f64 {
+            if *x >= self.a && *x <= self.b {
+                1.0 / (self.b - self.a)
+            } else {
+                0.0
+            }
+        }
+        
+        fn cdf(&self, x: &f64) -> f64 {
+            if *x < self.a {
+                0.0
+            } else if *x >= self.b {
+                1.0
+            } else {
+                (*x - self.a) / (self.b - self.a)
+            }
+        }
+    }
+
+    /// 正态分布
+    /// Normal distribution
+    pub struct Normal {
+        pub mu: f64,
+        pub sigma: f64,
+    }
+
+    impl Normal {
+        pub fn new(mu: f64, sigma: f64) -> Self {
+            assert!(sigma > 0.0);
+            Self { mu, sigma }
+        }
+    }
+
+    impl Distribution for Normal {
+        type Sample = f64;
+        
+        fn sample<R: Rng>(&self, rng: &mut R) -> f64 {
+            // Box-Muller transform
+            let u1: f64 = rng.gen();
+            let u2: f64 = rng.gen();
+            let z0 = (-2.0 * u1.ln()).sqrt() * (2.0 * std::f64::consts::PI * u2).cos();
+            self.mu + self.sigma * z0
+        }
+        
+        fn pdf(&self, x: &f64) -> f64 {
+            let z = (*x - self.mu) / self.sigma;
+            (-0.5 * z * z).exp() / (self.sigma * (2.0 * std::f64::consts::PI).sqrt())
+        }
+        
+        fn cdf(&self, x: &f64) -> f64 {
+            // 简化实现，实际应用中应使用误差函数
+            let z = (*x - self.mu) / self.sigma;
+            0.5 * (1.0 + erf(z / 2.0_f64.sqrt()))
+        }
+    }
+
+    /// 误差函数近似
+    /// Error function approximation
+    fn erf(x: f64) -> f64 {
+        let a1 =  0.254829592;
+        let a2 = -0.284496736;
+        let a3 =  1.421413741;
+        let a4 = -1.453152027;
+        let a5 =  1.061405429;
+        let p  =  0.3275911;
+
+        let sign = if x < 0.0 { -1.0 } else { 1.0 };
+        let x = x.abs();
+
+        let t = 1.0 / (1.0 + p * x);
+        let y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * (-x * x).exp();
+
+        sign * y
+    }
+
+    /// 蒙特卡洛积分
+    /// Monte Carlo integration
+    pub fn monte_carlo_integration<F>(f: F, a: f64, b: f64, n: usize) -> f64 
+    where F: Fn(f64) -> f64 {
+        let mut rng = rand::thread_rng();
+        let uniform = Uniform::new(a, b);
+        
+        let sum: f64 = (0..n)
+            .map(|_| {
+                let x = uniform.sample(&mut rng);
+                f(x)
+            })
+            .sum();
+        
+        (b - a) * sum / n as f64
+    }
+
+    /// 拒绝采样
+    /// Rejection sampling
+    pub fn rejection_sampling<F, G, R>(
+        target_pdf: F,
+        proposal_sampler: G,
+        proposal_pdf: impl Fn(&f64) -> f64,
+        m: f64,
+        rng: &mut R
+    ) -> f64 
+    where 
+        F: Fn(&f64) -> f64,
+        G: Fn(&mut R) -> f64,
+        R: Rng,
+    {
+        loop {
+            let x = proposal_sampler(rng);
+            let u: f64 = rng.gen();
+            
+            if u <= target_pdf(&x) / (m * proposal_pdf(&x)) {
+                return x;
+            }
+        }
+    }
+
+    /// 统计量计算
+    /// Statistical measures
+    pub fn mean(data: &[f64]) -> f64 {
+        data.iter().sum::<f64>() / data.len() as f64
+    }
+
+    pub fn variance(data: &[f64]) -> f64 {
+        let mu = mean(data);
+        data.iter().map(|x| (x - mu).powi(2)).sum::<f64>() / data.len() as f64
+    }
+
+    pub fn standard_deviation(data: &[f64]) -> f64 {
+        variance(data).sqrt()
+    }
+
+    /// 置信区间计算
+    /// Confidence interval calculation
+    pub fn confidence_interval(data: &[f64], confidence_level: f64) -> (f64, f64) {
+        let n = data.len() as f64;
+        let mu = mean(data);
+        let sigma = standard_deviation(data);
+        
+        // 使用正态分布近似（大样本）
+        let z_score = match confidence_level {
+            0.95 => 1.96,
+            0.99 => 2.576,
+            0.90 => 1.645,
+            _ => 1.96, // 默认95%置信水平
+        };
+        
+        let margin = z_score * sigma / n.sqrt();
+        (mu - margin, mu + margin)
+    }
+}
+```
+
+### 8.4 使用示例 / Usage Examples
+
+```rust
+/// 基础理论使用示例
+/// Fundamental theory usage examples
+pub fn examples() {
+    // 数论示例
+    println!("=== Number Theory Examples ===");
+    let gcd = number_theory::extended_gcd(48, 18);
+    println!("GCD(48, 18) = {:?}", gcd);
+    
+    let prime = number_theory::is_prime(17);
+    println!("Is 17 prime? {}", prime);
+    
+    let phi = number_theory::euler_totient(12);
+    println!("φ(12) = {}", phi);
+    
+    // 代数结构示例
+    println!("\n=== Algebraic Structure Examples ===");
+    let group = algebraic_structures::IntegerAdditiveGroup;
+    let result = group.operation(&5, &3);
+    println!("5 + 3 = {}", result);
+    
+    let power = group.power(&2, 5);
+    println!("2^5 = {}", power);
+    
+    // 概率统计示例
+    println!("\n=== Probability and Statistics Examples ===");
+    let uniform = probability_statistics::Uniform::new(0.0, 1.0);
+    let mut rng = rand::thread_rng();
+    let sample = uniform.sample(&mut rng);
+    println!("Uniform sample: {}", sample);
+    
+    let data = vec![1.0, 2.0, 3.0, 4.0, 5.0];
+    let mean = probability_statistics::mean(&data);
+    let variance = probability_statistics::variance(&data);
+    println!("Mean: {}, Variance: {}", mean, variance);
+    
+    let ci = probability_statistics::confidence_interval(&data, 0.95);
+    println!("95% Confidence Interval: ({:.3}, {:.3})", ci.0, ci.1);
+}
+```
+
+---
+
+## 7. 最小可运行Rust工作区与命令
+
+为便于一键运行本文档及各高级主题中的Rust骨架，建议使用如下最小工作区结构：
+
+```text
+formal_algorithm/
+├─ Cargo.toml
+└─ src/
+   └─ bin/
+      ├─ synth_lin.rs           # 对应 21-算法合成与元编程高级应用 的线性合成示例
+      ├─ qfin_portfolio.rs      # 对应 22-量子算法在金融科技中的应用 的QUBO投资组合示例
+      ├─ adapt_loop.rs          # 对应 23-算法自适应学习理论 的闭环自适应示例
+      └─ ga_min.rs              # 对应 24-算法演化与遗传编程理论 的GA示例
+```
+
+示例 Cargo.toml（按需裁剪依赖）：
+
+```toml
+[package]
+name = "formal_algorithm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8"
+chrono = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+num-complex = "0.4"
+tokio = { version = "1", features = ["full"] }
+```
+
+示例 src/bin/synth_lin.rs：
+
+```rust
+fn main() {
+    // 摘自 21-算法合成 与本仓库示例，略去健壮性处理
+    #[derive(Clone, Debug)]
+    struct LinSpec { samples: Vec<(f64, f64)> }
+    #[derive(Clone, Debug)]
+    struct LinAlg { a: f64, b: f64 }
+    struct GridSearchSynth;
+    impl GridSearchSynth {
+        fn synthesize(&self, spec: &LinSpec) -> Option<LinAlg> {
+            let mut best = None; let mut best_err = f64::INFINITY;
+            for a in (-10..=10).map(|k| k as f64 * 0.5) {
+                for b in (-10..=10).map(|k| k as f64 * 0.5) {
+                    let err: f64 = spec.samples.iter().map(|(x,y)| (a*x + b - y).abs()).sum();
+                    if err < best_err { best_err = err; best = Some(LinAlg{a,b}); }
+                }
+            }
+            best
+        }
+    }
+    let spec = LinSpec { samples: vec![(0.0, 1.0), (2.0, 5.0), (4.0, 9.0)] };
+    let alg = GridSearchSynth.synthesize(&spec).unwrap();
+    println!("a={:.2}, b={:.2}", alg.a, alg.b);
+}
+```
+
+运行命令：
+
+```bash
+# 构建
+cargo build
+
+# 运行各示例（二选一或逐个）
+cargo run --bin synth_lin
+cargo run --bin qfin_portfolio
+cargo run --bin adapt_loop
+cargo run --bin ga_min
+```
+
+说明：
+
+- 可将各文档中的代码片段粘贴至对应 `src/bin/*.rs` 文件。
+- 若不需要异步/复数等依赖，可在 `Cargo.toml` 中删除相关条目以加速编译。
+- Windows PowerShell 可直接运行上述命令，或使用 `cargo run --bin <name>`。

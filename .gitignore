@@ -1,0 +1,27 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Haskell (Stack/Cabal)
+/.stack-work/
+.stack-work/
+/dist-newstyle/
+/dist/
+/*.cabal.project.local
+cabal.project.local
+
+# Lean / Lake
+/.lake/
+/lake-packages/
+/lean_packages/
+/build/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log 

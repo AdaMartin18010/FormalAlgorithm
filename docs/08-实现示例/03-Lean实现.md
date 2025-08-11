@@ -1,8 +1,10 @@
-# 3. Lean实现 (Lean Implementation)
+# 3. Lean实现（说明性片段）
+
+> 说明：本文档中的 Lean 代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
 
 ## 目录
 
-- [3. Lean实现 (Lean Implementation)](#3-lean实现-lean-implementation)
+- [3. Lean实现（说明性片段）](#3-lean实现说明性片段)
   - [目录](#目录)
   - [3.1 基本概念 (Basic Concepts)](#31-基本概念-basic-concepts)
     - [3.1.1 Lean语言定义 (Definition of Lean Language)](#311-lean语言定义-definition-of-lean-language)
@@ -27,6 +29,8 @@
     - [3.5.4 程序验证 (Program Verification)](#354-程序验证-program-verification)
     - [3.5.5 Lean测试 (Lean Testing)](#355-lean测试-lean-testing)
   - [3.6 参考文献 (References)](#36-参考文献-references)
+  - [3.7 一键运行环境与命令（Lean 4 / lake）](#37-一键运行环境与命令lean-4--lake)
+  - [3.8 多模块项目结构与 lake 配置](#38-多模块项目结构与-lake-配置)
 
 ---
 
@@ -673,3 +677,118 @@ def main : IO Unit := do
 ---
 
 *本文档提供了Lean语言的全面实现框架，包括基本概念、类型系统、定理证明、数学库和实现示例。所有内容均采用严格的数学形式化表示，并包含完整的Lean代码实现。*
+
+---
+
+## 3.7 一键运行环境与命令（Lean 4 / lake）
+
+推荐使用 Lean 4 官方构建工具 `lake` 管理与运行示例。
+
+项目结构：
+
+```text
+fa-lean/
+├─ lakefile.lean
+├─ lean-toolchain
+└─ Main.lean
+```
+
+示例 `lean-toolchain`（固定工具链版本，亦可根据本地环境调整）：
+
+```text
+leanprover/lean4:nightly-2024-06-15
+```
+
+示例 `lakefile.lean`：
+
+```lean
+import Lake
+open Lake DSL
+
+package «fa-lean» where
+  -- add package configuration options here
+
+target «fa-lean» : FilePath := do
+  let oFile := FilePath.mk "build/fa-lean.o"
+  let src := FilePath.mk "Main.lean"
+  compileLeanModule src oFile ({} : Lean.Compiler.Options)
+  return oFile
+
+default_target «fa-lean»
+```
+
+示例 `Main.lean`：
+
+```lean
+-- 将文档中的示例定理/定义复制到此处
+
+def add (x y : Nat) : Nat := x + y
+
+def main : IO Unit := do
+  IO.println s!"Lean example: 2 + 3 = {add 2 3}"
+```
+
+运行：
+
+```bash
+# 安装 elan（若未安装）参见 https://leanprover-community.github.io/get_started.html
+# 进入目录后
+lake build
+lake exe fa-lean   # 或使用 `lean --run Main.lean`
+```
+
+说明：
+
+- 将各章节的 Lean 代码（定理/定义/证明）复制到 `Main.lean` 或拆分为多个 `.lean` 文件并在 `lakefile.lean` 中配置模块。
+- Windows PowerShell 下命令同样适用；如首次构建时间较长属正常现象。
+
+---
+
+## 3.8 多模块项目结构与 lake 配置
+
+当示例规模扩大时，建议将代码拆分为多个模块，使用 `lean_lib` 管理库代码，使用 `lean_exe` 定义可执行入口。
+
+示例 `lakefile.lean`：
+
+```lean
+import Lake
+open Lake DSL
+
+package «fa-lean» where
+
+@[default_target]
+lean_lib CoreLib where
+  -- 源代码位于 ./CoreLib 下
+
+lean_exe faMain where
+  root := `Main
+```
+
+项目结构：
+
+```text
+fa-lean/
+├─ lakefile.lean
+├─ lean-toolchain
+├─ Main.lean            -- 入口，import CoreLib
+└─ CoreLib/
+   ├─ Basic.lean
+   └─ Verify.lean
+```
+
+`Main.lean` 示例：
+
+```lean
+import CoreLib.Basic
+import CoreLib.Verify
+
+def main : IO Unit := do
+  IO.println s!"Check: {1+2}"
+```
+
+构建与运行：
+
+```bash
+lake build
+lake exe faMain
+```

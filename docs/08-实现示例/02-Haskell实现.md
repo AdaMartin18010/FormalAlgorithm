@@ -1,8 +1,10 @@
-# 2. Haskell实现 (Haskell Implementation)
+# Haskell实现（说明性片段）
+
+> 说明：本文档中的代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
 
 ## 目录
 
-- [2. Haskell实现 (Haskell Implementation)](#2-haskell实现-haskell-implementation)
+- [Haskell实现（说明性片段）](#haskell实现说明性片段)
   - [目录](#目录)
   - [2.1 基本概念 (Basic Concepts)](#21-基本概念-basic-concepts)
     - [2.1.1 Haskell语言定义 (Definition of Haskell Language)](#211-haskell语言定义-definition-of-haskell-language)
@@ -27,6 +29,9 @@
     - [2.5.4 高级类型系统特性 (Advanced Type System Features)](#254-高级类型系统特性-advanced-type-system-features)
     - [2.5.5 Haskell测试 (Haskell Testing)](#255-haskell测试-haskell-testing)
   - [2.6 参考文献 (References)](#26-参考文献-references)
+  - [2.7 一键运行环境与命令 (One-click Run)](#27-一键运行环境与命令-one-click-run)
+    - [2.7.1 使用 Stack](#271-使用-stack)
+    - [2.7.2 使用 Cabal](#272-使用-cabal)
 
 ---
 
@@ -738,3 +743,120 @@ main = do
 ---
 
 *本文档提供了Haskell语言的全面实现框架，包括基本概念、类型系统、函数式编程、依赖类型和实现示例。所有内容均采用严格的数学形式化表示，并包含完整的Haskell代码实现。*
+
+---
+
+## 2.7 一键运行环境与命令 (One-click Run)
+
+为统一示例运行体验，提供 Stack 与 Cabal 两种方式。任选其一。
+
+### 2.7.1 使用 Stack
+
+项目结构：
+
+```text
+fa-hs/
+├─ package.yaml
+├─ stack.yaml
+└─ app/
+   └─ Main.hs
+```
+
+示例 `package.yaml`：
+
+```yaml
+name: fa-hs
+version: 0.1.0
+resolver: lts-22.33
+
+library:
+  source-dirs: src
+
+executables:
+  fa-hs:
+    main: Main.hs
+    source-dirs: app
+
+dependencies:
+  - base >= 4.14 && < 5
+  - containers
+  - mtl
+  - QuickCheck
+  - HUnit
+```
+
+示例 `stack.yaml`：
+
+```yaml
+resolver: lts-22.33
+packages:
+  - .
+```
+
+示例 `app/Main.hs`：
+
+```haskell
+module Main where
+
+-- 将文中示例函数粘贴到此处，以下给出简短演示
+add :: Int -> Int -> Int
+add x y = x + y
+
+main :: IO ()
+main = do
+  putStrLn "Haskell example running..."
+  print (add 2 3)
+```
+
+运行：
+
+```bash
+stack setup
+stack build
+stack run
+```
+
+### 2.7.2 使用 Cabal
+
+项目结构：
+
+```text
+fa-hs/
+├─ fa-hs.cabal
+└─ app/
+   └─ Main.hs
+```
+
+示例 `fa-hs.cabal`：
+
+```cabal
+cabal-version:      3.4
+name:               fa-hs
+version:            0.1.0.0
+build-type:         Simple
+
+executable fa-hs
+  main-is:          Main.hs
+  hs-source-dirs:   app
+  default-language: Haskell2010
+  build-depends:    base >=4.14 && <5,
+                    containers,
+                    mtl,
+                    QuickCheck,
+                    HUnit
+```
+
+示例 `app/Main.hs` 同上。
+
+运行：
+
+```bash
+cabal update
+cabal build
+cabal run fa-hs
+```
+
+说明：
+
+- 将本文档中的任意示例函数/模块复制到`app/Main.hs`或`src`下并在`Main`中调用即可。
+- Windows PowerShell 下命令行同样适用；如遇GHC版本问题，优先使用Stack以获得稳定工具链。
