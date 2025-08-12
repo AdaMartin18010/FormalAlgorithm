@@ -24,6 +24,11 @@
     - [5.1 逻辑公式](#51-逻辑公式)
     - [5.2 证明规则](#52-证明规则)
   - [6. 参考文献](#6-参考文献)
+  - [8. 新增基础理论实现示例 / New Fundamental Theory Implementations](#8-新增基础理论实现示例--new-fundamental-theory-implementations)
+    - [8.1 数论基础实现 / Number Theory Fundamentals](#81-数论基础实现--number-theory-fundamentals)
+    - [8.2 代数结构基础实现 / Algebraic Structure Fundamentals](#82-代数结构基础实现--algebraic-structure-fundamentals)
+    - [8.3 概率统计基础实现 / Probability and Statistics Fundamentals](#83-概率统计基础实现--probability-and-statistics-fundamentals)
+    - [8.4 使用示例 / Usage Examples](#84-使用示例--usage-examples)
   - [7. 最小可运行Rust工作区与命令](#7-最小可运行rust工作区与命令)
 
 ---
