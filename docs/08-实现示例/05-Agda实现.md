@@ -516,10 +516,10 @@ Agda provides an ideal platform for research and practice in formal algorithm th
 
 ---
 
-**参考文献 / References**
+**参考文献 / References**:
 
 1. Norell, U. (2009). Dependently typed programming in Agda.
 2. Bove, A., & Dybjer, P. (2009). Dependent types at work.
 3. Altenkirch, T., & McBride, C. (2003). Generic programming with dependent types.
 4. Norell, U. (2007). Towards a practical programming language based on dependent type theory.
-5. The Agda Team. (2023). The Agda reference manual. 
+5. The Agda Team. (2023). The Agda reference manual.
