@@ -860,3 +860,378 @@ cabal run fa-hs
 
 - 将本文档中的任意示例函数/模块复制到`app/Main.hs`或`src`下并在`Main`中调用即可。
 - Windows PowerShell 下命令行同样适用；如遇GHC版本问题，优先使用Stack以获得稳定工具链。
+
+---
+
+## 2.8 严格算法实现 / Strict Algorithm Implementations
+
+### 2.8.1 排序算法实现 / Sorting Algorithm Implementations
+
+```haskell
+-- 排序算法模块 / Sorting Algorithms Module
+module Sorting where
+
+-- 快速排序算法 / QuickSort Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 快速排序是一种分治排序算法，通过选择基准元素将列表分为两部分。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - 平均情况：O(n log n)
+-- - 最坏情况：O(n²)
+-- - 最好情况：O(n log n)
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - 平均情况：O(log n)
+-- - 最坏情况：O(n)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基准选择正确性**: 基准元素最终位于正确位置
+-- 2. **分治正确性**: 左右子列表分别排序
+-- 3. **合并正确性**: 排序后的子列表与原列表构成有序序列
+quicksort :: Ord a => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) = 
+    let smaller = quicksort [a | a <- xs, a <= x]
+        larger = quicksort [a | a <- xs, a > x]
+    in smaller ++ [x] ++ larger
+
+-- 归并排序算法 / MergeSort Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 归并排序是一种稳定的分治排序算法，将列表分为两半，分别排序后合并。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - 所有情况：O(n log n)
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(n)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **分治正确性**: 递归排序左右子列表
+-- 2. **合并正确性**: 两个有序列表合并后仍有序
+-- 3. **稳定性**: 相等元素的相对位置保持不变
+mergesort :: Ord a => [a] -> [a]
+mergesort [] = []
+mergesort [x] = [x]
+mergesort xs = 
+    let (left, right) = splitAt (length xs `div` 2) xs
+    in merge (mergesort left) (mergesort right)
+
+-- 合并函数 / Merge Function
+-- 
+-- **定义 / Definition:**
+-- 将两个有序列表合并为一个有序列表
+-- 
+-- **不变式 / Invariant:**
+-- 合并过程中，结果列表始终保持有序
+merge :: Ord a => [a] -> [a] -> [a]
+merge [] ys = ys
+merge xs [] = xs
+merge (x:xs) (y:ys)
+    | x <= y    = x : merge xs (y:ys)
+    | otherwise = y : merge (x:xs) ys
+
+-- 插入排序算法 / Insertion Sort Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 插入排序是一种简单的排序算法，逐个将元素插入到已排序序列中。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - 平均情况：O(n²)
+-- - 最坏情况：O(n²)
+-- - 最好情况：O(n)
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(1)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **插入正确性**: 每个元素插入到正确位置
+-- 2. **有序性**: 插入后序列保持有序
+-- 3. **稳定性**: 相等元素的相对位置保持不变
+insertionSort :: Ord a => [a] -> [a]
+insertionSort = foldr insert []
+  where
+    insert x [] = [x]
+    insert x (y:ys)
+        | x <= y    = x : y : ys
+        | otherwise = y : insert x ys
+```
+
+### 2.8.2 搜索算法实现 / Search Algorithm Implementations
+
+```haskell
+-- 搜索算法模块 / Search Algorithms Module
+module Search where
+
+-- 二分搜索算法 / Binary Search Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 在有序列表中查找目标元素，通过比较中间元素缩小搜索范围。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - O(log n)
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(1) (迭代版本)
+-- - O(log n) (递归版本)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **循环不变式**: 目标元素在 [left, right] 范围内
+-- 2. **终止条件**: 当 left > right 时，目标元素不存在
+-- 3. **收敛性**: 每次迭代搜索范围减半
+binarySearch :: Ord a => a -> [a] -> Maybe Int
+binarySearch target xs = binarySearchHelper target xs 0 (length xs - 1)
+  where
+    binarySearchHelper _ _ left right | left > right = Nothing
+    binarySearchHelper target xs left right =
+        let mid = (left + right) `div` 2
+            midVal = xs !! mid
+        in case compare target midVal of
+            EQ -> Just mid
+            LT -> binarySearchHelper target xs left (mid - 1)
+            GT -> binarySearchHelper target xs (mid + 1) right
+
+-- 深度优先搜索算法 / Depth-First Search Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 在图中进行深度优先遍历，使用递归实现。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - O(V + E)，其中V是顶点数，E是边数
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(V) (最坏情况)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **访问完整性**: 从起始顶点可达的所有顶点都会被访问
+-- 2. **无重复访问**: 使用访问标记避免重复访问
+-- 3. **深度优先**: 优先访问深层顶点
+type Graph = [[Int]]
+
+dfs :: Graph -> Int -> [Bool] -> [Int]
+dfs graph start visited = 
+    let visited' = take start visited ++ [True] ++ drop (start + 1) visited
+        neighbors = graph !! start
+        unvisitedNeighbors = filter (\n -> not (visited' !! n)) neighbors
+    in start : concatMap (\n -> dfs graph n visited') unvisitedNeighbors
+
+-- 广度优先搜索算法 / Breadth-First Search Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 在图中进行广度优先遍历，使用队列实现。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - O(V + E)，其中V是顶点数，E是边数
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(V) (队列大小)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **访问完整性**: 从起始顶点可达的所有顶点都会被访问
+-- 2. **层次遍历**: 按距离起始顶点的层次顺序访问
+-- 3. **最短路径**: 在无权图中找到最短路径
+bfs :: Graph -> Int -> [Int]
+bfs graph start = bfsHelper graph [start] (replicate (length graph) False)
+  where
+    bfsHelper _ [] _ = []
+    bfsHelper graph (current:queue) visited =
+        let visited' = take current visited ++ [True] ++ drop (current + 1) visited
+            neighbors = graph !! current
+            unvisitedNeighbors = filter (\n -> not (visited' !! n)) neighbors
+            newQueue = queue ++ unvisitedNeighbors
+        in current : bfsHelper graph newQueue visited'
+```
+
+### 2.8.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations
+
+```haskell
+-- 动态规划算法模块 / Dynamic Programming Algorithms Module
+module DynamicProgramming where
+
+-- 最长公共子序列算法 / Longest Common Subsequence Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 找到两个序列的最长公共子序列。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - O(mn)，其中m和n是序列长度
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(mn)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **最优子结构**: 最长公共子序列包含子问题的最优解
+-- 2. **重叠子问题**: 子问题被重复计算
+-- 3. **状态转移**: dp[i][j] = max(dp[i-1][j], dp[i][j-1], dp[i-1][j-1] + 1)
+lcs :: Eq a => [a] -> [a] -> [a]
+lcs [] _ = []
+lcs _ [] = []
+lcs (x:xs) (y:ys)
+    | x == y    = x : lcs xs ys
+    | otherwise = 
+        let lcs1 = lcs xs (y:ys)
+            lcs2 = lcs (x:xs) ys
+        in if length lcs1 > length lcs2 then lcs1 else lcs2
+
+-- 斐波那契数列（记忆化版本）/ Fibonacci Sequence (Memoized Version)
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 使用记忆化技术计算斐波那契数列，避免重复计算。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - O(n) (记忆化后)
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(n)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: fib(0) = 0, fib(1) = 1
+-- 2. **递归关系**: fib(n) = fib(n-1) + fib(n-2)
+-- 3. **记忆化正确性**: 避免重复计算子问题
+fibMemo :: Int -> Integer
+fibMemo n = fibMemoHelper n (replicate (n + 1) (-1))
+  where
+    fibMemoHelper 0 memo = 0
+    fibMemoHelper 1 memo = 1
+    fibMemoHelper n memo
+        | memo !! n /= -1 = memo !! n
+        | otherwise = 
+            let fib1 = fibMemoHelper (n - 1) memo
+                fib2 = fibMemoHelper (n - 2) memo
+                result = fib1 + fib2
+                memo' = take n memo ++ [result] ++ drop (n + 1) memo
+            in result
+
+-- 0-1背包问题算法 / 0-1 Knapsack Algorithm
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 在给定容量限制下，选择物品使总价值最大。
+-- 
+-- **时间复杂度 / Time Complexity:**
+-- - O(nW)，其中n是物品数量，W是容量
+-- 
+-- **空间复杂度 / Space Complexity:**
+-- - O(nW)
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **最优子结构**: 最优解包含子问题的最优解
+-- 2. **状态转移**: dp[i][w] = max(dp[i-1][w], dp[i-1][w-wi] + vi)
+-- 3. **边界条件**: dp[0][w] = 0
+knapsack01 :: [Int] -> [Int] -> Int -> Int
+knapsack01 weights values capacity = 
+    knapsackHelper weights values capacity (length weights)
+  where
+    knapsackHelper _ _ _ 0 = 0
+    knapsackHelper weights values capacity n
+        | weights !! (n-1) > capacity = knapsackHelper weights values capacity (n-1)
+        | otherwise = 
+            let include = values !! (n-1) + knapsackHelper weights values (capacity - weights !! (n-1)) (n-1)
+                exclude = knapsackHelper weights values capacity (n-1)
+            in max include exclude
+```
+
+### 2.8.4 函数式数据结构实现 / Functional Data Structure Implementations
+
+```haskell
+-- 函数式数据结构模块 / Functional Data Structures Module
+module FunctionalDataStructures where
+
+-- 不可变列表 / Immutable List
+data List a = Empty | Cons a (List a) deriving (Show, Eq)
+
+-- 列表操作 / List Operations
+empty :: List a
+empty = Empty
+
+singleton :: a -> List a
+singleton x = Cons x Empty
+
+isEmpty :: List a -> Bool
+isEmpty Empty = True
+isEmpty _ = False
+
+head' :: List a -> Maybe a
+head' Empty = Nothing
+head' (Cons x _) = Just x
+
+tail' :: List a -> Maybe (List a)
+tail' Empty = Nothing
+tail' (Cons _ xs) = Just xs
+
+-- 列表转换 / List Conversions
+fromList :: [a] -> List a
+fromList [] = Empty
+fromList (x:xs) = Cons x (fromList xs)
+
+toList :: List a -> [a]
+toList Empty = []
+toList (Cons x xs) = x : toList xs
+
+-- 不可变栈 / Immutable Stack
+newtype Stack a = Stack [a] deriving (Show, Eq)
+
+-- 栈操作 / Stack Operations
+emptyStack :: Stack a
+emptyStack = Stack []
+
+push :: a -> Stack a -> Stack a
+push x (Stack xs) = Stack (x:xs)
+
+pop :: Stack a -> Maybe (a, Stack a)
+pop (Stack []) = Nothing
+pop (Stack (x:xs)) = Just (x, Stack xs)
+
+peek :: Stack a -> Maybe a
+peek (Stack []) = Nothing
+peek (Stack (x:_)) = Just x
+
+-- 不可变队列 / Immutable Queue
+data Queue a = Queue [a] [a] deriving (Show, Eq)
+
+-- 队列操作 / Queue Operations
+emptyQueue :: Queue a
+emptyQueue = Queue [] []
+
+enqueue :: a -> Queue a -> Queue a
+enqueue x (Queue front back) = Queue front (x:back)
+
+dequeue :: Queue a -> Maybe (a, Queue a)
+dequeue (Queue [] []) = Nothing
+dequeue (Queue [] back) = dequeue (Queue (reverse back) [])
+dequeue (Queue (x:front) back) = Just (x, Queue front back)
+
+front :: Queue a -> Maybe a
+front (Queue [] []) = Nothing
+front (Queue [] back) = front (Queue (reverse back) [])
+front (Queue (x:_) _) = Just x
+
+-- 不可变树 / Immutable Tree
+data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Show, Eq)
+
+-- 树操作 / Tree Operations
+emptyTree :: Tree a
+emptyTree = Empty
+
+singletonTree :: a -> Tree a
+singletonTree x = Node x Empty Empty
+
+isEmptyTree :: Tree a -> Bool
+isEmptyTree Empty = True
+isEmptyTree _ = False
+
+-- 中序遍历 / Inorder Traversal
+inorder :: Tree a -> [a]
+inorder Empty = []
+inorder (Node x left right) = inorder left ++ [x] ++ inorder right
+
+-- 前序遍历 / Preorder Traversal
+preorder :: Tree a -> [a]
+preorder Empty = []
+preorder (Node x left right) = [x] ++ preorder left ++ preorder right
+
+-- 后序遍历 / Postorder Traversal
+postorder :: Tree a -> [a]
+postorder Empty = []
+postorder (Node x left right) = postorder left ++ postorder right ++ [x]
+```

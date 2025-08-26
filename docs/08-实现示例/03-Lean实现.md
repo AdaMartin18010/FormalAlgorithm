@@ -792,3 +792,334 @@ def main : IO Unit := do
 lake build
 lake exe faMain
 ```
+
+---
+
+## 3.9 严格定理证明实现 / Strict Theorem Proving Implementations
+
+### 3.9.1 基础数学定理证明 / Basic Mathematical Theorem Proofs
+
+```lean
+-- 基础数学定理证明模块 / Basic Mathematical Theorem Proofs Module
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Pow
+import Mathlib.Algebra.Ring.Basic
+
+-- 自然数加法交换律 / Commutativity of Natural Number Addition
+-- 
+-- **定理定义 / Theorem Definition:**
+-- 对于任意自然数 a 和 b，有 a + b = b + a
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用数学归纳法，先证明基础情况，再证明归纳步骤
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 当 a = 0 时，0 + b = b + 0
+-- 2. **归纳步骤**: 假设 a + b = b + a，证明 (a + 1) + b = b + (a + 1)
+-- 3. **归纳原理**: 由数学归纳法，结论对所有自然数成立
+theorem add_comm (a b : Nat) : a + b = b + a := by
+  induction a with
+  | zero => 
+    -- 基础情况：0 + b = b + 0
+    simp [Nat.zero_add, Nat.add_zero]
+  | succ a ih => 
+    -- 归纳步骤：(a + 1) + b = b + (a + 1)
+    simp [Nat.succ_add, Nat.add_succ, ih]
+
+-- 自然数加法结合律 / Associativity of Natural Number Addition
+-- 
+-- **定理定义 / Theorem Definition:**
+-- 对于任意自然数 a、b 和 c，有 (a + b) + c = a + (b + c)
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用数学归纳法，对第一个参数进行归纳
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 当 a = 0 时，(0 + b) + c = 0 + (b + c)
+-- 2. **归纳步骤**: 假设 (a + b) + c = a + (b + c)，证明 ((a + 1) + b) + c = (a + 1) + (b + c)
+-- 3. **归纳原理**: 由数学归纳法，结论对所有自然数成立
+theorem add_assoc (a b c : Nat) : (a + b) + c = a + (b + c) := by
+  induction a with
+  | zero => 
+    -- 基础情况：(0 + b) + c = 0 + (b + c)
+    simp [Nat.zero_add]
+  | succ a ih => 
+    -- 归纳步骤：((a + 1) + b) + c = (a + 1) + (b + c)
+    simp [Nat.succ_add, ih]
+
+-- 自然数乘法分配律 / Distributivity of Natural Number Multiplication
+-- 
+-- **定理定义 / Theorem Definition:**
+-- 对于任意自然数 a、b 和 c，有 a * (b + c) = a * b + a * c
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用数学归纳法，对第一个参数进行归纳
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 当 a = 0 时，0 * (b + c) = 0 * b + 0 * c
+-- 2. **归纳步骤**: 假设 a * (b + c) = a * b + a * c，证明 (a + 1) * (b + c) = (a + 1) * b + (a + 1) * c
+-- 3. **归纳原理**: 由数学归纳法，结论对所有自然数成立
+theorem mul_distrib (a b c : Nat) : a * (b + c) = a * b + a * c := by
+  induction a with
+  | zero => 
+    -- 基础情况：0 * (b + c) = 0 * b + 0 * c
+    simp [Nat.zero_mul]
+  | succ a ih => 
+    -- 归纳步骤：(a + 1) * (b + c) = (a + 1) * b + (a + 1) * c
+    simp [Nat.succ_mul, Nat.add_mul, ih]
+    rw [add_assoc, add_assoc, add_comm (a * c) b]
+
+-- 幂运算性质 / Power Properties
+-- 
+-- **定理定义 / Theorem Definition:**
+-- 对于任意自然数 a、b 和 c，有 a^(b + c) = a^b * a^c
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用数学归纳法，对第二个参数进行归纳
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 当 b = 0 时，a^(0 + c) = a^0 * a^c
+-- 2. **归纳步骤**: 假设 a^(b + c) = a^b * a^c，证明 a^((b + 1) + c) = a^(b + 1) * a^c
+-- 3. **归纳原理**: 由数学归纳法，结论对所有自然数成立
+theorem pow_add (a b c : Nat) : a^(b + c) = a^b * a^c := by
+  induction b with
+  | zero => 
+    -- 基础情况：a^(0 + c) = a^0 * a^c
+    simp [Nat.pow_zero, Nat.one_mul]
+  | succ b ih => 
+    -- 归纳步骤：a^((b + 1) + c) = a^(b + 1) * a^c
+    simp [Nat.pow_succ, Nat.mul_assoc, ih]
+```
+
+### 3.9.2 算法正确性证明 / Algorithm Correctness Proofs
+
+```lean
+-- 算法正确性证明模块 / Algorithm Correctness Proofs Module
+import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Sort
+
+-- 列表反转算法正确性 / List Reverse Algorithm Correctness
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- reverse [] = []
+-- reverse (x :: xs) = reverse xs ++ [x]
+-- 
+-- **正确性定理 / Correctness Theorem:**
+-- 对于任意列表 xs，length (reverse xs) = length xs
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用结构归纳法，证明列表反转后长度不变
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 空列表反转后长度仍为0
+-- 2. **归纳步骤**: 假设 reverse xs 长度正确，证明 reverse (x :: xs) 长度正确
+-- 3. **归纳原理**: 由结构归纳法，结论对所有列表成立
+theorem reverse_length (xs : List α) : (reverse xs).length = xs.length := by
+  induction xs with
+  | nil => 
+    -- 基础情况：reverse [] = []
+    simp [List.reverse]
+  | cons x xs ih => 
+    -- 归纳步骤：reverse (x :: xs) = reverse xs ++ [x]
+    simp [List.reverse, List.length_append, ih]
+
+-- 列表反转的双重反转性质 / Double Reverse Property
+-- 
+-- **定理定义 / Theorem Definition:**
+-- 对于任意列表 xs，reverse (reverse xs) = xs
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用结构归纳法，证明双重反转等于原列表
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 空列表的双重反转等于空列表
+-- 2. **归纳步骤**: 假设 reverse (reverse xs) = xs，证明 reverse (reverse (x :: xs)) = x :: xs
+-- 3. **归纳原理**: 由结构归纳法，结论对所有列表成立
+theorem reverse_reverse (xs : List α) : reverse (reverse xs) = xs := by
+  induction xs with
+  | nil => 
+    -- 基础情况：reverse (reverse []) = []
+    simp [List.reverse]
+  | cons x xs ih => 
+    -- 归纳步骤：reverse (reverse (x :: xs)) = x :: xs
+    simp [List.reverse, List.reverse_append, ih]
+
+-- 排序算法正确性 / Sorting Algorithm Correctness
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 插入排序是一种简单的排序算法
+-- 
+-- **正确性定理 / Correctness Theorem:**
+-- 对于任意列表 xs，sorted (insertionSort xs) 为真
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用结构归纳法，证明插入排序产生有序列表
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 空列表排序后为空列表，有序
+-- 2. **归纳步骤**: 假设 insertionSort xs 有序，证明 insertionSort (x :: xs) 有序
+-- 3. **归纳原理**: 由结构归纳法，结论对所有列表成立
+def insertionSort [Ord α] : List α → List α
+  | [] => []
+  | x :: xs => insert x (insertionSort xs)
+where
+  insert : α → List α → List α
+  | x, [] => [x]
+  | x, y :: ys => 
+    if x ≤ y then x :: y :: ys else y :: insert x ys
+
+theorem insertionSort_sorted [Ord α] (xs : List α) : Sorted (insertionSort xs) := by
+  induction xs with
+  | nil => 
+    -- 基础情况：空列表排序后有序
+    simp [insertionSort, Sorted.nil]
+  | cons x xs ih => 
+    -- 归纳步骤：插入元素后列表仍有序
+    simp [insertionSort]
+    -- 这里需要更详细的证明，包括 insert 保持有序性的证明
+    sorry
+
+-- 二分搜索算法正确性 / Binary Search Algorithm Correctness
+-- 
+-- **算法定义 / Algorithm Definition:**
+-- 在有序列表中查找目标元素
+-- 
+-- **正确性定理 / Correctness Theorem:**
+-- 如果 binarySearch target xs 返回 Some i，则 xs[i] = target
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用循环不变式证明算法的正确性
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **初始化**: 循环开始时不变式成立
+-- 2. **保持**: 每次迭代后不变式仍成立
+-- 3. **终止**: 循环终止时找到目标或确定不存在
+def binarySearch [Ord α] (target : α) (xs : List α) : Option Nat :=
+  binarySearchHelper target xs 0 (xs.length - 1)
+where
+  binarySearchHelper (target : α) (xs : List α) (left right : Nat) : Option Nat :=
+    if left > right then None
+    else
+      let mid := (left + right) / 2
+      let midVal := xs.get? mid
+      match midVal with
+      | none => None
+      | some val => 
+        if target = val then some mid
+        else if target < val then binarySearchHelper target xs left (mid - 1)
+        else binarySearchHelper target xs (mid + 1) right
+
+-- 二分搜索正确性定理（简化版本）
+theorem binarySearch_correct [Ord α] [DecidableEq α] (target : α) (xs : List α) :
+  (binarySearch target xs).isSome → 
+  ∃ i, i < xs.length ∧ xs.get? i = some target := by
+  -- 这里需要详细的证明，包括循环不变式的形式化
+  sorry
+```
+
+### 3.9.3 数据结构性质证明 / Data Structure Property Proofs
+
+```lean
+-- 数据结构性质证明模块 / Data Structure Property Proofs Module
+import Mathlib.Data.Tree
+
+-- 二叉树高度性质 / Binary Tree Height Properties
+-- 
+-- **定义 / Definition:**
+-- 二叉树的高度是从根到叶子的最长路径长度
+-- 
+-- **性质定理 / Property Theorem:**
+-- 对于任意二叉树 t，height t ≥ 0
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用结构归纳法，证明二叉树高度非负
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 空树高度为0，非负
+-- 2. **归纳步骤**: 假设左右子树高度非负，证明父树高度非负
+-- 3. **归纳原理**: 由结构归纳法，结论对所有二叉树成立
+inductive BinaryTree (α : Type) where
+  | empty : BinaryTree α
+  | node : α → BinaryTree α → BinaryTree α → BinaryTree α
+
+def height {α : Type} : BinaryTree α → Nat
+  | BinaryTree.empty => 0
+  | BinaryTree.node _ left right => 1 + max (height left) (height right)
+
+theorem height_nonnegative {α : Type} (t : BinaryTree α) : height t ≥ 0 := by
+  induction t with
+  | empty => 
+    -- 基础情况：空树高度为0
+    simp [height]
+  | node x left right ih_left ih_right => 
+    -- 归纳步骤：节点树高度为1 + max(左子树高度, 右子树高度)
+    simp [height]
+    -- 需要证明 1 + max(左子树高度, 右子树高度) ≥ 0
+    -- 由于左子树和右子树高度都非负，max也非负，所以结论成立
+    have h1 : height left ≥ 0 := ih_left
+    have h2 : height right ≥ 0 := ih_right
+    have h3 : max (height left) (height right) ≥ 0 := by
+      apply Nat.le_max_of_le_left h1
+    exact Nat.le_add_of_nonnegative_right h3
+
+-- 堆性质证明 / Heap Property Proofs
+-- 
+-- **定义 / Definition:**
+-- 最大堆是一种特殊的二叉树，每个节点的值都大于等于其子节点的值
+-- 
+-- **性质定理 / Property Theorem:**
+-- 最大堆的根节点是树中的最大值
+-- 
+-- **证明策略 / Proof Strategy:**
+-- 使用结构归纳法，证明堆性质
+-- 
+-- **正确性证明 / Correctness Proof:**
+-- 1. **基础情况**: 单节点树满足堆性质
+-- 2. **归纳步骤**: 假设左右子树满足堆性质，证明父树满足堆性质
+-- 3. **归纳原理**: 由结构归纳法，结论对所有堆成立
+def isMaxHeap [Ord α] : BinaryTree α → Prop
+  | BinaryTree.empty => True
+  | BinaryTree.node x left right => 
+    (∀ y, y ∈ left → x ≥ y) ∧ 
+    (∀ y, y ∈ right → x ≥ y) ∧ 
+    isMaxHeap left ∧ 
+    isMaxHeap right
+
+-- 堆中元素属于关系的定义
+def elem {α : Type} : α → BinaryTree α → Prop
+  | _, BinaryTree.empty => False
+  | x, BinaryTree.node y left right => 
+    x = y ∨ elem x left ∨ elem x right
+
+theorem maxHeap_root_maximum [Ord α] (t : BinaryTree α) (h : isMaxHeap t) :
+  ∀ x, elem x t → (getRoot t).get ≥ x := by
+  induction t with
+  | empty => 
+    -- 基础情况：空树没有元素
+    simp [elem, getRoot]
+  | node root_val left right ih_left ih_right => 
+    -- 归纳步骤：根节点是最大值
+    simp [elem, getRoot]
+    intro x hx
+    cases hx with
+    | inl h1 => 
+      -- x = root_val
+      simp [h1]
+    | inr h1 => 
+      -- x 在左子树或右子树中
+      cases h1 with
+      | inl h2 => 
+        -- x 在左子树中
+        have h_left : isMaxHeap left := h.2.2.1
+        have h_root_ge_left : ∀ y, elem y left → root_val ≥ y := h.1
+        exact h_root_ge_left x h2
+      | inr h2 => 
+        -- x 在右子树中
+        have h_right : isMaxHeap right := h.2.2.2
+        have h_root_ge_right : ∀ y, elem y right → root_val ≥ y := h.2.1
+        exact h_root_ge_right x h2
+where
+  getRoot : BinaryTree α → Option α
+  | BinaryTree.empty => none
+  | BinaryTree.node x _ _ => some x
+```
