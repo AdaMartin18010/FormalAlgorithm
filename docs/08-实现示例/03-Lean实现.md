@@ -31,6 +31,7 @@
   - [3.6 参考文献 (References)](#36-参考文献-references)
   - [3.7 一键运行环境与命令（Lean 4 / lake）](#37-一键运行环境与命令lean-4--lake)
   - [3.8 多模块项目结构与 lake 配置](#38-多模块项目结构与-lake-配置)
+  - [3.10 交叉引用与依赖 (Cross References and Dependencies)](#310-交叉引用与依赖-cross-references-and-dependencies)
 
 ---
 
@@ -890,6 +891,25 @@ theorem pow_add (a b c : Nat) : a^(b + c) = a^b * a^c := by
     -- 归纳步骤：a^((b + 1) + c) = a^(b + 1) * a^c
     simp [Nat.pow_succ, Nat.mul_assoc, ih]
 ```
+
+---
+
+## 3.10 交叉引用与依赖 (Cross References and Dependencies)
+
+- 理论与模型：
+  - `docs/05-类型理论/02-依赖类型论.md`
+  - `docs/06-逻辑系统/08-高阶逻辑理论.md`
+  - `docs/03-形式化证明/01-证明系统.md`
+- 算法与复杂度：
+  - `docs/09-算法理论/04-高级算法理论/03-算法验证理论.md`
+  - `docs/04-算法复杂度/01-时间复杂度.md`
+- 高级主题关联：
+  - `docs/10-高级主题/03-证明助手的实现.md`
+  - `docs/10-高级主题/06-形式化验证的高级技术.md`
+- 相关实现：
+  - `docs/08-实现示例/01-Rust实现.md`
+  - `docs/08-实现示例/02-Haskell实现.md`
+  - `docs/术语与符号总表.md`
 
 ### 3.9.2 算法正确性证明 / Algorithm Correctness Proofs
 

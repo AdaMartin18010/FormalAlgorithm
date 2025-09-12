@@ -1905,3 +1905,22 @@ cargo run --bin ga_min
 - 可将各文档中的代码片段粘贴至对应 `src/bin/*.rs` 文件。
 - 若不需要异步/复数等依赖，可在 `Cargo.toml` 中删除相关条目以加速编译。
 - Windows PowerShell 可直接运行上述命令，或使用 `cargo run --bin <name>`。
+
+---
+
+## 10. 交叉引用与依赖 (Cross References and Dependencies)
+
+- 理论与模型：
+  - `docs/07-计算模型/01-图灵机.md`
+  - `docs/07-计算模型/02-λ演算.md`
+  - `docs/03-形式化证明/01-证明系统.md`
+- 算法与复杂度：
+  - `docs/09-算法理论/01-算法基础/06-动态规划理论.md`
+  - `docs/04-算法复杂度/01-时间复杂度.md`
+- 高级主题关联：
+  - `docs/10-高级主题/06-形式化验证的高级技术.md`
+  - `docs/10-高级主题/07-程序合成技术.md`
+- 相关实现：
+  - `docs/08-实现示例/02-Haskell实现.md`
+  - `docs/08-实现示例/03-Lean实现.md`
+  - `docs/术语与符号总表.md`
