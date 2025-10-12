@@ -23,7 +23,8 @@
   - [5. 证明系统](#5-证明系统)
     - [5.1 逻辑公式](#51-逻辑公式)
     - [5.2 证明规则](#52-证明规则)
-  - [6. 参考文献](#6-参考文献)
+  - [6. 参考文献 / References](#6-参考文献--references)
+    - [官方文档与标准教材 / Official Documentation and Standard Textbooks](#官方文档与标准教材--official-documentation-and-standard-textbooks)
   - [8. 新增基础理论实现示例 / New Fundamental Theory Implementations](#8-新增基础理论实现示例--new-fundamental-theory-implementations)
     - [8.1 数论基础实现 / Number Theory Fundamentals](#81-数论基础实现--number-theory-fundamentals)
     - [8.2 代数结构基础实现 / Algebraic Structure Fundamentals](#82-代数结构基础实现--algebraic-structure-fundamentals)
@@ -732,13 +733,23 @@ impl ProofRule {
 
 ---
 
-## 6. 参考文献
+## 6. 参考文献 / References
 
-1. The Rust Programming Language Book
-2. Rust Reference Manual
-3. Serde Documentation
-4. ThisError Documentation
-5. Rust Type System Documentation
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### 官方文档与标准教材 / Official Documentation and Standard Textbooks
+
+1. [RustBook2023] Klabnik, S., & Nichols, C. (2023). *The Rust Programming Language* (2nd ed.). No Starch Press. ISBN: 978-1718503106. URL: https://doc.rust-lang.org/book/
+   - **Rust官方教材**，Rust编程语言的权威指南。本文档的Rust实现遵循此书的最佳实践。
+
+2. [Pierce2002TAPL] Pierce, B. C. (2002). *Types and Programming Languages*. MIT Press. ISBN: 978-0262162098
+   - Pierce类型与程序设计语言的经典教材，本文档的类型系统实现参考此书。
+
+3. Rust Reference Manual. URL: https://doc.rust-lang.org/reference/
+   - Rust语言规范，Rust官方参考手册。
+
+4. Serde Documentation. URL: https://serde.rs/
+   - Serde序列化框架文档。
 
 ---
 
