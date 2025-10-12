@@ -619,10 +619,20 @@ Coq provides an ideal platform for research and practice in formal algorithm the
 
 ---
 
-**参考文献 / References**:
+## 参考文献 / References
 
-1. Bertot, Y., & Castéran, P. (2004). Interactive theorem proving and program development.
-2. Pierce, B. C. (2009). Software foundations.
-3. Chlipala, A. (2013). Certified programming with dependent types.
-4. The Coq Development Team. (2023). The Coq reference manual.
-5. Leroy, X. (2009). Formal verification of a realistic compiler.
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### 交互式定理证明 / Interactive Theorem Proving
+
+1. [Bertot2004] Bertot, Y., & Castéran, P. (2004). *Interactive Theorem Proving and Program Development: Coq'Art: The Calculus of Inductive Constructions*. Springer. ISBN: 978-3540208549. DOI: 10.1007/978-3-662-07964-5
+   - **Coq'Art经典教材**，Coq定理证明助手权威指南。本文档的Coq实现遵循此书的最佳实践。
+
+2. **Pierce, B. C.** (2009). *Software Foundations*. Online Textbook.
+   - Pierce的软件基础教程，使用Coq进行形式化验证教学。
+
+3. **Chlipala, A.** (2013). *Certified Programming with Dependent Types*. MIT Press.
+   - Chlipala的认证编程教材，深入Coq的依赖类型编程。
+
+4. **The Coq Development Team.** (2023). *The Coq Reference Manual*. Coq Documentation.
+   - Coq官方参考手册。

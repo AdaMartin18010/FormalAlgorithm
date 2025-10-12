@@ -427,4 +427,21 @@ Idris实现展示了依赖类型编程在形式化算法中的强大应用：
 
 ---
 
+## 参考文献 / References
+
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### 依赖类型编程语言 / Dependently Typed Programming Languages
+
+1. [Brady2013] Brady, E. (2013). "Idris, a General-Purpose Dependently Typed Programming Language: Design and Implementation". *Journal of Functional Programming*, 23(5), 552-593. DOI: 10.1017/S095679681300018X
+   - **Brady的Idris论文**，实用依赖类型编程语言。本文档的Idris实现遵循此论文的设计思想。
+
+2. **Brady, E.** (2017). *Type-Driven Development with Idris*. Manning Publications.
+   - Brady的类型驱动开发教材，Idris编程实践指南。
+
+3. **The Idris Community.** (2023). *The Idris Documentation*. Idris Documentation.
+   - Idris官方文档。
+
+---
+
 *本文档展示了Idris在形式化算法实现中的应用，通过依赖类型系统确保算法的正确性和安全性。*

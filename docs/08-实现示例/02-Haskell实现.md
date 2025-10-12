@@ -34,7 +34,12 @@
   - [2.7 一键运行环境与命令 (One-click Run)](#27-一键运行环境与命令-one-click-run)
     - [2.7.1 使用 Stack](#271-使用-stack)
     - [2.7.2 使用 Cabal](#272-使用-cabal)
+  - [2.8 严格算法实现 / Strict Algorithm Implementations](#28-严格算法实现--strict-algorithm-implementations)
+    - [2.8.1 排序算法实现 / Sorting Algorithm Implementations](#281-排序算法实现--sorting-algorithm-implementations)
   - [2.9 交叉引用与依赖 (Cross References and Dependencies)](#29-交叉引用与依赖-cross-references-and-dependencies)
+    - [2.8.2 搜索算法实现 / Search Algorithm Implementations](#282-搜索算法实现--search-algorithm-implementations)
+    - [2.8.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#283-动态规划算法实现--dynamic-programming-algorithm-implementations)
+    - [2.8.4 函数式数据结构实现 / Functional Data Structure Implementations](#284-函数式数据结构实现--functional-data-structure-implementations)
 
 ---
 
@@ -730,18 +735,37 @@ main = do
 
 ---
 
-## 2.6 参考文献 (References)
+## 2.6 参考文献 / References
 
-1. **Peyton Jones, S. L.** (2003). *The Haskell 98 Language and Libraries: The Revised Report*. Cambridge University Press.
-2. **Lipovača, M.** (2011). *Learn You a Haskell for Great Good!*. No Starch Press.
-3. **O'Sullivan, B., Stewart, D., & Goerzen, J.** (2008). *Real World Haskell*. O'Reilly Media.
-4. **Thompson, S.** (2011). *Haskell: The Craft of Functional Programming*. Addison-Wesley.
-5. **Bird, R.** (1998). *Introduction to Functional Programming using Haskell*. Prentice Hall.
-6. **Wadler, P.** (1992). "The Essence of Functional Programming". *Proceedings of the 19th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 1-14.
-7. **Hughes, J.** (1989). "Why Functional Programming Matters". *The Computer Journal*, 32(2), 98-107.
-8. **Peyton Jones, S. L., & Wadler, P.** (1993). "Imperative Functional Programming". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 71-84.
-9. **Launchbury, J.** (1993). "A Natural Semantics for Lazy Evaluation". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 144-154.
-10. **Peyton Jones, S. L.** (2001). *The Implementation of Functional Programming Languages*. Prentice Hall.
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### 语言规范与标准教材 / Language Specification and Standard Textbooks
+
+1. [HaskellReport2010] Marlow, S. (2010). *Haskell 2010 Language Report*. URL: <https://www.haskell.org/onlinereport/haskell2010/>
+   - **Haskell 2010语言规范**，Haskell官方语言定义。本文档的Haskell实现遵循此规范。
+
+2. [RealWorldHaskell2008] O'Sullivan, B., Goerzen, J., & Stewart, D. (2008). *Real World Haskell*. O'Reilly Media. ISBN: 978-0596514983. URL: <http://book.realworldhaskell.org/>
+   - **Real World Haskell实用教材**，Haskell实践指南。本文档的实际应用示例参考此书。
+
+3. [Pierce2002TAPL] Pierce, B. C. (2002). *Types and Programming Languages*. MIT Press. ISBN: 978-0262162098
+   - Pierce类型与程序设计语言的经典教材，本文档的类型系统实现参考此书。
+
+### 函数式编程经典论文 / Classic Papers on Functional Programming
+
+4. **Wadler, P.** (1992). "The Essence of Functional Programming". *Proceedings of the 19th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 1-14.
+   - Wadler关于Monad的经典论文，本文档的Monad实现参考此文。
+
+5. **Hughes, J.** (1989). "Why Functional Programming Matters". *The Computer Journal*, 32(2), 98-107.
+   - Hughes关于函数式编程重要性的经典论文。
+
+6. **Peyton Jones, S. L., & Wadler, P.** (1993). "Imperative Functional Programming". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 71-84.
+   - Peyton Jones和Wadler关于命令式函数式编程的论文。
+
+7. **Launchbury, J.** (1993). "A Natural Semantics for Lazy Evaluation". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 144-154.
+   - Launchbury关于惰性求值语义的论文，本文档的惰性求值实现参考此文。
+
+8. **Peyton Jones, S. L.** (2001). *The Implementation of Functional Programming Languages*. Prentice Hall.
+   - Peyton Jones关于函数式编程语言实现的权威著作。
 
 ---
 

@@ -30,7 +30,12 @@
     - [8.2 代数结构基础实现 / Algebraic Structure Fundamentals](#82-代数结构基础实现--algebraic-structure-fundamentals)
     - [8.3 概率统计基础实现 / Probability and Statistics Fundamentals](#83-概率统计基础实现--probability-and-statistics-fundamentals)
     - [8.4 使用示例 / Usage Examples](#84-使用示例--usage-examples)
+  - [9. 严格算法实现 / Strict Algorithm Implementations](#9-严格算法实现--strict-algorithm-implementations)
+    - [9.1 排序算法实现 / Sorting Algorithm Implementations](#91-排序算法实现--sorting-algorithm-implementations)
+    - [9.2 搜索算法实现 / Search Algorithm Implementations](#92-搜索算法实现--search-algorithm-implementations)
+    - [9.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#93-动态规划算法实现--dynamic-programming-algorithm-implementations)
   - [7. 最小可运行Rust工作区与命令](#7-最小可运行rust工作区与命令)
+  - [10. 交叉引用与依赖 (Cross References and Dependencies)](#10-交叉引用与依赖-cross-references-and-dependencies)
 
 ---
 
@@ -739,16 +744,16 @@ impl ProofRule {
 
 ### 官方文档与标准教材 / Official Documentation and Standard Textbooks
 
-1. [RustBook2023] Klabnik, S., & Nichols, C. (2023). *The Rust Programming Language* (2nd ed.). No Starch Press. ISBN: 978-1718503106. URL: https://doc.rust-lang.org/book/
+1. [RustBook2023] Klabnik, S., & Nichols, C. (2023). *The Rust Programming Language* (2nd ed.). No Starch Press. ISBN: 978-1718503106. URL: <https://doc.rust-lang.org/book/>
    - **Rust官方教材**，Rust编程语言的权威指南。本文档的Rust实现遵循此书的最佳实践。
 
 2. [Pierce2002TAPL] Pierce, B. C. (2002). *Types and Programming Languages*. MIT Press. ISBN: 978-0262162098
    - Pierce类型与程序设计语言的经典教材，本文档的类型系统实现参考此书。
 
-3. Rust Reference Manual. URL: https://doc.rust-lang.org/reference/
+3. Rust Reference Manual. URL: <https://doc.rust-lang.org/reference/>
    - Rust语言规范，Rust官方参考手册。
 
-4. Serde Documentation. URL: https://serde.rs/
+4. Serde Documentation. URL: <https://serde.rs/>
    - Serde序列化框架文档。
 
 ---

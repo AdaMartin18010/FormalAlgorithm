@@ -516,10 +516,20 @@ Agda provides an ideal platform for research and practice in formal algorithm th
 
 ---
 
-**参考文献 / References**:
+## 参考文献 / References
 
-1. Norell, U. (2009). Dependently typed programming in Agda.
-2. Bove, A., & Dybjer, P. (2009). Dependent types at work.
-3. Altenkirch, T., & McBride, C. (2003). Generic programming with dependent types.
-4. Norell, U. (2007). Towards a practical programming language based on dependent type theory.
-5. The Agda Team. (2023). The Agda reference manual.
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### 依赖类型编程语言 / Dependently Typed Programming Languages
+
+1. [Norell2007] Norell, U. (2007). *Towards a Practical Programming Language Based on Dependent Type Theory*. PhD Thesis, Chalmers University of Technology. URL: http://www.cse.chalmers.se/~ulfn/papers/thesis.pdf
+   - **Norell的Agda博士论文**，依赖类型编程语言的开创性工作。本文档的Agda实现遵循此论文的设计思想。
+
+2. **Norell, U.** (2009). "Dependently Typed Programming in Agda". In *Advanced Functional Programming*, 230-266.
+   - Norell关于Agda依赖类型编程的教程论文。
+
+3. **Bove, A., & Dybjer, P.** (2009). "Dependent Types at Work". In *Language Engineering and Rigorous Software Development*, 57-99.
+   - Bove和Dybjer关于依赖类型实践的论文。
+
+4. **The Agda Team.** (2023). *The Agda Reference Manual*. Agda Documentation.
+   - Agda官方参考手册。

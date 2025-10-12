@@ -3222,6 +3222,140 @@ recent_research:
   quality: "authoritative"
   notes: "Pierce类型与程序设计语言的经典教材，已在类型理论模块引用"
 
+# ==============================================================================
+# 定理证明与形式化验证 / Theorem Proving and Formal Verification
+# ==============================================================================
+
+- reference_id: "deMouraUllrich2021"
+  type: "techreport"
+  authors: ["Leonardo de Moura", "Sebastian Ullrich"]
+  title:
+    en: "The Lean 4 Theorem Prover and Programming Language"
+    zh: "Lean 4定理证明器与编程语言"
+  year: 2021
+  institution: "Microsoft Research"
+  url: "https://leanprover.github.io/"
+  tags: ["lean", "theorem-proving", "dependent-types", "formal-verification"]
+  relevance:
+    - "08-实现示例/03-Lean实现.md"
+  quality: "authoritative"
+  notes: "Lean 4官方技术报告，Lean语言的权威文档"
+
+- reference_id: "AvigaddeMoura2021"
+  type: "article"
+  authors: ["Jeremy Avigad", "Leonardo de Moura"]
+  title:
+    en: "The Lean Mathematical Library"
+    zh: "Lean数学库"
+  journal: "Journal of Automated Reasoning"
+  volume: 65
+  number: 1
+  pages: "1-23"
+  year: 2021
+  doi: "10.1007/s10817-020-09579-8"
+  tags: ["lean", "mathematics-library", "formalized-mathematics"]
+  relevance:
+    - "08-实现示例/03-Lean实现.md"
+  quality: "authoritative"
+  notes: "Lean数学库的权威论文，形式化数学的重要成果"
+
+- reference_id: "LeanCommunity2021"
+  type: "book"
+  authors: ["The Lean Community"]
+  title:
+    en: "Mathematics in Lean"
+    zh: "Lean中的数学"
+  year: 2021
+  publisher: "Lean Community"
+  url: "https://leanprover-community.github.io/mathematics_in_lean/"
+  tags: ["lean", "mathematics", "tutorial"]
+  relevance:
+    - "08-实现示例/03-Lean实现.md"
+  quality: "authoritative"
+  notes: "Lean社区数学教程，Lean数学实践指南"
+
+- reference_id: "Clarke2018"
+  type: "book"
+  authors: ["Edmund M. Clarke", "Thomas A. Henzinger", "Helmut Veith", "Roderick Bloem"]
+  title:
+    en: "Handbook of Model Checking"
+    zh: "模型检查手册"
+  year: 2018
+  publisher: "Springer"
+  isbn: "978-3319105741"
+  doi: "10.1007/978-3-319-10575-8"
+  tags: ["model-checking", "formal-verification", "temporal-logic"]
+  relevance:
+    - "08-实现示例/04-形式化验证.md"
+  quality: "authoritative"
+  notes: "Clarke模型检查手册，形式化验证的权威教材"
+
+- reference_id: "Nipkow2002"
+  type: "book"
+  authors: ["Tobias Nipkow", "Lawrence C. Paulson", "Markus Wenzel"]
+  title:
+    en: "Isabelle/HOL: A Proof Assistant for Higher-Order Logic"
+    zh: "Isabelle/HOL：高阶逻辑证明助手"
+  year: 2002
+  publisher: "Springer"
+  isbn: "978-3540433767"
+  doi: "10.1007/3-540-45949-9"
+  tags: ["isabelle", "theorem-proving", "higher-order-logic"]
+  relevance:
+    - "08-实现示例/04-形式化验证.md"
+  quality: "authoritative"
+  notes: "Isabelle/HOL权威教材，高阶逻辑定理证明"
+
+- reference_id: "Bertot2004"
+  type: "book"
+  authors: ["Yves Bertot", "Pierre Castéran"]
+  title:
+    en: "Interactive Theorem Proving and Program Development: Coq'Art: The Calculus of Inductive Constructions"
+    zh: "交互式定理证明与程序开发：Coq'Art：归纳构造演算"
+  year: 2004
+  publisher: "Springer"
+  isbn: "978-3540208549"
+  doi: "10.1007/978-3-662-07964-5"
+  tags: ["coq", "theorem-proving", "calculus-of-constructions"]
+  relevance:
+    - "08-实现示例/04-形式化验证.md"
+    - "08-实现示例/06-Coq实现.md"
+  quality: "authoritative"
+  notes: "Coq'Art经典教材，Coq定理证明助手权威指南"
+
+- reference_id: "Norell2007"
+  type: "phdthesis"
+  authors: ["Ulf Norell"]
+  title:
+    en: "Towards a Practical Programming Language Based on Dependent Type Theory"
+    zh: "基于依赖类型理论的实用编程语言研究"
+  year: 2007
+  school: "Chalmers University of Technology"
+  url: "http://www.cse.chalmers.se/~ulfn/papers/thesis.pdf"
+  tags: ["agda", "dependent-types", "programming-languages"]
+  relevance:
+    - "08-实现示例/05-Agda实现.md"
+  quality: "seminal"
+  notes: "Norell的Agda博士论文，依赖类型编程语言的开创性工作"
+
+- reference_id: "Brady2013"
+  type: "article"
+  authors: ["Edwin Brady"]
+  title:
+    en: "Idris, a General-Purpose Dependently Typed Programming Language: Design and Implementation"
+    zh: "Idris，一种通用依赖类型编程语言：设计与实现"
+  journal: "Journal of Functional Programming"
+  volume: 23
+  number: 5
+  pages: "552-593"
+  year: 2013
+  doi: "10.1017/S095679681300018X"
+  tags: ["idris", "dependent-types", "programming-languages"]
+  relevance:
+    - "08-实现示例/07-Idris实现.md"
+  quality: "seminal"
+  notes: "Brady的Idris论文，实用依赖类型编程语言"
+
 # ============================================================
 # 说明 (Notes)
 # ============================================================

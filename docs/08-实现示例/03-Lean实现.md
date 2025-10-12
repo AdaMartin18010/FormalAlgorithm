@@ -28,10 +28,17 @@
     - [3.5.3 数学定理证明 (Mathematical Theorem Proving)](#353-数学定理证明-mathematical-theorem-proving)
     - [3.5.4 程序验证 (Program Verification)](#354-程序验证-program-verification)
     - [3.5.5 Lean测试 (Lean Testing)](#355-lean测试-lean-testing)
-  - [3.6 参考文献 (References)](#36-参考文献-references)
+  - [3.6 参考文献 / References](#36-参考文献--references)
+    - [Lean语言规范与核心文献 / Lean Language Specification and Core Literature](#lean语言规范与核心文献--lean-language-specification-and-core-literature)
+    - [数学库与形式化数学 / Mathematics Library and Formalized Mathematics](#数学库与形式化数学--mathematics-library-and-formalized-mathematics)
+    - [其他相关文献 / Other Related Literature](#其他相关文献--other-related-literature)
   - [3.7 一键运行环境与命令（Lean 4 / lake）](#37-一键运行环境与命令lean-4--lake)
   - [3.8 多模块项目结构与 lake 配置](#38-多模块项目结构与-lake-配置)
+  - [3.9 严格定理证明实现 / Strict Theorem Proving Implementations](#39-严格定理证明实现--strict-theorem-proving-implementations)
+    - [3.9.1 基础数学定理证明 / Basic Mathematical Theorem Proofs](#391-基础数学定理证明--basic-mathematical-theorem-proofs)
   - [3.10 交叉引用与依赖 (Cross References and Dependencies)](#310-交叉引用与依赖-cross-references-and-dependencies)
+    - [3.9.2 算法正确性证明 / Algorithm Correctness Proofs](#392-算法正确性证明--algorithm-correctness-proofs)
+    - [3.9.3 数据结构性质证明 / Data Structure Property Proofs](#393-数据结构性质证明--data-structure-property-proofs)
 
 ---
 
@@ -662,18 +669,30 @@ def main : IO Unit := do
 
 ---
 
-## 3.6 参考文献 (References)
+## 3.6 参考文献 / References
 
-1. **de Moura, L., & Ullrich, S.** (2021). *The Lean 4 Theorem Prover and Programming Language*. Microsoft Research.
-2. **Avigad, J., & de Moura, L.** (2021). *The Lean Mathematical Library*. Journal of Automated Reasoning, 65(1), 1-23.
-3. **The Lean 4 Community** (2021). *Mathematics in Lean*. Lean 4 Documentation.
-4. **de Moura, L., & Kong, S.** (2014). *Efficient E-Matching for SMT Solvers*. Automated Deduction, 7364, 183-198.
-5. **de Moura, L., & Bjørner, N.** (2008). *Z3: An Efficient SMT Solver*. Tools and Algorithms for the Construction and Analysis of Systems, 4963, 337-340.
-6. **Avigad, J.** (2018). *Mathematics and Proof*. In *Computational Logic in Multi-Agent Systems*, 1-15.
-7. **de Moura, L., & Bjørner, N.** (2009). *Satisfiability Modulo Theories: Introduction and Applications*. Communications of the ACM, 54(9), 69-77.
-8. **The Lean 4 Community** (2021). *Lean 4 Reference Manual*. Lean 4 Documentation.
-9. **de Moura, L.** (2016). *Efficient E-Matching for SMT Solvers*. In *Automated Deduction*, 183-198.
-10. **Avigad, J., & de Moura, L.** (2020). *The Lean Mathematical Library: A Library of Formalized Mathematics*. In *Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs*, 1-13.
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### Lean语言规范与核心文献 / Lean Language Specification and Core Literature
+
+1. [deMouraUllrich2021] de Moura, L., & Ullrich, S. (2021). *The Lean 4 Theorem Prover and Programming Language*. Microsoft Research. URL: <https://leanprover.github.io/>
+   - **Lean 4官方技术报告**，Lean语言的权威文档。本文档的Lean实现遵循此规范。
+
+2. [LeanCommunity2021] The Lean Community. (2021). *Mathematics in Lean*. Lean Community. URL: <https://leanprover-community.github.io/mathematics_in_lean/>
+   - **Lean社区数学教程**，Lean数学实践指南。本文档的数学实现示例参考此书。
+
+### 数学库与形式化数学 / Mathematics Library and Formalized Mathematics
+
+1. [AvigaddeMoura2021] Avigad, J., & de Moura, L. (2021). "The Lean Mathematical Library". *Journal of Automated Reasoning*, 65(1), 1-23. DOI: 10.1007/s10817-020-09579-8
+   - **Lean数学库的权威论文**，形式化数学的重要成果。本文档的数学库实现参考此文。
+
+### 其他相关文献 / Other Related Literature
+
+1. **de Moura, L., & Bjørner, N.** (2008). "Z3: An Efficient SMT Solver". *Tools and Algorithms for the Construction and Analysis of Systems*, 4963, 337-340.
+   - Z3 SMT求解器论文，Lean的SMT支持参考此文。
+
+2. **The Lean 4 Community** (2021). *Lean 4 Reference Manual*. Lean 4 Documentation.
+   - Lean 4官方参考手册。
 
 ---
 
