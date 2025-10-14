@@ -20,17 +20,20 @@
 ### 2.2 引用时机 / When to Cite
 
 **必须引用的情况 / Must cite:**
+
 - ✓ 直接引用他人观点或表述
 - ✓ 使用他人的定理、证明或算法
 - ✓ 参考他人的实验结果或数据
 - ✓ 基于他人的工作进行扩展
 
 **建议引用的情况 / Recommended to cite:**
+
 - ✓ 介绍某个领域的背景知识
 - ✓ 对比不同学者的观点
 - ✓ 引导读者深入阅读
 
 **无需引用的情况 / No need to cite:**
+
 - ✗ 公共知识（common knowledge）
 - ✗ 基本数学定义（如自然数、实数的定义）
 - ✗ 标准符号（如 $\in$, $\forall$, $\exists$）
@@ -68,60 +71,70 @@ Any computable function can be computed by a Turing machine.¹
 #### 期刊论文 / Journal Articles
 
 **格式 / Format:**
-```
+
+```text
 Author(s). (Year). "Title". *Journal Name*, Volume(Issue), Page range. DOI
 ```
 
 **示例 / Example:**
-```
+
+```text
 Turing, A.M. (1936). "On Computable Numbers, with an Application to the Entscheidungsproblem". *Proceedings of the London Mathematical Society*, 42(2), 230-265. https://doi.org/10.1112/plms/s2-42.1.230
 ```
 
 #### 书籍 / Books
 
 **格式 / Format:**
-```
+
+```text
 Author(s). (Year). *Book Title* (Edition). Publisher.
 ```
 
 **示例 / Example:**
-```
+
+```text
 Cormen, T.H., Leiserson, C.E., Rivest, R.L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
 ```
 
 #### 书籍章节 / Book Chapters
 
 **格式 / Format:**
-```
+
+```text
 Author(s). (Year). "Chapter Title". In Editor(s) (Eds.), *Book Title* (pp. Page range). Publisher.
 ```
 
 **示例 / Example:**
-```
+
+```text
 Knuth, D.E. (1997). "Fundamental Algorithms". In *The Art of Computer Programming, Volume 1* (3rd ed., pp. 1-650). Addison-Wesley.
 ```
 
 #### 会议论文 / Conference Papers
 
 **格式 / Format:**
-```
+
+```text
 Author(s). (Year). "Title". In *Conference Name* (pp. Page range). Publisher.
 ```
 
 **示例 / Example:**
-```
+
+```text
 Shor, P.W. (1994). "Algorithms for Quantum Computation: Discrete Logarithms and Factoring". In *Proceedings of the 35th Annual Symposium on Foundations of Computer Science* (pp. 124-134). IEEE.
 ```
 
 #### 在线资源 / Online Resources
 
 **格式 / Format:**
-```
+
+```text
 Author/Organization. (Year). "Title". Retrieved from URL [Accessed: Date]
 ```
 
 **示例 / Example:**
-```
+
+```text
 Wikipedia contributors. (2024). "Algorithm". Retrieved from https://en.wikipedia.org/wiki/Algorithm [Accessed: 2024-12-01]
 ```
 
@@ -132,11 +145,13 @@ Wikipedia contributors. (2024). "Algorithm". Retrieved from https://en.wikipedia
 ### 4.1 直接引用 / Direct Quotations
 
 **英文引用 / English:**
+
 ```markdown
 As Knuth stated: "Premature optimization is the root of all evil" (Knuth, 1974, p. 268).
 ```
 
 **中文引用 / Chinese:**
+
 ```markdown
 正如高德纳所言："过早优化是万恶之源"（Knuth, 1974, 第268页）。
 ```
@@ -144,6 +159,7 @@ As Knuth stated: "Premature optimization is the root of all evil" (Knuth, 1974, 
 ### 4.2 间接引用（转述）/ Paraphrasing
 
 **示例 / Example:**
+
 ```markdown
 Turing's work established the theoretical foundation for modern computing (Turing, 1936).
 图灵的工作为现代计算奠定了理论基础（Turing, 1936）。
@@ -152,21 +168,25 @@ Turing's work established the theoretical foundation for modern computing (Turin
 ### 4.3 多作者引用 / Multiple Authors
 
 **2位作者 / 2 Authors:**
+
 ```markdown
 (Smith & Jones, 2020)
 ```
 
 **3-5位作者（首次）/ 3-5 Authors (first time):**
+
 ```markdown
 (Smith, Jones, Brown, White, & Green, 2020)
 ```
 
 **3-5位作者（后续）/ 3-5 Authors (subsequent):**
+
 ```markdown
 (Smith et al., 2020)
 ```
 
 **6位及以上作者 / 6+ Authors:**
+
 ```markdown
 (Smith et al., 2020)
 ```
@@ -176,11 +196,13 @@ Turing's work established the theoretical foundation for modern computing (Turin
 **避免使用 / Avoid if possible**, 优先查找原始文献。
 
 **格式 / Format:**
+
 ```markdown
 (Original Author, Year, as cited in Secondary Author, Year)
 ```
 
 **示例 / Example:**
+
 ```markdown
 (Church, 1936, as cited in Rogers, 1967)
 ```
@@ -203,17 +225,17 @@ Gödel, K. (1931). "Über formal unentscheidbare Sätze der Principia Mathematic
 ### 5.2 算法 / Algorithms
 
 ```markdown
-**算法 2.1** (归并排序, Knuth, 1998)
+    **算法 2.1** (归并排序, Knuth, 1998)
 
-**Algorithm 2.1** (Merge Sort, Knuth, 1998)
+    **Algorithm 2.1** (Merge Sort, Knuth, 1998)
 
-```rust
-// 基于 Knuth (1998) 的归并排序实现
-// Merge sort implementation based on Knuth (1998)
-```
+    ```rust
+    // 基于 Knuth (1998) 的归并排序实现
+    // Merge sort implementation based on Knuth (1998)
+    ```
 
-**参考文献 / Reference:**
-Knuth, D.E. (1998). *The Art of Computer Programming, Volume 3: Sorting and Searching* (2nd ed.). Addison-Wesley.
+    **参考文献 / Reference:**
+    Knuth, D.E. (1998). *The Art of Computer Programming, Volume 3: Sorting and Searching* (2nd ed.). Addison-Wesley.
 ```
 
 ### 5.3 代码实现 / Code Implementations
@@ -360,11 +382,13 @@ pub struct CitationExtractor {
 ### 9.1 避免的错误 / Mistakes to Avoid
 
 ❌ **错误1：缺失引用 / Missing Citations**
+
 ```markdown
 哥德尔不完备性定理表明任何包含算术的一致形式化系统都是不完备的。
 ```
 
 ✅ **正确做法 / Correct:**
+
 ```markdown
 哥德尔不完备性定理（Gödel, 1931）表明任何包含算术的一致形式化系统都是不完备的。
 ```
@@ -372,11 +396,13 @@ pub struct CitationExtractor {
 ---
 
 ❌ **错误2：引用信息不完整 / Incomplete Citation**
+
 ```markdown
 Turing, A.M. "On Computable Numbers". 1936.
 ```
 
 ✅ **正确做法 / Correct:**
+
 ```markdown
 Turing, A.M. (1936). "On Computable Numbers, with an Application to the Entscheidungsproblem". *Proceedings of the London Mathematical Society*, 42(2), 230-265.
 ```
@@ -384,11 +410,13 @@ Turing, A.M. (1936). "On Computable Numbers, with an Application to the Entschei
 ---
 
 ❌ **错误3：过度依赖Wikipedia / Over-reliance on Wikipedia**
+
 ```markdown
 算法是一系列指令（Wikipedia）。
 ```
 
 ✅ **正确做法 / Correct:**
+
 ```markdown
 算法是解决特定问题的有限、明确、可执行的指令序列（Knuth, 1997）。对于入门级介绍，也可参考 Wikipedia (2024)。
 
@@ -447,22 +475,20 @@ git commit -m "docs: 添加算法设计理论的引用 / Add citations for algor
 
 ### 12.1 引用风格指南 / Citation Style Guides
 
-- **APA Style**: https://apastyle.apa.org/
-- **IEEE Style**: https://ieeeauthorcenter.ieee.org/
-- **ACM Reference Format**: https://www.acm.org/publications/authors/reference-formatting
-- **Chicago Manual of Style**: https://www.chicagomanualofstyle.org/
+- **APA Style**: <https://apastyle.apa.org/>
+- **IEEE Style**: <https://ieeeauthorcenter.ieee.org/>
+- **ACM Reference Format**: <https://www.acm.org/publications/authors/reference-formatting>
+- **Chicago Manual of Style**: <https://www.chicagomanualofstyle.org/>
 
 ### 12.2 引用管理工具 / Citation Management Tools
 
-- **Zotero**: https://www.zotero.org/
-- **Mendeley**: https://www.mendeley.com/
-- **EndNote**: https://endnote.com/
-- **BibTeX**: https://www.bibtex.org/
+- **Zotero**: <https://www.zotero.org/>
+- **Mendeley**: <https://www.mendeley.com/>
+- **EndNote**: <https://endnote.com/>
+- **BibTeX**: <https://www.bibtex.org/>
 
 ---
 
 **最后更新 / Last Updated**: 2025年11月 / November 2025
 
 **版本 / Version**: 1.0
-
-

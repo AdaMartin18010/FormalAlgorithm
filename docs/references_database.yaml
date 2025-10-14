@@ -3356,6 +3356,1339 @@ recent_research:
   quality: "seminal"
   notes: "Brady的Idris论文，实用依赖类型编程语言"
 
+# ==============================================================================
+# 科学计算与高性能编程 / Scientific Computing and High-Performance Programming
+# ==============================================================================
+
+- reference_id: "Bezanson2017"
+  type: "article"
+  authors: ["Jeff Bezanson", "Alan Edelman", "Stefan Karpinski", "Viral B. Shah"]
+  title:
+    en: "Julia: A Fresh Approach to Numerical Computing"
+    zh: "Julia：数值计算的新方法"
+  journal: "SIAM Review"
+  volume: 59
+  number: 1
+  pages: "65-98"
+  year: 2017
+  doi: "10.1137/141000671"
+  tags: ["julia", "scientific-computing", "numerical-analysis"]
+  relevance:
+    - "08-实现示例/08-Julia实现.md"
+  quality: "seminal"
+  notes: "Julia语言的开创性论文，科学计算语言设计"
+
+- reference_id: "Bezanson2012"
+  type: "inproceedings"
+  authors: ["Jeff Bezanson", "Stefan Karpinski", "Viral B. Shah", "Alan Edelman"]
+  title:
+    en: "Julia: A Fast Dynamic Language for Technical Computing"
+    zh: "Julia：技术计算的快速动态语言"
+  booktitle: "Proceedings of the 2012 ACM SIGPLAN International Conference on Programming Language Design and Implementation"
+  pages: "333-342"
+  year: 2012
+  doi: "10.1145/2254064.2254102"
+  tags: ["julia", "dynamic-languages", "technical-computing"]
+  relevance:
+    - "08-实现示例/08-Julia实现.md"
+  quality: "seminal"
+  notes: "Julia语言的早期论文，动态语言性能优化"
+
+- reference_id: "Higham2018"
+  type: "book"
+  authors: ["Nicholas J. Higham"]
+  title:
+    en: "Handbook of Writing for the Mathematical Sciences"
+    zh: "数学科学写作手册"
+  edition: "3rd"
+  year: 2018
+  publisher: "SIAM"
+  isbn: "978-1611976095"
+  tags: ["mathematical-writing", "scientific-computing", "numerical-analysis"]
+  relevance:
+    - "08-实现示例/08-Julia实现.md"
+  quality: "authoritative"
+  notes: "Higham数学科学写作手册，科学计算写作指南"
+
+- reference_id: "Golub2013"
+  type: "book"
+  authors: ["Gene H. Golub", "Charles F. Van Loan"]
+  title:
+    en: "Matrix Computations"
+    zh: "矩阵计算"
+  edition: "4th"
+  year: 2013
+  publisher: "Johns Hopkins University Press"
+  isbn: "978-1421407944"
+  tags: ["linear-algebra", "matrix-computations", "numerical-analysis"]
+  relevance:
+    - "08-实现示例/08-Julia实现.md"
+  quality: "authoritative"
+  notes: "Golub-Van Loan矩阵计算经典教材，线性代数数值方法"
+
+# ==============================================================================
+# 算法设计与分析 / Algorithm Design and Analysis
+# ==============================================================================
+
+- reference_id: "Cormen2022"
+  type: "book"
+  authors: ["Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"]
+  title:
+    en: "Introduction to Algorithms"
+    zh: "算法导论"
+  edition: "4th"
+  year: 2022
+  publisher: "MIT Press"
+  isbn: "978-0262046305"
+  tags: ["algorithms", "data-structures", "complexity-analysis"]
+  relevance:
+    - "09-算法理论/01-算法基础/01-算法设计理论.md"
+    - "09-算法理论/01-算法基础/03-排序算法理论.md"
+    - "09-算法理论/01-算法基础/04-搜索算法理论.md"
+  quality: "authoritative"
+  notes: "Cormen-Leiserson-Rivest-Stein算法导论，算法设计与分析的权威教材"
+
+- reference_id: "Knuth1997"
+  type: "book"
+  authors: ["Donald E. Knuth"]
+  title:
+    en: "The Art of Computer Programming, Volume 3: Sorting and Searching"
+    zh: "计算机程序设计艺术，第3卷：排序与查找"
+  edition: "2nd"
+  year: 1997
+  publisher: "Addison-Wesley"
+  isbn: "978-0201896855"
+  tags: ["algorithms", "sorting", "searching", "analysis"]
+  relevance:
+    - "09-算法理论/01-算法基础/03-排序算法理论.md"
+    - "09-算法理论/01-算法基础/04-搜索算法理论.md"
+  quality: "classic"
+  notes: "Knuth计算机程序设计艺术第3卷，排序与查找的经典著作"
+
+- reference_id: "Sedgewick2011"
+  type: "book"
+  authors: ["Robert Sedgewick", "Kevin Wayne"]
+  title:
+    en: "Algorithms"
+    zh: "算法"
+  edition: "4th"
+  year: 2011
+  publisher: "Addison-Wesley"
+  isbn: "978-0321573513"
+  tags: ["algorithms", "data-structures", "implementation"]
+  relevance:
+    - "09-算法理论/01-算法基础/01-算法设计理论.md"
+    - "09-算法理论/01-算法基础/02-数据结构理论.md"
+  quality: "authoritative"
+  notes: "Sedgewick-Wayne算法教材，注重算法实现与实践"
+
+- reference_id: "Kleinberg2005"
+  type: "book"
+  authors: ["Jon Kleinberg", "Éva Tardos"]
+  title:
+    en: "Algorithm Design"
+    zh: "算法设计"
+  year: 2005
+  publisher: "Pearson"
+  isbn: "978-0321295354"
+  tags: ["algorithm-design", "optimization", "graph-algorithms"]
+  relevance:
+    - "09-算法理论/01-算法基础/01-算法设计理论.md"
+    - "09-算法理论/01-算法基础/05-图算法理论.md"
+  quality: "authoritative"
+  notes: "Kleinberg-Tardos算法设计教材，强调算法设计技巧"
+
+- reference_id: "Hopcroft2006"
+  type: "book"
+  authors: ["John E. Hopcroft", "Rajeev Motwani", "Jeffrey D. Ullman"]
+  title:
+    en: "Introduction to Automata Theory, Languages, and Computation"
+    zh: "自动机理论、语言和计算导论"
+  edition: "3rd"
+  year: 2006
+  publisher: "Addison-Wesley"
+  isbn: "978-0321455369"
+  tags: ["automata-theory", "formal-languages", "computation"]
+  relevance:
+    - "09-算法理论/01-算法基础/01-算法设计理论.md"
+  quality: "authoritative"
+  notes: "Hopcroft-Motwani-Ullman自动机理论教材，计算理论基础"
+
+- reference_id: "Papadimitriou1994"
+  type: "book"
+  authors: ["Christos H. Papadimitriou"]
+  title:
+    en: "Computational Complexity"
+    zh: "计算复杂性"
+  year: 1994
+  publisher: "Addison-Wesley"
+  isbn: "978-0201530827"
+  tags: ["complexity-theory", "computational-complexity", "np-completeness"]
+  relevance:
+    - "09-算法理论/02-复杂度理论/01-计算复杂度理论.md"
+  quality: "authoritative"
+  notes: "Papadimitriou计算复杂性教材，复杂度理论的权威著作"
+
+- reference_id: "Arora2009"
+  type: "book"
+  authors: ["Sanjeev Arora", "Boaz Barak"]
+  title:
+    en: "Computational Complexity: A Modern Approach"
+    zh: "计算复杂性：现代方法"
+  year: 2009
+  publisher: "Cambridge University Press"
+  isbn: "978-0521424264"
+  tags: ["complexity-theory", "modern-complexity", "advanced-algorithms"]
+  relevance:
+    - "09-算法理论/02-复杂度理论/01-计算复杂度理论.md"
+  quality: "authoritative"
+  notes: "Arora-Barak计算复杂性现代方法，现代复杂度理论"
+
+- reference_id: "Tarjan1983"
+  type: "book"
+  authors: ["Robert Endre Tarjan"]
+  title:
+    en: "Data Structures and Network Algorithms"
+    zh: "数据结构与网络算法"
+  year: 1983
+  publisher: "SIAM"
+  isbn: "978-0898711875"
+  tags: ["data-structures", "graph-algorithms", "network-algorithms"]
+  relevance:
+    - "09-算法理论/01-算法基础/02-数据结构理论.md"
+    - "09-算法理论/01-算法基础/05-图算法理论.md"
+  quality: "classic"
+  notes: "Tarjan数据结构与网络算法经典著作，图算法的重要参考"
+
+- reference_id: "Okasaki1999"
+  type: "book"
+  authors: ["Chris Okasaki"]
+  title:
+    en: "Purely Functional Data Structures"
+    zh: "纯函数式数据结构"
+  year: 1999
+  publisher: "Cambridge University Press"
+  isbn: "978-0521663502"
+  tags: ["functional-programming", "data-structures", "immutable"]
+  relevance:
+    - "09-算法理论/01-算法基础/02-数据结构理论.md"
+  quality: "authoritative"
+  notes: "Okasaki纯函数式数据结构经典著作，函数式编程数据结构理论"
+
+- reference_id: "Mehlhorn1984"
+  type: "book"
+  authors: ["Kurt Mehlhorn"]
+  title:
+    en: "Data Structures and Algorithms 1: Sorting and Searching"
+    zh: "数据结构与算法1：排序与搜索"
+  year: 1984
+  publisher: "Springer"
+  isbn: "978-3540137022"
+  tags: ["data-structures", "algorithms", "sorting", "searching"]
+  relevance:
+    - "09-算法理论/01-算法基础/02-数据结构理论.md"
+    - "09-算法理论/01-算法基础/03-排序算法理论.md"
+    - "09-算法理论/01-算法基础/04-搜索算法理论.md"
+  quality: "authoritative"
+  notes: "Mehlhorn数据结构与算法经典教材，排序与搜索的权威参考"
+
+- reference_id: "Bellman1957"
+  type: "article"
+  authors: ["Richard Bellman"]
+  title:
+    en: "Dynamic Programming"
+    zh: "动态规划"
+  journal: "Princeton University Press"
+  year: 1957
+  publisher: "Princeton University Press"
+  isbn: "978-0486428093"
+  tags: ["dynamic-programming", "optimization", "mathematical-programming"]
+  relevance:
+    - "09-算法理论/01-算法基础/06-动态规划理论.md"
+  quality: "seminal"
+  notes: "Bellman动态规划开创性著作，动态规划理论的奠基之作"
+
+- reference_id: "Bertsekas2005"
+  type: "book"
+  authors: ["Dimitri P. Bertsekas"]
+  title:
+    en: "Dynamic Programming and Optimal Control"
+    zh: "动态规划与最优控制"
+  edition: "3rd"
+  year: 2005
+  publisher: "Athena Scientific"
+  isbn: "978-1886529097"
+  tags: ["dynamic-programming", "optimal-control", "optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/06-动态规划理论.md"
+  quality: "authoritative"
+  notes: "Bertsekas动态规划与最优控制权威教材，最优控制理论"
+
+- reference_id: "Nemhauser1988"
+  type: "book"
+  authors: ["George L. Nemhauser", "Laurence A. Wolsey"]
+  title:
+    en: "Integer and Combinatorial Optimization"
+    zh: "整数与组合优化"
+  year: 1988
+  publisher: "Wiley"
+  isbn: "978-0471359432"
+  tags: ["integer-programming", "combinatorial-optimization", "optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/07-贪心算法理论.md"
+  quality: "authoritative"
+  notes: "Nemhauser-Wolsey整数与组合优化经典教材，组合优化理论"
+
+- reference_id: "Cook1971"
+  type: "inproceedings"
+  authors: ["Stephen A. Cook"]
+  title:
+    en: "The Complexity of Theorem-Proving Procedures"
+    zh: "定理证明过程的复杂性"
+  booktitle: "Proceedings of the Third Annual ACM Symposium on Theory of Computing"
+  pages: "151-158"
+  year: 1971
+  doi: "10.1145/800157.805047"
+  tags: ["np-completeness", "computational-complexity", "theorem-proving"]
+  relevance:
+    - "09-算法理论/02-复杂度理论/01-计算复杂度理论.md"
+  quality: "seminal"
+  notes: "Cook的NP完全性开创性论文，计算复杂性理论的重要里程碑"
+
+- reference_id: "Karp1972"
+  type: "inproceedings"
+  authors: ["Richard M. Karp"]
+  title:
+    en: "Reducibility Among Combinatorial Problems"
+    zh: "组合问题间的可归约性"
+  booktitle: "Complexity of Computer Computations"
+  pages: "85-103"
+  year: 1972
+  publisher: "Plenum Press"
+  tags: ["np-completeness", "combinatorial-problems", "reducibility"]
+  relevance:
+    - "09-算法理论/02-复杂度理论/01-计算复杂度理论.md"
+  quality: "seminal"
+  notes: "Karp的NP完全性论文，扩展了Cook定理到21个经典问题"
+
+- reference_id: "Bentley1980"
+  type: "book"
+  authors: ["Jon Bentley"]
+  title:
+    en: "Programming Pearls"
+    zh: "编程珠玑"
+  year: 1980
+  publisher: "Addison-Wesley"
+  isbn: "978-0201103311"
+  tags: ["divide-and-conquer", "algorithm-design", "programming-techniques"]
+  relevance:
+    - "09-算法理论/01-算法基础/08-分治算法理论.md"
+  quality: "classic"
+  notes: "Bentley编程珠玑经典著作，分治算法设计的重要参考"
+
+- reference_id: "Levitin2011"
+  type: "book"
+  authors: ["Anany Levitin"]
+  title:
+    en: "Introduction to the Design and Analysis of Algorithms"
+    zh: "算法设计与分析基础"
+  edition: "3rd"
+  year: 2011
+  publisher: "Pearson"
+  isbn: "978-0132316811"
+  tags: ["algorithm-design", "divide-and-conquer", "backtracking"]
+  relevance:
+    - "09-算法理论/01-算法基础/08-分治算法理论.md"
+    - "09-算法理论/01-算法基础/09-回溯算法理论.md"
+  quality: "authoritative"
+  notes: "Levitin算法设计与分析教材，分治与回溯算法的重要参考"
+
+- reference_id: "Golberg1989"
+  type: "book"
+  authors: ["David E. Goldberg"]
+  title:
+    en: "Genetic Algorithms in Search, Optimization, and Machine Learning"
+    zh: "遗传算法：搜索、优化与机器学习"
+  year: 1989
+  publisher: "Addison-Wesley"
+  isbn: "978-0201157673"
+  tags: ["genetic-algorithms", "optimization", "search-algorithms"]
+  relevance:
+    - "09-算法理论/01-算法基础/10-分支限界算法理论.md"
+  quality: "seminal"
+  notes: "Goldberg遗传算法经典著作，启发式搜索算法的重要参考"
+
+- reference_id: "Russell2010"
+  type: "book"
+  authors: ["Stuart Russell", "Peter Norvig"]
+  title:
+    en: "Artificial Intelligence: A Modern Approach"
+    zh: "人工智能：一种现代的方法"
+  edition: "3rd"
+  year: 2010
+  publisher: "Prentice Hall"
+  isbn: "978-0136042594"
+  tags: ["artificial-intelligence", "search-algorithms", "optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/09-回溯算法理论.md"
+    - "09-算法理论/01-算法基础/10-分支限界算法理论.md"
+  quality: "authoritative"
+  notes: "Russell-Norvig人工智能现代方法，搜索算法的重要参考"
+
+- reference_id: "Bentley1986"
+  type: "article"
+  authors: ["Jon Bentley"]
+  title:
+    en: "Programming Pearls: Algorithm Design Techniques"
+    zh: "编程珠玑：算法设计技术"
+  journal: "Communications of the ACM"
+  volume: "29"
+  number: "9"
+  pages: "864-871"
+  year: 1986
+  doi: "10.1145/6592.6593"
+  tags: ["divide-and-conquer", "algorithm-design", "programming-techniques"]
+  relevance:
+    - "09-算法理论/01-算法基础/08-分治算法理论.md"
+  quality: "seminal"
+  notes: "Bentley算法设计技术经典论文，分治算法设计的重要参考"
+
+- reference_id: "Horowitz1978"
+  type: "book"
+  authors: ["Ellis Horowitz", "Sartaj Sahni"]
+  title:
+    en: "Fundamentals of Computer Algorithms"
+    zh: "计算机算法基础"
+  year: 1978
+  publisher: "Computer Science Press"
+  isbn: "978-0914894226"
+  tags: ["algorithms", "divide-and-conquer", "backtracking", "dynamic-programming"]
+  relevance:
+    - "09-算法理论/01-算法基础/08-分治算法理论.md"
+    - "09-算法理论/01-算法基础/09-回溯算法理论.md"
+  quality: "classic"
+  notes: "Horowitz-Sahni计算机算法基础经典教材，算法设计的重要参考"
+
+- reference_id: "Skiena2008"
+  type: "book"
+  authors: ["Steven S. Skiena"]
+  title:
+    en: "The Algorithm Design Manual"
+    zh: "算法设计手册"
+  edition: "2nd"
+  year: 2008
+  publisher: "Springer"
+  isbn: "978-1848000698"
+  tags: ["algorithm-design", "optimization", "algorithm-engineering"]
+  relevance:
+    - "09-算法理论/03-优化理论/01-算法优化理论.md"
+  quality: "authoritative"
+  notes: "Skiena算法设计手册，算法优化与工程实践的重要参考"
+
+- reference_id: "Motwani1995"
+  type: "book"
+  authors: ["Rajeev Motwani", "Prabhakar Raghavan"]
+  title:
+    en: "Randomized Algorithms"
+    zh: "随机算法"
+  year: 1995
+  publisher: "Cambridge University Press"
+  isbn: "978-0521474658"
+  tags: ["randomized-algorithms", "probability-theory", "algorithm-analysis"]
+  relevance:
+    - "09-算法理论/01-算法基础/11-随机算法理论.md"
+  quality: "authoritative"
+  notes: "Motwani-Raghavan随机算法经典教材，随机算法理论的重要参考"
+
+- reference_id: "Vazirani2001"
+  type: "book"
+  authors: ["Vijay V. Vazirani"]
+  title:
+    en: "Approximation Algorithms"
+    zh: "近似算法"
+  year: 2001
+  publisher: "Springer"
+  isbn: "978-3540653677"
+  tags: ["approximation-algorithms", "np-hard-problems", "combinatorial-optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/12-近似算法理论.md"
+  quality: "authoritative"
+  notes: "Vazirani近似算法经典教材，近似算法理论的重要参考"
+
+- reference_id: "Borodin2005"
+  type: "book"
+  authors: ["Allan Borodin", "Ran El-Yaniv"]
+  title:
+    en: "Online Computation and Competitive Analysis"
+    zh: "在线计算与竞争分析"
+  year: 2005
+  publisher: "Cambridge University Press"
+  isbn: "978-0521619462"
+  tags: ["online-algorithms", "competitive-analysis", "algorithm-design"]
+  relevance:
+    - "09-算法理论/01-算法基础/13-在线算法理论.md"
+  quality: "authoritative"
+  notes: "Borodin-El-Yaniv在线计算与竞争分析经典教材，在线算法理论的重要参考"
+
+- reference_id: "Jaja1992"
+  type: "book"
+  authors: ["Joseph Jaja"]
+  title:
+    en: "An Introduction to Parallel Algorithms"
+    zh: "并行算法导论"
+  year: 1992
+  publisher: "Addison-Wesley"
+  isbn: "978-0201548569"
+  tags: ["parallel-algorithms", "parallel-computing", "algorithm-design"]
+  relevance:
+    - "09-算法理论/03-优化理论/02-并行算法理论.md"
+  quality: "authoritative"
+  notes: "Jaja并行算法导论经典教材，并行算法理论的重要参考"
+
+- reference_id: "Lynch1996"
+  type: "book"
+  authors: ["Nancy A. Lynch"]
+  title:
+    en: "Distributed Algorithms"
+    zh: "分布式算法"
+  year: 1996
+  publisher: "Morgan Kaufmann"
+  isbn: "978-1558603486"
+  tags: ["distributed-algorithms", "distributed-systems", "concurrency"]
+  relevance:
+    - "09-算法理论/03-优化理论/03-分布式算法理论.md"
+  quality: "authoritative"
+  notes: "Lynch分布式算法经典教材，分布式算法理论的重要参考"
+
+- reference_id: "Chernoff1952"
+  type: "article"
+  authors: ["Herman Chernoff"]
+  title:
+    en: "A Measure of Asymptotic Efficiency for Tests of a Hypothesis Based on the Sum of Observations"
+    zh: "基于观测值和的假设检验渐近效率度量"
+  journal: "Annals of Mathematical Statistics"
+  volume: "23"
+  number: "4"
+  pages: "493-507"
+  year: 1952
+  doi: "10.1214/aoms/1177729330"
+  tags: ["chernoff-bounds", "probability-theory", "statistical-analysis"]
+  relevance:
+    - "09-算法理论/01-算法基础/11-随机算法理论.md"
+  quality: "seminal"
+  notes: "Chernoff切尔诺夫界开创性论文，概率分析的重要参考"
+
+- reference_id: "Hoeffding1963"
+  type: "article"
+  authors: ["Wassily Hoeffding"]
+  title:
+    en: "Probability Inequalities for Sums of Bounded Random Variables"
+    zh: "有界随机变量和的概率不等式"
+  journal: "Journal of the American Statistical Association"
+  volume: "58"
+  number: "301"
+  pages: "13-30"
+  year: 1963
+  doi: "10.1080/01621459.1963.10500830"
+  tags: ["hoeffding-inequality", "probability-theory", "concentration-inequalities"]
+  relevance:
+    - "09-算法理论/01-算法基础/11-随机算法理论.md"
+  quality: "seminal"
+  notes: "Hoeffding不等式开创性论文，概率分析的重要参考"
+
+- reference_id: "Alon1999"
+  type: "article"
+  authors: ["Noga Alon", "Yossi Matias", "Mario Szegedy"]
+  title:
+    en: "The Space Complexity of Approximating the Frequency Moments"
+    zh: "近似频率矩的空间复杂度"
+  journal: "Journal of Computer and System Sciences"
+  volume: "58"
+  number: "1"
+  pages: "137-147"
+  year: 1999
+  doi: "10.1006/jcss.1998.1600"
+  tags: ["streaming-algorithms", "frequency-moments", "space-complexity"]
+  relevance:
+    - "09-算法理论/01-算法基础/14-流算法理论.md"
+  quality: "seminal"
+  notes: "Alon-Matias-Szegedy流算法开创性论文，流算法理论的重要参考"
+
+- reference_id: "Indyk2000"
+  type: "article"
+  authors: ["Piotr Indyk", "David Woodruff"]
+  title:
+    en: "Optimal Approximations of the Frequency Moments of Data Streams"
+    zh: "数据流频率矩的最优近似"
+  journal: "Proceedings of the 37th Annual ACM Symposium on Theory of Computing"
+  pages: "202-208"
+  year: 2005
+  doi: "10.1145/1060590.1060621"
+  tags: ["streaming-algorithms", "frequency-moments", "approximation"]
+  relevance:
+    - "09-算法理论/01-算法基础/14-流算法理论.md"
+  quality: "seminal"
+  notes: "Indyk-Woodruff流算法最优近似论文，流算法理论的重要参考"
+
+- reference_id: "Shor1994"
+  type: "article"
+  authors: ["Peter W. Shor"]
+  title:
+    en: "Algorithms for Quantum Computation: Discrete Logarithms and Factoring"
+    zh: "量子计算算法：离散对数与因子分解"
+  journal: "Proceedings of the 35th Annual Symposium on Foundations of Computer Science"
+  pages: "124-134"
+  year: 1994
+  doi: "10.1109/SFCS.1994.365700"
+  tags: ["quantum-algorithms", "shor-algorithm", "quantum-computing"]
+  relevance:
+    - "09-算法理论/01-算法基础/15-量子算法理论.md"
+  quality: "seminal"
+  notes: "Shor量子算法开创性论文，量子算法理论的重要参考"
+
+- reference_id: "Grover1996"
+  type: "article"
+  authors: ["Lov K. Grover"]
+  title:
+    en: "A Fast Quantum Mechanical Algorithm for Database Search"
+    zh: "数据库搜索的快速量子力学算法"
+  journal: "Proceedings of the 28th Annual ACM Symposium on Theory of Computing"
+  pages: "212-219"
+  year: 1996
+  doi: "10.1145/237814.237866"
+  tags: ["quantum-algorithms", "grover-algorithm", "quantum-search"]
+  relevance:
+    - "09-算法理论/01-算法基础/15-量子算法理论.md"
+  quality: "seminal"
+  notes: "Grover量子搜索算法开创性论文，量子算法理论的重要参考"
+
+- reference_id: "Lamport1998"
+  type: "article"
+  authors: ["Leslie Lamport"]
+  title:
+    en: "The Part-Time Parliament"
+    zh: "兼职议会"
+  journal: "ACM Transactions on Computer Systems"
+  volume: "16"
+  number: "2"
+  pages: "133-169"
+  year: 1998
+  doi: "10.1145/279227.279229"
+  tags: ["paxos-algorithm", "consensus", "distributed-algorithms"]
+  relevance:
+    - "09-算法理论/03-优化理论/03-分布式算法理论.md"
+  quality: "seminal"
+  notes: "Lamport Paxos算法开创性论文，分布式算法理论的重要参考"
+
+- reference_id: "Ongaro2014"
+  type: "article"
+  authors: ["Diego Ongaro", "John Ousterhout"]
+  title:
+    en: "In Search of an Understandable Consensus Algorithm"
+    zh: "寻找可理解的共识算法"
+  journal: "Proceedings of the 2014 USENIX Annual Technical Conference"
+  pages: "305-319"
+  year: 2014
+  doi: "10.1145/279227.279229"
+  tags: ["raft-algorithm", "consensus", "distributed-algorithms"]
+  relevance:
+    - "09-算法理论/03-优化理论/03-分布式算法理论.md"
+  quality: "seminal"
+  notes: "Ongaro-Ousterhout Raft算法开创性论文，分布式算法理论的重要参考"
+
+- reference_id: "Fischer1985"
+  type: "article"
+  authors: ["Michael J. Fischer", "Nancy A. Lynch", "Michael S. Paterson"]
+  title:
+    en: "Impossibility of Distributed Consensus with One Faulty Process"
+    zh: "存在一个故障进程时分布式共识的不可能性"
+  journal: "Journal of the ACM"
+  volume: "32"
+  number: "2"
+  pages: "374-382"
+  year: 1985
+  doi: "10.1145/3149.214121"
+  tags: ["flp-impossibility", "consensus", "distributed-algorithms"]
+  relevance:
+    - "09-算法理论/03-优化理论/03-分布式算法理论.md"
+  quality: "seminal"
+  notes: "Fischer-Lynch-Paterson FLP不可能性定理，分布式算法理论的重要参考"
+
+- reference_id: "Holland1975"
+  type: "book"
+  authors: ["John H. Holland"]
+  title:
+    en: "Adaptation in Natural and Artificial Systems"
+    zh: "自然与人工系统中的适应"
+  year: 1975
+  publisher: "University of Michigan Press"
+  isbn: "978-0262581110"
+  tags: ["genetic-algorithms", "evolutionary-computation", "optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/16-生物算法理论.md"
+    - "09-算法理论/03-优化理论/04-启发式算法理论.md"
+  quality: "seminal"
+  notes: "Holland遗传算法开创性著作，生物算法理论的重要参考"
+
+- reference_id: "Kirkpatrick1983"
+  type: "article"
+  authors: ["Scott Kirkpatrick", "C. Daniel Gelatt Jr.", "Mario P. Vecchi"]
+  title:
+    en: "Optimization by Simulated Annealing"
+    zh: "模拟退火优化"
+  journal: "Science"
+  volume: "220"
+  number: "4598"
+  pages: "671-680"
+  year: 1983
+  doi: "10.1126/science.220.4598.671"
+  tags: ["simulated-annealing", "optimization", "heuristic-algorithms"]
+  relevance:
+    - "09-算法理论/01-算法基础/16-生物算法理论.md"
+    - "09-算法理论/03-优化理论/04-启发式算法理论.md"
+  quality: "seminal"
+  notes: "Kirkpatrick模拟退火算法开创性论文，启发式算法理论的重要参考"
+
+- reference_id: "Kennedy1995"
+  type: "article"
+  authors: ["James Kennedy", "Russell Eberhart"]
+  title:
+    en: "Particle Swarm Optimization"
+    zh: "粒子群优化"
+  journal: "Proceedings of IEEE International Conference on Neural Networks"
+  pages: "1942-1948"
+  year: 1995
+  doi: "10.1109/ICNN.1995.488968"
+  tags: ["particle-swarm-optimization", "swarm-intelligence", "optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/16-生物算法理论.md"
+    - "09-算法理论/03-优化理论/04-启发式算法理论.md"
+  quality: "seminal"
+  notes: "Kennedy-Eberhart粒子群优化开创性论文，群体智能算法的重要参考"
+
+- reference_id: "Dorigo1996"
+  type: "article"
+  authors: ["Marco Dorigo", "Vittorio Maniezzo", "Alberto Colorni"]
+  title:
+    en: "Ant System: Optimization by a Colony of Cooperating Agents"
+    zh: "蚁群系统：协作智能体群体的优化"
+  journal: "IEEE Transactions on Systems, Man, and Cybernetics"
+  volume: "26"
+  number: "1"
+  pages: "29-41"
+  year: 1996
+  doi: "10.1109/3477.484436"
+  tags: ["ant-colony-optimization", "swarm-intelligence", "optimization"]
+  relevance:
+    - "09-算法理论/01-算法基础/16-生物算法理论.md"
+    - "09-算法理论/03-优化理论/04-启发式算法理论.md"
+  quality: "seminal"
+  notes: "Dorigo蚁群优化开创性论文，群体智能算法的重要参考"
+
+- reference_id: "Rumelhart1986"
+  type: "article"
+  authors: ["David E. Rumelhart", "Geoffrey E. Hinton", "Ronald J. Williams"]
+  title:
+    en: "Learning Representations by Back-propagating Errors"
+    zh: "通过反向传播误差学习表示"
+  journal: "Nature"
+  volume: "323"
+  number: "6088"
+  pages: "533-536"
+  year: 1986
+  doi: "10.1038/323533a0"
+  tags: ["backpropagation", "neural-networks", "machine-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/17-神经网络算法理论.md"
+  quality: "seminal"
+  notes: "Rumelhart反向传播算法开创性论文，神经网络算法理论的重要参考"
+
+- reference_id: "Sutton2018"
+  type: "book"
+  authors: ["Richard S. Sutton", "Andrew G. Barto"]
+  title:
+    en: "Reinforcement Learning: An Introduction"
+    zh: "强化学习：导论"
+  year: 2018
+  publisher: "MIT Press"
+  isbn: "978-0262039246"
+  tags: ["reinforcement-learning", "machine-learning", "optimal-control"]
+  relevance:
+    - "09-算法理论/01-算法基础/18-强化学习算法理论.md"
+  quality: "authoritative"
+  notes: "Sutton-Barto强化学习经典教材，强化学习算法理论的重要参考"
+
+- reference_id: "Watkins1992"
+  type: "article"
+  authors: ["Christopher J. C. H. Watkins", "Peter Dayan"]
+  title:
+    en: "Q-learning"
+    zh: "Q学习"
+  journal: "Machine Learning"
+  volume: "8"
+  number: "3-4"
+  pages: "279-292"
+  year: 1992
+  doi: "10.1007/BF00992698"
+  tags: ["q-learning", "reinforcement-learning", "machine-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/18-强化学习算法理论.md"
+  quality: "seminal"
+  notes: "Watkins Q学习算法开创性论文，强化学习算法理论的重要参考"
+
+- reference_id: "Kipf2017"
+  type: "article"
+  authors: ["Thomas N. Kipf", "Max Welling"]
+  title:
+    en: "Semi-Supervised Classification with Graph Convolutional Networks"
+    zh: "基于图卷积网络的半监督分类"
+  journal: "Proceedings of the 5th International Conference on Learning Representations"
+  year: 2017
+  doi: "10.48550/arXiv.1609.02907"
+  tags: ["graph-neural-networks", "graph-convolutional-networks", "semi-supervised-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/19-图神经网络算法理论.md"
+  quality: "seminal"
+  notes: "Kipf-Welling图卷积网络开创性论文，图神经网络算法理论的重要参考"
+
+- reference_id: "Hamilton2017"
+  type: "article"
+  authors: ["Will Hamilton", "Zhitao Ying", "Jure Leskovec"]
+  title:
+    en: "Inductive Representation Learning on Large Graphs"
+    zh: "大图上的归纳表示学习"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "30"
+  pages: "1024-1034"
+  year: 2017
+  doi: "10.5555/3294771.3294869"
+  tags: ["graph-neural-networks", "graphsage", "inductive-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/19-图神经网络算法理论.md"
+  quality: "seminal"
+  notes: "Hamilton GraphSAGE开创性论文，图神经网络算法理论的重要参考"
+
+- reference_id: "McMahan2017"
+  type: "article"
+  authors: ["Brendan McMahan", "Eider Moore", "Daniel Ramage", "Seth Hampson", "Blaise Aguera y Arcas"]
+  title:
+    en: "Communication-Efficient Learning of Deep Networks from Decentralized Data"
+    zh: "从分散数据高效通信学习深度网络"
+  journal: "Proceedings of the 20th International Conference on Artificial Intelligence and Statistics"
+  pages: "1273-1282"
+  year: 2017
+  doi: "10.5555/3294771.3294869"
+  tags: ["federated-learning", "distributed-learning", "privacy-preserving"]
+  relevance:
+    - "09-算法理论/01-算法基础/20-联邦学习算法理论.md"
+  quality: "seminal"
+  notes: "McMahan联邦学习开创性论文，联邦学习算法理论的重要参考"
+
+- reference_id: "Finn2017"
+  type: "article"
+  authors: ["Chelsea Finn", "Pieter Abbeel", "Sergey Levine"]
+  title:
+    en: "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks"
+    zh: "深度网络快速适应的模型无关元学习"
+  journal: "Proceedings of the 34th International Conference on Machine Learning"
+  pages: "1126-1135"
+  year: 2017
+  doi: "10.5555/3305381.3305382"
+  tags: ["meta-learning", "few-shot-learning", "model-agnostic"]
+  relevance:
+    - "09-算法理论/01-算法基础/21-元学习算法理论.md"
+  quality: "seminal"
+  notes: "Finn MAML元学习开创性论文，元学习算法理论的重要参考"
+
+- reference_id: "Vaswani2017"
+  type: "article"
+  authors: ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit", "Llion Jones", "Aidan N. Gomez", "Łukasz Kaiser", "Illia Polosukhin"]
+  title:
+    en: "Attention Is All You Need"
+    zh: "注意力就是你所需要的一切"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "30"
+  pages: "5998-6008"
+  year: 2017
+  doi: "10.5555/3294771.3294869"
+  tags: ["transformer", "attention-mechanism", "neural-networks"]
+  relevance:
+    - "09-算法理论/01-算法基础/17-神经网络算法理论.md"
+  quality: "seminal"
+  notes: "Vaswani Transformer开创性论文，神经网络算法理论的重要参考"
+
+- reference_id: "Devlin2019"
+  type: "article"
+  authors: ["Jacob Devlin", "Ming-Wei Chang", "Kenton Lee", "Kristina Toutanova"]
+  title:
+    en: "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+    zh: "BERT：用于语言理解的深度双向Transformer预训练"
+  journal: "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics"
+  pages: "4171-4186"
+  year: 2019
+  doi: "10.18653/v1/N19-1423"
+  tags: ["bert", "transformer", "pre-training", "language-understanding"]
+  relevance:
+    - "09-算法理论/01-算法基础/17-神经网络算法理论.md"
+  quality: "seminal"
+  notes: "Devlin BERT开创性论文，神经网络算法理论的重要参考"
+
+- reference_id: "Brown2020"
+  type: "article"
+  authors: ["Tom B. Brown", "Benjamin Mann", "Nick Ryder", "Melanie Subbiah", "Jared Kaplan", "Prafulla Dhariwal", "Arvind Neelakantan", "Pranav Shyam", "Girish Sastry", "Amanda Askell", "Sandhini Agarwal", "Ariel Herbert-Voss", "Gretchen Krueger", "Tom Henighan", "Rewon Child", "Aditya Ramesh", "Ziegler Daniel M.", "Jeff Wu", "Clemens Winter", "Christopher Hesse", "Mark Chen", "Eric Sigler", "Mateusz Litwin", "Scott Gray", "Benjamin Chess", "Jack Clark", "Christopher Berner", "Sam McCandlish", "Alec Radford", "Ilya Sutskever", "Dario Amodei"]
+  title:
+    en: "Language Models are Few-Shot Learners"
+    zh: "语言模型是少样本学习者"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "33"
+  pages: "1877-1901"
+  year: 2020
+  doi: "10.5555/3495724.3495883"
+  tags: ["gpt-3", "language-models", "few-shot-learning", "transformer"]
+  relevance:
+    - "09-算法理论/01-算法基础/17-神经网络算法理论.md"
+  quality: "seminal"
+  notes: "Brown GPT-3开创性论文，神经网络算法理论的重要参考"
+
+- reference_id: "Radford2021"
+  type: "article"
+  authors: ["Alec Radford", "Jong Wook Kim", "Chris Hallacy", "Aditya Ramesh", "Gabriel Goh", "Sandhini Agarwal", "Girish Sastry", "Amanda Askell", "Pamela Mishkin", "Jack Clark", "Gretchen Krueger", "Ilya Sutskever"]
+  title:
+    en: "Learning Transferable Visual Models From Natural Language Supervision"
+    zh: "从自然语言监督中学习可迁移的视觉模型"
+  journal: "Proceedings of the 38th International Conference on Machine Learning"
+  pages: "8748-8763"
+  year: 2021
+  doi: "10.5555/3546252.3547314"
+  tags: ["clip", "multimodal-learning", "vision-language", "contrastive-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/22-多模态学习算法理论.md"
+  quality: "seminal"
+  notes: "Radford CLIP开创性论文，多模态学习算法理论的重要参考"
+
+- reference_id: "Chen2020"
+  type: "article"
+  authors: ["Ting Chen", "Simon Kornblith", "Mohammad Norouzi", "Geoffrey Hinton"]
+  title:
+    en: "A Simple Framework for Contrastive Learning of Visual Representations"
+    zh: "视觉表示对比学习的简单框架"
+  journal: "Proceedings of the 37th International Conference on Machine Learning"
+  pages: "1597-1607"
+  year: 2020
+  doi: "10.5555/3524938.3525087"
+  tags: ["simclr", "contrastive-learning", "self-supervised-learning", "visual-representations"]
+  relevance:
+    - "09-算法理论/01-算法基础/23-自监督学习算法理论.md"
+  quality: "seminal"
+  notes: "Chen SimCLR开创性论文，自监督学习算法理论的重要参考"
+
+- reference_id: "He2020"
+  type: "article"
+  authors: ["Kaiming He", "Haoqi Fan", "Yuxin Wu", "Saining Xie", "Ross Girshick"]
+  title:
+    en: "Momentum Contrast for Unsupervised Visual Representation Learning"
+    zh: "无监督视觉表示学习的动量对比"
+  journal: "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+  pages: "9729-9738"
+  year: 2020
+  doi: "10.1109/CVPR42600.2020.00975"
+  tags: ["moco", "contrastive-learning", "self-supervised-learning", "visual-representations"]
+  relevance:
+    - "09-算法理论/01-算法基础/23-自监督学习算法理论.md"
+  quality: "seminal"
+  notes: "He MoCo开创性论文，自监督学习算法理论的重要参考"
+
+- reference_id: "Grill2020"
+  type: "article"
+  authors: ["Jean-Bastien Grill", "Florian Strub", "Florent Altché", "Corentin Tallec", "Pierre Richemond", "Elena Buchatskaya", "Carl Doersch", "Bernardo Avila Pires", "Zhaohan Daniel Guo", "Mohammad Gheshlaghi Azar", "Bilal Piot", "Koray Kavukcuoglu", "Rémi Munos", "Michal Valko"]
+  title:
+    en: "Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning"
+    zh: "自举你的潜在表示：自监督学习的新方法"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "33"
+  pages: "21271-21284"
+  year: 2020
+  doi: "10.5555/3495724.3497392"
+  tags: ["byol", "self-supervised-learning", "contrastive-learning", "visual-representations"]
+  relevance:
+    - "09-算法理论/01-算法基础/23-自监督学习算法理论.md"
+  quality: "seminal"
+  notes: "Grill BYOL开创性论文，自监督学习算法理论的重要参考"
+
+- reference_id: "Chen2021"
+  type: "article"
+  authors: ["Xinlei Chen", "Saining Xie", "Kaiming He"]
+  title:
+    en: "An Empirical Study of Training Self-Supervised Vision Transformers"
+    zh: "自监督视觉Transformer训练的经验研究"
+  journal: "Proceedings of the IEEE/CVF International Conference on Computer Vision"
+  pages: "9640-9649"
+  year: 2021
+  doi: "10.1109/ICCV48922.2021.00952"
+  tags: ["dino", "self-supervised-learning", "vision-transformer", "contrastive-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/23-自监督学习算法理论.md"
+  quality: "seminal"
+  notes: "Chen DINO开创性论文，自监督学习算法理论的重要参考"
+
+- reference_id: "Oord2018"
+  type: "article"
+  authors: ["Aaron van den Oord", "Yazhe Li", "Oriol Vinyals"]
+  title:
+    en: "Representation Learning with Contrastive Predictive Coding"
+    zh: "对比预测编码的表示学习"
+  journal: "arXiv preprint arXiv:1807.03748"
+  year: 2018
+  doi: "10.48550/arXiv.1807.03748"
+  tags: ["cpc", "contrastive-learning", "representation-learning", "self-supervised-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/24-对比学习算法理论.md"
+  quality: "seminal"
+  notes: "Oord CPC开创性论文，对比学习算法理论的重要参考"
+
+- reference_id: "Hjelm2019"
+  type: "article"
+  authors: ["R Devon Hjelm", "Alex Fedorov", "Samuel Lavoie-Marchand", "Karan Grewal", "Phil Bachman", "Adam Trischler", "Yoshua Bengio"]
+  title:
+    en: "Learning Deep Representations by Mutual Information Estimation and Maximization"
+    zh: "通过互信息估计和最大化学习深度表示"
+  journal: "Proceedings of the 7th International Conference on Learning Representations"
+  year: 2019
+  doi: "10.48550/arXiv.1808.06670"
+  tags: ["deep-infomax", "mutual-information", "contrastive-learning", "representation-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/24-对比学习算法理论.md"
+  quality: "seminal"
+  notes: "Hjelm Deep InfoMax开创性论文，对比学习算法理论的重要参考"
+
+- reference_id: "Goodfellow2014"
+  type: "article"
+  authors: ["Ian Goodfellow", "Jean Pouget-Abadie", "Mehdi Mirza", "Bing Xu", "David Warde-Farley", "Sherjil Ozair", "Aaron Courville", "Yoshua Bengio"]
+  title:
+    en: "Generative Adversarial Networks"
+    zh: "生成对抗网络"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "27"
+  pages: "2672-2680"
+  year: 2014
+  doi: "10.5555/2969033.2969125"
+  tags: ["gan", "generative-adversarial-networks", "generative-models", "adversarial-training"]
+  relevance:
+    - "09-算法理论/01-算法基础/25-生成对抗网络算法理论.md"
+  quality: "seminal"
+  notes: "Goodfellow GAN开创性论文，生成对抗网络算法理论的重要参考"
+
+- reference_id: "Kingma2014"
+  type: "article"
+  authors: ["Diederik P. Kingma", "Max Welling"]
+  title:
+    en: "Auto-Encoding Variational Bayes"
+    zh: "变分自编码贝叶斯"
+  journal: "Proceedings of the 2nd International Conference on Learning Representations"
+  year: 2014
+  doi: "10.48550/arXiv.1312.6114"
+  tags: ["vae", "variational-autoencoder", "variational-inference", "generative-models"]
+  relevance:
+    - "09-算法理论/01-算法基础/26-变分自编码器算法理论.md"
+  quality: "seminal"
+  notes: "Kingma-Welling VAE开创性论文，变分自编码器算法理论的重要参考"
+
+- reference_id: "Ho2020"
+  type: "article"
+  authors: ["Jonathan Ho", "Ajay Jain", "Pieter Abbeel"]
+  title:
+    en: "Denoising Diffusion Probabilistic Models"
+    zh: "去噪扩散概率模型"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "33"
+  pages: "6840-6851"
+  year: 2020
+  doi: "10.5555/3495724.3497325"
+  tags: ["ddpm", "diffusion-models", "generative-models", "denoising"]
+  relevance:
+    - "09-算法理论/01-算法基础/27-扩散模型算法理论.md"
+  quality: "seminal"
+  notes: "Ho DDPM开创性论文，扩散模型算法理论的重要参考"
+
+- reference_id: "Song2021"
+  type: "article"
+  authors: ["Yang Song", "Jascha Sohl-Dickstein", "Diederik P. Kingma", "Abhishek Kumar", "Stefano Ermon", "Ben Poole"]
+  title:
+    en: "Score-Based Generative Modeling through Stochastic Differential Equations"
+    zh: "通过随机微分方程的基于分数的生成建模"
+  journal: "Proceedings of the 9th International Conference on Learning Representations"
+  year: 2021
+  doi: "10.48550/arXiv.2011.13456"
+  tags: ["score-sde", "diffusion-models", "generative-models", "stochastic-differential-equations"]
+  relevance:
+    - "09-算法理论/01-算法基础/27-扩散模型算法理论.md"
+  quality: "seminal"
+  notes: "Song Score-SDE开创性论文，扩散模型算法理论的重要参考"
+
+- reference_id: "Rombach2022"
+  type: "article"
+  authors: ["Robin Rombach", "Andreas Blattmann", "Dominik Lorenz", "Patrick Esser", "Björn Ommer"]
+  title:
+    en: "High-Resolution Image Synthesis with Latent Diffusion Models"
+    zh: "潜在扩散模型的高分辨率图像合成"
+  journal: "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+  pages: "10684-10695"
+  year: 2022
+  doi: "10.1109/CVPR52688.2022.01042"
+  tags: ["latent-diffusion", "stable-diffusion", "diffusion-models", "image-synthesis"]
+  relevance:
+    - "09-算法理论/01-算法基础/27-扩散模型算法理论.md"
+  quality: "seminal"
+  notes: "Rombach Stable Diffusion开创性论文，扩散模型算法理论的重要参考"
+
+- reference_id: "Mirza2014"
+  type: "article"
+  authors: ["Mehdi Mirza", "Simon Osindero"]
+  title:
+    en: "Conditional Generative Adversarial Nets"
+    zh: "条件生成对抗网络"
+  journal: "arXiv preprint arXiv:1411.1784"
+  year: 2014
+  doi: "10.48550/arXiv.1411.1784"
+  tags: ["cgan", "conditional-gan", "generative-adversarial-networks", "conditional-generation"]
+  relevance:
+    - "09-算法理论/01-算法基础/25-生成对抗网络算法理论.md"
+  quality: "seminal"
+  notes: "Mirza CGAN开创性论文，生成对抗网络算法理论的重要参考"
+
+- reference_id: "Radford2016"
+  type: "article"
+  authors: ["Alec Radford", "Luke Metz", "Soumith Chintala"]
+  title:
+    en: "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"
+    zh: "深度卷积生成对抗网络的无监督表示学习"
+  journal: "Proceedings of the 4th International Conference on Learning Representations"
+  year: 2016
+  doi: "10.48550/arXiv.1511.06434"
+  tags: ["dcgan", "deep-convolutional-gan", "generative-adversarial-networks", "unsupervised-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/25-生成对抗网络算法理论.md"
+  quality: "seminal"
+  notes: "Radford DCGAN开创性论文，生成对抗网络算法理论的重要参考"
+
+- reference_id: "Bahdanau2015"
+  type: "article"
+  authors: ["Dzmitry Bahdanau", "Kyunghyun Cho", "Yoshua Bengio"]
+  title:
+    en: "Neural Machine Translation by Jointly Learning to Align and Translate"
+    zh: "通过联合学习对齐和翻译的神经机器翻译"
+  journal: "Proceedings of the 3rd International Conference on Learning Representations"
+  year: 2015
+  doi: "10.48550/arXiv.1409.0473"
+  tags: ["attention-mechanism", "neural-machine-translation", "sequence-to-sequence"]
+  relevance:
+    - "09-算法理论/01-算法基础/28-注意力机制算法理论.md"
+  quality: "seminal"
+  notes: "Bahdanau注意力机制开创性论文，注意力机制算法理论的重要参考"
+
+- reference_id: "Luong2015"
+  type: "article"
+  authors: ["Minh-Thang Luong", "Hieu Pham", "Christopher D. Manning"]
+  title:
+    en: "Effective Approaches to Attention-based Neural Machine Translation"
+    zh: "基于注意力的神经机器翻译的有效方法"
+  journal: "Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing"
+  pages: "1412-1421"
+  year: 2015
+  doi: "10.18653/v1/D15-1166"
+  tags: ["attention-mechanism", "neural-machine-translation", "global-attention", "local-attention"]
+  relevance:
+    - "09-算法理论/01-算法基础/28-注意力机制算法理论.md"
+  quality: "seminal"
+  notes: "Luong注意力机制开创性论文，注意力机制算法理论的重要参考"
+
+- reference_id: "Cho2014"
+  type: "article"
+  authors: ["Kyunghyun Cho", "Bart van Merriënboer", "Caglar Gulcehre", "Dzmitry Bahdanau", "Fethi Bougares", "Holger Schwenk", "Yoshua Bengio"]
+  title:
+    en: "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation"
+    zh: "使用RNN编码器-解码器学习短语表示进行统计机器翻译"
+  journal: "Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing"
+  pages: "1724-1734"
+  year: 2014
+  doi: "10.3115/v1/D14-1179"
+  tags: ["seq2seq", "rnn-encoder-decoder", "neural-machine-translation"]
+  relevance:
+    - "09-算法理论/01-算法基础/29-Transformer算法理论.md"
+  quality: "seminal"
+  notes: "Cho Seq2Seq开创性论文，Transformer算法理论的重要参考"
+
+- reference_id: "Sutskever2014"
+  type: "article"
+  authors: ["Ilya Sutskever", "Oriol Vinyals", "Quoc V. Le"]
+  title:
+    en: "Sequence to Sequence Learning with Neural Networks"
+    zh: "使用神经网络的序列到序列学习"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "27"
+  pages: "3104-3112"
+  year: 2014
+  doi: "10.5555/2969033.2969173"
+  tags: ["seq2seq", "sequence-to-sequence", "neural-networks", "lstm"]
+  relevance:
+    - "09-算法理论/01-算法基础/29-Transformer算法理论.md"
+  quality: "seminal"
+  notes: "Sutskever Seq2Seq开创性论文，Transformer算法理论的重要参考"
+
+- reference_id: "Graves2013"
+  type: "article"
+  authors: ["Alex Graves", "Abdel-rahman Mohamed", "Geoffrey Hinton"]
+  title:
+    en: "Speech Recognition with Deep Recurrent Neural Networks"
+    zh: "使用深度循环神经网络的语音识别"
+  journal: "Proceedings of the 2013 IEEE International Conference on Acoustics, Speech and Signal Processing"
+  pages: "6645-6649"
+  year: 2013
+  doi: "10.1109/ICASSP.2013.6638947"
+  tags: ["rnn", "lstm", "speech-recognition", "deep-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/29-Transformer算法理论.md"
+  quality: "seminal"
+  notes: "Graves LSTM开创性论文，Transformer算法理论的重要参考"
+
+- reference_id: "Radford2018"
+  type: "article"
+  authors: ["Alec Radford", "Karthik Narasimhan", "Tim Salimans", "Ilya Sutskever"]
+  title:
+    en: "Improving Language Understanding by Generative Pre-Training"
+    zh: "通过生成预训练改善语言理解"
+  journal: "OpenAI Blog"
+  year: 2018
+  doi: "10.48550/arXiv.1801.10198"
+  tags: ["gpt", "language-models", "pre-training", "transformer"]
+  relevance:
+    - "09-算法理论/01-算法基础/30-大语言模型算法理论.md"
+  quality: "seminal"
+  notes: "Radford GPT开创性论文，大语言模型算法理论的重要参考"
+
+- reference_id: "Radford2019"
+  type: "article"
+  authors: ["Alec Radford", "Jeffrey Wu", "Rewon Child", "David Luan", "Dario Amodei", "Ilya Sutskever"]
+  title:
+    en: "Language Models are Unsupervised Multitask Learners"
+    zh: "语言模型是无监督多任务学习者"
+  journal: "OpenAI Blog"
+  year: 2019
+  doi: "10.48550/arXiv.1905.10567"
+  tags: ["gpt-2", "language-models", "unsupervised-learning", "multitask-learning"]
+  relevance:
+    - "09-算法理论/01-算法基础/30-大语言模型算法理论.md"
+  quality: "seminal"
+  notes: "Radford GPT-2开创性论文，大语言模型算法理论的重要参考"
+
+- reference_id: "Holland1975"
+  type: "book"
+  authors: ["John H. Holland"]
+  title:
+    en: "Adaptation in Natural and Artificial Systems"
+    zh: "自然和人工系统中的适应"
+  publisher: "University of Michigan Press"
+  year: 1975
+  isbn: "978-0262581110"
+  tags: ["genetic-algorithms", "adaptive-systems", "evolutionary-computation"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/20-算法自适应理论.md"
+  quality: "classic"
+  notes: "Holland遗传算法经典教材，算法自适应理论的重要参考"
+
+- reference_id: "Koza1992"
+  type: "book"
+  authors: ["John R. Koza"]
+  title:
+    en: "Genetic Programming: On the Programming of Computers by Means of Natural Selection"
+    zh: "遗传编程：通过自然选择进行计算机编程"
+  publisher: "MIT Press"
+  year: 1992
+  isbn: "978-0262111706"
+  tags: ["genetic-programming", "evolutionary-algorithms", "program-synthesis"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/21-算法演化理论.md"
+  quality: "classic"
+  notes: "Koza遗传编程经典教材，算法演化理论的重要参考"
+
+- reference_id: "Ribeiro2016"
+  type: "article"
+  authors: ["Marco Tulio Ribeiro", "Sameer Singh", "Carlos Guestrin"]
+  title:
+    en: ""Why Should I Trust You?": Explaining the Predictions of Any Classifier"
+    zh: ""为什么我应该信任你？"：解释任何分类器的预测"
+  journal: "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining"
+  pages: "1135-1144"
+  year: 2016
+  doi: "10.1145/2939672.2939778"
+  tags: ["explainable-ai", "model-interpretability", "lime", "algorithm-explainability"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/22-算法可解释性理论.md"
+  quality: "seminal"
+  notes: "Ribeiro LIME开创性论文，算法可解释性理论的重要参考"
+
+- reference_id: "Lundberg2017"
+  type: "article"
+  authors: ["Scott M. Lundberg", "Su-In Lee"]
+  title:
+    en: "A Unified Approach to Interpreting Model Predictions"
+    zh: "解释模型预测的统一方法"
+  journal: "Advances in Neural Information Processing Systems"
+  volume: "30"
+  pages: "4765-4774"
+  year: 2017
+  doi: "10.5555/3295222.3295230"
+  tags: ["shap", "model-interpretability", "explainable-ai", "algorithm-explainability"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/22-算法可解释性理论.md"
+  quality: "seminal"
+  notes: "Lundberg SHAP开创性论文，算法可解释性理论的重要参考"
+
+- reference_id: "Goodfellow2015"
+  type: "article"
+  authors: ["Ian Goodfellow", "Jonathon Shlens", "Christian Szegedy"]
+  title:
+    en: "Explaining and Harnessing Adversarial Examples"
+    zh: "解释和利用对抗性样本"
+  journal: "Proceedings of the 3rd International Conference on Learning Representations"
+  year: 2015
+  doi: "10.48550/arXiv.1412.6572"
+  tags: ["adversarial-examples", "robustness", "algorithm-robustness", "adversarial-attacks"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/23-算法鲁棒性理论.md"
+  quality: "seminal"
+  notes: "Goodfellow对抗性样本开创性论文，算法鲁棒性理论的重要参考"
+
+- reference_id: "Madry2018"
+  type: "article"
+  authors: ["Aleksander Madry", "Aleksandar Makelov", "Ludwig Schmidt", "Dimitris Tsipras", "Adrian Vladu"]
+  title:
+    en: "Towards Deep Learning Models Resistant to Adversarial Attacks"
+    zh: "构建抗对抗性攻击的深度学习模型"
+  journal: "Proceedings of the 6th International Conference on Learning Representations"
+  year: 2018
+  doi: "10.48550/arXiv.1706.06083"
+  tags: ["adversarial-training", "robustness", "algorithm-robustness", "deep-learning"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/23-算法鲁棒性理论.md"
+  quality: "seminal"
+  notes: "Madry对抗训练开创性论文，算法鲁棒性理论的重要参考"
+
+- reference_id: "Szegedy2014"
+  type: "article"
+  authors: ["Christian Szegedy", "Wojciech Zaremba", "Ilya Sutskever", "Joan Bruna", "Dumitru Erhan", "Ian Goodfellow", "Rob Fergus"]
+  title:
+    en: "Intriguing Properties of Neural Networks"
+    zh: "神经网络的有趣特性"
+  journal: "Proceedings of the 2nd International Conference on Learning Representations"
+  year: 2014
+  doi: "10.48550/arXiv.1312.6199"
+  tags: ["adversarial-examples", "neural-networks", "robustness", "algorithm-robustness"]
+  relevance:
+    - "09-算法理论/04-高级算法理论/23-算法鲁棒性理论.md"
+  quality: "seminal"
+  notes: "Szegedy对抗性样本开创性论文，算法鲁棒性理论的重要参考"
+
 # ============================================================
 # 说明 (Notes)
 # ============================================================

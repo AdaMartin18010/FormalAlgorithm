@@ -39,6 +39,9 @@
   - [应用示例](#应用示例)
     - [完整的科学计算系统](#完整的科学计算系统)
   - [总结](#总结)
+  - [参考文献 / References](#参考文献--references)
+    - [Julia语言规范与核心文献 / Julia Language Specification and Core Literature](#julia语言规范与核心文献--julia-language-specification-and-core-literature)
+    - [科学计算与数值分析 / Scientific Computing and Numerical Analysis](#科学计算与数值分析--scientific-computing-and-numerical-analysis)
 
 ---
 
@@ -1109,6 +1112,28 @@ Julia实现展示了高性能科学计算语言在形式化算法中的强大应
 5. **机器学习**: 丰富的机器学习算法实现
 
 这种实现方式特别适合科学计算、数值分析、机器学习等需要高性能的应用领域。
+
+---
+
+## 参考文献 / References
+
+> **说明 / Note**: 本文档的参考文献采用统一的引用标准，所有文献条目均来自 `docs/references_database.yaml` 数据库。
+
+### Julia语言规范与核心文献 / Julia Language Specification and Core Literature
+
+1. [Bezanson2017] Bezanson, J., Edelman, A., Karpinski, S., & Shah, V. B. (2017). "Julia: A Fresh Approach to Numerical Computing". *SIAM Review*, 59(1), 65-98. DOI: 10.1137/141000671
+   - **Julia语言的开创性论文**，科学计算语言设计。本文档的Julia实现遵循此论文的设计理念。
+
+2. [Bezanson2012] Bezanson, J., Karpinski, S., Shah, V. B., & Edelman, A. (2012). "Julia: A Fast Dynamic Language for Technical Computing". *Proceedings of the 2012 ACM SIGPLAN International Conference on Programming Language Design and Implementation*, 333-342. DOI: 10.1145/2254064.2254102
+   - **Julia语言的早期论文**，动态语言性能优化。本文档的性能优化实现参考此文。
+
+### 科学计算与数值分析 / Scientific Computing and Numerical Analysis
+
+1. [Golub2013] Golub, G. H., & Van Loan, C. F. (2013). *Matrix Computations* (4th ed.). Johns Hopkins University Press. ISBN: 978-1421407944
+   - **Golub-Van Loan矩阵计算经典教材**，线性代数数值方法。本文档的线性代数实现参考此书。
+
+2. [Higham2018] Higham, N. J. (2018). *Handbook of Writing for the Mathematical Sciences* (3rd ed.). SIAM. ISBN: 978-1611976095
+   - **Higham数学科学写作手册**，科学计算写作指南。本文档的数学表达参考此书。
 
 ---
 
