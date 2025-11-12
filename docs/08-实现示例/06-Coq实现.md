@@ -1,4 +1,46 @@
-# Coq实现 / Coq Implementation
+---
+title: 8.6 Coq实现 / Coq Implementation
+version: 1.0
+status: maintained
+last_updated: 2025-10-11
+owner: 实现示例工作组
+---
+
+## 8.6 Coq实现 / Coq Implementation
+
+### 摘要 / Executive Summary
+
+- 统一Coq语言在形式化算法实现中的使用规范与交互式定理证明实践。
+- 建立Coq实现示例在形式化验证中的参考地位。
+
+### 关键术语与符号 / Glossary
+
+- Coq、构造演算、交互式定理证明、策略、证明脚本、形式化验证。
+- 术语对齐与引用规范：`docs/术语与符号总表.md`，`01-基础理论/00-撰写规范与引用指南.md`
+
+### 术语与符号规范 / Terminology & Notation
+
+- Coq：基于构造演算的交互式定理证明助手。
+- 构造演算（Calculus of Constructions）：Coq的类型理论基础。
+- 交互式定理证明（Interactive Theorem Proving）：通过交互方式证明定理。
+- 策略（Tactic）：Coq中的证明命令。
+- 记号约定：`Prop` 表示命题宇宙，`Set` 表示类型宇宙，`Type` 表示类型类型。
+
+### 交叉引用导航 / Cross-References
+
+- 依赖类型论：参见 `05-类型理论/02-依赖类型论.md`。
+- 证明系统：参见 `03-形式化证明/01-证明系统.md`。
+- 形式化验证：参见 `08-实现示例/04-形式化验证.md`。
+
+### 快速导航 / Quick Links
+
+- 基本概念
+- Coq基础
+- 定理证明
+
+## 目录 (Table of Contents)
+
+- [8.6 Coq实现 / Coq Implementation](#86-coq实现--coq-implementation)
 
 ## 概述 / Overview
 

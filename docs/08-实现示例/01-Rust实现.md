@@ -1,41 +1,84 @@
-# Rust实现（说明性片段）
+---
+title: 8.1 Rust实现 / Rust Implementation
+version: 1.0
+status: maintained
+last_updated: 2025-10-11
+owner: 实现示例工作组
+---
+
+## 8.1 Rust实现 / Rust Implementation
 
 > 说明：本文档中的代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
 
-## 目录
+### 摘要 / Executive Summary
 
-- [Rust实现（说明性片段）](#rust实现说明性片段)
-  - [目录](#目录)
-  - [1. 基本结构](#1-基本结构)
-    - [1.1 项目结构](#11-项目结构)
-    - [1.2 基本类型定义](#12-基本类型定义)
-    - [1.3 错误处理](#13-错误处理)
-  - [2. 递归函数](#2-递归函数)
-    - [2.1 基本函数实现](#21-基本函数实现)
-    - [2.2 常用函数构造](#22-常用函数构造)
-  - [3. 图灵机实现](#3-图灵机实现)
-    - [3.1 图灵机结构](#31-图灵机结构)
-    - [3.2 图灵机配置](#32-图灵机配置)
-    - [3.3 图灵机执行](#33-图灵机执行)
-  - [4. 类型系统](#4-类型系统)
-    - [4.1 类型定义](#41-类型定义)
-    - [4.2 类型检查](#42-类型检查)
-  - [5. 证明系统](#5-证明系统)
-    - [5.1 逻辑公式](#51-逻辑公式)
-    - [5.2 证明规则](#52-证明规则)
-  - [6. 参考文献 / References](#6-参考文献--references)
-    - [官方文档与标准教材 / Official Documentation and Standard Textbooks](#官方文档与标准教材--official-documentation-and-standard-textbooks)
-  - [8. 新增基础理论实现示例 / New Fundamental Theory Implementations](#8-新增基础理论实现示例--new-fundamental-theory-implementations)
-    - [8.1 数论基础实现 / Number Theory Fundamentals](#81-数论基础实现--number-theory-fundamentals)
-    - [8.2 代数结构基础实现 / Algebraic Structure Fundamentals](#82-代数结构基础实现--algebraic-structure-fundamentals)
-    - [8.3 概率统计基础实现 / Probability and Statistics Fundamentals](#83-概率统计基础实现--probability-and-statistics-fundamentals)
-    - [8.4 使用示例 / Usage Examples](#84-使用示例--usage-examples)
-  - [9. 严格算法实现 / Strict Algorithm Implementations](#9-严格算法实现--strict-algorithm-implementations)
-    - [9.1 排序算法实现 / Sorting Algorithm Implementations](#91-排序算法实现--sorting-algorithm-implementations)
-    - [9.2 搜索算法实现 / Search Algorithm Implementations](#92-搜索算法实现--search-algorithm-implementations)
-    - [9.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#93-动态规划算法实现--dynamic-programming-algorithm-implementations)
-  - [7. 最小可运行Rust工作区与命令](#7-最小可运行rust工作区与命令)
-  - [10. 交叉引用与依赖 (Cross References and Dependencies)](#10-交叉引用与依赖-cross-references-and-dependencies)
+- 统一Rust语言在形式化算法实现中的使用规范与最佳实践。
+- 建立Rust实现示例在算法工程中的参考地位。
+
+### 关键术语与符号 / Glossary
+
+- Rust、所有权、借用、生命周期、模式匹配、类型系统。
+- 术语对齐与引用规范：`docs/术语与符号总表.md`，`01-基础理论/00-撰写规范与引用指南.md`
+
+### 术语与符号规范 / Terminology & Notation
+
+- Rust：系统编程语言，强调内存安全和并发。
+- 所有权（Ownership）：Rust的内存管理机制。
+- 借用（Borrowing）：临时借用值的机制。
+- 生命周期（Lifetime）：引用的有效范围。
+- 记号约定：`&` 表示借用，`&mut` 表示可变借用，`'a` 表示生命周期。
+
+### 交叉引用导航 / Cross-References
+
+- 算法设计：参见 `09-算法理论/01-算法基础/01-算法设计理论.md`。
+- 类型系统：参见 `05-类型理论/04-类型系统.md`。
+- 实现示例：参见 `08-实现示例/` 相关文档。
+
+### 快速导航 / Quick Links
+
+- 基本结构
+- 递归函数
+- 数据结构
+
+## 目录 (Table of Contents)
+
+- [8.1 Rust实现 / Rust Implementation](#81-rust实现--rust-implementation)
+  - [摘要 / Executive Summary](#摘要--executive-summary)
+  - [关键术语与符号 / Glossary](#关键术语与符号--glossary)
+  - [术语与符号规范 / Terminology \& Notation](#术语与符号规范--terminology--notation)
+  - [交叉引用导航 / Cross-References](#交叉引用导航--cross-references)
+  - [快速导航 / Quick Links](#快速导航--quick-links)
+- [目录 (Table of Contents)](#目录-table-of-contents)
+- [1. 基本结构](#1-基本结构)
+  - [1.1 项目结构](#11-项目结构)
+  - [1.2 基本类型定义](#12-基本类型定义)
+  - [1.3 错误处理](#13-错误处理)
+- [2. 递归函数](#2-递归函数)
+  - [2.1 基本函数实现](#21-基本函数实现)
+  - [2.2 常用函数构造](#22-常用函数构造)
+- [3. 图灵机实现](#3-图灵机实现)
+  - [3.1 图灵机结构](#31-图灵机结构)
+  - [3.2 图灵机配置](#32-图灵机配置)
+  - [3.3 图灵机执行](#33-图灵机执行)
+- [4. 类型系统](#4-类型系统)
+  - [4.1 类型定义](#41-类型定义)
+  - [4.2 类型检查](#42-类型检查)
+- [5. 证明系统](#5-证明系统)
+  - [5.1 逻辑公式](#51-逻辑公式)
+  - [5.2 证明规则](#52-证明规则)
+- [6. 参考文献 / References](#6-参考文献--references)
+  - [官方文档与标准教材 / Official Documentation and Standard Textbooks](#官方文档与标准教材--official-documentation-and-standard-textbooks)
+- [8. 新增基础理论实现示例 / New Fundamental Theory Implementations](#8-新增基础理论实现示例--new-fundamental-theory-implementations)
+  - [8.1 数论基础实现 / Number Theory Fundamentals](#81-数论基础实现--number-theory-fundamentals)
+  - [8.2 代数结构基础实现 / Algebraic Structure Fundamentals](#82-代数结构基础实现--algebraic-structure-fundamentals)
+  - [8.3 概率统计基础实现 / Probability and Statistics Fundamentals](#83-概率统计基础实现--probability-and-statistics-fundamentals)
+  - [8.4 使用示例 / Usage Examples](#84-使用示例--usage-examples)
+- [9. 严格算法实现 / Strict Algorithm Implementations](#9-严格算法实现--strict-algorithm-implementations)
+  - [9.1 排序算法实现 / Sorting Algorithm Implementations](#91-排序算法实现--sorting-algorithm-implementations)
+  - [9.2 搜索算法实现 / Search Algorithm Implementations](#92-搜索算法实现--search-algorithm-implementations)
+  - [9.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#93-动态规划算法实现--dynamic-programming-algorithm-implementations)
+- [7. 最小可运行Rust工作区与命令](#7-最小可运行rust工作区与命令)
+- [10. 交叉引用与依赖 (Cross References and Dependencies)](#10-交叉引用与依赖-cross-references-and-dependencies)
 
 ---
 

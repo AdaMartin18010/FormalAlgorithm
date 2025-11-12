@@ -1,8 +1,50 @@
-# Idris实现 - 依赖类型编程的形式化算法
+---
+title: 8.7 Idris实现 / Idris Implementation
+version: 1.0
+status: maintained
+last_updated: 2025-10-11
+owner: 实现示例工作组
+---
 
-## 基本概念
+## 8.7 Idris实现 / Idris Implementation
 
-### Idris语言特性
+### 摘要 / Executive Summary
+
+- 统一Idris语言在形式化算法实现中的使用规范与依赖类型编程实践。
+- 建立Idris实现示例在函数式编程中的参考地位。
+
+### 关键术语与符号 / Glossary
+
+- Idris、依赖类型、函数式编程、定理证明、类型推导、效果系统。
+- 术语对齐与引用规范：`docs/术语与符号总表.md`，`01-基础理论/00-撰写规范与引用指南.md`
+
+### 术语与符号规范 / Terminology & Notation
+
+- Idris：依赖类型编程语言。
+- 依赖类型（Dependent Type）：类型依赖于值的类型系统。
+- 函数式编程（Functional Programming）：以函数为中心的编程范式。
+- 效果系统（Effect System）：Idris的类型系统特性。
+- 记号约定：`Type` 表示类型宇宙，`->` 表示函数类型，`=>` 表示效果类型。
+
+### 交叉引用导航 / Cross-References
+
+- 依赖类型论：参见 `05-类型理论/02-依赖类型论.md`。
+- 函数式编程：参见 `08-实现示例/02-Haskell实现.md`。
+- 类型系统：参见 `05-类型理论/04-类型系统.md`。
+
+### 快速导航 / Quick Links
+
+- 基本概念
+- Idris语言特性
+- 依赖类型编程
+
+## 目录 (Table of Contents)
+
+- [8.7 Idris实现 / Idris Implementation](#87-idris实现--idris-implementation)
+
+## 基本概念 / Basic Concepts
+
+### Idris语言特性 / Idris Language Features
 
 Idris是一个依赖类型编程语言，具有以下特性：
 

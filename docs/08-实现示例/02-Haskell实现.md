@@ -1,45 +1,88 @@
-# Haskell实现（说明性片段）
+---
+title: 8.2 Haskell实现 / Haskell Implementation
+version: 1.0
+status: maintained
+last_updated: 2025-10-11
+owner: 实现示例工作组
+---
+
+## 8.2 Haskell实现 / Haskell Implementation
 
 > 说明：本文档中的代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
 
-## 目录
+### 摘要 / Executive Summary
 
-- [Haskell实现（说明性片段）](#haskell实现说明性片段)
-  - [目录](#目录)
-  - [2.1 基本概念 (Basic Concepts)](#21-基本概念-basic-concepts)
-    - [2.1.1 Haskell语言定义 (Definition of Haskell Language)](#211-haskell语言定义-definition-of-haskell-language)
-    - [2.1.2 Haskell的历史 (History of Haskell)](#212-haskell的历史-history-of-haskell)
-    - [2.1.3 Haskell的应用领域 (Application Areas of Haskell)](#213-haskell的应用领域-application-areas-of-haskell)
-  - [2.2 类型系统 (Type System)](#22-类型系统-type-system)
-    - [2.2.1 Haskell类型系统基础 (Haskell Type System Basics)](#221-haskell类型系统基础-haskell-type-system-basics)
-    - [2.2.2 代数数据类型 (Algebraic Data Types)](#222-代数数据类型-algebraic-data-types)
-    - [2.2.3 类型类 (Type Classes)](#223-类型类-type-classes)
-  - [2.3 函数式编程 (Functional Programming)](#23-函数式编程-functional-programming)
-    - [2.3.1 纯函数 (Pure Functions)](#231-纯函数-pure-functions)
-    - [2.3.2 高阶函数 (Higher-Order Functions)](#232-高阶函数-higher-order-functions)
-    - [2.3.3 惰性求值 (Lazy Evaluation)](#233-惰性求值-lazy-evaluation)
-  - [2.4 依赖类型 (Dependent Types)](#24-依赖类型-dependent-types)
-    - [2.4.1 GHC扩展 (GHC Extensions)](#241-ghc扩展-ghc-extensions)
-    - [2.4.2 广义代数数据类型 (Generalized Algebraic Data Types)](#242-广义代数数据类型-generalized-algebraic-data-types)
-    - [2.4.3 类型族 (Type Families)](#243-类型族-type-families)
-  - [2.5 实现示例 (Implementation Examples)](#25-实现示例-implementation-examples)
-    - [2.5.1 函数式数据结构 (Functional Data Structures)](#251-函数式数据结构-functional-data-structures)
-    - [2.5.2 单子 (Monads)](#252-单子-monads)
-    - [2.5.3 类型级编程 (Type-Level Programming)](#253-类型级编程-type-level-programming)
-    - [2.5.4 高级类型系统特性 (Advanced Type System Features)](#254-高级类型系统特性-advanced-type-system-features)
-    - [2.5.5 Haskell测试 (Haskell Testing)](#255-haskell测试-haskell-testing)
-  - [2.6 参考文献 / References](#26-参考文献--references)
-    - [语言规范与标准教材 / Language Specification and Standard Textbooks](#语言规范与标准教材--language-specification-and-standard-textbooks)
-    - [函数式编程经典论文 / Classic Papers on Functional Programming](#函数式编程经典论文--classic-papers-on-functional-programming)
-  - [2.7 一键运行环境与命令 (One-click Run)](#27-一键运行环境与命令-one-click-run)
-    - [2.7.1 使用 Stack](#271-使用-stack)
-    - [2.7.2 使用 Cabal](#272-使用-cabal)
-  - [2.8 严格算法实现 / Strict Algorithm Implementations](#28-严格算法实现--strict-algorithm-implementations)
-    - [2.8.1 排序算法实现 / Sorting Algorithm Implementations](#281-排序算法实现--sorting-algorithm-implementations)
-  - [2.9 交叉引用与依赖 (Cross References and Dependencies)](#29-交叉引用与依赖-cross-references-and-dependencies)
-    - [2.8.2 搜索算法实现 / Search Algorithm Implementations](#282-搜索算法实现--search-algorithm-implementations)
-    - [2.8.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#283-动态规划算法实现--dynamic-programming-algorithm-implementations)
-    - [2.8.4 函数式数据结构实现 / Functional Data Structure Implementations](#284-函数式数据结构实现--functional-data-structure-implementations)
+- 统一Haskell语言在形式化算法实现中的使用规范与函数式编程实践。
+- 建立Haskell实现示例在算法理论中的参考地位。
+
+### 关键术语与符号 / Glossary
+
+- Haskell、函数式编程、惰性求值、类型类、单子、代数数据类型。
+- 术语对齐与引用规范：`docs/术语与符号总表.md`，`01-基础理论/00-撰写规范与引用指南.md`
+
+### 术语与符号规范 / Terminology & Notation
+
+- Haskell：纯函数式编程语言。
+- 函数式编程（Functional Programming）：以函数为中心的编程范式。
+- 惰性求值（Lazy Evaluation）：延迟计算表达式的值。
+- 类型类（Type Class）：Haskell的类型系统特性。
+- 记号约定：`::` 表示类型签名，`->` 表示函数类型，`=>` 表示类型类约束。
+
+### 交叉引用导航 / Cross-References
+
+- 算法设计：参见 `09-算法理论/01-算法基础/01-算法设计理论.md`。
+- 类型理论：参见 `05-类型理论/` 相关文档。
+- λ演算：参见 `07-计算模型/02-λ演算.md`。
+
+### 快速导航 / Quick Links
+
+- 基本概念
+- 类型系统
+- 函数式编程
+
+## 目录 (Table of Contents)
+
+- [8.2 Haskell实现 / Haskell Implementation](#82-haskell实现--haskell-implementation)
+  - [摘要 / Executive Summary](#摘要--executive-summary)
+  - [关键术语与符号 / Glossary](#关键术语与符号--glossary)
+  - [术语与符号规范 / Terminology \& Notation](#术语与符号规范--terminology--notation)
+  - [交叉引用导航 / Cross-References](#交叉引用导航--cross-references)
+  - [快速导航 / Quick Links](#快速导航--quick-links)
+- [目录 (Table of Contents)](#目录-table-of-contents)
+- [2.1 基本概念 (Basic Concepts)](#21-基本概念-basic-concepts)
+  - [2.1.1 Haskell语言定义 (Definition of Haskell Language)](#211-haskell语言定义-definition-of-haskell-language)
+  - [2.1.2 Haskell的历史 (History of Haskell)](#212-haskell的历史-history-of-haskell)
+  - [2.1.3 Haskell的应用领域 (Application Areas of Haskell)](#213-haskell的应用领域-application-areas-of-haskell)
+- [2.2 类型系统 (Type System)](#22-类型系统-type-system)
+  - [2.2.1 Haskell类型系统基础 (Haskell Type System Basics)](#221-haskell类型系统基础-haskell-type-system-basics)
+  - [2.2.2 代数数据类型 (Algebraic Data Types)](#222-代数数据类型-algebraic-data-types)
+  - [2.2.3 类型类 (Type Classes)](#223-类型类-type-classes)
+- [2.3 函数式编程 (Functional Programming)](#23-函数式编程-functional-programming)
+  - [2.3.1 纯函数 (Pure Functions)](#231-纯函数-pure-functions)
+  - [2.3.2 高阶函数 (Higher-Order Functions)](#232-高阶函数-higher-order-functions)
+  - [2.3.3 惰性求值 (Lazy Evaluation)](#233-惰性求值-lazy-evaluation)
+- [2.4 依赖类型 (Dependent Types)](#24-依赖类型-dependent-types)
+  - [2.4.1 GHC扩展 (GHC Extensions)](#241-ghc扩展-ghc-extensions)
+  - [2.4.2 广义代数数据类型 (Generalized Algebraic Data Types)](#242-广义代数数据类型-generalized-algebraic-data-types)
+  - [2.4.3 类型族 (Type Families)](#243-类型族-type-families)
+- [2.5 实现示例 (Implementation Examples)](#25-实现示例-implementation-examples)
+  - [2.5.1 函数式数据结构 (Functional Data Structures)](#251-函数式数据结构-functional-data-structures)
+  - [2.5.2 单子 (Monads)](#252-单子-monads)
+  - [2.5.3 类型级编程 (Type-Level Programming)](#253-类型级编程-type-level-programming)
+  - [2.5.4 高级类型系统特性 (Advanced Type System Features)](#254-高级类型系统特性-advanced-type-system-features)
+  - [2.5.5 Haskell测试 (Haskell Testing)](#255-haskell测试-haskell-testing)
+- [2.6 参考文献 / References](#26-参考文献--references)
+  - [语言规范与标准教材 / Language Specification and Standard Textbooks](#语言规范与标准教材--language-specification-and-standard-textbooks)
+  - [函数式编程经典论文 / Classic Papers on Functional Programming](#函数式编程经典论文--classic-papers-on-functional-programming)
+- [2.7 一键运行环境与命令 (One-click Run)](#27-一键运行环境与命令-one-click-run)
+  - [2.7.1 使用 Stack](#271-使用-stack)
+  - [2.7.2 使用 Cabal](#272-使用-cabal)
+- [2.8 严格算法实现 / Strict Algorithm Implementations](#28-严格算法实现--strict-algorithm-implementations)
+  - [2.8.1 排序算法实现 / Sorting Algorithm Implementations](#281-排序算法实现--sorting-algorithm-implementations)
+- [2.9 交叉引用与依赖 (Cross References and Dependencies)](#29-交叉引用与依赖-cross-references-and-dependencies)
+  - [2.8.2 搜索算法实现 / Search Algorithm Implementations](#282-搜索算法实现--search-algorithm-implementations)
+  - [2.8.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#283-动态规划算法实现--dynamic-programming-algorithm-implementations)
+  - [2.8.4 函数式数据结构实现 / Functional Data Structure Implementations](#284-函数式数据结构实现--functional-data-structure-implementations)
 
 ---
 

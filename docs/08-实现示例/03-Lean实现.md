@@ -1,44 +1,87 @@
-# 3. Lean实现（说明性片段）
+---
+title: 8.3 Lean实现 / Lean Implementation
+version: 1.0
+status: maintained
+last_updated: 2025-10-11
+owner: 实现示例工作组
+---
+
+## 8.3 Lean实现 / Lean Implementation
 
 > 说明：本文档中的 Lean 代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
 
-## 目录
+### 摘要 / Executive Summary
 
-- [3. Lean实现（说明性片段）](#3-lean实现说明性片段)
-  - [目录](#目录)
-  - [3.1 基本概念 (Basic Concepts)](#31-基本概念-basic-concepts)
-    - [3.1.1 Lean语言定义 (Definition of Lean Language)](#311-lean语言定义-definition-of-lean-language)
-    - [3.1.2 Lean的历史 (History of Lean)](#312-lean的历史-history-of-lean)
-    - [3.1.3 Lean的应用领域 (Application Areas of Lean)](#313-lean的应用领域-application-areas-of-lean)
-  - [3.2 类型系统 (Type System)](#32-类型系统-type-system)
-    - [3.2.1 依赖类型理论 (Dependent Type Theory)](#321-依赖类型理论-dependent-type-theory)
-    - [3.2.2 类型推导 (Type Inference)](#322-类型推导-type-inference)
-    - [3.2.3 类型类 (Type Classes)](#323-类型类-type-classes)
-  - [3.3 定理证明 (Theorem Proving)](#33-定理证明-theorem-proving)
-    - [3.3.1 命题和证明 (Propositions and Proofs)](#331-命题和证明-propositions-and-proofs)
-    - [3.3.2 证明策略 (Proof Tactics)](#332-证明策略-proof-tactics)
-    - [3.3.3 自动化证明 (Automated Proving)](#333-自动化证明-automated-proving)
-  - [3.4 数学库 (Mathematics Library)](#34-数学库-mathematics-library)
-    - [3.4.1 基础数学 (Basic Mathematics)](#341-基础数学-basic-mathematics)
-    - [3.4.2 代数结构 (Algebraic Structures)](#342-代数结构-algebraic-structures)
-    - [3.4.3 分析学 (Analysis)](#343-分析学-analysis)
-  - [3.5 实现示例 (Implementation Examples)](#35-实现示例-implementation-examples)
-    - [3.5.1 数据结构实现 (Data Structure Implementation)](#351-数据结构实现-data-structure-implementation)
-    - [3.5.2 算法实现 (Algorithm Implementation)](#352-算法实现-algorithm-implementation)
-    - [3.5.3 数学定理证明 (Mathematical Theorem Proving)](#353-数学定理证明-mathematical-theorem-proving)
-    - [3.5.4 程序验证 (Program Verification)](#354-程序验证-program-verification)
-    - [3.5.5 Lean测试 (Lean Testing)](#355-lean测试-lean-testing)
-  - [3.6 参考文献 / References](#36-参考文献--references)
-    - [Lean语言规范与核心文献 / Lean Language Specification and Core Literature](#lean语言规范与核心文献--lean-language-specification-and-core-literature)
-    - [数学库与形式化数学 / Mathematics Library and Formalized Mathematics](#数学库与形式化数学--mathematics-library-and-formalized-mathematics)
-    - [其他相关文献 / Other Related Literature](#其他相关文献--other-related-literature)
-  - [3.7 一键运行环境与命令（Lean 4 / lake）](#37-一键运行环境与命令lean-4--lake)
-  - [3.8 多模块项目结构与 lake 配置](#38-多模块项目结构与-lake-配置)
-  - [3.9 严格定理证明实现 / Strict Theorem Proving Implementations](#39-严格定理证明实现--strict-theorem-proving-implementations)
-    - [3.9.1 基础数学定理证明 / Basic Mathematical Theorem Proofs](#391-基础数学定理证明--basic-mathematical-theorem-proofs)
-  - [3.10 交叉引用与依赖 (Cross References and Dependencies)](#310-交叉引用与依赖-cross-references-and-dependencies)
-    - [3.9.2 算法正确性证明 / Algorithm Correctness Proofs](#392-算法正确性证明--algorithm-correctness-proofs)
-    - [3.9.3 数据结构性质证明 / Data Structure Property Proofs](#393-数据结构性质证明--data-structure-property-proofs)
+- 统一Lean语言在形式化算法实现中的使用规范与定理证明实践。
+- 建立Lean实现示例在形式化验证中的参考地位。
+
+### 关键术语与符号 / Glossary
+
+- Lean、依赖类型、定理证明、形式化验证、构造演算、同伦类型论。
+- 术语对齐与引用规范：`docs/术语与符号总表.md`，`01-基础理论/00-撰写规范与引用指南.md`
+
+### 术语与符号规范 / Terminology & Notation
+
+- Lean：基于依赖类型论的定理证明助手。
+- 依赖类型（Dependent Type）：类型依赖于值的类型系统。
+- 定理证明（Theorem Proving）：使用形式化方法证明定理。
+- 形式化验证（Formal Verification）：使用形式化方法验证程序。
+- 记号约定：`Type` 表示类型宇宙，`Prop` 表示命题宇宙，`→` 表示函数类型。
+
+### 交叉引用导航 / Cross-References
+
+- 依赖类型论：参见 `05-类型理论/02-依赖类型论.md`。
+- 同伦类型论：参见 `05-类型理论/03-同伦类型论.md`。
+- 证明系统：参见 `03-形式化证明/01-证明系统.md`。
+
+### 快速导航 / Quick Links
+
+- 基本概念
+- 类型系统
+- 定理证明
+
+## 目录 (Table of Contents)
+
+- [8.3 Lean实现 / Lean Implementation](#83-lean实现--lean-implementation)
+  - [摘要 / Executive Summary](#摘要--executive-summary)
+  - [关键术语与符号 / Glossary](#关键术语与符号--glossary)
+  - [术语与符号规范 / Terminology \& Notation](#术语与符号规范--terminology--notation)
+  - [交叉引用导航 / Cross-References](#交叉引用导航--cross-references)
+  - [快速导航 / Quick Links](#快速导航--quick-links)
+- [目录 (Table of Contents)](#目录-table-of-contents)
+- [3.1 基本概念 (Basic Concepts)](#31-基本概念-basic-concepts)
+  - [3.1.1 Lean语言定义 (Definition of Lean Language)](#311-lean语言定义-definition-of-lean-language)
+  - [3.1.2 Lean的历史 (History of Lean)](#312-lean的历史-history-of-lean)
+  - [3.1.3 Lean的应用领域 (Application Areas of Lean)](#313-lean的应用领域-application-areas-of-lean)
+- [3.2 类型系统 (Type System)](#32-类型系统-type-system)
+  - [3.2.1 依赖类型理论 (Dependent Type Theory)](#321-依赖类型理论-dependent-type-theory)
+  - [3.2.2 类型推导 (Type Inference)](#322-类型推导-type-inference)
+  - [3.2.3 类型类 (Type Classes)](#323-类型类-type-classes)
+- [3.3 定理证明 (Theorem Proving)](#33-定理证明-theorem-proving)
+  - [3.3.1 命题和证明 (Propositions and Proofs)](#331-命题和证明-propositions-and-proofs)
+  - [3.3.2 证明策略 (Proof Tactics)](#332-证明策略-proof-tactics)
+  - [3.3.3 自动化证明 (Automated Proving)](#333-自动化证明-automated-proving)
+- [3.4 数学库 (Mathematics Library)](#34-数学库-mathematics-library)
+  - [3.4.1 基础数学 (Basic Mathematics)](#341-基础数学-basic-mathematics)
+  - [3.4.2 代数结构 (Algebraic Structures)](#342-代数结构-algebraic-structures)
+  - [3.4.3 分析学 (Analysis)](#343-分析学-analysis)
+- [3.5 实现示例 (Implementation Examples)](#35-实现示例-implementation-examples)
+  - [3.5.1 数据结构实现 (Data Structure Implementation)](#351-数据结构实现-data-structure-implementation)
+  - [3.5.2 算法实现 (Algorithm Implementation)](#352-算法实现-algorithm-implementation)
+  - [3.5.3 数学定理证明 (Mathematical Theorem Proving)](#353-数学定理证明-mathematical-theorem-proving)
+  - [3.5.4 程序验证 (Program Verification)](#354-程序验证-program-verification)
+  - [3.5.5 Lean测试 (Lean Testing)](#355-lean测试-lean-testing)
+- [3.6 参考文献 / References](#36-参考文献--references)
+  - [Lean语言规范与核心文献 / Lean Language Specification and Core Literature](#lean语言规范与核心文献--lean-language-specification-and-core-literature)
+  - [数学库与形式化数学 / Mathematics Library and Formalized Mathematics](#数学库与形式化数学--mathematics-library-and-formalized-mathematics)
+  - [其他相关文献 / Other Related Literature](#其他相关文献--other-related-literature)
+- [3.7 一键运行环境与命令（Lean 4 / lake）](#37-一键运行环境与命令lean-4--lake)
+- [3.8 多模块项目结构与 lake 配置](#38-多模块项目结构与-lake-配置)
+- [3.9 严格定理证明实现 / Strict Theorem Proving Implementations](#39-严格定理证明实现--strict-theorem-proving-implementations)
+  - [3.9.1 基础数学定理证明 / Basic Mathematical Theorem Proofs](#391-基础数学定理证明--basic-mathematical-theorem-proofs)
+- [3.10 交叉引用与依赖 (Cross References and Dependencies)](#310-交叉引用与依赖-cross-references-and-dependencies)
+  - [3.9.2 算法正确性证明 / Algorithm Correctness Proofs](#392-算法正确性证明--algorithm-correctness-proofs)
+  - [3.9.3 数据结构性质证明 / Data Structure Property Proofs](#393-数据结构性质证明--data-structure-property-proofs)
 
 ---
 

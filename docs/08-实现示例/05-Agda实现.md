@@ -1,4 +1,46 @@
-# Agda实现 / Agda Implementation
+---
+title: 8.5 Agda实现 / Agda Implementation
+version: 1.0
+status: maintained
+last_updated: 2025-10-11
+owner: 实现示例工作组
+---
+
+## 8.5 Agda实现 / Agda Implementation
+
+### 摘要 / Executive Summary
+
+- 统一Agda语言在形式化算法实现中的使用规范与依赖类型编程实践。
+- 建立Agda实现示例在定理证明中的参考地位。
+
+### 关键术语与符号 / Glossary
+
+- Agda、依赖类型、定理证明、构造演算、同伦类型论、形式化验证。
+- 术语对齐与引用规范：`docs/术语与符号总表.md`，`01-基础理论/00-撰写规范与引用指南.md`
+
+### 术语与符号规范 / Terminology & Notation
+
+- Agda：基于依赖类型论的函数式编程语言和定理证明助手。
+- 依赖类型（Dependent Type）：类型依赖于值的类型系统。
+- 定理证明（Theorem Proving）：使用形式化方法证明定理。
+- 构造演算（Calculus of Constructions）：Agda的类型理论基础。
+- 记号约定：`Set` 表示类型宇宙，`→` 表示函数类型，`∀` 表示全称量词。
+
+### 交叉引用导航 / Cross-References
+
+- 依赖类型论：参见 `05-类型理论/02-依赖类型论.md`。
+- 同伦类型论：参见 `05-类型理论/03-同伦类型论.md`。
+- 证明系统：参见 `03-形式化证明/01-证明系统.md`。
+
+### 快速导航 / Quick Links
+
+- 基本概念
+- Agda基础
+- 定理证明
+
+## 目录 (Table of Contents)
+
+- [8.5 Agda实现 / Agda Implementation](#85-agda实现--agda-implementation)
 
 ## 概述 / Overview
 
