@@ -564,7 +564,7 @@ Agda provides an ideal platform for research and practice in formal algorithm th
 
 ### 依赖类型编程语言 / Dependently Typed Programming Languages
 
-1. [Norell2007] Norell, U. (2007). *Towards a Practical Programming Language Based on Dependent Type Theory*. PhD Thesis, Chalmers University of Technology. URL: http://www.cse.chalmers.se/~ulfn/papers/thesis.pdf
+1. [Norell2007] Norell, U. (2007). *Towards a Practical Programming Language Based on Dependent Type Theory*. PhD Thesis, Chalmers University of Technology. URL: <http://www.cse.chalmers.se/~ulfn/papers/thesis.pdf>
    - **Norell的Agda博士论文**，依赖类型编程语言的开创性工作。本文档的Agda实现遵循此论文的设计思想。
 
 2. **Norell, U.** (2009). "Dependently Typed Programming in Agda". In *Advanced Functional Programming*, 230-266.

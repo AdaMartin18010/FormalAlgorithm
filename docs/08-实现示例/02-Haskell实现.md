@@ -795,19 +795,19 @@ main = do
 
 ### 函数式编程经典论文 / Classic Papers on Functional Programming
 
-4. **Wadler, P.** (1992). "The Essence of Functional Programming". *Proceedings of the 19th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 1-14.
+1. **Wadler, P.** (1992). "The Essence of Functional Programming". *Proceedings of the 19th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 1-14.
    - Wadler关于Monad的经典论文，本文档的Monad实现参考此文。
 
-5. **Hughes, J.** (1989). "Why Functional Programming Matters". *The Computer Journal*, 32(2), 98-107.
+2. **Hughes, J.** (1989). "Why Functional Programming Matters". *The Computer Journal*, 32(2), 98-107.
    - Hughes关于函数式编程重要性的经典论文。
 
-6. **Peyton Jones, S. L., & Wadler, P.** (1993). "Imperative Functional Programming". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 71-84.
+3. **Peyton Jones, S. L., & Wadler, P.** (1993). "Imperative Functional Programming". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 71-84.
    - Peyton Jones和Wadler关于命令式函数式编程的论文。
 
-7. **Launchbury, J.** (1993). "A Natural Semantics for Lazy Evaluation". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 144-154.
+4. **Launchbury, J.** (1993). "A Natural Semantics for Lazy Evaluation". *Proceedings of the 20th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 144-154.
    - Launchbury关于惰性求值语义的论文，本文档的惰性求值实现参考此文。
 
-8. **Peyton Jones, S. L.** (2001). *The Implementation of Functional Programming Languages*. Prentice Hall.
+5. **Peyton Jones, S. L.** (2001). *The Implementation of Functional Programming Languages*. Prentice Hall.
    - Peyton Jones关于函数式编程语言实现的权威著作。
 
 ---
