@@ -216,7 +216,7 @@ binarySearch x [] = Nothing
 binarySearch x xs = binarySearchHelper x xs Z (length xs)
 
 binarySearchHelper : Ord a => a -> List a -> Nat -> Nat -> Maybe Nat
-binarySearchHelper x xs low high = 
+binarySearchHelper x xs low high =
   if low >= high
     then Nothing
     else let mid = div (plus low high) 2
@@ -238,12 +238,12 @@ dfs : Eq a => a -> Graph a -> List a
 dfs start graph = dfsHelper start graph []
 
 dfsHelper : Eq a => a -> Graph a -> List a -> List a
-dfsHelper node graph visited = 
+dfsHelper node graph visited =
   if elem node visited
     then visited
     else let neighbors = getNeighbors node graph
              newVisited = node :: visited
-         in foldl (\acc, neighbor => dfsHelper neighbor graph acc) 
+         in foldl (\acc, neighbor => dfsHelper neighbor graph acc)
                   newVisited neighbors
 
 -- 广度优先搜索
@@ -252,7 +252,7 @@ bfs start graph = bfsHelper [start] graph []
 
 bfsHelper : Eq a => List a -> Graph a -> List a -> List a
 bfsHelper [] graph visited = visited
-bfsHelper (node :: queue) graph visited = 
+bfsHelper (node :: queue) graph visited =
   if elem node visited
     then bfsHelper queue graph visited
     else let neighbors = getNeighbors node graph
@@ -292,7 +292,7 @@ filter p (x :: xs) = case filter p xs of
 data Sorted : List Nat -> Type where
   SortedNil : Sorted []
   SortedOne : (x : Nat) -> Sorted [x]
-  SortedCons : (x : Nat) -> (y : Nat) -> (xs : List Nat) -> 
+  SortedCons : (x : Nat) -> (y : Nat) -> (xs : List Nat) ->
                LTE x y -> Sorted (y :: xs) -> Sorted (x :: y :: xs)
 
 -- 排序函数类型
@@ -301,14 +301,14 @@ sort : (xs : List Nat) -> (ys : List Nat ** (Sorted ys, Permutation xs ys))
 -- 插入排序证明
 insertSorted : (x : Nat) -> (xs : List Nat) -> Sorted xs -> Sorted (insert x xs)
 insertSorted x [] SortedNil = SortedOne x
-insertSorted x [y] (SortedOne y) = 
+insertSorted x [y] (SortedOne y) =
   case isLTE x y of
     Yes prf => SortedCons x y [] prf (SortedOne y)
     No _ => SortedCons y x [] (lteRefl {n = y}) (SortedOne x)
-insertSorted x (y :: z :: zs) (SortedCons y z zs prf sorted) = 
+insertSorted x (y :: z :: zs) (SortedCons y z zs prf sorted) =
   case isLTE x y of
     Yes prf2 => SortedCons x y (z :: zs) prf2 (SortedCons y z zs prf sorted)
-    No _ => SortedCons y x (z :: zs) (lteRefl {n = y}) 
+    No _ => SortedCons y x (z :: zs) (lteRefl {n = y})
             (insertSorted x (z :: zs) sorted)
 ```
 
@@ -320,21 +320,21 @@ insertSorted x (y :: z :: zs) (SortedCons y z zs prf sorted) =
 -- 加法交换律
 plusComm : (n : Nat) -> (m : Nat) -> plus n m = plus m n
 plusComm Z m = sym (plusZeroRightNeutral m)
-plusComm (S n) m = rewrite plusComm n m in 
+plusComm (S n) m = rewrite plusComm n m in
                    rewrite plusSuccRightSucc m n in Refl
 
 -- 加法结合律
-plusAssoc : (n : Nat) -> (m : Nat) -> (p : Nat) -> 
+plusAssoc : (n : Nat) -> (m : Nat) -> (p : Nat) ->
             plus n (plus m p) = plus (plus n m) p
 plusAssoc Z m p = Refl
 plusAssoc (S n) m p = cong S (plusAssoc n m p)
 
 -- 乘法分配律
-multDistribPlus : (n : Nat) -> (m : Nat) -> (p : Nat) -> 
+multDistribPlus : (n : Nat) -> (m : Nat) -> (p : Nat) ->
                   mult n (plus m p) = plus (mult n m) (mult n p)
 multDistribPlus Z m p = Refl
-multDistribPlus (S n) m p = 
-  rewrite multDistribPlus n m p in 
+multDistribPlus (S n) m p =
+  rewrite multDistribPlus n m p in
   rewrite plusAssoc m (mult n m) (mult n p) in Refl
 ```
 
@@ -394,13 +394,13 @@ update (FS k) y (x :: xs) = x :: update k y xs
 data IsSorted : List Nat -> Type where
   EmptySorted : IsSorted []
   SingleSorted : (x : Nat) -> IsSorted [x]
-  ConsSorted : (x : Nat) -> (y : Nat) -> (xs : List Nat) -> 
+  ConsSorted : (x : Nat) -> (y : Nat) -> (xs : List Nat) ->
                LTE x y -> IsSorted (y :: xs) -> IsSorted (x :: y :: xs)
 
 -- 证明排序算法保持长度
 sortPreservesLength : (xs : List Nat) -> length (sort xs) = length xs
 sortPreservesLength [] = Refl
-sortPreservesLength (x :: xs) = 
+sortPreservesLength (x :: xs) =
   rewrite sortPreservesLength xs in Refl
 ```
 
@@ -444,11 +444,11 @@ data QueryPlan : Type where
 
 -- 查询优化器
 optimizeQuery : QueryPlan -> QueryPlan
-optimizeQuery (Filter p (Scan table)) = 
+optimizeQuery (Filter p (Scan table)) =
   if isSelective p
     then Filter p (Scan table)
     else Scan table
-optimizeQuery (Join p1 p2) = 
+optimizeQuery (Join p1 p2) =
   if isSmaller p1 p2
     then Join p1 p2
     else Join p2 p1

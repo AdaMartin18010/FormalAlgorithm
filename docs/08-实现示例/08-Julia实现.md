@@ -269,7 +269,7 @@ function fibonacci(n::Natural)::Natural
     if n.value <= 1
         n
     else
-        plus(fibonacci(Natural(n.value - 1)), 
+        plus(fibonacci(Natural(n.value - 1)),
              fibonacci(Natural(n.value - 2)))
     end
 end
@@ -281,7 +281,7 @@ function ackermann(m::Natural, n::Natural)::Natural
     elseif n.value == 0
         ackermann(Natural(m.value - 1), Natural(1))
     else
-        ackermann(Natural(m.value - 1), 
+        ackermann(Natural(m.value - 1),
                  ackermann(m, Natural(n.value - 1)))
     end
 end
@@ -468,12 +468,12 @@ function quicksort!(arr::Vector{T}) where T
     if length(arr) <= 1
         return arr
     end
-    
+
     pivot = arr[length(arr) ÷ 2]
     left = filter(x -> x < pivot, arr)
     middle = filter(x -> x == pivot, arr)
     right = filter(x -> x > pivot, arr)
-    
+
     return [quicksort!(left); middle; quicksort!(right)]
 end
 ```
@@ -489,7 +489,7 @@ function mergesort(arr::Vector{T}) where T
     mid = length(arr) ÷ 2
     left = mergesort(arr[1:mid])
     right = mergesort(arr[mid+1:end])
-    
+
     return merge(left, right)
 end
 
@@ -506,10 +506,10 @@ function merge(left::Vector{T}, right::Vector{T}) where T
             j += 1
         end
     end
-    
+
     append!(result, left[i:end])
     append!(result, right[j:end])
-    
+
     return result
 end
 
@@ -522,13 +522,13 @@ function heapsort!(arr::Vector{T}) where T
     for i in n÷2:-1:1
         heapify!(arr, n, i)
     end
-    
+
     # 逐个提取元素
     for i in n:-1:2
         arr[1], arr[i] = arr[i], arr[1]
         heapify!(arr, i-1, 1)
     end
-    
+
     return arr
 end
 
@@ -540,11 +540,11 @@ function heapify!(arr::Vector{T}, n::Int, i::Int) where T
     if left <= n && arr[left] > arr[largest]
         largest = left
     end
-    
+
     if right <= n && arr[right] > arr[largest]
         largest = right
     end
-    
+
     if largest != i
         arr[i], arr[largest] = arr[largest], arr[i]
         heapify!(arr, n, largest)
@@ -560,20 +560,20 @@ end
 function dfs(graph::Graph{T}, start::T) where T
     visited = Set{T}()
     result = T[]
-    
+
     function dfs_recursive(node::T)
         if node in visited
             return
         end
-        
+
         push!(visited, node)
         push!(result, node)
-        
+
         for neighbor in get(graph.adjacency_list, node, T[])
             dfs_recursive(neighbor)
         end
     end
-    
+
     dfs_recursive(start)
     return result
 end
@@ -583,14 +583,14 @@ function bfs(graph::Graph{T}, start::T) where T
     visited = Set{T}()
     queue = [start]
     result = T[]
-    
+
     while !isempty(queue)
         node = popfirst!(queue)
-        
+
         if node ∉ visited
             push!(visited, node)
             push!(result, node)
-            
+
             for neighbor in get(graph.adjacency_list, node, T[])
                 if neighbor ∉ visited
                     push!(queue, neighbor)
@@ -598,7 +598,7 @@ function bfs(graph::Graph{T}, start::T) where T
             end
         end
     end
-    
+
     return result
 end
 
@@ -609,39 +609,39 @@ function astar_search(graph::Graph{T}, start::T, goal::T, heuristic::Function) w
     came_from = Dict{T, T}()
     g_score = Dict{T, Float64}()
     f_score = Dict{T, Float64}()
-    
+
     enqueue!(open_set, start => 0.0)
     g_score[start] = 0.0
     f_score[start] = heuristic(start, goal)
-    
+
     while !isempty(open_set)
         current = dequeue!(open_set)
-        
+
         if current == goal
             return reconstruct_path(came_from, current)
         end
-        
+
         push!(closed_set, current)
-        
+
         for neighbor in get(graph.adjacency_list, current, T[])
             if neighbor in closed_set
                 continue
             end
-            
+
             tentative_g_score = g_score[current] + 1.0  # 假设边权重为1
-            
+
             if neighbor ∉ keys(g_score) || tentative_g_score < g_score[neighbor]
                 came_from[neighbor] = current
                 g_score[neighbor] = tentative_g_score
                 f_score[neighbor] = g_score[neighbor] + heuristic(neighbor, goal)
-                
+
                 if neighbor ∉ keys(open_set)
                     enqueue!(open_set, neighbor => f_score[neighbor])
                 end
             end
         end
     end
-    
+
     return T[]  # 没有找到路径
 end
 
@@ -665,10 +665,10 @@ function matrix_multiply(A::Matrix{T}, B::Matrix{T}) where T
     if size(A, 2) != size(B, 1)
         error("Matrix dimensions do not match")
     end
-    
+
     m, n = size(A, 1), size(B, 2)
     C = zeros(T, m, n)
-    
+
     for i in 1:m
         for j in 1:n
             for k in 1:size(A, 2)
@@ -676,7 +676,7 @@ function matrix_multiply(A::Matrix{T}, B::Matrix{T}) where T
             end
         end
     end
-    
+
     return C
 end
 
@@ -685,7 +685,7 @@ function lu_decomposition(A::Matrix{T}) where T
     n = size(A, 1)
     L = Matrix{T}(I, n, n)
     U = copy(A)
-    
+
     for k in 1:n-1
         for i in k+1:n
             L[i, k] = U[i, k] / U[k, k]
@@ -694,7 +694,7 @@ function lu_decomposition(A::Matrix{T}) where T
             end
         end
     end
-    
+
     return L, U
 end
 
@@ -703,13 +703,13 @@ function power_iteration(A::Matrix{T}, max_iterations::Int=100) where T
     n = size(A, 1)
     x = rand(T, n)
     x = x / norm(x)
-    
+
     for i in 1:max_iterations
         y = A * x
         eigenvalue = dot(x, y)
         x = y / norm(y)
     end
-    
+
     return eigenvalue, x
 end
 ```
@@ -722,7 +722,7 @@ function trapezoidal_rule(f::Function, a::Float64, b::Float64, n::Int)
     h = (b - a) / n
     x = range(a, b, length=n+1)
     y = f.(x)
-    
+
     return h * (0.5 * y[1] + sum(y[2:end-1]) + 0.5 * y[end])
 end
 
@@ -731,11 +731,11 @@ function simpson_rule(f::Function, a::Float64, b::Float64, n::Int)
     if n % 2 != 0
         n += 1  # n必须是偶数
     end
-    
+
     h = (b - a) / n
     x = range(a, b, length=n+1)
     y = f.(x)
-    
+
     return h/3 * (y[1] + 4*sum(y[2:2:end-1]) + 2*sum(y[3:2:end-2]) + y[end])
 end
 
@@ -751,17 +751,17 @@ function gauss_quadrature(f::Function, a::Float64, b::Float64, n::Int)
     else
         error("Only n=2 and n=3 implemented")
     end
-    
+
     # 变换到区间[a, b]
     c1 = (b - a) / 2
     c2 = (b + a) / 2
-    
+
     result = 0.0
     for i in 1:n
         x = c1 * points[i] + c2
         result += weights[i] * f(x)
     end
-    
+
     return c1 * result
 end
 ```
@@ -800,25 +800,25 @@ end
 # 并行归约
 function parallel_reduce(arr::Vector{T}, op::Function) where T
     n = length(arr)
-    
+
     if n <= 1
         return isempty(arr) ? nothing : arr[1]
     end
-    
+
     # 使用线程并行计算
     result = similar(arr, div(n, 2))
-    
+
     Threads.@threads for i in 1:div(n, 2)
         if 2*i <= n
             result[i] = op(arr[2*i-1], arr[2*i])
         end
     end
-    
+
     # 处理奇数个元素
     if n % 2 == 1
         push!(result, arr[end])
     end
-    
+
     return parallel_reduce(result, op)
 end
 ```
@@ -852,19 +852,19 @@ function parallel_quicksort!(arr::Vector{T}) where T
     left = filter(x -> x < pivot, arr)
     middle = filter(x -> x == pivot, arr)
     right = filter(x -> x > pivot, arr)
-    
+
     # 并行排序左右两部分
     if length(left) > 1000 && length(right) > 1000
         left_task = Threads.@spawn parallel_quicksort!(left)
         right_task = Threads.@spawn parallel_quicksort!(right)
-        
+
         sorted_left = fetch(left_task)
         sorted_right = fetch(right_task)
     else
         sorted_left = parallel_quicksort!(left)
         sorted_right = parallel_quicksort!(right)
     end
-    
+
     return [sorted_left; middle; sorted_right]
 end
 
@@ -877,7 +877,7 @@ function parallel_matrix_multiply(A::Matrix{T}, B::Matrix{T}) where T
 
     m, n = size(A, 1), size(B, 2)
     C = zeros(T, m, n)
-    
+
     Threads.@threads for i in 1:m
         for j in 1:n
             for k in 1:size(A, 2)
@@ -885,7 +885,7 @@ function parallel_matrix_multiply(A::Matrix{T}, B::Matrix{T}) where T
             end
         end
     end
-    
+
     return C
 end
 
@@ -921,13 +921,13 @@ end
 
 function fit!(model::LinearRegression, X::Matrix{Float64}, y::Vector{Float64})
     n_samples, n_features = size(X)
-    
+
     # 添加偏置项
     X_with_bias = hcat(X, ones(n_samples))
-    
+
     # 最小二乘解
     solution = X_with_bias \ y
-    
+
     model.weights = solution[1:end-1]
     model.bias = solution[end]
 end
@@ -957,17 +957,17 @@ function fit!(model::LogisticRegression, X::Matrix{Float64}, y::Vector{Float64})
     # 初始化权重
     model.weights = randn(n_features)
     model.bias = 0.0
-    
+
     for iteration in 1:max_iterations
         # 前向传播
         z = X * model.weights .+ model.bias
         predictions = sigmoid.(z)
-        
+
         # 计算梯度
         error = predictions - y
         dw = X' * error / n_samples
         db = sum(error) / n_samples
-        
+
         # 更新权重
         model.weights -= learning_rate * dw
         model.bias -= learning_rate * db
@@ -1016,18 +1016,18 @@ end
 
 function fit!(model::KMeans, X::Matrix{Float64}, k::Int)
     n_samples, n_features = size(X)
-    
+
     # 随机初始化聚类中心
     model.centroids = X[rand(1:n_samples, k), :]
     model.labels = zeros(Int, n_samples)
-    
+
     for iteration in 1:100
         # 分配样本到最近的聚类中心
         for i in 1:n_samples
             distances = [norm(X[i, :] - model.centroids[j, :]) for j in 1:k]
             model.labels[i] = argmin(distances)
         end
-        
+
         # 更新聚类中心
         old_centroids = copy(model.centroids)
         for j in 1:k
@@ -1036,7 +1036,7 @@ function fit!(model::KMeans, X::Matrix{Float64}, k::Int)
                 model.centroids[j, :] = mean(cluster_points, dims=1)[1, :]
             end
         end
-        
+
         # 检查收敛
         if norm(model.centroids - old_centroids) < 1e-6
             break
@@ -1073,7 +1073,7 @@ function predict(model::KMeans, X::Matrix{Float64})
         distances = [norm(X[i, :] - model.centroids[j, :]) for j in 1:k]
         labels[i] = argmin(distances)
     end
-    
+
     return labels
 end
 
@@ -1104,36 +1104,36 @@ end
 function solve_optimization_problem(system::ScientificComputingSystem, problem::OptimizationProblem)
     # 1. 问题分析
     problem_analysis = analyze_problem(problem)
-    
+
     # 2. 选择合适的优化算法
     algorithm = select_algorithm(problem_analysis)
-    
+
     # 3. 执行优化
     solution = execute_optimization(algorithm, problem)
-    
+
     # 4. 结果验证
     validated_solution = validate_solution(solution, problem)
-    
+
     # 5. 可视化结果
     plot_results(system.visualization, validated_solution)
-    
+
     return validated_solution
 end
 
 # 使用示例
 function main()
     system = ScientificComputingSystem()
-    
+
     # 定义优化问题
     problem = OptimizationProblem(
         objective = x -> x[1]^2 + x[2]^2,
         constraints = [x -> x[1] + x[2] - 1],
         initial_point = [0.5, 0.5]
     )
-    
+
     # 求解问题
     solution = solve_optimization_problem(system, problem)
-    
+
     println("Optimal solution: ", solution.optimal_point)
     println("Optimal value: ", solution.optimal_value)
 end

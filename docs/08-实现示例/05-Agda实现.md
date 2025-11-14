@@ -173,7 +173,7 @@ ListWithLength A = Σ (List A) (λ xs → Σ ℕ (λ n → LengthProof xs n))
 -- 乘法分配律 / Multiplication distributivity
 *-distrib-+ : (m n p : ℕ) → m * (n + p) ≡ m * n + m * p
 *-distrib-+ zero n p = refl
-*-distrib-+ (suc m) n p = 
+*-distrib-+ (suc m) n p =
   begin
     (suc m) * (n + p)
   ≡⟨⟩
@@ -210,7 +210,7 @@ length-non-negative (x ∷ xs) = s≤s (length-non-negative xs)
 -- 列表反转长度 / List reverse length
 reverse-length : {A : Set} (xs : List A) → length (reverse xs) ≡ length xs
 reverse-length [] = refl
-reverse-length (x ∷ xs) = 
+reverse-length (x ∷ xs) =
   begin
     length (reverse (x ∷ xs))
   ≡⟨⟩
@@ -278,7 +278,7 @@ binary-search (x ∷ xs) target with compare x target
 data SearchResult {A : Set} : A → List A → Fin (length xs) → Set where
   found : {x : A} {xs : List A} {i : Fin (length xs)} → lookup xs i ≡ x → SearchResult x xs i
 
-binary-search-correct : (xs : List ℕ) → (target : ℕ) → (result : Maybe (Fin (length xs))) → 
+binary-search-correct : (xs : List ℕ) → (target : ℕ) → (result : Maybe (Fin (length xs))) →
                        (result ≡ nothing → ¬ (target ∈ xs)) ×
                        (∀ i → result ≡ just i → SearchResult target xs i)
 binary-search-correct xs target result = {!!} -- 证明留作练习
@@ -450,7 +450,7 @@ record Functor (F : Set → Set) : Set₁ where
   field
     fmap : {A B : Set} → (A → B) → F A → F B
     fmap-id : {A : Set} (x : F A) → fmap id x ≡ x
-    fmap-comp : {A B C : Set} (f : A → B) (g : B → C) (x : F A) → 
+    fmap-comp : {A B C : Set} (f : A → B) (g : B → C) (x : F A) →
                 fmap (g ∘ f) x ≡ fmap g (fmap f x)
 
 -- 列表函子 / List functor
@@ -464,12 +464,12 @@ List-functor = record
     map : {A B : Set} → (A → B) → List A → List B
     map f [] = []
     map f (x ∷ xs) = f x ∷ map f xs
-    
+
     map-id : {A : Set} (xs : List A) → map id xs ≡ xs
     map-id [] = refl
     map-id (x ∷ xs) = cong (x ∷_) (map-id xs)
-    
-    map-comp : {A B C : Set} (f : A → B) (g : B → C) (xs : List A) → 
+
+    map-comp : {A B C : Set} (f : A → B) (g : B → C) (xs : List A) →
                map (g ∘ f) xs ≡ map g (map f xs)
     map-comp f g [] = refl
     map-comp f g (x ∷ xs) = cong (g (f x) ∷_) (map-comp f g xs)
@@ -496,15 +496,15 @@ partition _≤_ pivot (x ∷ xs) with x ≤ pivot
 
 quicksort : {A : Set} → (A → A → Bool) → List A → List A
 quicksort _≤_ [] = []
-quicksort _≤_ (x ∷ xs) = 
+quicksort _≤_ (x ∷ xs) =
   let (smaller , larger) = partition _≤_ x xs
   in quicksort _≤_ smaller ++ [ x ] ++ quicksort _≤_ larger
 
 -- 快速排序长度保持 / Quick sort preserves length
-quicksort-length : {A : Set} (_≤_ : A → A → Bool) (xs : List A) → 
+quicksort-length : {A : Set} (_≤_ : A → A → Bool) (xs : List A) →
                    length (quicksort _≤_ xs) ≡ length xs
 quicksort-length _≤_ [] = refl
-quicksort-length _≤_ (x ∷ xs) = 
+quicksort-length _≤_ (x ∷ xs) =
   begin
     length (quicksort _≤_ (x ∷ xs))
   ≡⟨⟩
@@ -532,8 +532,8 @@ quicksort-length _≤_ (x ∷ xs) =
     open ≡-Reasoning
     smaller = proj₁ (partition _≤_ x xs)
     larger = proj₂ (partition _≤_ x xs)
-    
-    partition-length : {A : Set} (_≤_ : A → A → Bool) (pivot : A) (xs : List A) → 
+
+    partition-length : {A : Set} (_≤_ : A → A → Bool) (pivot : A) (xs : List A) →
                       length (proj₁ (partition _≤_ pivot xs)) + length (proj₂ (partition _≤_ pivot xs)) ≡ length xs
     partition-length _≤_ pivot [] = refl
     partition-length _≤_ pivot (x ∷ xs) with x ≤ pivot

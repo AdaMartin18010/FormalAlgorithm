@@ -33,6 +33,10 @@
     - [2.9.1 对齐统计 (Alignment Statistics)](#291-对齐统计-alignment-statistics)
     - [2.9.2 质量保证 (Quality Assurance)](#292-质量保证-quality-assurance)
     - [2.9.3 持续维护 (Continuous Maintenance)](#293-持续维护-continuous-maintenance)
+  - [与项目结构主题的对齐 / Alignment with Project Structure](#与项目结构主题的对齐--alignment-with-project-structure)
+    - [相关文档 / Related Documents](#相关文档--related-documents)
+    - [知识体系位置 / Knowledge System Position](#知识体系位置--knowledge-system-position)
+    - [VIEW文件夹相关文档 / VIEW Folder Related Documents](#view文件夹相关文档--view-folder-related-documents)
 
 ---
 
@@ -417,6 +421,27 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
    - 建立概念对齐检查机制
    - 监控定义一致性
    - 确保术语标准化
+
+---
+
+## 与项目结构主题的对齐 / Alignment with Project Structure
+
+### 相关文档 / Related Documents
+
+- `11-国际化/01-中英术语对照表.md` - 中英术语对照表
+- `view/算法全景梳理-2025-11-14.md` - 算法全景梳理（包含Wikipedia对齐）
+- `view/VIEW内容总索引-2025-11-14.md` - VIEW文件夹完整索引
+- `docs/术语与符号总表.md` - 项目术语与符号总表
+
+### 知识体系位置 / Knowledge System Position
+
+本文档属于 **11-国际化** 模块，是项目国际化支持的核心文档，确保所有概念定义与Wiki国际标准完全一致。
+
+### VIEW文件夹相关文档 / VIEW Folder Related Documents
+
+- `view/算法全景梳理-2025-11-14.md` §7 - Wikipedia概念定义对齐（8个核心概念）
+- `view/VIEW内容总索引-2025-11-14.md` §6.1 - Wikipedia概念对齐索引
+- `view/VIEW内容总索引-2025-11-14.md` - VIEW文件夹完整索引
 
 ---
 

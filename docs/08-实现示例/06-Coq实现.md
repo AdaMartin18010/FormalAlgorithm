@@ -82,7 +82,7 @@ Fixpoint length {A : Type} (l : list A) : nat :=
 
 (* 命题定义 / Proposition definition *)
 Definition is_sorted {A : Type} (le : A -> A -> Prop) (l : list A) : Prop :=
-  forall i j : nat, i < j < length l -> 
+  forall i j : nat, i < j < length l ->
   le (nth i l) (nth j l).
 ```
 
@@ -163,7 +163,7 @@ Qed.
 
 ```coq
 (* 案例分析 / Case analysis *)
-Lemma list_cons_not_nil : forall A (x : A) (l : list A), 
+Lemma list_cons_not_nil : forall A (x : A) (l : list A),
   cons x l <> nil.
 Proof.
   intros A x l.       (* 引入变量 / Introduce variables *)
@@ -204,7 +204,7 @@ Qed.
 Fixpoint insert {A : Type} (le : A -> A -> bool) (x : A) (l : list A) : list A :=
   match l with
   | nil => cons x nil
-  | cons y tl => 
+  | cons y tl =>
     if le x y then cons x (cons y tl)
     else cons y (insert le x tl)
   end.
@@ -217,7 +217,7 @@ Fixpoint insertion_sort {A : Type} (le : A -> A -> bool) (l : list A) : list A :
 
 (* 排序正确性 / Sorting correctness *)
 Definition sorted {A : Type} (le : A -> A -> bool) (l : list A) : Prop :=
-  forall i j : nat, i < j < length l -> 
+  forall i j : nat, i < j < length l ->
   le (nth i l) (nth j l) = true.
 
 Lemma insertion_sort_sorted : forall A (le : A -> A -> bool) (l : list A),
@@ -268,7 +268,7 @@ Admitted.
 Fixpoint linear_search {A : Type} (eq : A -> A -> bool) (x : A) (l : list A) : option nat :=
   match l with
   | nil => None
-  | cons y tl => 
+  | cons y tl =>
     if eq x y then Some 0
     else match linear_search eq x tl with
          | None => None
@@ -278,7 +278,7 @@ Fixpoint linear_search {A : Type} (eq : A -> A -> bool) (x : A) (l : list A) : o
 
 (* 搜索正确性 / Search correctness *)
 Definition search_correct {A : Type} (eq : A -> A -> bool) (x : A) (l : list A) : Prop :=
-  forall i : nat, i < length l -> 
+  forall i : nat, i < length l ->
   (nth i l) = x <-> linear_search eq x l = Some i.
 
 Lemma linear_search_correct : forall A (eq : A -> A -> bool) (x : A) (l : list A),
@@ -382,7 +382,7 @@ Definition counter_invariant (s : CounterState) : Prop :=
 
 Definition counter_machine : StateMachine CounterState := {|
   initial := zero;
-  transition := fun s => 
+  transition := fun s =>
     match s with
     | zero => positive 1
     | positive n => if n <? 100 then positive (S n) else positive n
@@ -474,9 +474,9 @@ Record Function (A B : Type) : Type := {
 (* 函数组合 / Function composition *)
 Definition compose {A B C : Type} (g : Function B C) (f : Function A B) : Function A C := {|
   apply := fun x => apply g (apply f x);
-  injective := fun x y H => 
+  injective := fun x y H =>
     injective f (injective g H);
-  surjective := fun z => 
+  surjective := fun z =>
     let (y, Hy) := surjective g z in
     let (x, Hx) := surjective f y in
     exist _ x (eq_trans (congr (apply g) Hx) Hy)
@@ -591,7 +591,7 @@ Module FormalAlgorithmsExamples.
 Fixpoint partition {A : Type} (le : A -> A -> bool) (pivot : A) (l : list A) : list A * list A :=
   match l with
   | nil => (nil, nil)
-  | cons x tl => 
+  | cons x tl =>
     let (smaller, larger) := partition le pivot tl in
     if le x pivot then (cons x smaller, larger)
     else (smaller, cons x larger)
@@ -600,7 +600,7 @@ Fixpoint partition {A : Type} (le : A -> A -> bool) (pivot : A) (l : list A) : l
 Fixpoint quicksort {A : Type} (le : A -> A -> bool) (l : list A) : list A :=
   match l with
   | nil => nil
-  | cons x tl => 
+  | cons x tl =>
     let (smaller, larger) := partition le x tl in
     app (quicksort le smaller) (cons x (quicksort le larger))
   end.

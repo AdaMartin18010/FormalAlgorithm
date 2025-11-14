@@ -222,7 +222,7 @@ data Either a b = Left a | Right b
 data Point = Point Double Double
 
 -- 记录语法 / Record Syntax
-data Person = Person 
+data Person = Person
     { name :: String
     , age  :: Int
     , city :: String
@@ -589,7 +589,7 @@ instance Functor (State s) where
 
 instance Applicative (State s) where
     pure a = State $ \s -> (a, s)
-    (State f) <*> (State g) = State $ \s -> 
+    (State f) <*> (State g) = State $ \s ->
         let (h, s') = f s
             (a, s'') = g s'
         in (h a, s'')
@@ -757,11 +757,11 @@ import Test.HUnit
 
 testTree :: Test
 testTree = TestList
-    [ TestCase (assertEqual "insert into empty" 
+    [ TestCase (assertEqual "insert into empty"
         (Node 5 Empty Empty) (insert 5 Empty))
-    , TestCase (assertEqual "search found" 
+    , TestCase (assertEqual "search found"
         True (search 5 (Node 5 Empty Empty)))
-    , TestCase (assertEqual "search not found" 
+    , TestCase (assertEqual "search not found"
         False (search 3 (Node 5 Empty Empty)))
     ]
 
@@ -942,41 +942,41 @@ cabal run fa-hs
 module Sorting where
 
 -- 快速排序算法 / QuickSort Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 快速排序是一种分治排序算法，通过选择基准元素将列表分为两部分。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - 平均情况：O(n log n)
 -- - 最坏情况：O(n²)
 -- - 最好情况：O(n log n)
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - 平均情况：O(log n)
 -- - 最坏情况：O(n)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **基准选择正确性**: 基准元素最终位于正确位置
 -- 2. **分治正确性**: 左右子列表分别排序
 -- 3. **合并正确性**: 排序后的子列表与原列表构成有序序列
 quicksort :: Ord a => [a] -> [a]
 quicksort [] = []
-quicksort (x:xs) = 
+quicksort (x:xs) =
     let smaller = quicksort [a | a <- xs, a <= x]
         larger = quicksort [a | a <- xs, a > x]
     in smaller ++ [x] ++ larger
 
 -- 归并排序算法 / MergeSort Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 归并排序是一种稳定的分治排序算法，将列表分为两半，分别排序后合并。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - 所有情况：O(n log n)
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(n)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **分治正确性**: 递归排序左右子列表
 -- 2. **合并正确性**: 两个有序列表合并后仍有序
@@ -984,15 +984,15 @@ quicksort (x:xs) =
 mergesort :: Ord a => [a] -> [a]
 mergesort [] = []
 mergesort [x] = [x]
-mergesort xs = 
+mergesort xs =
     let (left, right) = splitAt (length xs `div` 2) xs
     in merge (mergesort left) (mergesort right)
 
 -- 合并函数 / Merge Function
--- 
+--
 -- **定义 / Definition:**
 -- 将两个有序列表合并为一个有序列表
--- 
+--
 -- **不变式 / Invariant:**
 -- 合并过程中，结果列表始终保持有序
 merge :: Ord a => [a] -> [a] -> [a]
@@ -1003,18 +1003,18 @@ merge (x:xs) (y:ys)
     | otherwise = y : merge (x:xs) ys
 
 -- 插入排序算法 / Insertion Sort Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 插入排序是一种简单的排序算法，逐个将元素插入到已排序序列中。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - 平均情况：O(n²)
 -- - 最坏情况：O(n²)
 -- - 最好情况：O(n)
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(1)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **插入正确性**: 每个元素插入到正确位置
 -- 2. **有序性**: 插入后序列保持有序
@@ -1054,17 +1054,17 @@ insertionSort = foldr insert []
 module Search where
 
 -- 二分搜索算法 / Binary Search Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 在有序列表中查找目标元素，通过比较中间元素缩小搜索范围。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - O(log n)
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(1) (迭代版本)
 -- - O(log n) (递归版本)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **循环不变式**: 目标元素在 [left, right] 范围内
 -- 2. **终止条件**: 当 left > right 时，目标元素不存在
@@ -1082,16 +1082,16 @@ binarySearch target xs = binarySearchHelper target xs 0 (length xs - 1)
             GT -> binarySearchHelper target xs (mid + 1) right
 
 -- 深度优先搜索算法 / Depth-First Search Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 在图中进行深度优先遍历，使用递归实现。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - O(V + E)，其中V是顶点数，E是边数
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(V) (最坏情况)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **访问完整性**: 从起始顶点可达的所有顶点都会被访问
 -- 2. **无重复访问**: 使用访问标记避免重复访问
@@ -1099,23 +1099,23 @@ binarySearch target xs = binarySearchHelper target xs 0 (length xs - 1)
 type Graph = [[Int]]
 
 dfs :: Graph -> Int -> [Bool] -> [Int]
-dfs graph start visited = 
+dfs graph start visited =
     let visited' = take start visited ++ [True] ++ drop (start + 1) visited
         neighbors = graph !! start
         unvisitedNeighbors = filter (\n -> not (visited' !! n)) neighbors
     in start : concatMap (\n -> dfs graph n visited') unvisitedNeighbors
 
 -- 广度优先搜索算法 / Breadth-First Search Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 在图中进行广度优先遍历，使用队列实现。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - O(V + E)，其中V是顶点数，E是边数
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(V) (队列大小)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **访问完整性**: 从起始顶点可达的所有顶点都会被访问
 -- 2. **层次遍历**: 按距离起始顶点的层次顺序访问
@@ -1139,16 +1139,16 @@ bfs graph start = bfsHelper graph [start] (replicate (length graph) False)
 module DynamicProgramming where
 
 -- 最长公共子序列算法 / Longest Common Subsequence Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 找到两个序列的最长公共子序列。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - O(mn)，其中m和n是序列长度
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(mn)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **最优子结构**: 最长公共子序列包含子问题的最优解
 -- 2. **重叠子问题**: 子问题被重复计算
@@ -1158,22 +1158,22 @@ lcs [] _ = []
 lcs _ [] = []
 lcs (x:xs) (y:ys)
     | x == y    = x : lcs xs ys
-    | otherwise = 
+    | otherwise =
         let lcs1 = lcs xs (y:ys)
             lcs2 = lcs (x:xs) ys
         in if length lcs1 > length lcs2 then lcs1 else lcs2
 
 -- 斐波那契数列（记忆化版本）/ Fibonacci Sequence (Memoized Version)
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 使用记忆化技术计算斐波那契数列，避免重复计算。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - O(n) (记忆化后)
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(n)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **基础情况**: fib(0) = 0, fib(1) = 1
 -- 2. **递归关系**: fib(n) = fib(n-1) + fib(n-2)
@@ -1185,7 +1185,7 @@ fibMemo n = fibMemoHelper n (replicate (n + 1) (-1))
     fibMemoHelper 1 memo = 1
     fibMemoHelper n memo
         | memo !! n /= -1 = memo !! n
-        | otherwise = 
+        | otherwise =
             let fib1 = fibMemoHelper (n - 1) memo
                 fib2 = fibMemoHelper (n - 2) memo
                 result = fib1 + fib2
@@ -1193,28 +1193,28 @@ fibMemo n = fibMemoHelper n (replicate (n + 1) (-1))
             in result
 
 -- 0-1背包问题算法 / 0-1 Knapsack Algorithm
--- 
+--
 -- **算法定义 / Algorithm Definition:**
 -- 在给定容量限制下，选择物品使总价值最大。
--- 
+--
 -- **时间复杂度 / Time Complexity:**
 -- - O(nW)，其中n是物品数量，W是容量
--- 
+--
 -- **空间复杂度 / Space Complexity:**
 -- - O(nW)
--- 
+--
 -- **正确性证明 / Correctness Proof:**
 -- 1. **最优子结构**: 最优解包含子问题的最优解
 -- 2. **状态转移**: dp[i][w] = max(dp[i-1][w], dp[i-1][w-wi] + vi)
 -- 3. **边界条件**: dp[0][w] = 0
 knapsack01 :: [Int] -> [Int] -> Int -> Int
-knapsack01 weights values capacity = 
+knapsack01 weights values capacity =
     knapsackHelper weights values capacity (length weights)
   where
     knapsackHelper _ _ _ 0 = 0
     knapsackHelper weights values capacity n
         | weights !! (n-1) > capacity = knapsackHelper weights values capacity (n-1)
-        | otherwise = 
+        | otherwise =
             let include = values !! (n-1) + knapsackHelper weights values (capacity - weights !! (n-1)) (n-1)
                 exclude = knapsackHelper weights values capacity (n-1)
             in max include exclude

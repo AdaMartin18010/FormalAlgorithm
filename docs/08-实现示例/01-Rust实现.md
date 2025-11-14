@@ -113,15 +113,15 @@ impl Natural {
     pub fn new(n: u64) -> Self {
         Natural(n)
     }
-    
+
     pub fn zero() -> Self {
         Natural(0)
     }
-    
+
     pub fn successor(&self) -> Self {
         Natural(self.0 + 1)
     }
-    
+
     pub fn value(&self) -> u64 {
         self.0
     }
@@ -148,13 +148,13 @@ use thiserror::Error;
 pub enum FormalAlgorithmError {
     #[error("Invalid input: {0}")]
     InvalidInput(String),
-    
+
     #[error("Computation error: {0}")]
     ComputationError(String),
-    
+
     #[error("Type error: {0}")]
     TypeError(String),
-    
+
     #[error("Proof error: {0}")]
     ProofError(String),
 }
@@ -172,12 +172,12 @@ impl RecursiveFunction {
     pub fn zero_function() -> Self {
         RecursiveFunction::Zero
     }
-    
+
     /// 后继函数
     pub fn successor_function() -> Self {
         RecursiveFunction::Successor
     }
-    
+
     /// 投影函数
     pub fn projection_function(i: usize, n: usize) -> Result<Self, FormalAlgorithmError> {
         if i > n || i == 0 {
@@ -187,7 +187,7 @@ impl RecursiveFunction {
         }
         Ok(RecursiveFunction::Projection(i, n))
     }
-    
+
     /// 计算函数值
     pub fn evaluate(&self, args: &[Natural]) -> Result<Natural, FormalAlgorithmError> {
         match self {
@@ -199,7 +199,7 @@ impl RecursiveFunction {
                 }
                 Ok(Natural::zero())
             },
-            
+
             RecursiveFunction::Successor => {
                 if args.len() != 1 {
                     return Err(FormalAlgorithmError::InvalidInput(
@@ -208,7 +208,7 @@ impl RecursiveFunction {
                 }
                 Ok(args[0].successor())
             },
-            
+
             RecursiveFunction::Projection(i, n) => {
                 if args.len() != *n {
                     return Err(FormalAlgorithmError::InvalidInput(
@@ -217,7 +217,7 @@ impl RecursiveFunction {
                 }
                 Ok(args[*i - 1].clone())
             },
-            
+
             RecursiveFunction::Composition(f, gs) => {
                 // 计算 g_1(args), ..., g_m(args)
                 let mut g_results = Vec::new();
@@ -227,17 +227,17 @@ impl RecursiveFunction {
                 // 计算 f(g_1(args), ..., g_m(args))
                 f.evaluate(&g_results)
             },
-            
+
             RecursiveFunction::PrimitiveRecursion(f, g) => {
                 if args.len() < 2 {
                     return Err(FormalAlgorithmError::InvalidInput(
                         "Primitive recursion needs at least 2 arguments".to_string()
                     ));
                 }
-                
+
                 let n = args[0].value();
                 let other_args = &args[1..];
-                
+
                 if n == 0 {
                     // h(0, x) = f(x)
                     f.evaluate(other_args)
@@ -249,14 +249,14 @@ impl RecursiveFunction {
                     g.evaluate(&g_args)
                 }
             },
-            
+
             RecursiveFunction::Minimization(f) => {
                 // μy[f(x, y) = 0]
                 let mut y = 0;
                 loop {
                     let mut args_with_y = args.to_vec();
                     args_with_y.push(Natural::new(y));
-                    
+
                     match f.evaluate(&args_with_y) {
                         Ok(result) if result.value() == 0 => {
                             return Ok(Natural::new(y));
@@ -282,14 +282,14 @@ impl RecursiveFunction {
 ```rust
 impl RecursiveFunction {
     /// 加法函数
-    /// 
+    ///
     /// **形式化定义 / Formal Definition:**
     /// add(x, y) = x + y
-    /// 
+    ///
     /// **递归定义 / Recursive Definition:**
     /// - add(0, y) = y
     /// - add(x+1, y) = S(add(x, y))
-    /// 
+    ///
     /// **构造证明 / Construction Proof:**
     /// 使用原始递归，其中：
     /// - f(y) = y (投影函数)
@@ -300,22 +300,22 @@ impl RecursiveFunction {
             Box::new(RecursiveFunction::Successor),
             vec![RecursiveFunction::Projection(2, 3)] // g(x, h, y) = S(h)
         );
-        
+
         RecursiveFunction::PrimitiveRecursion(
             Box::new(f),
             Box::new(g)
         )
     }
-    
+
     /// 乘法函数
-    /// 
+    ///
     /// **形式化定义 / Formal Definition:**
     /// mult(x, y) = x * y
-    /// 
+    ///
     /// **递归定义 / Recursive Definition:**
     /// - mult(0, y) = 0
     /// - mult(x+1, y) = add(mult(x, y), y)
-    /// 
+    ///
     /// **构造证明 / Construction Proof:**
     /// 使用原始递归，其中：
     /// - f(y) = 0 (零函数)
@@ -329,22 +329,22 @@ impl RecursiveFunction {
                 RecursiveFunction::Projection(3, 3)  // y
             ]
         );
-        
+
         RecursiveFunction::PrimitiveRecursion(
             Box::new(f),
             Box::new(g)
         )
     }
-    
+
     /// 指数函数
-    /// 
+    ///
     /// **形式化定义 / Formal Definition:**
     /// exp(x, y) = x^y
-    /// 
+    ///
     /// **递归定义 / Recursive Definition:**
     /// - exp(x, 0) = 1
     /// - exp(x, y+1) = mult(exp(x, y), x)
-    /// 
+    ///
     /// **构造证明 / Construction Proof:**
     /// 使用原始递归，其中：
     /// - f(x) = 1 (后继函数与零函数的复合)
@@ -361,22 +361,22 @@ impl RecursiveFunction {
                 RecursiveFunction::Projection(1, 3)  // x
             ]
         );
-        
+
         RecursiveFunction::PrimitiveRecursion(
             Box::new(f),
             Box::new(g)
         )
     }
-    
+
     /// 前驱函数
-    /// 
+    ///
     /// **形式化定义 / Formal Definition:**
     /// pred(x) = max(0, x-1)
-    /// 
+    ///
     /// **递归定义 / Recursive Definition:**
     /// - pred(0) = 0
     /// - pred(x+1) = x
-    /// 
+    ///
     /// **构造证明 / Construction Proof:**
     /// 使用原始递归，其中：
     /// - f() = 0 (零函数)
@@ -384,22 +384,22 @@ impl RecursiveFunction {
     pub fn predecessor() -> Self {
         let f = RecursiveFunction::Zero; // f() = 0
         let g = RecursiveFunction::Projection(1, 2); // g(x, h) = x
-        
+
         RecursiveFunction::PrimitiveRecursion(
             Box::new(f),
             Box::new(g)
         )
     }
-    
+
     /// 减法函数
-    /// 
+    ///
     /// **形式化定义 / Formal Definition:**
     /// sub(x, y) = max(0, x-y)
-    /// 
+    ///
     /// **递归定义 / Recursive Definition:**
     /// - sub(x, 0) = x
     /// - sub(x, y+1) = pred(sub(x, y))
-    /// 
+    ///
     /// **构造证明 / Construction Proof:**
     /// 使用原始递归，其中：
     /// - f(x) = x (投影函数)
@@ -410,20 +410,20 @@ impl RecursiveFunction {
             Box::new(RecursiveFunction::predecessor()),
             vec![RecursiveFunction::Projection(2, 3)] // g(x, h, y) = pred(h)
         );
-        
+
         RecursiveFunction::PrimitiveRecursion(
             Box::new(f),
             Box::new(g)
         )
     }
-    
+
     /// 阿克曼函数
-    /// 
+    ///
     /// **形式化定义 / Formal Definition:**
     /// A(0, y) = y + 1
     /// A(x+1, 0) = A(x, 1)
     /// A(x+1, y+1) = A(x, A(x+1, y))
-    /// 
+    ///
     /// **构造证明 / Construction Proof:**
     /// 阿克曼函数不是原始递归函数，需要使用一般递归函数构造
     pub fn ackermann() -> Self {
@@ -494,19 +494,19 @@ impl TuringMachine {
                 "Initial state not in states".to_string()
             ));
         }
-        
+
         if !states.contains(&accept_state) {
             return Err(FormalAlgorithmError::InvalidInput(
                 "Accept state not in states".to_string()
             ));
         }
-        
+
         if !states.contains(&reject_state) {
             return Err(FormalAlgorithmError::InvalidInput(
                 "Reject state not in states".to_string()
             ));
         }
-        
+
         Ok(TuringMachine {
             states,
             input_alphabet,
@@ -537,24 +537,24 @@ impl Configuration {
         for (i, ch) in input.chars().enumerate() {
             tape.insert(i as i64, Symbol(ch));
         }
-        
+
         Configuration {
             state,
             tape,
             head_position: 0,
         }
     }
-    
+
     pub fn get_current_symbol(&self, blank_symbol: &Symbol) -> Symbol {
         self.tape.get(&self.head_position)
             .unwrap_or(blank_symbol)
             .clone()
     }
-    
+
     pub fn write_symbol(&mut self, symbol: Symbol) {
         self.tape.insert(self.head_position, symbol);
     }
-    
+
     pub fn move_head(&mut self, direction: &Direction) {
         match direction {
             Direction::Left => self.head_position -= 1,
@@ -572,27 +572,27 @@ impl TuringMachine {
         let mut config = Configuration::new(self.initial_state.clone(), input);
         let mut step_count = 0;
         let max_steps = 10000; // 防止无限循环
-        
+
         loop {
             if step_count > max_steps {
                 return Err(FormalAlgorithmError::ComputationError(
                     "Turing machine exceeded maximum steps".to_string()
                 ));
             }
-            
+
             let current_symbol = config.get_current_symbol(&self.blank_symbol);
-            
+
             // 查找转移规则
             let transition = self.transitions.iter()
                 .find(|t| t.current_state == config.state && t.current_symbol == current_symbol);
-            
+
             match transition {
                 Some(t) => {
                     // 执行转移
                     config.write_symbol(t.new_symbol.clone());
                     config.move_head(&t.direction);
                     config.state = t.new_state.clone();
-                    
+
                     // 检查是否到达终止状态
                     if config.state == self.accept_state {
                         return Ok(ExecutionResult::Accept);
@@ -606,7 +606,7 @@ impl TuringMachine {
                     ));
                 }
             }
-            
+
             step_count += 1;
         }
     }
@@ -646,11 +646,11 @@ impl TypeEnvironment {
             bindings: HashMap::new(),
         }
     }
-    
+
     pub fn extend(&mut self, var: String, ty: Type) {
         self.bindings.insert(var, ty);
     }
-    
+
     pub fn lookup(&self, var: &str) -> Option<&Type> {
         self.bindings.get(var)
     }
@@ -677,20 +677,20 @@ impl Term {
                     ))
                     .map(|t| t.clone())
             },
-            
+
             Term::Abstraction(x, body) => {
                 let alpha = Type::Variable(format!("α_{}", x));
                 let mut new_env = env.clone();
                 new_env.extend(x.clone(), alpha.clone());
-                
+
                 let body_type = body.type_check(&new_env)?;
                 Ok(Type::Function(Box::new(alpha), Box::new(body_type)))
             },
-            
+
             Term::Application(func, arg) => {
                 let func_type = func.type_check(env)?;
                 let arg_type = arg.type_check(env)?;
-                
+
                 match func_type {
                     Type::Function(param_type, return_type) => {
                         if *param_type == arg_type {
@@ -759,19 +759,19 @@ impl ProofRule {
             ProofRule::Assumption => {
                 Ok(context.assumptions.contains(&context.goal))
             },
-            
+
             ProofRule::AndIntroduction(proof1, proof2) => {
                 // 检查两个子证明的有效性
                 let valid1 = proof1.check_validity(context)?;
                 let valid2 = proof2.check_validity(context)?;
                 Ok(valid1 && valid2)
             },
-            
+
             ProofRule::AndElimination1(proof) => {
                 // 检查子证明的有效性
                 proof.check_validity(context)
             },
-            
+
             // 其他规则的实现...
             _ => Ok(true) // 简化实现
         }
@@ -818,8 +818,8 @@ impl ProofRule {
 
 ---
 
-**文档版本 / Document Version**: 1.1  
-**最后更新 / Last Updated**: 2025-11-14  
+**文档版本 / Document Version**: 1.1
+**最后更新 / Last Updated**: 2025-11-14
 **状态 / Status**: 已对照Wikipedia更新 / Updated with Wikipedia references (as of 2025-11-14)
 
 ---
@@ -866,20 +866,20 @@ pub mod number_theory {
         if remainders.len() != moduli.len() {
             return None;
         }
-        
+
         let mut result = 0;
         let mut product = 1;
-        
+
         for &m in moduli {
             product *= m;
         }
-        
+
         for i in 0..remainders.len() {
             let pi = product / moduli[i];
             let (_, inv, _) = extended_gcd(pi, moduli[i]);
             result = (result + remainders[i] * pi * inv) % product;
         }
-        
+
         Some((result + product) % product)
     }
 
@@ -895,7 +895,7 @@ pub mod number_theory {
         if n % 2 == 0 {
             return false;
         }
-        
+
         let sqrt_n = (n as f64).sqrt() as u64;
         for i in (3..=sqrt_n).step_by(2) {
             if n % i == 0 {
@@ -910,7 +910,7 @@ pub mod number_theory {
     pub fn prime_factorization(mut n: u64) -> HashMap<u64, u32> {
         let mut factors = HashMap::new();
         let mut d = 2;
-        
+
         while d * d <= n {
             let mut count = 0;
             while n % d == 0 {
@@ -922,11 +922,11 @@ pub mod number_theory {
             }
             d += 1;
         }
-        
+
         if n > 1 {
             factors.insert(n, 1);
         }
-        
+
         factors
     }
 
@@ -935,11 +935,11 @@ pub mod number_theory {
     pub fn euler_totient(n: u64) -> u64 {
         let factors = prime_factorization(n);
         let mut result = n;
-        
+
         for (prime, _) in factors {
             result = result / prime * (prime - 1);
         }
-        
+
         result
     }
 }
@@ -957,23 +957,23 @@ pub mod algebraic_structures {
     /// Group trait
     pub trait Group {
         type Element: Clone + PartialEq;
-        
+
         fn operation(&self, a: &Self::Element, b: &Self::Element) -> Self::Element;
         fn identity(&self) -> Self::Element;
         fn inverse(&self, a: &Self::Element) -> Self::Element;
-        
+
         fn power(&self, a: &Self::Element, n: i64) -> Self::Element {
             if n == 0 {
                 return self.identity();
             }
-            
+
             let mut result = if n > 0 { a.clone() } else { self.inverse(a) };
             let abs_n = n.abs();
-            
+
             for _ in 1..abs_n {
                 result = self.operation(&result, if n > 0 { a } else { &self.inverse(a) });
             }
-            
+
             result
         }
     }
@@ -984,15 +984,15 @@ pub mod algebraic_structures {
 
     impl Group for IntegerAdditiveGroup {
         type Element = i64;
-        
+
         fn operation(&self, a: &i64, b: &i64) -> i64 {
             a + b
         }
-        
+
         fn identity(&self) -> i64 {
             0
         }
-        
+
         fn inverse(&self, a: &i64) -> i64 {
             -a
         }
@@ -1008,7 +1008,7 @@ pub mod algebraic_structures {
         pub fn new(n: u64) -> Self {
             Self { n }
         }
-        
+
         pub fn is_in_group(&self, a: &u64) -> bool {
             crate::number_theory::extended_gcd(*a as i64, self.n as i64).0 == 1
         }
@@ -1016,15 +1016,15 @@ pub mod algebraic_structures {
 
     impl Group for MultiplicativeGroupModN {
         type Element = u64;
-        
+
         fn operation(&self, a: &u64, b: &u64) -> u64 {
             (a * b) % self.n
         }
-        
+
         fn identity(&self) -> u64 {
             1
         }
-        
+
         fn inverse(&self, a: &u64) -> u64 {
             crate::number_theory::mod_inverse(*a, self.n).unwrap_or(0)
         }
@@ -1042,11 +1042,11 @@ pub mod algebraic_structures {
         pub fn new(real: f64, imag: f64) -> Self {
             Self { real, imag }
         }
-        
+
         pub fn conjugate(&self) -> Self {
             Self::new(self.real, -self.imag)
         }
-        
+
         pub fn magnitude(&self) -> f64 {
             (self.real * self.real + self.imag * self.imag).sqrt()
         }
@@ -1054,7 +1054,7 @@ pub mod algebraic_structures {
 
     impl Add for Complex {
         type Output = Self;
-        
+
         fn add(self, other: Self) -> Self {
             Self::new(self.real + other.real, self.imag + other.imag)
         }
@@ -1062,7 +1062,7 @@ pub mod algebraic_structures {
 
     impl Mul for Complex {
         type Output = Self;
-        
+
         fn mul(self, other: Self) -> Self {
             Self::new(
                 self.real * other.real - self.imag * other.imag,
@@ -1078,14 +1078,14 @@ pub mod algebraic_structures {
         if n == 1 {
             return polynomial.to_vec();
         }
-        
+
         if n & (n - 1) != 0 {
             panic!("Polynomial length must be a power of 2");
         }
-        
+
         let mut even = Vec::new();
         let mut odd = Vec::new();
-        
+
         for (i, &coeff) in polynomial.iter().enumerate() {
             if i % 2 == 0 {
                 even.push(coeff);
@@ -1093,29 +1093,29 @@ pub mod algebraic_structures {
                 odd.push(coeff);
             }
         }
-        
+
         let even_fft = fft(&even, inverse);
         let odd_fft = fft(&odd, inverse);
-        
+
         let mut result = vec![Complex::new(0.0, 0.0); n];
         let sign = if inverse { 1.0 } else { -1.0 };
-        
+
         for k in 0..n/2 {
             let angle = sign * 2.0 * std::f64::consts::PI * k as f64 / n as f64;
             let w = Complex::new(angle.cos(), angle.sin());
             let temp = w * odd_fft[k].clone();
-            
+
             result[k] = even_fft[k].clone() + temp.clone();
             result[k + n/2] = even_fft[k].clone() + temp.conjugate();
         }
-        
+
         if inverse {
             for coeff in &mut result {
                 coeff.real /= n as f64;
                 coeff.imag /= n as f64;
             }
         }
-        
+
         result
     }
 }
@@ -1134,7 +1134,7 @@ pub mod probability_statistics {
     /// Probability distribution trait
     pub trait Distribution {
         type Sample;
-        
+
         fn sample<R: Rng>(&self, rng: &mut R) -> Self::Sample;
         fn pdf(&self, x: &Self::Sample) -> f64;
         fn cdf(&self, x: &Self::Sample) -> f64;
@@ -1156,11 +1156,11 @@ pub mod probability_statistics {
 
     impl Distribution for Uniform {
         type Sample = f64;
-        
+
         fn sample<R: Rng>(&self, rng: &mut R) -> f64 {
             rng.gen_range(self.a..self.b)
         }
-        
+
         fn pdf(&self, x: &f64) -> f64 {
             if *x >= self.a && *x <= self.b {
                 1.0 / (self.b - self.a)
@@ -1168,7 +1168,7 @@ pub mod probability_statistics {
                 0.0
             }
         }
-        
+
         fn cdf(&self, x: &f64) -> f64 {
             if *x < self.a {
                 0.0
@@ -1196,7 +1196,7 @@ pub mod probability_statistics {
 
     impl Distribution for Normal {
         type Sample = f64;
-        
+
         fn sample<R: Rng>(&self, rng: &mut R) -> f64 {
             // Box-Muller transform
             let u1: f64 = rng.gen();
@@ -1204,12 +1204,12 @@ pub mod probability_statistics {
             let z0 = (-2.0 * u1.ln()).sqrt() * (2.0 * std::f64::consts::PI * u2).cos();
             self.mu + self.sigma * z0
         }
-        
+
         fn pdf(&self, x: &f64) -> f64 {
             let z = (*x - self.mu) / self.sigma;
             (-0.5 * z * z).exp() / (self.sigma * (2.0 * std::f64::consts::PI).sqrt())
         }
-        
+
         fn cdf(&self, x: &f64) -> f64 {
             // 简化实现，实际应用中应使用误差函数
             let z = (*x - self.mu) / self.sigma;
@@ -1238,18 +1238,18 @@ pub mod probability_statistics {
 
     /// 蒙特卡洛积分
     /// Monte Carlo integration
-    pub fn monte_carlo_integration<F>(f: F, a: f64, b: f64, n: usize) -> f64 
+    pub fn monte_carlo_integration<F>(f: F, a: f64, b: f64, n: usize) -> f64
     where F: Fn(f64) -> f64 {
         let mut rng = rand::thread_rng();
         let uniform = Uniform::new(a, b);
-        
+
         let sum: f64 = (0..n)
             .map(|_| {
                 let x = uniform.sample(&mut rng);
                 f(x)
             })
             .sum();
-        
+
         (b - a) * sum / n as f64
     }
 
@@ -1261,8 +1261,8 @@ pub mod probability_statistics {
         proposal_pdf: impl Fn(&f64) -> f64,
         m: f64,
         rng: &mut R
-    ) -> f64 
-    where 
+    ) -> f64
+    where
         F: Fn(&f64) -> f64,
         G: Fn(&mut R) -> f64,
         R: Rng,
@@ -1270,7 +1270,7 @@ pub mod probability_statistics {
         loop {
             let x = proposal_sampler(rng);
             let u: f64 = rng.gen();
-            
+
             if u <= target_pdf(&x) / (m * proposal_pdf(&x)) {
                 return x;
             }
@@ -1298,7 +1298,7 @@ pub mod probability_statistics {
         let n = data.len() as f64;
         let mu = mean(data);
         let sigma = standard_deviation(data);
-        
+
         // 使用正态分布近似（大样本）
         let z_score = match confidence_level {
             0.95 => 1.96,
@@ -1306,7 +1306,7 @@ pub mod probability_statistics {
             0.90 => 1.645,
             _ => 1.96, // 默认95%置信水平
         };
-        
+
         let margin = z_score * sigma / n.sqrt();
         (mu - margin, mu + margin)
     }
@@ -1323,34 +1323,34 @@ pub fn examples() {
     println!("=== Number Theory Examples ===");
     let gcd = number_theory::extended_gcd(48, 18);
     println!("GCD(48, 18) = {:?}", gcd);
-    
+
     let prime = number_theory::is_prime(17);
     println!("Is 17 prime? {}", prime);
-    
+
     let phi = number_theory::euler_totient(12);
     println!("φ(12) = {}", phi);
-    
+
     // 代数结构示例
     println!("\n=== Algebraic Structure Examples ===");
     let group = algebraic_structures::IntegerAdditiveGroup;
     let result = group.operation(&5, &3);
     println!("5 + 3 = {}", result);
-    
+
     let power = group.power(&2, 5);
     println!("2^5 = {}", power);
-    
+
     // 概率统计示例
     println!("\n=== Probability and Statistics Examples ===");
     let uniform = probability_statistics::Uniform::new(0.0, 1.0);
     let mut rng = rand::thread_rng();
     let sample = uniform.sample(&mut rng);
     println!("Uniform sample: {}", sample);
-    
+
     let data = vec![1.0, 2.0, 3.0, 4.0, 5.0];
     let mean = probability_statistics::mean(&data);
     let variance = probability_statistics::variance(&data);
     println!("Mean: {}, Variance: {}", mean, variance);
-    
+
     let ci = probability_statistics::confidence_interval(&data, 0.95);
     println!("95% Confidence Interval: ({:.3}, {:.3})", ci.0, ci.1);
 }
@@ -1367,21 +1367,21 @@ pub fn examples() {
 /// Sorting algorithms module
 pub mod sorting {
     use std::cmp::Ordering;
-    
+
     /// 快速排序算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 快速排序是一种分治排序算法，通过选择基准元素将数组分为两部分。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - 平均情况：O(n log n)
     /// - 最坏情况：O(n²)
     /// - 最好情况：O(n log n)
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - 平均情况：O(log n)
     /// - 最坏情况：O(n)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **基准选择正确性**: 基准元素最终位于正确位置
     /// 2. **分治正确性**: 左右子数组分别排序
@@ -1390,17 +1390,17 @@ pub mod sorting {
         if arr.len() <= 1 {
             return;
         }
-        
+
         let pivot_index = partition(arr);
         quicksort(&mut arr[..pivot_index]);
         quicksort(&mut arr[pivot_index + 1..]);
     }
-    
+
     /// 分区函数
-    /// 
+    ///
     /// **定义 / Definition:**
     /// 将数组分为两部分，左边元素小于基准，右边元素大于基准
-    /// 
+    ///
     /// **不变式 / Invariant:**
     /// 对于任意 i < pivot_index，arr[i] <= arr[pivot_index]
     /// 对于任意 i > pivot_index，arr[i] >= arr[pivot_index]
@@ -1408,29 +1408,29 @@ pub mod sorting {
         let len = arr.len();
         let pivot_index = len - 1;
         let mut i = 0;
-        
+
         for j in 0..len - 1 {
             if arr[j] <= arr[pivot_index] {
                 arr.swap(i, j);
                 i += 1;
             }
         }
-        
+
         arr.swap(i, pivot_index);
         i
     }
-    
+
     /// 归并排序算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 归并排序是一种稳定的分治排序算法，将数组分为两半，分别排序后合并。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - 所有情况：O(n log n)
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(n)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **分治正确性**: 递归排序左右子数组
     /// 2. **合并正确性**: 两个有序数组合并后仍有序
@@ -1440,28 +1440,28 @@ pub mod sorting {
         if len <= 1 {
             return;
         }
-        
+
         let mid = len / 2;
         mergesort(&mut arr[..mid]);
         mergesort(&mut arr[mid..]);
         merge(arr, mid);
     }
-    
+
     /// 合并函数
-    /// 
+    ///
     /// **定义 / Definition:**
     /// 将两个有序数组合并为一个有序数组
-    /// 
+    ///
     /// **不变式 / Invariant:**
     /// 合并过程中，结果数组始终保持有序
     fn merge<T: Ord + Clone>(arr: &mut [T], mid: usize) {
         let left = arr[..mid].to_vec();
         let right = arr[mid..].to_vec();
-        
+
         let mut i = 0;
         let mut j = 0;
         let mut k = 0;
-        
+
         while i < left.len() && j < right.len() {
             if left[i] <= right[j] {
                 arr[k] = left[i].clone();
@@ -1472,70 +1472,70 @@ pub mod sorting {
             }
             k += 1;
         }
-        
+
         while i < left.len() {
             arr[k] = left[i].clone();
             i += 1;
             k += 1;
         }
-        
+
         while j < right.len() {
             arr[k] = right[j].clone();
             j += 1;
             k += 1;
         }
     }
-    
+
     /// 堆排序算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 堆排序利用堆数据结构进行排序，先构建最大堆，然后逐个提取最大元素。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - 所有情况：O(n log n)
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(1) (原地排序)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **堆构建正确性**: 构建最大堆后，根节点为最大元素
     /// 2. **堆维护正确性**: 提取元素后重新维护堆性质
     /// 3. **排序正确性**: 逐个提取最大元素形成有序序列
     pub fn heapsort<T: Ord>(arr: &mut [T]) {
         let len = arr.len();
-        
+
         // 构建最大堆
         for i in (0..len / 2).rev() {
             heapify(arr, len, i);
         }
-        
+
         // 逐个提取最大元素
         for i in (1..len).rev() {
             arr.swap(0, i);
             heapify(arr, i, 0);
         }
     }
-    
+
     /// 堆化函数
-    /// 
+    ///
     /// **定义 / Definition:**
     /// 维护以给定节点为根的堆性质
-    /// 
+    ///
     /// **不变式 / Invariant:**
     /// 调用后，以给定节点为根的子树满足堆性质
     fn heapify<T: Ord>(arr: &mut [T], heap_size: usize, root: usize) {
         let mut largest = root;
         let left = 2 * root + 1;
         let right = 2 * root + 2;
-        
+
         if left < heap_size && arr[left] > arr[largest] {
             largest = left;
         }
-        
+
         if right < heap_size && arr[right] > arr[largest] {
             largest = right;
         }
-        
+
         if largest != root {
             arr.swap(root, largest);
             heapify(arr, heap_size, largest);
@@ -1551,19 +1551,19 @@ pub mod sorting {
 /// Search algorithms module
 pub mod search {
     use std::cmp::Ordering;
-    
+
     /// 二分搜索算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 在有序数组中查找目标元素，通过比较中间元素缩小搜索范围。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - O(log n)
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(1) (迭代版本)
     /// - O(log n) (递归版本)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **循环不变式**: 目标元素在 [left, right] 范围内
     /// 2. **终止条件**: 当 left > right 时，目标元素不存在
@@ -1571,31 +1571,31 @@ pub mod search {
     pub fn binary_search<T: Ord>(arr: &[T], target: &T) -> Option<usize> {
         let mut left = 0;
         let mut right = arr.len();
-        
+
         while left < right {
             let mid = left + (right - left) / 2;
-            
+
             match arr[mid].cmp(target) {
                 Ordering::Equal => return Some(mid),
                 Ordering::Less => left = mid + 1,
                 Ordering::Greater => right = mid,
             }
         }
-        
+
         None
     }
-    
+
     /// 深度优先搜索算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 在图中进行深度优先遍历，使用栈或递归实现。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - O(V + E)，其中V是顶点数，E是边数
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(V) (最坏情况)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **访问完整性**: 从起始顶点可达的所有顶点都会被访问
     /// 2. **无重复访问**: 使用访问标记避免重复访问
@@ -1607,25 +1607,25 @@ pub mod search {
     ) {
         visited[start] = true;
         println!("访问顶点: {}", start);
-        
+
         for &neighbor in &graph[start] {
             if !visited[neighbor] {
                 depth_first_search(graph, neighbor, visited);
             }
         }
     }
-    
+
     /// 广度优先搜索算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 在图中进行广度优先遍历，使用队列实现。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - O(V + E)，其中V是顶点数，E是边数
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(V) (队列大小)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **访问完整性**: 从起始顶点可达的所有顶点都会被访问
     /// 2. **层次遍历**: 按距离起始顶点的层次顺序访问
@@ -1637,14 +1637,14 @@ pub mod search {
         let mut visited = vec![false; graph.len()];
         let mut queue = std::collections::VecDeque::new();
         let mut distances = vec![usize::MAX; graph.len()];
-        
+
         visited[start] = true;
         distances[start] = 0;
         queue.push_back(start);
-        
+
         while let Some(current) = queue.pop_front() {
             println!("访问顶点: {}", current);
-            
+
             for &neighbor in &graph[current] {
                 if !visited[neighbor] {
                     visited[neighbor] = true;
@@ -1653,21 +1653,21 @@ pub mod search {
                 }
             }
         }
-        
+
         distances
     }
-    
+
     /// A*搜索算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 启发式搜索算法，使用启发函数指导搜索方向。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - 取决于启发函数质量
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(V) (开放列表和关闭列表)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **可采纳性**: 启发函数不超过实际代价
     /// 2. **一致性**: 启发函数满足三角不等式
@@ -1680,31 +1680,31 @@ pub mod search {
     ) -> Option<Vec<usize>> {
         use std::collections::{BinaryHeap, HashMap};
         use std::cmp::Ordering;
-        
+
         #[derive(Clone, Eq, PartialEq)]
         struct Node {
             id: usize,
             f_score: f64,
             g_score: f64,
         }
-        
+
         impl Ord for Node {
             fn cmp(&self, other: &Self) -> Ordering {
                 other.f_score.partial_cmp(&self.f_score).unwrap()
             }
         }
-        
+
         impl PartialOrd for Node {
             fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
                 Some(self.cmp(other))
             }
         }
-        
+
         let mut open_set = BinaryHeap::new();
         let mut came_from = HashMap::new();
         let mut g_score = HashMap::new();
         let mut f_score = HashMap::new();
-        
+
         g_score.insert(start, 0.0);
         f_score.insert(start, heuristic(start));
         open_set.push(Node {
@@ -1712,7 +1712,7 @@ pub mod search {
             f_score: heuristic(start),
             g_score: 0.0,
         });
-        
+
         while let Some(current) = open_set.pop() {
             if current.id == goal {
                 // 重建路径
@@ -1725,16 +1725,16 @@ pub mod search {
                 path.reverse();
                 return Some(path);
             }
-            
+
             for &(neighbor, cost) in &graph[current.id] {
                 let tentative_g_score = g_score[&current.id] + cost;
-                
+
                 if tentative_g_score < *g_score.get(&neighbor).unwrap_or(&f64::INFINITY) {
                     came_from.insert(neighbor, current.id);
                     g_score.insert(neighbor, tentative_g_score);
                     let new_f_score = tentative_g_score + heuristic(neighbor);
                     f_score.insert(neighbor, new_f_score);
-                    
+
                     open_set.push(Node {
                         id: neighbor,
                         f_score: new_f_score,
@@ -1743,7 +1743,7 @@ pub mod search {
                 }
             }
         }
-        
+
         None
     }
 }
@@ -1756,16 +1756,16 @@ pub mod search {
 /// Dynamic programming algorithms module
 pub mod dynamic_programming {
     /// 最长公共子序列算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 找到两个序列的最长公共子序列。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - O(mn)，其中m和n是序列长度
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(mn)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **最优子结构**: 最长公共子序列包含子问题的最优解
     /// 2. **重叠子问题**: 子问题被重复计算
@@ -1775,9 +1775,9 @@ pub mod dynamic_programming {
         let chars2: Vec<char> = s2.chars().collect();
         let m = chars1.len();
         let n = chars2.len();
-        
+
         let mut dp = vec![vec![0; n + 1]; m + 1];
-        
+
         // 填充DP表
         for i in 1..=m {
             for j in 1..=n {
@@ -1788,12 +1788,12 @@ pub mod dynamic_programming {
                 }
             }
         }
-        
+
         // 重建LCS
         let mut lcs = String::new();
         let mut i = m;
         let mut j = n;
-        
+
         while i > 0 && j > 0 {
             if chars1[i - 1] == chars2[j - 1] {
                 lcs.insert(0, chars1[i - 1]);
@@ -1805,21 +1805,21 @@ pub mod dynamic_programming {
                 j -= 1;
             }
         }
-        
+
         lcs
     }
-    
+
     /// 0-1背包问题算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 在给定容量限制下，选择物品使总价值最大。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - O(nW)，其中n是物品数量，W是容量
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(nW)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **最优子结构**: 最优解包含子问题的最优解
     /// 2. **状态转移**: dp[i][w] = max(dp[i-1][w], dp[i-1][w-wi] + vi)
@@ -1831,7 +1831,7 @@ pub mod dynamic_programming {
     ) -> (usize, Vec<usize>) {
         let n = weights.len();
         let mut dp = vec![vec![0; capacity + 1]; n + 1];
-        
+
         // 填充DP表
         for i in 1..=n {
             for w in 0..=capacity {
@@ -1842,7 +1842,7 @@ pub mod dynamic_programming {
                 }
             }
         }
-        
+
         // 重建解
         let mut selected = Vec::new();
         let mut w = capacity;
@@ -1853,21 +1853,21 @@ pub mod dynamic_programming {
             }
         }
         selected.reverse();
-        
+
         (dp[n][capacity], selected)
     }
-    
+
     /// 编辑距离算法
-    /// 
+    ///
     /// **算法定义 / Algorithm Definition:**
     /// 计算将一个字符串转换为另一个字符串所需的最少操作数。
-    /// 
+    ///
     /// **时间复杂度 / Time Complexity:**
     /// - O(mn)，其中m和n是字符串长度
-    /// 
+    ///
     /// **空间复杂度 / Space Complexity:**
     /// - O(mn)
-    /// 
+    ///
     /// **正确性证明 / Correctness Proof:**
     /// 1. **最优子结构**: 最优编辑序列包含子问题的最优解
     /// 2. **状态转移**: dp[i][j] = min(dp[i-1][j] + 1, dp[i][j-1] + 1, dp[i-1][j-1] + cost)
@@ -1877,9 +1877,9 @@ pub mod dynamic_programming {
         let chars2: Vec<char> = s2.chars().collect();
         let m = chars1.len();
         let n = chars2.len();
-        
+
         let mut dp = vec![vec![0; n + 1]; m + 1];
-        
+
         // 初始化边界条件
         for i in 0..=m {
             dp[i][0] = i;
@@ -1887,7 +1887,7 @@ pub mod dynamic_programming {
         for j in 0..=n {
             dp[0][j] = j;
         }
-        
+
         // 填充DP表
         for i in 1..=m {
             for j in 1..=n {
@@ -1900,7 +1900,7 @@ pub mod dynamic_programming {
                 }
             }
         }
-        
+
         dp[m][n]
     }
 }
