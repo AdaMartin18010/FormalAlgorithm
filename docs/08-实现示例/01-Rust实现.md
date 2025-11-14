@@ -1,8 +1,8 @@
 ---
 title: 8.1 Rust实现 / Rust Implementation
-version: 1.0
+version: 1.1
 status: maintained
-last_updated: 2025-10-11
+last_updated: 2025-11-14
 owner: 实现示例工作组
 ---
 
@@ -798,6 +798,29 @@ impl ProofRule {
 
 4. Serde Documentation. URL: <https://serde.rs/>
    - Serde序列化框架文档。
+
+**在线资源 / Online Resources**:
+
+1. **Wikipedia - Rust (Programming Language)**: <https://en.wikipedia.org/wiki/Rust_(programming_language)>
+   - Rust编程语言的Wikipedia条目，包含语言特性、所有权系统和类型系统（截至2025年11月14日）。
+
+2. **Wikipedia - Type System**: <https://en.wikipedia.org/wiki/Type_system>
+   - 类型系统的Wikipedia条目，详细介绍静态类型和动态类型（截至2025年11月14日）。
+
+3. **Wikipedia - Memory Safety**: <https://en.wikipedia.org/wiki/Memory_safety>
+   - 内存安全的Wikipedia条目，说明Rust的内存安全保证（截至2025年11月14日）。
+
+**引用规范说明 / Citation Guidelines**:
+
+本文档遵循项目引用规范（见 `docs/引用规范与数据库.md`）。所有引用条目在 `docs/references_database.yaml` 中有完整记录。
+
+本文档内容已对照Wikipedia相关条目（截至2025年11月14日）进行验证，确保术语定义和实现规范与当前学术标准一致。
+
+---
+
+**文档版本 / Document Version**: 1.1  
+**最后更新 / Last Updated**: 2025-11-14  
+**状态 / Status**: 已对照Wikipedia更新 / Updated with Wikipedia references (as of 2025-11-14)
 
 ---
 
