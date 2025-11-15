@@ -1,5 +1,7 @@
 # 引用规范标准 / Citation Standard
 
+> 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](项目全面梳理-2025.md)
+
 ## 1. 概述 / Overview
 
 本文档定义了形式化算法项目中所有引用的标准化规范，确保学术诚信和可追溯性。
@@ -243,7 +245,7 @@ Gödel, K. (1931). "Über formal unentscheidbare Sätze der Principia Mathematic
 ```rust
 /// 图灵机模拟器
 /// Turing machine simulator
-/// 
+///
 /// 实现参考 / Implementation reference:
 /// - Sipser, M. (2012). *Introduction to the Theory of Computation* (3rd ed.). Cengage Learning.
 /// - Hopcroft, J.E., & Ullman, J.D. (1979). *Introduction to Automata Theory*. Addison-Wesley.
@@ -350,7 +352,7 @@ According to ISO/IEC 2382-1 (2015), an algorithm is...
 
 ```rust
 /// 引用检查器 / Citation Checker
-/// 
+///
 /// 功能 / Features:
 /// - 检测文内引用是否有对应的参考文献条目
 /// - 检测参考文献条目是否在文中被引用
