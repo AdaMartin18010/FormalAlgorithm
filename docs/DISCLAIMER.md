@@ -64,7 +64,7 @@
 
 - 理解偏差或表述不当
 - 翻译误差或概念偏移
-- 知识更新滞后（内容截至2024年12月）
+- 知识更新滞后（内容截至2025年1月）
 
 **All content should be based on original literature. This project may contain:**
 
@@ -143,9 +143,9 @@
 ### 当前版本 / Current Version
 
 - **版本号 / Version**: 1.1
-- **发布日期 / Release Date**: 2025年11月 / November 2025
-- **内容截至 / Content as of**: 2024年12月 / December 2024
-- **最后更新 / Last Updated**: 2025年11月 / November 2025
+- **发布日期 / Release Date**: 2025年1月 / January 2025
+- **内容截至 / Content as of**: 2025年1月 / January 2025
+- **最后更新 / Last Updated**: 2025年1月 / January 2025
 
 ### 更新计划 / Update Plan
 
@@ -297,6 +297,6 @@
 
 ---
 
-**最后更新 / Last Updated**: 2025年11月 / November 2025
+**最后更新 / Last Updated**: 2025年1月 / January 2025
 
 **声明版本 / Disclaimer Version**: 1.0

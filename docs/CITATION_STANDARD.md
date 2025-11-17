@@ -491,6 +491,6 @@ git commit -m "docs: 添加算法设计理论的引用 / Add citations for algor
 
 ---
 
-**最后更新 / Last Updated**: 2025年11月 / November 2025
+**最后更新 / Last Updated**: 2025年1月 / January 2025
 
 **版本 / Version**: 1.0
