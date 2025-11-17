@@ -1,5 +1,7 @@
 # 2. Wiki国际概念对齐 (Wiki International Concept Alignment)
 
+> 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
+
 ## 目录 (Table of Contents)
 
 - [2. Wiki国际概念对齐 (Wiki International Concept Alignment)](#2-wiki国际概念对齐-wiki-international-concept-alignment)

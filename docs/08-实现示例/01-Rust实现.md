@@ -2,9 +2,11 @@
 title: 8.1 Rust实现 / Rust Implementation
 version: 1.1
 status: maintained
-last_updated: 2025-11-14
+last_updated: 2025-01-11
 owner: 实现示例工作组
 ---
+
+> 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
 
 ## 8.1 Rust实现 / Rust Implementation
 
