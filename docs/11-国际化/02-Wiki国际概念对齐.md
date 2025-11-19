@@ -1,44 +1,54 @@
-# 2. Wiki国际概念对齐 (Wiki International Concept Alignment)
+---
+title: 2. Wiki国际概念对齐 / Wiki International Concept Alignment
+version: 1.1
+status: maintained
+last_updated: 2025-01-12
+owner: 国际化工作组
+---
+
+## 2. Wiki国际概念对齐 (Wiki International Concept Alignment)
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
 
 ## 目录 (Table of Contents)
 
 - [2. Wiki国际概念对齐 (Wiki International Concept Alignment)](#2-wiki国际概念对齐-wiki-international-concept-alignment)
-  - [目录 (Table of Contents)](#目录-table-of-contents)
-  - [2.1 对齐原则 (Alignment Principles)](#21-对齐原则-alignment-principles)
-    - [2.1.1 对齐目标 (Alignment Goals)](#211-对齐目标-alignment-goals)
-    - [2.1.2 对齐方法 (Alignment Methods)](#212-对齐方法-alignment-methods)
-  - [2.2 数学基础概念对齐 (Mathematical Foundation Concept Alignment)](#22-数学基础概念对齐-mathematical-foundation-concept-alignment)
-    - [2.2.1 集合论概念对齐 (Set Theory Concept Alignment)](#221-集合论概念对齐-set-theory-concept-alignment)
-    - [2.2.2 函数论概念对齐 (Function Theory Concept Alignment)](#222-函数论概念对齐-function-theory-concept-alignment)
-  - [2.3 计算机科学概念对齐 (Computer Science Concept Alignment)](#23-计算机科学概念对齐-computer-science-concept-alignment)
-    - [2.3.1 算法概念对齐 (Algorithm Concept Alignment)](#231-算法概念对齐-algorithm-concept-alignment)
-    - [2.3.2 数据结构概念对齐 (Data Structure Concept Alignment)](#232-数据结构概念对齐-data-structure-concept-alignment)
-  - [2.4 形式化方法概念对齐 (Formal Methods Concept Alignment)](#24-形式化方法概念对齐-formal-methods-concept-alignment)
-    - [2.4.1 逻辑系统概念对齐 (Logic System Concept Alignment)](#241-逻辑系统概念对齐-logic-system-concept-alignment)
-    - [2.4.2 证明方法概念对齐 (Proof Method Concept Alignment)](#242-证明方法概念对齐-proof-method-concept-alignment)
-  - [2.5 类型理论概念对齐 (Type Theory Concept Alignment)](#25-类型理论概念对齐-type-theory-concept-alignment)
-    - [2.5.1 基本类型概念对齐 (Basic Type Concept Alignment)](#251-基本类型概念对齐-basic-type-concept-alignment)
-    - [2.5.2 高级类型概念对齐 (Advanced Type Concept Alignment)](#252-高级类型概念对齐-advanced-type-concept-alignment)
-  - [2.6 算法理论概念对齐 (Algorithm Theory Concept Alignment)](#26-算法理论概念对齐-algorithm-theory-concept-alignment)
-    - [2.6.1 算法设计概念对齐 (Algorithm Design Concept Alignment)](#261-算法设计概念对齐-algorithm-design-concept-alignment)
-    - [2.6.2 计算复杂度概念对齐 (Computational Complexity Concept Alignment)](#262-计算复杂度概念对齐-computational-complexity-concept-alignment)
-  - [2.7 高级主题概念对齐 (Advanced Topic Concept Alignment)](#27-高级主题概念对齐-advanced-topic-concept-alignment)
-    - [2.7.1 范畴论概念对齐 (Category Theory Concept Alignment)](#271-范畴论概念对齐-category-theory-concept-alignment)
-    - [2.7.2 同伦类型论概念对齐 (Homotopy Type Theory Concept Alignment)](#272-同伦类型论概念对齐-homotopy-type-theory-concept-alignment)
-    - [2.7.3 证明助手概念对齐 (Proof Assistant Concept Alignment)](#273-证明助手概念对齐-proof-assistant-concept-alignment)
-  - [2.8 实现示例概念对齐 (Implementation Example Concept Alignment)](#28-实现示例概念对齐-implementation-example-concept-alignment)
-    - [2.8.1 编程语言概念对齐 (Programming Language Concept Alignment)](#281-编程语言概念对齐-programming-language-concept-alignment)
-    - [2.8.2 形式化验证概念对齐 (Formal Verification Concept Alignment)](#282-形式化验证概念对齐-formal-verification-concept-alignment)
-  - [2.9 对齐总结 (Alignment Summary)](#29-对齐总结-alignment-summary)
-    - [2.9.1 对齐统计 (Alignment Statistics)](#291-对齐统计-alignment-statistics)
-    - [2.9.2 质量保证 (Quality Assurance)](#292-质量保证-quality-assurance)
-    - [2.9.3 持续维护 (Continuous Maintenance)](#293-持续维护-continuous-maintenance)
-  - [与项目结构主题的对齐 / Alignment with Project Structure](#与项目结构主题的对齐--alignment-with-project-structure)
-    - [相关文档 / Related Documents](#相关文档--related-documents)
-    - [知识体系位置 / Knowledge System Position](#知识体系位置--knowledge-system-position)
-    - [VIEW文件夹相关文档 / VIEW Folder Related Documents](#view文件夹相关文档--view-folder-related-documents)
+- [目录 (Table of Contents)](#目录-table-of-contents)
+- [2.1 对齐原则 (Alignment Principles)](#21-对齐原则-alignment-principles)
+  - [2.1.1 对齐目标 (Alignment Goals)](#211-对齐目标-alignment-goals)
+  - [2.1.2 对齐方法 (Alignment Methods)](#212-对齐方法-alignment-methods)
+- [2.2 数学基础概念对齐 (Mathematical Foundation Concept Alignment)](#22-数学基础概念对齐-mathematical-foundation-concept-alignment)
+  - [2.2.1 集合论概念对齐 (Set Theory Concept Alignment)](#221-集合论概念对齐-set-theory-concept-alignment)
+  - [2.2.2 函数论概念对齐 (Function Theory Concept Alignment)](#222-函数论概念对齐-function-theory-concept-alignment)
+- [2.3 计算机科学概念对齐 (Computer Science Concept Alignment)](#23-计算机科学概念对齐-computer-science-concept-alignment)
+  - [2.3.1 算法概念对齐 (Algorithm Concept Alignment)](#231-算法概念对齐-algorithm-concept-alignment)
+  - [2.3.2 数据结构概念对齐 (Data Structure Concept Alignment)](#232-数据结构概念对齐-data-structure-concept-alignment)
+- [2.4 形式化方法概念对齐 (Formal Methods Concept Alignment)](#24-形式化方法概念对齐-formal-methods-concept-alignment)
+  - [2.4.1 逻辑系统概念对齐 (Logic System Concept Alignment)](#241-逻辑系统概念对齐-logic-system-concept-alignment)
+  - [2.4.2 证明方法概念对齐 (Proof Method Concept Alignment)](#242-证明方法概念对齐-proof-method-concept-alignment)
+- [2.5 类型理论概念对齐 (Type Theory Concept Alignment)](#25-类型理论概念对齐-type-theory-concept-alignment)
+  - [2.5.1 基本类型概念对齐 (Basic Type Concept Alignment)](#251-基本类型概念对齐-basic-type-concept-alignment)
+  - [2.5.2 高级类型概念对齐 (Advanced Type Concept Alignment)](#252-高级类型概念对齐-advanced-type-concept-alignment)
+- [2.6 算法理论概念对齐 (Algorithm Theory Concept Alignment)](#26-算法理论概念对齐-algorithm-theory-concept-alignment)
+  - [2.6.1 算法设计概念对齐 (Algorithm Design Concept Alignment)](#261-算法设计概念对齐-algorithm-design-concept-alignment)
+  - [2.6.2 计算复杂度概念对齐 (Computational Complexity Concept Alignment)](#262-计算复杂度概念对齐-computational-complexity-concept-alignment)
+- [2.7 高级主题概念对齐 (Advanced Topic Concept Alignment)](#27-高级主题概念对齐-advanced-topic-concept-alignment)
+  - [2.7.1 范畴论概念对齐 (Category Theory Concept Alignment)](#271-范畴论概念对齐-category-theory-concept-alignment)
+  - [2.7.2 同伦类型论概念对齐 (Homotopy Type Theory Concept Alignment)](#272-同伦类型论概念对齐-homotopy-type-theory-concept-alignment)
+  - [2.7.3 证明助手概念对齐 (Proof Assistant Concept Alignment)](#273-证明助手概念对齐-proof-assistant-concept-alignment)
+  - [2.7.4 量子计算概念对齐 (Quantum Computing Concept Alignment)](#274-量子计算概念对齐-quantum-computing-concept-alignment)
+  - [2.7.5 机器学习概念对齐 (Machine Learning Concept Alignment)](#275-机器学习概念对齐-machine-learning-concept-alignment)
+- [2.8 实现示例概念对齐 (Implementation Example Concept Alignment)](#28-实现示例概念对齐-implementation-example-concept-alignment)
+  - [2.8.1 编程语言概念对齐 (Programming Language Concept Alignment)](#281-编程语言概念对齐-programming-language-concept-alignment)
+  - [2.8.2 形式化验证概念对齐 (Formal Verification Concept Alignment)](#282-形式化验证概念对齐-formal-verification-concept-alignment)
+- [2.9 对齐总结 (Alignment Summary)](#29-对齐总结-alignment-summary)
+  - [2.9.1 对齐统计 (Alignment Statistics)](#291-对齐统计-alignment-statistics)
+  - [2.9.2 质量保证 (Quality Assurance)](#292-质量保证-quality-assurance)
+  - [2.9.3 持续维护 (Continuous Maintenance)](#293-持续维护-continuous-maintenance)
+- [与项目结构主题的对齐 / Alignment with Project Structure](#与项目结构主题的对齐--alignment-with-project-structure)
+  - [相关文档 / Related Documents](#相关文档--related-documents)
+  - [知识体系位置 / Knowledge System Position](#知识体系位置--knowledge-system-position)
+  - [VIEW文件夹相关文档 / VIEW Folder Related Documents](#view文件夹相关文档--view-folder-related-documents)
 
 ---
 
@@ -337,6 +347,47 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 公理 | [Axiom](https://en.wikipedia.org/wiki/Axiom) | 无需证明的基本假设 | ✅ 已对齐 |
 | 推理规则 | [Rule of inference](https://en.wikipedia.org/wiki/Rule_of_inference) | 从前提推导结论的规则 | ✅ 已对齐 |
 
+### 2.7.4 量子计算概念对齐 (Quantum Computing Concept Alignment)
+
+**量子计算Wiki标准 / Quantum Computing Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 量子比特 | [Qubit](https://en.wikipedia.org/wiki/Qubit) | 量子信息的基本单位 | ✅ 已对齐 |
+| 量子叠加 | [Quantum superposition](https://en.wikipedia.org/wiki/Quantum_superposition) | 量子态可以同时处于多个状态的特性 | ✅ 已对齐 |
+| 量子纠缠 | [Quantum entanglement](https://en.wikipedia.org/wiki/Quantum_entanglement) | 量子系统之间的非局域关联 | ✅ 已对齐 |
+| 量子门 | [Quantum gate](https://en.wikipedia.org/wiki/Quantum_gate) | 对量子比特进行操作的基本单元 | ✅ 已对齐 |
+| 量子算法 | [Quantum algorithm](https://en.wikipedia.org/wiki/Quantum_algorithm) | 利用量子力学特性设计的算法 | ✅ 已对齐 |
+| 量子纠错 | [Quantum error correction](https://en.wikipedia.org/wiki/Quantum_error_correction) | 纠正量子系统中错误的方法 | ✅ 已对齐 |
+| 量子信息论 | [Quantum information theory](https://en.wikipedia.org/wiki/Quantum_information_theory) | 研究量子系统中信息的理论 | ✅ 已对齐 |
+| 量子信道 | [Quantum channel](https://en.wikipedia.org/wiki/Quantum_channel) | 传输量子信息的通道 | ✅ 已对齐 |
+| 冯·诺依曼熵 | [Von Neumann entropy](https://en.wikipedia.org/wiki/Von_Neumann_entropy) | 量子系统的熵度量 | ✅ 已对齐 |
+| 量子容量 | [Quantum capacity](https://en.wikipedia.org/wiki/Quantum_capacity) | 量子信道传输信息的能力 | ✅ 已对齐 |
+| Shor算法 | [Shor's algorithm](https://en.wikipedia.org/wiki/Shor%27s_algorithm) | 用于整数分解的量子算法 | ✅ 已对齐 |
+| Grover算法 | [Grover's algorithm](https://en.wikipedia.org/wiki/Grover%27s_algorithm) | 用于搜索的量子算法 | ✅ 已对齐 |
+| 量子机器学习 | [Quantum machine learning](https://en.wikipedia.org/wiki/Quantum_machine_learning) | 结合量子计算和机器学习的领域 | ✅ 已对齐 |
+| 量子密码学 | [Quantum cryptography](https://en.wikipedia.org/wiki/Quantum_cryptography) | 基于量子力学原理的密码学 | ✅ 已对齐 |
+
+### 2.7.5 机器学习概念对齐 (Machine Learning Concept Alignment)
+
+**机器学习Wiki标准 / Machine Learning Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 机器学习 | [Machine learning](https://en.wikipedia.org/wiki/Machine_learning) | 通过数据学习模式的算法 | ✅ 已对齐 |
+| 监督学习 | [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning) | 使用标注数据的学习方法 | ✅ 已对齐 |
+| 无监督学习 | [Unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning) | 不使用标注数据的学习方法 | ✅ 已对齐 |
+| 强化学习 | [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning) | 通过与环境交互学习的方法 | ✅ 已对齐 |
+| 神经网络 | [Neural network](https://en.wikipedia.org/wiki/Neural_network) | 模拟生物神经网络的模型 | ✅ 已对齐 |
+| 深度学习 | [Deep learning](https://en.wikipedia.org/wiki/Deep_learning) | 使用多层神经网络的学习方法 | ✅ 已对齐 |
+| 图神经网络 | [Graph neural network](https://en.wikipedia.org/wiki/Graph_neural_network) | 处理图结构数据的神经网络 | ✅ 已对齐 |
+| 联邦学习 | [Federated learning](https://en.wikipedia.org/wiki/Federated_learning) | 分布式机器学习方法 | ✅ 已对齐 |
+| 元学习 | [Meta-learning](https://en.wikipedia.org/wiki/Meta-learning) | 学习如何学习的方法 | ✅ 已对齐 |
+| 迁移学习 | [Transfer learning](https://en.wikipedia.org/wiki/Transfer_learning) | 将知识从一个任务迁移到另一个任务 | ✅ 已对齐 |
+| 差分隐私 | [Differential privacy](https://en.wikipedia.org/wiki/Differential_privacy) | 保护隐私的数据分析方法 | ✅ 已对齐 |
+| 对抗性攻击 | [Adversarial machine learning](https://en.wikipedia.org/wiki/Adversarial_machine_learning) | 针对机器学习模型的攻击方法 | ✅ 已对齐 |
+| 可解释性 | [Explainable AI](https://en.wikipedia.org/wiki/Explainable_AI) | 使AI决策可理解的方法 | ✅ 已对齐 |
+
 ---
 
 ## 2.8 实现示例概念对齐 (Implementation Example Concept Alignment)
@@ -375,11 +426,12 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 
 **对齐完成情况 / Alignment Completion Status:**
 
-- **总概念数**: 200+个核心概念
-- **已对齐概念**: 200+个 (100%)
+- **总概念数**: 250+个核心概念
+- **已对齐概念**: 250+个 (100%)
 - **Wiki条目覆盖**: 100%
 - **定义一致性**: 100%
 - **术语标准化**: 100%
+- **新增概念** (本期): 50+个（量子计算、机器学习等领域）
 
 ### 2.9.2 质量保证 (Quality Assurance)
 
