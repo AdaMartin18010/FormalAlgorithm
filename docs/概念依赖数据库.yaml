@@ -1,0 +1,219 @@
+# 概念依赖数据库
+# 创建日期: 2025-02-02
+# 用途: 存储概念间的依赖关系，支持学习路径推荐和知识图谱构建
+
+concepts:
+  # ========== 类型理论模块 ==========
+  - id: curry_howard_isomorphism
+    name: Curry-Howard同构
+    name_en: Curry-Howard Isomorphism
+    type: definition
+    location: 05-类型理论/05-依赖类型系统与数理逻辑.md
+    section: "§5.2.1"
+    prerequisites:
+      - concept_id: simple_type_theory
+        strength: strong
+        relation: depends_on
+      - concept_id: first_order_logic
+        strength: strong
+        relation: depends_on
+      - concept_id: constructive_proof
+        strength: medium
+        relation: depends_on
+    next_steps:
+      - concept_id: homotopy_type_theory
+        strength: medium
+        relation: specializes
+      - concept_id: proof_assistant
+        strength: weak
+        relation: applies_to
+    related:
+      - concept_id: dependent_product_type
+        relation: equivalent_to
+      - concept_id: dependent_sum_type
+        relation: equivalent_to
+
+  - id: simple_type_theory
+    name: 简单类型论
+    name_en: Simple Type Theory
+    type: definition
+    location: 05-类型理论/01-简单类型论.md
+    section: "§3.2"
+    prerequisites: []
+    next_steps:
+      - concept_id: dependent_type_theory
+        strength: strong
+        relation: depends_on
+    related: []
+
+  - id: dependent_type_theory
+    name: 依赖类型论
+    name_en: Dependent Type Theory
+    type: definition
+    location: 05-类型理论/02-依赖类型论.md
+    section: "§2.1-§2.3"
+    prerequisites:
+      - concept_id: simple_type_theory
+        strength: strong
+        relation: depends_on
+    next_steps:
+      - concept_id: curry_howard_isomorphism
+        strength: strong
+        relation: depends_on
+      - concept_id: homotopy_type_theory
+        strength: medium
+        relation: specializes
+    related: []
+
+  - id: dependent_product_type
+    name: 依赖积类型
+    name_en: Dependent Product Type
+    type: definition
+    location: 05-类型理论/02-依赖类型论.md
+    section: "§2.2.1"
+    prerequisites:
+      - concept_id: dependent_type_theory
+        strength: strong
+        relation: depends_on
+    next_steps:
+      - concept_id: curry_howard_isomorphism
+        strength: strong
+        relation: equivalent_to
+    related:
+      - concept_id: universal_quantifier
+        relation: equivalent_to
+
+  - id: dependent_sum_type
+    name: 依赖和类型
+    name_en: Dependent Sum Type
+    type: definition
+    location: 05-类型理论/02-依赖类型论.md
+    section: "§2.2.3"
+    prerequisites:
+      - concept_id: dependent_type_theory
+        strength: strong
+        relation: depends_on
+    next_steps:
+      - concept_id: curry_howard_isomorphism
+        strength: strong
+        relation: equivalent_to
+    related:
+      - concept_id: existential_quantifier
+        relation: equivalent_to
+
+  - id: homotopy_type_theory
+    name: 同伦类型论
+    name_en: Homotopy Type Theory
+    type: definition
+    location: 05-类型理论/03-同伦类型论.md
+    section: "§2-§4"
+    prerequisites:
+      - concept_id: dependent_type_theory
+        strength: strong
+        relation: depends_on
+      - concept_id: curry_howard_isomorphism
+        strength: medium
+        relation: depends_on
+    next_steps:
+      - concept_id: univalent_foundations
+        strength: medium
+        relation: specializes
+    related: []
+
+  - id: first_order_logic
+    name: 一阶逻辑
+    name_en: First-Order Logic
+    type: definition
+    location: 06-逻辑系统/02-一阶逻辑.md
+    section: "§2.1-§2.2"
+    prerequisites: []
+    next_steps:
+      - concept_id: curry_howard_isomorphism
+        strength: strong
+        relation: depends_on
+    related: []
+
+  - id: constructive_proof
+    name: 构造性证明
+    name_en: Constructive Proof
+    type: definition
+    location: 03-形式化证明/03-构造性证明.md
+    section: "§3.1-§3.2"
+    prerequisites: []
+    next_steps:
+      - concept_id: curry_howard_isomorphism
+        strength: medium
+        relation: depends_on
+    related: []
+
+  - id: universal_quantifier
+    name: 全称量词
+    name_en: Universal Quantifier
+    type: definition
+    location: 06-逻辑系统/02-一阶逻辑.md
+    section: "§2.1"
+    prerequisites:
+      - concept_id: first_order_logic
+        strength: strong
+        relation: depends_on
+    next_steps:
+      - concept_id: dependent_product_type
+        strength: strong
+        relation: equivalent_to
+    related: []
+
+  - id: existential_quantifier
+    name: 存在量词
+    name_en: Existential Quantifier
+    type: definition
+    location: 06-逻辑系统/02-一阶逻辑.md
+    section: "§2.2"
+    prerequisites:
+      - concept_id: first_order_logic
+        strength: strong
+        relation: depends_on
+    next_steps:
+      - concept_id: dependent_sum_type
+        strength: strong
+        relation: equivalent_to
+    related: []
+
+  - id: proof_assistant
+    name: 证明助手
+    name_en: Proof Assistant
+    type: application
+    location: 10-高级主题/03-证明助手的实现.md
+    section: "§3.1-§3.3"
+    prerequisites:
+      - concept_id: curry_howard_isomorphism
+        strength: medium
+        relation: depends_on
+    next_steps: []
+    related: []
+
+  - id: univalent_foundations
+    name: 单值基础
+    name_en: Univalent Foundations
+    type: definition
+    location: 05-类型理论/03-同伦类型论.md
+    section: "§3"
+    prerequisites:
+      - concept_id: homotopy_type_theory
+        strength: strong
+        relation: depends_on
+    next_steps: []
+    related: []
+
+# 关系类型说明
+relation_types:
+  depends_on: "依赖关系（前置知识）"
+  equivalent_to: "等价关系（不同表述）"
+  specializes: "特化关系（一般到特殊）"
+  applies_to: "应用关系（理论到应用）"
+  instance_of: "实例关系（概念到实例）"
+
+# 依赖强度说明
+strength_levels:
+  strong: "强依赖（必须理解）"
+  medium: "中等依赖（推荐了解）"
+  weak: "弱依赖（可选扩展）"
