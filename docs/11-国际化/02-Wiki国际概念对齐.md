@@ -50,6 +50,92 @@ owner: 国际化工作组
   - [知识体系位置 / Knowledge System Position](#知识体系位置--knowledge-system-position)
   - [VIEW文件夹相关文档 / VIEW Folder Related Documents](#view文件夹相关文档--view-folder-related-documents)
 
+### 内容补充与思维表征 / Content Supplement and Thinking Representation（轻量）
+
+> 本节按 [内容补充与思维表征全面计划方案](../内容补充与思维表征全面计划方案.md) **只补充、不删除**；清单/对齐类文档做轻量补充。标准见 [内容补充标准](../内容补充标准-概念定义属性关系解释论证形式证明.md)、[思维表征模板集](../思维表征模板集.md)。
+
+#### 解释与直观 / Explanation and Intuition
+
+Wiki 国际概念对齐将对齐原则与数学基础、计算机科学、形式化方法、类型理论、算法理论、高级主题、实现示例概念对齐结合。与 11-01 中英术语对照表、11-03 多语言支持衔接；§2.1–§2.9 形成完整表征。
+
+#### 概念属性表 / Concept Attribute Table
+
+| 属性名 | 类型/范围 | 含义 | 备注 |
+|--------|-----------|------|------|
+| 对齐原则 | 基本概念 | §2.1 | 与 11-01、11-03 对照 |
+| 数学基础/计算机科学/…/实现示例对齐 | 对齐小节 | 准确性、完整性、一致性、可追溯性 | §2.2–§2.8 |
+| 各领域对齐 | 对比 | §2.1–§2.8 | 多维矩阵 |
+
+#### 概念关系 / Concept Relations
+
+| 源概念 | 目标概念 | 关系类型 | 说明 |
+|--------|----------|----------|------|
+| Wiki 国际概念对齐 | 11-01、11-03 | depends_on | 术语对照表、多语言支持 |
+| Wiki 国际概念对齐 | 01–12 各模块 | applies_to | 国际化实践 |
+
+#### 概念依赖图 / Concept Dependency Graph
+
+```mermaid
+graph LR
+  P[对齐原则 §2.1]
+  A[数学/CS/形式化/…/实现对齐 §2.2–§2.8]
+  S[对齐总结 §2.9]
+  P --> A
+  A --> S
+  11_01[11-01]
+  P --> 11_01
+```
+
+#### 论证与证明衔接 / Argumentation and Proof Link
+
+对齐原则与 Wiki 标准对齐见 §2.1；与 11-01 论证衔接；各领域对齐正确性见 §2.2–§2.8。
+
+#### 思维导图：本章概念结构 / Mind Map
+
+```mermaid
+graph TD
+  Wiki[Wiki 国际概念对齐]
+  Wiki --> P[对齐原则]
+  Wiki --> Math[数学/CS/形式化/类型/算法/高级/实现对齐]
+  Wiki --> S[总结]
+  Math --> Acc[准确性/完整性/一致性]
+```
+
+#### 多维矩阵：各领域对齐对比 / Multi-Dimensional Comparison
+
+| 概念/领域 | 准确性 | 完整性 | 一致性 | 可追溯性 | 备注 |
+|-----------|--------|--------|--------|----------|------|
+| 各领域对齐 §2.1–§2.8 | §2.1–§2.8 | §2.1–§2.8 | §2.1–§2.8 | §2.1–§2.8 | — |
+
+#### 决策树：领域到对齐小节选择 / Decision Tree
+
+```mermaid
+flowchart TD
+  Start([领域])
+  Start --> Dom{数学/CS/形式化/类型/算法/高级/实现?}
+  Dom --> Sect[对应对齐小节 §2.2–§2.8]
+  Sect --> Impl[§2.9 对齐总结]
+```
+
+#### 公理定理推理证明决策树 / Axiom-Theorem-Proof Tree
+
+```mermaid
+graph LR
+  Ax[对齐公设 §2.1]
+  List[各领域对齐正确性 §2.2–§2.8]
+  Ax --> List
+```
+
+#### 应用决策建模树 / Application Decision Modeling Tree
+
+```mermaid
+flowchart TD
+  Need([应用需求])
+  Need --> App{撰写/翻译/对标?}
+  App --> Meth[对齐原则与对应领域对齐 §2.9 对齐总结]
+  Meth --> Impl[§2.9]
+```
+
 ---
 
 ## 2.1 对齐原则 (Alignment Principles)

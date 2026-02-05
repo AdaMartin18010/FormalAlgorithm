@@ -204,6 +204,150 @@ concepts:
     next_steps: []
     related: []
 
+  # ========== 形式化证明模块 ==========
+  - id: proof_system
+    name: 证明系统
+    name_en: Proof System
+    type: definition
+    location: 03-形式化证明/01-证明系统.md
+    section: "§1.1, §2-§4"
+    prerequisites:
+      - concept_id: formal_system
+        strength: strong
+        relation: depends_on
+    next_steps:
+      - concept_id: induction
+        strength: medium
+        relation: applies_to
+      - concept_id: constructive_proof
+        strength: medium
+        relation: applies_to
+      - concept_id: curry_howard_isomorphism
+        strength: medium
+        relation: applies_to
+      - concept_id: formal_verification
+        strength: weak
+        relation: applies_to
+    related: []
+
+  - id: formal_system
+    name: 形式化系统
+    name_en: Formal System
+    type: definition
+    location: 01-基础理论/01-形式化定义.md
+    section: "§1.1"
+    prerequisites: []
+    next_steps:
+      - concept_id: proof_system
+        strength: strong
+        relation: depends_on
+    related: []
+
+  - id: induction
+    name: 归纳法
+    name_en: Mathematical Induction
+    type: definition
+    location: 03-形式化证明/02-归纳法.md
+    section: "§1-§5"
+    prerequisites:
+      - concept_id: proof_system
+        strength: medium
+        relation: depends_on
+    next_steps:
+      - concept_id: constructive_proof
+        strength: medium
+        relation: depends_on
+      - concept_id: curry_howard_isomorphism
+        strength: weak
+        relation: applies_to
+    related: []
+
+  - id: proof_by_contradiction
+    name: 反证法
+    name_en: Proof by Contradiction
+    type: definition
+    location: 03-形式化证明/04-反证法.md
+    section: "§2-§3"
+    prerequisites:
+      - concept_id: proof_system
+        strength: medium
+        relation: depends_on
+    next_steps: []
+    related:
+      - concept_id: constructive_proof
+        relation: equivalent_to
+      - concept_id: proof_system
+        relation: applies_to
+
+  - id: formal_verification
+    name: 形式化验证
+    name_en: Formal Verification
+    type: application
+    location: 08-实现示例/04-形式化验证.md
+    section: "§4.1-§4.2"
+    prerequisites:
+      - concept_id: proof_system
+        strength: strong
+        relation: depends_on
+      - concept_id: curry_howard_isomorphism
+        strength: weak
+        relation: depends_on
+    next_steps: []
+    related: []
+
+  # ========== 大语言模型与高级主题 ==========
+  - id: llm_algorithm_theory
+    name: 大语言模型算法理论
+    name_en: LLM Algorithm Theory
+    type: definition
+    location: 10-高级主题/38-大语言模型算法理论.md
+    section: "§1-§5"
+    prerequisites:
+      - concept_id: formal_system
+        strength: weak
+        relation: depends_on
+      - concept_id: proof_system
+        strength: weak
+        relation: depends_on
+    next_steps: []
+    related: []
+
+  - id: federated_learning_privacy
+    name: 联邦学习与隐私保护
+    name_en: Federated Learning and Privacy Protection
+    type: definition
+    location: 10-高级主题/27-算法联邦学习与隐私保护理论.md
+    section: "概述、术语与定义"
+    prerequisites: []
+    next_steps: []
+    related:
+      - concept_id: llm_algorithm_theory
+        relation: applies_to
+
+  - id: algorithmic_interpretability
+    name: 算法可解释性与透明度
+    name_en: Algorithm Interpretability and Transparency
+    type: definition
+    location: 10-高级主题/25-算法可解释性与透明度理论.md
+    section: "概述"
+    prerequisites: []
+    next_steps: []
+    related:
+      - concept_id: llm_algorithm_theory
+        relation: applies_to
+
+  - id: adversarial_robustness
+    name: 算法鲁棒性与对抗性防御
+    name_en: Algorithm Robustness and Adversarial Defense
+    type: definition
+    location: 10-高级主题/26-算法鲁棒性与对抗性防御理论.md
+    section: "概述"
+    prerequisites: []
+    next_steps: []
+    related:
+      - concept_id: algorithmic_interpretability
+        relation: applies_to
+
 # 关系类型说明
 relation_types:
   depends_on: "依赖关系（前置知识）"

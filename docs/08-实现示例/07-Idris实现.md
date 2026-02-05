@@ -7,6 +7,7 @@ owner: 实现示例工作组
 ---
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
+> **项目导航与对标**：[项目扩展与持续推进任务编排](../项目扩展与持续推进任务编排.md)、[国际课程对标表](../国际课程对标表.md)
 
 ## 8.7 Idris实现 / Idris Implementation
 
@@ -73,6 +74,97 @@ data Vect : Nat -> Type -> Type where
 data List : Type -> Type where
   Nil  : List a
   (::) : a -> List a -> List a
+```
+
+### 内容补充与思维表征 / Content Supplement and Thinking Representation
+
+> 本节按 [内容补充与思维表征全面计划方案](../内容补充与思维表征全面计划方案.md) **只补充、不删除**。标准见 [内容补充标准](../内容补充标准-概念定义属性关系解释论证形式证明.md)、[思维表征模板集](../思维表征模板集.md)。
+
+#### 解释与直观 / Explanation and Intuition
+
+Idris 实现将基本概念(Idris 语言特性、形式化算法实现)与递归函数、定理证明、实现示例结合。与 05-类型理论、08-02 Haskell、08-05 Agda 衔接；§基本概念、§各节形成完整表征。
+
+#### 概念属性表 / Concept Attribute Table
+
+| 属性名 | 类型/范围 | 含义 | 备注 |
+|--------|-----------|------|------|
+| 基本概念(Idris 语言特性、形式化定义) | 基本概念 | §基本概念 | 与 05、08-02、08-05 对照 |
+| 递归函数实现、定理证明、实现示例 | 模块/示例 | 表达力、可验证性、适用场景 | §各节 |
+| 依赖类型/函数式/效果系统 | 对比 | §各节 | 多维矩阵 |
+
+#### 概念关系 / Concept Relations
+
+| 源概念 | 目标概念 | 关系类型 | 说明 |
+|--------|----------|----------|------|
+| Idris 实现 | 05、08-02、08-05 | depends_on | 类型理论、Haskell、Agda |
+| Idris 实现 | 08 实现示例 | relates_to | 实现实践 |
+
+#### 概念依赖图 / Concept Dependency Graph
+
+```mermaid
+graph LR
+  B[基本概念 §基本概念]
+  R[递归函数实现]
+  P[定理证明]
+  I[实现示例]
+  B --> R
+  R --> P
+  P --> I
+  05[05]
+  B --> 05
+```
+
+#### 论证与证明衔接 / Argumentation and Proof Link
+
+依赖类型正确性见 §基本概念；与 05 类型理论论证衔接；递归函数与定理证明正确性见 §各节。
+
+#### 思维导图：本章概念结构 / Mind Map
+
+```mermaid
+graph TD
+  Idris[Idris 实现]
+  Idris --> B[基本概念]
+  Idris --> R[递归函数]
+  Idris --> P[定理证明]
+  Idris --> I[实现]
+  R --> Express[表达力]
+```
+
+#### 多维矩阵：实现模块对比 / Multi-Dimensional Comparison
+
+| 概念/模块 | 表达力 | 可验证性 | 适用场景 | 备注 |
+|-----------|--------|----------|----------|------|
+| 依赖类型/函数式/效果系统 | §各节 | §各节 | §各节 | — |
+
+#### 决策树：目标到模块选择 / Decision Tree
+
+```mermaid
+flowchart TD
+  Start([目标])
+  Start --> Goal{目标?}
+  Goal -->|依赖类型/定理证明/代码生成| Mod[递归函数或定理证明 §各节]
+  Mod --> Impl[§实现示例]
+```
+
+#### 公理定理推理证明决策树 / Axiom-Theorem-Proof Tree
+
+```mermaid
+graph LR
+  Ax[Idris 公设 §基本概念]
+  R[递归函数正确性]
+  P[定理证明正确性]
+  Ax --> R
+  R --> P
+```
+
+#### 应用决策建模树 / Application Decision Modeling Tree
+
+```mermaid
+flowchart TD
+  Need([应用需求])
+  Need --> App{需求?}
+  App -->|依赖类型/多目标| Meth[Idris 或 Haskell 或 Agda §实现示例]
+  Meth --> Impl[§实现示例]
 ```
 
 ## 递归函数实现

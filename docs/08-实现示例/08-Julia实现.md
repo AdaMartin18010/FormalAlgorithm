@@ -7,6 +7,7 @@ owner: 实现示例工作组
 ---
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
+> **项目导航与对标**：[项目扩展与持续推进任务编排](../项目扩展与持续推进任务编排.md)、[国际课程对标表](../国际课程对标表.md)
 
 ## 8.8 Julia实现 / Julia Implementation
 
@@ -56,6 +57,17 @@ owner: 实现示例工作组
   - [1.2 形式化定义](#12-形式化定义)
   - [1.3 类型系统理论](#13-类型系统理论)
   - [形式化算法实现](#形式化算法实现)
+  - [内容补充与思维表征 / Content Supplement and Thinking Representation](#内容补充与思维表征--content-supplement-and-thinking-representation)
+    - [解释与直观 / Explanation and Intuition](#解释与直观--explanation-and-intuition)
+    - [概念属性表 / Concept Attribute Table](#概念属性表--concept-attribute-table)
+    - [概念关系 / Concept Relations](#概念关系--concept-relations)
+    - [概念依赖图 / Concept Dependency Graph](#概念依赖图--concept-dependency-graph)
+    - [论证与证明衔接 / Argumentation and Proof Link](#论证与证明衔接--argumentation-and-proof-link)
+    - [思维导图：本章概念结构 / Mind Map](#思维导图本章概念结构--mind-map)
+    - [多维矩阵：实现模块对比 / Multi-Dimensional Comparison](#多维矩阵实现模块对比--multi-dimensional-comparison)
+    - [决策树：目标到模块选择 / Decision Tree](#决策树目标到模块选择--decision-tree)
+    - [公理定理推理证明决策树 / Axiom-Theorem-Proof Tree](#公理定理推理证明决策树--axiom-theorem-proof-tree)
+    - [应用决策建模树 / Application Decision Modeling Tree](#应用决策建模树--application-decision-modeling-tree)
 - [2. 递归函数实现](#2-递归函数实现)
   - [2.1 原始递归函数](#21-原始递归函数)
   - [2.2 一般递归函数](#22-一般递归函数)
@@ -164,6 +176,95 @@ struct Matrix{T}
     rows::Int
     cols::Int
 end
+```
+
+### 内容补充与思维表征 / Content Supplement and Thinking Representation
+
+> 本节按 [内容补充与思维表征全面计划方案](../内容补充与思维表征全面计划方案.md) **只补充、不删除**。标准见 [内容补充标准](../内容补充标准-概念定义属性关系解释论证形式证明.md)、[思维表征模板集](../思维表征模板集.md)。
+
+#### 解释与直观 / Explanation and Intuition
+
+Julia 实现将基本概念(Julia 语言特性、形式化定义、类型系统理论)与递归函数、实现示例结合。与 02-递归理论、07-计算模型、08-01 Rust 衔接；§1–§2 形成完整表征。
+
+#### 概念属性表 / Concept Attribute Table
+
+| 属性名 | 类型/范围 | 含义 | 备注 |
+|--------|-----------|------|------|
+| 基本概念(Julia 特性、形式化定义、类型系统理论) | 基本概念 | §1 | 与 02、07、08-01 对照 |
+| 递归函数实现、实现示例 | 模块/示例 | 表达力、性能、适用场景 | §2 等 |
+| 类型系统/多重分派/递归函数 | 对比 | §1–§2 | 多维矩阵 |
+
+#### 概念关系 / Concept Relations
+
+| 源概念 | 目标概念 | 关系类型 | 说明 |
+|--------|----------|----------|------|
+| Julia 实现 | 02、07、08-01 | depends_on | 递归理论、计算模型、Rust |
+| Julia 实现 | 08 实现示例 | relates_to | 实现实践 |
+
+#### 概念依赖图 / Concept Dependency Graph
+
+```mermaid
+graph LR
+  B[基本概念 §1]
+  R[递归函数实现 §2]
+  I[实现示例]
+  B --> R
+  R --> I
+  02[02]
+  B --> 02
+```
+
+#### 论证与证明衔接 / Argumentation and Proof Link
+
+多重分派最优性见 §1.2；类型系统代数性质见 §1.3；与 02 递归理论论证衔接；递归函数正确性见 §2。
+
+#### 思维导图：本章概念结构 / Mind Map
+
+```mermaid
+graph TD
+  Julia[Julia 实现]
+  Julia --> B[基本概念]
+  Julia --> R[递归函数]
+  Julia --> I[实现]
+  B --> T[类型系统]
+  B --> Dispatch[多重分派]
+```
+
+#### 多维矩阵：实现模块对比 / Multi-Dimensional Comparison
+
+| 概念/模块 | 表达力 | 性能 | 适用场景 | 备注 |
+|-----------|--------|------|----------|------|
+| 类型系统/多重分派/递归函数 | §1–§2 | §1–§2 | §1–§2 | — |
+
+#### 决策树：目标到模块选择 / Decision Tree
+
+```mermaid
+flowchart TD
+  Start([目标])
+  Start --> Goal{目标?}
+  Goal -->|科学计算/数值/并行| Mod[类型系统或递归函数 §1–§2]
+  Mod --> Impl[§实现示例]
+```
+
+#### 公理定理推理证明决策树 / Axiom-Theorem-Proof Tree
+
+```mermaid
+graph LR
+  Ax[Julia 公设 §1]
+  T[类型系统正确性 §1.3]
+  R[递归函数正确性 §2]
+  Ax --> T
+  T --> R
+```
+
+#### 应用决策建模树 / Application Decision Modeling Tree
+
+```mermaid
+flowchart TD
+  Need([应用需求])
+  Need --> App{需求?}
+  App -->|科学计算/性能| Meth[Julia 实现模块或它语言 §实现示例]
+  Meth --> Impl[§实现示例]
 ```
 
 ## 2. 递归函数实现
