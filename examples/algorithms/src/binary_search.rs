@@ -188,8 +188,10 @@ pub fn upper_bound<T: Ord>(arr: &[T], target: T) -> usize {
 /// assert_eq!(equal_range(&arr, 2), (1, 4));  // 2出现在索引1,2,3
 /// assert_eq!(equal_range(&arr, 6), (7, 7));  // 6不存在，应插入到位置7
 /// ```
-pub fn equal_range<T: Ord>(arr: &[T], target: T) -> (usize, usize) {
-    (lower_bound(arr, target), upper_bound(arr, target))
+pub fn equal_range<T: Ord + Clone>(arr: &[T], target: T) -> (usize, usize) {
+    let lower = lower_bound(arr, target.clone());
+    let upper = upper_bound(arr, target);
+    (lower, upper)
 }
 
 /// 查找目标值出现的次数
@@ -203,7 +205,7 @@ pub fn equal_range<T: Ord>(arr: &[T], target: T) -> (usize, usize) {
 /// assert_eq!(count(&arr, 2), 3);
 /// assert_eq!(count(&arr, 6), 0);
 /// ```
-pub fn count<T: Ord>(arr: &[T], target: T) -> usize {
+pub fn count<T: Ord + Clone>(arr: &[T], target: T) -> usize {
     let (start, end) = equal_range(arr, target);
     end - start
 }

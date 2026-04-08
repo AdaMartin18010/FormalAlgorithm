@@ -2,12 +2,11 @@
 //!
 //! BFS和DFS是图遍历的基础算法，广泛应用于路径搜索、连通性检测等场景。
 
-use crate::{AlgorithmError, SearchResult};
 use std::collections::{HashMap, HashSet, VecDeque};
 use std::hash::Hash;
 
 /// 图遍历结果
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone)]
 pub struct GraphTraversalResult<V> {
     /// 遍历顺序
     pub order: Vec<V>,
@@ -17,7 +16,10 @@ pub struct GraphTraversalResult<V> {
     pub parents: HashMap<V, V>,
 }
 
-impl<V: Eq + Hash + Clone> GraphTraversalResult<V> {
+impl<V> GraphTraversalResult<V>
+where
+    V: Eq + Hash + Clone,
+{
     /// 创建新的结果
     pub fn new() -> Self {
         GraphTraversalResult {

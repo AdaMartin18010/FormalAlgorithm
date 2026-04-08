@@ -1,0 +1,121 @@
+name: Rust CI
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'examples/algorithms/**'
+      - '.github/workflows/rust.yml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'examples/algorithms/**'
+
+env:
+  CARGO_TERM_COLOR: always
+  working-directory: examples/algorithms
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        rust: [stable, beta]
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@master
+      with:
+        toolchain: ${{ matrix.rust }}
+        components: rustfmt, clippy
+    
+    - name: Cache cargo dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Build
+      working-directory: ${{ env.working-directory }}
+      run: cargo build --verbose
+    
+    - name: Run tests
+      working-directory: ${{ env.working-directory }}
+      run: cargo test --verbose
+    
+    - name: Run doc tests
+      working-directory: ${{ env.working-directory }}
+      run: cargo test --doc --verbose
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        components: rustfmt, clippy
+    
+    - name: Check formatting
+      working-directory: ${{ env.working-directory }}
+      run: cargo fmt -- --check
+    
+    - name: Run clippy
+      working-directory: ${{ env.working-directory }}
+      run: cargo clippy --all-targets --all-features -- -D warnings
+    
+    - name: Check documentation
+      working-directory: ${{ env.working-directory }}
+      run: cargo doc --no-deps
+      env:
+        RUSTDOCFLAGS: -D warnings
+
+  coverage:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Install tarpaulin
+      run: cargo install cargo-tarpaulin
+    
+    - name: Generate coverage
+      working-directory: ${{ env.working-directory }}
+      run: cargo tarpaulin --out Xml
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        files: ${{ env.working-directory }}/cobertura.xml
+        fail_ci_if_error: true
+
+  benchmark:
+    name: Benchmark
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Run benchmarks
+      working-directory: ${{ env.working-directory }}
+      run: cargo bench
+    
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v3
+      with:
+        name: benchmark-results
+        path: ${{ env.working-directory }}/target/criterion/

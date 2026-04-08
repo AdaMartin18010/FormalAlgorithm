@@ -2,7 +2,6 @@
 //!
 //! 活动选择问题是经典的贪心算法应用，目标是在有限资源（时间）内选择尽可能多的不冲突活动。
 
-use crate::{AlgorithmError, SearchResult};
 
 /// 活动结构
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -249,7 +248,7 @@ pub fn weighted_activity_selection(activities: &[(usize, usize, i32)]) -> (i32, 
     let mut choice = vec![false; n];
 
     for i in 1..=n {
-        let (orig_idx, start, end, weight) = indexed[i - 1];
+        let (_orig_idx, start, _end, weight) = indexed[i - 1];
 
         // 找到最后不冲突的活动
         let mut last_compatible = 0;
@@ -279,11 +278,16 @@ pub fn weighted_activity_selection(activities: &[(usize, usize, i32)]) -> (i32, 
             selected.push(orig_idx);
 
             // 跳到上一个兼容的活动
+            let mut found = false;
             for j in (0..i - 1).rev() {
                 if indexed[j].2 <= start {
                     i = j + 1;
+                    found = true;
                     break;
                 }
+            }
+            if !found {
+                break;
             }
         } else {
             i -= 1;
@@ -370,7 +374,7 @@ pub fn validate_selection(activities: &[Activity], selected_indices: &[usize]) -
 }
 
 /// 打印活动选择结果（用于调试）
-pub fn print_selection(activities: &[Activity], result: &ActivitySelectionResult) {
+pub fn print_selection(_activities: &[Activity], result: &ActivitySelectionResult) {
     println!("选中了 {} 个活动:", result.count);
     for (i, activity) in result.selected_activities.iter().enumerate() {
         let name = activity.name.unwrap_or("Unnamed");

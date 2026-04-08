@@ -1,0 +1,726 @@
+# 算法规范与模型设计知识体系 - 依赖关系定义
+# Concept Dependencies for Formal Algorithm Knowledge Graph
+# version: 1.0
+# last_updated: 2025-04-08
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-04-08"
+  total_dependencies: 85
+  difficulty_levels:
+    - 基础 (Foundational)
+    - 中级 (Intermediate)  
+    - 高级 (Advanced)
+    - 专家 (Expert)
+
+# 学习路径依赖 - 定义学习某个概念前必须掌握的前置知识
+dependencies:
+  # ========== 基础理论学习路径 ==========
+  - concept: "集合论基础"
+    concept_id: "set_theory"
+    requires: []
+    difficulty: "基础"
+    estimated_hours: 10
+    
+  - concept: "函数论基础"
+    concept_id: "function_theory"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 8
+    
+  - concept: "数论基础"
+    concept_id: "number_theory"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 12
+    
+  - concept: "代数结构基础"
+    concept_id: "algebraic_structure"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "范畴论基础"
+    concept_id: "category_theory"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+      - concept: "代数结构基础"
+        concept_id: "algebraic_structure"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 20
+    
+  - concept: "测度论基础"
+    concept_id: "measure_theory"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 18
+    
+  - concept: "概率与统计基础"
+    concept_id: "probability_theory"
+    requires:
+      - concept: "测度论基础"
+        concept_id: "measure_theory"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "信息论基础"
+    concept_id: "information_theory"
+    requires:
+      - concept: "概率与统计基础"
+        concept_id: "probability_theory"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 12
+    
+  # ========== 计算模型学习路径 ==========
+  - concept: "图灵机"
+    concept_id: "turing_machine"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 15
+    
+  - concept: "λ演算"
+    concept_id: "lambda_calculus"
+    requires:
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 12
+    
+  - concept: "自动机理论"
+    concept_id: "automata_theory"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 10
+    
+  - concept: "组合子逻辑"
+    concept_id: "combinatory_logic"
+    requires:
+      - concept: "λ演算"
+        concept_id: "lambda_calculus"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "量子计算模型"
+    concept_id: "quantum_computing_model"
+    requires:
+      - concept: "图灵机"
+        concept_id: "turing_machine"
+        strength: "中等依赖"
+      - concept: "线性代数"
+        concept_id: "linear_algebra"
+        strength: "强依赖"
+      - concept: "概率与统计基础"
+        concept_id: "probability_theory"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 25
+    
+  - concept: "神经网络计算模型"
+    concept_id: "neural_network_model"
+    requires:
+      - concept: "自动机理论"
+        concept_id: "automata_theory"
+        strength: "中等依赖"
+      - concept: "线性代数"
+        concept_id: "linear_algebra"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 18
+    
+  - concept: "计算模型等价性"
+    concept_id: "computational_equivalence"
+    requires:
+      - concept: "图灵机"
+        concept_id: "turing_machine"
+        strength: "强依赖"
+      - concept: "λ演算"
+        concept_id: "lambda_calculus"
+        strength: "强依赖"
+      - concept: "递归函数"
+        concept_id: "recursive_function"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 15
+    
+  # ========== 递归理论学习路径 ==========
+  - concept: "递归函数定义"
+    concept_id: "recursive_function"
+    requires:
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 10
+    
+  - concept: "原始递归函数"
+    concept_id: "primitive_recursive_function"
+    requires:
+      - concept: "递归函数定义"
+        concept_id: "recursive_function"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 8
+    
+  - concept: "一般递归函数"
+    concept_id: "general_recursive_function"
+    requires:
+      - concept: "原始递归函数"
+        concept_id: "primitive_recursive_function"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "递归可枚举性"
+    concept_id: "recursively_enumerable"
+    requires:
+      - concept: "递归函数定义"
+        concept_id: "recursive_function"
+        strength: "强依赖"
+      - concept: "图灵机"
+        concept_id: "turing_machine"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 12
+    
+  - concept: "递归不可解性"
+    concept_id: "undecidability"
+    requires:
+      - concept: "递归函数定义"
+        concept_id: "recursive_function"
+        strength: "强依赖"
+      - concept: "图灵机"
+        concept_id: "turing_machine"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 12
+    
+  # ========== 逻辑系统学习路径 ==========
+  - concept: "命题逻辑"
+    concept_id: "propositional_logic"
+    requires: []
+    difficulty: "基础"
+    estimated_hours: 8
+    
+  - concept: "一阶逻辑"
+    concept_id: "first_order_logic"
+    requires:
+      - concept: "命题逻辑"
+        concept_id: "propositional_logic"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 12
+    
+  - concept: "直觉逻辑"
+    concept_id: "intuitionistic_logic"
+    requires:
+      - concept: "命题逻辑"
+        concept_id: "propositional_logic"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "模态逻辑"
+    concept_id: "modal_logic"
+    requires:
+      - concept: "命题逻辑"
+        concept_id: "propositional_logic"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "时序逻辑"
+    concept_id: "temporal_logic"
+    requires:
+      - concept: "模态逻辑"
+        concept_id: "modal_logic"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 12
+    
+  - concept: "线性逻辑"
+    concept_id: "linear_logic"
+    requires:
+      - concept: "命题逻辑"
+        concept_id: "propositional_logic"
+        strength: "强依赖"
+      - concept: "类型系统"
+        concept_id: "type_system"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 15
+    
+  - concept: "高阶逻辑"
+    concept_id: "higher_order_logic"
+    requires:
+      - concept: "一阶逻辑"
+        concept_id: "first_order_logic"
+        strength: "强依赖"
+      - concept: "类型系统"
+        concept_id: "type_system"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 15
+    
+  # ========== 类型理论学习路径 ==========
+  - concept: "简单类型论"
+    concept_id: "simple_type_theory"
+    requires:
+      - concept: "λ演算"
+        concept_id: "lambda_calculus"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 12
+    
+  - concept: "依赖类型论"
+    concept_id: "dependent_type_theory"
+    requires:
+      - concept: "简单类型论"
+        concept_id: "simple_type_theory"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 18
+    
+  - concept: "同伦类型论"
+    concept_id: "homotopy_type_theory"
+    requires:
+      - concept: "依赖类型论"
+        concept_id: "dependent_type_theory"
+        strength: "强依赖"
+      - concept: "范畴论基础"
+        concept_id: "category_theory"
+        strength: "中等依赖"
+    difficulty: "专家"
+    estimated_hours: 30
+    
+  - concept: "类型系统"
+    concept_id: "type_system"
+    requires:
+      - concept: "简单类型论"
+        concept_id: "simple_type_theory"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "高阶类型系统"
+    concept_id: "higher_order_type_system"
+    requires:
+      - concept: "类型系统"
+        concept_id: "type_system"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 20
+    
+  # ========== 形式化证明学习路径 ==========
+  - concept: "证明系统"
+    concept_id: "proof_system"
+    requires:
+      - concept: "命题逻辑"
+        concept_id: "propositional_logic"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 10
+    
+  - concept: "归纳法"
+    concept_id: "mathematical_induction"
+    requires:
+      - concept: "数论基础"
+        concept_id: "number_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 8
+    
+  - concept: "构造性证明"
+    concept_id: "constructive_proof"
+    requires:
+      - concept: "证明系统"
+        concept_id: "proof_system"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "反证法"
+    concept_id: "proof_by_contradiction"
+    requires:
+      - concept: "命题逻辑"
+        concept_id: "propositional_logic"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 6
+    
+  # ========== 算法复杂度学习路径 ==========
+  - concept: "时间复杂度"
+    concept_id: "time_complexity"
+    requires:
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 8
+    
+  - concept: "空间复杂度"
+    concept_id: "space_complexity"
+    requires:
+      - concept: "函数论基础"
+        concept_id: "function_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 6
+    
+  - concept: "渐进分析"
+    concept_id: "asymptotic_analysis"
+    requires:
+      - concept: "时间复杂度"
+        concept_id: "time_complexity"
+        strength: "强依赖"
+      - concept: "空间复杂度"
+        concept_id: "space_complexity"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 8
+    
+  - concept: "复杂度类"
+    concept_id: "complexity_class"
+    requires:
+      - concept: "时间复杂度"
+        concept_id: "time_complexity"
+        strength: "强依赖"
+      - concept: "图灵机"
+        concept_id: "turing_machine"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "通信复杂度"
+    concept_id: "communication_complexity"
+    requires:
+      - concept: "复杂度类"
+        concept_id: "complexity_class"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 18
+    
+  # ========== 算法理论学习路径 ==========
+  - concept: "算法设计理论"
+    concept_id: "algorithm_design"
+    requires:
+      - concept: "时间复杂度"
+        concept_id: "time_complexity"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 12
+    
+  - concept: "数据结构理论"
+    concept_id: "data_structure"
+    requires:
+      - concept: "集合论基础"
+        concept_id: "set_theory"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 15
+    
+  - concept: "排序算法理论"
+    concept_id: "sorting_algorithm"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "数据结构理论"
+        concept_id: "data_structure"
+        strength: "强依赖"
+      - concept: "时间复杂度"
+        concept_id: "time_complexity"
+        strength: "中等依赖"
+    difficulty: "基础"
+    estimated_hours: 12
+    
+  - concept: "搜索算法理论"
+    concept_id: "search_algorithm"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "数据结构理论"
+        concept_id: "data_structure"
+        strength: "强依赖"
+    difficulty: "基础"
+    estimated_hours: 10
+    
+  - concept: "图算法理论"
+    concept_id: "graph_algorithm"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "数据结构理论"
+        concept_id: "data_structure"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "动态规划理论"
+    concept_id: "dynamic_programming"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "归纳法"
+        concept_id: "mathematical_induction"
+        strength: "中等依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "贪心算法理论"
+    concept_id: "greedy_algorithm"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "分治算法理论"
+    concept_id: "divide_and_conquer"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "归纳法"
+        concept_id: "mathematical_induction"
+        strength: "中等依赖"
+    difficulty: "中级"
+    estimated_hours: 12
+    
+  - concept: "回溯算法理论"
+    concept_id: "backtracking"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "搜索算法理论"
+        concept_id: "search_algorithm"
+        strength: "中等依赖"
+    difficulty: "中级"
+    estimated_hours: 10
+    
+  - concept: "随机算法理论"
+    concept_id: "randomized_algorithm"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "概率与统计基础"
+        concept_id: "probability_theory"
+        strength: "强依赖"
+    difficulty: "中级"
+    estimated_hours: 15
+    
+  - concept: "并行算法理论"
+    concept_id: "parallel_algorithm"
+    requires:
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "强依赖"
+      - concept: "复杂度类"
+        concept_id: "complexity_class"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 18
+    
+  - concept: "分布式算法理论"
+    concept_id: "distributed_algorithm"
+    requires:
+      - concept: "并行算法理论"
+        concept_id: "parallel_algorithm"
+        strength: "强依赖"
+      - concept: "通信复杂度"
+        concept_id: "communication_complexity"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 20
+    
+  - concept: "量子算法理论"
+    concept_id: "quantum_algorithm"
+    requires:
+      - concept: "量子计算模型"
+        concept_id: "quantum_computing_model"
+        strength: "强依赖"
+      - concept: "算法设计理论"
+        concept_id: "algorithm_design"
+        strength: "中等依赖"
+    difficulty: "专家"
+    estimated_hours: 25
+    
+  # ========== 高级主题学习路径 ==========
+  - concept: "范畴论在计算中的应用"
+    concept_id: "category_theory_computing"
+    requires:
+      - concept: "范畴论基础"
+        concept_id: "category_theory"
+        strength: "强依赖"
+      - concept: "类型系统"
+        concept_id: "type_system"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 20
+    
+  - concept: "同伦类型论的高级应用"
+    concept_id: "homotopy_type_theory_advanced"
+    requires:
+      - concept: "同伦类型论"
+        concept_id: "homotopy_type_theory"
+        strength: "强依赖"
+      - concept: "形式化验证"
+        concept_id: "formal_verification"
+        strength: "中等依赖"
+    difficulty: "专家"
+    estimated_hours: 25
+    
+  - concept: "证明助手的实现"
+    concept_id: "proof_assistant"
+    requires:
+      - concept: "依赖类型论"
+        concept_id: "dependent_type_theory"
+        strength: "强依赖"
+      - concept: "证明系统"
+        concept_id: "proof_system"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 25
+    
+  - concept: "量子信息论"
+    concept_id: "quantum_information"
+    requires:
+      - concept: "量子计算模型"
+        concept_id: "quantum_computing_model"
+        strength: "强依赖"
+      - concept: "信息论基础"
+        concept_id: "information_theory"
+        strength: "强依赖"
+    difficulty: "高级"
+    estimated_hours: 20
+    
+  - concept: "形式化验证"
+    concept_id: "formal_verification"
+    requires:
+      - concept: "证明系统"
+        concept_id: "proof_system"
+        strength: "强依赖"
+      - concept: "时序逻辑"
+        concept_id: "temporal_logic"
+        strength: "中等依赖"
+    difficulty: "高级"
+    estimated_hours: 20
+    
+  - concept: "量子计算复杂性理论"
+    concept_id: "quantum_complexity"
+    requires:
+      - concept: "量子计算模型"
+        concept_id: "quantum_computing_model"
+        strength: "强依赖"
+      - concept: "计算复杂度理论"
+        concept_id: "computational_complexity_theory"
+        strength: "强依赖"
+    difficulty: "专家"
+    estimated_hours: 25
+
+# 推荐学习路径
+learning_paths:
+  beginner:
+    name: "初学者路径"
+    description: "从基础理论到算法设计"
+    estimated_total_hours: 150
+    stages:
+      - stage: 1
+        name: "数学基础"
+        concepts: ["set_theory", "function_theory", "number_theory"]
+        estimated_hours: 30
+      - stage: 2
+        name: "计算模型基础"
+        concepts: ["turing_machine", "lambda_calculus", "automata_theory"]
+        estimated_hours: 40
+      - stage: 3
+        name: "逻辑与证明"
+        concepts: ["propositional_logic", "first_order_logic", "proof_system", "mathematical_induction"]
+        estimated_hours: 35
+      - stage: 4
+        name: "算法基础"
+        concepts: ["time_complexity", "algorithm_design", "data_structure", "sorting_algorithm"]
+        estimated_hours: 45
+        
+  intermediate:
+    name: "进阶路径"
+    description: "形式化方法与高级算法"
+    estimated_total_hours: 200
+    stages:
+      - stage: 1
+        name: "类型与逻辑"
+        concepts: ["simple_type_theory", "dependent_type_theory", "type_system", "modal_logic"]
+        estimated_hours: 50
+      - stage: 2
+        name: "复杂度理论"
+        concepts: ["complexity_class", "asymptotic_analysis", "computational_complexity_theory"]
+        estimated_hours: 40
+      - stage: 3
+        name: "高级算法"
+        concepts: ["dynamic_programming", "graph_algorithm", "randomized_algorithm", "approximation_algorithm"]
+        estimated_hours: 60
+      - stage: 4
+        name: "形式化方法"
+        concepts: ["constructive_proof", "formal_verification", "proof_assistant"]
+        estimated_hours: 50
+        
+  advanced:
+    name: "专业路径"
+    description: "类型理论到形式化验证"
+    estimated_total_hours: 250
+    stages:
+      - stage: 1
+        name: "高级类型理论"
+        concepts: ["homotopy_type_theory", "higher_order_type_system", "category_theory"]
+        estimated_hours: 70
+      - stage: 2
+        name: "量子计算"
+        concepts: ["quantum_computing_model", "quantum_algorithm", "quantum_information"]
+        estimated_hours: 60
+      - stage: 3
+        name: "并行与分布式"
+        concepts: ["parallel_algorithm", "distributed_algorithm", "communication_complexity"]
+        estimated_hours: 50
+      - stage: 4
+        name: "前沿主题"
+        concepts: ["quantum_complexity", "program_synthesis", "category_theory_computing"]
+        estimated_hours: 70

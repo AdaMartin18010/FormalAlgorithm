@@ -1,0 +1,777 @@
+# 2024-2025年最新研究进展引用数据库
+# Latest Research Advances (2024-2025) - Citation Database
+# 创建日期：2026-04-08
+
+metadata:
+  version: "1.0"
+  created: "2026-04-08"
+  total_entries: 53
+  categories:
+    - type_theory
+    - hott
+    - formal_verification
+    - quantum_computing
+    - machine_learning
+    - algorithm_design
+
+# ==================== 类型理论 (Type Theory) ====================
+type_theory:
+  - id: "MartinLof2024"
+    title: "Martin-Löf à la Coq"
+    authors:
+      - "Arthur Adjedj"
+      - "Meven Lennon-Bertrand"
+      - "Kenji Maillard"
+      - "Pierre-Marie Pédrot"
+      - "Loïc Pujet"
+    venue: "Certified Programs and Proofs (CPP) 2024"
+    year: 2024
+    type: "conference_paper"
+    url: "https://hal.science/hal-04214008"
+    code: "https://github.com/CoqHott/logrel-coq"
+    impact_factor: 5
+    topics:
+      - "Martin-Löf Type Theory"
+      - "Metatheory Formalization"
+      - "Bidirectional Type Checking"
+      - "Coq"
+    summary: "在Coq中完整机械化Martin-Löf类型论元理论，证明了类型检查和转换的可判定性，获得了经过认证的可执行类型检查器。"
+    related_sections:
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.8.1"
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.9.1"
+
+  - id: "LogicalTypeSoundness2024"
+    title: "A Logical Approach to Type Soundness"
+    authors:
+      - "Ralf Jung"
+      - "Jacques-Henri Jourdan"
+      - "Robbert Krebbers"
+      - "Derek Dreyer"
+    venue: "Journal of the ACM"
+    year: 2024
+    month: "November"
+    type: "journal_article"
+    doi: "10.1145/3676954"
+    impact_factor: 5
+    topics:
+      - "Semantic Type Soundness"
+      - "Iris Framework"
+      - "Logical Relations"
+      - "Higher-Order Separation Logic"
+    summary: "使用Iris高阶分离逻辑框架进行语义类型可靠性证明，建立了逻辑类型可靠性框架，证明了'安全封装不安全特性'的能力。"
+    related_sections:
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.8.2"
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.9.3"
+
+  - id: "Lean4802024"
+    title: "Lean 4.8.0 Release Notes"
+    authors:
+      - "The Lean Development Team"
+    venue: "GitHub Release"
+    year: 2024
+    month: "June"
+    day: 5
+    type: "software_release"
+    url: "https://github.com/leanprover/lean4/releases/tag/v4.8.0"
+    impact_factor: 4
+    topics:
+      - "Lean 4"
+      - "Termination Checking"
+      - "Functional Induction"
+      - "Type System Improvements"
+    summary: "包含370+改进：Defeq和WHNF算法改进、终止性论证增强、函数归纳法支持、实例命名新算法、simp/omega增强等。"
+    related_sections:
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.8.3"
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.6.6"
+
+  - id: "CoqSortPolymorphism2025"
+    title: "All Your Base Are Belong to Us: Sort Polymorphism for Proof Assistants"
+    authors:
+      - "Josselin Poiret"
+      - "Gaëtan Gilbert"
+      - "Kenji Maillard"
+      - "Pierre-Marie Pédrot"
+      - "Matthieu Sozeau"
+      - "Nicolas Tabareau"
+      - "Éric Tanter"
+    venue: "Proceedings of the ACM on Programming Languages (POPL'25)"
+    year: 2025
+    type: "conference_paper"
+    doi: "10.1145/3704912"
+    impact_factor: 5
+    topics:
+      - "Sort Polymorphism"
+      - "Multi-Sort Type Theory"
+      - "Coq"
+      - "Definition Reuse"
+    summary: "开发了排序多态性及其元理论，在Coq中实现，支持跨排序的定义复用，为多排序类型理论提供基础设施。"
+    related_sections:
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.8.4"
+
+  - id: "UnfoldingControl2024"
+    title: "Controlling Unfolding in Type Theory"
+    authors:
+      - "Daniel Gratzer"
+      - "Jonathan Sterling"
+      - "Carlo Angiuli"
+      - "Thierry Coquand"
+      - "Lars Birkedal"
+    venue: "Mathematical Structures in Computer Science"
+    year: 2025
+    type: "journal_article"
+    doi: "10.1017/S0960129525100327"
+    arxiv: "2210.05420"
+    impact_factor: 4
+    topics:
+      - "Definition Unfolding Control"
+      - "Extension Types"
+      - "cooltt"
+      - "Agda"
+    summary: "提出了基于扩展类型的定义展开控制理论，定义默认为不透明但支持选择性局部展开，在cooltt和Agda中实现。"
+    related_sections:
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §5.8.5"
+
+# ==================== 同伦类型论 (HoTT) ====================
+hott:
+  - id: "Escardo2025"
+    title: "Introduction to Homotopy Type Theory and Univalent Foundations (HoTT/UF) with Agda"
+    authors:
+      - "Martín Hötzel Escardó"
+    institution: "University of Birmingham"
+    venue: "Lecture Notes"
+    year: 2025
+    month: "November"
+    day: 17
+    type: "tutorial"
+    url: "https://martinescardo.github.io/HoTT-UF-in-Agda-Lecture-Notes/"
+    arxiv: "1911.00580"
+    github: "https://github.com/martinescardo/HoTT-UF-Agda-Lecture-Notes"
+    impact_factor: 4
+    topics:
+      - "Homotopy Type Theory"
+      - "Univalent Foundations"
+      - "Agda"
+      - "Literate Programming"
+    summary: "使用Agda开发单值数学的文学编程教程，形式化、机器验证的数学发展，使用显式宇宙级别。"
+    related_sections:
+      - "docs/05-类型理论/03-同伦类型论.md §3.5.4"
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §参考文献"
+
+  - id: "Angiuli2025"
+    title: "Principles of Dependent Type Theory"
+    authors:
+      - "Carlo Angiuli"
+      - "Daniel Gratzer"
+    venue: "Cambridge University Press"
+    year: 2025
+    status: "forthcoming"
+    type: "textbook"
+    url: "https://www.danielgratzer.com/papers/type-theory-book.pdf"
+    impact_factor: 5
+    topics:
+      - "Dependent Type Theory"
+      - "Modal Type Theory"
+      - "Homotopy Type Theory"
+      - "Categorical Semantics"
+    summary: "依赖类型理论的综合教材，涵盖外延和内涵类型论、模态类型论、同伦类型论、范畴论语义和证明助手实现技术。已被SPLV 2025等暑期学校采用。"
+    related_sections:
+      - "docs/05-类型理论/03-同伦类型论.md §3.5.4"
+      - "docs/05-类型理论/05-依赖类型系统与数理逻辑.md §参考文献"
+
+  - id: "1Lab2024"
+    title: "1Lab: A Formalised Library of Univalent Mathematics"
+    authors:
+      - "1Lab Development Team"
+    venue: "Online Library"
+    year: 2024
+    type: "software_library"
+    url: "https://1lab.dev/"
+    impact_factor: 3
+    topics:
+      - "Univalent Mathematics"
+      - "Agda"
+      - "Category Theory"
+      - "Formalization"
+    summary: "基于Agda的单值数学形式化库，提供了大量的同伦类型论和范畴论形式化内容。"
+    related_sections:
+      - "docs/05-类型理论/03-同伦类型论.md §参考文献"
+
+  - id: "CubicalAgda2024"
+    title: "Cubical Agda 0.6 Release"
+    authors:
+      - "Cubical Agda Development Team"
+    venue: "GitHub Release"
+    year: 2024
+    type: "software_release"
+    impact_factor: 3
+    topics:
+      - "Cubical Agda"
+      - "Path Types"
+      - "Higher Inductive Types"
+    summary: "Cubical Agda 0.6+版本改进了路径类型的计算行为，增强了高阶归纳类型的支持。"
+    related_sections:
+      - "docs/05-类型理论/03-同伦类型论.md §参考文献"
+
+# ==================== 形式化验证 (Formal Verification) ====================
+formal_verification:
+  - id: "MIT_6.5960_2024"
+    title: "MIT 6.5960 Secure Hardware Design"
+    institution: "MIT"
+    year: 2024
+    type: "course"
+    tools:
+      - "Yosys"
+      - "Rosette"
+      - "knox"
+    impact_factor: 4
+    topics:
+      - "RTL Verification"
+      - "Symbolic Execution"
+      - "Bounded Model Checking"
+    summary: "MIT形式化验证RTL实现的新实验课程，使用Yosys+Rosette工具链进行有界模型检查。"
+    related_sections:
+      - "docs/08-实现示例/04-形式化验证.md"
+
+  - id: "Stanford_AA228V_2024"
+    title: "AA 228V: Validation of Safety Critical Systems"
+    institution: "Stanford University"
+    year: 2024
+    type: "course"
+    textbook: "Algorithms for Validation (2024 Preprint)"
+    impact_factor: 4
+    topics:
+      - "Safety-Critical Systems"
+      - "Formal Validation"
+      - "Model Checking"
+      - "Reachability Analysis"
+    summary: "Stanford首次开设的验证安全关键系统课程，涵盖基于采样的验证技术和形式化方法。"
+    related_sections:
+      - "docs/10-高级主题/06-形式化验证的高级技术.md"
+
+  - id: "VNNCOMP_2024"
+    title: "VNN-COMP 2024: 5th International Verification of Neural Networks Competition"
+    venue: "VNN-COMP"
+    year: 2024
+    type: "competition"
+    arxiv: "2412.19985"
+    impact_factor: 4
+    topics:
+      - "Neural Network Verification"
+      - "Formal Methods"
+      - "Marabou"
+      - "NeuralSAT"
+    summary: "第五届国际神经网络验证竞赛，参赛工具包括Marabou 2.0、NeuralSAT、β-CROWN等。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/17-神经网络算法理论.md"
+
+  - id: "Marabou_2.0_2024"
+    title: "Marabou 2.0: A Versatile Formal Analyzer of Neural Networks"
+    venue: "Computer Aided Verification (CAV) 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Neural Network Verification"
+      - "SMT Solving"
+      - "Deep Learning"
+    summary: "Marabou 2.0是一个多功能的神经网络形式化分析器。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/17-神经网络算法理论.md"
+
+  - id: "NeuralSAT_2025"
+    title: "NeuralSAT: A High-Performance Verification Tool for Deep Neural Networks"
+    venue: "Computer Aided Verification (CAV) 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Neural Network Verification"
+      - "SAT Solving"
+      - "GPU Acceleration"
+    summary: "NeuralSAT是一个用于深度神经网络的高性能验证工具。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/17-神经网络算法理论.md"
+
+# ==================== 量子计算 (Quantum Computing) ====================
+quantum_computing:
+  - id: "Google_Quantum_Advantage_2025"
+    title: "Observation of Constructive Interference at the Edge of Quantum Ergodicity"
+    authors:
+      - "Google Quantum AI Team"
+    venue: "Nature"
+    year: 2025
+    type: "journal_article"
+    impact_factor: 5
+    topics:
+      - "Quantum Advantage"
+      - "Random Circuit Sampling"
+      - "Quantum Supremacy"
+    summary: "Google Quantum AI团队在Nature发表论文，展示了量子处理器在2小时内完成的计算，经典超级计算机需要3年。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/15-量子算法理论.md"
+
+  - id: "Zuchongzhi_3.0_2025"
+    title: "Establishing a New Benchmark in Quantum Computational Advantage with 105-Qubit Zuchongzhi 3.0 Processor"
+    venue: "Physical Review Letters"
+    year: 2025
+    institution: "University of Science and Technology of China"
+    type: "journal_article"
+    impact_factor: 5
+    topics:
+      - "Quantum Advantage"
+      - "105-Qubit Processor"
+      - "Random Circuit Sampling"
+    summary: "中国科学技术大学的105量子比特祖冲之3.0处理器，建立了量子计算优势的新基准。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/15-量子算法理论.md"
+
+  - id: "Harvard_Logical_Processor_2024"
+    title: "Logical Quantum Processor Based on Reconfigurable Atom Arrays"
+    authors:
+      - "Harvard/MIT Team"
+    venue: "Nature"
+    year: 2024
+    type: "journal_article"
+    impact_factor: 5
+    topics:
+      - "Logical Quantum Processor"
+      - "Atom Arrays"
+      - "Quantum Error Correction"
+    summary: "哈佛/MIT团队基于可重构原子阵列的逻辑量子处理器。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/15-量子算法理论.md"
+
+  - id: "Quantinuum_56qubit_2025"
+    title: "Computational Power of Random Quantum Circuits in Arbitrary Geometries"
+    venue: "Physical Review X"
+    year: 2025
+    institution: "Quantinuum"
+    type: "journal_article"
+    impact_factor: 5
+    topics:
+      - "Random Quantum Circuits"
+      - "56-Qubit"
+      - "Ion Trap"
+    summary: "Quantinuum团队56量子比特离子阱的随机量子电路计算能力研究。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/15-量子算法理论.md"
+
+  - id: "QNN_Unified_Theory_2025"
+    title: "A Unified Theory of Quantum Neural Network Loss Landscapes"
+    venue: "International Conference on Learning Representations (ICLR) 2025"
+    year: 2025
+    arxiv: "2408.11901"
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Quantum Neural Networks"
+      - "Loss Landscapes"
+      - "Wishart Process"
+      - "Barren Plateaus"
+    summary: "证明了QNN及其前两个导数形成'Wishart过程'，计算了完整的梯度分布，推广了已知的贫瘠高原结果。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/15-量子算法理论.md"
+
+  - id: "Single_Shot_QML_2025"
+    title: "Single-shot Quantum Machine Learning"
+    venue: "Physical Review A"
+    year: 2025
+    arxiv: "2406.13812"
+    type: "journal_article"
+    impact_factor: 4
+    topics:
+      - "Quantum Machine Learning"
+      - "Single-shot Inference"
+      - "YOMO Architecture"
+    summary: "分析了量子学习模型何时能以近乎确定的方式产生预测，给出了单发性的严格定义。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/15-量子算法理论.md"
+
+# ==================== 机器学习算法 (Machine Learning) ====================
+machine_learning:
+  - id: "Transformer_CoT_Reasoning_2025"
+    title: "Transformers Provably Solve Parity Efficiently with Chain of Thought"
+    venue: "International Conference on Learning Representations (ICLR) 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Transformer"
+      - "Chain-of-Thought Reasoning"
+      - "Parity Problem"
+      - "Expressive Power"
+    summary: "理论上证明了Transformer结合Chain-of-Thought可以高效解决奇偶性问题。"
+    related_sections:
+      - "docs/10-高级主题/38-大语言模型算法理论.md"
+
+  - id: "Expressive_Power_CoT_2024"
+    title: "The Expressive Power of Transformers with Chain of Thought"
+    venue: "ICLR 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Transformer"
+      - "Chain-of-Thought"
+      - "Expressive Power"
+    summary: "分析了Chain-of-Thought推理机制对Transformer表达能力的影响。"
+    related_sections:
+      - "docs/10-高级主题/38-大语言模型算法理论.md"
+
+  - id: "GRPO_2025"
+    title: "Group Relative Policy Optimization (GRPO)"
+    authors:
+      - "DeepSeek-AI"
+    year: 2025
+    type: "technical_report"
+    impact_factor: 4
+    topics:
+      - "Reinforcement Learning"
+      - "LLM Reasoning"
+      - "PPO"
+      - "Policy Optimization"
+    summary: "DeepSeek提出的GRPO算法，用于大语言模型的推理优化。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/18-强化学习算法理论.md"
+
+  - id: "Timer_XL_2025"
+    title: "Timer-XL: Long-Context Transformers for Time Series Forecasting"
+    venue: "ICLR 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Time Series Forecasting"
+      - "Transformer"
+      - "Long Context"
+      - "Foundation Models"
+    summary: "用于时间序列预测的长上下文Transformer模型。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/时间序列算法.md"
+
+  - id: "Moirai_2024"
+    title: "Moirai: A Time Series Foundation Model for Universal Forecasting"
+    venue: "ICML 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Time Series"
+      - "Foundation Model"
+      - "Universal Forecasting"
+    summary: "Salesforce Research提出的时间序列基础模型，支持通用预测。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/时间序列算法.md"
+
+  - id: "RiemannGFM_2025"
+    title: "RiemannGFM: Learning a Graph Foundation Model from Riemannian Geometry"
+    year: 2025
+    type: "preprint"
+    impact_factor: 3
+    topics:
+      - "Graph Neural Networks"
+      - "Riemannian Geometry"
+      - "Foundation Models"
+    summary: "从黎曼几何学习图基础模型。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/19-图神经网络算法理论.md"
+
+  - id: "Spiking_GNN_Riemannian_2024"
+    title: "Spiking Graph Neural Network on Riemannian Manifolds"
+    venue: "NeurIPS 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Spiking Neural Networks"
+      - "Graph Neural Networks"
+      - "Riemannian Manifolds"
+    summary: "黎曼流形上的脉冲图神经网络。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/19-图神经网络算法理论.md"
+
+  - id: "Oversmoothing_Prevention_2025"
+    title: "Residual Connections and Normalization Can Provably Prevent Oversmoothing in GNNs"
+    venue: "ICLR 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Graph Neural Networks"
+      - "Oversmoothing"
+      - "Residual Connections"
+      - "Normalization"
+    summary: "理论上证明了残差连接和归一化可以防止GNN中的过度平滑问题。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/19-图神经网络算法理论.md"
+
+  - id: "DDFed_2024"
+    title: "Dual Defense: Enhancing Privacy and Mitigating Poisoning Attacks in Federated Learning"
+    venue: "NeurIPS 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Federated Learning"
+      - "Privacy Protection"
+      - "Poisoning Attacks"
+      - "Fully Homomorphic Encryption"
+    summary: "DDFed框架：同时使用全同态加密和异常检测来保护联邦学习的隐私和安全。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/20-联邦学习算法理论.md"
+
+  - id: "FLoRA_2024"
+    title: "FLoRA: Federated Fine-Tuning Large Language Models with Heterogeneous Low-Rank Adaptations"
+    venue: "NeurIPS 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Federated Learning"
+      - "Large Language Models"
+      - "LoRA"
+      - "Fine-tuning"
+    summary: "使用异构低秩适应进行联邦大语言模型微调。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/20-联邦学习算法理论.md"
+
+# ==================== 算法设计 (Algorithm Design) ====================
+algorithm_design:
+  - id: "Vizing_Near_Linear_2025"
+    title: "Vizing's Theorem in Near-Linear Time"
+    venue: "STOC 2025"
+    year: 2025
+    type: "conference_paper"
+    award: "Best Paper Award"
+    impact_factor: 5
+    topics:
+      - "Edge Coloring"
+      - "Graph Algorithms"
+      - "Near-Linear Time"
+    summary: "Vizing定理的近线性时间算法，获得STOC 2025最佳论文奖。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+
+  - id: "Maximum_Matching_Quadratic_2024"
+    title: "Approximating Maximum Matching Requires Almost Quadratic Time"
+    venue: "STOC 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 5
+    topics:
+      - "Maximum Matching"
+      - "Approximation Algorithms"
+      - "Time Complexity Lower Bounds"
+    summary: "证明了最大匹配近似算法的时间复杂度下界。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+
+  - id: "Maximum_Bipartite_Matching_2024"
+    title: "Maximum Bipartite Matching in n^{2+o(1)} Time via Combinatorial Algorithm"
+    venue: "STOC 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 5
+    topics:
+      - "Bipartite Matching"
+      - "Combinatorial Algorithms"
+      - "Time Complexity"
+    summary: "通过组合算法在n^{2+o(1)}时间内解决最大二分图匹配问题。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+
+  - id: "PCST_1.79_2025"
+    title: "Prize-Collecting Steiner Tree: A 1.79 Approximation"
+    year: 2025
+    type: "preprint"
+    impact_factor: 4
+    topics:
+      - "Prize-Collecting Steiner Tree"
+      - "Approximation Algorithms"
+      - "Network Design"
+    summary: "将从15年前的1.9672改进到1.7994的Prize-Collecting Steiner Tree近似算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+
+  - id: "Correlation_Clustering_2024"
+    title: "Combinatorial Correlation Clustering"
+    venue: "STOC 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 5
+    topics:
+      - "Correlation Clustering"
+      - "Approximation Algorithms"
+      - "Combinatorial Algorithms"
+    summary: "相关聚类的组合算法，近似比从3改进到~1.847。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+
+  - id: "Cluster_LP_2025"
+    title: "Understanding the Cluster LP for Correlation Clustering"
+    year: 2025
+    arxiv: "2404.17509"
+    type: "preprint"
+    impact_factor: 4
+    topics:
+      - "Correlation Clustering"
+      - "Linear Programming"
+      - "Approximation Algorithms"
+    summary: "提出了Cluster LP并改进了相关聚类近似比到1.485。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+
+  - id: "Dynamic_k_Center_2025"
+    title: "Dynamic Consistent k-Center Clustering with Optimal Recourse"
+    venue: "SODA 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Dynamic Graph Algorithms"
+      - "k-Center Clustering"
+      - "Recourse"
+    summary: "具有最优资源代价的动态一致k中心聚类算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+
+  - id: "Dynamic_APSP_2024"
+    title: "New Tradeoffs for Decremental Approximate All-Pairs Shortest Paths"
+    venue: "ICALP 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Dynamic Graph Algorithms"
+      - "All-Pairs Shortest Paths"
+      - "Decremental Algorithms"
+    summary: "递减近似全源最短路径的新权衡。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+
+  - id: "Dynamic_k_Center_Graphs_2024"
+    title: "Dynamic Algorithms for k-Center on Graphs"
+    venue: "SODA 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Dynamic Graph Algorithms"
+      - "k-Center"
+      - "Graph Algorithms"
+    summary: "图上k中心问题的动态算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+
+  - id: "Dynamic_Predictions_2024"
+    title: "On Dynamic Graph Algorithms with Predictions"
+    venue: "SODA 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Dynamic Graph Algorithms"
+      - "Machine Learning Predictions"
+      - "Learning-Augmented Algorithms"
+    summary: "结合机器学习预测的动态图算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+
+  - id: "Dynamic_Shortest_Paths_Toolbox_2024"
+    title: "A Dynamic Shortest Paths Toolbox: Low-Congestion Vertex Sparsifiers and their Applications"
+    venue: "STOC 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 5
+    topics:
+      - "Dynamic Graph Algorithms"
+      - "Shortest Paths"
+      - "Vertex Sparsifiers"
+    summary: "动态最短路径工具箱：低拥塞顶点稀疏器及其应用。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+
+  - id: "Expander_Pruning_2025"
+    title: "Expander Pruning with Polylogarithmic Worst-Case Recourse and Update Time"
+    venue: "SODA 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Dynamic Graph Algorithms"
+      - "Expander Pruning"
+      - "Worst-Case Bounds"
+    summary: "具有多对数最坏情况资源代价和更新时间的扩展器修剪算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+
+  - id: "Streaming_Directed_Cut_2025"
+    title: "Streaming Algorithms via Local Algorithms for Maximum Directed Cut"
+    venue: "SODA 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Streaming Algorithms"
+      - "Maximum Directed Cut"
+      - "Local Algorithms"
+    summary: "通过局部算法进行最大有向割的流算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/14-流算法理论.md"
+
+  - id: "Hypergraph_Sparsification_2024"
+    title: "Near-Optimal Size Linear Sketches for Hypergraph Cut Sparsifiers"
+    venue: "FOCS 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 5
+    topics:
+      - "Streaming Algorithms"
+      - "Hypergraph Sparsification"
+      - "Linear Sketches"
+    summary: "超图割稀疏器的近最优大小线性草图。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/14-流算法理论.md"
+
+  - id: "Hypergraph_Sparsification_2025"
+    title: "Near-Optimal Hypergraph Sparsification in Insertion-Only and Bounded-Deletion Streams"
+    venue: "ICALP 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Streaming Algorithms"
+      - "Hypergraph Sparsification"
+      - "Dynamic Streams"
+    summary: "仅插入和有界删除流中的近最优超图稀疏化。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/14-流算法理论.md"
+
+  - id: "Learning_Augmented_Correlation_Clustering_2025"
+    title: "Learning-Augmented Streaming Algorithms for Correlation Clustering"
+    venue: "NeurIPS 2025"
+    year: 2025
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Streaming Algorithms"
+      - "Correlation Clustering"
+      - "Learning-Augmented Algorithms"
+      - "Machine Learning Predictions"
+    summary: "用于相关聚类的学习增强流算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/14-流算法理论.md"
+
+  - id: "Sublinear_TSP_2024"
+    title: "Sublinear Algorithms for TSP via Path Covers"
+    venue: "ICALP 2024"
+    year: 2024
+    type: "conference_paper"
+    impact_factor: 4
+    topics:
+      - "Sublinear Algorithms"
+      - "TSP"
+      - "Path Covers"
+    summary: "通过路径覆盖的子线性TSP算法。"
+    related_sections:
+      - "docs/09-算法理论/01-算法基础/14-流算法理论.md"

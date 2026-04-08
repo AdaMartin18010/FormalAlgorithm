@@ -1,0 +1,174 @@
+# 专家库
+# Expert Database for FormalAlgorithm Project
+# 版本: 1.0
+# 创建日期: 2025-04-08
+# 状态: 初始化中
+
+metadata:
+  version: "1.0"
+  created_date: "2025-04-08"
+  last_updated: "2025-04-08"
+  total_experts: 0
+  active_experts: 0
+  pending_invitations: 0
+
+# 领域分类定义
+domain_definitions:
+  ALG: "算法设计与分析"
+  DS: "数据结构"
+  CC: "计算复杂性"
+  PL: "编程语言理论"
+  LOG: "逻辑与证明"
+  AI: "人工智能算法"
+  CRYPT: "密码学"
+  DIST: "分布式算法"
+  
+  # 二级领域
+  ALG-SORT: "排序算法"
+  ALG-GRAPH: "图算法"
+  ALG-DP: "动态规划"
+  ALG-GREEDY: "贪心算法"
+  ALG-APPROX: "近似算法"
+  ALG-RANDOM: "随机算法"
+  ALG-PARALLEL: "并行算法"
+  DS-TREE: "树结构"
+  DS-HEAP: "堆结构"
+  DS-HASH: "哈希表"
+  DS-ADV: "高级数据结构"
+  CC-CLASS: "复杂性类"
+  CC-LOWER: "下界理论"
+  CC-PCP: "概率可检验证明"
+  PL-TYPE: "类型理论"
+  PL-LAMBDA: "λ演算"
+  PL-SEM: "形式语义"
+
+# 专家列表
+experts: []
+
+# 待邀请候选人池
+candidates:
+  - candidate_id: "CAND-001"
+    target_domain: ["ALG", "CC"]
+    priority: "high"
+    source: "文献引用"
+    notes: "从STOC/FOCS论文作者中识别"
+    status: "researching"
+    
+  - candidate_id: "CAND-002"
+    target_domain: ["PL-TYPE", "LOG"]
+    priority: "high"
+    source: "文献引用"
+    notes: "从POPL/PLDI论文作者中识别"
+    status: "researching"
+    
+  - candidate_id: "CAND-003"
+    target_domain: ["ALG-GRAPH", "ALG-DP"]
+    priority: "medium"
+    source: "推荐"
+    notes: "待具体推荐"
+    status: "pending_referral"
+    
+  - candidate_id: "CAND-004"
+    target_domain: ["CC-CLASS"]
+    priority: "medium"
+    source: "文献引用"
+    notes: "复杂性理论专家"
+    status: "researching"
+    
+  - candidate_id: "CAND-005"
+    target_domain: ["DS-ADV", "ALG"]
+    priority: "medium"
+    source: "推荐"
+    notes: "数据结构专家"
+    status: "pending_referral"
+
+# 优先邀请领域
+priority_domains:
+  - domain: "ALG"
+    reason: "项目核心内容，需要权威验证"
+    required_experts: 3
+    
+  - domain: "CC"
+    reason: "理论严谨性要求高"
+    required_experts: 2
+    
+  - domain: "PL-TYPE"
+    reason: "类型理论内容专业性强"
+    required_experts: 2
+    
+  - domain: "LOG"
+    reason: "形式化证明需要专家验证"
+    required_experts: 2
+    
+  - domain: "DS"
+    reason: "基础数据结构需要确认"
+    required_experts: 2
+
+# 专家库建设计划
+build_plan:
+  phase_1:
+    name: "核心专家邀请"
+    timeline: "2025-04至2025-06"
+    target: 5-8位专家
+    focus_domains: ["ALG", "CC", "PL-TYPE"]
+    
+  phase_2:
+    name: "领域扩展"
+    timeline: "2025-07至2025-09"
+    target: 10-12位专家
+    focus_domains: ["LOG", "DS", "ALG-GRAPH"]
+    
+  phase_3:
+    name: "完善与稳定"
+    timeline: "2025-10至2025-12"
+    target: 12-15位专家
+    focus_domains: ["全部领域"]
+
+# 专家信息模板（用于后续添加）
+expert_template:
+  expert_id: "EX-YYYY-NNN"
+  profile:
+    name:
+      zh: "专家中文名"
+      en: "Expert English Name"
+    affiliation:
+      institution: "机构名称"
+      department: "院系"
+      country: "国家"
+    title: "教授/研究员/博士"
+    
+  contact:
+    email: "expert@institution.edu"
+    orcid: "0000-0000-0000-0000"
+    homepage: "https://..."
+    
+  expertise:
+    primary: ["ALG", "CC"]
+    secondary: ["PL", "LOG"]
+    specific: ["ALG-GRAPH", "CC-CLASS"]
+    
+  qualifications:
+    h_index: 45
+    publications: 120
+    citations: 8000
+    key_papers: []
+    
+  experience:
+    phd_institution: "博士毕业院校"
+    phd_year: 2010
+    positions: []
+    awards: []
+    
+  review_history:
+    total_reviews: 0
+    last_review: null
+    avg_response_days: null
+    
+  availability:
+    status: "available"
+    max_reviews_per_month: 2
+    preferred_notice_days: 14
+    
+  notes: ""
+  added_date: "2025-04-08"
+  last_updated: "2025-04-08"

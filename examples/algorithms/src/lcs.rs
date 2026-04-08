@@ -3,7 +3,6 @@
 //! LCS问题是动态规划的经典应用，用于找出两个序列的最长公共子序列。
 //! 子序列不要求连续，但要求相对顺序一致。
 
-use crate::{AlgorithmError, SearchResult};
 
 /// 最长公共子序列结果
 #[derive(Debug, Clone, PartialEq)]
@@ -49,7 +48,8 @@ pub struct LCSResult<T> {
 /// let result = lcs(&seq1, &seq2);
 ///
 /// assert_eq!(result.length, 4);
-/// assert_eq!(result.sequence, vec!['B', 'C', 'B', 'A']);
+/// // LCS可能不唯一，序列可以是 BCBA、BDAB等
+/// assert_eq!(result.sequence.len(), 4);
 /// ```
 ///
 /// # 注意
@@ -291,7 +291,8 @@ pub fn edit_distance<T: Eq>(seq1: &[T], seq2: &[T]) -> usize {
 /// let seq1 = "ABCBDAB";
 /// let seq2 = "BDCABA";
 /// let sim = similarity(seq1.as_bytes(), seq2.as_bytes());
-/// assert!((sim - 0.5).abs() < 0.01); // 4/8 = 0.5
+/// // LCS长度是4，最大序列长度是7，相似度 = 4/7 ≈ 0.57
+/// assert!((sim - 4.0/7.0).abs() < 0.01);
 /// ```
 pub fn similarity<T: Eq>(seq1: &[T], seq2: &[T]) -> f64 {
     if seq1.is_empty() && seq2.is_empty() {
@@ -420,7 +421,25 @@ mod tests {
         let seq2 = vec!['B', 'D', 'C', 'A', 'B', 'A'];
         let result = lcs(&seq1, &seq2);
         assert_eq!(result.length, 4);
-        assert_eq!(result.sequence, vec!['B', 'C', 'B', 'A']);
+        // LCS可能不唯一，只验证长度和有效性
+        assert!(result.sequence.len() == 4);
+        // 验证结果确实是公共子序列
+        assert!(is_subsequence(&result.sequence, &seq1));
+        assert!(is_subsequence(&result.sequence, &seq2));
+    }
+
+    // 辅助函数：检查sub是否是seq的子序列
+    fn is_subsequence<T: Eq>(sub: &[T], seq: &[T]) -> bool {
+        if sub.is_empty() {
+            return true;
+        }
+        let mut i = 0;
+        for item in seq {
+            if i < sub.len() && *item == sub[i] {
+                i += 1;
+            }
+        }
+        i == sub.len()
     }
 
     #[test]
@@ -454,7 +473,9 @@ mod tests {
     fn test_similarity() {
         assert_eq!(similarity("".as_bytes(), "".as_bytes()), 1.0);
         assert_eq!(similarity("abc".as_bytes(), "".as_bytes()), 0.0);
-        assert!((similarity("ABCBDAB".as_bytes(), "BDCABA".as_bytes()) - 0.5).abs() < 0.01);
+        // ABCBDAB(7) 和 BDCABA(6) 的LCS长度是4，相似度 = 4/7 ≈ 0.57
+        let sim = similarity("ABCBDAB".as_bytes(), "BDCABA".as_bytes());
+        assert!((sim - 4.0/7.0).abs() < 0.01, "Expected ~0.571, got {}", sim);
     }
 
     #[test]

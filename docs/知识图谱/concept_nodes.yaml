@@ -1,0 +1,724 @@
+# 算法规范与模型设计知识体系 - 概念节点定义
+# Concept Nodes for Formal Algorithm Knowledge Graph
+# version: 1.0
+# last_updated: 2025-04-08
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-04-08"
+  total_concepts: 156
+  categories:
+    - 基础理论
+    - 递归理论
+    - 形式化证明
+    - 算法复杂度
+    - 类型理论
+    - 逻辑系统
+    - 计算模型
+    - 算法理论
+    - 高级主题
+    - 应用领域
+
+concepts:
+  # ========== 01-基础理论 (Foundation) ==========
+  - id: "set_theory"
+    name: "集合论"
+    name_en: "Set Theory"
+    category: "基础理论"
+    definition: "研究集合及其性质、运算和关系的数学分支"
+    document: "01-基础理论/03-集合论基础.md"
+    complexity: "基础"
+    prerequisites: []
+    
+  - id: "function_theory"
+    name: "函数论"
+    name_en: "Function Theory"
+    category: "基础理论"
+    definition: "研究函数的定义域、值域、映射关系和性质的数学理论"
+    document: "01-基础理论/04-函数论基础.md"
+    complexity: "基础"
+    prerequisites: ["set_theory"]
+    
+  - id: "number_theory"
+    name: "数论"
+    name_en: "Number Theory"
+    category: "基础理论"
+    definition: "研究整数性质和整数方程的数学分支"
+    document: "01-基础理论/05-数论基础.md"
+    complexity: "基础"
+    prerequisites: ["set_theory"]
+    
+  - id: "algebraic_structure"
+    name: "代数结构"
+    name_en: "Algebraic Structure"
+    category: "基础理论"
+    definition: "研究群、环、域等代数系统的数学结构"
+    document: "01-基础理论/06-代数结构基础.md"
+    complexity: "基础"
+    prerequisites: ["set_theory", "function_theory"]
+    
+  - id: "category_theory"
+    name: "范畴论"
+    name_en: "Category Theory"
+    category: "基础理论"
+    definition: "研究数学结构及其之间关系的抽象理论"
+    document: "01-基础理论/10-范畴论基础.md"
+    complexity: "高级"
+    prerequisites: ["set_theory", "function_theory", "algebraic_structure"]
+    
+  - id: "measure_theory"
+    name: "测度论"
+    name_en: "Measure Theory"
+    category: "基础理论"
+    definition: "研究度量空间和积分理论的数学分支"
+    document: "01-基础理论/11-测度论基础.md"
+    complexity: "高级"
+    prerequisites: ["set_theory", "real_analysis"]
+    
+  - id: "probability_theory"
+    name: "概率论"
+    name_en: "Probability Theory"
+    category: "基础理论"
+    definition: "研究随机现象和概率分布的数学理论"
+    document: "01-基础理论/07-概率与统计基础.md"
+    complexity: "基础"
+    prerequisites: ["measure_theory"]
+    
+  - id: "information_theory"
+    name: "信息论"
+    name_en: "Information Theory"
+    category: "基础理论"
+    definition: "研究信息度量、传输和编码的数学理论"
+    document: "01-基础理论/08-信息论基础.md"
+    complexity: "中级"
+    prerequisites: ["probability_theory"]
+    
+  # ========== 02-递归理论 (Recursion Theory) ==========
+  - id: "recursive_function"
+    name: "递归函数"
+    name_en: "Recursive Function"
+    category: "递归理论"
+    definition: "通过递归方式定义的函数，可计算性的基础"
+    document: "02-递归理论/01-递归函数定义.md"
+    complexity: "基础"
+    prerequisites: ["function_theory"]
+    
+  - id: "primitive_recursive_function"
+    name: "原始递归函数"
+    name_en: "Primitive Recursive Function"
+    category: "递归理论"
+    definition: "仅使用复合和原始递归模式定义的函数类"
+    document: "02-递归理论/02-原始递归函数.md"
+    complexity: "基础"
+    prerequisites: ["recursive_function"]
+    
+  - id: "general_recursive_function"
+    name: "一般递归函数"
+    name_en: "General Recursive Function"
+    category: "递归理论"
+    definition: "包含μ算子的递归函数，等价于图灵可计算函数"
+    document: "02-递归理论/03-一般递归函数.md"
+    complexity: "中级"
+    prerequisites: ["primitive_recursive_function"]
+    
+  - id: "recursively_enumerable"
+    name: "递归可枚举性"
+    name_en: "Recursively Enumerable"
+    category: "递归理论"
+    definition: "可被图灵机半判定的语言或集合"
+    document: "02-递归理论/04-递归可枚举性.md"
+    complexity: "中级"
+    prerequisites: ["recursive_function", "turing_machine"]
+    
+  - id: "undecidability"
+    name: "递归不可解性"
+    name_en: "Undecidability"
+    category: "递归理论"
+    definition: "不存在算法可解决的问题或判定问题"
+    document: "02-递归理论/05-递归不可解性.md"
+    complexity: "中级"
+    prerequisites: ["recursive_function", "turing_machine"]
+    
+  # ========== 03-形式化证明 (Formal Proof) ==========
+  - id: "proof_system"
+    name: "证明系统"
+    name_en: "Proof System"
+    category: "形式化证明"
+    definition: "形式化推理的公理和规则集合"
+    document: "03-形式化证明/01-证明系统.md"
+    complexity: "基础"
+    prerequisites: ["propositional_logic"]
+    
+  - id: "mathematical_induction"
+    name: "数学归纳法"
+    name_en: "Mathematical Induction"
+    category: "形式化证明"
+    definition: "证明关于自然数命题的推理方法"
+    document: "03-形式化证明/02-归纳法.md"
+    complexity: "基础"
+    prerequisites: ["number_theory"]
+    
+  - id: "constructive_proof"
+    name: "构造性证明"
+    name_en: "Constructive Proof"
+    category: "形式化证明"
+    definition: "通过构造具体实例来证明存在性命题的方法"
+    document: "03-形式化证明/03-构造性证明.md"
+    complexity: "中级"
+    prerequisites: ["proof_system"]
+    
+  - id: "proof_by_contradiction"
+    name: "反证法"
+    name_en: "Proof by Contradiction"
+    category: "形式化证明"
+    definition: "通过假设命题不成立导出矛盾来证明命题的方法"
+    document: "03-形式化证明/04-反证法.md"
+    complexity: "基础"
+    prerequisites: ["propositional_logic"]
+    
+  # ========== 04-算法复杂度 (Complexity) ==========
+  - id: "time_complexity"
+    name: "时间复杂度"
+    name_en: "Time Complexity"
+    category: "算法复杂度"
+    definition: "算法执行所需时间随输入规模增长的度量"
+    document: "04-算法复杂度/01-时间复杂度.md"
+    complexity: "基础"
+    prerequisites: ["function_theory"]
+    
+  - id: "space_complexity"
+    name: "空间复杂度"
+    name_en: "Space Complexity"
+    category: "算法复杂度"
+    definition: "算法执行所需内存空间随输入规模增长的度量"
+    document: "04-算法复杂度/02-空间复杂度.md"
+    complexity: "基础"
+    prerequisites: ["function_theory"]
+    
+  - id: "asymptotic_analysis"
+    name: "渐进分析"
+    name_en: "Asymptotic Analysis"
+    category: "算法复杂度"
+    definition: "使用大O记号等描述算法复杂度的方法"
+    document: "04-算法复杂度/03-渐进分析.md"
+    complexity: "基础"
+    prerequisites: ["time_complexity", "space_complexity"]
+    
+  - id: "complexity_class"
+    name: "复杂度类"
+    name_en: "Complexity Class"
+    category: "算法复杂度"
+    definition: "具有相似复杂度特征的问题集合"
+    document: "04-算法复杂度/04-复杂度类.md"
+    complexity: "中级"
+    prerequisites: ["time_complexity", "turing_machine"]
+    
+  - id: "communication_complexity"
+    name: "通信复杂度"
+    name_en: "Communication Complexity"
+    category: "算法复杂度"
+    definition: "分布式计算中节点间通信量的度量"
+    document: "04-算法复杂度/05-通信复杂度.md"
+    complexity: "高级"
+    prerequisites: ["complexity_class"]
+    
+  # ========== 05-类型理论 (Type Theory) ==========
+  - id: "simple_type_theory"
+    name: "简单类型论"
+    name_en: "Simple Type Theory"
+    category: "类型理论"
+    definition: "为λ演算引入类型的形式系统"
+    document: "05-类型理论/01-简单类型论.md"
+    complexity: "基础"
+    prerequisites: ["lambda_calculus"]
+    
+  - id: "dependent_type_theory"
+    name: "依赖类型论"
+    name_en: "Dependent Type Theory"
+    category: "类型理论"
+    definition: "类型可以依赖于值的类型系统"
+    document: "05-类型理论/02-依赖类型论.md"
+    complexity: "中级"
+    prerequisites: ["simple_type_theory"]
+    
+  - id: "homotopy_type_theory"
+    name: "同伦类型论"
+    name_en: "Homotopy Type Theory"
+    category: "类型理论"
+    definition: "将类型论与同伦论结合的数学基础"
+    document: "05-类型理论/03-同伦类型论.md"
+    complexity: "高级"
+    prerequisites: ["dependent_type_theory", "category_theory"]
+    
+  - id: "type_system"
+    name: "类型系统"
+    name_en: "Type System"
+    category: "类型理论"
+    definition: "编程语言中用于分类和约束值的规则集合"
+    document: "05-类型理论/04-类型系统.md"
+    complexity: "中级"
+    prerequisites: ["simple_type_theory"]
+    
+  - id: "higher_order_type_system"
+    name: "高阶类型系统"
+    name_en: "Higher-Order Type System"
+    category: "类型理论"
+    definition: "支持类型构造器和类型抽象的扩展类型系统"
+    document: "05-类型理论/07-高阶类型系统.md"
+    complexity: "高级"
+    prerequisites: ["type_system", "polymorphism"]
+    
+  # ========== 06-逻辑系统 (Logic Systems) ==========
+  - id: "propositional_logic"
+    name: "命题逻辑"
+    name_en: "Propositional Logic"
+    category: "逻辑系统"
+    definition: "研究命题和逻辑连接词的形式系统"
+    document: "06-逻辑系统/01-命题逻辑.md"
+    complexity: "基础"
+    prerequisites: []
+    
+  - id: "first_order_logic"
+    name: "一阶逻辑"
+    name_en: "First-Order Logic"
+    category: "逻辑系统"
+    definition: "包含量词和谓词的扩展逻辑系统"
+    document: "06-逻辑系统/02-一阶逻辑.md"
+    complexity: "基础"
+    prerequisites: ["propositional_logic"]
+    
+  - id: "intuitionistic_logic"
+    name: "直觉逻辑"
+    name_en: "Intuitionistic Logic"
+    category: "逻辑系统"
+    definition: "拒绝排中律的构造性逻辑系统"
+    document: "06-逻辑系统/03-直觉逻辑.md"
+    complexity: "中级"
+    prerequisites: ["propositional_logic", "constructive_proof"]
+    
+  - id: "modal_logic"
+    name: "模态逻辑"
+    name_en: "Modal Logic"
+    category: "逻辑系统"
+    definition: "研究必然性和可能性的扩展逻辑系统"
+    document: "06-逻辑系统/04-模态逻辑.md"
+    complexity: "中级"
+    prerequisites: ["propositional_logic"]
+    
+  - id: "linear_logic"
+    name: "线性逻辑"
+    name_en: "Linear Logic"
+    category: "逻辑系统"
+    definition: "强调资源敏感性的子结构逻辑"
+    document: "06-逻辑系统/06-线性逻辑.md"
+    complexity: "高级"
+    prerequisites: ["propositional_logic", "type_system"]
+    
+  - id: "temporal_logic"
+    name: "时序逻辑"
+    name_en: "Temporal Logic"
+    category: "逻辑系统"
+    definition: "处理时间维度上的命题的真值的逻辑系统"
+    document: "06-逻辑系统/07-时序逻辑.md"
+    complexity: "中级"
+    prerequisites: ["modal_logic"]
+    
+  - id: "higher_order_logic"
+    name: "高阶逻辑"
+    name_en: "Higher-Order Logic"
+    category: "逻辑系统"
+    definition: "允许量词作用于谓词和函数的逻辑系统"
+    document: "06-逻辑系统/08-高阶逻辑理论.md"
+    complexity: "高级"
+    prerequisites: ["first_order_logic", "type_system"]
+    
+  # ========== 07-计算模型 (Computation Models) ==========
+  - id: "turing_machine"
+    name: "图灵机"
+    name_en: "Turing Machine"
+    category: "计算模型"
+    definition: "由图灵提出的抽象计算模型，可计算性理论的基础"
+    document: "07-计算模型/01-图灵机.md"
+    complexity: "基础"
+    prerequisites: ["set_theory", "function_theory"]
+    
+  - id: "lambda_calculus"
+    name: "λ演算"
+    name_en: "Lambda Calculus"
+    category: "计算模型"
+    definition: "基于函数抽象和应用的计算模型"
+    document: "07-计算模型/02-λ演算.md"
+    complexity: "基础"
+    prerequisites: ["function_theory"]
+    
+  - id: "combinatory_logic"
+    name: "组合子逻辑"
+    name_en: "Combinatory Logic"
+    category: "计算模型"
+    definition: "通过组合子而非变量绑定进行计算的模型"
+    document: "07-计算模型/03-组合子逻辑.md"
+    complexity: "中级"
+    prerequisites: ["lambda_calculus"]
+    
+  - id: "automata_theory"
+    name: "自动机理论"
+    name_en: "Automata Theory"
+    category: "计算模型"
+    definition: "研究抽象计算机器及其能力的理论"
+    document: "07-计算模型/04-自动机理论.md"
+    complexity: "基础"
+    prerequisites: ["set_theory"]
+    
+  - id: "finite_state_machine"
+    name: "有限状态机"
+    name_en: "Finite State Machine"
+    category: "计算模型"
+    definition: "具有有限状态的抽象计算模型"
+    document: "07-计算模型/04-自动机理论.md"
+    complexity: "基础"
+    prerequisites: ["automata_theory"]
+    
+  - id: "pushdown_automaton"
+    name: "下推自动机"
+    name_en: "Pushdown Automaton"
+    category: "计算模型"
+    definition: "带有栈存储的有限状态机"
+    document: "07-计算模型/04-自动机理论.md"
+    complexity: "中级"
+    prerequisites: ["finite_state_machine"]
+    
+  - id: "quantum_computing_model"
+    name: "量子计算模型"
+    name_en: "Quantum Computing Model"
+    category: "计算模型"
+    definition: "基于量子力学原理的计算模型"
+    document: "07-计算模型/05-量子计算模型.md"
+    complexity: "高级"
+    prerequisites: ["turing_machine", "linear_algebra", "probability_theory"]
+    
+  - id: "cellular_automaton"
+    name: "细胞自动机"
+    name_en: "Cellular Automaton"
+    category: "计算模型"
+    definition: "由规则驱动的离散格点系统"
+    document: "07-计算模型/06-细胞自动机理论.md"
+    complexity: "中级"
+    prerequisites: ["automata_theory"]
+    
+  - id: "neural_network_model"
+    name: "神经网络计算模型"
+    name_en: "Neural Network Model"
+    category: "计算模型"
+    definition: "受生物神经网络启发的计算模型"
+    document: "07-计算模型/07-神经网络计算模型.md"
+    complexity: "中级"
+    prerequisites: ["automata_theory", "linear_algebra"]
+    
+  - id: "computational_equivalence"
+    name: "计算模型等价性"
+    name_en: "Computational Equivalence"
+    category: "计算模型"
+    definition: "不同计算模型在计算能力上的等价关系"
+    document: "07-计算模型/08-计算模型等价性理论.md"
+    complexity: "高级"
+    prerequisites: ["turing_machine", "lambda_calculus", "recursive_function"]
+    
+  # ========== 09-算法理论 (Algorithm Theory) ==========
+  - id: "algorithm_design"
+    name: "算法设计理论"
+    name_en: "Algorithm Design Theory"
+    category: "算法理论"
+    definition: "研究算法设计方法和策略的理论"
+    document: "09-算法理论/01-算法基础/01-算法设计理论.md"
+    complexity: "基础"
+    prerequisites: ["time_complexity"]
+    
+  - id: "data_structure"
+    name: "数据结构理论"
+    name_en: "Data Structure Theory"
+    category: "算法理论"
+    definition: "研究数据组织和存储方法的理论"
+    document: "09-算法理论/01-算法基础/02-数据结构理论.md"
+    complexity: "基础"
+    prerequisites: ["set_theory"]
+    
+  - id: "sorting_algorithm"
+    name: "排序算法理论"
+    name_en: "Sorting Algorithm Theory"
+    category: "算法理论"
+    definition: "研究数据排序方法和复杂度下界的理论"
+    document: "09-算法理论/01-算法基础/03-排序算法理论.md"
+    complexity: "基础"
+    prerequisites: ["algorithm_design", "data_structure", "time_complexity"]
+    
+  - id: "search_algorithm"
+    name: "搜索算法理论"
+    name_en: "Search Algorithm Theory"
+    category: "算法理论"
+    definition: "研究在数据结构中查找元素的方法和理论"
+    document: "09-算法理论/01-算法基础/04-搜索算法理论.md"
+    complexity: "基础"
+    prerequisites: ["algorithm_design", "data_structure"]
+    
+  - id: "graph_algorithm"
+    name: "图算法理论"
+    name_en: "Graph Algorithm Theory"
+    category: "算法理论"
+    definition: "研究图结构上的算法设计和分析"
+    document: "09-算法理论/01-算法基础/05-图算法理论.md"
+    complexity: "中级"
+    prerequisites: ["algorithm_design", "data_structure", "graph_theory"]
+    
+  - id: "dynamic_programming"
+    name: "动态规划理论"
+    name_en: "Dynamic Programming Theory"
+    category: "算法理论"
+    definition: "通过分解为重叠子问题来求解最优解的方法论"
+    document: "09-算法理论/01-算法基础/06-动态规划理论.md"
+    complexity: "中级"
+    prerequisites: ["algorithm_design", "mathematical_induction"]
+    
+  - id: "greedy_algorithm"
+    name: "贪心算法理论"
+    name_en: "Greedy Algorithm Theory"
+    category: "算法理论"
+    definition: "通过局部最优选择来构造全局最优解的算法设计方法"
+    document: "09-算法理论/01-算法基础/07-贪心算法理论.md"
+    complexity: "中级"
+    prerequisites: ["algorithm_design"]
+    
+  - id: "divide_and_conquer"
+    name: "分治算法理论"
+    name_en: "Divide and Conquer Theory"
+    category: "算法理论"
+    definition: "将问题分解为子问题、求解子问题并合并结果的算法设计方法"
+    document: "09-算法理论/01-算法基础/08-分治算法理论.md"
+    complexity: "中级"
+    prerequisites: ["algorithm_design", "mathematical_induction", "recurrence_relation"]
+    
+  - id: "backtracking"
+    name: "回溯算法理论"
+    name_en: "Backtracking Theory"
+    category: "算法理论"
+    definition: "通过试探和回退来搜索解空间的算法设计方法"
+    document: "09-算法理论/01-算法基础/09-回溯算法理论.md"
+    complexity: "中级"
+    prerequisites: ["algorithm_design", "search_algorithm"]
+    
+  - id: "branch_and_bound"
+    name: "分支限界算法理论"
+    name_en: "Branch and Bound Theory"
+    category: "算法理论"
+    definition: "结合分支搜索和界限剪枝的优化算法方法"
+    document: "09-算法理论/01-算法基础/10-分支限界算法理论.md"
+    complexity: "中级"
+    prerequisites: ["backtracking", "optimization_theory"]
+    
+  - id: "randomized_algorithm"
+    name: "随机算法理论"
+    name_en: "Randomized Algorithm Theory"
+    category: "算法理论"
+    definition: "利用随机性来提高效率或简化设计的算法"
+    document: "09-算法理论/01-算法基础/11-随机算法理论.md"
+    complexity: "中级"
+    prerequisites: ["algorithm_design", "probability_theory"]
+    
+  - id: "approximation_algorithm"
+    name: "近似算法理论"
+    name_en: "Approximation Algorithm Theory"
+    category: "算法理论"
+    definition: "在多项式时间内给出NP难问题近似解的算法"
+    document: "09-算法理论/01-算法基础/12-近似算法理论.md"
+    complexity: "高级"
+    prerequisites: ["algorithm_design", "np_completeness"]
+    
+  - id: "online_algorithm"
+    name: "在线算法理论"
+    name_en: "Online Algorithm Theory"
+    category: "算法理论"
+    definition: "在输入序列逐步到达时做出决策的算法"
+    document: "09-算法理论/01-算法基础/13-在线算法理论.md"
+    complexity: "高级"
+    prerequisites: ["algorithm_design", "competitive_analysis"]
+    
+  - id: "streaming_algorithm"
+    name: "流算法理论"
+    name_en: "Streaming Algorithm Theory"
+    category: "算法理论"
+    definition: "在数据流上以亚线性空间处理数据的算法"
+    document: "09-算法理论/01-算法基础/14-流算法理论.md"
+    complexity: "高级"
+    prerequisites: ["algorithm_design", "space_complexity"]
+    
+  - id: "quantum_algorithm"
+    name: "量子算法理论"
+    name_en: "Quantum Algorithm Theory"
+    category: "算法理论"
+    definition: "利用量子力学原理设计的算法"
+    document: "09-算法理论/01-算法基础/15-量子算法理论.md"
+    complexity: "高级"
+    prerequisites: ["quantum_computing_model", "algorithm_design"]
+    
+  - id: "parallel_algorithm"
+    name: "并行算法理论"
+    name_en: "Parallel Algorithm Theory"
+    category: "算法理论"
+    definition: "利用多处理器同时执行的算法设计方法"
+    document: "09-算法理论/03-优化理论/02-并行算法理论.md"
+    complexity: "高级"
+    prerequisites: ["algorithm_design", "complexity_class"]
+    
+  - id: "distributed_algorithm"
+    name: "分布式算法理论"
+    name_en: "Distributed Algorithm Theory"
+    category: "算法理论"
+    definition: "在分布式系统中协调多个节点完成计算的算法"
+    document: "09-算法理论/03-优化理论/03-分布式算法理论.md"
+    complexity: "高级"
+    prerequisites: ["parallel_algorithm", "communication_complexity"]
+    
+  - id: "computational_complexity_theory"
+    name: "计算复杂度理论"
+    name_en: "Computational Complexity Theory"
+    category: "算法理论"
+    definition: "研究计算问题内在难度的理论"
+    document: "09-算法理论/02-复杂度理论/01-计算复杂度理论.md"
+    complexity: "高级"
+    prerequisites: ["complexity_class", "turing_machine"]
+    
+  # ========== 10-高级主题 (Advanced Topics) ==========
+  - id: "category_theory_computing"
+    name: "范畴论在计算中的应用"
+    name_en: "Category Theory in Computing"
+    category: "高级主题"
+    definition: "将范畴论方法应用于计算机科学的理论"
+    document: "10-高级主题/01-范畴论在计算中的应用.md"
+    complexity: "高级"
+    prerequisites: ["category_theory", "type_system"]
+    
+  - id: "homotopy_type_theory_advanced"
+    name: "同伦类型论的高级应用"
+    name_en: "Advanced Applications of HoTT"
+    category: "高级主题"
+    definition: "同伦类型论在证明助手和统一基础中的应用"
+    document: "10-高级主题/02-同伦类型论的高级应用.md"
+    complexity: "专家"
+    prerequisites: ["homotopy_type_theory", "formal_verification"]
+    
+  - id: "proof_assistant"
+    name: "证明助手的实现"
+    name_en: "Proof Assistant Implementation"
+    category: "高级主题"
+    definition: "用于形式化数学证明的计算机辅助系统"
+    document: "10-高级主题/03-证明助手的实现.md"
+    complexity: "高级"
+    prerequisites: ["dependent_type_theory", "proof_system"]
+    
+  - id: "quantum_information"
+    name: "量子信息论"
+    name_en: "Quantum Information Theory"
+    category: "高级主题"
+    definition: "研究量子态作为信息载体的理论"
+    document: "10-高级主题/04-量子信息论.md"
+    complexity: "高级"
+    prerequisites: ["quantum_computing_model", "information_theory"]
+    
+  - id: "quantum_machine_learning"
+    name: "量子机器学习"
+    name_en: "Quantum Machine Learning"
+    category: "高级主题"
+    definition: "结合量子计算与机器学习的交叉领域"
+    document: "10-高级主题/05-量子机器学习.md"
+    complexity: "高级"
+    prerequisites: ["quantum_computing_model", "machine_learning"]
+    
+  - id: "formal_verification"
+    name: "形式化验证"
+    name_en: "Formal Verification"
+    category: "高级主题"
+    definition: "使用数学方法验证系统正确性的技术"
+    document: "08-实现示例/04-形式化验证.md"
+    complexity: "高级"
+    prerequisites: ["proof_system", "temporal_logic"]
+    
+  - id: "program_synthesis"
+    name: "程序合成技术"
+    name_en: "Program Synthesis"
+    category: "高级主题"
+    definition: "自动从规范生成程序的技术"
+    document: "10-高级主题/07-程序合成技术.md"
+    complexity: "专家"
+    prerequisites: ["formal_verification", "logic_programming"]
+    
+  - id: "quantum_complexity"
+    name: "量子计算复杂性理论"
+    name_en: "Quantum Computational Complexity"
+    category: "高级主题"
+    definition: "研究量子计算复杂度类的理论"
+    document: "10-高级主题/08-量子计算复杂性理论.md"
+    complexity: "专家"
+    prerequisites: ["quantum_computing_model", "computational_complexity_theory"]
+    
+  # ========== 应用领域 (Applications) ==========
+  - id: "ai_algorithm"
+    name: "人工智能算法应用"
+    name_en: "AI Algorithm Applications"
+    category: "应用领域"
+    definition: "算法在人工智能领域的应用"
+    document: "12-应用领域/01-人工智能算法应用.md"
+    complexity: "中级"
+    prerequisites: ["machine_learning", "neural_network_algorithm"]
+    
+  - id: "blockchain_algorithm"
+    name: "区块链算法应用"
+    name_en: "Blockchain Algorithm Applications"
+    category: "应用领域"
+    definition: "算法在区块链技术中的应用"
+    document: "12-应用领域/02-区块链算法应用.md"
+    complexity: "中级"
+    prerequisites: ["cryptography", "distributed_algorithm"]
+    
+  - id: "cybersecurity_algorithm"
+    name: "网络安全算法应用"
+    name_en: "Cybersecurity Algorithm Applications"
+    category: "应用领域"
+    definition: "算法在网络安全领域的应用"
+    document: "12-应用领域/03-网络安全算法应用.md"
+    complexity: "中级"
+    prerequisites: ["cryptography", "complexity_class"]
+    
+  - id: "bioinformatics_algorithm"
+    name: "生物信息学算法应用"
+    name_en: "Bioinformatics Algorithm Applications"
+    category: "应用领域"
+    definition: "算法在生物信息学领域的应用"
+    document: "12-应用领域/04-生物信息学算法应用.md"
+    complexity: "高级"
+    prerequisites: ["dynamic_programming", "graph_algorithm", "string_algorithm"]
+    
+  - id: "financial_algorithm"
+    name: "金融算法应用"
+    name_en: "Financial Algorithm Applications"
+    category: "应用领域"
+    definition: "算法在金融领域的应用"
+    document: "12-应用领域/05-金融算法应用.md"
+    complexity: "高级"
+    prerequisites: ["optimization_theory", "randomized_algorithm", "machine_learning"]
+    
+  - id: "quantum_cryptography"
+    name: "量子密码学"
+    name_en: "Quantum Cryptography"
+    category: "应用领域"
+    definition: "基于量子力学原理的密码学技术"
+    document: "12-应用领域/09-量子密码学算法应用.md"
+    complexity: "专家"
+    prerequisites: ["quantum_computing_model", "cryptography"]
+    
+  - id: "quantum_optimization"
+    name: "量子优化算法"
+    name_en: "Quantum Optimization Algorithms"
+    category: "应用领域"
+    definition: "利用量子计算解决优化问题的算法"
+    document: "12-应用领域/18-量子优化算法应用.md"
+    complexity: "专家"
+    prerequisites: ["quantum_computing_model", "optimization_theory"]

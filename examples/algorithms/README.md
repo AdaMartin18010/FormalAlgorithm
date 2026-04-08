@@ -42,32 +42,35 @@ fn main() {
 
 ## 📚 算法清单
 
-| 算法 | 模块 | 时间复杂度 | 空间复杂度 | 特点 |
-|------|------|-----------|-----------|------|
-| 归并排序 | `merge_sort` | O(n log n) | O(n) | 稳定排序，分治法 |
-| 快速排序 | `quick_sort` | O(n log n) 平均 | O(log n) | 原地排序，分治法 |
-| 堆排序 | `heap_sort` | O(n log n) | O(1) | 原地排序，堆结构 |
-| 二分搜索 | `binary_search` | O(log n) | O(1) | 有序数组搜索 |
-| Dijkstra | `dijkstra` | O((V+E) log V) | O(V) | 单源最短路径 |
-| LCS | `lcs` | O(mn) | O(mn) 可优化 | 动态规划经典 |
-| 活动选择 | `greedy_activity_selection` | O(n log n) | O(n) | 贪心算法经典 |
-| 最近点对 | `divide_conquer` | O(n log n) | O(n) | 分治几何算法 |
-| N皇后 | `backtracking_nqueens` | O(N!) | O(N) | 回溯算法经典 |
-| BFS/DFS | `graph_bfs_dfs` | O(V+E) | O(V) | 图遍历基础 |
+| 分类 | 算法 | 模块 | 时间复杂度 | 空间复杂度 | 特点 |
+|------|------|------|-----------|-----------|------|
+| 排序 | 归并排序 | `merge_sort` | O(n log n) | O(n) | 稳定排序，分治法 |
+| 排序 | 快速排序 | `quick_sort` | O(n log n) 平均 | O(log n) | 原地排序，分治法 |
+| 排序 | 堆排序 | `heap_sort` | O(n log n) | O(1) | 原地排序，堆结构 |
+| 搜索 | 二分搜索 | `binary_search` | O(log n) | O(1) | 有序数组搜索 |
+| 图算法 | Dijkstra | `dijkstra` | O((V+E) log V) | O(V) | 单源最短路径 |
+| 图算法 | BFS | `graph_bfs_dfs::bfs` | O(V+E) | O(V) | 广度优先搜索 |
+| 图算法 | DFS | `graph_bfs_dfs::dfs` | O(V+E) | O(V) | 深度优先搜索 |
+| 动态规划 | LCS | `lcs` | O(mn) | O(mn) 可优化 | 最长公共子序列 |
+| 贪心算法 | 活动选择 | `greedy_activity_selection` | O(n log n) | O(n) | 区间调度问题 |
+| 回溯算法 | N皇后 | `backtracking_nqueens` | O(N!) | O(N) | 经典回溯问题 |
 
 ## 🔧 功能特性
 
 ### 类型安全
+
 - 使用Rust类型系统确保运行时安全
 - 泛型支持多种数据类型
 - 自定义错误类型
 
 ### 错误处理
+
 - 使用 `Result<T, E>` 进行错误传播
 - 使用 `Option<T>` 处理可选值
 - 详细的错误信息和上下文
 
 ### 性能优化
+
 - 零成本抽象
 - 内存安全无GC开销
 - 编译器优化友好
@@ -75,11 +78,13 @@ fn main() {
 ## 🧪 测试
 
 ### 运行所有测试
+
 ```bash
 cargo test
 ```
 
 ### 运行特定算法测试
+
 ```bash
 cargo test merge_sort
 cargo test quick_sort
@@ -87,6 +92,7 @@ cargo test binary_search
 ```
 
 ### 边界条件测试
+
 ```bash
 cargo test -- --include-ignored
 ```
@@ -94,14 +100,17 @@ cargo test -- --include-ignored
 ## 📊 基准测试
 
 ### 运行所有基准测试
+
 ```bash
 cargo bench
 ```
 
 ### 生成HTML报告
+
 基准测试报告将生成在 `target/criterion/` 目录下。
 
 ### 与标准库对比
+
 ```bash
 cargo bench -- --compare
 ```
@@ -121,6 +130,7 @@ assert_eq!(data, vec![3, 9, 10, 27, 38, 43, 82]);
 **算法思想**: 分治法 - 将数组分成两半，分别排序后合并。
 
 **复杂度分析**:
+
 - 时间复杂度: O(n log n) - 最坏、最好、平均情况
 - 空间复杂度: O(n) - 需要额外存储空间
 - 稳定性: 稳定
@@ -138,6 +148,7 @@ assert_eq!(data, vec![1, 5, 7, 8, 9, 10]);
 **算法思想**: 分治法 - 选择基准元素，将数组分区后递归排序。
 
 **复杂度分析**:
+
 - 时间复杂度: O(n log n) 平均，O(n²) 最坏
 - 空间复杂度: O(log n) - 递归栈空间
 - 稳定性: 不稳定
@@ -155,6 +166,7 @@ assert_eq!(data, vec![5, 6, 7, 11, 12, 13]);
 **算法思想**: 构建最大堆，反复提取最大值。
 
 **复杂度分析**:
+
 - 时间复杂度: O(n log n)
 - 空间复杂度: O(1) - 原地排序
 - 稳定性: 不稳定
@@ -172,6 +184,7 @@ assert_eq!(binary_search(&arr, 5), Err(SearchError::NotFound));
 **算法思想**: 在有序数组中，每次将搜索范围减半。
 
 **复杂度分析**:
+
 - 时间复杂度: O(log n)
 - 空间复杂度: O(1)
 
@@ -192,6 +205,7 @@ let (distances, predecessors) = dijkstra(&edges, 'A');
 **算法思想**: 贪心算法 - 每次选择距离最短的顶点进行松弛操作。
 
 **复杂度分析**:
+
 - 时间复杂度: O((V+E) log V) 使用优先队列
 - 空间复杂度: O(V)
 
@@ -208,6 +222,7 @@ let (length, subsequence) = lcs(&seq1, &seq2);
 **算法思想**: 动态规划 - 构建DP表存储子问题解。
 
 **复杂度分析**:
+
 - 时间复杂度: O(mn)
 - 空间复杂度: O(mn) 可优化至 O(min(m,n))
 
@@ -227,26 +242,8 @@ let selected = greedy_activity_selection(&activities);
 **算法思想**: 贪心算法 - 每次选择结束时间最早且兼容的活动。
 
 **复杂度分析**:
+
 - 时间复杂度: O(n log n) - 主要是排序
-- 空间复杂度: O(n)
-
-### 8. 最近点对问题
-
-```rust
-use formal_algorithms::closest_pair;
-
-let points = vec![
-    Point { x: 2.0, y: 3.0 },
-    Point { x: 12.0, y: 30.0 },
-    Point { x: 40.0, y: 50.0 },
-];
-let (p1, p2, dist) = closest_pair(&points).unwrap();
-```
-
-**算法思想**: 分治法 - 将平面分割，递归求解后合并。
-
-**复杂度分析**:
-- 时间复杂度: O(n log n)
 - 空间复杂度: O(n)
 
 ### 9. N皇后问题
@@ -261,10 +258,33 @@ println!("4皇后问题共有 {} 个解", solutions.len());
 **算法思想**: 回溯算法 - 逐行放置皇后，冲突时回溯。
 
 **复杂度分析**:
+
 - 时间复杂度: O(N!) 最坏情况
 - 空间复杂度: O(N) - 递归栈
 
-### 10. 图的BFS/DFS遍历
+### 10. 活动选择问题
+
+```rust
+use formal_algorithms::greedy_activity_selection::{greedy_activity_selection, Activity};
+
+let activities = vec![
+    Activity::new(1, 4),
+    Activity::new(3, 5),
+    Activity::new(0, 6),
+    Activity::new(5, 7),
+];
+let result = greedy_activity_selection(&activities);
+println!("最多可以安排 {} 个活动", result.count);
+```
+
+**算法思想**: 贪心算法 - 每次选择结束时间最早且兼容的活动。
+
+**复杂度分析**:
+
+- 时间复杂度: O(n log n) - 主要是排序
+- 空间复杂度: O(n)
+
+### 11. 图的BFS/DFS遍历
 
 ```rust
 use formal_algorithms::{bfs, dfs};
@@ -279,11 +299,13 @@ let bfs_order = bfs(&adjacency_list, 0);
 let dfs_order = dfs(&adjacency_list, 0);
 ```
 
-**算法思想**: 
+**算法思想**:
+
 - BFS: 队列实现的层次遍历
 - DFS: 栈/递归实现的深度遍历
 
 **复杂度分析**:
+
 - 时间复杂度: O(V+E)
 - 空间复杂度: O(V)
 
@@ -294,6 +316,7 @@ let dfs_order = dfs(&adjacency_list, 0);
 ## 🤝 贡献
 
 欢迎提交Issue和Pull Request。请确保：
+
 1. 代码符合Rust编码规范
 2. 包含完整的单元测试
 3. 更新相关文档

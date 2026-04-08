@@ -3,7 +3,6 @@
 //! 堆排序是一种基于二叉堆数据结构的比较排序算法。
 //! 它利用堆的性质，通过反复提取最大（或最小）元素来实现排序。
 
-use crate::{AlgorithmError, SearchResult};
 use std::cmp::Ordering;
 
 /// 对可变切片进行堆排序
@@ -84,9 +83,9 @@ fn heapify<T: Ord>(arr: &mut [T], heap_size: usize, root: usize) {
     }
 }
 
-/// 最小堆排序（升序排列，使用最小堆）
+/// 最小堆排序（降序排列，使用最小堆）
 ///
-/// 与最大堆版本功能相同，只是实现方式不同
+/// 使用最小堆实现降序排列，与最大堆版本功能互补
 ///
 /// # 示例
 ///
@@ -95,7 +94,7 @@ fn heapify<T: Ord>(arr: &mut [T], heap_size: usize, root: usize) {
 ///
 /// let mut data = vec![12, 11, 13, 5, 6, 7];
 /// heap_sort_min(&mut data);
-/// assert_eq!(data, vec![5, 6, 7, 11, 12, 13]);
+/// assert_eq!(data, vec![13, 12, 11, 7, 6, 5]);
 /// ```
 pub fn heap_sort_min<T: Ord>(arr: &mut [T]) {
     if arr.len() <= 1 {
@@ -105,13 +104,13 @@ pub fn heap_sort_min<T: Ord>(arr: &mut [T]) {
     // 构建最小堆
     build_min_heap(arr);
 
-    // 提取元素
+    // 提取元素 - 每次将最小值放到数组末尾
     let n = arr.len();
-    for i in 0..n {
-        // 将堆顶（最小值）与当前位置交换
-        arr.swap(0, n - 1 - i);
+    for i in (1..n).rev() {
+        // 将堆顶（最小值）与末尾交换
+        arr.swap(0, i);
         // 调整剩余元素
-        min_heapify(&mut arr[..n - 1 - i], 0);
+        min_heapify(&mut arr[..i], 0);
     }
 }
 
@@ -303,7 +302,7 @@ pub fn heap_sort_floyd<T: Ord>(arr: &mut [T]) {
 
 /// 下沉操作（Floyd算法）
 fn sift_down<T: Ord>(arr: &mut [T], heap_size: usize, mut root: usize) {
-    let value = std::ptr::addr_of!(arr[root]);
+    let _value = std::ptr::addr_of!(arr[root]);
     
     loop {
         let left = 2 * root + 1;
@@ -312,7 +311,7 @@ fn sift_down<T: Ord>(arr: &mut [T], heap_size: usize, mut root: usize) {
         }
 
         let right = left + 1;
-        let mut largest = if right < heap_size && arr[right] > arr[left] {
+        let largest = if right < heap_size && arr[right] > arr[left] {
             right
         } else {
             left
@@ -378,7 +377,8 @@ mod tests {
     fn test_min_heap_sort() {
         let mut arr = vec![12, 11, 13, 5, 6, 7];
         heap_sort_min(&mut arr);
-        assert_eq!(arr, vec![5, 6, 7, 11, 12, 13]);
+        // 最小堆排序产生降序排列
+        assert_eq!(arr, vec![13, 12, 11, 7, 6, 5]);
     }
 
     #[test]

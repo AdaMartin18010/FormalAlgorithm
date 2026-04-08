@@ -1,0 +1,1085 @@
+# 11所国际顶尖大学课程对标数据库
+# 版本: 1.0
+# 创建日期: 2026-04-08
+# 用途: 存储课程对标分析数据，支持自动化查询和报告生成
+
+metadata:
+  version: "1.0"
+  created_date: "2026-04-08"
+  last_updated: "2026-04-08"
+  project: "算法规范与模型设计知识体系"
+  phase: "阶段4 - 国际化课程对标深化"
+  total_universities: 11
+  total_courses: 15
+  total_topics_analyzed: 140
+  overall_alignment: "79.2%"
+
+courses:
+  # MIT课程
+  - university: "MIT"
+    code: "6.006"
+    name: "Introduction to Algorithms"
+    name_cn: "算法导论"
+    level: "本科"
+    credits: "12 units"
+    instructors: ["Erik Demaine", "Jason Ku", "Justin Solomon"]
+    semester: "Spring/Fall"
+    url: "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+    prerequisites: ["6.0001", "6.042J"]
+    textbook: "CLRS Introduction to Algorithms 3rd Edition"
+    alignment:
+      overall: 90
+      theory: 95
+      practice: 85
+    covered_topics:
+      - 渐进分析
+      - 动态数组
+      - 堆与优先队列
+      - 哈希表
+      - 排序算法
+      - 图算法
+      - 动态规划
+      - 贪心算法
+    missing_topics:
+      - 摊还分析势能法详细证明
+      - 高级哈希技术
+    topics_with_gaps:
+      - topic: 平衡BST
+        alignment: 75
+        gap: 需补充AVL/红黑树实现
+      - topic: 摊还分析
+        alignment: 70
+        gap: 需补充势能分析法
+    priority: "高"
+    
+  - university: "MIT"
+    code: "18.404/6.5400"
+    name: "Theory of Computation"
+    name_cn: "计算理论"
+    level: "本科"
+    credits: "12 units"
+    instructors: ["Michael Sipser"]
+    semester: "Fall"
+    url: "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/"
+    prerequisites: ["6.1200"]
+    textbook: "Sipser Introduction to the Theory of Computation"
+    alignment:
+      overall: 85
+      theory: 90
+      practice: 40
+    covered_topics:
+      - 有限自动机
+      - 正则语言
+      - 上下文无关语言
+      - 图灵机
+      - 可判定性
+      - P vs NP
+      - NP完全性
+    missing_topics:
+      - 交互式证明系统
+      - 概率复杂度类
+      - 空间层次定理
+    topics_with_gaps:
+      - topic: CFG与PDA
+        alignment: 70
+        gap: 需补充更多形式化证明
+      - topic: 空间复杂度
+        alignment: 65
+        gap: 需补充空间层次定理
+    priority: "高"
+    
+  - university: "MIT"
+    code: "6.046"
+    name: "Design and Analysis of Algorithms"
+    name_cn: "算法设计与分析"
+    level: "本科高阶"
+    credits: "12 units"
+    instructors: ["Erik Demaine", "Srini Devadas", "Nancy Lynch"]
+    semester: "Spring"
+    url: "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/"
+    prerequisites: ["6.006", "6.042J"]
+    textbook: "CLRS Introduction to Algorithms 3rd Edition"
+    alignment:
+      overall: 78
+      theory: 80
+      practice: 75
+    covered_topics:
+      - 高级分治
+      - 网络流
+      - 线性规划基础
+      - 随机化算法
+      - 近似算法
+    missing_topics:
+      - 计算几何基础
+      - 在线算法竞争分析
+      - 多臂老虎机
+      - 拟阵理论
+    topics_with_gaps:
+      - topic: 高级分治
+        alignment: 70
+        gap: 需补充FFT完整实现
+      - topic: 在线算法
+        alignment: 60
+        gap: 需大幅补充
+    priority: "高"
+
+  # Stanford课程
+  - university: "Stanford"
+    code: "CS 161"
+    name: "Design and Analysis of Algorithms"
+    name_cn: "算法设计与分析"
+    level: "本科"
+    credits: "3-5 units"
+    instructors: ["Nima Anari", "Moses Charikar", "Mary Wootters"]
+    semester: "Winter/Autumn"
+    url: "https://stanford-cs161.github.io/winter2024/"
+    prerequisites: ["CS 106B/X", "CS 103/103B", "CS 109"]
+    textbook: "参考CLRS, Kleinberg-Tardos"
+    alignment:
+      overall: 85
+      theory: 88
+      practice: 82
+    covered_topics:
+      - 渐进分析
+      - 递归关系
+      - 分治法
+      - 动态规划
+      - 贪心算法
+      - 图算法
+      - 网络流
+      - NP完全性
+    missing_topics:
+      - 字符串算法
+      - Chernoff界应用
+      - 网络流完整理论
+    topics_with_gaps:
+      - topic: 摊还分析
+        alignment: 75
+        gap: 需补充更多示例
+      - topic: 随机化算法
+        alignment: 70
+        gap: 需扩展概率分析
+    priority: "高"
+
+  # CMU课程
+  - university: "CMU"
+    code: "15-451/651"
+    name: "Algorithm Design and Analysis"
+    name_cn: "算法设计与分析"
+    level: "本科/研究生"
+    credits: "12 units"
+    instructors: ["Daniel Anderson", "David Woodruff"]
+    semester: "Spring"
+    url: "https://www.cs.cmu.edu/~15451-s25/"
+    prerequisites: ["15-210"]
+    textbook: "Anderson, Blum, Gupta, Sleator讲义"
+    alignment:
+      overall: 82
+      theory: 85
+      practice: 80
+    covered_topics:
+      - 线性时间选择
+      - 比较模型下界
+      - 整数排序
+      - 摊还分析
+      - 哈希技术
+      - 网络流
+      - 线性规划
+      - 近似算法
+    missing_topics:
+      - 乘性权重算法
+      - 机制设计
+      - 计算几何
+      - 伸展树完整实现
+    topics_with_gaps:
+      - topic: 线性规划
+        alignment: 75
+        gap: 需补充单纯形法实现
+      - topic: 在线算法
+        alignment: 70
+        gap: 需补充更多问题
+    priority: "高"
+    
+  - university: "CMU"
+    code: "15-815"
+    name: "Interactive Theorem Proving"
+    name_cn: "交互式定理证明"
+    level: "研究生"
+    credits: "9-12 units"
+    instructors: ["参考课程目录"]
+    semester: "Fall/Spring"
+    prerequisites: ["15-251"]
+    alignment:
+      overall: 90
+      theory: 95
+      practice: 85
+    covered_topics:
+      - 直觉主义逻辑
+      - Curry-Howard对应
+      - 依赖类型
+      - 归纳类型
+      - 证明助手实践
+    missing_topics:
+      - Twelf证明助手实践
+      - 元理论证明
+    topics_with_gaps:
+      - topic: 证明助手实践
+        alignment: 70
+        gap: 需补充Twelf等
+    priority: "中"
+
+  # Berkeley课程
+  - university: "Berkeley"
+    code: "CS 170"
+    name: "Efficient Algorithms and Intractable Problems"
+    name_cn: "高效算法与难解问题"
+    level: "本科"
+    credits: "4 units"
+    instructors: ["Prasad Raghavendra", "John Wright", "Sanjam Garg"]
+    semester: "Spring"
+    url: "https://cs170.org/"
+    prerequisites: ["CS 61B", "CS 70"]
+    textbook: "Dasgupta, Papadimitriou, Vazirani Algorithms"
+    alignment:
+      overall: 90
+      theory: 92
+      practice: 88
+    covered_topics:
+      - 渐进分析
+      - 图论基础
+      - 最短路径
+      - 最小生成树
+      - 动态规划
+      - 网络流
+      - NP完全性
+    missing_topics:
+      - 数据流算法
+      - FFT完整实现
+      - 密码学基础
+    topics_with_gaps:
+      - topic: 线性规划
+        alignment: 70
+        gap: 需补充理论
+      - topic: 近似算法
+        alignment: 75
+        gap: 需补充更多算法
+    priority: "高"
+
+  # Harvard课程
+  - university: "Harvard"
+    code: "CS 125"
+    name: "Algorithms & Complexity"
+    name_cn: "算法与复杂度"
+    level: "本科"
+    credits: "4 units"
+    instructors: ["Salil Vadhan", "Jelani Nelson", "Michael Mitzenmacher", "Madhu Sudan"]
+    semester: "Fall"
+    url: "https://salil.seas.harvard.edu/~cs125"
+    prerequisites: []
+    textbook: "CLRS, Kleinberg-Tardos, Sipser"
+    alignment:
+      overall: 85
+      theory: 90
+      practice: 75
+    covered_topics:
+      - 排序
+      - 贪心算法
+      - 分治法
+      - 动态规划
+      - RAM模型
+      - 图灵机
+      - P vs NP
+      - 不可解性
+    missing_topics:
+      - 数据结构下界
+      - 近似算法扩展
+      - ZPP/PP复杂度类
+    topics_with_gaps:
+      - topic: 随机化复杂度
+        alignment: 75
+        gap: 需补充更多类
+    priority: "中"
+    
+  - university: "Harvard"
+    code: "CS 1200"
+    name: "Intro to Algorithms and their Limitations"
+    name_cn: "算法及其局限性导论"
+    level: "本科"
+    credits: "4 units"
+    instructors: ["参考课程目录"]
+    semester: "Fall"
+    url: "https://harvard-cs-1200.github.io/cs1200/"
+    prerequisites: []
+    alignment:
+      overall: 95
+      theory: 95
+      practice: 90
+    covered_topics:
+      - 算法基础
+      - 数据结构
+      - 图算法
+      - 可计算性基础
+    missing_topics:
+      - 高级分析技术
+      - 形式化证明训练
+    priority: "低"
+
+  # Princeton课程
+  - university: "Princeton"
+    code: "COS 226"
+    name: "Algorithms and Data Structures"
+    name_cn: "算法与数据结构"
+    level: "本科"
+    credits: "4 units"
+    instructors: ["Kevin Wayne", "Robert Sedgewick"]
+    semester: "Fall/Spring"
+    url: "https://www.cs.princeton.edu/courses/archive/fall25/cos226/"
+    prerequisites: ["COS 126"]
+    textbook: "Sedgewick & Wayne Algorithms 4th Edition"
+    alignment:
+      overall: 87
+      theory: 85
+      practice: 95
+    covered_topics:
+      - Union-Find
+      - 排序算法
+      - 二叉搜索树
+      - 图算法
+      - 最小生成树
+      - 最短路径
+      - 字符串排序
+      - 最大流
+    missing_topics:
+      - 后缀数组/后缀树
+      - 红黑树完整证明
+      - 几何算法理论
+      - B树详细分析
+    topics_with_gaps:
+      - topic: 红黑树
+        alignment: 80
+        gap: 需补充完整证明
+      - topic: 字符串查找
+        alignment: 85
+        gap: 需补充更多分析
+    priority: "中"
+
+  # Oxford课程
+  - university: "Oxford"
+    code: "L81"
+    name: "Proof Assistants"
+    name_cn: "证明助手"
+    level: "研究生"
+    credits: "N/A"
+    instructors: ["Dr Thomas Bauereiss", "Dr Meven Lennon-Bertrand", "Prof Peter Sewell"]
+    semester: "Michaelmas Term"
+    url: "https://www.cl.cam.ac.uk/teaching/2425/L81/"
+    prerequisites: ["基础逻辑", "编程经验"]
+    alignment:
+      overall: 92
+      theory: 95
+      practice: 88
+    covered_topics:
+      - 证明助手介绍
+      - 谓词逻辑
+      - 依赖类型
+      - Curry-Howard对应
+      - 归纳定义
+      - 递归函数
+      - 操作语义
+      - 类型系统
+    missing_topics:
+      - Isabelle/HOL实践
+      - 证明自动化
+      - 实际验证案例
+    topics_with_gaps:
+      - topic: Isabelle使用
+        alignment: 60
+        gap: 需补充Isabelle
+      - topic: Coq高级技巧
+        alignment: 70
+        gap: 需补充Ltac等
+    priority: "中"
+
+  # Cambridge课程
+  - university: "Cambridge"
+    code: "L313"
+    name: "Homotopy Type Theory & Univalent Foundations"
+    name_cn: "同伦类型论与泛等基础"
+    level: "研究生"
+    credits: "N/A"
+    instructors: ["Jon Sterling"]
+    semester: "Michaelmas"
+    url: "https://www.cl.cam.ac.uk/teaching/2526/L313/"
+    prerequisites: ["基础类型理论", "逻辑"]
+    alignment:
+      overall: 70
+      theory: 75
+      practice: 65
+    covered_topics:
+      - 依赖类型基础
+      - 判断等式
+      - Π-types / Σ-types
+      - 恒等类型
+      - 泛等基础
+    missing_topics:
+      - 截断类型理论
+      - 泛等公理完整理论
+      - 结构恒等原理应用
+      - 合成同伦论
+    topics_with_gaps:
+      - topic: 同伦
+        alignment: 60
+        gap: 需扩展HoTT
+      - topic: 等价
+        alignment: 70
+        gap: 需补充HoTT视角
+    priority: "高"
+
+  # Indiana University课程
+  - university: "Indiana University"
+    code: "CSCI-B619"
+    name: "Modern Dependent Types"
+    name_cn: "现代依赖类型"
+    level: "研究生"
+    credits: "N/A"
+    instructors: ["Carlo Angiuli", "Daniel Gratzer"]
+    semester: "Spring"
+    url: "https://carloangiuli.com/courses/b619-sp24/"
+    prerequisites: ["基础类型理论", "逻辑"]
+    textbook: "Principles of Dependent Type Theory"
+    alignment:
+      overall: 68
+      theory: 75
+      practice: 60
+    covered_topics:
+      - 替换演算
+      - 类型连接词
+      - HoTT基础
+    missing_topics:
+      - 归一化理论
+      - 类型检查算法实现
+      - 立方类型论
+      - 证明助手内核设计
+    topics_with_gaps:
+      - topic: 归一化
+        alignment: 0
+        gap: 缺失
+      - topic: 类型检查
+        alignment: 50
+        gap: 需补充实现
+    priority: "高"
+
+  # Boston University课程
+  - university: "Boston University"
+    code: "CS 511"
+    name: "Formal Methods"
+    name_cn: "形式化方法"
+    level: "研究生"
+    credits: "N/A"
+    instructors: ["参考课程目录"]
+    prerequisites: ["离散数学", "编程"]
+    alignment:
+      overall: 80
+      theory: 85
+      practice: 75
+    covered_topics:
+      - 时序逻辑
+      - 形式化建模
+      - 模型检测
+      - 定理证明
+    missing_topics:
+      - 进程代数
+      - weakest precondition演算
+    topics_with_gaps:
+      - topic: 形式化建模
+        alignment: 70
+        gap: 需补充
+      - topic: 模型检测
+        alignment: 75
+        gap: 基本一致
+    priority: "中"
+
+  # Cornell课程
+  - university: "Cornell"
+    code: "CS 6115"
+    name: "Certified Software Systems"
+    name_cn: "认证软件系统"
+    level: "研究生"
+    credits: "N/A"
+    instructors: ["Andrew Myers"]
+    semester: "Fall"
+    url: "https://www.cs.cornell.edu/courses/cs6115/"
+    prerequisites: ["编程语言", "形式化方法基础"]
+    alignment:
+      overall: 85
+      theory: 88
+      practice: 85
+    covered_topics:
+      - Coq基础
+      - 程序语义
+      - 霍尔逻辑
+      - 类型理论
+      - 程序验证
+    missing_topics:
+      - 操作系统验证深度案例
+      - 编译器验证完整流程
+    priority: "中"
+
+# 缺失主题库
+topics:
+  # 算法设计类
+  - name: "高级数据结构"
+    name_en: "Advanced Data Structures"
+    category: "算法设计"
+    priority: "高"
+    difficulty: "中"
+    courses: ["MIT 6.046", "CMU 15-451", "Princeton COS 226"]
+    status: "missing"
+    subtopics:
+      - 斐波那契堆
+      - van Emde Boas树
+      - 伸展树完整实现
+      - Link-Cut树
+    target_doc: "docs/09-算法理论/01-算法基础/24-高级数据结构.md"
+    estimated_days: 30
+    
+  - name: "网络流高级算法"
+    name_en: "Advanced Network Flow Algorithms"
+    category: "算法设计"
+    priority: "中"
+    difficulty: "中"
+    courses: ["MIT 6.046", "CMU 15-451", "Berkeley CS 170"]
+    status: "partial"
+    subtopics:
+      - Edmonds-Karp算法
+      - Dinic算法
+      - Push-Relabel算法
+      - 最小费用流
+    target_doc: "docs/09-算法理论/01-算法基础/05-图算法理论.md"
+    estimated_days: 25
+    
+  - name: "线性规划与对偶性"
+    name_en: "Linear Programming and Duality"
+    category: "算法设计"
+    priority: "高"
+    difficulty: "高"
+    courses: ["MIT 6.046", "CMU 15-451", "Berkeley CS 170"]
+    status: "partial"
+    subtopics:
+      - 单纯形法详细推导
+      - 对偶理论
+      - 互补松弛条件
+      - 应用案例
+    target_doc: "docs/09-算法理论/03-优化理论/05-线性规划理论.md"
+    estimated_days: 40
+    
+  - name: "近似算法设计技术"
+    name_en: "Approximation Algorithm Design Techniques"
+    category: "算法设计"
+    priority: "中"
+    difficulty: "中"
+    courses: ["MIT 6.046", "CMU 15-451", "Stanford CS 161"]
+    status: "partial"
+    subtopics:
+      - PTAS/FPTAS
+      - LP舍入
+      - 原始-对偶方法
+      - hardness of approximation
+    target_doc: "docs/09-算法理论/01-算法基础/12-近似算法理论.md"
+    estimated_days: 30
+    
+  - name: "在线算法竞争分析"
+    name_en: "Online Algorithms and Competitive Analysis"
+    category: "算法设计"
+    priority: "高"
+    difficulty: "高"
+    courses: ["MIT 6.046", "CMU 15-451"]
+    status: "partial"
+    subtopics:
+      - 分页问题
+      - k-server问题
+      - 列表更新问题
+      - 随机化在线算法
+    target_doc: "docs/09-算法理论/01-算法基础/13-在线算法理论.md"
+    estimated_days: 35
+    
+  - name: "并行算法设计"
+    name_en: "Parallel Algorithm Design"
+    category: "算法设计"
+    priority: "高"
+    difficulty: "高"
+    courses: []
+    status: "missing"
+    subtopics:
+      - PRAM模型
+      - 并行归约与前缀和
+      - 并行排序
+      - 并行图算法
+    target_doc: "docs/09-算法理论/03-优化理论/02-并行算法理论.md"
+    estimated_days: 40
+    
+  - name: "外部排序算法"
+    name_en: "External Sorting Algorithms"
+    category: "算法设计"
+    priority: "中"
+    difficulty: "低"
+    courses: ["Princeton COS 226"]
+    status: "missing"
+    subtopics:
+      - I/O模型
+      - 多路归并
+      - 置换选择
+      - B树与外部索引
+    target_doc: "docs/09-算法理论/01-算法基础/03-排序算法理论.md"
+    estimated_days: 15
+    
+  - name: "字符串匹配高级算法"
+    name_en: "Advanced String Matching Algorithms"
+    category: "算法设计"
+    priority: "高"
+    difficulty: "高"
+    courses: ["Princeton COS 226", "Stanford CS 161"]
+    status: "missing"
+    subtopics:
+      - 后缀数组
+      - 后缀树
+      - 后缀自动机
+      - LCP数组与RMQ
+    target_doc: "docs/09-算法理论/01-算法基础/25-字符串高级算法.md"
+    estimated_days: 40
+
+  # 形式化方法类
+  - name: "霍尔逻辑详细形式化"
+    name_en: "Hoare Logic Formalization"
+    category: "形式化方法"
+    priority: "高"
+    difficulty: "中"
+    courses: ["CMU 15-414", "BU CS 511", "Cornell CS 6115", "KTH FID3217"]
+    status: "partial"
+    subtopics:
+      - 霍尔三元组
+      - 推理规则
+      - 可靠性证明
+      - 相对完备性
+    target_doc: "docs/03-形式化证明/05-霍尔逻辑.md"
+    estimated_days: 25
+    
+  - name: "最弱前置条件计算"
+    name_en: "Weakest Precondition Calculus"
+    category: "形式化方法"
+    priority: "中"
+    difficulty: "中"
+    courses: ["BU CS 511", "CMU 15-414"]
+    status: "missing"
+    subtopics:
+      - 谓词转换器
+      - wp计算规则
+      - 验证条件生成
+      - 工具实现
+    target_doc: "docs/10-高级主题/40-最弱前置条件.md"
+    estimated_days: 25
+    
+  - name: "抽象解释"
+    name_en: "Abstract Interpretation"
+    category: "形式化方法"
+    priority: "高"
+    difficulty: "高"
+    courses: ["CMU 15-414"]
+    status: "missing"
+    subtopics:
+      - Galois连接
+      - 抽象域设计
+      - 不动点计算
+      - widen/narrow
+    target_doc: "docs/10-高级主题/41-抽象解释理论.md"
+    estimated_days: 35
+    
+  - name: "模型检测深度"
+    name_en: "Model Checking in Depth"
+    category: "形式化方法"
+    priority: "中"
+    difficulty: "高"
+    courses: ["CMU 15-414", "BU CS 511", "Stanford CS 238V"]
+    status: "partial"
+    subtopics:
+      - CTL*
+      - 符号模型检测
+      - BDD基础
+      - CEGAR
+    target_doc: "docs/06-逻辑系统/10-模型检测深度.md"
+    estimated_days: 35
+    
+  - name: "SAT/SMT求解器原理"
+    name_en: "SAT/SMT Solver Principles"
+    category: "形式化方法"
+    priority: "高"
+    difficulty: "高"
+    courses: ["CMU 15-414", "Stanford CS 238V"]
+    status: "partial"
+    subtopics:
+      - DPLL算法
+      - CDCL
+      - Nelson-Oppen组合
+      - 理论求解器
+    target_doc: "docs/10-高级主题/42-SAT-SMT求解器.md"
+    estimated_days: 35
+    
+  - name: "符号执行"
+    name_en: "Symbolic Execution"
+    category: "形式化方法"
+    priority: "中"
+    difficulty: "中"
+    courses: []
+    status: "missing"
+    subtopics:
+      - 基本原理
+      - 路径爆炸处理
+      - 工具实现
+      - 漏洞发现应用
+    target_doc: "docs/10-高级主题/43-符号执行.md"
+    estimated_days: 25
+    
+  - name: "类型推导算法"
+    name_en: "Type Inference Algorithms"
+    category: "形式化方法"
+    priority: "高"
+    difficulty: "中"
+    courses: []
+    status: "missing"
+    subtopics:
+      - 类型约束收集
+      - 合一算法
+      - Hindley-Milner系统
+      - 算法W
+    target_doc: "docs/05-类型理论/09-类型推导算法.md"
+    estimated_days: 25
+
+  # 计算理论类
+  - name: "交互式证明系统"
+    name_en: "Interactive Proof Systems"
+    category: "计算理论"
+    priority: "高"
+    difficulty: "高"
+    courses: ["MIT 18.404"]
+    status: "missing"
+    subtopics:
+      - IP类定义
+      - IP = PSPACE
+      - #P ⊆ IP
+      - MIP = NEXP
+    target_doc: "docs/04-算法复杂度/07-交互式证明系统.md"
+    estimated_days: 35
+    
+  - name: "概率可验证证明"
+    name_en: "Probabilistically Checkable Proofs"
+    category: "计算理论"
+    priority: "中"
+    difficulty: "高"
+    courses: ["MIT 18.404"]
+    status: "missing"
+    subtopics:
+      - PCP定理
+      - 组合验证器
+      - hardness of approximation
+      - 傅里叶分析
+    target_doc: "docs/09-算法理论/02-复杂度理论/02-PCP定理.md"
+    estimated_days: 35
+    
+  - name: "电路复杂度"
+    name_en: "Circuit Complexity"
+    category: "计算理论"
+    priority: "中"
+    difficulty: "中"
+    courses: ["MIT 18.404"]
+    status: "missing"
+    subtopics:
+      - 电路类定义
+      - 下界结果
+      - 限制方法
+      - NC层次
+    target_doc: "docs/09-算法理论/02-复杂度理论/03-电路复杂度.md"
+    estimated_days: 20
+    
+  - name: "通信复杂度"
+    name_en: "Communication Complexity"
+    category: "计算理论"
+    priority: "高"
+    difficulty: "中"
+    courses: ["Harvard CS 125"]
+    status: "partial"
+    subtopics:
+      - 两方通信模型
+      - 下界技术
+      - 应用
+      - 量子通信复杂度
+    target_doc: "docs/04-算法复杂度/05-通信复杂度.md"
+    estimated_days: 15
+    
+  - name: "量子计算复杂性"
+    name_en: "Quantum Complexity Theory"
+    category: "计算理论"
+    priority: "中"
+    difficulty: "高"
+    courses: []
+    status: "partial"
+    subtopics:
+      - BQP
+      - QIP = PSPACE
+      - 量子查询复杂度
+      - BQP vs NP
+    target_doc: "docs/10-高级主题/08-量子计算复杂性理论.md"
+    estimated_days: 35
+
+  # 类型理论类
+  - name: "子类型理论"
+    name_en: "Subtyping Theory"
+    category: "类型理论"
+    priority: "中"
+    difficulty: "中"
+    courses: []
+    status: "missing"
+    subtopics:
+      - 子类型关系
+      - 记录子类型
+      - 函数子类型
+      - 变型
+    target_doc: "docs/05-类型理论/10-子类型理论.md"
+    estimated_days: 20
+    
+  - name: "多态类型系统"
+    name_en: "Polymorphic Type Systems"
+    category: "类型理论"
+    priority: "中"
+    difficulty: "中"
+    courses: ["KTH FID3217"]
+    status: "missing"
+    subtopics:
+      - 参数多态
+      - 系统F
+      - 类型构造器
+      - 存在类型
+    target_doc: "docs/05-类型理论/11-多态类型系统.md"
+    estimated_days: 20
+    
+  - name: "归纳类型高级主题"
+    name_en: "Advanced Inductive Types"
+    category: "类型理论"
+    priority: "中"
+    difficulty: "中"
+    courses: ["Oxford L81", "CMU 15-815"]
+    status: "partial"
+    subtopics:
+      - 归纳族
+      - 归纳-归纳
+      - 归纳-递归
+      - 共归纳类型
+    target_doc: "docs/05-类型理论/02-依赖类型论.md"
+    estimated_days: 20
+    
+  - name: "立方类型论"
+    name_en: "Cubical Type Theory"
+    category: "类型理论"
+    priority: "高"
+    difficulty: "高"
+    courses: ["Indiana B619", "Cambridge L313"]
+    status: "missing"
+    subtopics:
+      - 立方模型
+      - 路径类型
+      - 构造性泛等
+      - 实现工具
+    target_doc: "docs/05-类型理论/03-同伦类型论-高级深化.md"
+    estimated_days: 35
+
+  # 实践技能类
+  - name: "算法实现技巧"
+    name_en: "Algorithm Implementation Techniques"
+    category: "实践技能"
+    priority: "中"
+    difficulty: "中"
+    courses: ["Princeton COS 226"]
+    status: "partial"
+    subtopics:
+      - 代码优化
+      - 数据结构选择
+      - 语言特性
+      - 调试与测试
+    target_doc: "docs/08-实现示例/09-算法实现技巧.md"
+    estimated_days: 20
+    
+  - name: "性能分析与优化"
+    name_en: "Performance Analysis and Optimization"
+    category: "实践技能"
+    priority: "高"
+    difficulty: "中"
+    courses: []
+    status: "missing"
+    subtopics:
+      - 分析方法
+      - 性能测量
+      - 优化技术
+      - 案例研究
+    target_doc: "docs/09-算法理论/04-高级算法理论/22-算法工程理论.md"
+    estimated_days: 25
+    
+  - name: "算法可视化"
+    name_en: "Algorithm Visualization"
+    category: "实践技能"
+    priority: "中"
+    difficulty: "低"
+    courses: []
+    status: "missing"
+    subtopics:
+      - 可视化原理
+      - 工具使用
+      - 经典算法可视化
+      - 教学应用
+    target_doc: "docs/12-应用领域/33-算法可视化应用.md"
+    estimated_days: 15
+    
+  - name: "证明助手实践"
+    name_en: "Proof Assistant Practice"
+    category: "实践技能"
+    priority: "高"
+    difficulty: "高"
+    courses: ["CMU 15-815", "Cornell CS 6115", "Oxford L81"]
+    status: "partial"
+    subtopics:
+      - Coq高级项目
+      - Lean项目
+      - 其他工具
+      - 证明工程
+    target_doc: "docs/08-实现示例/10-证明助手实践项目.md"
+    estimated_days: 40
+    
+  - name: "算法竞赛技巧"
+    name_en: "Algorithm Competition Techniques"
+    category: "实践技能"
+    priority: "低"
+    difficulty: "中"
+    courses: []
+    status: "missing"
+    subtopics:
+      - 竞赛算法
+      - 问题类型
+      - 解题策略
+      - 训练资源
+    target_doc: "docs/12-应用领域/34-算法竞赛技巧.md"
+    estimated_days: 20
+
+# 统计信息
+statistics:
+  by_category:
+    - category: "算法设计"
+      count: 8
+      high_priority: 5
+      medium_priority: 3
+      low_priority: 0
+    - category: "形式化方法"
+      count: 7
+      high_priority: 4
+      medium_priority: 3
+      low_priority: 0
+    - category: "计算理论"
+      count: 5
+      high_priority: 3
+      medium_priority: 2
+      low_priority: 0
+    - category: "类型理论"
+      count: 5
+      high_priority: 2
+      medium_priority: 3
+      low_priority: 0
+    - category: "实践技能"
+      count: 5
+      high_priority: 2
+      medium_priority: 2
+      low_priority: 1
+      
+  by_priority:
+    - priority: "高"
+      count: 15
+      estimated_total_days: 445
+    - priority: "中"
+      count: 10
+      estimated_total_days: 240
+    - priority: "低"
+      count: 5
+      estimated_total_days: 70
+      
+  by_status:
+    - status: "missing"
+      count: 20
+    - status: "partial"
+      count: 10
+
+# 实施计划
+timeline:
+  phase1:
+    name: "高优先级补充"
+    duration: "1-4月"
+    topics:
+      - 高级数据结构
+      - 线性规划与对偶性
+      - 在线算法竞争分析
+      - 霍尔逻辑详细形式化
+      - 类型推导算法
+      - 交互式证明系统
+      - 通信复杂度
+      - 立方类型论
+  phase2:
+    name: "中优先级补充"
+    duration: "5-9月"
+    topics:
+      - 网络流高级算法
+      - 近似算法设计技术
+      - 最弱前置条件计算
+      - 抽象解释
+      - 模型检测深度
+      - SAT/SMT求解器原理
+      - 符号执行
+      - PCP定理
+      - 电路复杂度
+      - 子类型理论
+  phase3:
+    name: "低优先级补充"
+    duration: "10-12月"
+    topics:
+      - 外部排序算法
+      - 多态类型系统
+      - 算法竞赛技巧
+      - 算法可视化
+      - 其他主题
+
+# 映射关系到项目模块
+module_mapping:
+  "01-基础理论":
+    courses: ["CMU 10-606"]
+    topics: []
+  "03-形式化证明":
+    courses: ["CMU 15-414", "Oxford L81", "Cornell CS 6115"]
+    topics: ["霍尔逻辑详细形式化", "最弱前置条件计算"]
+  "04-算法复杂度":
+    courses: ["MIT 18.404", "Harvard CS 125"]
+    topics: ["交互式证明系统", "通信复杂度"]
+  "05-类型理论":
+    courses: ["CMU 15-815", "Oxford L81", "Cambridge L313", "Indiana B619"]
+    topics: ["类型推导算法", "子类型理论", "多态类型系统", "立方类型论", "归纳类型高级主题"]
+  "06-逻辑系统":
+    courses: ["BU CS 511"]
+    topics: ["模型检测深度"]
+  "07-计算模型":
+    courses: ["MIT 18.404", "Harvard CS 125"]
+    topics: []
+  "08-实现示例":
+    courses: ["Oxford L81", "CMU 15-815", "Cornell CS 6115"]
+    topics: ["证明助手实践", "算法实现技巧"]
+  "09-算法理论":
+    courses: ["MIT 6.006", "MIT 6.046", "Stanford CS 161", "CMU 15-451", "Berkeley CS 170", "Harvard CS 125", "Princeton COS 226"]
+    topics: ["高级数据结构", "网络流高级算法", "线性规划与对偶性", "近似算法设计技术", "在线算法竞争分析", "并行算法设计", "外部排序算法", "字符串匹配高级算法"]
+  "10-高级主题":
+    courses: ["MIT 18.404", "CMU 15-414", "Stanford CS 238V"]
+    topics: ["抽象解释", "SAT/SMT求解器原理", "符号执行", "PCP定理", "电路复杂度", "量子计算复杂性", "性能分析与优化"]
+  "12-应用领域":
+    courses: []
+    topics: ["算法可视化", "算法竞赛技巧"]

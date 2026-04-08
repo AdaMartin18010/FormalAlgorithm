@@ -1,0 +1,504 @@
+# 算法规范与模型设计知识体系 - 关系边定义
+# Concept Edges for Formal Algorithm Knowledge Graph
+# version: 1.0
+# last_updated: 2025-04-08
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-04-08"
+  total_edges: 124
+  relation_types:
+    - depends_on          # 依赖关系
+    - implements          # 实现关系
+    - extends             # 扩展关系
+    - equivalent_to       # 等价关系
+    - applies_to          # 应用于
+    - generalizes         # 泛化关系
+    - specializes         # 特化关系
+    - uses                # 使用关系
+    - defines             # 定义关系
+    - proves              # 证明关系
+    - refines             # 精化关系
+    - contrasts_with      # 对比关系
+
+edges:
+  # ========== 基础理论内部关系 ==========
+  - source: "function_theory"
+    target: "set_theory"
+    relation: "depends_on"
+    
+  - source: "algebraic_structure"
+    target: "set_theory"
+    relation: "depends_on"
+    
+  - source: "algebraic_structure"
+    target: "function_theory"
+    relation: "uses"
+    
+  - source: "category_theory"
+    target: "set_theory"
+    relation: "depends_on"
+    
+  - source: "category_theory"
+    target: "function_theory"
+    relation: "depends_on"
+    
+  - source: "category_theory"
+    target: "algebraic_structure"
+    relation: "generalizes"
+    
+  - source: "measure_theory"
+    target: "set_theory"
+    relation: "depends_on"
+    
+  - source: "probability_theory"
+    target: "measure_theory"
+    relation: "depends_on"
+    
+  - source: "information_theory"
+    target: "probability_theory"
+    relation: "depends_on"
+    
+  # ========== 递归理论与计算模型关系 ==========
+  - source: "recursive_function"
+    target: "function_theory"
+    relation: "depends_on"
+    
+  - source: "primitive_recursive_function"
+    target: "recursive_function"
+    relation: "specializes"
+    
+  - source: "general_recursive_function"
+    target: "primitive_recursive_function"
+    relation: "extends"
+    
+  - source: "general_recursive_function"
+    target: "turing_machine"
+    relation: "equivalent_to"
+    description: "丘奇-图灵论题"
+    
+  - source: "recursively_enumerable"
+    target: "turing_machine"
+    relation: "depends_on"
+    
+  - source: "recursively_enumerable"
+    target: "recursive_function"
+    relation: "depends_on"
+    
+  - source: "undecidability"
+    target: "turing_machine"
+    relation: "depends_on"
+    
+  - source: "undecidability"
+    target: "recursive_function"
+    relation: "depends_on"
+    
+  # ========== 计算模型内部关系 ==========
+  - source: "turing_machine"
+    target: "finite_state_machine"
+    relation: "generalizes"
+    
+  - source: "pushdown_automaton"
+    target: "finite_state_machine"
+    relation: "extends"
+    
+  - source: "lambda_calculus"
+    target: "function_theory"
+    relation: "depends_on"
+    
+  - source: "lambda_calculus"
+    target: "turing_machine"
+    relation: "equivalent_to"
+    description: "丘奇-图灵论题"
+    
+  - source: "combinatory_logic"
+    target: "lambda_calculus"
+    relation: "equivalent_to"
+    
+  - source: "automata_theory"
+    target: "finite_state_machine"
+    relation: "defines"
+    
+  - source: "quantum_computing_model"
+    target: "turing_machine"
+    relation: "extends"
+    description: "在可计算性上等价，在复杂度上扩展"
+    
+  - source: "quantum_computing_model"
+    target: "linear_algebra"
+    relation: "depends_on"
+    
+  - source: "quantum_computing_model"
+    target: "probability_theory"
+    relation: "depends_on"
+    
+  - source: "cellular_automaton"
+    target: "automata_theory"
+    relation: "specializes"
+    
+  - source: "neural_network_model"
+    target: "automata_theory"
+    relation: "specializes"
+    
+  - source: "neural_network_model"
+    target: "linear_algebra"
+    relation: "depends_on"
+    
+  - source: "computational_equivalence"
+    target: "turing_machine"
+    relation: "proves"
+    
+  - source: "computational_equivalence"
+    target: "lambda_calculus"
+    relation: "proves"
+    
+  - source: "computational_equivalence"
+    target: "recursive_function"
+    relation: "proves"
+    
+  # ========== 逻辑系统内部关系 ==========
+  - source: "first_order_logic"
+    target: "propositional_logic"
+    relation: "extends"
+    
+  - source: "intuitionistic_logic"
+    target: "propositional_logic"
+    relation: "refines"
+    description: "拒绝排中律"
+    
+  - source: "modal_logic"
+    target: "propositional_logic"
+    relation: "extends"
+    
+  - source: "temporal_logic"
+    target: "modal_logic"
+    relation: "specializes"
+    
+  - source: "linear_logic"
+    target: "propositional_logic"
+    relation: "refines"
+    description: "资源敏感性"
+    
+  - source: "higher_order_logic"
+    target: "first_order_logic"
+    relation: "extends"
+    
+  - source: "higher_order_logic"
+    target: "type_system"
+    relation: "uses"
+    
+  # ========== 类型理论与逻辑系统关系 ==========
+  - source: "simple_type_theory"
+    target: "lambda_calculus"
+    relation: "extends"
+    
+  - source: "simple_type_theory"
+    target: "propositional_logic"
+    relation: "corresponds_to"
+    description: "柯里-霍华德同构"
+    
+  - source: "dependent_type_theory"
+    target: "simple_type_theory"
+    relation: "extends"
+    
+  - source: "dependent_type_theory"
+    target: "first_order_logic"
+    relation: "corresponds_to"
+    description: "柯里-霍华德同构"
+    
+  - source: "homotopy_type_theory"
+    target: "dependent_type_theory"
+    relation: "extends"
+    
+  - source: "homotopy_type_theory"
+    target: "category_theory"
+    relation: "uses"
+    
+  - source: "type_system"
+    target: "simple_type_theory"
+    relation: "depends_on"
+    
+  - source: "higher_order_type_system"
+    target: "type_system"
+    relation: "extends"
+    
+  - source: "higher_order_type_system"
+    target: "higher_order_logic"
+    relation: "corresponds_to"
+    
+  # ========== 形式化证明关系 ==========
+  - source: "proof_system"
+    target: "propositional_logic"
+    relation: "depends_on"
+    
+  - source: "mathematical_induction"
+    target: "number_theory"
+    relation: "depends_on"
+    
+  - source: "constructive_proof"
+    target: "proof_system"
+    relation: "refines"
+    
+  - source: "constructive_proof"
+    target: "intuitionistic_logic"
+    relation: "uses"
+    
+  - source: "proof_by_contradiction"
+    target: "propositional_logic"
+    relation: "uses"
+    
+  # ========== 算法复杂度关系 ==========
+  - source: "asymptotic_analysis"
+    target: "time_complexity"
+    relation: "refines"
+    
+  - source: "asymptotic_analysis"
+    target: "space_complexity"
+    relation: "refines"
+    
+  - source: "complexity_class"
+    target: "time_complexity"
+    relation: "depends_on"
+    
+  - source: "complexity_class"
+    target: "turing_machine"
+    relation: "depends_on"
+    
+  - source: "communication_complexity"
+    target: "complexity_class"
+    relation: "specializes"
+    
+  # ========== 算法理论内部关系 ==========
+  - source: "algorithm_design"
+    target: "time_complexity"
+    relation: "uses"
+    
+  - source: "sorting_algorithm"
+    target: "algorithm_design"
+    relation: "specializes"
+    
+  - source: "sorting_algorithm"
+    target: "data_structure"
+    relation: "uses"
+    
+  - source: "search_algorithm"
+    target: "algorithm_design"
+    relation: "specializes"
+    
+  - source: "search_algorithm"
+    target: "data_structure"
+    relation: "uses"
+    
+  - source: "graph_algorithm"
+    target: "algorithm_design"
+    relation: "specializes"
+    
+  - source: "graph_algorithm"
+    target: "data_structure"
+    relation: "uses"
+    
+  - source: "dynamic_programming"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "dynamic_programming"
+    target: "mathematical_induction"
+    relation: "uses"
+    
+  - source: "greedy_algorithm"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "divide_and_conquer"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "divide_and_conquer"
+    target: "mathematical_induction"
+    relation: "uses"
+    
+  - source: "backtracking"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "backtracking"
+    target: "search_algorithm"
+    relation: "uses"
+    
+  - source: "branch_and_bound"
+    target: "backtracking"
+    relation: "extends"
+    
+  - source: "randomized_algorithm"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "randomized_algorithm"
+    target: "probability_theory"
+    relation: "uses"
+    
+  - source: "approximation_algorithm"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "approximation_algorithm"
+    target: "np_completeness"
+    relation: "applies_to"
+    
+  - source: "online_algorithm"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "streaming_algorithm"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "streaming_algorithm"
+    target: "space_complexity"
+    relation: "uses"
+    
+  - source: "quantum_algorithm"
+    target: "quantum_computing_model"
+    relation: "implements"
+    
+  - source: "quantum_algorithm"
+    target: "algorithm_design"
+    relation: "extends"
+    
+  - source: "parallel_algorithm"
+    target: "algorithm_design"
+    relation: "implements"
+    
+  - source: "distributed_algorithm"
+    target: "parallel_algorithm"
+    relation: "extends"
+    
+  - source: "distributed_algorithm"
+    target: "communication_complexity"
+    relation: "uses"
+    
+  - source: "computational_complexity_theory"
+    target: "complexity_class"
+    relation: "extends"
+    
+  - source: "computational_complexity_theory"
+    target: "turing_machine"
+    relation: "depends_on"
+    
+  # ========== 高级主题关系 ==========
+  - source: "category_theory_computing"
+    target: "category_theory"
+    relation: "applies_to"
+    
+  - source: "category_theory_computing"
+    target: "type_system"
+    relation: "applies_to"
+    
+  - source: "homotopy_type_theory_advanced"
+    target: "homotopy_type_theory"
+    relation: "extends"
+    
+  - source: "homotopy_type_theory_advanced"
+    target: "formal_verification"
+    relation: "applies_to"
+    
+  - source: "proof_assistant"
+    target: "dependent_type_theory"
+    relation: "implements"
+    
+  - source: "proof_assistant"
+    target: "proof_system"
+    relation: "implements"
+    
+  - source: "quantum_information"
+    target: "quantum_computing_model"
+    relation: "extends"
+    
+  - source: "quantum_information"
+    target: "information_theory"
+    relation: "applies_to"
+    
+  - source: "quantum_machine_learning"
+    target: "quantum_computing_model"
+    relation: "uses"
+    
+  - source: "quantum_machine_learning"
+    target: "machine_learning"
+    relation: "extends"
+    
+  - source: "formal_verification"
+    target: "proof_system"
+    relation: "uses"
+    
+  - source: "formal_verification"
+    target: "temporal_logic"
+    relation: "uses"
+    
+  - source: "program_synthesis"
+    target: "formal_verification"
+    relation: "uses"
+    
+  - source: "quantum_complexity"
+    target: "quantum_computing_model"
+    relation: "applies_to"
+    
+  - source: "quantum_complexity"
+    target: "computational_complexity_theory"
+    relation: "extends"
+    
+  # ========== 应用领域关系 ==========
+  - source: "ai_algorithm"
+    target: "machine_learning"
+    relation: "applies_to"
+    
+  - source: "ai_algorithm"
+    target: "neural_network_algorithm"
+    relation: "uses"
+    
+  - source: "blockchain_algorithm"
+    target: "cryptography"
+    relation: "uses"
+    
+  - source: "blockchain_algorithm"
+    target: "distributed_algorithm"
+    relation: "uses"
+    
+  - source: "cybersecurity_algorithm"
+    target: "cryptography"
+    relation: "uses"
+    
+  - source: "cybersecurity_algorithm"
+    target: "complexity_class"
+    relation: "uses"
+    
+  - source: "bioinformatics_algorithm"
+    target: "dynamic_programming"
+    relation: "uses"
+    
+  - source: "bioinformatics_algorithm"
+    target: "graph_algorithm"
+    relation: "uses"
+    
+  - source: "financial_algorithm"
+    target: "optimization_theory"
+    relation: "uses"
+    
+  - source: "financial_algorithm"
+    target: "randomized_algorithm"
+    relation: "uses"
+    
+  - source: "quantum_cryptography"
+    target: "quantum_computing_model"
+    relation: "uses"
+    
+  - source: "quantum_cryptography"
+    target: "cryptography"
+    relation: "extends"
+    
+  - source: "quantum_optimization"
+    target: "quantum_computing_model"
+    relation: "uses"
+    
+  - source: "quantum_optimization"
+    target: "optimization_theory"
+    relation: "applies_to"

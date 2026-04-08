@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions / 讨论区
+    url: ../../discussions
+    about: 一般性讨论、问答、分享 / General discussions, Q&A, sharing
+  - name: 📖 贡献者指南 / Contributing Guide
+    url: ../docs/贡献者指南.md
+    about: 了解如何参与贡献 / Learn how to contribute
+  - name: 📚 项目文档 / Documentation
+    url: ../docs/README.md
+    about: 查看完整文档 / View full documentation

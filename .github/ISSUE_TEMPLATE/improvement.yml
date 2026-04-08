@@ -1,0 +1,78 @@
+name: Improvement / 改进建议
+description: 提出改进建议 / Suggest improvements
+title: "[Improvement] "
+labels: ["improvement", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您提出改进建议！请详细描述您的想法。
+        
+        Thank you for your suggestion! Please describe your idea in detail.
+        
+  - type: dropdown
+    id: category
+    attributes:
+      label: 改进类别 / Category
+      description: 选择改进的类型 / Select the type of improvement
+      options:
+        - 📖 内容质量（深度、准确性）/ Content Quality
+        - 🎨 格式排版（结构、美观）/ Formatting
+        - 🔗 交叉引用（链接、导航）/ Cross-references
+        - 💻 代码示例（实现、注释）/ Code Examples
+        - 🌐 国际化（翻译、术语）/ Internationalization
+        - ⚙️ 其他 / Other
+    validations:
+      required: true
+      
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前状况 / Current State
+      description: |
+        描述当前的问题或不足
+        Describe the current problem or limitation
+        - 具体位置
+        - 存在的问题
+        - 造成的影响
+    validations:
+      required: true
+      
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 改进建议 / Proposed Improvement
+      description: |
+        描述您的改进方案
+        Describe your improvement proposal
+        - 具体的改进措施
+        - 预期效果
+        - 实施步骤
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 替代方案 / Alternatives
+      description: 是否考虑过其他方案？ / Have you considered alternatives?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 补充信息 / Additional Context
+      description: 任何其他相关信息 / Any other relevant information
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 检查清单 / Checklist
+      options:
+        - label: 我已经搜索过现有的Issues，确认这个建议没有被提出过 / I have searched existing issues
+          required: true
+        - label: 我愿意参与实施这个改进 / I am willing to help implement this
+          required: false

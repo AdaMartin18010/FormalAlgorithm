@@ -1,0 +1,81 @@
+name: Content Request / 内容请求
+description: 请求补充新内容 / Request new content
+title: "[Content] "
+labels: ["content-request", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您对本项目的关注！请详细描述您希望补充的内容。
+        
+        Thank you for your interest! Please describe the content you would like to add.
+        
+  - type: input
+    id: topic
+    attributes:
+      label: 请求主题 / Topic
+      description: 希望补充的内容主题 / The topic you want to add
+      placeholder: 例如：动态规划优化技术 / e.g., Dynamic Programming Optimization Techniques
+    validations:
+      required: true
+      
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 补充理由 / Motivation
+      description: |
+        为什么需要补充这个主题？
+        Why is this topic needed?
+        - 当前知识体系的缺口
+        - 实际应用的需求
+        - 学术前沿的发展
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_outline
+    attributes:
+      label: 内容大纲 / Content Outline
+      description: 建议包含的主要内容 / Suggested main content
+      placeholder: |
+        - 定义与基本概念
+        - 主要定理与证明
+        - 算法实现示例
+        - 应用场景
+        - 参考文献
+    validations:
+      required: false
+      
+  - type: textarea
+    id: reference
+    attributes:
+      label: 参考资源 / References
+      description: 相关的论文、教材或课程 / Relevant papers, textbooks, or courses
+      placeholder: |
+        - [作者]. [标题]. [出版信息].
+        - 在线课程：...
+        - 论文链接：...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级 / Priority
+      description: 您认为这个主题的优先级 / Priority level
+      options:
+        - 🔴 高（核心主题缺失 / Core topic missing）
+        - 🟡 中（重要补充 / Important supplement）
+        - 🟢 低（锦上添花 / Nice to have）
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 检查清单 / Checklist
+      options:
+        - label: 我已经检查过现有文档，确认这个主题没有被覆盖 / I have checked existing documents
+          required: true
+        - label: 我愿意参与这个内容的编写 / I am willing to contribute to this content
+          required: false

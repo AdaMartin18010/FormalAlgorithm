@@ -93,24 +93,26 @@ fn partition<T: Ord>(arr: &mut [T], low: usize, high: usize) -> usize {
 ///
 /// 返回分区点，左边<=基准，右边>=基准
 fn hoare_partition<T: Ord>(arr: &mut [T], low: usize, high: usize) -> usize {
-    let pivot = &arr[low + (high - low) / 2];
-    let mut i = low as isize - 1;
+    let pivot_index = low + (high - low) / 2;
+    arr.swap(low, pivot_index);
+    let mut i = low as isize;
     let mut j = high as isize + 1;
 
     loop {
         loop {
             i += 1;
-            if i > high as isize || arr[i as usize] >= *pivot {
+            if i > high as isize || arr[i as usize] >= arr[low] {
                 break;
             }
         }
         loop {
             j -= 1;
-            if j < low as isize || arr[j as usize] <= *pivot {
+            if arr[j as usize] <= arr[low] {
                 break;
             }
         }
         if i >= j {
+            arr.swap(low, j as usize);
             return j as usize;
         }
         arr.swap(i as usize, j as usize);
@@ -160,7 +162,7 @@ fn quick_sort_hoare_internal<T: Ord>(arr: &mut [T], low: usize, high: usize) {
 /// quick_sort_3way(&mut data);
 /// assert_eq!(data, vec![1, 1, 1, 2, 2, 2, 3, 3, 3]);
 /// ```
-pub fn quick_sort_3way<T: Ord>(arr: &mut [T]) {
+pub fn quick_sort_3way<T: Ord + Clone>(arr: &mut [T]) {
     if arr.len() <= 1 {
         return;
     }
@@ -168,7 +170,7 @@ pub fn quick_sort_3way<T: Ord>(arr: &mut [T]) {
     quick_sort_3way_internal(arr, 0, len - 1);
 }
 
-fn quick_sort_3way_internal<T: Ord>(arr: &mut [T], low: usize, high: usize) {
+fn quick_sort_3way_internal<T: Ord + Clone>(arr: &mut [T], low: usize, high: usize) {
     if low >= high {
         return;
     }
@@ -186,28 +188,30 @@ fn quick_sort_3way_internal<T: Ord>(arr: &mut [T], low: usize, high: usize) {
 /// 三路分区
 ///
 /// 返回 (lt, gt)，其中：
-/// - arr[low..=lt] < pivot
-/// - arr[lt+1..=gt] == pivot
+/// - arr[low..lt] < pivot
+/// - arr[lt..=gt] == pivot
 /// - arr[gt+1..=high] > pivot
-fn partition_3way<T: Ord>(arr: &mut [T], low: usize, high: usize) -> (usize, usize) {
-    let pivot = &arr[low];
+fn partition_3way<T: Ord + Clone>(arr: &mut [T], low: usize, high: usize) -> (usize, usize) {
+    // 使用最后一个元素作为pivot（简化实现）
+    let pivot = arr[high].clone();
     let mut lt = low;      // arr[low..lt] < pivot
-    let mut gt = high;     // arr[gt+1..high] > pivot
-    let mut i = low + 1;   // 当前扫描位置
+    let mut gt = high;     // arr[gt..=high] > pivot
+    let mut i = low;       // 当前扫描位置
 
     while i <= gt {
-        if arr[i] < *pivot {
+        if arr[i] < pivot {
             arr.swap(lt, i);
             lt += 1;
             i += 1;
-        } else if arr[i] > *pivot {
+        } else if arr[i] > pivot {
             arr.swap(i, gt);
+            if gt == 0 { break; }
             gt -= 1;
         } else {
             i += 1;
         }
     }
-
+    
     (lt, gt)
 }
 
