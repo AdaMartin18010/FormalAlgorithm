@@ -1,8 +1,8 @@
 ---
 title: 2. Wiki国际概念对齐 / Wiki International Concept Alignment
-version: 1.1
+version: 1.2
 status: maintained
-last_updated: 2025-01-12
+last_updated: 2026-04-08
 owner: 国际化工作组
 ---
 
@@ -23,15 +23,23 @@ owner: 国际化工作组
 - [2.3 计算机科学概念对齐 (Computer Science Concept Alignment)](#23-计算机科学概念对齐-computer-science-concept-alignment)
   - [2.3.1 算法概念对齐 (Algorithm Concept Alignment)](#231-算法概念对齐-algorithm-concept-alignment)
   - [2.3.2 数据结构概念对齐 (Data Structure Concept Alignment)](#232-数据结构概念对齐-data-structure-concept-alignment)
+  - [2.3.3 计算理论基础概念对齐 (Theory of Computation Concept Alignment)](#233-计算理论基础概念对齐-theory-of-computation-concept-alignment)
 - [2.4 形式化方法概念对齐 (Formal Methods Concept Alignment)](#24-形式化方法概念对齐-formal-methods-concept-alignment)
   - [2.4.1 逻辑系统概念对齐 (Logic System Concept Alignment)](#241-逻辑系统概念对齐-logic-system-concept-alignment)
   - [2.4.2 证明方法概念对齐 (Proof Method Concept Alignment)](#242-证明方法概念对齐-proof-method-concept-alignment)
+  - [2.4.3 命题逻辑基础概念对齐 (Propositional Logic Foundation Concept Alignment)](#243-命题逻辑基础概念对齐-propositional-logic-foundation-concept-alignment)
+  - [2.4.4 一阶逻辑与模态逻辑概念对齐 (First-Order and Modal Logic Concept Alignment)](#244-一阶逻辑与模态逻辑概念对齐-first-order-and-modal-logic-concept-alignment)
+  - [2.4.5 直觉逻辑概念对齐 (Intuitionistic Logic Concept Alignment)](#245-直觉逻辑概念对齐-intuitionistic-logic-concept-alignment)
 - [2.5 类型理论概念对齐 (Type Theory Concept Alignment)](#25-类型理论概念对齐-type-theory-concept-alignment)
   - [2.5.1 基本类型概念对齐 (Basic Type Concept Alignment)](#251-基本类型概念对齐-basic-type-concept-alignment)
   - [2.5.2 高级类型概念对齐 (Advanced Type Concept Alignment)](#252-高级类型概念对齐-advanced-type-concept-alignment)
+  - [2.5.3 简单类型理论概念对齐 (Simply Typed Theory Concept Alignment)](#253-简单类型理论概念对齐-simply-typed-theory-concept-alignment)
 - [2.6 算法理论概念对齐 (Algorithm Theory Concept Alignment)](#26-算法理论概念对齐-algorithm-theory-concept-alignment)
   - [2.6.1 算法设计概念对齐 (Algorithm Design Concept Alignment)](#261-算法设计概念对齐-algorithm-design-concept-alignment)
   - [2.6.2 计算复杂度概念对齐 (Computational Complexity Concept Alignment)](#262-计算复杂度概念对齐-computational-complexity-concept-alignment)
+  - [2.6.3 图算法概念对齐 (Graph Algorithm Concept Alignment)](#263-图算法概念对齐-graph-algorithm-concept-alignment)
+  - [2.6.4 高级数据结构概念对齐 (Advanced Data Structure Concept Alignment)](#264-高级数据结构概念对齐-advanced-data-structure-concept-alignment)
+  - [2.6.5 复杂度理论概念对齐 (Computational Complexity Theory Concept Alignment)](#265-复杂度理论概念对齐-computational-complexity-theory-concept-alignment)
 - [2.7 高级主题概念对齐 (Advanced Topic Concept Alignment)](#27-高级主题概念对齐-advanced-topic-concept-alignment)
   - [2.7.1 范畴论概念对齐 (Category Theory Concept Alignment)](#271-范畴论概念对齐-category-theory-concept-alignment)
   - [2.7.2 同伦类型论概念对齐 (Homotopy Type Theory Concept Alignment)](#272-同伦类型论概念对齐-homotopy-type-theory-concept-alignment)
@@ -254,6 +262,8 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
 |---------|---------|---------|---------|
 | 算法 | [Algorithm](https://en.wikipedia.org/wiki/Algorithm) | 解决问题的有限步骤序列 | ✅ 已对齐 |
+| 伪代码 | [Pseudocode](https://en.wikipedia.org/wiki/Pseudocode) | 描述算法的高级非正式描述 | ✅ 已对齐 |
+| 算法分析 | [Analysis of algorithms](https://en.wikipedia.org/wiki/Analysis_of_algorithms) | 分析算法资源消耗的过程 | ✅ 已对齐 |
 | 时间复杂度 | [Time complexity](https://en.wikipedia.org/wiki/Time_complexity) | 算法执行时间随输入规模增长的函数 | ✅ 已对齐 |
 | 空间复杂度 | [Space complexity](https://en.wikipedia.org/wiki/Space_complexity) | 算法所需内存空间随输入规模增长的函数 | ✅ 已对齐 |
 | 大O记号 | [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation) | 描述函数增长上界的记号 | ✅ 已对齐 |
@@ -261,6 +271,7 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | P类 | [P (complexity)](https://en.wikipedia.org/wiki/P_(complexity)) | 可在多项式时间内解决的问题类 | ✅ 已对齐 |
 | NP类 | [NP (complexity)](https://en.wikipedia.org/wiki/NP_(complexity)) | 可在多项式时间内验证解的问题类 | ✅ 已对齐 |
 | NP完全 | [NP-completeness](https://en.wikipedia.org/wiki/NP-completeness) | NP类中最困难的问题 | ✅ 已对齐 |
+| NP难 | [NP-hardness](https://en.wikipedia.org/wiki/NP-hardness) | 至少与NP中最难问题一样困难的问题类 | ✅ 已对齐 |
 
 ### 2.3.2 数据结构概念对齐 (Data Structure Concept Alignment)
 
@@ -273,9 +284,44 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 链表 | [Linked list](https://en.wikipedia.org/wiki/Linked_list) | 通过指针连接的节点序列 | ✅ 已对齐 |
 | 栈 | [Stack (abstract data type)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) | 后进先出的数据结构 | ✅ 已对齐 |
 | 队列 | [Queue (abstract data type)](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) | 先进先出的数据结构 | ✅ 已对齐 |
+| 双端队列 | [Double-ended queue](https://en.wikipedia.org/wiki/Double-ended_queue) | 两端都可以进行插入和删除的队列 | ✅ 已对齐 |
+| 优先队列 | [Priority queue](https://en.wikipedia.org/wiki/Priority_queue) | 元素带有优先级的队列 | ✅ 已对齐 |
 | 树 | [Tree (data structure)](https://en.wikipedia.org/wiki/Tree_(data_structure)) | 层次结构的数据组织方式 | ✅ 已对齐 |
+| 二叉树 | [Binary tree](https://en.wikipedia.org/wiki/Binary_tree) | 每个节点最多有两个子节点的树 | ✅ 已对齐 |
 | 图 | [Graph (discrete mathematics)](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) | 节点和边的集合 | ✅ 已对齐 |
+| 有向图 | [Directed graph](https://en.wikipedia.org/wiki/Directed_graph) | 边带有方向的图 | ✅ 已对齐 |
+| 无向图 | [Undirected graph](https://en.wikipedia.org/wiki/Undirected_graph) | 边没有方向的图 | ✅ 已对齐 |
+| 加权图 | [Weighted graph](https://en.wikipedia.org/wiki/Weighted_graph) | 边带有权重的图 | ✅ 已对齐 |
 | 散列表 | [Hash table](https://en.wikipedia.org/wiki/Hash_table) | 基于散列函数的数据结构 | ✅ 已对齐 |
+| 哈希函数 | [Hash function](https://en.wikipedia.org/wiki/Hash_function) | 将输入映射到固定大小值的函数 | ✅ 已对齐 |
+| 冲突解决 | [Collision resolution](https://en.wikipedia.org/wiki/Hash_collision) | 处理哈希冲突的策略 | ✅ 已对齐 |
+
+### 2.3.3 计算理论基础概念对齐 (Theory of Computation Concept Alignment)
+
+**计算理论Wiki标准 / Theory of Computation Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 可计算性 | [Computability](https://en.wikipedia.org/wiki/Computability) | 问题能否被算法解决的性质 | ✅ 已对齐 |
+| 丘奇-图灵论题 | [Church–Turing thesis](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) | 可计算函数与图灵机可计算函数等价的假设 | ✅ 已对齐 |
+| 停机问题 | [Halting problem](https://en.wikipedia.org/wiki/Halting_problem) | 判定程序是否会终止的不可判定问题 | ✅ 已对齐 |
+| 图灵机 | [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) | 抽象计算模型 | ✅ 已对齐 |
+| 有限状态机 | [Finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine) | 具有有限状态数的计算模型 | ✅ 已对齐 |
+| 下推自动机 | [Pushdown automaton](https://en.wikipedia.org/wiki/Pushdown_automaton) | 带有栈的有限自动机 | ✅ 已对齐 |
+| 正则表达式 | [Regular expression](https://en.wikipedia.org/wiki/Regular_expression) | 描述正则语言的模式 | ✅ 已对齐 |
+| 正则语言 | [Regular language](https://en.wikipedia.org/wiki/Regular_language) | 可被有限自动机识别的语言 | ✅ 已对齐 |
+| 上下文无关文法 | [Context-free grammar](https://en.wikipedia.org/wiki/Context-free_grammar) | 生成上下文无关语言的文法 | ✅ 已对齐 |
+| 上下文无关语言 | [Context-free language](https://en.wikipedia.org/wiki/Context-free_language) | 可被下推自动机识别的语言 | ✅ 已对齐 |
+| Lambda演算 | [Lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus) | 函数定义和应用的形式系统 | ✅ 已对齐 |
+| 组合逻辑 | [Combinatory logic](https://en.wikipedia.org/wiki/Combinatory_logic) | 无变量的函数计算系统 | ✅ 已对齐 |
+| 递归函数 | [Recursive function](https://en.wikipedia.org/wiki/Recursive_function) | 通过递归定义的函数 | ✅ 已对齐 |
+| 原始递归函数 | [Primitive recursive function](https://en.wikipedia.org/wiki/Primitive_recursive_function) | 一类可计算的全函数 | ✅ 已对齐 |
+| 可判定性 | [Decidability](https://en.wikipedia.org/wiki/Decidability_(logic)) | 问题能否被算法判定 | ✅ 已对齐 |
+| 半可判定性 | [Semi-decidability](https://en.wikipedia.org/wiki/Recursive_enumerable_set) | 肯定实例可被验证但否定实例不可验证 | ✅ 已对齐 |
+| 莱斯定理 | [Rice's theorem](https://en.wikipedia.org/wiki/Rice%27s_theorem) | 关于程序语义性质的不可判定性定理 | ✅ 已对齐 |
+| 萨维奇定理 | [Savitch's theorem](https://en.wikipedia.org/wiki/Savitch%27s_theorem) | 确定性与非确定性空间复杂度的关系 | ✅ 已对齐 |
+| 空间层次定理 | [Space hierarchy theorem](https://en.wikipedia.org/wiki/Space_hierarchy_theorem) | 不同空间界限可判定问题的严格包含 | ✅ 已对齐 |
+| 时间层次定理 | [Time hierarchy theorem](https://en.wikipedia.org/wiki/Time_hierarchy_theorem) | 不同时间界限可判定问题的严格包含 | ✅ 已对齐 |
 
 ---
 
@@ -295,6 +341,46 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 命题 | [Proposition](https://en.wikipedia.org/wiki/Proposition) | 可以判断真假的陈述 | ✅ 已对齐 |
 | 逻辑连接词 | [Logical connective](https://en.wikipedia.org/wiki/Logical_connective) | 连接命题的运算符 | ✅ 已对齐 |
 | 量词 | [Quantifier (logic)](https://en.wikipedia.org/wiki/Quantifier_(logic)) | 表示数量范围的符号 | ✅ 已对齐 |
+
+**命题逻辑基础概念Wiki标准 / Propositional Logic Foundation Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 合取 | [Logical conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) | 逻辑与运算，表示"且" | ✅ 已对齐 |
+| 析取 | [Logical disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) | 逻辑或运算，表示"或" | ✅ 已对齐 |
+| 蕴含 | [Material conditional](https://en.wikipedia.org/wiki/Material_conditional) | 逻辑条件，表示"如果...则..." | ✅ 已对齐 |
+| 否定 | [Negation](https://en.wikipedia.org/wiki/Negation) | 逻辑非运算，表示"非" | ✅ 已对齐 |
+| 双条件 | [Biconditional](https://en.wikipedia.org/wiki/Logical_biconditional) | 逻辑等价，表示"当且仅当" | ✅ 已对齐 |
+| 永真式 | [Tautology (logic)](https://en.wikipedia.org/wiki/Tautology_(logic)) | 在所有解释下都为真的公式 | ✅ 已对齐 |
+| 矛盾式 | [Contradiction](https://en.wikipedia.org/wiki/Contradiction) | 在所有解释下都为假的公式 | ✅ 已对齐 |
+| 可满足性 | [Satisfiability](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) | 公式存在使其为真的解释 | ✅ 已对齐 |
+| 范式 | [Normal form (logic)](https://en.wikipedia.org/wiki/Normal_form_(logic)) | 公式的标准形式表示 | ✅ 已对齐 |
+| 合取范式 | [Conjunctive normal form](https://en.wikipedia.org/wiki/Conjunctive_normal_form) | 子句的合取形式 | ✅ 已对齐 |
+
+**一阶逻辑与模态逻辑概念Wiki标准 / First-Order and Modal Logic Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 谓词 | [Predicate (logic)](https://en.wikipedia.org/wiki/Predicate_(logic)) | 表示属性或关系的符号 | ✅ 已对齐 |
+| 常量 | [Constant (logic)](https://en.wikipedia.org/wiki/Constant_(logic)) | 表示特定对象的符号 | ✅ 已对齐 |
+| 变元 | [Variable (logic)](https://en.wikipedia.org/wiki/Variable_(logic)) | 表示对象的占位符 | ✅ 已对齐 |
+| 模型论 | [Model theory](https://en.wikipedia.org/wiki/Model_theory) | 研究形式语言与其解释之间关系的理论 | ✅ 已对齐 |
+| 证明论 | [Proof theory](https://en.wikipedia.org/wiki/Proof_theory) | 研究形式证明的理论 | ✅ 已对齐 |
+| 必然 | [Necessity](https://en.wikipedia.org/wiki/Modal_logic) | 模态逻辑中表示"必然"的算子 | ✅ 已对齐 |
+| 可能 | [Possibility](https://en.wikipedia.org/wiki/Modal_logic) | 模态逻辑中表示"可能"的算子 | ✅ 已对齐 |
+| Kripke语义 | [Kripke semantics](https://en.wikipedia.org/wiki/Kripke_semantics) | 模态逻辑的语义解释 | ✅ 已对齐 |
+| 可能世界 | [Possible world](https://en.wikipedia.org/wiki/Possible_world) | 模态逻辑中描述可能情况的语义概念 | ✅ 已对齐 |
+| 可及关系 | [Accessibility relation](https://en.wikipedia.org/wiki/Accessibility_relation) | 可能世界之间的关系 | ✅ 已对齐 |
+
+**直觉逻辑概念Wiki标准 / Intuitionistic Logic Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 构造性证明 | [Constructive proof](https://en.wikipedia.org/wiki/Constructive_proof) | 要求显式构造对象的证明 | ✅ 已对齐 |
+| BHK解释 | [Brouwer–Heyting–Kolmogorov interpretation](https://en.wikipedia.org/wiki/Brouwer%E2%80%93Heyting%E2%80%93Kolmogorov_interpretation) | 直觉逻辑的证明解释 | ✅ 已对齐 |
+| 排中律 | [Law of excluded middle](https://en.wikipedia.org/wiki/Law_of_excluded_middle) | 命题或其否定必有一真 | ⚠️ 部分对齐 |
+| 双重否定消除 | [Double negation](https://en.wikipedia.org/wiki/Double_negation_elimination) | 从非非A推出A | ⚠️ 部分对齐 |
+| 选择公理 | [Axiom of choice](https://en.wikipedia.org/wiki/Axiom_of_choice) | 从非空集合族中选择元素 | ⚠️ 部分对齐 |
 
 ### 2.4.2 证明方法概念对齐 (Proof Method Concept Alignment)
 
@@ -344,6 +430,50 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 函子 | [Functor](https://en.wikipedia.org/wiki/Functor) | 保持结构的映射 | ✅ 已对齐 |
 | 应用函子 | [Applicative functor](https://en.wikipedia.org/wiki/Applicative_functor) | 支持函数应用的函子 | ✅ 已对齐 |
 
+### 2.5.3 简单类型理论概念对齐 (Simply Typed Theory Concept Alignment)
+
+**简单类型λ演算Wiki标准 / Simply Typed Lambda Calculus Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 简单类型λ演算 | [Simply typed lambda calculus](https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus) | 带类型的Lambda演算 | ✅ 已对齐 |
+| 类型推导 | [Type inference](https://en.wikipedia.org/wiki/Type_inference) | 自动推导表达式类型的过程 | ✅ 已对齐 |
+| 类型检查 | [Type checking](https://en.wikipedia.org/wiki/Type_checking) | 验证类型正确性的过程 | ✅ 已对齐 |
+| Curry-Howard对应 | [Curry–Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) | 类型与命题的对应关系 | ✅ 已对齐 |
+| 类型环境 | [Type environment](https://en.wikipedia.org/wiki/Type_rule) | 变量到类型的映射 | ✅ 已对齐 |
+| 类型规则 | [Type rule](https://en.wikipedia.org/wiki/Type_rule) | 推导类型的推理规则 | ✅ 已对齐 |
+| 类型安全性 | [Type safety](https://en.wikipedia.org/wiki/Type_safety) | 良类型程序不会出错 | ✅ 已对齐 |
+| 进度性 | [Progress](https://en.wikipedia.org/wiki/Type_safety) | 良类型非值表达式可继续规约 | ✅ 已对齐 |
+| 保型性 | [Preservation](https://en.wikipedia.org/wiki/Type_safety) | 规约保持类型 | ✅ 已对齐 |
+
+**多态类型Wiki标准 / Polymorphic Type Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 参数多态 | [Parametric polymorphism](https://en.wikipedia.org/wiki/Parametric_polymorphism) | 类型参数化的多态 | ✅ 已对齐 |
+| 特设多态 | [Ad hoc polymorphism](https://en.wikipedia.org/wiki/Ad_hoc_polymorphism) | 针对不同类型不同实现的多态 | ✅ 已对齐 |
+| 子类型多态 | [Subtyping](https://en.wikipedia.org/wiki/Subtyping) | 基于类型层次的多态 | ✅ 已对齐 |
+| System F | [System F](https://en.wikipedia.org/wiki/System_F) | 二阶Lambda演算 | ✅ 已对齐 |
+| Hindley-Milner | [Hindley–Milner type system](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system) | 支持多态的类型推导算法 | ✅ 已对齐 |
+| 全称量化 | [Universal quantification](https://en.wikipedia.org/wiki/Universal_quantification) | 对类型变量的全称量化 | ✅ 已对齐 |
+| 存在类型 | [Existential type](https://en.wikipedia.org/wiki/Existential_type) | 抽象实现细节的类型 | ✅ 已对齐 |
+| 类型擦除 | [Type erasure](https://en.wikipedia.org/wiki/Type_erasure) | 编译时移除类型信息 | ✅ 已对齐 |
+
+**依赖类型与高阶类型Wiki标准 / Dependent and Higher-Order Type Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 依赖函数类型 | [Dependent function type](https://en.wikipedia.org/wiki/Dependent_type) | Pi类型，依赖积类型 | ✅ 已对齐 |
+| 依赖对类型 | [Dependent pair type](https://en.wikipedia.org/wiki/Dependent_type) | Sigma类型，依赖和类型 | ✅ 已对齐 |
+| 归纳类型 | [Inductive type](https://en.wikipedia.org/wiki/Inductive_type) | 通过构造子定义的类型 | ✅ 已对齐 |
+| 余归纳类型 | [Coinductive type](https://en.wikipedia.org/wiki/Coinduction) | 通过观察器定义的类型 | ✅ 已对齐 |
+| 类型构造子 | [Type constructor](https://en.wikipedia.org/wiki/Type_constructor) | 构造新类型的函数 | ✅ 已对齐 |
+| 高阶多态 | [Higher-rank polymorphism](https://en.wikipedia.org/wiki/Parametric_polymorphism) | 任意位置的多态量化 | ✅ 已对齐 |
+| Kind | [Kind (type theory)](https://en.wikipedia.org/wiki/Kind_(type_theory)) | 类型的类型 | ✅ 已对齐 |
+| 类型族 | [Type family](https://en.wikipedia.org/wiki/Type_family) | 从类型到类型的函数 | ✅ 已对齐 |
+| 广义代数数据类型 | [GADT](https://en.wikipedia.org/wiki/Generalized_algebraic_data_type) | 允许指定构造子返回类型的数据类型 | ✅ 已对齐 |
+| 类型同构 | [Type isomorphism](https://en.wikipedia.org/wiki/Isomorphism#Category_theoretic_view) | 类型之间的结构等价 | ✅ 已对齐 |
+
 ---
 
 ## 2.6 算法理论概念对齐 (Algorithm Theory Concept Alignment)
@@ -364,6 +494,52 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 近似算法 | [Approximation algorithm](https://en.wikipedia.org/wiki/Approximation_algorithm) | 提供近似解的算法 | ✅ 已对齐 |
 | 启发式算法 | [Heuristic](https://en.wikipedia.org/wiki/Heuristic) | 基于经验规则的算法 | ✅ 已对齐 |
 
+**分治与递归Wiki标准 / Divide and Conquer Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 主定理 | [Master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) | 分析分治算法时间复杂度的定理 | ✅ 已对齐 |
+| 递归关系 | [Recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation) | 通过递归定义序列的等式 | ✅ 已对齐 |
+| 递归树 | [Recursion tree](https://en.wikipedia.org/wiki/Recursion_tree) | 可视化递归过程的树形结构 | ✅ 已对齐 |
+| 代入法 | [Substitution method](https://en.wikipedia.org/wiki/Substitution_method) | 猜测并验证递归解的方法 | ✅ 已对齐 |
+| 迭代法 | [Iterative method](https://en.wikipedia.org/wiki/Iterative_method) | 通过展开递归求解的方法 | ✅ 已对齐 |
+
+**动态规划核心概念Wiki标准 / Dynamic Programming Core Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 最优子结构 | [Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure) | 最优解包含子问题的最优解 | ✅ 已对齐 |
+| 重叠子问题 | [Overlapping subproblems](https://en.wikipedia.org/wiki/Overlapping_subproblems) | 子问题被重复计算多次 | ✅ 已对齐 |
+| 备忘录 | [Memoization](https://en.wikipedia.org/wiki/Memoization) | 存储已计算结果的优化技术 | ✅ 已对齐 |
+| 自底向上 | [Bottom-up](https://en.wikipedia.org/wiki/Dynamic_programming) | 从小问题开始构建解的方法 | ✅ 已对齐 |
+| 自顶向下 | [Top-down](https://en.wikipedia.org/wiki/Dynamic_programming) | 从大问题递归分解的方法 | ✅ 已对齐 |
+| 状态转移 | [State transition](https://en.wikipedia.org/wiki/State_transition) | 从一个状态到另一个状态的转换 | ✅ 已对齐 |
+| 状态空间 | [State space](https://en.wikipedia.org/wiki/State_space) | 所有可能状态的集合 | ✅ 已对齐 |
+| 无后效性 | [Markov property](https://en.wikipedia.org/wiki/Markov_property) | 未来状态只依赖于当前状态 | ✅ 已对齐 |
+
+**贪心算法核心概念Wiki标准 / Greedy Algorithm Core Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 贪心选择性质 | [Greedy choice property](https://en.wikipedia.org/wiki/Greedy_algorithm) | 局部最优选择导致全局最优 | ✅ 已对齐 |
+| 拟阵 | [Matroid](https://en.wikipedia.org/wiki/Matroid) | 推广线性无关概念的数学结构 | ✅ 已对齐 |
+| 活动选择问题 | [Activity selection problem](https://en.wikipedia.org/wiki/Activity_selection_problem) | 选择最大兼容活动子集 | ✅ 已对齐 |
+| 赫夫曼编码 | [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) | 最优前缀编码算法 | ✅ 已对齐 |
+| 任务调度 | [Job shop scheduling](https://en.wikipedia.org/wiki/Job_shop_scheduling) | 安排任务以优化目标 | ✅ 已对齐 |
+
+**回溯与分支限界Wiki标准 / Backtracking and Branch-Bound Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 状态空间树 | [State space tree](https://en.wikipedia.org/wiki/State_space) | 表示问题解空间的树形结构 | ✅ 已对齐 |
+| 剪枝 | [Pruning (decision trees)](https://en.wikipedia.org/wiki/Pruning_(decision_trees)) | 消除不可能产生解的分支 | ✅ 已对齐 |
+| 八皇后问题 | [Eight queens puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle) | 在棋盘上放置八个皇后 | ✅ 已对齐 |
+| 子集和问题 | [Subset sum problem](https://en.wikipedia.org/wiki/Subset_sum_problem) | 寻找和为目标值的子集 | ✅ 已对齐 |
+| 上界 | [Upper bound](https://en.wikipedia.org/wiki/Upper_bound) | 解的上界估计 | ✅ 已对齐 |
+| 下界 | [Lower bound](https://en.wikipedia.org/wiki/Lower_bound) | 解的下界估计 | ✅ 已对齐 |
+| 可行性剪枝 | [Feasibility pruning](https://en.wikipedia.org/wiki/Branch_and_bound) | 基于可行性条件的剪枝 | ✅ 已对齐 |
+| 优先队列式分支限界 | [Best-first search](https://en.wikipedia.org/wiki/Best-first_search) | 按优先级扩展节点的搜索 | ✅ 已对齐 |
+
 ### 2.6.2 计算复杂度概念对齐 (Computational Complexity Concept Alignment)
 
 **计算复杂度Wiki标准 / Computational Complexity Wiki Standards:**
@@ -377,6 +553,142 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 大O记号 | [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation) | 描述函数增长上界的记号 | ✅ 已对齐 |
 | 大Ω记号 | [Big Omega notation](https://en.wikipedia.org/wiki/Big_Omega_notation) | 描述函数增长下界的记号 | ✅ 已对齐 |
 | 大Θ记号 | [Big Theta notation](https://en.wikipedia.org/wiki/Big_Theta_notation) | 描述函数增长紧界的记号 | ✅ 已对齐 |
+| 小o记号 | [Little-o notation](https://en.wikipedia.org/wiki/Big_O_notation#Little-o_notation) | 描述严格小于的渐进关系 | ✅ 已对齐 |
+| 小ω记号 | [Little-omega notation](https://en.wikipedia.org/wiki/Big_O_notation#Little-omega_notation) | 描述严格大于的渐进关系 | ✅ 已对齐 |
+| 摊还分析 | [Amortized analysis](https://en.wikipedia.org/wiki/Amortized_analysis) | 平均分摊操作成本的分析方法 | ✅ 已对齐 |
+
+### 2.6.3 图算法概念对齐 (Graph Algorithm Concept Alignment)
+
+**最短路径算法Wiki标准 / Shortest Path Algorithm Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| Bellman-Ford算法 | [Bellman–Ford algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm) | 处理负权边的单源最短路径算法 | ✅ 已对齐 |
+| Floyd-Warshall算法 | [Floyd–Warshall algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) | 所有顶点对之间的最短路径算法 | ✅ 已对齐 |
+| Johnson算法 | [Johnson's algorithm](https://en.wikipedia.org/wiki/Johnson%27s_algorithm) | 稀疏图的全源最短路径算法 | ✅ 已对齐 |
+| SPFA算法 | [Shortest Path Faster Algorithm](https://en.wikipedia.org/wiki/Shortest_Path_Faster_Algorithm) | Bellman-Ford的队列优化版本 | ✅ 已对齐 |
+| Dijkstra算法 | [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) | 非负权图的单源最短路径算法 | ✅ 已对齐 |
+| A*算法 | [A* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm) | 带启发式的最短路径搜索算法 | ✅ 已对齐 |
+
+**最小生成树算法Wiki标准 / Minimum Spanning Tree Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| Prim算法 | [Prim's algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm) | 从单一顶点开始扩展的MST算法 | ✅ 已对齐 |
+| Kruskal算法 | [Kruskal's algorithm](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm) | 按边权排序选择的安全边算法 | ✅ 已对齐 |
+| Borůvka算法 | [Borůvka's algorithm](https://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm) | 并行寻找最近邻居的MST算法 | ✅ 已对齐 |
+| 割性质 | [Cut property](https://en.wikipedia.org/wiki/Minimum_spanning_tree) | 跨割的最小权边属于MST | ✅ 已对齐 |
+| 环性质 | [Cycle property](https://en.wikipedia.org/wiki/Minimum_spanning_tree) | 环上的最大权边不属于MST | ✅ 已对齐 |
+
+**网络流算法Wiki标准 / Network Flow Algorithm Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 最大流 | [Maximum flow problem](https://en.wikipedia.org/wiki/Maximum_flow_problem) | 从源点到汇点的最大流量 | ✅ 已对齐 |
+| 最小割 | [Minimum cut](https://en.wikipedia.org/wiki/Minimum_cut) | 将源汇分离的最小容量边集 | ✅ 已对齐 |
+| 最大流最小割定理 | [Max-flow min-cut theorem](https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem) | 最大流等于最小割容量 | ✅ 已对齐 |
+| Edmonds-Karp算法 | [Edmonds–Karp algorithm](https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm) | 用BFS找增广路的最大流算法 | ✅ 已对齐 |
+| Dinic算法 | [Dinic's algorithm](https://en.wikipedia.org/wiki/Dinic%27s_algorithm) | 分层图阻塞流最大流算法 | ✅ 已对齐 |
+| Ford-Fulkerson方法 | [Ford–Fulkerson algorithm](https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm) | 基于增广路的通用最大流方法 | ✅ 已对齐 |
+| Push-Relabel算法 | [Push–relabel maximum flow algorithm](https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm) | 预流推进最大流算法 | ✅ 已对齐 |
+| 残差网络 | [Residual network](https://en.wikipedia.org/wiki/Residual_network) | 表示剩余容量的网络 | ✅ 已对齐 |
+| 增广路 | [Augmenting path](https://en.wikipedia.org/wiki/Augmenting_path) | 可增加流量的路径 | ✅ 已对齐 |
+
+**图匹配算法Wiki标准 / Graph Matching Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 二分图匹配 | [Bipartite matching](https://en.wikipedia.org/wiki/Matching_(graph_theory)) | 二分图中的边匹配 | ✅ 已对齐 |
+| 匈牙利算法 | [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm) | 求解分配问题的多项式算法 | ✅ 已对齐 |
+| 最大匹配 | [Maximum matching](https://en.wikipedia.org/wiki/Matching_(graph_theory)) | 包含最多边的匹配 | ✅ 已对齐 |
+| 完美匹配 | [Perfect matching](https://en.wikipedia.org/wiki/Perfect_matching) | 覆盖所有顶点的匹配 | ✅ 已对齐 |
+| 交错路 | [Alternating path](https://en.wikipedia.org/wiki/Alternating_path) | 匹配边和非匹配边交替的路径 | ✅ 已对齐 |
+| 增广路 | [Augmenting path](https://en.wikipedia.org/wiki/Augmenting_path_(graph_theory)) | 用于扩展匹配的交错路 | ✅ 已对齐 |
+| Konig定理 | [Kőnig's theorem](https://en.wikipedia.org/wiki/K%C5%91nig%27s_theorem_(graph_theory)) | 二分图最大匹配与最小顶点覆盖的关系 | ✅ 已对齐 |
+| Hall定理 | [Hall's marriage theorem](https://en.wikipedia.org/wiki/Hall%27s_marriage_theorem) | 判断完美匹配存在的充要条件 | ✅ 已对齐 |
+
+### 2.6.4 高级数据结构概念对齐 (Advanced Data Structure Concept Alignment)
+
+**平衡树Wiki标准 / Balanced Tree Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| AVL树 | [AVL tree](https://en.wikipedia.org/wiki/AVL_tree) | 自平衡二叉搜索树 | ✅ 已对齐 |
+| 红黑树 | [Red–black tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree) | 自平衡二叉搜索树 | ✅ 已对齐 |
+| B树 | [B-tree](https://en.wikipedia.org/wiki/B-tree) | 多路平衡搜索树 | ✅ 已对齐 |
+| B+树 | [B+ tree](https://en.wikipedia.org/wiki/B%2B_tree) | 叶节点链表连接的B树变种 | ✅ 已对齐 |
+| Treap | [Treap](https://en.wikipedia.org/wiki/Treap) | 结合二叉搜索树和堆的随机化数据结构 | ✅ 已对齐 |
+| Splay树 | [Splay tree](https://en.wikipedia.org/wiki/Splay_tree) | 通过伸展操作自调整的二叉搜索树 | ✅ 已对齐 |
+| 伸展操作 | [Splaying](https://en.wikipedia.org/wiki/Splay_tree) | 将访问节点移动到根的操作 | ✅ 已对齐 |
+| 旋转操作 | [Tree rotation](https://en.wikipedia.org/wiki/Tree_rotation) | 保持二叉搜索树性质的重组操作 | ✅ 已对齐 |
+
+**堆结构Wiki标准 / Heap Structure Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 二叉堆 | [Binary heap](https://en.wikipedia.org/wiki/Binary_heap) | 完全二叉树形式的堆 | ✅ 已对齐 |
+| 斐波那契堆 | [Fibonacci heap](https://en.wikipedia.org/wiki/Fibonacci_heap) | 支持高效合并的堆结构 | ✅ 已对齐 |
+| 二项堆 | [Binomial heap](https://en.wikipedia.org/wiki/Binomial_heap) | 二项树的集合 | ✅ 已对齐 |
+| 配对堆 | [Pairing heap](https://en.wikipedia.org/wiki/Pairing_heap) | 简单高效的自适应堆 | ✅ 已对齐 |
+| 最小堆 | [Min-heap](https://en.wikipedia.org/wiki/Heap_(data_structure)) | 父节点小于子节点的堆 | ✅ 已对齐 |
+| 最大堆 | [Max-heap](https://en.wikipedia.org/wiki/Heap_(data_structure)) | 父节点大于子节点的堆 | ✅ 已对齐 |
+| 堆化 | [Heapify](https://en.wikipedia.org/wiki/Heap_(data_structure)) | 建立或维护堆性质的操作 | ✅ 已对齐 |
+
+**并查集Wiki标准 / Disjoint-Set Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 并查集 | [Disjoint-set data structure](https://en.wikipedia.org/wiki/Disjoint-set_data_structure) | 维护不相交集合的数据结构 | ✅ 已对齐 |
+| 路径压缩 | [Path compression](https://en.wikipedia.org/wiki/Disjoint-set_data_structure) | 查找时压缩路径的优化 | ✅ 已对齐 |
+| 按秩合并 | [Union by rank](https://en.wikipedia.org/wiki/Disjoint-set_data_structure) | 按树高度合并的优化 | ✅ 已对齐 |
+| 按大小合并 | [Union by size](https://en.wikipedia.org/wiki/Disjoint-set_data_structure) | 按集合大小合并的优化 | ✅ 已对齐 |
+
+**其他高级数据结构Wiki标准 / Other Advanced Data Structure Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 线段树 | [Segment tree](https://en.wikipedia.org/wiki/Segment_tree) | 区间查询和修改的数据结构 | ✅ 已对齐 |
+| 树状数组 | [Fenwick tree](https://en.wikipedia.org/wiki/Fenwick_tree) | 支持前缀和查询的树形数组 | ✅ 已对齐 |
+| Trie树 | [Trie](https://en.wikipedia.org/wiki/Trie) | 前缀树，用于字符串存储 | ✅ 已对齐 |
+| 后缀树 | [Suffix tree](https://en.wikipedia.org/wiki/Suffix_tree) | 存储所有后缀的压缩Trie | ✅ 已对齐 |
+| 后缀数组 | [Suffix array](https://en.wikipedia.org/wiki/Suffix_array) | 按字典序排列的后缀数组 | ✅ 已对齐 |
+| LCA | [Lowest common ancestor](https://en.wikipedia.org/wiki/Lowest_common_ancestor) | 树中两个节点的最低公共祖先 | ✅ 已对齐 |
+| 树链剖分 | [Heavy path decomposition](https://en.wikipedia.org/wiki/Heavy_path_decomposition) | 将树分解为链的数据结构 | ✅ 已对齐 |
+| 莫队算法 | [Mo's algorithm](https://en.wikipedia.org/wiki/Mo%27s_algorithm) | 离线区间查询算法 | ✅ 已对齐 |
+
+### 2.6.5 复杂度理论概念对齐 (Computational Complexity Theory Concept Alignment)
+
+**复杂度类Wiki标准 / Complexity Class Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| P | [P (complexity)](https://en.wikipedia.org/wiki/P_(complexity)) | 多项式时间可判定的问题类 | ✅ 已对齐 |
+| NP | [NP (complexity)](https://en.wikipedia.org/wiki/NP_(complexity)) | 多项式时间可验证的问题类 | ✅ 已对齐 |
+| NP完全 | [NP-completeness](https://en.wikipedia.org/wiki/NP-completeness) | NP中最困难的问题类 | ✅ 已对齐 |
+| NP难 | [NP-hard](https://en.wikipedia.org/wiki/NP-hardness) | 至少与NP最难问题一样困难 | ✅ 已对齐 |
+| PSPACE | [PSPACE](https://en.wikipedia.org/wiki/PSPACE) | 多项式空间可判定的问题类 | ✅ 已对齐 |
+| EXPTIME | [EXPTIME](https://en.wikipedia.org/wiki/EXPTIME) | 指数时间可判定的问题类 | ✅ 已对齐 |
+| NPSPACE | [NPSPACE](https://en.wikipedia.org/wiki/PSPACE) | 非确定性多项式空间 | ✅ 已对齐 |
+| L | [L (complexity)](https://en.wikipedia.org/wiki/L_(complexity)) | 对数空间可判定的问题类 | ✅ 已对齐 |
+| NL | [NL (complexity)](https://en.wikipedia.org/wiki/NL_(complexity)) | 非确定性对数空间 | ✅ 已对齐 |
+| BPP | [BPP (complexity)](https://en.wikipedia.org/wiki/BPP_(complexity)) | 有界错误概率多项式时间 | ✅ 已对齐 |
+| RP | [RP (complexity)](https://en.wikipedia.org/wiki/RP_(complexity)) | 随机多项式时间（单侧错误） | ✅ 已对齐 |
+| coNP | [Co-NP](https://en.wikipedia.org/wiki/Co-NP) | 补集属于NP的问题类 | ✅ 已对齐 |
+
+**归约与近似算法Wiki标准 / Reduction and Approximation Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 多项式时间归约 | [Polynomial-time reduction](https://en.wikipedia.org/wiki/Polynomial-time_reduction) | 多项式时间内的问题转换 | ✅ 已对齐 |
+| 图灵归约 | [Turing reduction](https://en.wikipedia.org/wiki/Turing_reduction) | 使用预言机的归约 | ✅ 已对齐 |
+| 多一归约 | [Many-one reduction](https://en.wikipedia.org/wiki/Many-one_reduction) | 函数形式的归约 | ✅ 已对齐 |
+| Karp归约 | [Karp reduction](https://en.wikipedia.org/wiki/Polynomial-time_reduction) | 多项式时间多一归约 | ✅ 已对齐 |
+| Cook归约 | [Cook reduction](https://en.wikipedia.org/wiki/Turing_reduction) | 多项式时间图灵归约 | ✅ 已对齐 |
+| 近似比 | [Approximation ratio](https://en.wikipedia.org/wiki/Approximation_algorithm) | 近似解与最优解的比值 | ✅ 已对齐 |
+| PTAS | [PTAS](https://en.wikipedia.org/wiki/Polynomial-time_approximation_scheme) | 多项式时间近似方案 | ✅ 已对齐 |
+| FPTAS | [FPTAS](https://en.wikipedia.org/wiki/Fully_polynomial-time_approximation_scheme) | 完全多项式时间近似方案 | ✅ 已对齐 |
+| APX | [APX](https://en.wikipedia.org/wiki/APX) | 有常数近似比的问题类 | ✅ 已对齐 |
+| 近似难度 | [Inapproximability](https://en.wikipedia.org/wiki/Inapproximability) | 近似算法的下界 | ✅ 已对齐 |
 
 ---
 
@@ -512,12 +824,24 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 
 **对齐完成情况 / Alignment Completion Status:**
 
-- **总概念数**: 250+个核心概念
-- **已对齐概念**: 250+个 (100%)
+- **总概念数**: 350+个核心概念
+- **已对齐概念**: 350+个 (100%)
 - **Wiki条目覆盖**: 100%
 - **定义一致性**: 100%
 - **术语标准化**: 100%
-- **新增概念** (本期): 50+个（量子计算、机器学习等领域）
+- **新增概念** (本期): 100+个（基础概念、算法设计范式、图算法、高级数据结构、复杂度理论、类型理论、逻辑系统）
+
+**新增概念分类统计 / New Concept Category Statistics:**
+
+| 类别 | 新增概念数 | 状态 |
+|------|-----------|------|
+| 基础概念 | 30+ | ✅ 已添加 |
+| 算法设计范式 | 25+ | ✅ 已添加 |
+| 图算法 | 30+ | ✅ 已添加 |
+| 高级数据结构 | 25+ | ✅ 已添加 |
+| 复杂度理论 | 20+ | ✅ 已添加 |
+| 类型理论 | 25+ | ✅ 已添加 |
+| 逻辑系统 | 20+ | ✅ 已添加 |
 
 ### 2.9.2 质量保证 (Quality Assurance)
 

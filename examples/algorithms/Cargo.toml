@@ -1,0 +1,33 @@
+[package]
+name = "formal-algorithms"
+version = "0.1.0"
+edition = "2021"
+authors = ["Formal Algorithm Project <algorithm@example.com>"]
+description = "Engineering-level algorithm implementations with comprehensive testing"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/formal-algorithm/formal-algorithm"
+keywords = ["algorithm", "sorting", "graph", "dynamic-programming", "data-structures"]
+categories = ["algorithms", "data-structures"]
+rust-version = "1.70"
+
+[dependencies]
+thiserror = "1.0"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+proptest = "1.4"
+rand = "0.8"
+
+[[bench]]
+name = "algorithm_benches"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.bench]
+opt-level = 3
+debug = true
