@@ -1,0 +1,70 @@
+name: Quality Check
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    - cron: '0 0 * * 0'  # 每周日运行
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Run citation check
+      run: python tools/citation_checker.py
+      continue-on-error: true
+    
+    - name: Run math symbol check
+      run: python tools/math_symbol_checker.py
+      continue-on-error: true
+    
+    - name: Run structure check
+      run: python tools/doc_structure_checker.py
+      continue-on-error: true
+    
+    - name: Generate quality report
+      run: python tools/quality_check.py
+      continue-on-error: true
+    
+    - name: Upload quality reports
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: quality-reports
+        path: docs/质量报告/
+    
+    - name: Comment PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const reportPath = 'docs/质量报告/quality-check-report.md';
+          
+          let report = '';
+          try {
+            report = fs.readFileSync(reportPath, 'utf8');
+          } catch (e) {
+            report = '质量检查报告生成失败';
+          }
+          
+          // 截取前3000字符
+          const summary = report.substring(0, 3000) + (report.length > 3000 ? '...' : '');
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## 质量检查结果\n\n${summary}\n\n[查看完整报告](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+          });

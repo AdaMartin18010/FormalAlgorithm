@@ -1,6 +1,5 @@
 name: Bug Report
-name: Bug Report / 错误报告
-description: 报告文档中的错误 / Report errors in documentation
+description: 报告文档中的错误
 title: "[Bug] "
 labels: ["bug"]
 body:
@@ -9,13 +8,11 @@ body:
       value: |
         感谢报告问题！请提供以下信息帮助我们快速定位。
         
-        Thank you for reporting! Please provide the following information to help us quickly identify the issue.
-        
   - type: input
     id: document
     attributes:
-      label: 问题文档 / Affected Document
-      description: 请提供文档路径 / Please provide the document path
+      label: 问题文档
+      description: 请提供文档路径
       placeholder: docs/01-基础理论/01-形式化定义.md
     validations:
       required: true
@@ -23,57 +20,24 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: 问题描述 / Description
-      description: |
-        请详细描述问题 / Please describe the issue in detail
-        - 如果是概念性错误，请说明正确内容
-        - 如果是证明缺陷，请指出具体问题
-        - 如果是排版错误，请提供截图
+      label: 问题描述
+      description: 请详细描述问题
     validations:
       required: true
       
   - type: dropdown
     id: severity
     attributes:
-      label: 严重程度 / Severity
-      description: 选择问题的严重程度 / Select the severity level
+      label: 严重程度
       options:
-        - 🔴 严重（概念性错误 / Conceptual Error）
-        - 🟡 中等（证明缺陷 / Proof Defect）
-        - 🟢 轻微（排版/错别字 / Typo/Formatting）
+        - 严重（概念性错误）
+        - 中等（证明缺陷）
+        - 轻微（排版/错别字）
     validations:
       required: true
-
+      
   - type: textarea
     id: expected
     attributes:
-      label: 期望的修正 / Expected Fix
-      description: 如果知道如何修正，请说明 / If you know how to fix it, please describe
-      placeholder: |
-        建议修改为：...
-        Suggested fix: ...
-    validations:
-      required: false
-
-  - type: textarea
-    id: reference
-    attributes:
-      label: 参考资源 / References
-      description: 相关的论文、教材或权威来源 / Relevant papers, textbooks, or authoritative sources
-      placeholder: |
-        例如：
-        - [作者]. [标题]. [来源].
-        - 链接：...
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: 检查清单 / Checklist
-      description: 确认以下事项 / Please confirm the following
-      options:
-        - label: 我已经搜索过现有的Issues，确认这个问题没有被报告过 / I have searched existing issues
-          required: true
-        - label: 我愿意提交PR来修复这个问题 / I am willing to submit a PR to fix this
-          required: false
+      label: 期望的修正
+      description: 如果知道如何修正，请说明
