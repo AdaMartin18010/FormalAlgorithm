@@ -27,11 +27,13 @@ $$\text{NP} = \bigcup_{k \geq 1} \text{NTIME}(n^k) = \{L : \exists \text{ 多项
 **P vs NP问题**: 计算机科学最核心的开放问题，问P是否等于NP。
 
 **直观解释**:
+
 - P问题：可以"快速找到"解的问题（如排序、最短路径）
 - NP问题：可以"快速验证"解的问题（如SAT、哈密顿路径）
 - P=NP？：验证解的容易性是否意味着找到解也容易？
 
 **关键要点**:
+
 - P $\subseteq$ NP（显然）
 - 若P=NP，则现代密码学将失效
 - NP $\neq$ co-NP ⟹ P $\neq$ NP
@@ -110,6 +112,7 @@ P vs NP
 $$\varphi_x \text{可满足} \Leftrightarrow N \text{接受} x$$
 
 变量表示计算历史：
+
 - T[i,j,s]: 第i步第j格为符号s
 - H[i,j]: 第i步读写头在j
 - S[i,s]: 第i步状态为s
@@ -144,46 +147,46 @@ $$\varphi_x \text{可满足} \Leftrightarrow N \text{接受} x$$
 ### 5.1 理解题 (L1-L2)
 
 1. **验证NP类** [难度⭐]
-   
+
    证明：若L ∈ NP，则存在多项式p和多项式时间算法V，使得：
    $$x \in L \Leftrightarrow \exists c, |c| \leq p(|x|), V(x, c) = 1$$
-   
+
    <details>
    <summary>解答</summary>
-   
+
    由NP定义，存在NTM N在多项式时间p(n)内判定L。
    证书c可以是N的接受计算路径的描述。
    验证器V模拟N按c指定的非确定性选择，验证该路径接受。
-   
+
    </details>
 
 2. **P=NP的含义** [难度⭐⭐]
-   
+
    如果P=NP被证明，现代密码学会受到什么影响？
-   
+
    <details>
    <summary>解答</summary>
-   
+
    - RSA、Diffie-Hellman等基于困难问题的密码系统将不安全
    - 零知识证明将变得平凡
    - 需要转向信息论安全的密码学（如一次性密码本）
    - 量子密码可能变得更重要
-   
+
    </details>
 
 ### 5.2 证明题 (L3-L4)
 
-3. **复杂性类关系** [难度⭐⭐⭐]
-   
+1. **复杂性类关系** [难度⭐⭐⭐]
+
    证明：若NP ≠ co-NP，则P ≠ NP。
-   
+
    <details>
    <summary>解答</summary>
-   
+
    反证法：若P = NP，则P = co-P = co-NP，故NP = co-NP。
-   
+
    因此NP ≠ co-NP ⟹ P ≠ NP。
-   
+
    </details>
 
 ---
@@ -250,6 +253,7 @@ $$\varphi_x \text{可满足} \Leftrightarrow N \text{接受} x$$
 
 **标签**: #计算复杂性 #PvsNP #NP完全 #计算理论
 
-**相关笔记**: 
+**相关笔记**:
+
 - [NP完全性.md](./NP完全性.md)
 - [可计算性理论.md](./可计算性理论.md)

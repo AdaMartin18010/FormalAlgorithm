@@ -9,38 +9,38 @@ graph TB
         B[02-递归理论]
         C[03-形式化证明]
     end
-    
+
     subgraph "核心层"
         D[04-算法复杂度]
         E[05-类型理论]
         F[06-逻辑系统]
         G[07-计算模型]
     end
-    
+
     subgraph "应用层"
         H[08-实现示例]
         I[09-算法理论]
     end
-    
+
     subgraph "高级层"
         J[10-高级主题]
         K[12-应用领域]
     end
-    
+
     A --> D
     A --> E
     A --> F
     A --> G
-    
+
     B --> G
     C --> F
-    
+
     D --> I
     E --> H
     E --> J
     F --> E
     G --> I
-    
+
     H --> J
     I --> J
     I --> K
@@ -59,47 +59,47 @@ graph LR
     ST --> AS[代数结构]
     FT --> AS
     AS --> CT[范畴论]
-    
+
     %% 计算模型
     FT --> LC[λ演算]
     ST --> AT[自动机理论]
     AT --> TM[图灵机]
     LC --> CL[组合子逻辑]
-    
+
     %% 递归理论
     FT --> RF[递归函数]
     RF --> PRF[原始递归函数]
     PRF --> GRF[一般递归函数]
     RF --> RE[递归可枚举]
     TM --> RE
-    
+
     %% 等价性
     TM -.丘奇-图灵论题.-> LC
     TM -.等价.-> GRF
-    
+
     %% 逻辑系统
     PL[命题逻辑] --> FOL[一阶逻辑]
     PL --> IL[直觉逻辑]
     PL --> ML[模态逻辑]
     ML --> TL[时序逻辑]
     FOL --> HOL[高阶逻辑]
-    
+
     %% 类型理论
     LC --> STT[简单类型论]
     STT --> DTT[依赖类型论]
     DTT --> HTT[同伦类型论]
     STT --> TS[类型系统]
     CT --> HTT
-    
+
     %% 柯里-霍华德同构
     STT -.同构.-> PL
     DTT -.同构.-> FOL
-    
+
     %% 复杂度
     TM --> CC[复杂度类]
     FT --> TC[时间复杂度]
     TC --> AA[渐进分析]
-    
+
     %% 算法
     TC --> AD[算法设计]
     AD --> SA[排序算法]
@@ -107,13 +107,13 @@ graph LR
     AD --> DP[动态规划]
     AD --> GA[贪心算法]
     AD --> DAC[分治算法]
-    
+
     %% 高级主题
     HTT --> HTTA[HoTT高级应用]
     TS --> PA[证明助手]
     QCM[量子计算模型] --> QA[量子算法]
     QCM --> QI[量子信息]
-    
+
     %% 应用领域
     QA --> QO[量子优化]
     AD --> AI[AI算法应用]
@@ -167,43 +167,43 @@ flowchart TB
         IN2[计算问题]
         IN3[验证需求]
     end
-    
+
     subgraph Foundation["基础层处理"]
         F1[集合/函数分析]
         F2[逻辑建模]
         F3[复杂度评估]
     end
-    
+
     subgraph Model["模型层处理"]
         M1[选择计算模型]
         M2[设计算法]
         M3[类型约束]
     end
-    
+
     subgraph Verification["验证层"]
         V1[形式化证明]
         V2[复杂度分析]
         V3[正确性验证]
     end
-    
+
     subgraph Output["输出层"]
         OUT1[算法实现]
         OUT2[正确性保证]
         OUT3[复杂度界限]
     end
-    
+
     IN1 --> F1
     IN2 --> F2
     IN3 --> F3
-    
+
     F1 --> M1
     F2 --> M2
     F3 --> M3
-    
+
     M1 --> V1
     M2 --> V2
     M3 --> V3
-    
+
     V1 --> OUT1
     V2 --> OUT2
     V3 --> OUT3
