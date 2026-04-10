@@ -43,6 +43,22 @@
 //! | 算法 | 模块 | 时间复杂度 | 空间复杂度 |
 //! |------|------|-----------|-----------|
 //! | 矩阵乘法/最近点对 | [`divide_and_conquer`] | O(n^2.8)/O(n log n) | O(n²)/O(n) |
+//!
+//! ### 图算法扩展 (3个)
+//! | 算法 | 模块 | 时间复杂度 | 空间复杂度 |
+//! |------|------|-----------|-----------|
+//! | 拓扑排序 | [`topological_sort`] | O(V+E) | O(V) |
+//! | 强连通分量 | [`strongly_connected_components`] | O(V+E) | O(V) |
+//!
+//! ### 高级数据结构 (5个)
+//! | 数据结构 | 模块 | 操作复杂度 | 空间复杂度 |
+//! |----------|------|-----------|-----------|
+//! | LRU缓存 | [`lru_cache`] | get/put: O(1) | O(capacity) |
+//! | 一致性哈希 | [`consistent_hash`] | get: O(log N) | O(N×V) |
+//! | 布隆过滤器 | [`bloom_filter`] | insert/contains: O(k) | O(m) |
+//! | 线段树 | [`segment_tree`] | update/query: O(log n) | O(n) |
+//! | 树状数组 | [`fenwick_tree`] | update/query: O(log n) | O(n) |
+//! | 后缀数组 | [`suffix_array`] | build: O(n log n) | O(n) |
 
 #![warn(missing_docs)]
 #![warn(missing_debug_implementations)]
@@ -114,6 +130,86 @@ pub mod backtracking;
 /// 分治算法模块
 pub mod divide_and_conquer;
 
+// 图算法扩展模块
+/// 拓扑排序模块 (Kahn算法、DFS)
+pub mod topological_sort;
+/// 强连通分量模块 (Kosaraju、Tarjan)
+pub mod strongly_connected_components;
+/// Tarjan强连通分量算法
+pub mod tarjan_scc;
+/// Kosaraju强连通分量算法
+pub mod kosaraju_scc;
+/// 割点/关节点算法
+pub mod articulation_points;
+/// 桥边算法
+pub mod bridges;
+/// 欧拉路径/回路算法
+pub mod euler_tour;
+/// 二分图匹配（匈牙利算法）
+pub mod bipartite_matching;
+
+// 高级数据结构模块
+/// LRU缓存模块
+pub mod lru_cache;
+/// 一致性哈希模块
+pub mod consistent_hash;
+/// 布隆过滤器模块
+pub mod bloom_filter;
+/// 线段树模块
+pub mod segment_tree;
+/// 树状数组模块
+pub mod fenwick_tree;
+/// 后缀数组模块
+pub mod suffix_array;
+/// 树上并查集模块 (DSU on Tree)
+pub mod dsu_on_tree;
+/// 莫算法模块 (Mo's Algorithm)
+pub mod mo_algorithm;
+/// 树链剖分模块 (Heavy-Light Decomposition)
+pub mod heavy_light_decomposition;
+/// 点分治模块 (Centroid Decomposition)
+pub mod centroid_decomposition;
+/// 后缀自动机模块 (Suffix Automaton)
+pub mod suffix_automaton;
+// 跳表模块 - 当前实现有内存安全问题，暂时禁用
+// pub mod skiplist;
+
+// 数值算法模块
+/// 矩阵操作模块（Strassen、快速幂、高斯消元）
+pub mod matrix_operations;
+/// 多项式运算模块（求值、插值、FFT）
+pub mod polynomial;
+/// 几何工具模块（凸包、旋转卡壳）
+pub mod geometry_utils;
+/// 离散对数模块（BSGS、Pollard's Rho）
+pub mod discrete_log;
+/// 素性测试模块（Miller-Rabin、因数分解）
+pub mod primality_test;
+
+// 网络流算法
+/// 最小费用最大流模块
+pub mod min_cost_max_flow;
+
+// 逻辑求解模块
+/// 2-SAT求解器模块
+pub mod sat2;
+
+// 字符串算法
+/// 滚动哈希模块
+pub mod rolling_hash;
+
+// 高级数据结构
+/// 可持久化线段树模块
+pub mod persistent_segment_tree;
+
+// 精确覆盖算法
+/// 舞蹈链模块（DLX）
+pub mod dancing_links;
+
+// 启发式算法
+/// 模拟退火算法模块
+pub mod simulated_annealing;
+
 // 排序算法
 pub use heap_sort::heap_sort;
 pub use merge_sort::merge_sort;
@@ -141,6 +237,70 @@ pub use backtracking::{subset_sum, graph_coloring, generate_permutations};
 
 // 分治算法
 pub use divide_and_conquer::{closest_pair, Point, Matrix, strassen_multiply};
+
+// 图算法扩展
+pub use topological_sort::{
+    topological_sort_kahn, topological_sort_dfs, has_cycle, TopologicalSortResult
+};
+pub use strongly_connected_components::{
+    kosaraju, tarjan, is_strongly_connected, SCCResult
+};
+pub use tarjan_scc::{tarjan_scc, TarjanSCCResult};
+pub use kosaraju_scc::{kosaraju_scc, KosarajuSCCResult};
+pub use articulation_points::{find_articulation_points, ArticulationPointResult};
+pub use bridges::{find_bridges, BridgeResult, Edge};
+pub use euler_tour::{
+    find_eulerian_circuit_undirected, find_eulerian_path_undirected,
+    find_eulerian_circuit_directed, find_eulerian_path_directed,
+    has_eulerian_circuit_undirected, has_eulerian_path_undirected,
+    EulerResult
+};
+pub use bipartite_matching::{
+    hungarian_dfs, hungarian_bfs, is_bipartite, bipartite_partition,
+    MatchingResult, max_matching_size
+};
+
+// 高级数据结构
+pub use lru_cache::LruCache;
+pub use consistent_hash::ConsistentHash;
+pub use bloom_filter::BloomFilter;
+pub use segment_tree::{SegmentTree, LazySegmentTree};
+pub use fenwick_tree::{FenwickTree, RangeUpdateFenwickTree, count_inversions};
+pub use suffix_array::SuffixArray;
+pub use dsu_on_tree::DsuOnTree;
+pub use mo_algorithm::MoAlgorithm;
+pub use heavy_light_decomposition::HeavyLightDecompositionWithSegTree;
+pub use centroid_decomposition::CentroidDecomposition;
+pub use suffix_automaton::SuffixAutomaton;
+// pub use skiplist::SkipList;
+
+// 数值算法
+pub use matrix_operations::Matrix as Mat;
+pub use polynomial::{Polynomial, lagrange_interpolate, lagrange_polynomial, NewtonInterpolation, fft_multiply};
+pub use geometry_utils::{Point as GeoPoint, Segment, Line, Circle, Polygon, convex_hull, 
+    rotating_calipers_diameter, rotating_calipers_width, closest_pair as closest_pair_geo};
+pub use discrete_log::{bsgs, ex_bsgs, pollard_rho_dlog, pollard_rho_factor, factorize as dlog_factorize, pohlig_hellman};
+pub use primality_test::{is_probable_prime, is_prime_deterministic, pollard_rho as rho_factor, factorize as prime_factorize,
+    prime_factorization, euler_totient, mobius, sieve_of_eratosthenes, linear_sieve, 
+    nth_prime, next_prime, prev_prime};
+
+// 网络流算法
+pub use min_cost_max_flow::{MinCostMaxFlow, MCMFResult, min_cost_max_flow_spfa, min_cost_max_flow_dijkstra};
+
+// 2-SAT求解
+pub use sat2::{Solver2Sat, Sat2Result, solve_2sat};
+
+// 滚动哈希
+pub use rolling_hash::{RollingHash, MultiRollingHash, HashPair, rolling_hash, double_hash};
+
+// 可持久化线段树
+pub use persistent_segment_tree::{PersistentSegmentTree, KthPersistentSegmentTree, QueryResult, persistent_segment_tree};
+
+// 舞蹈链
+pub use dancing_links::{DancingLinks, DLXResult, exact_cover, exact_cover_all};
+
+// 模拟退火
+pub use simulated_annealing::{SimulatedAnnealing, SAResult, TspSolver, FunctionOptimizer, SchedulingSolver};
 
 /// 算法 trait，定义算法的基本接口
 ///

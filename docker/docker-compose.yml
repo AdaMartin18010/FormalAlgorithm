@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  # 开发环境
+  dev:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: formal-algorithm-dev
+    volumes:
+      # 挂载源代码（开发时实时同步）
+      - ../:/workspace
+      # 持久化 cargo 缓存
+      - cargo-cache:/usr/local/cargo/registry
+      - target-cache:/workspace/target
+    working_dir: /workspace
+    environment:
+      - RUST_BACKTRACE=1
+      - CARGO_TERM_COLOR=always
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    networks:
+      - algorithm-network
+
+  # 文档服务
+  docs:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: docs
+    container_name: formal-algorithm-docs
+    volumes:
+      - ../docs:/workspace/docs:ro
+      - ../README.md:/workspace/README.md:ro
+    ports:
+      - "3000:3000"
+    environment:
+      - MDBOOK_HOST=0.0.0.0
+      - MDBOOK_PORT=3000
+    networks:
+      - algorithm-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 测试服务
+  test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: formal-algorithm-test
+    volumes:
+      - ../:/workspace
+      - cargo-cache:/usr/local/cargo/registry
+    working_dir: /workspace/examples/algorithms
+    command: cargo test --verbose
+    environment:
+      - RUST_BACKTRACE=full
+    networks:
+      - algorithm-network
+    profiles:
+      - test
+
+  # 代码质量检查
+  lint:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: formal-algorithm-lint
+    volumes:
+      - ../:/workspace
+      - cargo-cache:/usr/local/cargo/registry
+    working_dir: /workspace/examples/algorithms
+    command: >
+      sh -c "
+        echo '=== Running cargo fmt check ===' &&
+        cargo fmt --all -- --check &&
+        echo '=== Running cargo clippy ===' &&
+        cargo clippy --all-targets --all-features -- -D warnings &&
+        echo '=== All checks passed ==='
+      "
+    networks:
+      - algorithm-network
+    profiles:
+      - lint
+
+  # 覆盖率报告
+  coverage:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: formal-algorithm-coverage
+    volumes:
+      - ../:/workspace
+      - cargo-cache:/usr/local/cargo/registry
+      - coverage-reports:/workspace/coverage
+    working_dir: /workspace/examples/algorithms
+    command: >
+      sh -c "
+        cargo tarpaulin --verbose --all-features --workspace --timeout 120 --out Html --output-dir /workspace/coverage
+      "
+    environment:
+      - RUST_BACKTRACE=1
+    networks:
+      - algorithm-network
+    profiles:
+      - coverage
+
+  # 生产环境（仅运行构建好的代码）
+  prod:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: production
+    container_name: formal-algorithm-prod
+    networks:
+      - algorithm-network
+    profiles:
+      - prod
+
+volumes:
+  cargo-cache:
+    driver: local
+  target-cache:
+    driver: local
+  coverage-reports:
+    driver: local
+
+networks:
+  algorithm-network:
+    driver: bridge

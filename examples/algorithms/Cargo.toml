@@ -12,6 +12,8 @@ rust-version = "1.70"
 
 [dependencies]
 thiserror = "1.0"
+rand = "0.8"
+num-complex = "0.4"
 
 [dev-dependencies]
 criterion = { version = "0.5", features = ["html_reports"] }

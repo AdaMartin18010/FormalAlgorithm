@@ -1,0 +1,22 @@
+{
+  "name": "algorithms-js",
+  "version": "1.0.0",
+  "description": "经典算法JavaScript实现 - 排序、数据结构",
+  "main": "sorting.js",
+  "scripts": {
+    "test": "node sorting.js && node data_structures.js",
+    "sort": "node sorting.js",
+    "ds": "node data_structures.js"
+  },
+  "keywords": [
+    "algorithm",
+    "sorting",
+    "data-structures",
+    "javascript"
+  ],
+  "author": "FormalAlgorithm",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
