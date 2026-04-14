@@ -176,7 +176,7 @@ pub mod suffix_automaton;
 /// 斐波那契堆模块 (Fibonacci Heap)
 pub mod fibonacci_heap;
 // 跳表模块 - 当前实现有内存安全问题，暂时禁用
-// pub mod skiplist;
+pub mod skiplist;
 
 // 数值算法模块
 /// 矩阵操作模块（Strassen、快速幂、高斯消元）
@@ -364,7 +364,7 @@ pub use centroid_decomposition::CentroidDecomposition;
 pub use suffix_automaton::SuffixAutomaton;
 pub use fibonacci_heap::FibonacciHeap;
 pub use fibonacci_heap::NodeHandle;
-// pub use skiplist::SkipList;
+pub use skiplist::SkipList;
 
 // 数值算法
 pub use matrix_operations::Matrix as Mat;

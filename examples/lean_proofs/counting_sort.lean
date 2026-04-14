@@ -20,10 +20,14 @@ def IsNondecreasing (xs : List Nat) : Prop :=
 -- 输入列表只包含 0 和 1
 
 def countZeros (xs : List Nat) : Nat :=
-  xs.foldl (fun acc x => if x = 0 then acc + 1 else acc) 0
+  match xs with
+  | [] => 0
+  | x :: xs' => (if x = 0 then 1 else 0) + countZeros xs'
 
 def countOnes (xs : List Nat) : Nat :=
-  xs.foldl (fun acc x => if x = 1 then acc + 1 else acc) 0
+  match xs with
+  | [] => 0
+  | x :: xs' => (if x = 1 then 1 else 0) + countOnes xs'
 
 -- 二进制计数排序：将所有的 0 放在前面，所有的 1 放在后面
 def binaryCountingSort (xs : List Nat) : List Nat :=
@@ -79,21 +83,97 @@ theorem binary_counting_sort_sorted (xs : List Nat)
   unfold binaryCountingSort
   exact zeros_before_ones_nondecreasing (countZeros xs) (countOnes xs)
 
--- 辅助函数：计算列表中值为 v 的元素个数
+-- 辅助函数：计算列表中值为 v 的元素个数（递归定义，便于证明）
 def countValue (xs : List Nat) (v : Nat) : Nat :=
-  xs.foldl (fun acc x => if x = v then acc + 1 else acc) 0
+  match xs with
+  | [] => 0
+  | x :: xs' => (if x = v then 1 else 0) + countValue xs' v
+
+-- 辅助引理：countValue 在列表拼接上满足分配律
+theorem countValue_append (xs ys : List Nat) (v : Nat)
+    : countValue (xs ++ ys) v = countValue xs v + countValue ys v := by
+  induction xs with
+  | nil =>
+    simp [countValue]
+  | cons x xs' ih =>
+    simp [countValue, ih]
+    omega
+
+-- 辅助引理：replicate n 0 中 0 的个数为 n
+theorem countValue_replicate_zero (n : Nat)
+    : countValue (List.replicate n 0) 0 = n := by
+  induction n with
+  | zero =>
+    simp [countValue]
+  | succ n ih =>
+    simp [countValue, ih]
+
+-- 辅助引理：replicate n 1 中 0 的个数为 0
+theorem countValue_replicate_one_zero (n : Nat)
+    : countValue (List.replicate n 1) 0 = 0 := by
+  induction n with
+  | zero =>
+    simp [countValue]
+  | succ n ih =>
+    simp [countValue, ih]
+
+-- 辅助引理：replicate n 0 中 1 的个数为 0
+theorem countValue_replicate_zero_one (n : Nat)
+    : countValue (List.replicate n 0) 1 = 0 := by
+  induction n with
+  | zero =>
+    simp [countValue]
+  | succ n ih =>
+    simp [countValue, ih]
+
+-- 辅助引理：replicate n 1 中 1 的个数为 n
+theorem countValue_replicate_one (n : Nat)
+    : countValue (List.replicate n 1) 1 = n := by
+  induction n with
+  | zero =>
+    simp [countValue]
+  | succ n ih =>
+    simp [countValue, ih]
+
+-- 辅助引理：countZeros 等价于 countValue ... 0
+theorem countZeros_eq_countValue (xs : List Nat)
+    : countZeros xs = countValue xs 0 := by
+  induction xs with
+  | nil =>
+    simp [countZeros, countValue]
+  | cons x xs' ih =>
+    simp [countZeros, countValue, ih]
+    by_cases h : x = 0
+    · simp [h]
+    · simp [h]
+
+-- 辅助引理：countOnes 等价于 countValue ... 1
+theorem countOnes_eq_countValue (xs : List Nat)
+    : countOnes xs = countValue xs 1 := by
+  induction xs with
+  | nil =>
+    simp [countOnes, countValue]
+  | cons x xs' ih =>
+    simp [countOnes, countValue, ih]
+    by_cases h : x = 1
+    · simp [h]
+    · simp [h]
 
 -- 辅助引理：binaryCountingSort 中 0 的个数与输入相同
 theorem binary_counting_sort_zero_count (xs : List Nat)
     : countValue (binaryCountingSort xs) 0 = countValue xs 0 := by
-  simp [binaryCountingSort, countValue]
-  sorry
+  simp [binaryCountingSort]
+  rw [countValue_append, countValue_replicate_zero, countValue_replicate_one_zero]
+  rw [countZeros_eq_countValue]
+  simp
 
 -- 辅助引理：binaryCountingSort 中 1 的个数与输入相同
 theorem binary_counting_sort_one_count (xs : List Nat)
     : countValue (binaryCountingSort xs) 1 = countValue xs 1 := by
-  simp [binaryCountingSort, countValue]
-  sorry
+  simp [binaryCountingSort]
+  rw [countValue_append, countValue_replicate_zero_one, countValue_replicate_one]
+  rw [countOnes_eq_countValue]
+  simp
 
 -- 稳定性/正确性定理：输出有序且元素数量守恒
 theorem binary_counting_sort_stable (xs : List Nat)
