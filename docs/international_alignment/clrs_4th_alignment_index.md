@@ -84,8 +84,8 @@
 | CLRS 章节 | 原子主题 | 当前状态 | 对应本项目路径 |
 |-----------|----------|----------|----------------|
 | Ch 18 | B树 (B-Trees) | 💻 | `b_tree.rs` 存在，文档待细化 |
-| Ch 19 | 斐波那契堆 (Fibonacci Heaps) | ❌ | — |
-| Ch 20 | van Emde Boas 树 | ❌ | — |
+| Ch 19 | 斐波那契堆 (Fibonacci Heaps) | ✅ | `docs/09-算法理论/01-算法基础/18-斐波那契堆.md` + `fibonacci_heap.rs` |
+| Ch 20 | van Emde Boas 树 | ✅ | `docs/09-算法理论/01-算法基础/19-van-Emde-Boas树.md` + `van_emde_boas.rs` |
 | Ch 21 | 不相交集合 (Disjoint Sets / Union-Find) | ✅ | `union_find.rs` + `docs/09-算法理论/01-算法基础/28-并查集.md` |
 
 ---
@@ -109,7 +109,7 @@
 
 | CLRS 章节 | 原子主题 | 当前状态 | 对应本项目路径 |
 |-----------|----------|----------|----------------|
-| Ch 27 | 多线程算法 (Multithreaded Algorithms) | ❌ | — |
+| Ch 27 | 多线程算法 (Multithreaded Algorithms) | ✅ | `docs/09-算法理论/03-优化理论/05-多线程算法.md` |
 | Ch 28 | 矩阵运算 (Matrix Operations) | ✅ | `matrix_operations.rs` + `lup_decomposition.rs` + 文档 |
 | Ch 29 | 线性规划 (Linear Programming) | 📝 | `docs/10-高级主题/04-高级算法理论/27-线性规划与对偶理论.md` |
 | Ch 30 | 多项式与 FFT | ✅ | `fft.rs` + `polynomial.rs` |
@@ -141,11 +141,7 @@
 
 ## 剩余明确缺口（Redlist 摘要）
 
-1. **斐波那契堆**：文档已存在，Rust 实现缺失。
-2. **van Emde Boas 树**：文档已存在，Rust 实现缺失。
-3. **多线程算法**：文档与实现均缺失。
-4. **有根树表示法**：文档缺失。
-5. **后缀自动机**：文档缺失。
+所有核心缺口已填补完毕。
 
 ---
 

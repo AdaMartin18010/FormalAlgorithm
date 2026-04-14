@@ -84,6 +84,7 @@ impl<T: Ord + Debug + Clone> AVLTree<T> {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::avl_tree::AVLTree;
     /// let mut tree = AVLTree::new();
     /// tree.insert(5);
     /// tree.insert(3);

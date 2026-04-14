@@ -161,6 +161,8 @@ pub mod segment_tree;
 pub mod fenwick_tree;
 /// 后缀数组模块
 pub mod suffix_array;
+/// van Emde Boas 树模块
+pub mod van_emde_boas;
 /// 树上并查集模块 (DSU on Tree)
 pub mod dsu_on_tree;
 /// 莫算法模块 (Mo's Algorithm)
@@ -171,6 +173,8 @@ pub mod heavy_light_decomposition;
 pub mod centroid_decomposition;
 /// 后缀自动机模块 (Suffix Automaton)
 pub mod suffix_automaton;
+/// 斐波那契堆模块 (Fibonacci Heap)
+pub mod fibonacci_heap;
 // 跳表模块 - 当前实现有内存安全问题，暂时禁用
 // pub mod skiplist;
 
@@ -201,7 +205,6 @@ pub mod rolling_hash;
 // 高级数据结构
 /// 可持久化线段树模块
 pub mod persistent_segment_tree;
-
 // 精确覆盖算法
 /// 舞蹈链模块（DLX）
 pub mod dancing_links;
@@ -228,11 +231,11 @@ pub mod union_find;
 /// 红黑树模块
 pub mod red_black_tree;
 /// AVL树模块
-// pub mod avl_tree; // 编译错误待修复
+pub mod avl_tree;
 /// B树模块
-// pub mod b_tree; // 编译错误待修复
+pub mod b_tree;
 /// Splay树模块
-// pub mod splay_tree; // 编译错误待修复
+pub mod splay_tree;
 // 跳表模块 - 当前实现有内存安全问题，暂时禁用
 // pub mod skiplist;
 
@@ -240,9 +243,9 @@ pub mod red_black_tree;
 /// 笛卡尔树模块
 pub mod cartesian_tree;
 /// 区间树模块
-// pub mod interval_tree; // 编译错误待修复
+pub mod interval_tree;
 /// Trie树模块
-// pub mod trie; // 编译错误待修复
+pub mod trie;
 /// 二维树状数组模块
 pub mod binary_indexed_tree_2d;
 
@@ -353,11 +356,14 @@ pub use bloom_filter::BloomFilter;
 pub use segment_tree::{SegmentTree, LazySegmentTree};
 pub use fenwick_tree::{FenwickTree, RangeUpdateFenwickTree, count_inversions};
 pub use suffix_array::SuffixArray;
+pub use van_emde_boas::VanEmdeBoasTree;
 pub use dsu_on_tree::DsuOnTree;
 pub use mo_algorithm::MoAlgorithm;
 pub use heavy_light_decomposition::HeavyLightDecompositionWithSegTree;
 pub use centroid_decomposition::CentroidDecomposition;
 pub use suffix_automaton::SuffixAutomaton;
+pub use fibonacci_heap::FibonacciHeap;
+pub use fibonacci_heap::NodeHandle;
 // pub use skiplist::SkipList;
 
 // 数值算法
@@ -397,15 +403,19 @@ pub use queue::{Queue, QueueWithTwoStacks};
 pub use deque::Deque;
 pub use hash_table::{HashTableSeparateChaining, HashTableOpenAddressing};
 pub use red_black_tree::RedBlackTree;
-// pub use avl_tree::AVLTree;
-// pub use b_tree::BTree;
-// pub use splay_tree::SplayTree;
+pub use avl_tree::AVLTree;
+pub use b_tree::BTree;
+pub use splay_tree::SplayTree;
 pub use cartesian_tree::CartesianTree;
-// pub use interval_tree::{IntervalTree, Interval, IntervalSet};
-// pub use trie::{Trie, TrieNode, BinaryTrie};
+pub use interval_tree::{IntervalTree, Interval, IntervalSet};
+pub use trie::{Trie, TrieNode, BinaryTrie};
 pub use binary_indexed_tree_2d::BIT2D;
 
 // 排序与搜索扩展
+pub use counting_sort::counting_sort;
+pub use radix_sort::radix_sort;
+pub use bucket_sort::bucket_sort;
+pub use quick_select::quick_select;
 // pub use sorting::...; // 独立模块已提供相同导出
 
 // 图算法扩展

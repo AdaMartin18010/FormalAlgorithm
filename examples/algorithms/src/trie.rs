@@ -51,6 +51,7 @@ impl Trie {
     /// - 时间: O(|word|)
     /// - 空间: O(|word|) (新节点)
     pub fn insert(&mut self, word: &str) {
+        self.root.count += 1;
         let mut node = &mut self.root;
         
         for ch in word.chars() {
@@ -304,8 +305,8 @@ mod tests {
         trie.insert(2);   // 00010
         trie.insert(8);   // 01000
         
-        // 与5(0101)异或最大的是?(1010)=10
-        assert_eq!(trie.max_xor(5), Some(10));
+        // 与5(0101)异或最大的是?(11001)=25 -> 5^25=20 > 5^10=15
+        assert_eq!(trie.max_xor(5), Some(25));
         
         // 与2(0010)异或最大的是?(1110=14不存在, 应该是?)
         // 实际应该是 10 (1010) -> 1000 = 8

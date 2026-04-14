@@ -67,6 +67,7 @@ impl<T: Ord + Debug + Clone> SplayTree<T> {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::splay_tree::SplayTree;
     /// let mut tree = SplayTree::new();
     /// tree.insert(5);
     /// assert!(tree.contains(&5));

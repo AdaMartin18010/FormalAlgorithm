@@ -158,6 +158,7 @@ impl<T: Ord + Clone + Copy + Debug> IntervalTree<T> {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::interval_tree::{IntervalTree, Interval};
     /// let mut tree = IntervalTree::new();
     /// tree.insert(Interval::new(1, 5));
     /// tree.insert(Interval::new(3, 7));

@@ -124,11 +124,11 @@ mod tests {
     fn test_extended_gcd_zero() {
         let (g, x, y) = extended_gcd(0, 5);
         assert_eq!(g, 5);
-        assert_eq!(0 * x + 5 * y, 5);
+        assert_eq!(5 * y, 5);
 
         let (g, x, y) = extended_gcd(5, 0);
         assert_eq!(g, 5);
-        assert_eq!(5 * x + 0 * y, 5);
+        assert_eq!(5 * x, 5);
 
         let (g, _x, _y) = extended_gcd(0, 0);
         assert_eq!(g, 0);

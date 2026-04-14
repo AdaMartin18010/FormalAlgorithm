@@ -565,7 +565,7 @@ mod tests {
         ];
 
         let result = exact_cover(&matrix);
-        assert!(result.count >= 0);
+        assert!(result.count > 0);
     }
 }
 

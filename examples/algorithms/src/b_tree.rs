@@ -73,6 +73,7 @@ impl<T: Ord + Clone + Debug> BTree<T> {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::b_tree::BTree;
     /// let tree: BTree<i32> = BTree::new(4);
     /// ```
     pub fn new(order: usize) -> Self {
