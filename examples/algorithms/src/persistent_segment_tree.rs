@@ -108,6 +108,7 @@ impl PersistentSegmentTree {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::PersistentSegmentTree;
     /// let pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
     /// ```
     pub fn new(arr: &[i64]) -> Self {
@@ -151,6 +152,7 @@ impl PersistentSegmentTree {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::PersistentSegmentTree;
     /// let mut pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
     /// let v1 = pst.update(0, 2, 10); // 版本0的位置2加10
     /// ```
@@ -230,6 +232,7 @@ impl PersistentSegmentTree {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::PersistentSegmentTree;
     /// let pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
     /// let sum = pst.range_query(0, 1, 3); // 查询版本0的[1,3]区间和
     /// assert_eq!(sum, 9); // 2 + 3 + 4
@@ -382,12 +385,16 @@ impl PersistentSegmentTree {
 
 /// 用于区间第K小的辅助结构（配合离散化）
 pub struct KthPersistentSegmentTree {
-    /// 离散化映射：原始值 -> 离散化值
+    /// 离散化映射：原始值 -> 离散化值（已排序）
     sorted_values: Vec<i64>,
     /// 值到索引的映射
     value_to_idx: std::collections::HashMap<i64, usize>,
-    /// 可持久化线段树
+    /// 可持久化线段树（存储频率）
     pst: PersistentSegmentTree,
+    /// 前缀版本映射：prefix_versions[i] 表示 arr[0..i-1] 对应的 PST 版本号
+    prefix_versions: Vec<usize>,
+    /// 当前数组状态（用于支持单点更新）
+    current_arr: Vec<i64>,
 }
 
 impl KthPersistentSegmentTree {
@@ -403,36 +410,61 @@ impl KthPersistentSegmentTree {
             value_to_idx.insert(val, idx);
         }
 
-        // 创建离散化后的数组
-        let discrete_arr: Vec<i64> = arr
-            .iter()
-            .map(|&x| *value_to_idx.get(&x).unwrap() as i64)
-            .collect();
+        // 建立空的可持久化线段树，用于统计各离散值的频率
+        let mut pst = PersistentSegmentTree::new(&vec![0i64; sorted_values.len()]);
 
-        let pst = PersistentSegmentTree::new(&discrete_arr);
+        // 建立前缀版本：prefix_versions[i] 包含 arr[0..i-1] 中各值的频率
+        let mut prefix_versions = vec![0]; // version 0 对应空数组
+        for &x in arr {
+            let idx = *value_to_idx.get(&x).unwrap();
+            let new_version = pst.update(*prefix_versions.last().unwrap(), idx, 1);
+            prefix_versions.push(new_version);
+        }
 
         KthPersistentSegmentTree {
             sorted_values,
             value_to_idx,
             pst,
+            prefix_versions,
+            current_arr: arr.to_vec(),
         }
     }
 
-    /// 单点更新（添加一个新值）
-    pub fn update(&mut self, version: usize, pos: usize, new_value: i64) -> usize {
-        let discrete_val = *self.value_to_idx.get(&new_value).unwrap() as i64;
-        self.pst.set(version, pos, discrete_val)
+    /// 单点更新（将 arr[pos] 修改为 new_value）
+    ///
+    /// 修正说明：原实现错误地直接调用 PST 的 set 方法（把频率树当值树用），
+    /// 现改为先减少旧值频率、再增加新值频率。
+    pub fn update(&mut self, pos: usize, new_value: i64) -> usize {
+        assert!(pos < self.current_arr.len(), "位置超出范围");
+        let old_value = self.current_arr[pos];
+        let old_idx = *self.value_to_idx.get(&old_value).unwrap();
+        let new_idx = *self.value_to_idx.get(&new_value).unwrap();
+
+        let last_version = *self.prefix_versions.last().unwrap();
+        let v1 = self.pst.update(last_version, old_idx, -1);
+        let v2 = self.pst.update(v1, new_idx, 1);
+
+        self.current_arr[pos] = new_value;
+        self.prefix_versions.push(v2);
+        v2
     }
 
-    /// 查询区间第K小
-    pub fn query_kth(&self, left_version: usize, right_version: usize, k: usize) -> Option<i64> {
-        self.pst.kth_smallest(left_version, right_version, k)
+    /// 查询区间 [l, r]（0-based，包含两端）的第K小
+    ///
+    /// 修正说明：原实现未建立前缀版本，导致 kth_smallest 计算错误。
+    /// 现通过 prefix_versions 将数组区间 [l, r] 映射到 PST 的两个版本做差分。
+    pub fn query_kth(&self, l: usize, r: usize, k: usize) -> Option<i64> {
+        assert!(l <= r && r < self.current_arr.len(), "查询范围无效");
+        assert!(k > 0, "k must be positive");
+
+        self.pst
+            .kth_smallest(self.prefix_versions[l], self.prefix_versions[r + 1], k)
             .map(|idx| self.sorted_values[idx as usize])
     }
 
     /// 获取当前版本数
     pub fn version_count(&self) -> usize {
-        self.pst.version_count()
+        self.prefix_versions.len()
     }
 }
 
@@ -539,10 +571,9 @@ mod tests {
         let kpst = KthPersistentSegmentTree::new(&arr);
 
         // 排序后: [1, 1, 2, 3, 4, 5, 6, 9]
-        // 第1小 = 1, 第2小 = 1, 第3小 = 2, 等等
-
-        assert_eq!(kpst.query_kth(0, 0, 1), Some(1));
-        assert_eq!(kpst.query_kth(0, 0, 3), Some(2));
+        // 查询整个数组的第K小
+        assert_eq!(kpst.query_kth(0, arr.len() - 1, 1), Some(1));
+        assert_eq!(kpst.query_kth(0, arr.len() - 1, 3), Some(2));
     }
 
     #[test]
@@ -606,9 +637,9 @@ mod example {
         let kpst = KthPersistentSegmentTree::new(&arr);
         println!("离散化后排序: {:?}", kpst.sorted_values);
 
-        // 查询不同区间
+        // 查询整个数组的第K小
         for k in 1..=3 {
-            if let Some(val) = kpst.query_kth(0, 0, k) {
+            if let Some(val) = kpst.query_kth(0, arr.len() - 1, k) {
                 println!("整个数组第{}小: {}", k, val);
             }
         }

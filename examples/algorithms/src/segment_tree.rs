@@ -150,8 +150,7 @@ impl LazySegmentTree {
         if left <= nl && nr <= right {
             self.tree[node] += value * (nr - nl + 1) as i64;
             if nl != nr {
-                self.lazy[node * 2] += value;
-                self.lazy[node * 2 + 1] += value;
+                self.lazy[node] += value;
             }
             return;
         }

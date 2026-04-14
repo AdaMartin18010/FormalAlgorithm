@@ -122,6 +122,7 @@ impl DancingLinks {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::DancingLinks;
     /// let matrix = vec![
     ///     vec![true, false, true, false],
     ///     vec![true, true, false, false],
@@ -324,6 +325,7 @@ impl DancingLinks {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::DancingLinks;
     /// let matrix = vec![
     ///     vec![true, false, true],
     ///     vec![true, true, false],

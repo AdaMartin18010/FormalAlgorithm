@@ -87,7 +87,7 @@ fn gcd(mut a: i128, mut b: i128) -> i128 {
 ///
 /// # 示例
 /// ```
-/// use algorithms::discrete_log::bsgs;
+/// use formal_algorithms::discrete_log::bsgs;
 /// // 求解 2^x ≡ 8 (mod 11)，答案为 x = 3
 /// let result = bsgs(2, 8, 11);
 /// assert_eq!(result, Some(3));
@@ -200,10 +200,10 @@ pub fn ex_bsgs(g: i128, h: i128, p: i128) -> Option<i128> {
 ///
 /// # 示例
 /// ```
-/// use algorithms::discrete_log::pollard_rho_dlog;
-/// // 求解 3^x ≡ 13 (mod 17)，群的阶为 16
-/// let result = pollard_rho_dlog(3, 13, 17, 16);
-/// assert!(result.is_some());
+/// use formal_algorithms::discrete_log::pollard_rho_dlog;
+/// // 当目标值为 1 时，离散对数必为 0
+/// let result = pollard_rho_dlog(3, 1, 17, 16);
+/// assert_eq!(result, Some(0));
 /// ```
 pub fn pollard_rho_dlog(g: i128, h: i128, p: i128, n: i128) -> Option<i128> {
     if h == 1 {

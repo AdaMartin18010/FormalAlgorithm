@@ -40,7 +40,7 @@ impl SuffixArray {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::suffix_array::SuffixArray;
+    /// use formal_algorithms::suffix_array::SuffixArray;
     /// let sa = SuffixArray::new("banana");
     /// ```
     pub fn new(text: &str) -> Self {
@@ -73,6 +73,13 @@ impl SuffixArray {
         let n = text.len();
         let bytes = text.as_bytes();
         
+        if n == 0 {
+            return (Vec::new(), Vec::new());
+        }
+        if n == 1 {
+            return (vec![0], vec![0]);
+        }
+        
         // 初始: 按第一个字符排序
         let mut sa: Vec<usize> = (0..n).collect();
         let mut rank: Vec<usize> = bytes.iter().map(|&b| b as usize).collect();
@@ -84,13 +91,13 @@ impl SuffixArray {
             // 按第二关键字排序(sa[i]+k的位置的rank)
             // 使用计数排序思想，按rank排序
             sa.sort_by(|&i, &j| {
-                let ri = if i + k < n { rank[i + k] } else { 0 };
-                let rj = if j + k < n { rank[j + k] } else { 0 };
+                let ri = rank[i];
+                let rj = rank[j];
                 if ri != rj {
                     ri.cmp(&rj)
                 } else {
-                    let ri = if i < n { rank[i] } else { 0 };
-                    let rj = if j < n { rank[j] } else { 0 };
+                    let ri = if i + k < n { rank[i + k] } else { 0 };
+                    let rj = if j + k < n { rank[j + k] } else { 0 };
                     ri.cmp(&rj)
                 }
             });
@@ -196,7 +203,7 @@ impl SuffixArray {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::suffix_array::SuffixArray;
+    /// use formal_algorithms::suffix_array::SuffixArray;
     /// let sa = SuffixArray::new("banana");
     /// let (len, substr) = sa.longest_repeated_substring();
     /// assert_eq!(substr, "ana");

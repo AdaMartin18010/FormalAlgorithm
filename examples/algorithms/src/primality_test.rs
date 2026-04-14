@@ -49,7 +49,7 @@ fn mod_pow(mut base: u128, mut exp: u128, modulus: u128) -> u128 {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::is_probable_prime;
+/// use formal_algorithms::primality_test::is_probable_prime;
 /// assert!(is_probable_prime(17, 10));
 /// assert!(!is_probable_prime(18, 10));
 /// ```
@@ -216,7 +216,7 @@ fn gcd(mut a: u128, mut b: u128) -> u128 {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::pollard_rho;
+/// use formal_algorithms::primality_test::pollard_rho;
 /// let factor = pollard_rho(8051);
 /// assert!(factor.is_some());
 /// ```
@@ -299,7 +299,7 @@ fn trial_division(mut n: u128, limit: u128) -> Vec<u128> {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::factorize;
+/// use formal_algorithms::primality_test::factorize;
 /// let factors = factorize(100);
 /// assert_eq!(factors, vec![2, 2, 5, 5]);
 /// ```
@@ -356,7 +356,7 @@ pub fn factorize(mut n: u128) -> Vec<u128> {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::prime_factorization;
+/// use formal_algorithms::primality_test::prime_factorization;
 /// let pf = prime_factorization(100);
 /// assert_eq!(pf, vec![(2, 2), (5, 2)]); // 100 = 2^2 * 5^2
 /// ```
@@ -389,7 +389,7 @@ pub fn prime_factorization(n: u128) -> Vec<(u128, u32)> {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::euler_totient;
+/// use formal_algorithms::primality_test::euler_totient;
 /// assert_eq!(euler_totient(10), 4); // 1, 3, 7, 9
 /// ```
 pub fn euler_totient(n: u128) -> u128 {
@@ -449,7 +449,7 @@ pub fn mobius(n: u128) -> i32 {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::sieve_of_eratosthenes;
+/// use formal_algorithms::primality_test::sieve_of_eratosthenes;
 /// let primes = sieve_of_eratosthenes(30);
 /// assert_eq!(primes, vec![2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
 /// ```
@@ -518,7 +518,7 @@ pub fn linear_sieve(n: usize) -> Vec<usize> {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::nth_prime;
+/// use formal_algorithms::primality_test::nth_prime;
 /// assert_eq!(nth_prime(1), 2);
 /// assert_eq!(nth_prime(6), 13);
 /// ```
@@ -559,7 +559,7 @@ pub fn prime_counting(n: usize) -> usize {
 ///
 /// # 示例
 /// ```
-/// use algorithms::primality_test::next_prime;
+/// use formal_algorithms::primality_test::next_prime;
 /// assert_eq!(next_prime(10), 11);
 /// assert_eq!(next_prime(13), 17);
 /// ```

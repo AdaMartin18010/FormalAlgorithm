@@ -23,7 +23,7 @@ impl Polynomial {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::polynomial::Polynomial;
+    /// use formal_algorithms::polynomial::Polynomial;
     /// let p = Polynomial::new(vec![1.0, 2.0, 3.0]); // 1 + 2x + 3x^2
     /// ```
     pub fn new(coeffs: Vec<f64>) -> Self {
@@ -64,7 +64,7 @@ impl Polynomial {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::polynomial::Polynomial;
+    /// use formal_algorithms::polynomial::Polynomial;
     /// let p = Polynomial::new(vec![1.0, 2.0, 3.0]); // 1 + 2x + 3x^2
     /// assert_eq!(p.evaluate(2.0), 17.0); // 1 + 4 + 12 = 17
     /// ```
@@ -119,10 +119,10 @@ impl Polynomial {
     /// - 空间: O(n+m)
     pub fn multiply(&self, other: &Self) -> Self {
         if self.degree() == 0 {
-            return Self::new(vec![self.coeff(0) * other.coeff(0)]);
+            return Self::new(other.coeffs.iter().map(|&c| c * self.coeff(0)).collect());
         }
         if other.degree() == 0 {
-            return Self::new(vec![self.coeff(0) * other.coeff(0)]);
+            return Self::new(self.coeffs.iter().map(|&c| c * other.coeff(0)).collect());
         }
 
         let result_degree = self.degree() + other.degree();
@@ -145,7 +145,7 @@ impl Polynomial {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::polynomial::Polynomial;
+    /// use formal_algorithms::polynomial::Polynomial;
     /// let p1 = Polynomial::new(vec![0.0, 0.0, 1.0]); // x^2
     /// let p2 = Polynomial::new(vec![1.0, 1.0]);      // 1 + x
     /// let (q, r) = p1.divide(&p2);
@@ -232,7 +232,7 @@ impl Polynomial {
 ///
 /// # 示例
 /// ```
-/// use algorithms::polynomial::lagrange_interpolate;
+/// use formal_algorithms::polynomial::lagrange_interpolate;
 /// let points = vec![(1.0, 1.0), (2.0, 4.0), (3.0, 9.0)]; // y = x^2
 /// let y = lagrange_interpolate(&points, 2.5);
 /// assert!((y - 6.25).abs() < 1e-9);

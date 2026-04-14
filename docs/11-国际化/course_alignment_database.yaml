@@ -6,11 +6,11 @@
 metadata:
   version: "1.0"
   created_date: "2026-04-08"
-  last_updated: "2026-04-08"
+  last_updated: "2026-04-15"
   project: "算法规范与模型设计知识体系"
   phase: "阶段4 - 国际化课程对标深化"
   total_universities: 11
-  total_courses: 15
+  total_courses: 17
   total_topics_analyzed: 140
   overall_alignment: "79.2%"
 
@@ -89,6 +89,43 @@ courses:
     priority: "高"
     
   - university: "MIT"
+    code: "6.1210"
+    name: "Introduction to Algorithms"
+    name_cn: "算法导论"
+    level: "本科"
+    credits: "12 units"
+    instructors: ["Erik Demaine", "Jason Ku", "Justin Solomon"]
+    semester: "Fall 2024+"
+    url: "https://ocw.mit.edu/courses/6-1210-introduction-to-algorithms-fall-2024/"
+    prerequisites: ["6.100A", "6.1200"]
+    textbook: "CLRS Introduction to Algorithms 4th Edition"
+    alignment:
+      overall: 90
+      theory: 95
+      practice: 85
+    covered_topics:
+      - 渐进分析
+      - 动态数组
+      - 堆与优先队列
+      - 哈希表
+      - 排序算法
+      - 图算法
+      - 动态规划
+      - 贪心算法
+    missing_topics:
+      - 摊还分析势能法详细证明
+      - 高级哈希技术
+    topics_with_gaps:
+      - topic: 平衡BST
+        alignment: 75
+        gap: 需补充AVL/红黑树实现
+      - topic: 摊还分析
+        alignment: 70
+        gap: 需补充势能分析法
+    priority: "高"
+    notes: "MIT 6.006 的新编号，自 2024 年秋季起使用"
+
+  - university: "MIT"
     code: "6.046"
     name: "Design and Analysis of Algorithms"
     name_cn: "算法设计与分析"
@@ -161,6 +198,43 @@ courses:
         gap: 需扩展概率分析
     priority: "高"
 
+  - university: "Stanford"
+    code: "CS 161"
+    name: "Design and Analysis of Algorithms"
+    name_cn: "算法设计与分析"
+    level: "本科"
+    credits: "3-5 units"
+    instructors: ["TBD"]
+    semester: "Summer 2025"
+    url: "https://stanford-cs161.github.io/"
+    prerequisites: ["CS 106B/X", "CS 103/103B", "CS 109"]
+    textbook: "参考CLRS, Kleinberg-Tardos"
+    alignment:
+      overall: 85
+      theory: 88
+      practice: 82
+    covered_topics:
+      - 渐进分析
+      - 递归关系
+      - 分治法
+      - 动态规划
+      - 贪心算法
+      - 图算法
+      - 网络流
+      - NP完全性
+    missing_topics:
+      - 字符串算法
+      - Chernoff界应用
+      - 网络流完整理论
+    topics_with_gaps:
+      - topic: 摊还分析
+        alignment: 75
+        gap: 需补充更多示例
+      - topic: 随机化算法
+        alignment: 70
+        gap: 需扩展概率分析
+    priority: "高"
+
   # CMU课程
   - university: "CMU"
     code: "15-451/651"
@@ -169,10 +243,11 @@ courses:
     level: "本科/研究生"
     credits: "12 units"
     instructors: ["Daniel Anderson", "David Woodruff"]
-    semester: "Spring"
+    semester: "Spring 2025"
     url: "https://www.cs.cmu.edu/~15451-s25/"
     prerequisites: ["15-210"]
     textbook: "Anderson, Blum, Gupta, Sleator讲义"
+    notes: "CMU 15-451 Spring 2025 已入库"
     alignment:
       overall: 82
       theory: 85

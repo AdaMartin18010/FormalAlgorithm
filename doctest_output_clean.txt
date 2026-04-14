@@ -1,0 +1,1331 @@
+﻿cargo : warning: unused import: `std::mem::MaybeUninit`
+At line:1 char:49
++ ... rc\FormalAlgorithm\examples\algorithms; cargo test --doc 2>&1 | Tee-O ...
++                                             ~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: unused...m::MaybeUninit`:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  --> src\lru_cache.rs:86:13
+   |
+86 |         use std::mem::MaybeUninit;
+   |             ^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::collections::HashMap`
+   --> src\primality_test.rs:8:5
+    |
+  8 | use std::collections::HashMap;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+help: if this is a test module, consider adding a `#[cfg(test)]` to the containing module
+   --> src\lib.rs:187:1
+    |
+187 | pub mod primality_test;
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `HashMap`
+  --> src\min_cost_max_flow.rs:26:24
+   |
+26 | use std::collections::{HashMap, VecDeque};
+   |                        ^^^^^^^
+
+warning: unused import: `std::hash::Hash`
+  --> src\min_cost_max_flow.rs:27:5
+   |
+27 | use std::hash::Hash;
+   |     ^^^^^^^^^^^^^^^
+
+warning: unused variable: `from`
+   --> src\tarjan_scc.rs:309:10
+    |
+309 |     for (from, to_set) in &result.condensed_graph {
+    |          ^^^^ help: if this is intentional, prefix it with an underscore: `_from`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `next_left`
+   --> src\bipartite_matching.rs:279:21
+    |
+279 |                 let next_left = match_right.get(&current_right).cloned();
+    |                     ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_next_left`
+
+warning: variable does not need to be mutable
+  --> src\segment_tree.rs:33:13
+   |
+33 |         let mut tree = vec![identity; 4 * n];
+   |             ----^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `n`
+   --> src\mo_algorithm.rs:180:13
+    |
+180 |         let n = arr.len();
+    |             ^ help: if this is intentional, prefix it with an underscore: `_n`
+
+warning: unused variable: `old_freq`
+   --> src\mo_algorithm.rs:241:13
+    |
+241 |         let old_freq = freq[v];
+    |             ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_old_freq`
+
+warning: unused variable: `modify_count`
+   --> src\mo_algorithm.rs:308:26
+    |
+308 |     pub fn new(n: usize, modify_count: usize) -> Self {
+    |                          ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_modify_count`
+
+warning: unused variable: `n`
+   --> src\mo_algorithm.rs:336:13
+    |
+336 |         let n = arr.len();
+    |             ^ help: if this is intentional, prefix it with an underscore: `_n`
+
+warning: unused variable: `mid`
+   --> src\matrix_operations.rs:113:13
+    |
+113 |         let mid = n / 2;
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_mid`
+
+warning: variable does not need to be mutable
+   --> src\discrete_log.rs:139:9
+    |
+139 |     let mut g = g % p;
+    |         ----^
+    |         |
+    |         help: remove this `mut`
+
+warning: unreachable pattern
+   --> src\discrete_log.rs:229:13
+    |
+229 |             _ => unreachable!(),
+    |             ^ no value can reach this
+    |
+note: multiple earlier patterns match some of the same values
+   --> src\discrete_log.rs:229:13
+    |
+226 |             0 => ((x * h) % p, a, (b + 1) % n),
+    |             - matches some of the same values
+227 |             1 => ((x * x) % p, (2 * a) % n, (2 * b) % n),
+    |             - matches some of the same values
+228 |             _ => ((x * g) % p, (a + 1) % n, b),
+    |             - matches some of the same values
+229 |             _ => unreachable!(),
+    |             ^ collectively making this unreachable
+    = note: `#[warn(unreachable_patterns)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> src\primality_test.rs:306:18
+    |
+306 | pub fn factorize(mut n: u128) -> Vec<u128> {
+    |                  ----^
+    |                  |
+    |                  help: remove this `mut`
+
+warning: unused variable: `idx`
+   --> src\min_cost_max_flow.rs:358:18
+    |
+358 |             for (idx, edge) in self.graph[from].iter().enumerate() {
+    |                  ^^^ help: if this is intentional, prefix it with an underscore: `_idx`
+
+warning: variable does not need to be mutable
+   --> src\rolling_hash.rs:123:13
+    |
+123 |         let mut prefix_hash2 = vec![0u64; n + 1];
+    |             ----^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src\rolling_hash.rs:124:13
+    |
+124 |         let mut power2 = vec![1u64; n + 1];
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: field `mod_block_size` is never read
+   --> src\mo_algorithm.rs:299:5
+    |
+297 | pub struct MoAlgorithmWithModify {
+    |            --------------------- field in this struct
+298 |     block_size: usize,
+299 |     mod_block_size: usize,
+    |     ^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `trial_division` is never used
+   --> src\primality_test.rs:262:4
+    |
+262 | fn trial_division(mut n: u128, limit: u128) -> Vec<u128> {
+    |    ^^^^^^^^^^^^^^
+
+warning: field `assignment` is never read
+  --> src\sat2.rs:40:5
+   |
+32 | pub struct Solver2Sat {
+   |            ---------- field in this struct
+...
+40 |     assignment: Vec<Option<bool>>,
+   |     ^^^^^^^^^^
+
+warning: fields `l` and `r` are never read
+  --> src\persistent_segment_tree.rs:42:5
+   |
+34 | struct Node {
+   |        ---- fields in this struct
+...
+42 |     l: usize,
+   |     ^
+43 |     /// 区间右边界
+44 |     r: usize,
+   |     ^
+   |
+   = note: `Node` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead
+ code analysis
+
+warning: method `is_leaf` is never used
+  --> src\persistent_segment_tree.rs:83:8
+   |
+47 | impl Node {
+   | --------- method in this implementation
+...
+83 |     fn is_leaf(&self) -> bool {
+   |        ^^^^^^^
+
+warning: field `name` is never read
+  --> src\dancing_links.rs:66:5
+   |
+60 | struct Column {
+   |        ------ field in this struct
+...
+66 |     name: String,
+   |     ^^^^
+   |
+   = note: `Column` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during de
+ad code analysis
+
+warning: field `initial_temperature` is never read
+  --> src\simulated_annealing.rs:51:5
+   |
+39 | pub struct SimulatedAnnealing<T> {
+   |            ------------------ field in this struct
+...
+51 |     initial_temperature: f64,
+   |     ^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\lru_cache.rs:55:1
+   |
+55 | / pub struct LruCache<K, V> {
+56 | |     /// 存储键到节点指针的映射
+57 | |     map: HashMap<K, NonNull<Node<K, V>>>,
+58 | |     /// 双向链表虚拟头节点（最新访问）
+...  |
+65 | |     size: usize,
+66 | | }
+   | |_^
+   |
+note: the lint level is defined here
+  --> src\lib.rs:64:9
+   |
+64 | #![warn(missing_debug_implementations)]
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\consistent_hash.rs:46:1
+   |
+46 | / pub struct ConsistentHash<T> {
+47 | |     /// 哈希环：哈希值 -> 节点
+48 | |     ring: BTreeMap<u64, T>,
+49 | |     /// 物理节点到虚拟节点的映射
+...  |
+54 | |     hasher: Box<dyn Fn(&[u8]) -> u64 + Send + Sync>,
+55 | | }
+   | |_^
+
+warning: missing documentation for a struct field
+   --> src\consistent_hash.rs:260:5
+    |
+260 |     pub node: String,
+    |     ^^^^^^^^^^^^^^^^
+    |
+note: the lint level is defined here
+   --> src\lib.rs:63:9
+    |
+ 63 | #![warn(missing_docs)]
+    |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\consistent_hash.rs:261:5
+    |
+261 |     pub virtual_nodes: usize,
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\consistent_hash.rs:262:5
+    |
+262 |     pub percentage: f64,
+    |     ^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\bloom_filter.rs:51:1
+   |
+51 | / pub struct BloomFilter<T: Hash> {
+52 | |     /// 位数组
+53 | |     bits: Vec<bool>,
+54 | |     /// 位数组大小
+...  |
+67 | |     _marker: std::marker::PhantomData<T>,
+68 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\bloom_filter.rs:311:1
+    |
+311 | / pub struct CountingBloomFilter<T: Hash> {
+312 | |     /// 计数器数组
+313 | |     counters: Vec<u8>,
+314 | |     /// 数组大小
+...   |
+322 | |     _marker: std::marker::PhantomData<T>,
+323 | | }
+    | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\segment_tree.rs:119:1
+    |
+119 | / pub struct LazySegmentTree {
+120 | |     tree: Vec<i64>,
+121 | |     lazy: Vec<i64>,
+122 | |     n: usize,
+123 | | }
+    | |_^
+
+warning: missing documentation for an associated function
+   --> src\segment_tree.rs:126:5
+    |
+126 |     pub fn new(n: usize) -> Self {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\dsu_on_tree.rs:24:1
+   |
+24 | / pub struct DsuOnTree {
+25 | |     /// 树的邻接表表示
+26 | |     adj: Vec<Vec<usize>>,
+27 | |     /// 节点颜色/值
+...  |
+40 | |     ans: Vec<usize>,
+41 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\dsu_on_tree.rs:195:1
+    |
+195 | / pub struct SimpleDsuOnTree {
+196 | |     adj: Vec<Vec<usize>>,
+197 | |     colors: Vec<usize>,
+198 | | }
+    | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\mo_algorithm.rs:48:1
+   |
+48 | / pub struct MoAlgorithm {
+49 | |     /// 块大小（通常为 √n）
+50 | |     block_size: usize,
+51 | |     /// 当前左指针
+...  |
+56 | |     cur_ans: i64,
+57 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\mo_algorithm.rs:297:1
+    |
+297 | / pub struct MoAlgorithmWithModify {
+298 | |     block_size: usize,
+299 | |     mod_block_size: usize,
+300 | | }
+    | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\heavy_light_decomposition.rs:28:1
+   |
+28 | / pub struct HeavyLightDecomposition {
+29 | |     /// 树的邻接表（存目标节点和边权）
+30 | |     adj: Vec<Vec<(usize, i64)>>,
+31 | |     /// 父节点
+...  |
+50 | |     n: usize,
+51 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\heavy_light_decomposition.rs:293:1
+    |
+293 | / pub struct HeavyLightDecompositionWithSegTree {
+294 | |     hld: HeavyLightDecomposition,
+295 | |     seg_tree_sum: SegmentTree<i64>,
+296 | |     seg_tree_max: SegmentTree<i64>,
+297 | | }
+    | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\centroid_decomposition.rs:27:1
+   |
+27 | / pub struct CentroidDecomposition {
+28 | |     /// 树的邻接表（目标节点，边权）
+29 | |     adj: Vec<Vec<(usize, i64)>>,
+30 | |     /// 子树大小
+...  |
+37 | |     answer: i64,
+38 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\centroid_decomposition.rs:185:1
+    |
+185 | / pub struct WeightedCentroidDecomposition<T> {
+186 | |     adj: Vec<Vec<(usize, i64)>>,
+187 | |     subtree_size: Vec<usize>,
+188 | |     removed: Vec<bool>,
+...   |
+192 | |     result: T,
+193 | | }
+    | |_^
+
+warning: missing documentation for a method
+  --> src\matrix_operations.rs:56:5
+   |
+56 |     pub fn rows(&self) -> usize {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a method
+  --> src\matrix_operations.rs:60:5
+   |
+60 |     pub fn cols(&self) -> usize {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\polynomial.rs:301:1
+    |
+301 | / pub struct NewtonInterpolation {
+302 | |     points: Vec<(f64, f64)>,
+303 | |     divided_diff: Vec<Vec<f64>>,
+304 | | }
+    | |_^
+
+warning: missing documentation for a struct field
+  --> src\geometry_utils.rs:14:5
+   |
+14 |     pub x: f64,
+   |     ^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> src\geometry_utils.rs:15:5
+   |
+15 |     pub y: f64,
+   |     ^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:108:5
+    |
+108 |     pub a: Point,
+    |     ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:109:5
+    |
+109 |     pub b: Point,
+    |     ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:197:5
+    |
+197 |     pub a: f64, // Ax + By + C = 0
+    |     ^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:198:5
+    |
+198 |     pub b: f64,
+    |     ^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:199:5
+    |
+199 |     pub c: f64,
+    |     ^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:245:5
+    |
+245 |     pub center: Point,
+    |     ^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:246:5
+    |
+246 |     pub r: f64,
+    |     ^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\geometry_utils.rs:420:5
+    |
+420 |     pub vertices: Vec<Point>,
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a method
+   --> src\geometry_utils.rs:434:5
+    |
+434 |     pub fn is_empty(&self) -> bool {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\min_cost_max_flow.rs:45:1
+   |
+45 | / pub struct MinCostMaxFlow {
+46 | |     /// 图的邻接表表示
+47 | |     graph: Vec<Vec<Edge>>,
+48 | |     /// 节点数量
+49 | |     n: usize,
+50 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\sat2.rs:32:1
+   |
+32 | / pub struct Solver2Sat {
+33 | |     /// 变量数量
+34 | |     n: usize,
+35 | |     /// 子句列表
+...  |
+40 | |     assignment: Vec<Option<bool>>,
+41 | | }
+   | |_^
+
+warning: missing documentation for a struct field
+  --> src\rolling_hash.rs:60:5
+   |
+60 |     pub hash1: u64,
+   |     ^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> src\rolling_hash.rs:61:5
+   |
+61 |     pub hash2: u64,
+   |     ^^^^^^^^^^^^^^
+
+warning: missing documentation for a method
+   --> src\rolling_hash.rs:332:5
+    |
+332 |     pub fn is_empty(&self) -> bool {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\persistent_segment_tree.rs:89:1
+   |
+89 | / pub struct PersistentSegmentTree {
+90 | |     /// 所有版本（根节点）
+91 | |     versions: Vec<Option<Rc<Node>>>,
+92 | |     /// 原始数组长度
+93 | |     n: usize,
+94 | | }
+   | |_^
+
+warning: missing documentation for a struct field
+  --> src\persistent_segment_tree.rs:99:5
+   |
+99 |     pub sum: i64,
+   |     ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+   --> src\persistent_segment_tree.rs:100:5
+    |
+100 |     pub count: usize,
+    |     ^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\persistent_segment_tree.rs:384:1
+    |
+384 | / pub struct KthPersistentSegmentTree {
+385 | |     /// 离散化映射：原始值 -> 离散化值（已排序）
+386 | |     sorted_values: Vec<i64>,
+387 | |     /// 值到索引的映射
+...   |
+394 | |     current_arr: Vec<i64>,
+395 | | }
+    | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\dancing_links.rs:86:1
+    |
+ 86 | / pub struct DancingLinks {
+ 87 | |     /// 所有节点（包括列头和普通节点）
+ 88 | |     nodes: Vec<Node>,
+ 89 | |     /// 列头数组
+...   |
+102 | |     row_names: Vec<String>,
+103 | | }
+    | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+  --> src\simulated_annealing.rs:39:1
+   |
+39 | / pub struct SimulatedAnnealing<T> {
+40 | |     /// 当前解
+41 | |     current: T,
+42 | |     /// 当前能量（目标函数值）
+...  |
+69 | |     energy_history: Vec<(usize, f64, f64)>, // (迭代, 温度, 能量)
+70 | | }
+   | |_^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\simulated_annealing.rs:291:1
+    |
+291 | pub struct TspSolver;
+    | ^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\simulated_annealing.rs:391:1
+    |
+391 | pub struct FunctionOptimizer;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: type does not implement `Debug`; consider adding `#[derive(Debug)]` or a manual implementation
+   --> src\simulated_annealing.rs:469:1
+    |
+469 | pub struct SchedulingSolver;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `formal-algorithms` (lib) generated 70 warnings (run `cargo fix --lib -p formal-algorithms` to apply 17 sugges
+tions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+   Doc-tests formal_algorithms
+
+running 128 tests
+test src\binary_search.rs - binary_search::sqrt_int (line 324) ... ok
+test src\backtracking.rs - backtracking::solve_maze (line 423) ... ok
+test src\binary_search.rs - binary_search::lower_bound (line 122) ... ok
+test src\articulation_points.rs - articulation_points::find_articulation_points (line 86) ... ok
+test src\backtracking.rs - backtracking::generate_permutations (line 259) ... ok
+test src\backtracking.rs - backtracking::subset_sum (line 46) ... ok
+test src\backtracking_nqueens.rs - backtracking_nqueens::count_n_queens_bitwise (line 347) ... ok
+test src\backtracking_nqueens.rs - backtracking_nqueens::count_n_queens_solutions (line 235) ... ok
+test src\backtracking_nqueens.rs - backtracking_nqueens::solve_n_queens_iter (line 396) ... ok
+test src\backtracking.rs - backtracking::generate_combinations (line 310) ... ok
+test src\backtracking_nqueens.rs - backtracking_nqueens::is_valid_solution (line 315) ... ok
+test src\backtracking_nqueens.rs - backtracking_nqueens::solve_n_queens (line 73) ... ok
+test src\binary_search.rs - binary_search::insertion_point (line 220) ... ok
+test src\binary_search.rs - binary_search::binary_search (line 36) ... ok
+test src\backtracking_nqueens.rs - backtracking_nqueens::solve_n_queens_one (line 161) ... ok
+test src\binary_search.rs - binary_search::equal_range (line 184) ... ok
+test src\binary_search.rs - binary_search::binary_search_recursive (line 84) ... ok
+test src\binary_search.rs - binary_search::find_min_in_rotated (line 236) ... ok
+test src\binary_search.rs - binary_search::upper_bound (line 153) ... ok
+test src\binary_search.rs - binary_search::count (line 201) ... ok
+test src\backtracking.rs - backtracking::generate_subsets (line 368) ... ok
+test src\binary_search.rs - binary_search::search_in_rotated (line 269) ... ok
+test src\backtracking.rs - backtracking::graph_coloring (line 148) ... ok
+test src\bipartite_matching.rs - bipartite_matching::hungarian_bfs (line 199) ... ok
+test src\discrete_log.rs - discrete_log::pollard_rho_dlog (line 202) ... FAILED
+test src\discrete_log.rs - discrete_log::bsgs (line 89) ... FAILED
+test src\bipartite_matching.rs - bipartite_matching::hungarian_dfs (line 105) ... ok
+test src\dancing_links.rs - dancing_links::DancingLinks::solve (line 326) ... FAILED
+test src\dancing_links.rs - dancing_links::DancingLinks::new (line 124) ... FAILED
+test src\bloom_filter.rs - bloom_filter::BloomFilter (line 38) ... ok
+test src\bloom_filter.rs - bloom_filter::BloomFilter<T>::check_and_insert (line 172) ... ok
+test src\bloom_filter.rs - bloom_filter::example_usage (line 527) ... ok
+test src\bloom_filter.rs - bloom_filter::BloomFilter<T>::new (line 83) ... ok
+test src\consistent_hash.rs - consistent_hash::ConsistentHash<T>::with_virtual_nodes (line 76) ... ok
+test src\bridges.rs - bridges::find_bridges (line 112) ... ok
+test src\consistent_hash.rs - consistent_hash::example_usage (line 437) ... ok
+test src\dijkstra.rs - dijkstra::dijkstra (line 132) ... ok
+test src\consistent_hash.rs - consistent_hash::ConsistentHash (line 37) ... ok
+test src\divide_and_conquer.rs - divide_and_conquer::binary_search_dc (line 452) ... ok
+test src\geometry_utils.rs - geometry_utils::convex_hull (line 557) ... FAILED
+test src\dijkstra.rs - dijkstra::dijkstra_with_graph (line 252) ... ok
+test src\divide_and_conquer.rs - divide_and_conquer::Point::new (line 22) ... ok
+test src\divide_and_conquer.rs - divide_and_conquer::closest_pair (line 324) ... ok
+test src\divide_and_conquer.rs - divide_and_conquer::matrix_multiply (line 100) ... ok
+test src\divide_and_conquer.rs - divide_and_conquer::strassen_multiply (line 161) ... ok
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree (line 39) ... ok
+test src\divide_and_conquer.rs - divide_and_conquer::merge_sort_dc (line 492) ... ok
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree::find_kth (line 276) ... ok
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree::from_vec (line 92) ... ok
+test src\euler_tour.rs - euler_tour::find_eulerian_circuit_undirected (line 181) ... FAILED
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree::new (line 70) ... ok
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree::query (line 210) ... ok
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree::range_query (line 247) ... ok
+test src\fenwick_tree.rs - fenwick_tree::FenwickTree::update (line 159) ... ok
+test src\fenwick_tree.rs - fenwick_tree::count_inversions (line 390) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::bfs (line 89) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::connected_components (line 276) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::has_cycle (line 345) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::dfs_iterative (line 204) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::dfs (line 156) ... ok
+test src\greedy_activity_selection.rs - greedy_activity_selection::Activity::is_compatible_with (line 59) ... ok
+test src\lcs.rs - lcs::edit_distance (line 235) ... ok
+test src\greedy_activity_selection.rs - greedy_activity_selection::Activity::with_name (line 41) ... ok
+test src\greedy_activity_selection.rs - greedy_activity_selection::Activity::new (line 22) ... ok
+test src\greedy_activity_selection.rs - greedy_activity_selection::greedy_activity_selection (line 143) ... ok
+test src\lcs.rs - lcs::lcs (line 43) ... ok
+test src\greedy_activity_selection.rs - greedy_activity_selection::min_meeting_rooms (line 307) ... ok
+test src\heap_sort.rs - heap_sort::heap_sort (line 29) ... ok
+test src\greedy_activity_selection.rs - greedy_activity_selection::weighted_activity_selection (line 217) ... ok
+test src\heap_sort.rs - heap_sort::heap_sort_min (line 92) ... ok
+test src\heap_sort.rs - heap_sort::heap_sort_by (line 149) ... ok
+test src\heap_sort.rs - heap_sort::heap_sort_iterative (line 209) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::topological_sort (line 423) ... ok
+test src\lcs.rs - lcs::find_all_lcs (line 321) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::has_path (line 249) ... ok
+test src\kosaraju_scc.rs - kosaraju_scc::kosaraju_scc (line 99) ... ok
+test src\graph_bfs_dfs.rs - graph_bfs_dfs::shortest_path (line 314) ... ok
+test src\matrix_operations.rs - matrix_operations::Matrix<T>::new (line 27) ... FAILED
+test src\lcs.rs - lcs::similarity (line 288) ... ok
+test src\lcs.rs - lcs::longest_common_substring (line 177) ... ok
+test src\matrix_operations.rs - matrix_operations::Matrix<f64>::gaussian_elimination (line 243) ... FAILED
+test src\matrix_operations.rs - matrix_operations::Matrix<i64>::pow (line 191) ... FAILED
+test src\lcs.rs - lcs::lcs_length (line 98) ... ok
+test src\lru_cache.rs - lru_cache::LruCache (line 45) ... ok
+test src\polynomial.rs - polynomial::Polynomial::divide (line 147) ... FAILED
+test src\polynomial.rs - polynomial::Polynomial::evaluate (line 66) ... FAILED
+test src\min_cost_max_flow.rs - min_cost_max_flow::MinCostMaxFlow::min_cost_flow_spfa (line 123) ... FAILED
+test src\lru_cache.rs - lru_cache::LruCache<K,V>::new (line 79) ... ok
+test src\min_cost_max_flow.rs - min_cost_max_flow::MinCostMaxFlow::new (line 70) ... FAILED
+test src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::new (line 110) ... FAILED
+test src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::update (line 153) ... FAILED
+test src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::range_query (line 232) ... FAILED
+test src\polynomial.rs - polynomial::Polynomial::new (line 25) ... FAILED
+test src\polynomial.rs - polynomial::lagrange_interpolate (line 234) ... FAILED
+test src\primality_test.rs - primality_test::pollard_rho (line 218) ... FAILED
+test src\primality_test.rs - primality_test::is_probable_prime (line 51) ... FAILED
+test src\primality_test.rs - primality_test::euler_totient (line 391) ... FAILED
+test src\primality_test.rs - primality_test::next_prime (line 561) ... FAILED
+test src\primality_test.rs - primality_test::factorize (line 301) ... FAILED
+test src\primality_test.rs - primality_test::nth_prime (line 520) ... FAILED
+test src\lru_cache.rs - lru_cache::example_usage (line 447) ... ok
+test src\primality_test.rs - primality_test::prime_factorization (line 358) ... FAILED
+test src\primality_test.rs - primality_test::sieve_of_eratosthenes (line 451) ... FAILED
+test src\merge_sort.rs - merge_sort::merge_sort (line 27) ... ok
+test src\rolling_hash.rs - rolling_hash::RollingHash::new (line 71) ... FAILED
+test src\rolling_hash.rs - rolling_hash::RollingHash::get_hash (line 146) ... FAILED
+test src\suffix_array.rs - suffix_array::SuffixArray::new (line 42) ... FAILED
+test src\suffix_array.rs - suffix_array::SuffixArray::longest_repeated_substring (line 205) ... FAILED
+test src\sat2.rs - sat2::Solver2Sat::add_clause (line 96) ... FAILED
+test src\sat2.rs - sat2::Solver2Sat::new (line 77) ... FAILED
+test src\merge_sort.rs - merge_sort::merge_sort_iterative (line 124) ... ok
+test src\sat2.rs - sat2::Solver2Sat::solve (line 149) ... FAILED
+test src\simulated_annealing.rs - simulated_annealing::SimulatedAnnealing<T>::new (line 110) ... FAILED
+test src\simulated_annealing.rs - simulated_annealing::SimulatedAnnealing<T>::solve (line 169) ... FAILED
+test src\merge_sort.rs - merge_sort::merge_sort_to_new (line 103) ... ok
+test src\quick_sort.rs - quick_sort::intro_sort (line 262) ... ok
+test src\quick_sort.rs - quick_sort::quick_select (line 322) ... ok
+test src\quick_sort.rs - quick_sort::quick_sort_3way (line 158) ... ok
+test src\quick_sort.rs - quick_sort::quick_sort_hoare (line 128) ... ok
+test src\quick_sort.rs - quick_sort::quick_sort (line 30) ... ok
+test src\strongly_connected_components.rs - strongly_connected_components::kosaraju (line 90) ... ok
+test src\strongly_connected_components.rs - strongly_connected_components::is_strongly_connected (line 429) ... ok
+test src\strongly_connected_components.rs - strongly_connected_components::tarjan (line 257) ... ok
+test src\tarjan_scc.rs - tarjan_scc::is_strongly_connected (line 267) ... ok
+test src\tarjan_scc.rs - tarjan_scc::tarjan_scc (line 95) ... ok
+test src\topological_sort.rs - topological_sort::topological_sort_kahn (line 82) ... ok
+test src\topological_sort.rs - topological_sort::has_cycle (line 294) ... ok
+test src\topological_sort.rs - topological_sort::topological_sort_dfs (line 187) ... ok
+
+failures:
+
+---- src\discrete_log.rs - discrete_log::pollard_rho_dlog (line 202) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\discrete_log.rs:203:5
+    |
+203 | use algorithms::discrete_log::pollard_rho_dlog;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\discrete_log.rs - discrete_log::bsgs (line 89) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+  --> src\discrete_log.rs:90:5
+   |
+90 | use algorithms::discrete_log::bsgs;
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+   |
+   = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\dancing_links.rs - dancing_links::DancingLinks::solve (line 326) stdout ----
+error[E0433]: cannot find type `DancingLinks` in this scope
+   --> src\dancing_links.rs:332:15
+    |
+332 | let mut dlx = DancingLinks::new(&matrix, None);
+    |               ^^^^^^^^^^^^ use of undeclared type `DancingLinks`
+    |
+help: consider importing this struct
+    |
+326 + use formal_algorithms::DancingLinks;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\dancing_links.rs - dancing_links::DancingLinks::new (line 124) stdout ----
+error[E0433]: cannot find type `DancingLinks` in this scope
+   --> src\dancing_links.rs:130:11
+    |
+130 | let dlx = DancingLinks::new(&matrix, None);
+    |           ^^^^^^^^^^^^ use of undeclared type `DancingLinks`
+    |
+help: consider importing this struct
+    |
+124 + use formal_algorithms::DancingLinks;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\geometry_utils.rs - geometry_utils::convex_hull (line 557) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\geometry_utils.rs:558:5
+    |
+558 | use algorithms::geometry_utils::{convex_hull, Point};
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\euler_tour.rs - euler_tour::find_eulerian_circuit_undirected (line 181) stdout ----
+Test executable failed (exit code: 101).
+
+stderr:
+
+thread 'main' (34940) panicked at src\euler_tour.rs:18:1:
+assertion failed: result.exists
+stack backtrace:
+   0:     0x7ff6fdb83920 - std::backtrace_rs::backtrace::win64::trace
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\..\..\backtrace\src\backtrace\win64.rs:85
+   1:     0x7ff6fdb83920 - std::backtrace_rs::backtrace::trace_unsynchronized
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\..\..\backtrace\src\backtrace\mod.rs:66
+   2:     0x7ff6fdb83920 - std::sys::backtrace::_print_fmt
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\sys\backtrace.rs:74
+   3:     0x7ff6fdb83920 - std::sys::backtrace::impl$0::print::impl$0::fmt
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\sys\backtrace.rs:44
+   4:     0x7ff6fdb87ee1 - core::fmt::write
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\core\src\fmt\mod.rs:0
+   5:     0x7ff6fdb85ef4 - std::io::default_write_fmt
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\io\mod.rs:621
+   6:     0x7ff6fdb85ef4 - std::io::Write::write_fmt<std::sys::stdio::windows::Stderr>
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\io\mod.rs:1976
+   7:     0x7ff6fdb7edc2 - std::sys::backtrace::BacktraceLock::print
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\sys\backtrace.rs:47
+   8:     0x7ff6fdb7edc2 - std::panicking::default_hook::closure$0
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:292
+   9:     0x7ff6fdb8156f - std::panicking::default_hook
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:319
+  10:     0x7ff6fdb81773 - std::panicking::panic_with_hook
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:825
+  11:     0x7ff6fdb7eeca - std::panicking::panic_handler::closure$0
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:691
+  12:     0x7ff6fdb7e0ff - std::sys::backtrace::__rust_end_short_backtrace<std::panicking::panic_handler::closure_env$0,never$>
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\sys\backtrace.rs:182
+  13:     0x7ff6fdb7f3be - std::panicking::panic_handler
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:689
+  14:     0x7ff6fdb93d2d - core::panicking::panic_fmt
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\core\src\panicking.rs:80
+  15:     0x7ff6fdb93cf7 - core::panicking::panic
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\core\src\panicking.rs:150
+  16:     0x7ff6fdb78c8b - rust_out[acb31cf15dad2893]::main
+  17:     0x7ff6fdb762a9 - rust_out[acb31cf15dad2893]::main
+  18:     0x7ff6fdb79a66 - rust_out[acb31cf15dad2893]::main
+  19:     0x7ff6fdb74d29 - std[2756518993b8823b]::rt::lang_start::<()>
+  20:     0x7ff6fdb75c0c - std[2756518993b8823b]::rt::lang_start::<()>
+  21:     0x7ff6fdb80960 - std::rt::lang_start_internal::closure$0
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\rt.rs:175
+  22:     0x7ff6fdb80960 - std::panicking::catch_unwind::do_call
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:581
+  23:     0x7ff6fdb80960 - std::panicking::catch_unwind
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panicking.rs:544
+  24:     0x7ff6fdb80960 - std::panic::catch_unwind
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\panic.rs:359
+  25:     0x7ff6fdb80960 - std::rt::lang_start_internal
+                               at /rustc/900485642855f4729d926ecf24680a791f9293cf/library\std\src\rt.rs:171
+  26:     0x7ff6fdb738a7 - std[2756518993b8823b]::rt::lang_start::<()>
+  27:     0x7ff6fdb79d69 - main
+  28:     0x7ff6fdb923f0 - invoke_main
+                               at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:78
+  29:     0x7ff6fdb923f0 - __scrt_common_main_seh
+                               at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288
+  30:     0x7fffeafae8d7 - BaseThreadInitThunk
+  31:     0x7fffebdac3fc - RtlUserThreadStart
+
+
+---- src\matrix_operations.rs - matrix_operations::Matrix<T>::new (line 27) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+  --> src\matrix_operations.rs:28:5
+   |
+28 | use algorithms::matrix_operations::Matrix;
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+   |
+   = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\matrix_operations.rs - matrix_operations::Matrix<f64>::gaussian_elimination (line 243) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\matrix_operations.rs:244:5
+    |
+244 | use algorithms::matrix_operations::Matrix;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\matrix_operations.rs - matrix_operations::Matrix<i64>::pow (line 191) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\matrix_operations.rs:192:5
+    |
+192 | use algorithms::matrix_operations::Matrix;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\polynomial.rs - polynomial::Polynomial::divide (line 147) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\polynomial.rs:148:5
+    |
+148 | use algorithms::polynomial::Polynomial;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\polynomial.rs - polynomial::Polynomial::evaluate (line 66) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+  --> src\polynomial.rs:67:5
+   |
+67 | use algorithms::polynomial::Polynomial;
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+   |
+   = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\min_cost_max_flow.rs - min_cost_max_flow::MinCostMaxFlow::min_cost_flow_spfa (line 123) stdout ----
+error[E0433]: cannot find type `MinCostMaxFlow` in this scope
+   --> src\min_cost_max_flow.rs:124:16
+    |
+124 | let mut mcmf = MinCostMaxFlow::new(4);
+    |                ^^^^^^^^^^^^^^ use of undeclared type `MinCostMaxFlow`
+    |
+help: consider importing this struct
+    |
+123 + use formal_algorithms::MinCostMaxFlow;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\min_cost_max_flow.rs - min_cost_max_flow::MinCostMaxFlow::new (line 70) stdout ----
+error[E0433]: cannot find type `MinCostMaxFlow` in this scope
+  --> src\min_cost_max_flow.rs:71:12
+   |
+71 | let mcmf = MinCostMaxFlow::new(4);
+   |            ^^^^^^^^^^^^^^ use of undeclared type `MinCostMaxFlow`
+   |
+help: consider importing this struct
+   |
+70 + use formal_algorithms::MinCostMaxFlow;
+   |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::new (line 110) stdout ----
+error[E0433]: cannot find type `PersistentSegmentTree` in this scope
+   --> src\persistent_segment_tree.rs:111:11
+    |
+111 | let pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
+    |           ^^^^^^^^^^^^^^^^^^^^^ use of undeclared type `PersistentSegmentTree`
+    |
+help: consider importing this struct
+    |
+110 + use formal_algorithms::PersistentSegmentTree;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::update (line 153) stdout ----
+error[E0433]: cannot find type `PersistentSegmentTree` in this scope
+   --> src\persistent_segment_tree.rs:154:15
+    |
+154 | let mut pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
+    |               ^^^^^^^^^^^^^^^^^^^^^ use of undeclared type `PersistentSegmentTree`
+    |
+help: consider importing this struct
+    |
+153 + use formal_algorithms::PersistentSegmentTree;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::range_query (line 232) stdout ----
+error[E0433]: cannot find type `PersistentSegmentTree` in this scope
+   --> src\persistent_segment_tree.rs:233:11
+    |
+233 | let pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
+    |           ^^^^^^^^^^^^^^^^^^^^^ use of undeclared type `PersistentSegmentTree`
+    |
+help: consider importing this struct
+    |
+232 + use formal_algorithms::PersistentSegmentTree;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\polynomial.rs - polynomial::Polynomial::new (line 25) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+  --> src\polynomial.rs:26:5
+   |
+26 | use algorithms::polynomial::Polynomial;
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+   |
+   = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\polynomial.rs - polynomial::lagrange_interpolate (line 234) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\polynomial.rs:235:5
+    |
+235 | use algorithms::polynomial::lagrange_interpolate;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::pollard_rho (line 218) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:219:5
+    |
+219 | use algorithms::primality_test::pollard_rho;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::is_probable_prime (line 51) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+  --> src\primality_test.rs:52:5
+   |
+52 | use algorithms::primality_test::is_probable_prime;
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+   |
+   = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::euler_totient (line 391) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:392:5
+    |
+392 | use algorithms::primality_test::euler_totient;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::next_prime (line 561) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:562:5
+    |
+562 | use algorithms::primality_test::next_prime;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::factorize (line 301) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:302:5
+    |
+302 | use algorithms::primality_test::factorize;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::nth_prime (line 520) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:521:5
+    |
+521 | use algorithms::primality_test::nth_prime;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::prime_factorization (line 358) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:359:5
+    |
+359 | use algorithms::primality_test::prime_factorization;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\primality_test.rs - primality_test::sieve_of_eratosthenes (line 451) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\primality_test.rs:452:5
+    |
+452 | use algorithms::primality_test::sieve_of_eratosthenes;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\rolling_hash.rs - rolling_hash::RollingHash::new (line 71) stdout ----
+error[E0433]: cannot find type `RollingHash` in this scope
+  --> src\rolling_hash.rs:72:10
+   |
+72 | let rh = RollingHash::new("hello world");
+   |          ^^^^^^^^^^^ use of undeclared type `RollingHash`
+   |
+help: consider importing this struct
+   |
+71 + use formal_algorithms::RollingHash;
+   |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\rolling_hash.rs - rolling_hash::RollingHash::get_hash (line 146) stdout ----
+error[E0433]: cannot find type `RollingHash` in this scope
+   --> src\rolling_hash.rs:147:10
+    |
+147 | let rh = RollingHash::new("hello");
+    |          ^^^^^^^^^^^ use of undeclared type `RollingHash`
+    |
+help: consider importing this struct
+    |
+146 + use formal_algorithms::RollingHash;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\suffix_array.rs - suffix_array::SuffixArray::new (line 42) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+  --> src\suffix_array.rs:43:5
+   |
+43 | use algorithms::suffix_array::SuffixArray;
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+   |
+   = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\suffix_array.rs - suffix_array::SuffixArray::longest_repeated_substring (line 205) stdout ----
+error[E0433]: cannot find module or crate `algorithms` in this scope
+   --> src\suffix_array.rs:206:5
+    |
+206 | use algorithms::suffix_array::SuffixArray;
+    |     ^^^^^^^^^^ use of unresolved module or unlinked crate `algorithms`
+    |
+    = help: if you wanted to use a crate named `algorithms`, use `cargo add algorithms` to add it to your `Cargo.toml`
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\sat2.rs - sat2::Solver2Sat::add_clause (line 96) stdout ----
+error[E0433]: cannot find type `Solver2Sat` in this scope
+  --> src\sat2.rs:97:18
+   |
+97 | let mut solver = Solver2Sat::new(3);
+   |                  ^^^^^^^^^^ use of undeclared type `Solver2Sat`
+   |
+help: consider importing this struct
+   |
+96 + use formal_algorithms::Solver2Sat;
+   |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\sat2.rs - sat2::Solver2Sat::new (line 77) stdout ----
+error[E0433]: cannot find type `Solver2Sat` in this scope
+  --> src\sat2.rs:78:14
+   |
+78 | let solver = Solver2Sat::new(3);
+   |              ^^^^^^^^^^ use of undeclared type `Solver2Sat`
+   |
+help: consider importing this struct
+   |
+77 + use formal_algorithms::Solver2Sat;
+   |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\sat2.rs - sat2::Solver2Sat::solve (line 149) stdout ----
+error[E0433]: cannot find type `Solver2Sat` in this scope
+   --> src\sat2.rs:150:18
+    |
+150 | let mut solver = Solver2Sat::new(2);
+    |                  ^^^^^^^^^^ use of undeclared type `Solver2Sat`
+    |
+help: consider importing this struct
+    |
+149 + use formal_algorithms::Solver2Sat;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\simulated_annealing.rs - simulated_annealing::SimulatedAnnealing<T>::new (line 110) stdout ----
+error[E0433]: cannot find type `SimulatedAnnealing` in this scope
+   --> src\simulated_annealing.rs:112:14
+    |
+112 | let mut sa = SimulatedAnnealing::new(initial.clone(), 100.0, 1000.0);
+    |              ^^^^^^^^^^^^^^^^^^ use of undeclared type `SimulatedAnnealing`
+    |
+help: consider importing this struct
+    |
+110 + use formal_algorithms::SimulatedAnnealing;
+    |
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0433`.
+Couldn't compile the test.
+---- src\simulated_annealing.rs - simulated_annealing::SimulatedAnnealing<T>::solve (line 169) stdout ----
+error[E0425]: cannot find value `sa` in this scope
+   --> src\simulated_annealing.rs:170:14
+    |
+170 | let result = sa.solve(
+    |              ^^ not found in this scope
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0425`.
+Couldn't compile the test.
+
+failures:
+    src\dancing_links.rs - dancing_links::DancingLinks::new (line 124)
+    src\dancing_links.rs - dancing_links::DancingLinks::solve (line 326)
+    src\discrete_log.rs - discrete_log::bsgs (line 89)
+    src\discrete_log.rs - discrete_log::pollard_rho_dlog (line 202)
+    src\euler_tour.rs - euler_tour::find_eulerian_circuit_undirected (line 181)
+    src\geometry_utils.rs - geometry_utils::convex_hull (line 557)
+    src\matrix_operations.rs - matrix_operations::Matrix<T>::new (line 27)
+    src\matrix_operations.rs - matrix_operations::Matrix<f64>::gaussian_elimination (line 243)
+    src\matrix_operations.rs - matrix_operations::Matrix<i64>::pow (line 191)
+    src\min_cost_max_flow.rs - min_cost_max_flow::MinCostMaxFlow::min_cost_flow_spfa (line 123)
+    src\min_cost_max_flow.rs - min_cost_max_flow::MinCostMaxFlow::new (line 70)
+    src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::new (line 110)
+    src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::range_query (line 232)
+    src\persistent_segment_tree.rs - persistent_segment_tree::PersistentSegmentTree::update (line 153)
+    src\polynomial.rs - polynomial::Polynomial::divide (line 147)
+    src\polynomial.rs - polynomial::Polynomial::evaluate (line 66)
+    src\polynomial.rs - polynomial::Polynomial::new (line 25)
+    src\polynomial.rs - polynomial::lagrange_interpolate (line 234)
+    src\primality_test.rs - primality_test::euler_totient (line 391)
+    src\primality_test.rs - primality_test::factorize (line 301)
+    src\primality_test.rs - primality_test::is_probable_prime (line 51)
+    src\primality_test.rs - primality_test::next_prime (line 561)
+    src\primality_test.rs - primality_test::nth_prime (line 520)
+    src\primality_test.rs - primality_test::pollard_rho (line 218)
+    src\primality_test.rs - primality_test::prime_factorization (line 358)
+    src\primality_test.rs - primality_test::sieve_of_eratosthenes (line 451)
+    src\rolling_hash.rs - rolling_hash::RollingHash::get_hash (line 146)
+    src\rolling_hash.rs - rolling_hash::RollingHash::new (line 71)
+    src\sat2.rs - sat2::Solver2Sat::add_clause (line 96)
+    src\sat2.rs - sat2::Solver2Sat::new (line 77)
+    src\sat2.rs - sat2::Solver2Sat::solve (line 149)
+    src\simulated_annealing.rs - simulated_annealing::SimulatedAnnealing<T>::new (line 110)
+    src\simulated_annealing.rs - simulated_annealing::SimulatedAnnealing<T>::solve (line 169)
+    src\suffix_array.rs - suffix_array::SuffixArray::longest_repeated_substring (line 205)
+    src\suffix_array.rs - suffix_array::SuffixArray::new (line 42)
+
+test result: FAILED. 93 passed; 35 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.18s
+
+error: doctest failed, to rerun pass `--doc`
+
+

@@ -69,6 +69,7 @@ impl RollingHash {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::RollingHash;
     /// let rh = RollingHash::new("hello world");
     /// ```
     pub fn new(s: &str) -> Self {
@@ -144,6 +145,7 @@ impl RollingHash {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::RollingHash;
     /// let rh = RollingHash::new("hello");
     /// let hash = rh.get_hash(0, 2); // "hel" 的哈希
     /// ```
@@ -307,14 +309,16 @@ impl RollingHash {
 
         while low <= high {
             let mid = (low + high) / 2;
+            if mid == 0 {
+                result = 0;
+                low = 1;
+                continue;
+            }
             if i + mid <= self.n && j + mid <= self.n
                 && self.substr_equals(i, i + mid - 1, j, j + mid - 1) {
                 result = mid;
                 low = mid + 1;
             } else {
-                if mid == 0 {
-                    break;
-                }
                 high = mid - 1;
             }
         }

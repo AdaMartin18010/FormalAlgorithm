@@ -555,7 +555,7 @@ impl Polygon {
 ///
 /// # 示例
 /// ```
-/// use algorithms::geometry_utils::{convex_hull, Point};
+/// use formal_algorithms::geometry_utils::{convex_hull, Point};
 /// let points = vec![
 ///     Point::new(0.0, 0.0), Point::new(1.0, 0.0),
 ///     Point::new(0.5, 0.5), Point::new(0.0, 1.0),

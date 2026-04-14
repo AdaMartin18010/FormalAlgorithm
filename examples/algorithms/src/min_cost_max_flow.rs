@@ -68,6 +68,7 @@ impl MinCostMaxFlow {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::MinCostMaxFlow;
     /// let mcmf = MinCostMaxFlow::new(4);
     /// ```
     pub fn new(n: usize) -> Self {
@@ -121,6 +122,7 @@ impl MinCostMaxFlow {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::MinCostMaxFlow;
     /// let mut mcmf = MinCostMaxFlow::new(4);
     /// mcmf.add_edge(0, 1, 3, 1);  // 0->1, 容量3, 费用1
     /// mcmf.add_edge(0, 2, 2, 2);  // 0->2, 容量2, 费用2
@@ -439,7 +441,7 @@ mod tests {
 
         let result = mcmf.min_cost_flow_spfa(0, 3);
         assert_eq!(result.max_flow, 5);
-        assert_eq!(result.min_cost, 13); // 3*3 + 2*2 = 13
+        assert_eq!(result.min_cost, 18); // 0->1->3: 3*(1+3)=12; 0->2->3: 2*(2+1)=6; total=18
     }
 
     #[test]
@@ -557,8 +559,9 @@ mod tests {
 
         let result = mcmf.min_cost_flow_spfa(0, 7);
         assert_eq!(result.max_flow, 3); // 分配3个任务
-        // 最优分配: 工人1->任务2(2), 工人2->任务3(1), 工人3->任务1(4) = 7
-        assert_eq!(result.min_cost, 7);
+        // 最优分配: 工人1->任务1(3), 工人2->任务3(1), 工人3->任务2(1) = 5
+        // 修正说明：原期望值 7 有误，实际最小费用为 5
+        assert_eq!(result.min_cost, 5);
     }
 
     #[test]

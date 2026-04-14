@@ -210,6 +210,90 @@ pub mod dancing_links;
 /// 模拟退火算法模块
 pub mod simulated_annealing;
 
+// 基础数据结构 (Foundation Data Structures)
+/// 动态数组模块
+// pub mod dynamic_array; // TODO: 自动生成的占位符
+/// 链表模块
+// pub mod linked_list; // TODO: 自动生成的占位符
+/// 栈模块
+// pub mod stack; // TODO: 自动生成的占位符
+/// 队列模块
+// pub mod queue; // TODO: 自动生成的占位符
+/// 双端队列模块
+// pub mod deque; // TODO: 自动生成的占位符
+/// 哈希表模块
+// pub mod hash_table; // TODO: 自动生成的占位符
+/// 并查集模块
+pub mod union_find;
+/// 红黑树模块
+pub mod red_black_tree;
+/// AVL树模块
+pub mod avl_tree;
+/// B树模块
+pub mod b_tree;
+/// Splay树模块
+pub mod splay_tree;
+// 跳表模块 - 当前实现有内存安全问题，暂时禁用
+// pub mod skiplist;
+
+// 树型高级数据结构
+/// 笛卡尔树模块
+pub mod cartesian_tree;
+/// 区间树模块
+pub mod interval_tree;
+/// Trie树模块
+pub mod trie;
+/// 二维树状数组模块
+pub mod binary_indexed_tree_2d;
+
+// 排序与搜索扩展
+/// 综合排序算法模块
+pub mod sorting;
+/// 计数排序模块
+// pub mod counting_sort; // TODO: 自动生成的占位符
+/// 基数排序模块
+// pub mod radix_sort; // TODO: 自动生成的占位符
+/// 桶排序模块
+// pub mod bucket_sort; // TODO: 自动生成的占位符
+/// 快速选择模块
+// pub mod quick_select; // TODO: 自动生成的占位符
+
+// 图算法扩展
+/// 最小生成树模块
+pub mod graph_mst;
+/// Bellman-Ford最短路径模块
+// pub mod bellman_ford; // TODO: 自动生成的占位符
+/// Floyd-Warshall全源最短路径模块
+// pub mod floyd_warshall; // TODO: 自动生成的占位符
+/// Johnson全源最短路径模块
+// pub mod johnson; // TODO: 自动生成的占位符
+/// Hopcroft-Karp二分图匹配模块
+// pub mod hopcroft_karp; // TODO: 自动生成的占位符
+
+// 字符串算法扩展
+/// Rabin-Karp字符串匹配模块
+pub mod rabin_karp;
+/// Z算法模块
+pub mod z_algorithm;
+/// Manacher回文算法模块
+pub mod manacher;
+/// AC自动机模块
+pub mod ac_automaton;
+
+// 数值与矩阵算法
+/// 矩阵链乘法模块
+pub mod matrix_chain;
+/// 最优二叉搜索树模块
+pub mod optimal_bst;
+/// 最近点对模块
+pub mod closest_pair;
+/// 快速傅里叶变换模块
+pub mod fft;
+/// 扩展欧几里得算法模块
+// pub mod extended_euclidean; // TODO: 自动生成的占位符
+/// 中国剩余定理模块
+// pub mod chinese_remainder; // TODO: 自动生成的占位符
+
 // 排序算法
 pub use heap_sort::heap_sort;
 pub use merge_sort::merge_sort;
@@ -301,6 +385,35 @@ pub use dancing_links::{DancingLinks, DLXResult, exact_cover, exact_cover_all};
 
 // 模拟退火
 pub use simulated_annealing::{SimulatedAnnealing, SAResult, TspSolver, FunctionOptimizer, SchedulingSolver};
+
+// 基础数据结构
+pub use union_find::UnionFind;
+pub use red_black_tree::RedBlackTree;
+pub use avl_tree::AVLTree;
+pub use b_tree::BTree;
+pub use splay_tree::SplayTree;
+pub use cartesian_tree::CartesianTree;
+pub use interval_tree::{IntervalTree, Interval, IntervalSet};
+pub use trie::{Trie, TrieNode, BinaryTrie};
+pub use binary_indexed_tree_2d::BIT2D;
+
+// 排序与搜索扩展
+// pub use sorting::...; // 独立模块已提供相同导出
+
+// 图算法扩展
+pub use graph_mst::{Edge as MSTEdge, kruskal, prim, prim_adj_list};
+
+// 字符串算法扩展
+pub use rabin_karp::{RabinKarp, RabinKarp2D};
+pub use z_algorithm::{z_algorithm, z_search, z_count};
+pub use manacher::{manacher, longest_palindrome, count_palindromes};
+pub use ac_automaton::ACAutomaton;
+
+// 数值与矩阵算法
+pub use matrix_chain::{MatrixChain, OptimalSolution};
+pub use optimal_bst::{OptimalBST, OptimalBSTResult, SimpleOptimalBST};
+pub use closest_pair::{Point as ClosestPoint, ClosestPairResult, closest_pair as closest_pair_optimal, closest_pair_brute_force};
+pub use fft::{fft, ifft, polynomial_multiply};
 
 /// 算法 trait，定义算法的基本接口
 ///

@@ -17,215 +17,215 @@ owner: 国际化工作组
 ### 基础理论扩展（5个）
 
 1. **Total order / 全序**
-   - Wiki: https://en.wikipedia.org/wiki/Total_order
+   - Wiki: <https://en.wikipedia.org/wiki/Total_order>
    - 状态: 待对齐
    - 优先级: 中
 
 2. **Well-ordering / 良序**
-   - Wiki: https://en.wikipedia.org/wiki/Well-order
+   - Wiki: <https://en.wikipedia.org/wiki/Well-order>
    - 状态: 待对齐
    - 优先级: 中
 
 3. **Boolean algebra / 布尔代数**
-   - Wiki: https://en.wikipedia.org/wiki/Boolean_algebra
+   - Wiki: <https://en.wikipedia.org/wiki/Boolean_algebra>
    - 状态: 待对齐
    - 优先级: 中
 
 4. **Topos theory / 拓扑斯理论**
-   - Wiki: https://en.wikipedia.org/wiki/Topos
+   - Wiki: <https://en.wikipedia.org/wiki/Topos>
    - 状态: 待对齐
    - 优先级: 低
 
 5. **Sheaf theory / 层论**
-   - Wiki: https://en.wikipedia.org/wiki/Sheaf_(mathematics)
+   - Wiki: <https://en.wikipedia.org/wiki/Sheaf_(mathematics)>
    - 状态: 待对齐
    - 优先级: 低
 
 ### 计算理论扩展（5个）
 
-6. **Alternating Turing machine / 交替图灵机**
-   - Wiki: https://en.wikipedia.org/wiki/Alternating_Turing_machine
+1. **Alternating Turing machine / 交替图灵机**
+   - Wiki: <https://en.wikipedia.org/wiki/Alternating_Turing_machine>
    - 状态: 待对齐
    - 优先级: 低
 
-7. **Oracle machine / 预言机机器**
-   - Wiki: https://en.wikipedia.org/wiki/Oracle_machine
+2. **Oracle machine / 预言机机器**
+   - Wiki: <https://en.wikipedia.org/wiki/Oracle_machine>
    - 状态: 待对齐
    - 优先级: 中
 
-8. **Probabilistic Turing machine / 概率图灵机**
-   - Wiki: https://en.wikipedia.org/wiki/Probabilistic_Turing_machine
+3. **Probabilistic Turing machine / 概率图灵机**
+   - Wiki: <https://en.wikipedia.org/wiki/Probabilistic_Turing_machine>
    - 状态: 待对齐
    - 优先级: 中
 
-9. **Quantum Turing machine / 量子图灵机**
-   - Wiki: https://en.wikipedia.org/wiki/Quantum_Turing_machine
+4. **Quantum Turing machine / 量子图灵机**
+   - Wiki: <https://en.wikipedia.org/wiki/Quantum_Turing_machine>
    - 状态: 待对齐
    - 优先级: 中
 
-10. **Blum complexity axioms / Blum复杂性公理**
-    - Wiki: https://en.wikipedia.org/wiki/Blum_axioms
+5. **Blum complexity axioms / Blum复杂性公理**
+    - Wiki: <https://en.wikipedia.org/wiki/Blum_axioms>
     - 状态: 待对齐
     - 优先级: 低
 
 ### 算法设计扩展（5个）
 
-11. **String matching algorithm / 字符串匹配算法**
-    - Wiki: https://en.wikipedia.org/wiki/String-searching_algorithm
+1. **String matching algorithm / 字符串匹配算法**
+    - Wiki: <https://en.wikipedia.org/wiki/String-searching_algorithm>
     - 状态: 待对齐
     - 优先级: 中
 
-12. **Computational geometry algorithm / 计算几何算法**
-    - Wiki: https://en.wikipedia.org/wiki/Computational_geometry
+2. **Computational geometry algorithm / 计算几何算法**
+    - Wiki: <https://en.wikipedia.org/wiki/Computational_geometry>
     - 状态: 待对齐
     - 优先级: 低
 
-13. **External sorting / 外部排序**
-    - Wiki: https://en.wikipedia.org/wiki/External_sorting
+3. **External sorting / 外部排序**
+    - Wiki: <https://en.wikipedia.org/wiki/External_sorting>
     - 状态: 待对齐
     - 优先级: 中
 
-14. **Cache-oblivious algorithm / 缓存无关算法**
-    - Wiki: https://en.wikipedia.org/wiki/Cache-oblivious_algorithm
+4. **Cache-oblivious algorithm / 缓存无关算法**
+    - Wiki: <https://en.wikipedia.org/wiki/Cache-oblivious_algorithm>
     - 状态: 待对齐
     - 优先级: 低
 
-15. **Parallel external memory model / 并行外部存储模型**
+5. **Parallel external memory model / 并行外部存储模型**
     - 状态: 待对齐
     - 优先级: 低
 
 ### 类型理论扩展（5个）
 
-16. **System F / System F**
-    - Wiki: https://en.wikipedia.org/wiki/System_F
+1. **System F / System F**
+    - Wiki: <https://en.wikipedia.org/wiki/System_F>
     - 状态: 待对齐
     - 优先级: 中
 
-17. **Calculus of constructions / 构造演算**
-    - Wiki: https://en.wikipedia.org/wiki/Calculus_of_constructions
+2. **Calculus of constructions / 构造演算**
+    - Wiki: <https://en.wikipedia.org/wiki/Calculus_of_constructions>
     - 状态: 待对齐
     - 优先级: 中
 
-18. **Refinement type / 精化类型**
-    - Wiki: https://en.wikipedia.org/wiki/Refinement_type
+3. **Refinement type / 精化类型**
+    - Wiki: <https://en.wikipedia.org/wiki/Refinement_type>
     - 状态: 待对齐
     - 优先级: 低
 
-19. **Effect system / 效应系统**
-    - Wiki: https://en.wikipedia.org/wiki/Effect_system
+4. **Effect system / 效应系统**
+    - Wiki: <https://en.wikipedia.org/wiki/Effect_system>
     - 状态: 待对齐
     - 优先级: 低
 
-20. **Gradual typing / 渐进类型**
-    - Wiki: https://en.wikipedia.org/wiki/Gradual_typing
+5. **Gradual typing / 渐进类型**
+    - Wiki: <https://en.wikipedia.org/wiki/Gradual_typing>
     - 状态: 待对齐
     - 优先级: 低
 
 ### 形式化方法扩展（5个）
 
-21. **CSP (Communicating Sequential Processes) / 通信顺序进程**
-    - Wiki: https://en.wikipedia.org/wiki/Communicating_sequential_processes
+1. **CSP (Communicating Sequential Processes) / 通信顺序进程**
+    - Wiki: <https://en.wikipedia.org/wiki/Communicating_sequential_processes>
     - 状态: 待对齐
     - 优先级: 中
 
-22. **CCS (Calculus of Communicating Systems) / 通信系统演算**
-    - Wiki: https://en.wikipedia.org/wiki/Calculus_of_communicating_systems
+2. **CCS (Calculus of Communicating Systems) / 通信系统演算**
+    - Wiki: <https://en.wikipedia.org/wiki/Calculus_of_communicating_systems>
     - 状态: 待对齐
     - 优先级: 中
 
-23. **Pi-calculus / π演算**
-    - Wiki: https://en.wikipedia.org/wiki/Pi-calculus
+3. **Pi-calculus / π演算**
+    - Wiki: <https://en.wikipedia.org/wiki/Pi-calculus>
     - 状态: 待对齐
     - 优先级: 中
 
-24. ** Separation logic / 分离逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Separation_logic
+4. **Separation logic / 分离逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Separation_logic>
     - 状态: 待对齐
     - 优先级: 中
 
-25. **Concurrent separation logic / 并发分离逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Separation_logic
+5. **Concurrent separation logic / 并发分离逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Separation_logic>
     - 状态: 待对齐
     - 优先级: 低
 
 ### 逻辑系统扩展（5个）
 
-26. **Description logic / 描述逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Description_logic
+1. **Description logic / 描述逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Description_logic>
     - 状态: 待对齐
     - 优先级: 中
 
-27. **Fuzzy logic / 模糊逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Fuzzy_logic
+2. **Fuzzy logic / 模糊逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Fuzzy_logic>
     - 状态: 待对齐
     - 优先级: 低
 
-28. **Paraconsistent logic / 次协调逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Paraconsistent_logic
+3. **Paraconsistent logic / 次协调逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Paraconsistent_logic>
     - 状态: 待对齐
     - 优先级: 低
 
-29. **Relevance logic / 相干逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Relevance_logic
+4. **Relevance logic / 相干逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Relevance_logic>
     - 状态: 待对齐
     - 优先级: 低
 
-30. **Non-monotonic logic / 非单调逻辑**
-    - Wiki: https://en.wikipedia.org/wiki/Non-monotonic_logic
+5. **Non-monotonic logic / 非单调逻辑**
+    - Wiki: <https://en.wikipedia.org/wiki/Non-monotonic_logic>
     - 状态: 待对齐
     - 优先级: 低
 
 ### 高级主题扩展（5个）
 
-31. **Federated learning / 联邦学习**
-    - Wiki: https://en.wikipedia.org/wiki/Federated_learning
+1. **Federated learning / 联邦学习**
+    - Wiki: <https://en.wikipedia.org/wiki/Federated_learning>
     - 状态: 待对齐
     - 优先级: 中
 
-32. **Differential privacy / 差分隐私**
-    - Wiki: https://en.wikipedia.org/wiki/Differential_privacy
+2. **Differential privacy / 差分隐私**
+    - Wiki: <https://en.wikipedia.org/wiki/Differential_privacy>
     - 状态: 待对齐
     - 优先级: 中
 
-33. **Zero-knowledge proof / 零知识证明**
-    - Wiki: https://en.wikipedia.org/wiki/Zero-knowledge_proof
+3. **Zero-knowledge proof / 零知识证明**
+    - Wiki: <https://en.wikipedia.org/wiki/Zero-knowledge_proof>
     - 状态: 待对齐
     - 优先级: 中
 
-34. **Homomorphic encryption / 同态加密**
-    - Wiki: https://en.wikipedia.org/wiki/Homomorphic_encryption
+4. **Homomorphic encryption / 同态加密**
+    - Wiki: <https://en.wikipedia.org/wiki/Homomorphic_encryption>
     - 状态: 待对齐
     - 优先级: 中
 
-35. **Blockchain consensus / 区块链共识**
-    - Wiki: https://en.wikipedia.org/wiki/Consensus_(computer_science)
+5. **Blockchain consensus / 区块链共识**
+    - Wiki: <https://en.wikipedia.org/wiki/Consensus_(computer_science)>
     - 状态: 待对齐
     - 优先级: 低
 
 ### 新兴概念（5个）
 
-36. **Neuromorphic computing / 神经形态计算**
-    - Wiki: https://en.wikipedia.org/wiki/Neuromorphic_engineering
+1. **Neuromorphic computing / 神经形态计算**
+    - Wiki: <https://en.wikipedia.org/wiki/Neuromorphic_engineering>
     - 状态: 待对齐
     - 优先级: 低
 
-37. **DNA computing / DNA计算**
-    - Wiki: https://en.wikipedia.org/wiki/DNA_computing
+2. **DNA computing / DNA计算**
+    - Wiki: <https://en.wikipedia.org/wiki/DNA_computing>
     - 状态: 待对齐
     - 优先级: 低
 
-38. **Memristor computing / 忆阻器计算**
-    - Wiki: https://en.wikipedia.org/wiki/Memristor
+3. **Memristor computing / 忆阻器计算**
+    - Wiki: <https://en.wikipedia.org/wiki/Memristor>
     - 状态: 待对齐
     - 优先级: 低
 
-39. **Topological quantum computing / 拓扑量子计算**
-    - Wiki: https://en.wikipedia.org/wiki/Topological_quantum_computer
+4. **Topological quantum computing / 拓扑量子计算**
+    - Wiki: <https://en.wikipedia.org/wiki/Topological_quantum_computer>
     - 状态: 待对齐
     - 优先级: 低
 
-40. **Causal inference / 因果推断**
-    - Wiki: https://en.wikipedia.org/wiki/Causal_inference
+5. **Causal inference / 因果推断**
+    - Wiki: <https://en.wikipedia.org/wiki/Causal_inference>
     - 状态: 待对齐
     - 优先级: 中
 
@@ -234,14 +234,17 @@ owner: 国际化工作组
 ## 优先级说明
 
 ### 高优先级
+
 - 核心基础概念，对理解后续内容至关重要
 - 与现有项目文档直接相关
 
 ### 中优先级
+
 - 重要概念，扩展知识体系
 - 与项目文档有间接关联
 
 ### 低优先级
+
 - 高级/前沿概念
 - 当前阶段可作为选读内容
 
@@ -250,6 +253,7 @@ owner: 国际化工作组
 ## 后续工作计划
 
 ### 阶段5目标（计划）
+
 - 补充40个剩余概念对齐
 - 对齐度提升至95%
 - 重点补充：
@@ -258,6 +262,7 @@ owner: 国际化工作组
   - 新兴计算模型（DNA计算、神经形态计算）
 
 ### 预计完成时间
+
 - 阶段5：2026年Q2-Q3
 
 ---

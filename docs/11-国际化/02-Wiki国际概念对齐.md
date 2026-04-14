@@ -14,6 +14,17 @@ owner: 国际化工作组
 
 - [2. Wiki国际概念对齐 (Wiki International Concept Alignment)](#2-wiki国际概念对齐-wiki-international-concept-alignment)
 - [目录 (Table of Contents)](#目录-table-of-contents)
+  - [内容补充与思维表征 / Content Supplement and Thinking Representation（轻量）](#内容补充与思维表征--content-supplement-and-thinking-representation轻量)
+    - [解释与直观 / Explanation and Intuition](#解释与直观--explanation-and-intuition)
+    - [概念属性表 / Concept Attribute Table](#概念属性表--concept-attribute-table)
+    - [概念关系 / Concept Relations](#概念关系--concept-relations)
+    - [概念依赖图 / Concept Dependency Graph](#概念依赖图--concept-dependency-graph)
+    - [论证与证明衔接 / Argumentation and Proof Link](#论证与证明衔接--argumentation-and-proof-link)
+    - [思维导图：本章概念结构 / Mind Map](#思维导图本章概念结构--mind-map)
+    - [多维矩阵：各领域对齐对比 / Multi-Dimensional Comparison](#多维矩阵各领域对齐对比--multi-dimensional-comparison)
+    - [决策树：领域到对齐小节选择 / Decision Tree](#决策树领域到对齐小节选择--decision-tree)
+    - [公理定理推理证明决策树 / Axiom-Theorem-Proof Tree](#公理定理推理证明决策树--axiom-theorem-proof-tree)
+    - [应用决策建模树 / Application Decision Modeling Tree](#应用决策建模树--application-decision-modeling-tree)
 - [2.1 对齐原则 (Alignment Principles)](#21-对齐原则-alignment-principles)
   - [2.1.1 对齐目标 (Alignment Goals)](#211-对齐目标-alignment-goals)
   - [2.1.2 对齐方法 (Alignment Methods)](#212-对齐方法-alignment-methods)
@@ -27,9 +38,6 @@ owner: 国际化工作组
 - [2.4 形式化方法概念对齐 (Formal Methods Concept Alignment)](#24-形式化方法概念对齐-formal-methods-concept-alignment)
   - [2.4.1 逻辑系统概念对齐 (Logic System Concept Alignment)](#241-逻辑系统概念对齐-logic-system-concept-alignment)
   - [2.4.2 证明方法概念对齐 (Proof Method Concept Alignment)](#242-证明方法概念对齐-proof-method-concept-alignment)
-  - [2.4.3 命题逻辑基础概念对齐 (Propositional Logic Foundation Concept Alignment)](#243-命题逻辑基础概念对齐-propositional-logic-foundation-concept-alignment)
-  - [2.4.4 一阶逻辑与模态逻辑概念对齐 (First-Order and Modal Logic Concept Alignment)](#244-一阶逻辑与模态逻辑概念对齐-first-order-and-modal-logic-concept-alignment)
-  - [2.4.5 直觉逻辑概念对齐 (Intuitionistic Logic Concept Alignment)](#245-直觉逻辑概念对齐-intuitionistic-logic-concept-alignment)
 - [2.5 类型理论概念对齐 (Type Theory Concept Alignment)](#25-类型理论概念对齐-type-theory-concept-alignment)
   - [2.5.1 基本类型概念对齐 (Basic Type Concept Alignment)](#251-基本类型概念对齐-basic-type-concept-alignment)
   - [2.5.2 高级类型概念对齐 (Advanced Type Concept Alignment)](#252-高级类型概念对齐-advanced-type-concept-alignment)
@@ -40,6 +48,7 @@ owner: 国际化工作组
   - [2.6.3 图算法概念对齐 (Graph Algorithm Concept Alignment)](#263-图算法概念对齐-graph-algorithm-concept-alignment)
   - [2.6.4 高级数据结构概念对齐 (Advanced Data Structure Concept Alignment)](#264-高级数据结构概念对齐-advanced-data-structure-concept-alignment)
   - [2.6.5 复杂度理论概念对齐 (Computational Complexity Theory Concept Alignment)](#265-复杂度理论概念对齐-computational-complexity-theory-concept-alignment)
+  - [2.6.6 高阶算法概念对齐 (Advanced Algorithm Concept Alignment)](#266-高阶算法概念对齐-advanced-algorithm-concept-alignment)
 - [2.7 高级主题概念对齐 (Advanced Topic Concept Alignment)](#27-高级主题概念对齐-advanced-topic-concept-alignment)
   - [2.7.1 范畴论概念对齐 (Category Theory Concept Alignment)](#271-范畴论概念对齐-category-theory-concept-alignment)
   - [2.7.2 同伦类型论概念对齐 (Homotopy Type Theory Concept Alignment)](#272-同伦类型论概念对齐-homotopy-type-theory-concept-alignment)
@@ -57,6 +66,20 @@ owner: 国际化工作组
   - [相关文档 / Related Documents](#相关文档--related-documents)
   - [知识体系位置 / Knowledge System Position](#知识体系位置--knowledge-system-position)
   - [VIEW文件夹相关文档 / VIEW Folder Related Documents](#view文件夹相关文档--view-folder-related-documents)
+- [阶段4批2概念对齐（100个概念）](#阶段4批2概念对齐100个概念)
+  - [批2概念对齐补充完成](#批2概念对齐补充完成)
+  - [批2概念概览](#批2概念概览)
+    - [基础概念（20个）](#基础概念20个)
+    - [排序算法（10个）](#排序算法10个)
+    - [搜索算法（10个）](#搜索算法10个)
+    - [图算法（15个）](#图算法15个)
+    - [动态规划（10个）](#动态规划10个)
+    - [贪心算法（5个）](#贪心算法5个)
+    - [类型理论（15个）](#类型理论15个)
+    - [逻辑系统（10个）](#逻辑系统10个)
+    - [计算复杂性（5个）](#计算复杂性5个)
+  - [对齐质量评估](#对齐质量评估)
+- [阶段4概念对齐详细内容](#阶段4概念对齐详细内容)
 
 ### 内容补充与思维表征 / Content Supplement and Thinking Representation（轻量）
 
@@ -606,6 +629,8 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 增广路 | [Augmenting path](https://en.wikipedia.org/wiki/Augmenting_path_(graph_theory)) | 用于扩展匹配的交错路 | ✅ 已对齐 |
 | Konig定理 | [Kőnig's theorem](https://en.wikipedia.org/wiki/K%C5%91nig%27s_theorem_(graph_theory)) | 二分图最大匹配与最小顶点覆盖的关系 | ✅ 已对齐 |
 | Hall定理 | [Hall's marriage theorem](https://en.wikipedia.org/wiki/Hall%27s_marriage_theorem) | 判断完美匹配存在的充要条件 | ✅ 已对齐 |
+| 稳定婚姻问题 | [Stable marriage problem](https://en.wikipedia.org/wiki/Stable_marriage_problem) | 寻找稳定匹配的配对问题 | ✅ 已对齐 |
+| Gale-Shapley算法 | [Gale–Shapley algorithm](https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm) | 求解稳定婚姻问题的延迟接受算法 | ✅ 已对齐 |
 
 ### 2.6.4 高级数据结构概念对齐 (Advanced Data Structure Concept Alignment)
 
@@ -690,6 +715,18 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | APX | [APX](https://en.wikipedia.org/wiki/APX) | 有常数近似比的问题类 | ✅ 已对齐 |
 | 近似难度 | [Inapproximability](https://en.wikipedia.org/wiki/Inapproximability) | 近似算法的下界 | ✅ 已对齐 |
 
+### 2.6.6 高阶算法概念对齐 (Advanced Algorithm Concept Alignment)
+
+**高阶算法Wiki标准 / Advanced Algorithm Wiki Standards:**
+
+| 项目概念 | Wiki条目 | 标准定义 | 对齐状态 |
+|---------|---------|---------|---------|
+| 在线算法 | [Online algorithm](https://en.wikipedia.org/wiki/Online_algorithm) | 输入逐次到达时做出决策的算法 | ✅ 已对齐 |
+| 竞争比 | [Competitive ratio](https://en.wikipedia.org/wiki/Competitive_ratio) | 在线算法与最优离线算法的性能比值 | ✅ 已对齐 |
+| 线性规划对偶性 | [Linear programming duality](https://en.wikipedia.org/wiki/Dual_linear_program) | 每个线性规划问题都存在对应的对偶问题 | ✅ 已对齐 |
+| 原始-对偶方法 | [Primal–dual method](https://en.wikipedia.org/wiki/Primal-dual_method) | 同时维护原始与对偶可行解的优化方法 | ✅ 已对齐 |
+| 二分图匹配 | [Bipartite matching](https://en.wikipedia.org/wiki/Matching_(graph_theory)) | 二分图中的最大匹配问题 | ✅ 已对齐 |
+
 ---
 
 ## 2.7 高级主题概念对齐 (Advanced Topic Concept Alignment)
@@ -727,6 +764,8 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 同伦群 | [Homotopy group](https://en.wikipedia.org/wiki/Homotopy_group) | 空间的代数不变量 | ✅ 已对齐 |
 | 纤维丛 | [Fiber bundle](https://en.wikipedia.org/wiki/Fiber_bundle) | 局部平凡的空间 | ✅ 已对齐 |
 | 主丛 | [Principal bundle](https://en.wikipedia.org/wiki/Principal_bundle) | 具有群作用的纤维丛 | ✅ 已对齐 |
+| 纤维化 | [Fibration](https://en.wikipedia.org/wiki/Fibration) | 满足同伦提升性质的连续映射 | ✅ 已对齐 |
+| 泛等基础 | [Univalent foundations](https://en.wikipedia.org/wiki/Homotopy_type_theory#Univalent_foundations) | 基于HoTT的数学新基础 | ✅ 已对齐 |
 
 ### 2.7.3 证明助手概念对齐 (Proof Assistant Concept Alignment)
 
@@ -765,6 +804,9 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | Grover算法 | [Grover's algorithm](https://en.wikipedia.org/wiki/Grover%27s_algorithm) | 用于搜索的量子算法 | ✅ 已对齐 |
 | 量子机器学习 | [Quantum machine learning](https://en.wikipedia.org/wiki/Quantum_machine_learning) | 结合量子计算和机器学习的领域 | ✅ 已对齐 |
 | 量子密码学 | [Quantum cryptography](https://en.wikipedia.org/wiki/Quantum_cryptography) | 基于量子力学原理的密码学 | ✅ 已对齐 |
+| 量子霸权 | [Quantum supremacy](https://en.wikipedia.org/wiki/Quantum_supremacy) | 量子计算机在特定任务上超越经典计算机 | ✅ 已对齐 |
+| 逻辑量子比特 | [Logical qubit](https://en.wikipedia.org/wiki/Logical_qubit) | 通过量子纠错编码保护的抽象量子比特 | ✅ 已对齐 |
+| 量子纠错 | [Quantum error correction](https://en.wikipedia.org/wiki/Quantum_error_correction) | 保护量子信息免受退相干和噪声影响 | ✅ 已对齐 |
 
 ### 2.7.5 机器学习概念对齐 (Machine Learning Concept Alignment)
 
@@ -785,6 +827,10 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 差分隐私 | [Differential privacy](https://en.wikipedia.org/wiki/Differential_privacy) | 保护隐私的数据分析方法 | ✅ 已对齐 |
 | 对抗性攻击 | [Adversarial machine learning](https://en.wikipedia.org/wiki/Adversarial_machine_learning) | 针对机器学习模型的攻击方法 | ✅ 已对齐 |
 | 可解释性 | [Explainable AI](https://en.wikipedia.org/wiki/Explainable_AI) | 使AI决策可理解的方法 | ✅ 已对齐 |
+| 大语言模型 | [Large language model](https://en.wikipedia.org/wiki/Large_language_model) | 基于Transformer架构的大规模预训练语言模型 | ✅ 已对齐 |
+| Transformer | [Transformer (machine learning model)](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)) | 基于自注意力机制的神经网络架构 | ✅ 已对齐 |
+| 思维链 | [Chain-of-thought prompting](https://en.wikipedia.org/wiki/Prompt_engineering#Chain-of-thought) | 通过中间推理步骤增强大模型推理能力 | ✅ 已对齐 |
+| 推测解码 | [Speculative decoding](https://en.wikipedia.org/wiki/Speculative_decoding) | 通过草稿模型加速大语言模型解码的技术 | ✅ 已对齐 |
 
 ---
 
@@ -815,6 +861,9 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 抽象解释 | [Abstract interpretation](https://en.wikipedia.org/wiki/Abstract_interpretation) | 程序语义的近似分析方法 | ✅ 已对齐 |
 | 程序验证 | [Program verification](https://en.wikipedia.org/wiki/Program_verification) | 验证程序满足规范的过程 | ✅ 已对齐 |
 | 规范语言 | [Specification language](https://en.wikipedia.org/wiki/Specification_language) | 描述系统行为的语言 | ✅ 已对齐 |
+| 自动形式化 | [Autoformalization](https://en.wikipedia.org/wiki/Autoformalization) | 利用AI自动将自然语言转化为形式化表述 | ⚠️ 部分对齐 |
+| 符号执行 | [Symbolic execution](https://en.wikipedia.org/wiki/Symbolic_execution) | 使用符号值而非具体值执行程序的分析技术 | ✅ 已对齐 |
+| 霍尔逻辑 | [Hoare logic](https://en.wikipedia.org/wiki/Hoare_logic) | 使用前置/后置条件进行程序验证的形式系统 | ✅ 已对齐 |
 
 ---
 
@@ -960,6 +1009,7 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 | 阶段6 | 对齐度达到100% | 维护 | 持续 | 📋 待定 |
 
 **剩余待对齐概念 / Remaining Concepts:**
+
 - 详见 [wiki_alignment_missing.md](./wiki_alignment_missing.md)
 - 总计：40个概念
 - 重点领域：形式化方法扩展、高级密码学、新兴计算模型
@@ -1019,30 +1069,39 @@ Adopt a systematic approach to ensure concept alignment, including review, verif
 ### 批2概念概览
 
 #### 基础概念（20个）
+
 Algorithm / 算法、Data structure / 数据结构、Time complexity / 时间复杂度、Space complexity / 空间复杂度、Big O notation / 大O符号、Turing machine / 图灵机、Computability / 可计算性、Decidability / 可判定性、Recursion / 递归、Iteration / 迭代、Divide and conquer / 分治、Dynamic programming / 动态规划、Greedy algorithm / 贪心算法、Backtracking / 回溯、Branch and bound / 分支限界、Randomized algorithm / 随机算法、Approximation algorithm / 近似算法、Online algorithm / 在线算法、Parallel algorithm / 并行算法、Distributed algorithm / 分布式算法
 
 #### 排序算法（10个）
+
 Merge sort / 归并排序、Quick sort / 快速排序、Heap sort / 堆排序、Insertion sort / 插入排序、Selection sort / 选择排序、Bubble sort / 冒泡排序、Counting sort / 计数排序、Radix sort / 基数排序、Bucket sort / 桶排序、Timsort / Timsort算法
 
 #### 搜索算法（10个）
+
 Binary search / 二分搜索、Linear search / 线性搜索、Hash table / 哈希表、Binary search tree / 二叉搜索树、AVL tree / AVL树、Red-black tree / 红黑树、B-tree / B树、Trie / 字典树、Graph search / 图搜索、String search / 字符串搜索
 
 #### 图算法（15个）
+
 Breadth-first search / 广度优先搜索、Depth-first search / 深度优先搜索、Dijkstra's algorithm / Dijkstra算法、Bellman-Ford algorithm / Bellman-Ford算法、Floyd-Warshall algorithm / Floyd-Warshall算法、Minimum spanning tree / 最小生成树、Prim's algorithm / Prim算法、Kruskal's algorithm / Kruskal算法、Topological sorting / 拓扑排序、Strongly connected components / 强连通分量、Shortest path problem / 最短路径问题、Maximum flow problem / 最大流问题、Ford-Fulkerson algorithm / Ford-Fulkerson算法、Edmonds-Karp algorithm / Edmonds-Karp算法、Maximum matching / 最大匹配
 
 #### 动态规划（10个）
+
 Longest common subsequence / 最长公共子序列、Longest increasing subsequence / 最长递增子序列、Edit distance / 编辑距离、Knapsack problem / 背包问题、Matrix chain multiplication / 矩阵链乘法、Optimal binary search tree / 最优二叉搜索树、Shortest common supersequence / 最短公共超序列、Coin change problem / 硬币找零问题、Subset sum problem / 子集和问题、Rod cutting problem / 钢条切割问题
 
 #### 贪心算法（5个）
+
 Activity selection problem / 活动选择问题、Huffman coding / 霍夫曼编码、Interval scheduling / 区间调度、Fractional knapsack / 分数背包、Task scheduling / 任务调度
 
 #### 类型理论（15个）
+
 Type theory / 类型论、Simply typed lambda calculus / 简单类型λ演算、Polymorphism / 多态性、Type inference / 类型推断、Hindley-Milner type system / Hindley-Milner类型系统、Dependent type / 依赖类型、Intuitionistic type theory / 直觉类型论、Curry-Howard correspondence / Curry-Howard对应、Proof assistant / 证明助手、Coq / Coq证明助手、Lean / Lean证明助手、Agda / Agda编程语言、Homotopy type theory / 同伦类型论、Univalent foundations / 一元基础、Martin-Löf type theory / Martin-Löf类型论
 
 #### 逻辑系统（10个）
+
 Propositional logic / 命题逻辑、First-order logic / 一阶逻辑、Modal logic / 模态逻辑、Temporal logic / 时序逻辑、Intuitionistic logic / 直觉逻辑、Linear logic / 线性逻辑、Proof theory / 证明论、Model theory / 模型论、Gödel's incompleteness theorems / 哥德尔不完备定理、Church-Turing thesis / Church-Turing论题
 
 #### 计算复杂性（5个）
+
 P versus NP problem / P vs NP问题、NP-completeness / NP完全性、Computational complexity theory / 计算复杂性理论、Boolean satisfiability problem / 布尔可满足性问题、Turing reduction / 图灵归约
 
 ### 对齐质量评估
@@ -1075,4 +1134,3 @@ P versus NP problem / P vs NP问题、NP-completeness / NP完全性、Computatio
 | 逻辑系统 | 10 | 100% 高对齐 |
 | 高级主题 | 15 | 100% 高对齐 |
 | **总计** | **100** | **100%** |
-

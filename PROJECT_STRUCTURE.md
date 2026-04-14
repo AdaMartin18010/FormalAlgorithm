@@ -64,7 +64,7 @@ FormalAlgorithm/
 │   │   │   ├── 05-图算法理论-六维补充.md
 │   │   │   ├── 06-动态规划理论-六维补充.md
 │   │   │   ├── 07-贪心算法理论-六维补充.md
-│   │   │   └── 08-高级数据结构-六维补充.md
+│   │   │   └── 24-高级数据结构.md
 │   │   ├── 02-分治算法/
 │   │   │   └── 01-分治算法理论-六维补充.md
 │   │   ├── 03-搜索算法/
@@ -219,11 +219,13 @@ FormalAlgorithm/
 ## 快速导航
 
 ### 学习者路径
+
 1. **入门**: `docs/01-基础理论/` → `docs/习题库/01-基础算法习题.md`
 2. **进阶**: `docs/09-算法理论/` → `docs/习题库/04-动态规划习题.md`
 3. **高级**: `docs/10-高级主题/` → `docs/习题库/10-研究级开放问题.md`
 
 ### 代码实现索引
+
 - **排序**: `examples/algorithms/src/sorting.rs`, `merge_sort.rs`, `quick_sort.rs`
 - **图算法**: `examples/algorithms/src/dijkstra.rs`, `graph_mst.rs`, `network_flow/`
 - **字符串**: `examples/algorithms/src/string_algorithms/kmp.rs`, `suffix_array.rs`

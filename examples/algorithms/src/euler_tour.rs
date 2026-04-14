@@ -186,10 +186,9 @@ where
 /// // 构建一个欧拉图（所有顶点度数为偶数）
 /// graph.insert('A', vec!['B', 'C']);
 /// graph.insert('B', vec!['A', 'C']);
-/// graph.insert('C', vec!['A', 'B', 'D']);
-/// graph.insert('D', vec!['C', 'E', 'F']);
-/// graph.insert('E', vec!['D', 'F']);
-/// graph.insert('F', vec!['D', 'E']);
+/// graph.insert('C', vec!['A', 'B', 'D', 'E']);
+/// graph.insert('D', vec!['C', 'E']);
+/// graph.insert('E', vec!['C', 'D']);
 ///
 /// let result = find_eulerian_circuit_undirected(&graph);
 /// assert!(result.exists);

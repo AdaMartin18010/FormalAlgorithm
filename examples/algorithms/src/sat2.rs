@@ -75,6 +75,7 @@ impl Solver2Sat {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::Solver2Sat;
     /// let solver = Solver2Sat::new(3); // 3个变量: x₁, x₂, x₃
     /// ```
     pub fn new(n: usize) -> Self {
@@ -94,6 +95,7 @@ impl Solver2Sat {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::Solver2Sat;
     /// let mut solver = Solver2Sat::new(3);
     /// solver.add_clause(1, 2);    // (x₁ ∨ x₂)
     /// solver.add_clause(-1, 3);   // (¬x₁ ∨ x₃)
@@ -147,6 +149,7 @@ impl Solver2Sat {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::Solver2Sat;
     /// let mut solver = Solver2Sat::new(2);
     /// solver.add_clause(1, 2);
     /// solver.add_clause(-1, -2);
@@ -198,35 +201,20 @@ impl Solver2Sat {
         let component_graph = self.build_component_graph(&scc_result, &var_to_scc_map);
         let topo_order = self.topological_sort(&component_graph, scc_count);
 
-        // 按照拓扑排序的逆序赋值
-        let mut assigned = vec![false; scc_count];
-        let mut assignment = vec![false; self.n + 1];
-
-        for &scc_id in topo_order.iter().rev() {
-            if assigned[scc_id] {
-                continue;
-            }
-
-            // 给当前SCC赋false，给对应的否定SCC赋true
-            for &var in &scc_result[scc_id] {
-                if var > 0 {
-                    assignment[var as usize] = false;
-                } else {
-                    assignment[(-var) as usize] = true;
-                }
-            }
-            assigned[scc_id] = true;
-
-            // 找到对应的否定SCC并标记
-            let first_var = scc_result[scc_id][0];
-            let neg_var = -first_var;
-            if let Some(&neg_scc) = var_to_scc_map.get(&neg_var) {
-                assigned[neg_scc] = true;
-            }
+        // 创建 SCC 到拓扑序位置的映射
+        let mut scc_to_topo_pos = vec![0; scc_count];
+        for (pos, &scc_id) in topo_order.iter().enumerate() {
+            scc_to_topo_pos[scc_id] = pos;
         }
 
-        // 转换为结果格式
-        let final_assignment: Vec<bool> = (1..=self.n).map(|i| assignment[i]).collect();
+        // 标准 2-SAT 赋值: x_i = true 当且仅当 comp(x_i) 在拓扑序中出现在 comp(¬x_i) 之后
+        let final_assignment: Vec<bool> = (1..=self.n)
+            .map(|i| {
+                let pos_i = scc_to_topo_pos[var_to_scc_map[&(i as i32)]];
+                let pos_ni = scc_to_topo_pos[var_to_scc_map[&(-(i as i32))]];
+                pos_i > pos_ni
+            })
+            .collect();
 
         // 转换var_to_scc_map为Vec（只包含正变量）
         let var_to_scc: Vec<usize> = (0..=self.n)

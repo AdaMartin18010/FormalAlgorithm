@@ -25,7 +25,7 @@ impl<T: Copy + Default> Matrix<T> {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::matrix_operations::Matrix;
+    /// use formal_algorithms::matrix_operations::Matrix;
     /// let m = Matrix::new(2, 2, vec![vec![1, 2], vec![3, 4]]);
     /// ```
     pub fn new(rows: usize, cols: usize, data: Vec<Vec<T>>) -> Self {
@@ -189,7 +189,7 @@ impl Matrix<i64> {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::matrix_operations::Matrix;
+    /// use formal_algorithms::matrix_operations::Matrix;
     /// let m = Matrix::new(2, 2, vec![vec![1, 1], vec![1, 0]]);
     /// let result = m.pow(10); // 计算第11个斐波那契数
     /// ```
@@ -241,7 +241,7 @@ impl Matrix<f64> {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::matrix_operations::Matrix;
+    /// use formal_algorithms::matrix_operations::Matrix;
     /// let a = Matrix::new(2, 2, vec![vec![2.0, 1.0], vec![1.0, 3.0]]);
     /// let b = vec![5.0, 8.0];
     /// let x = a.gaussian_elimination(&b).unwrap();

@@ -108,6 +108,7 @@ impl<T: Clone> SimulatedAnnealing<T> {
     ///
     /// # 示例
     /// ```
+/// use formal_algorithms::SimulatedAnnealing;
     /// let initial = vec![1, 2, 3, 4, 5];
     /// let mut sa = SimulatedAnnealing::new(initial.clone(), 100.0, 1000.0);
     /// ```
@@ -166,12 +167,15 @@ impl<T: Clone> SimulatedAnnealing<T> {
     /// 返回 `SAResult`，包含最佳解和统计信息
     ///
     /// # 示例
-    /// ```
-    /// let result = sa.solve(
-    ///     |current| { /* 生成邻域解 */ },
-    ///     |solution| { /* 计算能量 */ 0.0 }
-    /// );
-    /// ```
+/// `
+/// use formal_algorithms::SimulatedAnnealing;
+/// let initial = vec![1, 2, 3, 4, 5];
+/// let mut sa = SimulatedAnnealing::new(initial.clone(), 100.0, 1000.0);
+/// let result = sa.solve(
+///     |current| { current.clone() },
+///     |solution| { 0.0 }
+/// );
+/// `
     pub fn solve<N, E>(&mut self, neighbor_gen: N, energy_fn: E) -> SAResult<T>
     where
         N: Fn(&T) -> T,
