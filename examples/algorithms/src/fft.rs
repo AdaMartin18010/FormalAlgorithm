@@ -35,7 +35,7 @@ pub fn fft(input: &[Complex<f64>]) -> Vec<Complex<f64>> {
 /// 逆FFT
 pub fn ifft(input: &[Complex<f64>]) -> Vec<Complex<f64>> {
     let n = input.len();
-    let mut conjugated: Vec<_> = input.iter().map(|&c| c.conj()).collect();
+    let conjugated: Vec<_> = input.iter().map(|&c| c.conj()).collect();
     let mut result = fft(&conjugated);
     for x in &mut result {
         *x = x.conj() / n as f64;
@@ -50,7 +50,7 @@ fn bit_reverse_copy(input: &[Complex<f64>]) -> Vec<Complex<f64>> {
     let bits = n.trailing_zeros();
     
     for i in 0..n {
-        let rev = i.reverse_bits() >> (32 - bits);
+        let rev = i.reverse_bits() >> (usize::BITS - bits);
         result[rev] = input[i];
     }
     result

@@ -27,7 +27,7 @@ use std::fmt::Debug;
 const DEFAULT_ORDER: usize = 4;
 
 /// B树节点
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct BTreeNode<T: Ord + Clone> {
     /// 节点中的键（已排序）
     keys: Vec<T>,
@@ -101,10 +101,10 @@ impl<T: Ord + Clone + Debug> BTree<T> {
 
     /// 查找元素
     pub fn contains(&self, key: &T) -> bool {
-        Self::search_recursive(&self.root, key)
+        Self::search_recursive(self.root.as_ref(), key)
     }
 
-    fn search_recursive(node: &Option<Box<BTreeNode<T>>>, key: &T) -> bool {
+    fn search_recursive(node: Option<&Box<BTreeNode<T>>>, key: &T) -> bool {
         match node {
             None => false,
             Some(n) => {
@@ -114,7 +114,7 @@ impl<T: Ord + Clone + Debug> BTree<T> {
                         if n.is_leaf {
                             false
                         } else {
-                            Self::search_recursive(&Some(n.children[idx].clone()), key)
+                            Self::search_recursive(Some(&n.children[idx]), key)
                         }
                     }
                 }
@@ -136,16 +136,18 @@ impl<T: Ord + Clone + Debug> BTree<T> {
         if self.root.as_ref().unwrap().is_full(self.order) {
             let mut new_root = Box::new(BTreeNode::new(false));
             new_root.children.push(self.root.take().unwrap());
-            self.split_child(&mut new_root, 0);
+            Self::split_child(self.order, &mut new_root, 0);
             self.root = Some(new_root);
         }
 
-        self.insert_non_full(self.root.as_mut().unwrap(), key);
+        let order = self.order;
+        let size = &mut self.size;
+        let root = self.root.as_mut().unwrap();
+        Self::insert_non_full(root, key, order, size);
     }
 
     /// 分裂子节点
-    fn split_child(&self, parent: &mut BTreeNode<T>, idx: usize) {
-        let order = self.order;
+    fn split_child(order: usize, parent: &mut BTreeNode<T>, idx: usize) {
         let mut new_node = Box::new(BTreeNode::new(parent.children[idx].is_leaf));
         let mid = (order - 1) / 2;
 
@@ -165,23 +167,23 @@ impl<T: Ord + Clone + Debug> BTree<T> {
     }
 
     /// 在非满节点中插入
-    fn insert_non_full(&mut self, node: &mut BTreeNode<T>, key: T) {
+    fn insert_non_full(node: &mut BTreeNode<T>, key: T, order: usize, size: &mut usize) {
         match node.find_key(&key) {
             Ok(_) => return, // 键已存在
             Err(mut idx) => {
                 if node.is_leaf {
                     node.keys.insert(idx, key);
-                    self.size += 1;
+                    *size += 1;
                 } else {
                     // 确保子节点不会满
-                    if node.children[idx].is_full(self.order) {
-                        self.split_child(node, idx);
+                    if node.children[idx].is_full(order) {
+                        Self::split_child(order, node, idx);
                         // 分裂后重新确定插入位置
                         if key > node.keys[idx] {
                             idx += 1;
                         }
                     }
-                    self.insert_non_full(&mut node.children[idx], key);
+                    Self::insert_non_full(&mut node.children[idx], key, order, size);
                 }
             }
         }
@@ -190,20 +192,20 @@ impl<T: Ord + Clone + Debug> BTree<T> {
     /// 中序遍历获取所有键
     pub fn inorder_traversal(&self) -> Vec<&T> {
         let mut result = Vec::new();
-        Self::inorder_recursive(&self.root, &mut result);
+        Self::inorder_recursive(self.root.as_ref(), &mut result);
         result
     }
 
-    fn inorder_recursive<'a>(node: &'a Option<Box<BTreeNode<T>>>, result: &mut Vec<&'a T>) {
+    fn inorder_recursive<'a>(node: Option<&'a Box<BTreeNode<T>>>, result: &mut Vec<&'a T>) {
         if let Some(n) = node {
             for i in 0..n.keys.len() {
                 if !n.is_leaf {
-                    Self::inorder_recursive(&Some(&n.children[i]), result);
+                    Self::inorder_recursive(Some(&n.children[i]), result);
                 }
                 result.push(&n.keys[i]);
             }
             if !n.is_leaf {
-                Self::inorder_recursive(&Some(&n.children[n.keys.len()]), result);
+                Self::inorder_recursive(Some(&n.children[n.keys.len()]), result);
             }
         }
     }
@@ -211,12 +213,12 @@ impl<T: Ord + Clone + Debug> BTree<T> {
     /// 范围查询 [start, end]
     pub fn range_query(&self, start: &T, end: &T) -> Vec<&T> {
         let mut result = Vec::new();
-        Self::range_recursive(&self.root, start, end, &mut result);
+        Self::range_recursive(self.root.as_ref(), start, end, &mut result);
         result
     }
 
     fn range_recursive<'a>(
-        node: &'a Option<Box<BTreeNode<T>>>,
+        node: Option<&'a Box<BTreeNode<T>>>,
         start: &T,
         end: &T,
         result: &mut Vec<&'a T>,
@@ -224,31 +226,31 @@ impl<T: Ord + Clone + Debug> BTree<T> {
         if let Some(n) = node {
             for i in 0..n.keys.len() {
                 if !n.is_leaf {
-                    Self::range_recursive(&Some(&n.children[i]), start, end, result);
+                    Self::range_recursive(Some(&n.children[i]), start, end, result);
                 }
                 if n.keys[i] >= *start && n.keys[i] <= *end {
                     result.push(&n.keys[i]);
                 }
             }
             if !n.is_leaf {
-                Self::range_recursive(&Some(&n.children[n.keys.len()]), start, end, result);
+                Self::range_recursive(Some(&n.children[n.keys.len()]), start, end, result);
             }
         }
     }
 
     /// 获取树的高度
     pub fn height(&self) -> usize {
-        Self::height_recursive(&self.root)
+        Self::height_recursive(self.root.as_ref())
     }
 
-    fn height_recursive(node: &Option<Box<BTreeNode<T>>>) -> usize {
+    fn height_recursive(node: Option<&Box<BTreeNode<T>>>) -> usize {
         match node {
             None => 0,
             Some(n) => {
                 if n.is_leaf {
                     1
                 } else {
-                    1 + Self::height_recursive(&Some(&n.children[0]))
+                    1 + Self::height_recursive(Some(&n.children[0]))
                 }
             }
         }

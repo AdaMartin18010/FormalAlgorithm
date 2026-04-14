@@ -306,7 +306,7 @@ where
     let n = result.count();
     let mut has_incoming = vec![false; n];
 
-    for (from, to_set) in &result.condensed_graph {
+    for (_from, to_set) in &result.condensed_graph {
         for to in to_set {
             has_incoming[*to] = true;
         }

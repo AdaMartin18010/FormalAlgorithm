@@ -470,9 +470,14 @@ impl<T: Ord + Clone + Copy + Debug> Default for IntervalTree<T> {
 }
 
 /// 区间集合操作
-pub struct IntervalSet<T: Ord + Clone + Copy + Debug>;
+pub struct IntervalSet<T: Ord + Clone + Copy + Debug>(std::marker::PhantomData<T>);
 
 impl<T: Ord + Clone + Copy + Debug> IntervalSet<T> {
+    /// 创建新区间集合
+    pub fn new() -> Self {
+        Self(std::marker::PhantomData)
+    }
+
     /// 合并重叠区间
     pub fn merge_intervals(mut intervals: Vec<Interval<T>>) -> Vec<Interval<T>> {
         if intervals.len() <= 1 {

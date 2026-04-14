@@ -69,7 +69,14 @@ impl UnionFind {
     /// 获取某集合的大小
     pub fn set_size(&mut self, x: usize) -> usize {
         let root = self.find(x);
-        self.parent.iter().filter(|&&p| self.find(p) == root).count()
+        let n = self.parent.len();
+        let mut count = 0;
+        for i in 0..n {
+            if self.find(i) == root {
+                count += 1;
+            }
+        }
+        count
     }
 }
 

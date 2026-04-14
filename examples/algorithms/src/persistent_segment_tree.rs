@@ -527,7 +527,7 @@ mod tests {
         let mut pst = PersistentSegmentTree::new(&[1, 2, 3, 4, 5]);
 
         let v1 = pst.update(0, 0, 10); // v1: [11, 2, 3, 4, 5]
-        let v2 = pst.update(v1, 1, 10); // v2: [11, 12, 3, 4, 5]
+        let _v2 = pst.update(v1, 1, 10); // v2: [11, 12, 3, 4, 5]
 
         // 回滚到v0
         let v3 = pst.rollback(0);

@@ -121,8 +121,8 @@ impl RollingHash {
     /// 初始化第二个哈希函数（用于双哈希）
     fn init_second_hash(&mut self, base2: u64, mod_val2: u64) {
         let n = self.n;
-        let mut prefix_hash2 = vec![0u64; n + 1];
-        let mut power2 = vec![1u64; n + 1];
+        let prefix_hash2 = vec![0u64; n + 1];
+        let power2 = vec![1u64; n + 1];
 
         // 需要重新获取原始字符串，这里用前缀哈希还原不现实
         // 所以在实际使用中，new_double应该同时计算两个哈希

@@ -30,7 +30,7 @@ impl<T: Clone + Copy + Default> SegmentTree<T> {
     /// - 空间: O(4n)
     pub fn new(data: &[T], identity: T, merge: fn(T, T) -> T) -> Self {
         let n = data.len();
-        let mut tree = vec![identity; 4 * n];
+        let tree = vec![identity; 4 * n];
         let mut seg_tree = SegmentTree { tree, n, identity, merge };
         
         if n > 0 {

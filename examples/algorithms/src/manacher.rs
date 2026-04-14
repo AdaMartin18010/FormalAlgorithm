@@ -66,8 +66,8 @@ pub fn longest_palindrome(s: &str) -> String {
 /// 统计回文子串数量
 pub fn count_palindromes(s: &str) -> usize {
     let p = manacher(s);
-    // 每个位置的回文半径之和（不包括中心字符）
-    p.iter().sum::<usize>() / 2
+    // 每个位置的回文半径对应原始字符串中的回文子串数量
+    p.iter().map(|&x| (x + 1) / 2).sum()
 }
 
 #[cfg(test)]

@@ -276,7 +276,7 @@ where
             let mut current_right = end_right.unwrap();
 
             loop {
-                let next_left = match_right.get(&current_right).cloned();
+                let _next_left = match_right.get(&current_right).cloned();
 
                 // 更新匹配
                 match_left.insert(current_left.clone(), current_right.clone());

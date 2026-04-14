@@ -600,7 +600,7 @@ mod tests {
     fn test_generate_permutations_empty() {
         let nums: Vec<i32> = vec![];
         let perms = generate_permutations(&nums);
-        assert_eq!(perms, vec![vec![]]);
+        assert_eq!(perms, vec![Vec::<i32>::new()]);
     }
 
     #[test]

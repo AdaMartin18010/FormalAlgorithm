@@ -177,7 +177,7 @@ impl MoAlgorithm {
     /// - 时间: O((n + q) × √n × log n) 或使用值域分块优化到 O((n + q) × √n)
     pub fn solve_mode(&mut self, arr: &[i32], queries: &[(usize, usize)]) -> Vec<(i32, i64)> {
         // 使用值域分块来维护众数
-        let n = arr.len();
+        let _n = arr.len();
         let max_val = *arr.iter().max().unwrap_or(&0) as usize + 1;
         let val_block_size = (max_val as f64).sqrt() as usize + 1;
         let num_val_blocks = (max_val + val_block_size - 1) / val_block_size;
@@ -238,7 +238,7 @@ impl MoAlgorithm {
 
     fn add_mode(&mut self, val: i32, freq: &mut [i64], block_cnt: &mut [i64], block_size: usize) {
         let v = val as usize;
-        let old_freq = freq[v];
+        let _old_freq = freq[v];
         freq[v] += 1;
         block_cnt[v / block_size] += 1;
         if freq[v] > self.cur_ans {
@@ -305,7 +305,7 @@ impl MoAlgorithmWithModify {
     /// # 复杂度
     /// - 时间: O(1)
     /// - 空间: O(1)
-    pub fn new(n: usize, modify_count: usize) -> Self {
+    pub fn new(n: usize, _modify_count: usize) -> Self {
         let block_size = (n as f64).cbrt() as usize * (n as f64).cbrt() as usize + 1;
         let mod_block_size = (n as f64).cbrt() as usize + 1;
         MoAlgorithmWithModify {
@@ -333,7 +333,7 @@ impl MoAlgorithmWithModify {
         queries: &[(usize, usize)],
         modifies: &[Modify],
     ) -> Vec<i64> {
-        let n = arr.len();
+        let _n = arr.len();
         let q = queries.len();
 
         // 预处理修改操作，记录旧值

@@ -70,6 +70,7 @@ impl MatrixChain {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::matrix_chain::MatrixChain;
     /// // 3个矩阵：A₁(10×30), A₂(30×5), A₃(5×60)
     /// let mc = MatrixChain::new(vec![10, 30, 5, 60]);
     /// ```
@@ -412,7 +413,7 @@ mod example {
         }
         
         let mut mc = MatrixChain::new(dims);
-        let min_cost = mc.solve();
+        let _min_cost = mc.solve();
         let solution = mc.get_solution();
         
         println!("\n{}", solution);
@@ -469,7 +470,7 @@ mod example {
         let dims = vec![800, 600, 400, 300, 640, 480, 320, 240];
         
         let mut mc = MatrixChain::new(dims);
-        let cost = mc.solve();
+        let _cost = mc.solve();
         let solution = mc.get_solution();
         
         println!("\nOptimal computation order:");

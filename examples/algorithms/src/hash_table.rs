@@ -22,12 +22,12 @@
 /// ```
 /// use formal_algorithms::hash_table::HashTableSeparateChaining;
 ///
-/// let mut ht = HashTableSeparateChaining::new();
+/// let mut ht: HashTableSeparateChaining<&str, i32> = HashTableSeparateChaining::new();
 /// ht.insert("key1", 100);
 /// ht.insert("key2", 200);
-/// assert_eq!(ht.get("key1"), Some(&100));
-/// assert_eq!(ht.remove("key1"), Some(100));
-/// assert_eq!(ht.get("key1"), None);
+/// assert_eq!(ht.get(&"key1"), Some(&100));
+/// assert_eq!(ht.remove(&"key1"), Some(100));
+/// assert_eq!(ht.get(&"key1"), None);
 /// ```
 #[derive(Debug, Clone)]
 pub struct HashTableSeparateChaining<K, V> {
@@ -35,7 +35,11 @@ pub struct HashTableSeparateChaining<K, V> {
     len: usize,
 }
 
-impl<K, V> Default for HashTableSeparateChaining<K, V> {
+impl<K, V> Default for HashTableSeparateChaining<K, V>
+where
+    K: std::hash::Hash + Eq + Clone,
+    V: Clone,
+{
     fn default() -> Self {
         Self::new()
     }
@@ -110,8 +114,9 @@ where
     }
 
     fn resize(&mut self) {
-        let old_buckets = std::mem::replace(&mut self.buckets, Vec::with_capacity(self.buckets.len() * 2));
-        self.buckets.resize_with(old_buckets.len() * 2, Vec::new);
+        let new_len = self.buckets.len() * 2;
+        let old_buckets = std::mem::replace(&mut self.buckets, Vec::with_capacity(new_len));
+        self.buckets.resize_with(new_len, Vec::new);
         self.len = 0;
         for mut bucket in old_buckets {
             for (k, v) in bucket.drain(..) {
@@ -125,7 +130,12 @@ where
 
 // ==================== Open Addressing ====================
 
-const TOMBSTONE: u64 = u64::MAX;
+#[derive(Clone)]
+enum Slot<V> {
+    Empty,
+    Tombstone,
+    Occupied(u64, V),
+}
 
 /// 开放寻址法哈希表，支持线性探测与二次探测
 ///
@@ -133,17 +143,16 @@ const TOMBSTONE: u64 = u64::MAX;
 /// ```
 /// use formal_algorithms::hash_table::HashTableOpenAddressing;
 ///
-/// let mut ht = HashTableOpenAddressing::new_linear();
+/// let mut ht: HashTableOpenAddressing<&str, i32> = HashTableOpenAddressing::new_linear();
 /// ht.insert("key1", 100);
-/// assert_eq!(ht.get("key1"), Some(&100));
+/// assert_eq!(ht.get(&"key1"), Some(&100));
 /// ```
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 pub struct HashTableOpenAddressing<K, V> {
-    keys: Vec<u64>,
-    values: Vec<V>,
+    slots: Vec<Slot<V>>,
     len: usize,
-    tombstones: usize,
     use_quadratic: bool,
+    _phantom: std::marker::PhantomData<K>,
 }
 
 impl<K, V> HashTableOpenAddressing<K, V>
@@ -164,22 +173,27 @@ where
     fn new(use_quadratic: bool) -> Self {
         let capacity = 16;
         Self {
-            keys: vec![0; capacity],
-            values: Vec::with_capacity(capacity),
+            slots: vec![Slot::Empty; capacity],
             len: 0,
-            tombstones: 0,
             use_quadratic,
+            _phantom: std::marker::PhantomData,
         }
     }
 
     fn hash_key(key: &K) -> u64 {
         let mut hasher = std::collections::hash_map::DefaultHasher::new();
         std::hash::Hash::hash(key, &mut hasher);
-        std::hash::Hasher::finish(&hasher)
+        let h = std::hash::Hasher::finish(&hasher);
+        // Avoid 0 and u64::MAX since we reserve them internally
+        if h == 0 || h == u64::MAX {
+            1
+        } else {
+            h
+        }
     }
 
     fn capacity(&self) -> usize {
-        self.keys.len()
+        self.slots.len()
     }
 
     fn probe(&self, hash: u64, i: usize) -> usize {
@@ -193,47 +207,38 @@ where
 
     /// 插入键值对
     pub fn insert(&mut self, key: K, value: V) {
-        if self.len + self.tombstones > self.capacity() * 3 / 4 {
+        if self.len > self.capacity() * 3 / 4 {
             self.resize();
         }
         let h = Self::hash_key(&key);
         for i in 0..self.capacity() {
             let idx = self.probe(h, i);
-            if self.keys[idx] == 0 || self.keys[idx] == TOMBSTONE {
-                self.keys[idx] = h;
-                if idx < self.values.len() {
-                    self.values[idx] = value;
-                } else {
-                    self.values.resize_with(idx, || panic!("value resize error"));
-                    self.values.push(value);
+            match &self.slots[idx] {
+                Slot::Empty | Slot::Tombstone => {
+                    self.slots[idx] = Slot::Occupied(h, value);
+                    self.len += 1;
+                    return;
                 }
-                self.len += 1;
-                if self.keys[idx] == TOMBSTONE {
-                    // tombstone was overwritten, but we already incremented len
-                    // actually we don't know if it was TOMBSTONE here because we just overwrote it
-                    // let's fix logic: check before write
+                Slot::Occupied(existing_h, _) if *existing_h == h => {
+                    // Simplified: treat same hash as same key for this educational implementation
+                    self.slots[idx] = Slot::Occupied(h, value);
+                    return;
                 }
-                return;
-            } else if self.keys[idx] == h {
-                // potential collision by same hash, but we can't compare K here without storing it
-                // For simplicity in open addressing, we treat same hash as same key
-                self.values[idx] = value;
-                return;
+                _ => {}
             }
         }
         panic!("hash table is full");
     }
 
-    /// 查找值（基于哈希比较，简化版）
+    /// 查找值
     pub fn get(&self, key: &K) -> Option<&V> {
         let h = Self::hash_key(key);
         for i in 0..self.capacity() {
             let idx = self.probe(h, i);
-            if self.keys[idx] == 0 {
-                return None;
-            }
-            if self.keys[idx] == h && idx < self.values.len() {
-                return Some(&self.values[idx]);
+            match &self.slots[idx] {
+                Slot::Empty => return None,
+                Slot::Occupied(existing_h, v) if *existing_h == h => return Some(v),
+                _ => {}
             }
         }
         None
@@ -244,14 +249,15 @@ where
         let h = Self::hash_key(key);
         for i in 0..self.capacity() {
             let idx = self.probe(h, i);
-            if self.keys[idx] == 0 {
-                return None;
-            }
-            if self.keys[idx] == h {
-                self.keys[idx] = TOMBSTONE;
-                self.len -= 1;
-                self.tombstones += 1;
-                return Some(std::mem::replace(&mut self.values[idx], unsafe { std::mem::zeroed() }));
+            match &self.slots[idx] {
+                Slot::Empty => return None,
+                Slot::Occupied(existing_h, _) if *existing_h == h => {
+                    if let Slot::Occupied(_, v) = std::mem::replace(&mut self.slots[idx], Slot::Tombstone) {
+                        self.len -= 1;
+                        return Some(v);
+                    }
+                }
+                _ => {}
             }
         }
         None
@@ -268,22 +274,15 @@ where
     }
 
     fn resize(&mut self) {
-        let old_keys = std::mem::replace(&mut self.keys, vec![0; self.capacity() * 2]);
-        let old_values = std::mem::replace(&mut self.values, Vec::with_capacity(self.capacity()));
+        let new_cap = self.capacity() * 2;
+        let old_slots = std::mem::replace(&mut self.slots, vec![Slot::Empty; new_cap]);
         self.len = 0;
-        self.tombstones = 0;
-        for (i, k) in old_keys.into_iter().enumerate() {
-            if k != 0 && k != TOMBSTONE {
+        for slot in old_slots {
+            if let Slot::Occupied(h, v) = slot {
                 for j in 0..self.capacity() {
-                    let idx = self.probe(k, j);
-                    if self.keys[idx] == 0 {
-                        self.keys[idx] = k;
-                        if idx >= self.values.len() {
-                            self.values.resize_with(idx, || panic!("resize error"));
-                            self.values.push(old_values[i].clone());
-                        } else {
-                            self.values[idx] = old_values[i].clone();
-                        }
+                    let idx = self.probe(h, j);
+                    if matches!(self.slots[idx], Slot::Empty | Slot::Tombstone) {
+                        self.slots[idx] = Slot::Occupied(h, v);
                         self.len += 1;
                         break;
                     }
@@ -299,7 +298,7 @@ mod tests {
 
     #[test]
     fn test_separate_chaining() {
-        let mut ht = HashTableSeparateChaining::new();
+        let mut ht: HashTableSeparateChaining<&str, i32> = HashTableSeparateChaining::new();
         ht.insert("apple", 5);
         ht.insert("banana", 6);
         ht.insert("cherry", 6);
@@ -312,7 +311,7 @@ mod tests {
 
     #[test]
     fn test_open_addressing_linear() {
-        let mut ht = HashTableOpenAddressing::new_linear();
+        let mut ht: HashTableOpenAddressing<&str, i32> = HashTableOpenAddressing::new_linear();
         ht.insert("a", 1);
         ht.insert("b", 2);
         ht.insert("c", 3);
@@ -336,7 +335,7 @@ mod tests {
 
     #[test]
     fn test_resize_behavior() {
-        let mut ht = HashTableSeparateChaining::new();
+        let mut ht: HashTableSeparateChaining<i32, i32> = HashTableSeparateChaining::new();
         for i in 0..100 {
             ht.insert(i, i * 2);
         }

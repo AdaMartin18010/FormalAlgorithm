@@ -110,7 +110,7 @@ impl Matrix<i64> {
             return self.multiply(other);
         }
 
-        let mid = n / 2;
+        let _mid = n / 2;
 
         // 分块
         let (a11, a12, a21, a22) = self.split();

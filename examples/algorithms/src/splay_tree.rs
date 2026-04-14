@@ -106,19 +106,18 @@ impl<T: Ord + Debug + Clone> SplayTree<T> {
             return;
         }
 
-        // 创建新节点
-        let mut new_node = Box::new(Node::new(value));
-        
         // 根据值大小重新连接
         match value.cmp(&root.value) {
             Ordering::Less => {
                 // 新节点成为新的根，原根成为右子树
+                let mut new_node = Box::new(Node::new(value));
                 new_node.right = self.root.take();
                 new_node.left = new_node.right.as_mut().unwrap().left.take();
                 self.root = Some(new_node);
             }
             Ordering::Greater => {
                 // 新节点成为新的根，原根成为左子树
+                let mut new_node = Box::new(Node::new(value));
                 new_node.left = self.root.take();
                 new_node.right = new_node.left.as_mut().unwrap().right.take();
                 self.root = Some(new_node);
@@ -170,14 +169,20 @@ impl<T: Ord + Debug + Clone> SplayTree<T> {
         match value.cmp(&node.value) {
             Ordering::Equal => Some(node),
             Ordering::Less => {
-                let left = node.left.take()?;
-                node.left = Self::splay(Some(left), value);
-                Some(Self::rotate_right(node))
+                if let Some(left) = node.left.take() {
+                    node.left = Self::splay(Some(left), value);
+                    Some(Self::rotate_right(node))
+                } else {
+                    Some(node)
+                }
             }
             Ordering::Greater => {
-                let right = node.right.take()?;
-                node.right = Self::splay(Some(right), value);
-                Some(Self::rotate_left(node))
+                if let Some(right) = node.right.take() {
+                    node.right = Self::splay(Some(right), value);
+                    Some(Self::rotate_left(node))
+                } else {
+                    Some(node)
+                }
             }
         }
     }

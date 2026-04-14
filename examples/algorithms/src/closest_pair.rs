@@ -210,7 +210,6 @@ fn closest_pair_recursive(px: &[Point], py: &[Point]) -> Option<ClosestPairResul
 }
 
 /// 生成随机点集（用于测试）
-#[cfg(test)]
 pub fn generate_random_points(n: usize, seed: u64) -> Vec<Point> {
     use std::collections::hash_map::DefaultHasher;
     use std::hash::{Hash, Hasher};

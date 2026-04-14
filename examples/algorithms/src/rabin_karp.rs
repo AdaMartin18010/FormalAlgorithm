@@ -69,6 +69,7 @@ impl RabinKarp {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::rabin_karp::RabinKarp;
     /// let rk = RabinKarp::new();
     /// let matches = rk.search("hello world", "world");
     /// assert_eq!(matches, vec![6]);

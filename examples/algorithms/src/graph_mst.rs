@@ -156,7 +156,7 @@ pub fn prim(graph: &[Vec<i32>]) -> (Vec<(usize, usize)>, i32) {
             if graph[u][v] > 0 && !in_mst[v] && graph[u][v] < key[v] {
                 key[v] = graph[u][v];
                 parent[v] = Some(u);
-                heap.push(PrimNode { vertex: v, key });
+                heap.push(PrimNode { vertex: v, key: key[v] });
             }
         }
     }

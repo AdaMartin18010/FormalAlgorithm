@@ -136,7 +136,7 @@ pub fn bsgs(g: i128, h: i128, p: i128) -> Option<i128> {
 /// - 时间: O(√p)
 /// - 空间: O(√p)
 pub fn ex_bsgs(g: i128, h: i128, p: i128) -> Option<i128> {
-    let mut g = g % p;
+    let g = g % p;
     let mut h = h % p;
 
     if h == 1 {

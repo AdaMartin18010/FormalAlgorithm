@@ -580,7 +580,7 @@ mod example {
         // 324 = 81（格子约束）+ 81（行约束）+ 81（列约束）+ 81（宫约束）
         // 这里简化演示，生成部分约束
 
-        let mut matrix = Vec::new();
+        let matrix = Vec::new();
 
         // 为简化，只生成一个小的子集
         // 实际的数独转换需要完整的729x324矩阵
@@ -684,7 +684,7 @@ mod example {
 
         // 简化为12列的精确覆盖问题
 
-        let matrix = vec![
+        let _matrix = vec![
             // (0,0,1): 格子(0,0), 行0值1, 列0值1
             vec![true, false, false, false, true, false, true, false, false, false, false, false],
             // (0,0,2): 格子(0,0), 行0值2, 列0值2

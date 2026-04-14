@@ -227,9 +227,6 @@ impl<T: Ord + Clone + std::fmt::Debug> SkipList<T> {
             }
         }
         
-        // 防止 Box::from_raw 重复释放，需要重新获取所有权再放回
-        let _ = unsafe { Box::from_raw(new_node_ptr) };
-        
         self.length += 1;
     }
 

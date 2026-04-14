@@ -22,8 +22,7 @@
 //! - 字典/词汇表组织
 //! - 文件系统目录结构
 
-use std::collections::HashMap;
-use std::fmt::{Display, Formatter, Result as FmtResult};
+use std::fmt::Display;
 
 /// 最优BST节点
 #[derive(Debug, Clone)]
@@ -78,6 +77,7 @@ impl<K: Ord + Clone + Display> OptimalBST<K> {
     ///
     /// # 示例
     /// ```
+    /// use formal_algorithms::optimal_bst::OptimalBST;
     /// let keys = vec![10, 20, 30];
     /// let p = vec![0.3, 0.4, 0.1];    // 搜索各关键字的概率
     /// let q = vec![0.1, 0.05, 0.03, 0.02];  // 搜索失败的概率
@@ -265,8 +265,8 @@ impl<K: Ord + Clone + Display> SimpleOptimalBST<K> {
 
         let r = root[i][j];
         let mut node = Box::new(Node::new(self.keys[r].clone()));
-        node.left = self.build_tree(root, i, r - 1);
-        node.right = self.build_tree(root, r + 1, j);
+        node.left = if r > i { self.build_tree(root, i, r - 1) } else { None };
+        node.right = if r < j { self.build_tree(root, r + 1, j) } else { None };
         Some(node)
     }
 }
@@ -338,7 +338,7 @@ mod tests {
         let freq = vec![34, 8, 50];
         
         let opt = SimpleOptimalBST::new(keys.clone(), freq.clone());
-        let (cost, root) = opt.solve();
+        let (_cost, root) = opt.solve();
         
         // 最优结构应该是：12为根，10为左子，20为右子
         // 或者：10为根，右子树是12和20
@@ -381,7 +381,7 @@ mod tests {
         let freq = vec![90, 10];
         
         let opt = SimpleOptimalBST::new(keys.clone(), freq);
-        let (cost, root) = opt.solve();
+        let (_cost, root) = opt.solve();
         
         // 高频键应该在根
         assert!(root.is_some());
@@ -460,7 +460,7 @@ mod example {
         // 编译器符号表优化
         // 变量名及其使用频率
         let identifiers = vec!["i", "j", "count", "sum", "result", "temp", "ptr"];
-        let probs_success = vec![0.25, 0.20, 0.15, 0.12, 0.10, 0.10, 0.05];
+        let probs_success = vec![0.24, 0.19, 0.14, 0.12, 0.10, 0.10, 0.06];
         let probs_fail = vec![0.01, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.01];
         
         println!("Identifier probabilities:");

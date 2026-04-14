@@ -502,7 +502,7 @@ mod tests {
         bf.insert(&"world".to_string());
         
         let bytes = bf.to_bytes();
-        let mut restored = BloomFilter::<String>::from_bytes(&bytes, 100, 0.01);
+        let restored = BloomFilter::<String>::from_bytes(&bytes, 100, 0.01);
         
         assert!(restored.contains(&"hello".to_string()));
         assert!(restored.contains(&"world".to_string()));

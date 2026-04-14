@@ -645,7 +645,7 @@ mod tests {
 
         // 构建100个顶点的图，每10个形成一个SCC
         for i in 0..100 {
-            let next = if (i + 1) % 10 == 0 { i - 9 } else { i + 1 };
+            let _next = if (i + 1) % 10 == 0 { i - 9 } else { i + 1 };
             // 只添加在同一个组内的边
             let cross_edge = if i % 10 == 9 { i - 9 } else { i + 1 };
             graph.insert(i, vec![cross_edge]);

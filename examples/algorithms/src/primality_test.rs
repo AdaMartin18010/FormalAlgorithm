@@ -5,7 +5,6 @@
 //! - Pollard's Rho 因数分解
 //! - 试除法与小素数筛
 
-use std::collections::HashMap;
 
 /// 快速幂（带模）
 ///
@@ -303,7 +302,7 @@ fn trial_division(mut n: u128, limit: u128) -> Vec<u128> {
 /// let factors = factorize(100);
 /// assert_eq!(factors, vec![2, 2, 5, 5]);
 /// ```
-pub fn factorize(mut n: u128) -> Vec<u128> {
+pub fn factorize(n: u128) -> Vec<u128> {
     if n <= 1 {
         return vec![];
     }
@@ -699,7 +698,7 @@ mod tests {
         let primes = sieve_of_eratosthenes(30);
         assert_eq!(primes, vec![2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
         
-        assert_eq!(sieve_of_eratosthenes(2), vec![]);
+        assert_eq!(sieve_of_eratosthenes(2), Vec::<usize>::new());
         assert_eq!(sieve_of_eratosthenes(3), vec![2]);
     }
 

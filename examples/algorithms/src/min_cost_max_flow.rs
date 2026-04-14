@@ -23,8 +23,7 @@
 //! - 任务分配：最优人员分配
 //! - 网络设计：最小成本网络流
 
-use std::collections::{HashMap, VecDeque};
-use std::hash::Hash;
+use std::collections::VecDeque;
 
 /// 边结构体
 #[derive(Clone, Debug)]
@@ -357,7 +356,7 @@ impl MinCostMaxFlow {
         let mut result = Vec::new();
 
         for from in 0..self.n {
-            for (idx, edge) in self.graph[from].iter().enumerate() {
+            for (_idx, edge) in self.graph[from].iter().enumerate() {
                 // 只输出正向边（原始容量大于0的边）
                 if edge.original_capacity > 0 {
                     let flow = edge.original_capacity - edge.capacity;

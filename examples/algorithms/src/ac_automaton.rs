@@ -57,7 +57,7 @@ impl ACAutomaton {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::ac_automaton::ACAutomaton;
+    /// use formal_algorithms::ac_automaton::ACAutomaton;
     /// let ac = ACAutomaton::new();
     /// ```
     pub fn new() -> Self {
@@ -79,7 +79,7 @@ impl ACAutomaton {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::ac_automaton::ACAutomaton;
+    /// use formal_algorithms::ac_automaton::ACAutomaton;
     /// let ac = ACAutomaton::from_patterns(&["he", "she", "his", "hers"]);
     /// ```
     pub fn from_patterns(patterns: &[&str]) -> Self {
@@ -134,7 +134,7 @@ impl ACAutomaton {
             queue.push_back((ch, node_id));
         }
 
-        while let Some((ch, node_id)) = queue.pop_front() {
+        while let Some((_ch, node_id)) = queue.pop_front() {
             // 设置子节点的失败指针
             for (&next_ch, &next_node_id) in &self.nodes[node_id].children.clone() {
                 queue.push_back((next_ch, next_node_id));
@@ -177,7 +177,7 @@ impl ACAutomaton {
     ///
     /// # 示例
     /// ```
-    /// use algorithms::ac_automaton::ACAutomaton;
+    /// use formal_algorithms::ac_automaton::ACAutomaton;
     /// let ac = ACAutomaton::from_patterns(&["he", "she", "his", "hers"]);
     /// let matches = ac.search("ushers");
     /// ```
@@ -222,7 +222,7 @@ impl ACAutomaton {
         let matches = self.search(text);
         matches
             .into_iter()
-            .map(|(id, pattern, end_pos)| {
+            .map(|(_id, pattern, end_pos)| {
                 let start_pos = end_pos - pattern.len();
                 (pattern, start_pos)
             })

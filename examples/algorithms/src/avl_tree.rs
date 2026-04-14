@@ -64,7 +64,7 @@ pub struct AVLTree<T: Ord> {
     size: usize,
 }
 
-impl<T: Ord + Debug> AVLTree<T> {
+impl<T: Ord + Debug + Clone> AVLTree<T> {
     /// 创建空AVL树
     pub fn new() -> Self {
         AVLTree { root: None, size: 0 }
@@ -90,8 +90,10 @@ impl<T: Ord + Debug> AVLTree<T> {
     /// tree.insert(7);
     /// ```
     pub fn insert(&mut self, value: T) {
-        self.root = Self::insert_recursive(self.root.take(), value);
-        self.size += 1;
+        if !self.contains(&value) {
+            self.root = Self::insert_recursive(self.root.take(), value);
+            self.size += 1;
+        }
     }
 
     /// 递归插入并平衡
@@ -104,10 +106,10 @@ impl<T: Ord + Debug> AVLTree<T> {
         // 标准BST插入
         match value.cmp(&node.value) {
             Ordering::Less => {
-                node.left = Self::insert_recursive(node.left.take(), value);
+                node.left = Self::insert_recursive(node.left.take(), value.clone());
             }
             Ordering::Greater => {
-                node.right = Self::insert_recursive(node.right.take(), value);
+                node.right = Self::insert_recursive(node.right.take(), value.clone());
             }
             Ordering::Equal => {
                 // 重复值，不插入
@@ -306,7 +308,7 @@ impl<T: Ord + Debug> AVLTree<T> {
     }
 }
 
-impl<T: Ord + Debug> Default for AVLTree<T> {
+impl<T: Ord + Debug + Clone> Default for AVLTree<T> {
     fn default() -> Self {
         Self::new()
     }

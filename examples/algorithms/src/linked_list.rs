@@ -36,7 +36,6 @@ struct SllNode<T> {
 /// list.push_front(2);
 /// assert_eq!(list.pop_front(), Some(2));
 /// ```
-#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct SinglyLinkedList<T> {
     head: Option<Box<SllNode<T>>>,
     len: usize,

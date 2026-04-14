@@ -321,7 +321,7 @@ mod tests {
     fn test_single_node() {
         let n = 1;
         let colors = vec![42];
-        let mut dsu = DsuOnTree::new(n, colors);
+        let dsu = DsuOnTree::new(n, colors);
 
         let ans = dsu.solve(0);
 

@@ -100,12 +100,14 @@ impl Trie {
             return false;
         }
         
-        self.delete_recursive(&mut self.root, word, 0);
+        if Self::delete_recursive(&mut self.root, word, 0) {
+            self.root = TrieNode::new();
+        }
         self.size -= 1;
         true
     }
     
-    fn delete_recursive(&mut self, node: &mut TrieNode, word: &str, index: usize) -> bool {
+    fn delete_recursive(node: &mut TrieNode, word: &str, index: usize) -> bool {
         if index == word.len() {
             // 到达目标节点
             node.is_end = false;
@@ -116,7 +118,7 @@ impl Trie {
         
         let ch = word.chars().nth(index).unwrap();
         let should_delete_child = if let Some(child) = node.children.get_mut(&ch) {
-            self.delete_recursive(child, word, index + 1)
+            Self::delete_recursive(child, word, index + 1)
         } else {
             false
         };

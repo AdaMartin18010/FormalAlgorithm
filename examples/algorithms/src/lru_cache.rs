@@ -83,7 +83,7 @@ where
     /// ```
     pub fn new(capacity: usize) -> Self {
         // 使用 MaybeUninit 来创建虚拟头尾节点，避免需要 Default
-        use std::mem::MaybeUninit;
+        
         
         let mut cache = Self {
             map: HashMap::with_capacity(capacity),
