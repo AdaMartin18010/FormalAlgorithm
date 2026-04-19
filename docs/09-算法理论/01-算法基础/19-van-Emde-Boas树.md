@@ -1,5 +1,10 @@
 # van Emde Boas 树（vEB Tree）
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 > 对标：CLRS 第4版 Chapter 20
 
 ## 一、理论基础
@@ -148,3 +153,16 @@ $$
 
 - Cormen, T. H., et al. *Introduction to Algorithms* (4th ed.). MIT Press. Chapter 20.
 - van Emde Boas, P. (1975). Preserving order in a forest in less than logarithmic time. *FOCS*.
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

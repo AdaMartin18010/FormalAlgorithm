@@ -79,3 +79,9 @@ $$
 
 1. **D. Gusfield**, *Algorithms on Strings, Trees, and Sequences: Computer Science and Computational Biology*, Cambridge University Press, 1997.
 2. **T. H. Cormen et al.**, *Introduction to Algorithms*, 3rd ed., MIT Press, 2009.
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

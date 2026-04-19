@@ -29,10 +29,10 @@ docs\术语与符号总表-v2.md:195
   [missing] 定义后可能缺少引用: 4. **定义标记**：首次定义使用粗体，如 **定义 (Definition)**...
 
 docs\01-基础理论\02-数理逻辑基础-六维补充.md:444
-  [missing] 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $\Gamma \vdash \ph...
+  [missing] 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $\Gamma \vdash \ph\cdots
 
 docs\知识体系\算法概念图谱.md:87
-  [missing] 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：...
+  [missing] 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：\cdots
 
 docs\知识体系\算法概念图谱.md:150
   [missing] 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + f(n)$，其中$a \geq 1, b > ...
@@ -65,13 +65,13 @@ docs\质量报告\citation-check-report.md:12
   [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用:    **定理 (Church-Turing论题)**: 任何可计算函数都可由图灵机计...
 
 docs\质量报告\citation-check-report.md:20
-  [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $...
+  [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $\cdots
 
 docs\质量报告\citation-check-report.md:24
-  [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：......
+  [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：\cdots\cdots
 
 docs\质量报告\citation-check-report.md:28
-  [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + f(n)$，...
+  [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + f(n)$，\cdots
 
 docs\质量报告\citation-check-report.md:32
   [missing] 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (空间层次定理)**: 对于空间可构造函数$s(n) \geq \log n...

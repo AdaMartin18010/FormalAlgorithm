@@ -669,3 +669,9 @@ Agda provides an ideal platform for research and practice in formal algorithm th
 
 4. **The Agda Team.** (2023). *The Agda Reference Manual*. Agda Documentation.
    - Agda官方参考手册。
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

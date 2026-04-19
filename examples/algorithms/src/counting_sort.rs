@@ -2,6 +2,17 @@
 //!
 //! 计数排序是一种非比较排序算法，适用于整数范围已知且不大的场景。
 //! 时间复杂度 O(n + k)，当 k = O(n) 时为线性时间。
+//!
+//! ## 形式化规范 (Formal Specification)
+//!
+//! 对应 Lean 证明: [`examples/lean_proofs/counting_sort.lean`]
+//!
+//! | Rust 规范 | Lean 谓词/定理 | 状态 |
+//! |-----------|---------------|------|
+//! | `counting_sort` 输出有序 | `binary_counting_sort_sorted` | ✅ 已证明 |
+//! | 0 的计数守恒 | `binary_counting_sort_zero_count` | ✅ 已证明 |
+//! | 1 的计数守恒 | `binary_counting_sort_one_count` | ✅ 已证明 |
+//! | 排列性质 (multiset 等价) | `binary_counting_sort_permutation` | ⚠️ PO-001 (需 mathlib4 `List.Perm`) |
 
 use crate::{AlgorithmError, SearchResult};
 

@@ -20,12 +20,12 @@
 ### docs\01-基础理论\02-数理逻辑基础-六维补充.md:444
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $\Gamma \vdash \ph...
+- 信息: 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $\Gamma \vdash \ph\cdots
 
 ### docs\知识体系\算法概念图谱.md:87
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：...
+- 信息: 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：\cdots
 
 ### docs\知识体系\算法概念图谱.md:150
 
@@ -80,17 +80,17 @@
 ### docs\质量报告\citation-check-report.md:20
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $...
+- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (哥德尔完备性)**：若 $\Gamma \models \phi$，则 $\cdots
 
 ### docs\质量报告\citation-check-report.md:24
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：......
+- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (算法正确性)**: 若算法$A$满足循环不变式$P$，且：\cdots\cdots
 
 ### docs\质量报告\citation-check-report.md:28
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + f(n)$，...
+- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + f(n)$，\cdots
 
 ### docs\质量报告\citation-check-report.md:32
 
@@ -120,32 +120,32 @@
 ### docs\质量报告\citation-check-report.md:52
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (割性质)**: 设$S \subset V$，$e$是横跨割$(S, V-...
+- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: **定理 (割性质)**: 设$S \subset V$，$e$是横跨割$(S, V-\cdots
 
 ### docs\质量报告\citation-check-report.md:60
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用:    **定理 (Church-Turing论题)*...
+- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用:    **定理 (Church-Turing论题)*\cdots
 
 ### docs\质量报告\citation-check-report.md:68
 
 - 类型: missing
-- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用:   [missing] 定理后可能缺少引用:    **定理 (Church-Turi...
+- 信息: 定理后可能缺少引用: - 信息: 定理后可能缺少引用:   [missing] 定理后可能缺少引用:    **定理 (Church-Turi\cdots
 
 ### docs\质量报告\quality-check-report.md:28
 
 - 类型: missing
-- 信息: 定义后可能缺少引用:   [missing] 定义后可能缺少引用: 4. **定义标记**：首次定义使用粗体，如 **定义 (Definiti...
+- 信息: 定义后可能缺少引用:   [missing] 定义后可能缺少引用: 4. **定义标记**：首次定义使用粗体，如 **定义 (Definiti\cdots
 
 ### docs\质量报告\quality-check-report.md:58
 
 - 类型: missing
-- 信息: 定义后可能缺少引用:   [missing] 定义后可能缺少引用: - 信息: 定义后可能缺少引用: 4. **定义标记**：首次定义使用粗体...
+- 信息: 定义后可能缺少引用:   [missing] 定义后可能缺少引用: - 信息: 定义后可能缺少引用: 4. **定义标记**：首次定义使用粗体\cdots
 
 ### docs\质量报告\quality-check-report.md:25
 
 - 类型: missing
-- 信息: 定理后可能缺少引用:   [missing] 定理后可能缺少引用:    **定理 (Church-Turing论题)**: 任何可计算函数都...
+- 信息: 定理后可能缺少引用:   [missing] 定理后可能缺少引用:    **定理 (Church-Turing论题)**: 任何可计算函数都\cdots
 
 ### docs\质量报告\quality-check-report.md:31
 
@@ -160,7 +160,7 @@
 ### docs\质量报告\quality-check-report.md:37
 
 - 类型: missing
-- 信息: 定理后可能缺少引用:   [missing] 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + ...
+- 信息: 定理后可能缺少引用:   [missing] 定理后可能缺少引用: **定理 (主定理)**: 对于递推式$T(n) = aT(n/b) + \cdots
 
 ### docs\质量报告\quality-check-report.md:40
 

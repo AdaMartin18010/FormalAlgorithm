@@ -1,5 +1,10 @@
 # Johnson 算法
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 > 对标：CLRS 第4版 Chapter 25.3
 
 ## 一、理论基础
@@ -111,3 +116,16 @@ Johnson 算法返回的距离矩阵 `distances[u][v]` 等于原图中 $u$ 到 $v
 ## 参考
 
 - Cormen, T. H., et al. *Introduction to Algorithms* (4th ed.). MIT Press. Chapter 25.3.
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

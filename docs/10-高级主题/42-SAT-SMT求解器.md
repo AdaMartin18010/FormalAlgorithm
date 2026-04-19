@@ -1,5 +1,10 @@
 # SAT/SMT 求解器原理
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 > 对应课程：CMU 15-414 / Stanford CS 238V
 
 ## 1. SAT 求解
@@ -192,3 +197,15 @@ else:
 4. **Moura, L. de & Bjørner, N. (2008)**. *Z3: An Efficient SMT Solver*. TACAS 2008. 描述了工业级 SMT 求解器 Z3 的设计与实现。
 
 5. **Biere, A., Heule, M., van Maaren, H., & Walsh, T. (eds.) (2009)**. *Handbook of Satisfiability*. IOS Press. SAT 与 SMT 求解的权威参考书。
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

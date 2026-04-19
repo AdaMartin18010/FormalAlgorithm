@@ -1479,3 +1479,16 @@ where
   | BinaryTree.empty => none
   | BinaryTree.node x _ _ => some x
 ```
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

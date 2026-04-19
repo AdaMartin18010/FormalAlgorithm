@@ -1,6 +1,16 @@
 //! 图的广度优先搜索（BFS）和深度优先搜索（DFS）实现
 //!
 //! BFS和DFS是图遍历的基础算法，广泛应用于路径搜索、连通性检测等场景。
+//!
+//! ## 形式化规范 (Formal Specification)
+//!
+//! 对应 Lean 证明: [`examples/lean_proofs/graph_proofs.lean`]
+//!
+//! | Rust 规范 | Lean 谓词/定理 | 状态 |
+//! |-----------|---------------|------|
+//! | BFS 遍历实现 | `bfs` / `bfs_aux` | ✅ 已实现 |
+//! | 访问节点必可达 | `bfs_visits_only_reachable` | ⚠️ PO-003 (需 well-founded 递归 + `Finset`) |
+//! | 可达节点必被访问 (有限图) | `bfs_visits_all_reachable_finite` | ⚠️ PO-004 (需 `Finset` / well-ordering) |
 
 use std::collections::{HashMap, HashSet, VecDeque};
 use std::hash::Hash;

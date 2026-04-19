@@ -1,5 +1,10 @@
 # LCS（最长公共子序列）实际应用案例
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 ## 应用场景1：版本控制Diff算法
 
 ### 问题描述
@@ -488,3 +493,15 @@ if __name__ == '__main__':
 
 - **工具**：BLAST、ClustalW、MAFFT
 - **论文**："A General Method Applicable to the Search for Similarities" - Smith & Waterman, 1981
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

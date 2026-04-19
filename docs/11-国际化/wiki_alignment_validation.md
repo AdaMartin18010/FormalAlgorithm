@@ -352,3 +352,15 @@ python scripts/check_definition_diff.py \
 
 *文档生成时间: 2026-04-08*
 *版本: 1.0*
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

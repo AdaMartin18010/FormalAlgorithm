@@ -3,6 +3,16 @@
 //! 使用动态规划求解所有顶点对之间的最短路径。
 //! 支持负权边，可检测负权环。
 //! 对标: CLRS Chapter 25.2
+//!
+//! ## 形式化规范 (Formal Specification)
+//!
+//! 对应 Lean 证明: [`examples/lean_proofs/floyd_warshall.lean`]
+//!
+//! | Rust 规范 | Lean 谓词/定理 | 状态 |
+//! |-----------|---------------|------|
+//! | 三层循环核心 | `floydWarshall` | ✅ 已实现 |
+//! | 循环不变式 | `LoopInvariant k d n` | ✅ 已定义 |
+//! | 算法正确性 | `floyd_warshall_correctness` | ⚠️ PO-002 (需 mathlib4 `infimum` / well-ordering) |
 
 use crate::AlgorithmError;
 

@@ -112,7 +112,12 @@ def check_math_in_file(file_path: Path) -> List[SymbolIssue]:
 
 def main():
     """主函数"""
-    doc_path = Path('docs')
+    # 自动定位项目根目录（tools/的上级目录）
+    root = Path(__file__).resolve().parent.parent
+    doc_path = root / 'docs'
+    if not doc_path.exists():
+        print(f"错误: 文档目录不存在: {doc_path}")
+        return
     all_issues = []
     
     md_files = list(doc_path.rglob('*.md'))
@@ -177,7 +182,7 @@ def main():
         report_lines.append(f"- 建议: {issue.suggestion}")
         report_lines.append("")
     
-    report_path.parent.mkdir(exist_ok=True)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text('\n'.join(report_lines), encoding='utf-8')
     print(f"详细报告已保存: {report_path}")
 

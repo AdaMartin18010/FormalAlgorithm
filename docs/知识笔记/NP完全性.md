@@ -517,7 +517,7 @@ if __name__ == "__main__":
 
    使用自归约性（self-reducibility）：
 
-   对于变量$x_1, x_2, ..., x_n$：
+   对于变量$x_1, x_2, \cdots, x_n$：
    1. 检查公式是否可满足，若否，返回无解
    2. 令$x_1 = \text{True}$，检查剩余公式是否可满足
    3. 若是，则$x_1$赋值为真，继续处理剩余变量
@@ -563,7 +563,7 @@ if __name__ == "__main__":
 
    **3-SAT ≤p Clique**:
 
-   给定3-CNF公式$φ = C_1 \wedge C_2 \wedge ... \wedge C_m$，每个$C_i = (l_{i1} \vee l_{i2} \vee l_{i3})$。
+   给定3-CNF公式$φ = C_1 \wedge C_2 \wedge \cdots \wedge C_m$，每个$C_i = (l_{i1} \vee l_{i2} \vee l_{i3})$。
 
    构造图$G$：
    - 顶点集：所有文字出现$V = \{v_{ij} | 1 \leq i \leq m, 1 \leq j \leq 3\}$

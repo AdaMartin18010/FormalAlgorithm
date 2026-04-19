@@ -114,7 +114,12 @@ def check_document_structure(file_path: Path) -> Dict[str, Any]:
 
 def main():
     """主函数"""
-    doc_path = Path('docs')
+    # 自动定位项目根目录（tools/的上级目录）
+    root = Path(__file__).resolve().parent.parent
+    doc_path = root / 'docs'
+    if not doc_path.exists():
+        print(f"错误: 文档目录不存在: {doc_path}")
+        return
     results = []
     
     md_files = list(doc_path.rglob('*.md'))
@@ -137,7 +142,10 @@ def main():
     print("文档结构检查报告")
     print("=" * 60)
     print(f"检查文档数: {total}")
-    print(f"有文档头: {with_header} ({with_header/total*100:.1f}%)")
+    if total > 0:
+        print(f"有文档头: {with_header} ({with_header/total*100:.1f}%)")
+    else:
+        print(f"有文档头: {with_header} (N/A)")
     print(f"缺少章节: {with_missing_sections}")
     print(f"有断链: {with_broken_links}")
     print(f"有其他问题: {with_issues}")
@@ -193,7 +201,7 @@ def main():
             report_lines.append(f"- ⚠️ 断链: 行{link['line']} [{link['text']}]({link['target']})")
         report_lines.append("")
     
-    report_path.parent.mkdir(exist_ok=True)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text('\n'.join(report_lines), encoding='utf-8')
     print(f"\n详细报告已保存: {report_path}")
 

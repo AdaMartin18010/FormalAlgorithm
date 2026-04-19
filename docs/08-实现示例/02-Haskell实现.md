@@ -702,7 +702,7 @@ instance Applicative (State s) where
 
 instance Monad (State s) where
     return = pure
-    (State f) >>= g = State $ \s ->
+    (State f) >\geq g = State $ \s ->
         let (a, s') = f s
             (State h) = g a
         in h s'
@@ -1430,3 +1430,16 @@ postorder :: Tree a -> [a]
 postorder Empty = []
 postorder (Node x left right) = postorder left ++ postorder right ++ [x]
 ```
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

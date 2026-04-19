@@ -98,3 +98,9 @@ $LCP[rank[i+1]] \ge LCP[rank[i]] - 1$。
 2. **T. Kasai et al.**, "Linear-Time Longest-Common-Prefix Computation in Suffix Arrays and Its Applications", *CPM*, 2001.
 3. **G. Nong, S. Zhang, W. H. Chan**, "Two Efficient Algorithms for Linear Time Suffix Array Construction", *IEEE Transactions on Computers*, 60(10), 2011.
 4. **T. H. Cormen et al.**, *Introduction to Algorithms*, 3rd ed., MIT Press, 2009.
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

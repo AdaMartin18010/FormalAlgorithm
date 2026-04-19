@@ -2115,3 +2115,16 @@ cargo run --bin ga_min
   - `docs/08-实现示例/02-Haskell实现.md`
   - `docs/08-实现示例/03-Lean实现.md`
   - `docs/术语与符号总表.md`
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

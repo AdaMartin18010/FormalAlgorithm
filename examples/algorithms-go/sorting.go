@@ -1,11 +1,9 @@
-// sorting.go - Go语言排序算法实现
-package main
+// Package algorithms provides core algorithm implementations in Go.
+package algorithms
 
-import (
-	"fmt"
-)
-
-// QuickSort 快速排序 - 原地排序
+// QuickSort sorts a slice of ints in-place using the quicksort algorithm.
+// Time complexity: O(n log n) average, O(n²) worst case.
+// Space complexity: O(log n) due to recursion.
 func QuickSort(arr []int) {
 	if len(arr) <= 1 {
 		return
@@ -24,7 +22,6 @@ func quickSortHelper(arr []int, low, high int) {
 func partition(arr []int, low, high int) int {
 	pivot := arr[high]
 	i := low - 1
-	
 	for j := low; j < high; j++ {
 		if arr[j] <= pivot {
 			i++
@@ -35,23 +32,23 @@ func partition(arr []int, low, high int) int {
 	return i + 1
 }
 
-// MergeSort 归并排序
+// MergeSort returns a new sorted slice using the merge sort algorithm.
+// Time complexity: O(n log n). Space complexity: O(n).
 func MergeSort(arr []int) []int {
 	if len(arr) <= 1 {
-		return arr
+		result := make([]int, len(arr))
+		copy(result, arr)
+		return result
 	}
-	
 	mid := len(arr) / 2
 	left := MergeSort(arr[:mid])
 	right := MergeSort(arr[mid:])
-	
 	return merge(left, right)
 }
 
 func merge(left, right []int) []int {
 	result := make([]int, 0, len(left)+len(right))
 	i, j := 0, 0
-	
 	for i < len(left) && j < len(right) {
 		if left[i] <= right[j] {
 			result = append(result, left[i])
@@ -61,25 +58,23 @@ func merge(left, right []int) []int {
 			j++
 		}
 	}
-	
 	result = append(result, left[i:]...)
 	result = append(result, right[j:]...)
 	return result
 }
 
-// HeapSort 堆排序
+// HeapSort sorts a slice of ints in-place using the heap sort algorithm.
+// Time complexity: O(n log n). Space complexity: O(1).
 func HeapSort(arr []int) {
 	n := len(arr)
 	if n <= 1 {
 		return
 	}
-	
-	// 建堆
+	// Build max heap
 	for i := n/2 - 1; i >= 0; i-- {
 		heapify(arr, n, i)
 	}
-	
-	// 提取元素
+	// Extract elements
 	for i := n - 1; i > 0; i-- {
 		arr[0], arr[i] = arr[i], arr[0]
 		heapify(arr, i, 0)
@@ -90,21 +85,20 @@ func heapify(arr []int, heapSize, root int) {
 	largest := root
 	left := 2*root + 1
 	right := 2*root + 2
-	
 	if left < heapSize && arr[left] > arr[largest] {
 		largest = left
 	}
 	if right < heapSize && arr[right] > arr[largest] {
 		largest = right
 	}
-	
 	if largest != root {
 		arr[root], arr[largest] = arr[largest], arr[root]
 		heapify(arr, heapSize, largest)
 	}
 }
 
-// InsertionSort 插入排序
+// InsertionSort sorts a slice of ints in-place using insertion sort.
+// Time complexity: O(n²) worst case, O(n) best case.
 func InsertionSort(arr []int) {
 	for i := 1; i < len(arr); i++ {
 		key := arr[i]
@@ -117,52 +111,27 @@ func InsertionSort(arr []int) {
 	}
 }
 
-// CountingSort 计数排序
+// CountingSort returns a new sorted slice using counting sort.
+// Requires all elements to be non-negative and within the range [0, maxVal].
+// Time complexity: O(n + k) where k = maxVal. Space complexity: O(n + k).
 func CountingSort(arr []int, maxVal int) []int {
-	count := make([]int, maxVal+1)
-	
-	// 计数
-	for _, v := range arr {
-		count[v]++
+	if len(arr) == 0 {
+		return []int{}
 	}
-	
-	// 累加
+	count := make([]int, maxVal+1)
+	for _, v := range arr {
+		if v >= 0 && v <= maxVal {
+			count[v]++
+		}
+	}
 	for i := 1; i <= maxVal; i++ {
 		count[i] += count[i-1]
 	}
-	
-	// 输出
 	output := make([]int, len(arr))
 	for i := len(arr) - 1; i >= 0; i-- {
-		output[count[arr[i]]-1] = arr[i]
-		count[arr[i]]--
+		v := arr[i]
+		output[count[v]-1] = v
+		count[v]--
 	}
-	
 	return output
-}
-
-func main() {
-	// 测试快速排序
-	arr1 := []int{3, 6, 8, 10, 1, 2, 1}
-	fmt.Println("Original:", arr1)
-	QuickSort(arr1)
-	fmt.Println("QuickSort:", arr1)
-	
-	// 测试归并排序
-	arr2 := []int{38, 27, 43, 3, 9, 82, 10}
-	fmt.Println("\nOriginal:", arr2)
-	sorted := MergeSort(arr2)
-	fmt.Println("MergeSort:", sorted)
-	
-	// 测试堆排序
-	arr3 := []int{12, 11, 13, 5, 6, 7}
-	fmt.Println("\nOriginal:", arr3)
-	HeapSort(arr3)
-	fmt.Println("HeapSort:", arr3)
-	
-	// 测试计数排序
-	arr4 := []int{4, 2, 2, 8, 3, 3, 1}
-	fmt.Println("\nOriginal:", arr4)
-	counted := CountingSort(arr4, 8)
-	fmt.Println("CountingSort:", counted)
 }

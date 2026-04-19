@@ -1,5 +1,10 @@
 # Hopcroft-Karp 算法
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 > 对标：CLRS 第4版 Chapter 26.6
 
 ## 一、理论基础
@@ -122,3 +127,16 @@ return 匹配结果
 
 - Cormen, T. H., et al. *Introduction to Algorithms* (4th ed.). MIT Press. Chapter 26.6.
 - Hopcroft, J. E., & Karp, R. M. (1973). An $n^{5/2}$ algorithm for maximum matchings in bipartite graphs. *SIAM J. Comput.*, 2(4), 225–231.
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
+

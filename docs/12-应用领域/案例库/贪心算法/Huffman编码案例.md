@@ -1,5 +1,10 @@
 # Huffman编码实际应用案例
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 ## 应用场景1：文件压缩系统
 
 ### 问题描述
@@ -382,3 +387,15 @@ if __name__ == '__main__':
 - **压缩工具**：gzip、zip、7zip
 - **图像格式**：JPEG、PNG
 - **论文**："A Method for the Construction of Minimum-Redundancy Codes" - Huffman, 1952
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

@@ -101,6 +101,18 @@ pub mod merge_sort;
 pub mod quick_sort;
 /// 堆排序模块
 pub mod heap_sort;
+/// 插入排序模块
+pub mod insertion_sort;
+/// 选择排序模块
+pub mod selection_sort;
+/// 冒泡排序模块
+pub mod bubble_sort;
+/// 0/1背包问题模块
+pub mod knapsack;
+/// 最长递增子序列模块
+pub mod longest_increasing_subsequence;
+/// 硬币找零问题模块
+pub mod coin_change;
 
 // 搜索算法模块
 /// 二分搜索模块
@@ -109,6 +121,16 @@ pub mod binary_search;
 // 图算法模块
 /// Dijkstra算法模块
 pub mod dijkstra;
+/// A*搜索算法模块
+pub mod astar;
+/// 二叉堆与优先队列模块
+pub mod binary_heap;
+/// 二叉搜索树模块
+pub mod binary_search_tree;
+/// KMP字符串匹配模块
+pub mod kmp;
+/// Median of Medians选择算法模块
+pub mod median_of_medians;
 /// 图遍历算法 - BFS/DFS模块
 pub mod graph_bfs_dfs;
 
@@ -303,6 +325,16 @@ pub mod lup_decomposition;
 pub use heap_sort::heap_sort;
 pub use merge_sort::merge_sort;
 pub use quick_sort::quick_sort;
+pub use insertion_sort::insertion_sort;
+pub use selection_sort::selection_sort;
+pub use bubble_sort::bubble_sort;
+pub use binary_heap::{BinaryHeap, MinHeap, build_max_heap};
+pub use knapsack::{knapsack_01, unbounded_knapsack, fractional_knapsack};
+pub use longest_increasing_subsequence::{lis_length_dp, lis_length_binary, lis_dp, lis_binary};
+pub use coin_change::{coin_change_min, coin_change_ways};
+pub use binary_search_tree::BinarySearchTree;
+pub use kmp::kmp_search;
+pub use median_of_medians::{select, median};
 
 // 搜索算法
 pub use binary_search::binary_search;

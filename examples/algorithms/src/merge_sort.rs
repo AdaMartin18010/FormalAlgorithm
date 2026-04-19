@@ -2,6 +2,15 @@
 //!
 //! 归并排序是一种基于分治策略的稳定排序算法。
 //! 它将数组递归地分成两半，分别排序后再合并。
+//!
+//! ## 形式化规范 (Formal Specification)
+//!
+//! 对应 Lean 证明: [`examples/lean_proofs/sorting_proofs.lean`]
+//!
+//! | Rust 规范 | Lean 谓词/定理 | 状态 |
+//! |-----------|---------------|------|
+//! | `merge_sort` 输出有序 | `mergeSort_sorted` | ✅ 已证明 (含 `merge_sorted` 引理) |
+//! | 排列性质 (multiset 等价) | `List.Perm (mergeSort xs) xs` | ⚠️ 待扩展 (需 mathlib4 `List.Perm`) |
 
 
 /// 对可变切片进行归并排序

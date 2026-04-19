@@ -187,11 +187,22 @@ theorem binary_counting_sort_stable (xs : List Nat)
   · exact binary_counting_sort_zero_count xs
   · exact binary_counting_sort_one_count xs
 
--- 排列性质：输出包含与输入相同的元素（仅使用 sorry）
+-- 证明义务 PO-001：排列性质
+-- 输出包含与输入相同的元素（multiset 等价）。
+--
+-- 证明思路（需 mathlib4 的 List.Perm）：
+-- 1. 已证 countValue (binaryCountingSort xs) 0 = countValue xs 0
+--    和 countValue (binaryCountingSort xs) 1 = countValue xs 1。
+-- 2. 对于二进制输入（仅含 0/1），上述两条即说明两个列表中 0 和 1 的数量完全相同。
+-- 3. 由 mathlib4 的 List.Perm 判定定理：若两个列表中每个元素出现次数相同，
+--    则它们互为排列（List.Perm xs ys ↔ ∀ v, count v xs = count v ys）。
+-- 4. 因此 binaryCountingSort xs ~ xs（Perm 关系）。
+--
+-- 依赖外部工具：mathlib4 的 `List.Perm` 定义与判定定理。
+-- 当前使用 sorry 占位，待环境具备后替换为实际证明。
 theorem binary_counting_sort_permutation (xs : List Nat)
     (_h : ∀ x ∈ xs, x = 0 ∨ x = 1)
     : List.Perm (binaryCountingSort xs) xs := by
-  -- 需要 mathlib4 的 List.Perm 工具
   sorry
 
 -- 完整正确性定理

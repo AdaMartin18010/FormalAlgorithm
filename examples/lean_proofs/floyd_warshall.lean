@@ -64,24 +64,33 @@ def LoopInvariant (k : Vertex) (d : Array (Array Weight)) (n : Vertex) : Prop :=
     ((d[i]!)[j]!) = shortestPathWeight
       (λ a b => if ((d[a]!)[b]!) < INF then some ((d[a]!)[b]!) else none) i j
 
--- 主定理骨架
+-- 证明义务 PO-002：Floyd-Warshall 算法正确性
+-- 若图中不存在负权环，则算法终止后 dist[i][j] 等于从 i 到 j 的最短路径权重。
+--
+-- 证明思路（需 mathlib4 的 infimum / well-ordering 工具）：
+-- 1. 对 k 进行数学归纳，证明循环不变式 LoopInvariant k d n。
+-- 2. 基例 k=0：不允许任何中间顶点，距离矩阵仅含直接边权重。
+--    此时 d[i][j] = w(i,j) 若边存在，否则 = INF。
+-- 3. 归纳步骤：假设对 k 成立，考虑允许使用顶点 k 的情况。
+--    新最短路径 = min(旧最短路径, 经过 k 的最短路径)。
+--    经过 k 的路径可拆分为 i→k 与 k→j，两段均只使用 {0,…,k-1} 作为中间顶点，
+--    其最优权重已由归纳假设给出（即 d[i][k] 与 d[k][j]）。
+-- 4. 终止时 k=n，允许所有顶点作为中间点，故矩阵存储全局最短路径。
+-- 5. no_neg_cycle 保证不存在权重为负的环，从而最短路径是良定义的
+--    （不存在无限递减的路径序列）。
+--
+-- 依赖外部工具：
+--   - mathlib4 的 `infimum` / `sInf` 用于定义 shortestPathWeight
+--   - mathlib4 的 `WellFounded` 或 `Set.Finite` 用于处理路径集合的极小元存在性
+--   - `Array.get!` 的安全访问引理（可用 `Fin` 索引替代以消除 `!`）
+--
+-- 当前使用 sorry 占位，待环境具备后替换为实际证明。
 theorem floyd_warshall_correctness
     (n : Vertex)
     (edges : List (Vertex × Vertex × Weight))
     (no_neg_cycle : ∀ (i : Vertex), i < n →
       ((floydWarshall n (initialDist n edges))[i]!)[i]! ≥ 0)
     : LoopInvariant n (floydWarshall n (initialDist n edges)) n := by
-  /-
-    完整证明思路：
-    1. 对 k 进行数学归纳，证明循环不变式。
-    2. 基例 k=0：不允许任何中间顶点，距离矩阵仅含直接边权重。
-    3. 归纳步骤：假设对 k 成立，考虑允许使用顶点 k 的情况。
-       新最短路径 = min(旧最短路径, 经过 k 的最短路径)。
-       经过 k 的路径可拆分为 i→k 与 k→j，两段均只使用 {0,…,k-1} 作为中间顶点，
-       其最优权重已由归纳假设给出。
-    4. 终止时 k=n，允许所有顶点作为中间点，故矩阵存储全局最短路径。
-    5. no_neg_cycle 保证不存在权重为负的环，从而最短路径是良定义的。
-  -/
   sorry
 
 -- 示例验证（使用 #eval! 以允许 sorry 公理）
