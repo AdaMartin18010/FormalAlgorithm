@@ -1,0 +1,1 @@
+line1\n$P \rightarrow Q$\nline2\n
