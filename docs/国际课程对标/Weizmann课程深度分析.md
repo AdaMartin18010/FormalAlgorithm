@@ -1,5 +1,10 @@
 # 魏茨曼研究所 (Weizmann Institute of Science) 课程深度分析
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 > **分析日期**: 2026-04-09
 > **分析版本**: v1.0
 > **对标项目**: 算法规范与模型设计知识体系
@@ -257,7 +262,7 @@
 1. **两方通信复杂性**
    - 确定性通信复杂性
    - 矩形覆盖与秩下界
-   -  fooling set方法
+   - fooling set方法
 
 2. **随机与量子通信**
    - 随机通信复杂性
@@ -787,6 +792,7 @@
 #### 1. 概率方法的重要性
 
 魏茨曼研究所将概率方法作为核心课程，体现了其在现代理论CS中的中心地位。建议项目在现有概率论基础上：
+
 - 扩充概率方法专题，包含期望论证、LLL、集中不等式
 - 增加概率方法在算法设计中的应用案例
 - 补充随机组合结构的分析技术
@@ -794,6 +800,7 @@
 #### 2. 理论与密码学的深度融合
 
 魏茨曼的密码学课程强调理论基础而非实现细节：
+
 - 现有项目密码学内容偏重应用，需补充理论基础
 - 建议增加零知识证明、承诺方案、MPC等理论内容
 - 引入密码学与复杂性理论的联系
@@ -801,6 +808,7 @@
 #### 3. 分布式算法的理论化
 
 David Peleg的分布式算法课程展示了分布式计算的理论深度：
+
 - 补充LOCAL和CONGEST计算模型
 - 增加分布式图算法的下界分析
 - 引入网络分解等高级主题
@@ -808,6 +816,7 @@ David Peleg的分布式算法课程展示了分布式计算的理论深度：
 #### 4. 数学基础的强化
 
 魏茨曼的深厚数学传统提示我们：
+
 - 线性代数方法在算法中的应用需加强
 - 代数复杂性理论可作为高级主题
 - 组合数学工具需系统化整理
@@ -913,8 +922,8 @@ docs/
 
 ---
 
-**文档版本**: v1.0  
-**最后更新**: 2026-04-09  
+**文档版本**: v1.0
+**最后更新**: 2026-04-09
 **下次审查**: 建议6个月后根据项目进展更新
 
 ---
@@ -922,10 +931,12 @@ docs/
 ## 附录: 参考资源
 
 ### 魏茨曼研究所官方资源
+
 - 计算机科学与应用数学系: <https://www.weizmann.ac.il/feinberg/computerscience>
 - 理论CS研究组: <https://www.weizmann.ac.il/dekelts/>
 
 ### 核心教授个人页面
+
 - Uriel Feige: <https://www.weizmann.ac.il/feinberg/deptSites/computerScience/people/faculty/uriel-feige>
 - Ran Raz: <https://www.weizmann.ac.il/math/dekelts/>
 - Irit Dinur: <https://www.weizmann.ac.il/math/dekelts/>
@@ -933,8 +944,21 @@ docs/
 - David Peleg: <https://www.weizmann.ac.il/math/dekelts/>
 
 ### 推荐教材
+
 1. Alon, N. & Spencer, J.H. (2016). *The Probabilistic Method* (4th ed.). Wiley.
 2. Goldreich, O. (2001). *Foundations of Cryptography*. Cambridge University Press.
 3. Arora, S. & Barak, B. (2009). *Computational Complexity: A Modern Approach*. Cambridge University Press.
 4. Vazirani, V.V. (2001). *Approximation Algorithms*. Springer.
 5. Peleg, D. (2000). *Distributed Computing: A Locality-Sensitive Approach*. SIAM.
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

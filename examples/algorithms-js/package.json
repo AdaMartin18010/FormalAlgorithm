@@ -1,16 +1,22 @@
 {
   "name": "algorithms-js",
   "version": "1.0.0",
-  "description": "经典算法JavaScript实现 - 排序、数据结构",
+  "description": "经典算法JavaScript实现 - 排序、搜索、图算法、动态规划、数据结构",
   "main": "sorting.js",
   "scripts": {
-    "test": "node sorting.js && node data_structures.js",
+    "test": "node sorting.js && node data_structures.js && node search.js && node graph.js && node dynamic.js",
     "sort": "node sorting.js",
+    "search": "node search.js",
+    "graph": "node graph.js",
+    "dynamic": "node dynamic.js",
     "ds": "node data_structures.js"
   },
   "keywords": [
     "algorithm",
     "sorting",
+    "searching",
+    "graph",
+    "dynamic-programming",
     "data-structures",
     "javascript"
   ],

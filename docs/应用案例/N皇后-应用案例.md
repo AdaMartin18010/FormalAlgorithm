@@ -1,9 +1,14 @@
 # N皇后实际应用案例
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 ## 案例概述
 
-**算法**: N皇后问题 (N-Queens) - 回溯算法  
-**应用领域**: 约束满足问题、排课系统、资源分配、组合优化  
+**算法**: N皇后问题 (N-Queens) - 回溯算法
+**应用领域**: 约束满足问题、排课系统、资源分配、组合优化
 **案例来源**: 谜题求解器 / 排课算法 / 测试用例生成
 
 ## 应用场景描述
@@ -11,6 +16,7 @@
 ### 背景
 
 N皇后是回溯算法的经典示例：
+
 - **排课系统**: 教师-教室-时间约束满足
 - **资源分配**: 不冲突的资源调度
 - **芯片设计**: 电路布局约束
@@ -21,10 +27,12 @@ N皇后是回溯算法的经典示例：
 **场景 - 大学排课系统**:
 
 **输入**:
+
 - 课程列表、教师、教室
 - 约束：教师不能同时上两门课、教室容量等
 
 **输出**:
+
 - 满足所有约束的课程表
 
 ### 为什么选择回溯算法
@@ -124,15 +132,15 @@ impl<V: Eq + Hash + Clone, D: Clone> ConstraintSatisfactionProblem<V, D> {
         }
 
         let var = self.select_unassigned_variable(assignment);
-        
+
         for value in self.domains.get(&var).unwrap_or(&vec![]) {
             if self.is_consistent(&var, value, assignment) {
                 assignment.insert(var.clone(), value.clone());
-                
+
                 if let Some(result) = self.backtrack(assignment) {
                     return Some(result);
                 }
-                
+
                 assignment.remove(&var);
             }
         }
@@ -183,3 +191,15 @@ use std::collections::HashMap;
 ## 参考资料
 
 - [Golomb 1966] Golomb, S. W., & Baumert, L. D. (1966). "Backtrack programming."
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

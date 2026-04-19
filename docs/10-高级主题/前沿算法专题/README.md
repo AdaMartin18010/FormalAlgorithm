@@ -12,6 +12,8 @@
 | 04 | 算法博弈论 | [04-算法博弈论.md](04-算法博弈论.md) | Mechanism Design, Auction Theory, PoA |
 | 05 | 量子算法 | [05-量子算法.md](05-量子算法.md) | Grover, Shor, BQP, 量子查询复杂度 |
 | 06 | 差分隐私 | [06-差分隐私.md](06-差分隐私.md) | DP-SGD, Laplace机制, 组合定理 |
+| 07 | 算法公平性 | [07-算法公平性.md](07-算法公平性.md) | Demographic Parity, Equalized Odds, 因果公平性 |
+| 08 | 进化算法与遗传编程 | [08-进化算法与遗传编程.md](08-进化算法与遗传编程.md) | Schema Theorem, GP, CMA-ES, DE |
 
 ## 阅读建议
 

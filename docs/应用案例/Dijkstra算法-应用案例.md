@@ -1,9 +1,14 @@
 # Dijkstra算法实际应用案例
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 ## 案例概述
 
-**算法**: Dijkstra最短路径算法  
-**应用领域**: 导航系统、网络路由、游戏AI路径规划  
+**算法**: Dijkstra最短路径算法
+**应用领域**: 导航系统、网络路由、游戏AI路径规划
 **案例来源**: 高德/百度地图导航 / OSPF路由协议 / Unity A*寻路
 
 ## 应用场景描述
@@ -11,6 +16,7 @@
 ### 背景
 
 最短路径问题是图算法的核心应用：
+
 - **地图导航**: 实时计算最优路线，考虑距离、时间、拥堵
 - **网络路由**: OSPF/IS-IS协议计算最优路径
 - **游戏开发**: NPC寻路、策略游戏单位移动
@@ -21,11 +27,13 @@
 **场景 - 实时导航系统**:
 
 **输入**:
+
 - 道路网络图（千万级节点，亿级边）
 - 实时交通数据（拥堵系数、限速、封路信息）
 - 起点和终点
 
 **约束**:
+
 - 查询响应时间 < 200ms
 - 支持多目标优化（最快/最短/避开高速）
 - 支持中途点、避开区域
@@ -124,7 +132,7 @@ impl RoadNetwork {
             .get(&(0, edge.to))  // 简化: 使用默认key
             .map(|t| t.congestion_factor)
             .unwrap_or(1.0);
-        
+
         // 时间 = 距离(m) / 速度(m/s) / 拥堵系数
         let speed_ms = edge.base_speed * 1000.0 / 3600.0;
         edge.distance / speed_ms * congestion
@@ -135,27 +143,27 @@ impl RoadNetwork {
         let mut dist: HashMap<NodeId, f64> = HashMap::new();
         let mut prev: HashMap<NodeId, NodeId> = HashMap::new();
         let mut visited: HashSet<NodeId> = HashSet::new();
-        
+
         // 优先队列: (距离, 节点)
         let mut heap: BinaryHeap<State> = BinaryHeap::new();
-        
+
         dist.insert(start, 0.0);
         heap.push(State { cost: 0.0, node: start });
-        
+
         while let Some(State { cost, node }) = heap.pop() {
             if node == end {
                 return Some((self.reconstruct_path(&prev, end), cost));
             }
-            
+
             if visited.contains(&node) {
                 continue;
             }
             visited.insert(node);
-            
+
             if let Some(edges) = self.adjacency.get(&node) {
                 for edge in edges {
                     let new_cost = cost + self.travel_time(edge);
-                    
+
                     if new_cost < *dist.get(&edge.to).unwrap_or(&f64::INFINITY) {
                         dist.insert(edge.to, new_cost);
                         prev.insert(edge.to, node);
@@ -164,77 +172,77 @@ impl RoadNetwork {
                 }
             }
         }
-        
+
         None
     }
 
     /// 双向Dijkstra（性能优化版）
-    pub fn bidirectional_dijkstra(&self, start: NodeId, end: NodeId) 
+    pub fn bidirectional_dijkstra(&self, start: NodeId, end: NodeId)
         -> Option<(Vec<NodeId>, f64)> {
         if start == end {
             return Some((vec![start], 0.0));
         }
-        
+
         // 正向搜索
         let mut dist_f: HashMap<NodeId, f64> = HashMap::new();
         let mut prev_f: HashMap<NodeId, NodeId> = HashMap::new();
         let mut heap_f: BinaryHeap<State> = BinaryHeap::new();
-        
+
         // 反向搜索
         let mut dist_b: HashMap<NodeId, f64> = HashMap::new();
         let mut prev_b: HashMap<NodeId, NodeId> = HashMap::new();
         let mut heap_b: BinaryHeap<State> = BinaryHeap::new();
-        
+
         dist_f.insert(start, 0.0);
         heap_f.push(State { cost: 0.0, node: start });
-        
+
         dist_b.insert(end, 0.0);
         heap_b.push(State { cost: 0.0, node: end });
-        
+
         let mut best_path = f64::INFINITY;
         let mut meeting_node: Option<NodeId> = None;
-        
+
         while !heap_f.is_empty() || !heap_b.is_empty() {
             // 选择较小的一边扩展
             let expand_forward = heap_f.peek().map(|s| s.cost).unwrap_or(f64::INFINITY)
                 <= heap_b.peek().map(|s| s.cost).unwrap_or(f64::INFINITY);
-            
+
             if expand_forward {
-                self.expand(&mut heap_f, &mut dist_f, &mut prev_f, &mut dist_b, 
+                self.expand(&mut heap_f, &mut dist_f, &mut prev_f, &mut dist_b,
                            &mut best_path, &mut meeting_node, true);
             } else {
                 self.expand(&mut heap_b, &mut dist_b, &mut prev_b, &mut dist_f,
                            &mut best_path, &mut meeting_node, false);
             }
-            
+
             // 终止条件
             let min_f = heap_f.peek().map(|s| s.cost).unwrap_or(f64::INFINITY);
             let min_b = heap_b.peek().map(|s| s.cost).unwrap_or(f64::INFINITY);
-            
+
             if best_path < min_f + min_b {
                 break;
             }
         }
-        
+
         meeting_node.map(|m| {
             let path = self.reconstruct_bidirectional_path(&prev_f, &prev_b, start, end, m);
             (path, best_path)
         })
     }
 
-    fn expand(&self, heap: &mut BinaryHeap<State>, 
+    fn expand(&self, heap: &mut BinaryHeap<State>,
               dist: &mut HashMap<NodeId, f64>,
               prev: &mut HashMap<NodeId, NodeId>,
               other_dist: &HashMap<NodeId, f64>,
               best_path: &mut f64,
               meeting_node: &mut Option<NodeId>,
               is_forward: bool) {
-        
+
         if let Some(State { cost, node }) = heap.pop() {
             if cost > *dist.get(&node).unwrap_or(&f64::INFINITY) {
                 return;
             }
-            
+
             // 检查是否相遇
             if let Some(&other_cost) = other_dist.get(&node) {
                 let total = cost + other_cost;
@@ -243,7 +251,7 @@ impl RoadNetwork {
                     *meeting_node = Some(node);
                 }
             }
-            
+
             // 扩展邻居
             let neighbors = if is_forward {
                 self.adjacency.get(&node)
@@ -251,12 +259,12 @@ impl RoadNetwork {
                 // 反向搜索需要反向图，这里简化处理
                 self.adjacency.get(&node)
             };
-            
+
             if let Some(edges) = neighbors {
                 for edge in edges {
                     let neighbor = if is_forward { edge.to } else { node }; // 简化
                     let new_cost = cost + self.travel_time(edge);
-                    
+
                     if new_cost < *dist.get(&neighbor).unwrap_or(&f64::INFINITY) {
                         dist.insert(neighbor, new_cost);
                         prev.insert(neighbor, node);
@@ -270,12 +278,12 @@ impl RoadNetwork {
     fn reconstruct_path(&self, prev: &HashMap<NodeId, NodeId>, end: NodeId) -> Vec<NodeId> {
         let mut path = vec![end];
         let mut current = end;
-        
+
         while let Some(&p) = prev.get(&current) {
             path.push(p);
             current = p;
         }
-        
+
         path.reverse();
         path
     }
@@ -296,7 +304,7 @@ impl RoadNetwork {
             }
         }
         path_f.reverse();
-        
+
         // 反向路径
         let mut path_b = vec![];
         current = meeting;
@@ -307,7 +315,7 @@ impl RoadNetwork {
                 break;
             }
         }
-        
+
         path_f.extend(path_b);
         path_f
     }
@@ -357,12 +365,12 @@ impl<'a> AStarNavigator<'a> {
 
     pub fn find_path(&self, start: NodeId, end: NodeId) -> Option<(Vec<NodeId>, f64)> {
         let end_pos = self.network.nodes.get(&end)?;
-        
+
         let mut open_set: BinaryHeap<AStarState> = BinaryHeap::new();
         let mut g_score: HashMap<NodeId, f64> = HashMap::new();
         let mut f_score: HashMap<NodeId, f64> = HashMap::new();
         let mut prev: HashMap<NodeId, NodeId> = HashMap::new();
-        
+
         g_score.insert(start, 0.0);
         f_score.insert(start, self.heuristic(start, end_pos));
         open_set.push(AStarState {
@@ -370,20 +378,20 @@ impl<'a> AStarNavigator<'a> {
             g: 0.0,
             node: start,
         });
-        
+
         while let Some(AStarState { g, node, .. }) = open_set.pop() {
             if node == end {
                 return Some((self.reconstruct_path(&prev, end), g));
             }
-            
+
             if g > *g_score.get(&node).unwrap_or(&f64::INFINITY) {
                 continue;
             }
-            
+
             if let Some(edges) = self.network.adjacency.get(&node) {
                 for edge in edges {
                     let tentative_g = g + self.network.travel_time(edge);
-                    
+
                     if tentative_g < *g_score.get(&edge.to).unwrap_or(&f64::INFINITY) {
                         prev.insert(edge.to, node);
                         g_score.insert(edge.to, tentative_g);
@@ -398,7 +406,7 @@ impl<'a> AStarNavigator<'a> {
                 }
             }
         }
-        
+
         None
     }
 
@@ -455,11 +463,11 @@ fn haversine_distance((lat1, lon1): (f64, f64), (lat2, lon2): (f64, f64)) -> f64
     let r = 6371000.0; // 地球半径（米）
     let d_lat = (lat2 - lat1).to_radians();
     let d_lon = (lon2 - lon1).to_radians();
-    
+
     let a = (d_lat / 2.0).sin().powi(2)
         + lat1.to_radians().cos() * lat2.to_radians().cos() * (d_lon / 2.0).sin().powi(2);
     let c = 2.0 * a.sqrt().atan2((1.0 - a).sqrt());
-    
+
     r * c
 }
 
@@ -473,23 +481,23 @@ pub struct HierarchicalNetwork {
 
 impl HierarchicalNetwork {
     /// 分层寻路：先在高速层搜索，再细化到本地道路
-    pub fn hierarchical_route(&self, start: NodeId, end: NodeId) 
+    pub fn hierarchical_route(&self, start: NodeId, end: NodeId)
         -> Option<(Vec<NodeId>, f64)> {
-        
+
         // 找到起点和终点最近的快速路入口
         let start_access = self.find_nearest_highway(start)?;
         let end_access = self.find_nearest_highway(end)?;
-        
+
         // 三段路径
         let (path1, cost1) = self.base_network.dijkstra(start, start_access)?;
         let (path2, cost2) = self.highway_network.dijkstra(start_access, end_access)?;
         let (path3, cost3) = self.base_network.dijkstra(end_access, end)?;
-        
+
         // 合并路径
         let mut full_path = path1;
         full_path.extend(path2.into_iter().skip(1));
         full_path.extend(path3.into_iter().skip(1));
-        
+
         Some((full_path, cost1 + cost2 + cost3))
     }
 
@@ -510,13 +518,13 @@ mod tests {
         // 构建测试图
         let mut network = RoadNetwork::new();
         let n = 10000;
-        
+
         // 创建网格图
         for i in 0..n {
             let lat = 39.9 + (i / 100) as f64 * 0.001;
             let lng = 116.3 + (i % 100) as f64 * 0.001;
             network.nodes.insert(i as u64, (lat, lng));
-            
+
             let mut edges = vec![];
             if i % 100 < 99 {
                 edges.push(Edge {
@@ -536,17 +544,17 @@ mod tests {
             }
             network.adjacency.insert(i as u64, edges);
         }
-        
+
         // 测试标准Dijkstra
         let start = Instant::now();
         let _result = network.dijkstra(0, 9999);
         let std_time = start.elapsed();
-        
+
         // 测试双向Dijkstra
         let start = Instant::now();
         let _result = network.bidirectional_dijkstra(0, 9999);
         let bi_time = start.elapsed();
-        
+
         println!("标准Dijkstra: {:?}", std_time);
         println!("双向Dijkstra: {:?}", bi_time);
         println!("加速比: {:.2}x", std_time.as_secs_f64() / bi_time.as_secs_f64());
@@ -620,11 +628,25 @@ OSRM(contraction hierarchies)  45ms   100%   2GB(预计算)
 ## 扩展阅读
 
 ### 相关算法
+
 - **Contraction Hierarchies**: 预计算加速
 - **ALT算法**: A* + Landmark + Triangle inequality
 - **CCH**: Customizable Contraction Hierarchies
 
 ### 进阶应用
+
 - **多目标最短路径**: 时间vs距离权衡
 - **时间依赖最短路径**: 考虑时段差异
 - **随机最短路径**: 考虑不确定性
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

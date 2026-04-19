@@ -97,13 +97,34 @@ def main():
     root = Path(__file__).resolve().parent.parent
     doc_path = root / 'docs'
     
-    # 只处理核心目录下的文档（排除根目录杂项）
+    # 处理核心目录（数字前缀）和高质量扩展目录
     core_dirs = [d for d in doc_path.iterdir() if d.is_dir() and d.name[:2].isdigit()]
+    extra_dirs = [
+        doc_path / '国际课程对标',
+        doc_path / '国际课程深度对标',
+        doc_path / '国际对标',
+        doc_path / '学习路径',
+        doc_path / '应用案例',
+        doc_path / '案例研究',
+        doc_path / '知识体系',
+        doc_path / '知识图谱',
+        doc_path / '示例库',
+        doc_path / '速查表',
+        doc_path / '面试指南',
+        doc_path / '知识笔记',
+        doc_path / '思维表征',
+        doc_path / '习题库',
+        doc_path / '习题集',
+        doc_path / '交互式学习',
+        doc_path / '可视化',
+        doc_path / '附录',
+    ]
+    all_dirs = core_dirs + [d for d in extra_dirs if d.exists()]
     
     processed = 0
     skipped = 0
     
-    for core_dir in core_dirs:
+    for core_dir in all_dirs:
         for md_file in core_dir.rglob('*.md'):
             # 跳过已知的报告和README
             if any(skip in md_file.name for skip in ['README', '质量报告', '任务完成报告']):

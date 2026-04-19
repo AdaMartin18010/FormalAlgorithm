@@ -17,7 +17,7 @@ def fix_math_symbols(content: str) -> tuple[str, int]:
     # 匹配 $...$ 块中的 ...
     def fix_dots_in_math(match):
         math_content = match.group(1)
-        if '...' in math_content and '\cdots' not in math_content and '\ldots' not in math_content:
+        if '...' in math_content and r'\cdots' not in math_content and r'\ldots' not in math_content:
             return '$' + math_content.replace('...', '\\cdots') + '$'
         return match.group(0)
     

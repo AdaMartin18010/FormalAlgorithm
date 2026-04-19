@@ -1,9 +1,14 @@
 # DFS实际应用案例
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 ## 案例概述
 
-**算法**: 深度优先搜索 (Depth-First Search)  
-**应用领域**: 拓扑排序、迷宫求解、连通分量检测、编译器优化  
+**算法**: 深度优先搜索 (Depth-First Search)
+**应用领域**: 拓扑排序、迷宫求解、连通分量检测、编译器优化
 **案例来源**: 构建系统依赖分析 / 游戏迷宫生成 / 编译器死代码检测
 
 ## 应用场景描述
@@ -11,6 +16,7 @@
 ### 背景
 
 DFS是图遍历的核心算法，典型应用：
+
 - **构建系统**: Make/Cargo/Gradle的依赖解析与执行顺序
 - **游戏开发**: 迷宫生成、解谜、状态空间搜索
 - **编译器**: 控制流分析、死代码检测、寄存器分配
@@ -21,10 +27,12 @@ DFS是图遍历的核心算法，典型应用：
 **场景 - 编译构建系统**:
 
 **输入**:
+
 - 项目依赖图（模块、库依赖关系）
 - 源代码修改时间戳
 
-**输出**: 
+**输出**:
+
 - 正确的编译执行顺序
 - 识别循环依赖
 - 并行编译的最大并行度
@@ -71,9 +79,9 @@ impl DependencyGraph {
             .keys()
             .map(|k| (k.clone(), DfsState::Unvisited))
             .collect();
-        
+
         let mut result = Vec::new();
-        
+
         for module in self.modules.keys().cloned().collect::<Vec<_>>() {
             if state[&module] == DfsState::Unvisited {
                 if let Err(cycle) = self.dfs_topo(&module, &mut state, &mut result) {
@@ -81,16 +89,16 @@ impl DependencyGraph {
                 }
             }
         }
-        
+
         result.reverse();  // 逆后序即为拓扑序
         Ok(result)
     }
 
-    fn dfs_topo(&self, module: &str, 
+    fn dfs_topo(&self, module: &str,
                 state: &mut HashMap<String, DfsState>,
                 result: &mut Vec<String>) -> Result<(), Vec<String>> {
         state.insert(module.to_string(), DfsState::Visiting);
-        
+
         if let Some(m) = self.modules.get(module) {
             for dep in &m.dependencies {
                 match state.get(dep).unwrap_or(&DfsState::Unvisited) {
@@ -105,7 +113,7 @@ impl DependencyGraph {
                 }
             }
         }
-        
+
         state.insert(module.to_string(), DfsState::Visited);
         result.push(module.to_string());
         Ok(())
@@ -115,15 +123,15 @@ impl DependencyGraph {
     pub fn find_modules_to_rebuild(&self, changed_modules: &[String]) -> Vec<String> {
         let mut to_rebuild = HashSet::new();
         let mut visited = HashSet::new();
-        
+
         for module in changed_modules {
             self.dfs_collect_dependents(module, &mut to_rebuild, &mut visited);
         }
-        
+
         to_rebuild.into_iter().collect()
     }
 
-    fn dfs_collect_dependents(&self, module: &str, 
+    fn dfs_collect_dependents(&self, module: &str,
                                result: &mut HashSet<String>,
                                visited: &mut HashSet<String>) {
         if visited.contains(module) {
@@ -131,7 +139,7 @@ impl DependencyGraph {
         }
         visited.insert(module.to_string());
         result.insert(module.to_string());
-        
+
         // 查找依赖此模块的其他模块（反向边）
         for (name, m) in &self.modules {
             if m.dependencies.contains(&module.to_string()) {
@@ -152,7 +160,7 @@ impl MazeSolver {
     pub fn solve(&self, start: (usize, usize), end: (usize, usize)) -> Option<Vec<(usize, usize)>> {
         let mut path = Vec::new();
         let mut visited = vec![vec![false; self.cols]; self.rows];
-        
+
         if self.dfs(start, end, &mut visited, &mut path) {
             Some(path)
         } else {
@@ -163,31 +171,31 @@ impl MazeSolver {
     fn dfs(&self, pos: (usize, usize), end: (usize, usize),
            visited: &mut Vec<Vec<bool>>, path: &mut Vec<(usize, usize)>) -> bool {
         let (r, c) = pos;
-        
+
         // 边界检查
         if r >= self.rows || c >= self.cols || self.grid[r][c] == 1 || visited[r][c] {
             return false;
         }
-        
+
         visited[r][c] = true;
         path.push(pos);
-        
+
         // 到达终点
         if pos == end {
             return true;
         }
-        
+
         // 四个方向探索
         let directions = [(0, 1), (0, -1), (1, 0), (-1, 0)];
         for &(dr, dc) in &directions {
             let nr = (r as i32 + dr) as usize;
             let nc = (c as i32 + dc) as usize;
-            
+
             if self.dfs((nr, nc), end, visited, path) {
                 return true;
             }
         }
-        
+
         // 回溯
         path.pop();
         false
@@ -223,3 +231,15 @@ impl MazeSolver {
 ## 参考资料
 
 - [Tarjan 1972] Tarjan, R. E. (1972). "Depth-first search and linear graph algorithms."
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

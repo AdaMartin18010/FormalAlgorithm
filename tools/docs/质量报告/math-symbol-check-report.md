@@ -1,12 +1,12 @@
 # 数学符号检查报告
 
-生成时间: 2026-04-19T20:39:14.595598
+生成时间: 2026-04-19T20:57:55.364814
 
-- 检查文档数: 772
-- 发现问题数: 1740
+- 检查文档数: 773
+- 发现问题数: 1744
 - 错误: 1
 - 风格问题: 31
-- 建议: 1708
+- 建议: 1712
 
 ## 问题列表
 
@@ -4700,7 +4700,7 @@
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\32-算法在脑机接口中的应用.md:203
+### E:\_src\FormalAlgorithm\docs\10-高级主题\32-算法在脑机接口中的应用.md:205
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -4795,7 +4795,7 @@
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\06-游戏算法应用.md:291
+### E:\_src\FormalAlgorithm\docs\12-应用领域\06-游戏算法应用.md:293
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
@@ -4820,17 +4820,17 @@
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\10-量子机器学习算法应用.md:220
+### E:\_src\FormalAlgorithm\docs\12-应用领域\10-量子机器学习算法应用.md:222
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\10-量子机器学习算法应用.md:223
+### E:\_src\FormalAlgorithm\docs\12-应用领域\10-量子机器学习算法应用.md:225
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\10-量子机器学习算法应用.md:1196
+### E:\_src\FormalAlgorithm\docs\12-应用领域\10-量子机器学习算法应用.md:1198
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
@@ -4850,52 +4850,47 @@
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:424
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
 ### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:426
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:561
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:428
 - 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
 
 ### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:563
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:614
-- 类型: style
-- 问题: 数学环境中使用 ...
-- 建议: 使用 \cdots 代替 ...
-
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:625
-- 类型: style
-- 问题: 数学环境中使用 ...
-- 建议: 使用 \cdots 代替 ...
-
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:625
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:625
-- 类型: suggestion
-- 问题: 使用 phi vs varphi
-- 建议: 考虑使用 \varphi 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:625
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:565
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:786
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:616
+- 类型: style
+- 问题: 数学环境中使用 ...
+- 建议: 使用 \cdots 代替 ...
+
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:627
+- 类型: style
+- 问题: 数学环境中使用 ...
+- 建议: 使用 \cdots 代替 ...
+
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:627
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:627
+- 类型: suggestion
+- 问题: 使用 phi vs varphi
+- 建议: 考虑使用 \varphi 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:627
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
@@ -4910,17 +4905,22 @@
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:794
-- 类型: suggestion
-- 问题: 使用 phi vs varphi
-- 建议: 考虑使用 \varphi 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:794
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:792
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
 ### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:796
+- 类型: suggestion
+- 问题: 使用 phi vs varphi
+- 建议: 考虑使用 \varphi 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:796
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\12-应用领域\32-算法在数字孪生中的应用.md:798
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
@@ -5200,247 +5200,247 @@
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\交互式学习\渐进分析交互练习.md:245
+### E:\_src\FormalAlgorithm\docs\交互式学习\渐进分析交互练习.md:262
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\交互式学习\渐进分析交互练习.md:247
+### E:\_src\FormalAlgorithm\docs\交互式学习\渐进分析交互练习.md:264
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\交互式学习\渐进分析交互练习.md:337
+### E:\_src\FormalAlgorithm\docs\交互式学习\渐进分析交互练习.md:358
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\应用案例\二分搜索-应用案例.md:525
+### E:\_src\FormalAlgorithm\docs\应用案例\二分搜索-应用案例.md:530
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\应用案例\哈希搜索-应用案例.md:562
+### E:\_src\FormalAlgorithm\docs\应用案例\哈希搜索-应用案例.md:567
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\应用案例\哈希搜索-应用案例.md:563
+### E:\_src\FormalAlgorithm\docs\应用案例\哈希搜索-应用案例.md:568
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\分布式系统概念图谱.md:228
+### E:\_src\FormalAlgorithm\docs\知识体系\分布式系统概念图谱.md:233
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\分布式系统概念图谱.md:231
+### E:\_src\FormalAlgorithm\docs\知识体系\分布式系统概念图谱.md:236
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\密码学概念图谱.md:177
+### E:\_src\FormalAlgorithm\docs\知识体系\密码学概念图谱.md:182
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\密码学概念图谱.md:449
+### E:\_src\FormalAlgorithm\docs\知识体系\密码学概念图谱.md:454
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:101
+### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:110
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:206
+### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:219
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:213
+### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:226
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:420
+### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:440
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:424
+### E:\_src\FormalAlgorithm\docs\知识体系\数据库与存储概念图谱.md:444
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据结构图谱.md:35
+### E:\_src\FormalAlgorithm\docs\知识体系\数据结构图谱.md:40
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\数据结构图谱.md:425
+### E:\_src\FormalAlgorithm\docs\知识体系\数据结构图谱.md:430
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:101
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:106
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:103
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:108
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:148
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:153
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:150
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:155
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:152
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:157
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:259
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:264
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:277
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:282
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:280
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:285
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:298
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:303
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:299
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:304
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:461
+### E:\_src\FormalAlgorithm\docs\知识体系\机器学习理论概念图谱.md:466
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:132
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:137
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:152
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:157
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:154
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:159
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:261
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:266
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:267
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:272
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:417
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:422
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:994
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:999
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:1032
+### E:\_src\FormalAlgorithm\docs\知识体系\算法概念图谱.md:1037
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:103
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:108
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:242
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:247
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:245
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:250
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:281
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:286
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:304
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:309
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:305
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:310
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:308
+### E:\_src\FormalAlgorithm\docs\知识体系\类型逻辑图谱.md:313
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:73
+### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:80
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:99
+### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:107
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:259
+### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:277
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:404
+### E:\_src\FormalAlgorithm\docs\知识体系\编译器概念图谱.md:427
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\计算几何概念图谱.md:37
+### E:\_src\FormalAlgorithm\docs\知识体系\计算几何概念图谱.md:42
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识体系\计算几何概念图谱.md:40
+### E:\_src\FormalAlgorithm\docs\知识体系\计算几何概念图谱.md:45
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
@@ -5705,32 +5705,32 @@
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:193
+### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:204
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:197
+### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:208
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:573
+### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:594
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:573
+### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:594
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:584
+### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:605
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:587
+### E:\_src\FormalAlgorithm\docs\知识笔记\多臂老虎机.md:608
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
@@ -5740,27 +5740,27 @@
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:189
+### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:199
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:199
+### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:210
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:206
+### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:217
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:209
+### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:220
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:669
+### E:\_src\FormalAlgorithm\docs\知识笔记\子模优化.md:690
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
@@ -5800,177 +5800,177 @@
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:34
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:35
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:48
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:50
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:52
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:55
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:149
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:158
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:150
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:159
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:150
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:159
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:151
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:160
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:168
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:177
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:170
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:179
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:180
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:190
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:181
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:191
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:217
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:229
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:220
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:232
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:541
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:561
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:547
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:567
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:550
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:570
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:589
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:609
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:592
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:612
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:594
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:614
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:598
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:618
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:608
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:628
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:622
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:624
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:632
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:638
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:639
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:639
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
 
 ### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:642
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:645
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:648
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:651
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:653
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:644
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:653
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:655
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:652
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:684
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:658
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:659
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:659
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:662
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:665
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:668
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:671
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:673
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:673
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:675
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\差分隐私.md:705
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -6045,217 +6045,217 @@
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:33
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:35
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:34
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:36
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:71
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:77
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:162
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:172
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:170
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:180
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:173
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:183
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:228
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:241
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:236
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:249
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:255
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:269
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:705
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:725
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:709
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:729
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:712
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:732
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:715
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:735
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:718
+### E:\_src\FormalAlgorithm\docs\知识笔记\机器学习理论.md:738
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:37
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:40
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:44
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:47
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:46
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:49
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:50
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:54
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:139
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:148
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:140
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:149
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:145
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:154
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:157
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:166
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:160
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:169
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:163
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:172
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:165
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:174
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:170
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:180
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:222
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:235
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:231
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:247
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:246
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:263
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:490
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:497
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:505
-- 类型: suggestion
-- 问题: 使用 phi vs varphi
-- 建议: 考虑使用 \varphi 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:512
-- 类型: suggestion
-- 问题: 使用 phi vs varphi
-- 建议: 考虑使用 \varphi 以提高一致性
 
 ### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:515
 - 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:522
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:530
+- 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:518
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:518
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:537
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:619
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:540
+- 类型: suggestion
+- 问题: 使用 phi vs varphi
+- 建议: 考虑使用 \varphi 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:543
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:620
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:543
+- 类型: suggestion
+- 问题: 使用 phi vs varphi
+- 建议: 考虑使用 \varphi 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:649
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:621
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:650
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:622
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:651
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:623
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:652
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:624
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:653
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:632
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:654
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\流算法.md:662
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -6480,12 +6480,12 @@
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\算法博弈论.md:61
+### E:\_src\FormalAlgorithm\docs\知识笔记\算法博弈论.md:66
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\算法博弈论.md:229
+### E:\_src\FormalAlgorithm\docs\知识笔记\算法博弈论.md:245
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -6550,92 +6550,92 @@
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:182
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:196
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:189
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:203
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:192
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:206
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:194
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:208
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:275
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:294
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:530
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:556
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:530
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:556
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:536
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:562
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:537
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:563
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:539
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:565
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:540
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:566
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:541
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:555
-- 类型: suggestion
-- 问题: 使用 theta vs vartheta
-- 建议: 考虑使用 \vartheta 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:558
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:567
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
 ### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:581
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:584
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:607
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:581
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:607
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:585
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:611
 - 类型: style
 - 问题: 数学环境中使用 ...
 - 建议: 使用 \cdots 代替 ...
 
-### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:587
+### E:\_src\FormalAlgorithm\docs\知识笔记\量子算法.md:613
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -7030,62 +7030,52 @@
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:37
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:38
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:40
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:41
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:42
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:43
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:45
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:47
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:49
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:52
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:72
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:75
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:74
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:77
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:81
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:84
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:83
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:86
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:93
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:95
-- 类型: suggestion
-- 问题: 使用 \epsilon
-- 建议: 推荐使用 \varepsilon 以区分元素符号
-
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:98
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:97
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -7095,12 +7085,17 @@
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:108
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:103
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:110
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:104
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:113
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
@@ -7110,50 +7105,75 @@
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:117
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:120
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:119
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:122
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:126
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:124
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:139
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:131
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:144
 - 类型: suggestion
 - 问题: 使用 theta vs vartheta
 - 建议: 考虑使用 \vartheta 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:146
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:151
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:148
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:153
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:177
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:182
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:178
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:183
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:179
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\06-差分隐私.md:184
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\07-算法公平性.md:99
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\07-算法公平性.md:99
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\07-算法公平性.md:104
+- 类型: suggestion
+- 问题: 使用 \epsilon
+- 建议: 推荐使用 \varepsilon 以区分元素符号
+
+### E:\_src\FormalAlgorithm\docs\10-高级主题\前沿算法专题\07-算法公平性.md:104
+- 类型: suggestion
+- 问题: 使用 theta vs vartheta
+- 建议: 考虑使用 \vartheta 以提高一致性
 
 ### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\01-算法分析基础-六维补充.md:143
 - 类型: suggestion
@@ -7325,92 +7345,87 @@
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:225
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:240
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:374
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:389
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:402
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:417
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:403
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:418
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:505
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:520
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:536
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:551
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:540
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:555
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:541
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:556
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:543
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:558
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:608
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:623
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:609
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:624
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:619
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:634
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:1516
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:1531
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:1524
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\12-近似算法理论.md:1539
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\13-在线算法理论-扩展.md:100
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\13-在线算法理论-扩展.md:106
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\13-在线算法理论-扩展.md:105
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\13-在线算法理论-扩展.md:111
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:29
-- 类型: suggestion
-- 问题: 使用 phi vs varphi
-- 建议: 考虑使用 \varphi 以提高一致性
-
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:32
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:31
 - 类型: suggestion
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
@@ -7420,47 +7435,52 @@
 - 问题: 使用 phi vs varphi
 - 建议: 考虑使用 \varphi 以提高一致性
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:41
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:38
+- 类型: suggestion
+- 问题: 使用 phi vs varphi
+- 建议: 考虑使用 \varphi 以提高一致性
+
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:45
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:74
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:78
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:75
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:79
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:77
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:81
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:95
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:101
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:106
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:113
 - 类型: suggestion
 - 问题: 使用 \to 表示箭头
 - 建议: 推荐使用 \rightarrow 以提高可读性
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:137
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:146
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:138
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:147
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号
 
-### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:139
+### E:\_src\FormalAlgorithm\docs\09-算法理论\01-算法基础\14-流算法理论-扩展.md:148
 - 类型: suggestion
 - 问题: 使用 \epsilon
 - 建议: 推荐使用 \varepsilon 以区分元素符号

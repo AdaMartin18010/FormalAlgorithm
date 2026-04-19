@@ -1,9 +1,14 @@
 # Huffman编码实际应用案例
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 ## 案例概述
 
-**算法**: Huffman编码 (Huffman Coding)  
-**应用领域**: 文件压缩、数据编码、JPEG/MP3压缩、通信协议  
+**算法**: Huffman编码 (Huffman Coding)
+**应用领域**: 文件压缩、数据编码、JPEG/MP3压缩、通信协议
 **案例来源**: ZIP压缩 / JPEG图像 / MP3音频
 
 ## 应用场景描述
@@ -11,6 +16,7 @@
 ### 背景
 
 Huffman编码是贪心算法的经典应用，用于无损数据压缩：
+
 - **文件压缩**: ZIP、GZIP、7-Zip
 - **图像压缩**: JPEG（结合DCT）
 - **音频压缩**: MP3（结合心理声学模型）
@@ -21,10 +27,12 @@ Huffman编码是贪心算法的经典应用，用于无损数据压缩：
 **场景 - 日志文件压缩系统**:
 
 **输入**:
+
 - 大型文本日志文件（GB级）
 - 字符频率统计
 
 **输出**:
+
 - 压缩后的文件
 - 压缩比、解压速度
 
@@ -87,19 +95,19 @@ pub fn build_huffman_tree(frequencies: &HashMap<u8, u64>) -> Option<HuffmanNode>
             HuffmanNode::Leaf { symbol, weight }
         })
         .collect();
-    
+
     if heap.len() < 2 {
         return heap.pop();
     }
-    
+
     while heap.len() > 1 {
         let left = Box::new(heap.pop().unwrap());
         let right = Box::new(heap.pop().unwrap());
         let weight = left.weight() + right.weight();
-        
+
         heap.push(HuffmanNode::Internal { left, right, weight });
     }
-    
+
     heap.pop()
 }
 
@@ -119,7 +127,7 @@ fn generate_codes_recursive(node: &HuffmanNode, prefix: &mut String, codes: &mut
             prefix.push('0');
             generate_codes_recursive(left, prefix, codes);
             prefix.pop();
-            
+
             prefix.push('1');
             generate_codes_recursive(right, prefix, codes);
             prefix.pop();
@@ -134,21 +142,21 @@ pub fn compress(data: &[u8]) -> (Vec<u8>, HashMap<u8, String>) {
     for &byte in data {
         *frequencies.entry(byte).or_insert(0) += 1;
     }
-    
+
     // 构建Huffman树
     let tree = build_huffman_tree(&frequencies).unwrap();
     let codes = generate_codes(&tree);
-    
+
     // 编码
     let mut bits = String::new();
     for &byte in data {
         bits.push_str(&codes[&byte]);
     }
-    
+
     // 位填充并转换为字节
     let padding = (8 - bits.len() % 8) % 8;
     bits.extend(std::iter::repeat('0').take(padding));
-    
+
     let compressed: Vec<u8> = bits
         .as_bytes()
         .chunks(8)
@@ -157,7 +165,7 @@ pub fn compress(data: &[u8]) -> (Vec<u8>, HashMap<u8, String>) {
             u8::from_str_radix(s, 2).unwrap()
         })
         .collect();
-    
+
     (compressed, codes)
 }
 
@@ -198,3 +206,15 @@ pub fn compression_ratio(original: &[u8], compressed: &[u8]) -> f64 {
 ## 参考资料
 
 - [Huffman 1952] Huffman, D. A. (1952). "A method for the construction of minimum-redundancy codes."
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)

@@ -1,5 +1,10 @@
 # ETH Zurich (苏黎世联邦理工学院) 课程深度分析
 
+
+> **版本**: 1.0
+> **创建日期**: 2026-04-19
+> **最后更新**: 2026-04-19
+
 > **分析日期**: 2026-04-09
 > **分析版本**: v1.0
 > **对标项目**: 算法规范与模型设计知识体系
@@ -73,6 +78,7 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 #### 课程目标
 
 本课程是计算机科学本科的基础核心课程，旨在：
+
 - 掌握基本数据结构的设计、实现与分析
 - 理解经典算法的设计范式
 - 培养算法效率分析能力
@@ -177,6 +183,7 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 #### 课程目标
 
 本课程将概率论与算法设计紧密结合，强调：
+
 - 随机化算法的设计与分析
 - 概率方法在组合优化中的应用
 - 随机数据结构 (如随机搜索树)
@@ -280,6 +287,7 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 #### 课程目标
 
 这是ETH Zurich算法方向的旗舰高级课程，由多位教授联合授课：
+
 - 深入高级算法设计与分析技术
 - 结合概率方法与代数技术
 - 涵盖前沿研究方向
@@ -504,6 +512,7 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 #### 课程目标
 
 这是理论计算机科学的入门课程，系统讲授：
+
 - 形式语言与自动机理论
 - 可计算性理论
 - 计算复杂性理论基础
@@ -601,6 +610,7 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 #### 课程目标
 
 本课程是ETH Zurich形式化方法方向的核心课程：
+
 - 函数式编程范式与抽象思维
 - 形式化规约与验证技术
 - 模型检测基础
@@ -796,17 +806,17 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 
 #### 中优先级 (P1) - 建议3个月内补充
 
-4. **编译器优化基础**
+1. **编译器优化基础**
    - 位置: `docs/10-高级主题/程序合成技术.md` 或新建
    - 内容: 中间表示、控制流分析、循环优化、寄存器分配
    - 工作量: 5天
 
-5. **随机代数算法**
+2. **随机代数算法**
    - 位置: `docs/09-算法理论/04-高级算法理论/随机代数算法.md`
    - 内容: 多项式恒等测试、指纹技术、并行代数计算
    - 工作量: 4天
 
-6. **细粒度复杂性理论**
+3. **细粒度复杂性理论**
    - 位置: `docs/04-算法复杂度/04-复杂度类.md` (扩展)
    - 内容: SETH、3SUM猜想、细粒度归约
    - 工作量: 4天
@@ -856,27 +866,39 @@ ETH Zurich 在理论计算机科学领域具有世界级的研究实力：
 
 | 资源 | 链接 |
 |------|------|
-| ETH D-INFK 官网 | https://inf.ethz.ch/ |
-| 课程目录 (VVZ) | https://www.vvz.ethz.ch/ |
-| 理论计算机科学研究 | https://inf.ethz.ch/research/theory-algorithms.html |
-| 课程讲义存档 | https://cadmo.ethz.ch/education/lectures/ |
+| ETH D-INFK 官网 | <https://inf.ethz.ch/> |
+| 课程目录 (VVZ) | <https://www.vvz.ethz.ch/> |
+| 理论计算机科学研究 | <https://inf.ethz.ch/research/theory-algorithms.html> |
+| 课程讲义存档 | <https://cadmo.ethz.ch/education/lectures/> |
 
 ### 6.2 教授个人页面
 
 | 教授 | 研究方向 | 个人页面 |
 |------|----------|----------|
-| Angelika Steger | 随机算法、组合优化 | https://people.inf.ethz.ch/asteger/ |
-| Bernd Gärtner | 计算几何、优化 | https://people.inf.ethz.ch/gaertner/ |
-| David Steurer | 复杂性理论、优化 | https://people.inf.ethz.ch/dsteurer/ |
-| Rasmus Kyng | 图算法、凸优化 | https://kyng.inf.ethz.ch/ |
-| Dennis Hofheinz | 密码学 | https://people.inf.ethz.ch/dhofheinz/ |
+| Angelika Steger | 随机算法、组合优化 | <https://people.inf.ethz.ch/asteger/> |
+| Bernd Gärtner | 计算几何、优化 | <https://people.inf.ethz.ch/gaertner/> |
+| David Steurer | 复杂性理论、优化 | <https://people.inf.ethz.ch/dsteurer/> |
+| Rasmus Kyng | 图算法、凸优化 | <https://kyng.inf.ethz.ch/> |
+| Dennis Hofheinz | 密码学 | <https://people.inf.ethz.ch/dhofheinz/> |
 
 ### 6.3 学生课程评价
 
 | 资源 | 描述 |
 |------|------|
-| ETHZ Courses Attended | https://liblor.github.io/ethz-course-list/ |
+| ETHZ Courses Attended | <https://liblor.github.io/ethz-course-list/> |
 
 ---
 
 **文档版本**: v1.0 | **最后更新**: 2026-04-09
+
+---
+
+## 参考文献
+
+- 待补充
+
+---
+
+## 知识导航
+
+- [返回目录](README.md)
