@@ -6,7 +6,7 @@ last_updated: 2026-04-15
 owner: 算法理论工作组
 ---
 
-> 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../../../项目全面梳理-2025.md)
+> 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../../项目全面梳理-2025.md)
 
 ## 04-字符串算法. Aho-Corasick 算法 / Aho-Corasick Algorithm
 
@@ -82,3 +82,7 @@ Aho-Corasick 算法由 Aho 与 Corasick 于 1975 年提出 [Aho & Corasick, 1975
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解Aho-Corasick算法的核心概念
+- 掌握Aho-Corasick算法的形式化表示

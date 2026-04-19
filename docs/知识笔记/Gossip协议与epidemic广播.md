@@ -1,3 +1,9 @@
+---
+title: Gossip协议与epidemic广播
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # Gossip协议与epidemic广播
 
 > **学科**: 分布式系统

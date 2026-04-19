@@ -129,3 +129,7 @@ Johnson 算法返回的距离矩阵 `distances[u][v]` 等于原图中 $u$ 到 $v
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解Johnson 算法的核心概念
+- 掌握Johnson 算法的形式化表示

@@ -152,6 +152,8 @@ python scripts/check_wiki_links.py \
   --output report/link_check_report.json
 ```
 
+## 术语一致性检查
+### 术语一致性检查
 #### 术语一致性检查
 
 ```bash
@@ -162,6 +164,8 @@ python scripts/check_terminology.py \
   --output report/terminology_check_report.md
 ```
 
+## 定义差异检测
+### 定义差异检测
 #### 定义差异检测
 
 ```bash
@@ -172,6 +176,7 @@ python scripts/check_definition_diff.py \
   --output report/definition_diff.md
 ```
 
+## 3. 质量指标
 ### 3. 质量指标
 
 #### 对齐度指标
@@ -364,3 +369,8 @@ python scripts/check_definition_diff.py \
 ## 知识导航
 
 - [返回目录](README.md)
+
+## 学习目标
+
+- 理解Wiki概念对齐验证机制的核心概念
+- 掌握Wiki概念对齐验证机制的形式化表示

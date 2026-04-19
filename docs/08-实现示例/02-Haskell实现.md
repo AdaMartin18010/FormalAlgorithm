@@ -97,6 +97,9 @@ owner: 实现示例工作组
   - [2.8.2 搜索算法实现 / Search Algorithm Implementations](#282-搜索算法实现--search-algorithm-implementations)
   - [2.8.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#283-动态规划算法实现--dynamic-programming-algorithm-implementations)
   - [2.8.4 函数式数据结构实现 / Functional Data Structure Implementations](#284-函数式数据结构实现--functional-data-structure-implementations)
+- [参考文献](#参考文献)
+- [知识导航](#知识导航)
+- [学习目标](#学习目标)
 
 ---
 
@@ -1443,3 +1446,12 @@ postorder (Node x left right) = postorder left ++ postorder right ++ [x]
 
 - [返回目录](README.md)
 
+---
+
+## 学习目标
+
+完成本章节后，读者将能够：
+
+1. 理解核心概念与基本原理
+2. 掌握关键定理与证明方法
+3. 应用所学知识解决实际问题

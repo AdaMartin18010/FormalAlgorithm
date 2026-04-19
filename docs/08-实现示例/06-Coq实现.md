@@ -772,9 +772,19 @@ Coq provides an ideal platform for research and practice in formal algorithm the
 
 4. **The Coq Development Team.** (2023). *The Coq Reference Manual*. Coq Documentation.
    - Coq官方参考手册。
+
 ---
 
 ## 知识导航
 
 - [返回目录](README.md)
 
+---
+
+## 学习目标
+
+完成本章节后，读者将能够：
+
+1. 理解核心概念与基本原理
+2. 掌握关键定理与证明方法
+3. 应用所学知识解决实际问题

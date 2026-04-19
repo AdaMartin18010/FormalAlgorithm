@@ -336,6 +336,7 @@ if __name__ == '__main__':
     benchmark_autocomplete()
 ```
 
+## 性能评估
 ### 性能评估
 
 - **时间复杂度**：
@@ -478,6 +479,7 @@ if __name__ == '__main__':
     demo_spell_checker()
 ```
 
+## 实际案例来源
 ### 实际案例来源
 
 - **编辑器**：Microsoft Word、Google Docs
@@ -495,3 +497,8 @@ if __name__ == '__main__':
 ## 知识导航
 
 - [返回目录](README.md)
+
+## 学习目标
+
+- 理解Trie树实际应用案例的核心概念
+- 掌握Trie树实际应用案例的形式化表示

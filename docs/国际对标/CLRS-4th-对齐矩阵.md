@@ -1,3 +1,9 @@
+---
+title: CLRS 4th 对齐矩阵
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # CLRS 4th Ed. 完整对齐矩阵
 
 > **来源**: Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (4th ed.). MIT Press.

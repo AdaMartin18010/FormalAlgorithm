@@ -120,6 +120,9 @@ owner: 实现示例工作组
   - [3.9.2 算法正确性证明 / Algorithm Correctness Proofs](#392-算法正确性证明--algorithm-correctness-proofs)
   - [3.9.4 图算法正确性证明 / Graph Algorithm Correctness Proofs](#394-图算法正确性证明--graph-algorithm-correctness-proofs)
   - [3.9.3 数据结构性质证明 / Data Structure Property Proofs](#393-数据结构性质证明--data-structure-property-proofs)
+- [参考文献](#参考文献)
+- [知识导航](#知识导航)
+- [学习目标](#学习目标)
 
 ---
 
@@ -1492,3 +1495,12 @@ where
 
 - [返回目录](README.md)
 
+---
+
+## 学习目标
+
+完成本章节后，读者将能够：
+
+1. 理解核心概念与基本原理
+2. 掌握关键定理与证明方法
+3. 应用所学知识解决实际问题

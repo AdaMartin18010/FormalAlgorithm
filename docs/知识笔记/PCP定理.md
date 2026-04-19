@@ -1,3 +1,9 @@
+---
+title: PCP定理
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # PCP定理 (PCP Theorem)
 
 > **学科**: 计算理论

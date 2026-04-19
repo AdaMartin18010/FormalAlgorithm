@@ -1,3 +1,9 @@
+---
+title: README
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 算法规范与模型设计知识体系
 
 > **版本**: v2.0  
@@ -68,10 +74,10 @@
 - [命题逻辑](06-逻辑系统/01-命题逻辑-六维补充.md)
 
 ### 核心代码
-- [KMP字符串匹配](examples/algorithms/src/string_algorithms/kmp.rs)
-- [最大流算法](examples/algorithms/src/network_flow/max_flow.rs)
-- [线段树](examples/algorithms/src/segment_tree.rs)
-- [FFT](examples/algorithms/src/fft.rs)
+- [KMP字符串匹配](../examples/algorithms/src/string_algorithms/kmp.rs)
+- [最大流算法](../examples/algorithms/src/network_flow/max_flow.rs)
+- [线段树](../examples/algorithms/src/segment_tree.rs)
+- [FFT](../examples/algorithms/src/fft.rs)
 
 ## 参与贡献
 

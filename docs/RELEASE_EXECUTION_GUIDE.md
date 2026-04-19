@@ -1,3 +1,9 @@
+---
+title: RELEASE EXECUTION GUIDE
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 🚀 最终发布执行指南
 
 > **版本**: v2.0.0

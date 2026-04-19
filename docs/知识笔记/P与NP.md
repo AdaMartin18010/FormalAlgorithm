@@ -1,3 +1,9 @@
+---
+title: P与NP
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # P与NP (P vs NP)
 
 > **学科**: 计算理论

@@ -1,3 +1,9 @@
+---
+title: 证明助手(Coq Lean Agda)
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 证明助手 (Coq/Lean/Agda)
 
 > **学科**: 形式化方法 / 交互式定理证明 / 类型理论

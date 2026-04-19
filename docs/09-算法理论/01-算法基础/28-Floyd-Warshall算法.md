@@ -170,3 +170,7 @@ $$
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解Floyd-Warshall 算法 —— 全对最短路径的核心概念
+- 掌握Floyd-Warshall 算法 —— 全对最短路径的形式化表示

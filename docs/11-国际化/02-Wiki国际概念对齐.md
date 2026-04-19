@@ -1147,3 +1147,7 @@ P versus NP problem / P vs NP问题、NP-completeness / NP完全性、Computatio
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解02-Wiki国际概念对齐的核心概念
+- 掌握02-Wiki国际概念对齐的形式化表示

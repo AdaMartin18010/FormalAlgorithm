@@ -1,3 +1,9 @@
+---
+title: LSM树与日志结构存储
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # LSM树与日志结构存储
 
 > **学科**: 数据库系统、存储系统
@@ -745,6 +751,7 @@ if __name__ == "__main__":
 - **_flush_memtable**: 将内存数据刷写到L0，可能触发Compaction
 - **_compact_level**: Leveled Compaction的实现，合并重叠的SSTable
 
+## 5.3 反例
 ### 5.3 反例
 
 **常见错误 1**: 忽视墓碑标记的处理

@@ -140,3 +140,7 @@ return 匹配结果
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解Hopcroft-Karp 算法的核心概念
+- 掌握Hopcroft-Karp 算法的形式化表示

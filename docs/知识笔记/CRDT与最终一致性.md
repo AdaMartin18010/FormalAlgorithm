@@ -1,3 +1,9 @@
+---
+title: CRDT与最终一致性
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # CRDT与最终一致性
 
 > **学科**: 分布式系统
@@ -486,6 +492,7 @@ if __name__ == "__main__":
     print(f"合并后元素: {merged_set.elements()}")
 ```
 
+## 5.3 反例
 ### 5.3 反例
 
 **常见错误**:

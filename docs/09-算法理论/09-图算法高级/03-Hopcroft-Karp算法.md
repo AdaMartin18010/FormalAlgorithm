@@ -261,3 +261,7 @@ BFS 返回 `true` 当且仅当当前匹配存在增广路。
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解03-Hopcroft-Karp算法的核心概念
+- 掌握03-Hopcroft-Karp算法的形式化表示

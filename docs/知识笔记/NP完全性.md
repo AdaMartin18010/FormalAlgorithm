@@ -1,3 +1,9 @@
+---
+title: NP完全性
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # NP完全性 (NP-Completeness)
 
 > **学科**: 计算理论
@@ -470,6 +476,7 @@ if __name__ == "__main__":
 - `sat_to_vertex_cover`: 3-SAT到顶点覆盖的归约构造
 - 演示了"验证容易，求解难"的本质
 
+## 5.3 反例
 ### 5.3 反例
 
 **常见误解1**: NP = "非多项式"

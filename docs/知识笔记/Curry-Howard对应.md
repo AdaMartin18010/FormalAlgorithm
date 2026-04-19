@@ -1,3 +1,9 @@
+---
+title: Curry Howard对应
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # Curry-Howard对应 (Curry-Howard Correspondence)
 
 > **学科**: 形式化方法 / 类型理论 / 数理逻辑
@@ -541,4 +547,4 @@ Coq基于Calculus of Inductive Constructions（Curry-Howard扩展）。
 - [λ演算.md](./λ演算.md)
 - [简单类型系统.md](./简单类型系统.md)
 - [依赖类型.md](./依赖类型.md)
-- [证明助手(Coq-Lean-Agda).md](./证明助手(Coq-Lean-Agda).md)
+- [证明助手(Coq-Lean-Agda).md](./证明助手.md).md)

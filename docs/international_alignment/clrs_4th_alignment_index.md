@@ -1,3 +1,9 @@
+---
+title: clrs 4th alignment index
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # CLRS 第4版（Introduction to Algorithms, 4th Ed.）对齐索引
 
 > 本索引将本项目的内容与算法领域国际金标准 **CLRS 第4版** 进行原子级对齐。每个主题标注当前覆盖状态：

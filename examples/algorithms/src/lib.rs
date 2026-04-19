@@ -324,6 +324,10 @@ pub mod lup_decomposition;
 // 启发式算法扩展
 /// 遗传算法模块
 pub mod genetic_algorithm;
+/// 蚁群优化模块
+pub mod ant_colony;
+/// 禁忌搜索模块
+pub mod tabu_search;
 
 // 排序算法
 pub use heap_sort::heap_sort;
@@ -469,6 +473,8 @@ pub use optimal_bst::{OptimalBST, OptimalBSTResult, SimpleOptimalBST};
 pub use closest_pair::{Point as ClosestPoint, ClosestPairResult, closest_pair as closest_pair_optimal, closest_pair_brute_force};
 pub use fft::{fft, ifft, polynomial_multiply};
 pub use genetic_algorithm::{GeneticAlgorithm, SelectionMethod};
+pub use ant_colony::{aco_tsp, TspGraph};
+pub use tabu_search::{tabu_search, tabu_sort};
 
 /// 算法 trait，定义算法的基本接口
 ///

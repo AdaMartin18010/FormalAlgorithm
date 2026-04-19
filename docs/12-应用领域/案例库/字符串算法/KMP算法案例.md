@@ -426,6 +426,7 @@ if __name__ == '__main__':
     benchmark_log_analysis()
 ```
 
+## 实际案例来源
 ### 实际案例来源
 
 - **日志分析**：ELK Stack、Splunk、Datadog
@@ -442,3 +443,8 @@ if __name__ == '__main__':
 ## 知识导航
 
 - [返回目录](README.md)
+
+## 学习目标
+
+- 理解KMP算法实际应用案例的核心概念
+- 掌握KMP算法实际应用案例的形式化表示

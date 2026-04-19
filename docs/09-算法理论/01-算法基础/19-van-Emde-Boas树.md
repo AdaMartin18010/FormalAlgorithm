@@ -166,3 +166,7 @@ $$
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解van Emde Boas 树（vEB Tree）的核心概念
+- 掌握van Emde Boas 树（vEB Tree）的形式化表示

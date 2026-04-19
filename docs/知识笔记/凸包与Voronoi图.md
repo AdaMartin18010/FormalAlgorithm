@@ -1,3 +1,9 @@
+---
+title: 凸包与Voronoi图
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 凸包与Voronoi图 (Convex Hull & Voronoi Diagrams)
 
 > **学科**: 计算几何、算法设计与分析
@@ -657,6 +663,7 @@ if __name__ == "__main__":
 
 ---
 
+## 5.3 反例与常见问题
 ### 5.3 反例与常见问题
 
 **Graham扫描常见问题**:

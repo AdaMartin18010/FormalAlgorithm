@@ -1,3 +1,9 @@
+---
+title: README
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 算法规范与模型设计知识体系 - 知识图谱
 
 ## 概述
@@ -113,6 +119,7 @@ concepts:
     ...
 ```
 
+## 2. 查看概念关系
 ### 2. 查看概念关系
 ```yaml
 # 在 concept_edges.yaml 中搜索
@@ -122,6 +129,7 @@ edges:
     relation: "equivalent_to"
 ```
 
+## 3. 规划学习路径
 ### 3. 规划学习路径
 ```yaml
 # 在 concept_dependencies.yaml 中查看

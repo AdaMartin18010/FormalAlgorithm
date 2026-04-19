@@ -1,3 +1,9 @@
+---
+title: Dijkstra算法
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # Dijkstra算法 (Dijkstra's Algorithm)
 
 > **学科**: 算法设计与分析

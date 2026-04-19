@@ -1,3 +1,9 @@
+---
+title: FAQ
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 常见问题解答 (FAQ)
 
 本文档整理了关于 FormalAlgorithm 项目的常见问题及其解答。
@@ -135,6 +141,7 @@ cd docs && python -m http.server 8000
 # 然后访问 http://localhost:8000
 ```
 
+## Q12: 有 PDF 版本吗？
 ### Q12: 有 PDF 版本吗？
 
 **A:** 目前 PDF 版本正在开发中。您可以使用以下工具自行生成：
@@ -221,6 +228,7 @@ mkdocs serve
 # 访问 http://127.0.0.1:8000
 ```
 
+## Q20: 如何运行项目脚本？
 ### Q20: 如何运行项目脚本？
 
 **A:** 我们提供了多个实用脚本：
@@ -236,6 +244,7 @@ python scripts/count_lines.py
 python scripts/check_completeness.py
 ```
 
+## Q21: 项目支持哪些编程语言？
 ### Q21: 项目支持哪些编程语言？
 
 **A:** 代码示例主要使用：

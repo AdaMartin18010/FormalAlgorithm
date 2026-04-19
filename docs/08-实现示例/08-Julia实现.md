@@ -96,6 +96,9 @@ owner: 实现示例工作组
 - [参考文献 / References](#参考文献--references)
   - [Julia语言规范与核心文献 / Julia Language Specification and Core Literature](#julia语言规范与核心文献--julia-language-specification-and-core-literature)
   - [科学计算与数值分析 / Scientific Computing and Numerical Analysis](#科学计算与数值分析--scientific-computing-and-numerical-analysis)
+- [*本文档展示了Julia在形式化算法实现中的应用，通过高性能计算语言实现复杂的科学计算算法。*](#本文档展示了julia在形式化算法实现中的应用通过高性能计算语言实现复杂的科学计算算法)
+- [知识导航](#知识导航)
+- [学习目标](#学习目标)
 
 ---
 
@@ -175,6 +178,7 @@ struct Matrix{T}
 end
 ```
 
+## 内容补充与思维表征 / Content Supplement and Thinking Representation
 ### 内容补充与思维表征 / Content Supplement and Thinking Representation
 
 > 本节按 [内容补充与思维表征全面计划方案](../内容补充与思维表征全面计划方案.md) **只补充、不删除**。标准见 [内容补充标准](../内容补充标准-概念定义属性关系解释论证形式证明.md)、[思维表征模板集](../思维表征模板集.md)。
@@ -266,7 +270,7 @@ flowchart TD
 
 ## 2. 递归函数实现
 
-> 📚 **概念引用**：关于 **递归函数** 的完整定义，详见 [docs/知识图谱/concept_nodes.yaml](../../知识图谱/concept_nodes.yaml) 中 recursive_function 的定义，或参见 [docs/02-递归理论/01-递归函数定义.md](../../02-递归理论/01-递归函数定义.md)。
+> 📚 **概念引用**：关于 **递归函数** 的完整定义，详见 [docs/知识图谱/concept_nodes.yaml](../知识图谱/concept_nodes.yaml) 中 recursive_function 的定义，或参见 [docs/02-递归理论/01-递归函数定义.md](../02-递归理论/01-递归函数定义.md)。
 
 > 以下展示递归函数的Julia实现代码，理论定义详见权威文档。
 
@@ -508,6 +512,7 @@ end
 
 ```
 
+## 搜索算法
 ### 搜索算法
 
 ```julia
@@ -669,6 +674,7 @@ function power_iteration(A::Matrix{T}, max_iterations::Int=100) where T
 end
 ```
 
+## 数值积分
 ### 数值积分
 
 ```julia
@@ -778,6 +784,7 @@ function parallel_reduce(arr::Vector{T}, op::Function) where T
 end
 ```
 
+## 6.2 并行算法正确性证明
 ### 6.2 并行算法正确性证明
 
 **定理 6.2.1 (并行算法的可组合性)** 如果并行算法 $A_1$ 和 $A_2$ 都正确，则它们的组合 $A_1 \circ A_2$ 也正确。
@@ -1000,6 +1007,7 @@ function fit!(model::KMeans, X::Matrix{Float64}, k::Int)
 end
 ```
 
+## 7.3 机器学习算法收敛性证明
 ### 7.3 机器学习算法收敛性证明
 
 **定理 7.3.1 (梯度下降的收敛性)** 对于凸函数 $f$ 和适当的步长，梯度下降算法收敛到全局最优解。
@@ -1142,3 +1150,12 @@ Julia实现展示了高性能科学计算语言在形式化算法中的强大应
 
 - [返回目录](README.md)
 
+---
+
+## 学习目标
+
+完成本章节后，读者将能够：
+
+1. 理解核心概念与基本原理
+2. 掌握关键定理与证明方法
+3. 应用所学知识解决实际问题

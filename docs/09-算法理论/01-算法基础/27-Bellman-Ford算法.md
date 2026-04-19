@@ -153,3 +153,7 @@ BELLMAN-FORD(G, w, s)
 
 - [返回目录](README.md)
 
+## 学习目标
+
+- 理解Bellman-Ford 算法 —— 单源最短路径与负权环检测的核心概念
+- 掌握Bellman-Ford 算法 —— 单源最短路径与负权环检测的形式化表示

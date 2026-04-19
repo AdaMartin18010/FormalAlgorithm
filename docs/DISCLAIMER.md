@@ -1,3 +1,9 @@
+---
+title: DISCLAIMER
+version: 1.0
+last_updated: 2026-04-19
+---
+
 # 项目声明 / Project Disclaimer
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](项目全面梳理-2025.md)

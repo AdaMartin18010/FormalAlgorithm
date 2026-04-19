@@ -107,6 +107,7 @@ cd FormalAlgorithm
 cat docs/README.md
 ```
 
+## 2. 运行代码
 ### 2. 运行代码
 ```bash
 cd examples/algorithms
