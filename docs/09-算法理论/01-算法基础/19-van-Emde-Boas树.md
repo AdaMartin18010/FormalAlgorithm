@@ -1,3 +1,10 @@
+---
+title: 19 van Emde Boas树
+concepts: ["排序", "搜索", "图算法", "动态规划", "贪心"]
+level: 中级
+last_updated: 2026-04-21
+---
+
 # van Emde Boas 树（vEB Tree）
 
 

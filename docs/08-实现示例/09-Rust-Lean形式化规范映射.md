@@ -1,3 +1,10 @@
+---
+title: 09 Rust Lean形式化规范映射
+concepts: ["Rust", "Lean4", "Haskell", "形式化验证", "程序提取"]
+level: 中级
+last_updated: 2026-04-21
+---
+
 # Rust ↔ Lean 形式化规范映射
 
 

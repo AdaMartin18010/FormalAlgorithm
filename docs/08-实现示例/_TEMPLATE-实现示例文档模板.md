@@ -4,7 +4,10 @@ version: 1.0
 status: draft
 last_updated: <YYYY-MM-DD>
 owner: 实现示例工作组
+concepts: ["Rust", "Lean4", "Haskell", "形式化验证", "程序提取"]
+level: 中级
 ---
+
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
 

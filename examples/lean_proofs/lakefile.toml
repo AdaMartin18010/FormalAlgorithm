@@ -1,0 +1,15 @@
+name = "FormalAlgorithm"
+version = "0.1.0"
+defaultTargets = ["FormalAlgorithm"]
+
+[[lean_lib]]
+name = "FormalAlgorithm"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+version = "git#v4.16.0"
+
+[[lean_exe]]
+name = "formal_algorithm"
+root = "Main"

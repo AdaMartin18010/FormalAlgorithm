@@ -2,9 +2,11 @@
 title: 2. Wiki国际概念对齐 / Wiki International Concept Alignment
 version: 1.2
 status: maintained
-last_updated: 2026-04-08
+last_updated: 2026-04-21
 owner: 国际化工作组
+level: 中级
 ---
+
 
 ## 2. Wiki国际概念对齐 (Wiki International Concept Alignment)
 

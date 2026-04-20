@@ -1,3 +1,10 @@
+---
+title: 27 Bellman Ford算法
+concepts: ["排序", "搜索", "图算法", "动态规划", "贪心"]
+level: 中级
+last_updated: 2026-04-21
+---
+
 # Bellman-Ford 算法 —— 单源最短路径与负权环检测
 
 

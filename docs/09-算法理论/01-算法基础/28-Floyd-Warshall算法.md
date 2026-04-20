@@ -1,3 +1,10 @@
+---
+title: 28 Floyd Warshall算法
+concepts: ["排序", "搜索", "图算法", "动态规划", "贪心"]
+level: 中级
+last_updated: 2026-04-21
+---
+
 # Floyd-Warshall 算法 —— 全对最短路径
 
 

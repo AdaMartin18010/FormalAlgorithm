@@ -2,9 +2,12 @@
 title: 04-字符串算法. Rabin-Karp 算法 / Rabin-Karp Algorithm
 version: 1.0
 status: draft
-last_updated: 2026-04-15
+last_updated: 2026-04-21
 owner: 算法理论工作组
+concepts: ["排序", "搜索", "图算法", "动态规划", "贪心"]
+level: 中级
 ---
+
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../../项目全面梳理-2025.md)
 

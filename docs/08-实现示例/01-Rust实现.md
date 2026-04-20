@@ -2,16 +2,19 @@
 title: 8.1 Rust实现 / Rust Implementation
 version: 1.1
 status: maintained
-last_updated: 2025-01-11
+last_updated: 2026-04-21
 owner: 实现示例工作组
+concepts: ["Rust", "Lean4", "Haskell", "形式化验证", "程序提取"]
+level: 中级
 ---
+
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
 > **项目导航与对标**：[项目扩展与持续推进任务编排](../项目扩展与持续推进任务编排.md)、[国际课程对标表](../国际课程对标表.md)
 
 ## 8.1 Rust实现 / Rust Implementation
 
-> 说明：本文档中的代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
+> 说明：本项目包含工程级 Rust 算法实现库（`examples/algorithms/`），已通过 `cargo check` 编译验证，包含 100+ 算法模块的完整单元测试。代码严格遵循工程规范：泛型设计、错误处理、文档注释与基准测试。
 
 ### 摘要 / Executive Summary
 

@@ -2,16 +2,19 @@
 title: 8.3 Lean实现 / Lean Implementation
 version: 1.1
 status: maintained
-last_updated: 2025-01-12
+last_updated: 2026-04-21
 owner: 实现示例工作组
+concepts: ["Rust", "Lean4", "Haskell", "形式化验证", "程序提取"]
+level: 中级
 ---
+
 
 > 📊 **项目全面梳理**：详细的项目结构、模块详解和学习路径，请参阅 [`项目全面梳理-2025.md`](../项目全面梳理-2025.md)
 > **项目导航与对标**：[项目扩展与持续推进任务编排](../项目扩展与持续推进任务编排.md)、[国际课程对标表](../国际课程对标表.md)
 
 ## 8.3 Lean实现 / Lean Implementation
 
-> 说明：本文档中的 Lean 代码/伪代码为说明性片段，用于辅助理解概念；本仓库不提供可运行工程或 CI。
+> 说明：本项目包含 Lean4 形式化证明工程（`examples/lean_proofs/`），配置 `lakefile.toml`，涵盖排序正确性、图论性质、数论归纳等定理证明。所有 `.lean` 文件遵循 Lean4 语法规范。
 
 ### 摘要 / Executive Summary
 

@@ -318,7 +318,7 @@
 | **参考** | Introduction to the Theory of Computation | Sipser | 英文/中文 |
 | **参考** | 计算复杂性基础 | 陈引 | 中文 |
 | **扩展** | The Nature of Computation | Moore & Mertens | 英文 |
-| **扩展** | Quantum Computation and Quantum Information | Nielsen & Chuang | 英文 |
+| **扩展** | Quantum Computation and Quantum Information | [NielsenChuang2010] | 英文 |
 
 #### 与项目对齐分析 / Alignment with Project
 
@@ -744,7 +744,7 @@
    - Graham, Knuth, Patashnik. *Concrete Mathematics*
 
 4. **量子计算**:
-   - Nielsen & Chuang. *Quantum Computation and Quantum Information*
+   - [NielsenChuang2010]. *Quantum Computation and Quantum Information*
    - 姚期智相关讲义与论文
 
 ---

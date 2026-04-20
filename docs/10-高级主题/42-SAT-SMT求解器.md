@@ -1,3 +1,10 @@
+---
+title: 42 SAT SMT求解器
+concepts: ["量子算法", "机器学习", "并行计算", "流算法", "分布式算法"]
+level: 中级
+last_updated: 2026-04-21
+---
+
 # SAT/SMT 求解器原理
 
 

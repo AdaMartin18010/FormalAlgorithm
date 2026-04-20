@@ -1,3 +1,10 @@
+---
+title: Huffman编码案例
+concepts: ["人工智能", "区块链", "网络安全", "生物信息学", "金融"]
+level: 中级
+last_updated: 2026-04-21
+---
+
 # Huffman编码实际应用案例
 
 
