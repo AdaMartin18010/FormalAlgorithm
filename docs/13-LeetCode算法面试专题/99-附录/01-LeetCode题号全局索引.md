@@ -24,6 +24,7 @@ owner: LeetCode面试专题工作组
 - [1. 索引表 / Index Table](#1-索引表--index-table)
   - [1.1 数据结构专题](#11-数据结构专题)
   - [1.2 算法范式专题（关联引用）](#12-算法范式专题关联引用)
+  - [1.3 图论专题](#13-图论专题)
 - [2. 按专题分类索引 / Index by Topic](#2-按专题分类索引--index-by-topic)
   - [2.1 数据结构专题](#21-数据结构专题)
     - [01-数组与矩阵](#01-数组与矩阵)
@@ -34,10 +35,15 @@ owner: LeetCode面试专题工作组
     - [02-回文问题](#02-回文问题)
   - [2.3 算法范式专题（关联）](#23-算法范式专题关联)
     - [05-二分查找](#05-二分查找)
+  - [2.4 图论专题](#24-图论专题)
+    - [01-图的遍历](#01-图的遍历)
+    - [02-最短路径](#02-最短路径)
+    - [03-拓扑排序与DAG DP](#03-拓扑排序与dag-dp)
+    - [04-最小生成树](#04-最小生成树)
 - [3. 按难度分类索引 / Index by Difficulty](#3-按难度分类索引--index-by-difficulty)
   - [Easy (8 题)](#easy-8-题)
-  - [Medium (10 题)](#medium-10-题)
-  - [Hard (3 题)](#hard-3-题)
+  - [Medium (21 题)](#medium-21-题)
+  - [Hard (4 题)](#hard-4-题)
 - [4. 代码实现语言分布 / Language Distribution](#4-代码实现语言分布--language-distribution)
   - [4.1 按语言统计](#41-按语言统计)
   - [4.2 按题目统计](#42-按题目统计)
@@ -79,6 +85,22 @@ owner: LeetCode面试专题工作组
 | 35 | Search Insert Position | Easy | 算法范式-二分查找 | `02-算法范式专题/05-二分查找.md` | 见范式专题 | ❌ |
 | 153 | Find Minimum in Rotated Sorted Array | Medium | 算法范式-二分查找 | `02-算法范式专题/05-二分查找.md` | 见范式专题 | ❌ |
 | 704 | Binary Search | Easy | 算法范式-二分查找 | `02-算法范式专题/05-二分查找.md` | 见范式专题 | ❌ |
+
+### 1.3 图论专题
+
+| 题号 | 标题 | 难度 | 所属专题 | 文档路径 | 代码路径 | Lean证明 |
+|-----|------|------|---------|---------|---------|---------|
+| 133 | Clone Graph | Medium | 图论-遍历 | `05-图论专题/01-图的遍历（DFS-BFS-并查集）.md` | `algorithms/src/leetcode/lc0133_clone_graph.rs`, `algorithms-python/src/leetcode/lc0133_clone_graph.py` | ❌ |
+| 200 | Number of Islands | Medium | 图论-遍历 | `05-图论专题/01-图的遍历（DFS-BFS-并查集）.md` | `algorithms/src/leetcode/lc0200_number_of_islands.rs`, `algorithms-python/src/leetcode/lc0200_number_of_islands.py`, `algorithms-go/leetcode/lc0200_number_of_islands.go` | ❌ |
+| 207 | Course Schedule | Medium | 图论-拓扑排序 | `05-图论专题/03-拓扑排序与DAG DP.md` | `algorithms/src/leetcode/lc0207_course_schedule.rs`, `algorithms-python/src/leetcode/lc0207_course_schedule.py`, `algorithms-go/leetcode/lc0207_course_schedule.go` | ❌ |
+| 210 | Course Schedule II | Medium | 图论-拓扑排序 | `05-图论专题/03-拓扑排序与DAG DP.md` | `algorithms/src/leetcode/lc0210_course_schedule_ii.rs`, `algorithms-python/src/leetcode/lc0210_course_schedule_ii.py` | ❌ |
+| 329 | Longest Increasing Path in a Matrix | Hard | 图论-拓扑排序 | `05-图论专题/03-拓扑排序与DAG DP.md` | 见专题文档 | ❌ |
+| 743 | Network Delay Time | Medium | 图论-最短路径 | `05-图论专题/02-最短路径（Dijkstra-Bellman-Ford-SPFA）.md` | `algorithms/src/leetcode/lc0743_network_delay_time.rs`, `algorithms-python/src/leetcode/lc0743_network_delay_time.py`, `algorithms-go/leetcode/lc0743_network_delay_time.go` | ❌ |
+| 787 | Cheapest Flights Within K Stops | Medium | 图论-最短路径 | `05-图论专题/02-最短路径（Dijkstra-Bellman-Ford-SPFA）.md` | `algorithms/src/leetcode/lc0787_cheapest_flights_within_k_stops.rs`, `algorithms-python/src/leetcode/lc0787_cheapest_flights_within_k_stops.py` | ❌ |
+| 994 | Rotting Oranges | Medium | 图论-遍历 | `05-图论专题/01-图的遍历（DFS-BFS-并查集）.md` | `algorithms/src/leetcode/lc0994_rotting_oranges.rs`, `algorithms-go/leetcode/lc0994_rotting_oranges.go` | ❌ |
+| 1135 | Connecting Cities With Minimum Cost | Medium | 图论-MST | `05-图论专题/04-最小生成树（Prim-Kruskal）.md` | 见专题文档 | ❌ |
+| 1584 | Min Cost to Connect All Points | Medium | 图论-MST | `05-图论专题/04-最小生成树（Prim-Kruskal）.md` | `algorithms/src/leetcode/lc1584_min_cost_to_connect_all_points.rs` | ❌ |
+| 1631 | Path With Minimum Effort | Medium | 图论-最短路径 | `05-图论专题/02-最短路径（Dijkstra-Bellman-Ford-SPFA）.md` | 见专题文档 | ❌ |
 
 ---
 
@@ -129,6 +151,31 @@ owner: LeetCode面试专题工作组
 - [LC 153 — Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) (Medium)
 - [LC 704 — Binary Search](https://leetcode.com/problems/binary-search/) (Easy)
 
+### 2.4 图论专题
+
+#### 01-图的遍历
+
+- [LC 133 — Clone Graph](https://leetcode.com/problems/clone-graph/) (Medium)
+- [LC 200 — Number of Islands](https://leetcode.com/problems/number-of-islands/) (Medium)
+- [LC 994 — Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) (Medium)
+
+#### 02-最短路径
+
+- [LC 743 — Network Delay Time](https://leetcode.com/problems/network-delay-time/) (Medium)
+- [LC 787 — Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/) (Medium)
+- [LC 1631 — Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/) (Medium)
+
+#### 03-拓扑排序与DAG DP
+
+- [LC 207 — Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
+- [LC 210 — Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) (Medium)
+- [LC 329 — Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) (Hard)
+
+#### 04-最小生成树
+
+- [LC 1135 — Connecting Cities With Minimum Cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/) (Medium)
+- [LC 1584 — Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/) (Medium)
+
 ---
 
 ## 3. 按难度分类索引 / Index by Difficulty
@@ -146,7 +193,7 @@ owner: LeetCode面试专题工作组
 | 226 | Invert Binary Tree | 二叉树 |
 | 704 | Binary Search | 二分查找 |
 
-### Medium (10 题)
+### Medium (21 题)
 
 | 题号 | 标题 | 所属专题 |
 |-----|------|---------|
@@ -156,18 +203,29 @@ owner: LeetCode面试专题工作组
 | 35 | Search Insert Position | 二分查找 |
 | 48 | Rotate Image | 数组与矩阵 |
 | 54 | Spiral Matrix | 数组与矩阵 |
+| 133 | Clone Graph | 图论-遍历 |
 | 142 | Linked List Cycle II | 链表 |
 | 153 | Find Minimum in Rotated Sorted Array | 二分查找 |
+| 200 | Number of Islands | 图论-遍历 |
+| 207 | Course Schedule | 图论-拓扑排序 |
+| 210 | Course Schedule II | 图论-拓扑排序 |
 | 236 | Lowest Common Ancestor of a Binary Tree | 二叉树 |
 | 240 | Search a 2D Matrix II | 数组与矩阵 |
 | 647 | Palindromic Substrings | 回文问题 |
+| 743 | Network Delay Time | 图论-最短路径 |
+| 787 | Cheapest Flights Within K Stops | 图论-最短路径 |
+| 994 | Rotting Oranges | 图论-遍历 |
+| 1135 | Connecting Cities With Minimum Cost | 图论-MST |
+| 1584 | Min Cost to Connect All Points | 图论-MST |
+| 1631 | Path With Minimum Effort | 图论-最短路径 |
 
-### Hard (3 题)
+### Hard (4 题)
 
 | 题号 | 标题 | 所属专题 |
 |-----|------|---------|
 | 23 | Merge k Sorted Lists | 链表 |
 | 214 | Shortest Palindrome | 字符串-KMP |
+| 329 | Longest Increasing Path in a Matrix | 图论-拓扑排序 |
 
 ---
 
@@ -177,9 +235,9 @@ owner: LeetCode面试专题工作组
 
 | 语言 | 题目数量 | 覆盖题号 |
 |-----|---------|---------|
-| Python | 7 | 5, 48, 54, 206, 214, 240, 23 |
-| Rust | 5 | 5, 28, 94, 226, 236 |
-| Go | 4 | 21, 104, 142, 647 |
+| Python | 11 | 5, 48, 54, 133, 200, 207, 210, 214, 240, 743, 787 |
+| Rust | 12 | 5, 28, 94, 133, 200, 207, 210, 226, 236, 743, 787, 1584 |
+| Go | 6 | 21, 104, 142, 200, 647, 743 |
 
 ### 4.2 按题目统计
 
@@ -193,13 +251,20 @@ owner: LeetCode面试专题工作组
 | 54 | ✅ | ❌ | ❌ | 1 |
 | 94 | ❌ | ✅ | ❌ | 1 |
 | 104 | ❌ | ❌ | ✅ | 1 |
+| 133 | ✅ | ✅ | ❌ | 2 |
 | 142 | ❌ | ❌ | ✅ | 1 |
+| 200 | ✅ | ✅ | ✅ | 3 |
 | 206 | ✅ | ❌ | ❌ | 1 |
+| 207 | ✅ | ✅ | ✅ | 3 |
+| 210 | ✅ | ✅ | ❌ | 2 |
 | 214 | ✅ | ❌ | ❌ | 1 |
 | 226 | ❌ | ✅ | ❌ | 1 |
 | 236 | ❌ | ✅ | ❌ | 1 |
 | 240 | ✅ | ❌ | ❌ | 1 |
 | 647 | ❌ | ❌ | ✅ | 1 |
+| 743 | ✅ | ✅ | ✅ | 3 |
+| 787 | ✅ | ✅ | ❌ | 2 |
+| 1584 | ❌ | ✅ | ❌ | 1 |
 
 ---
 

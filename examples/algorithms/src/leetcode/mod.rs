@@ -53,6 +53,22 @@ pub mod lc0127_word_ladder;
 /// LeetCode 994. 腐烂的橘子（多源 BFS）
 pub mod lc0994_rotting_oranges;
 
+// === 图论专题 ===
+/// LeetCode 133. 克隆图（DFS/BFS + 哈希映射）
+pub mod lc0133_clone_graph;
+/// LeetCode 200. 岛屿数量（DFS Flood Fill）
+pub mod lc0200_number_of_islands;
+/// LeetCode 207. 课程表（拓扑排序 / Kahn 算法）
+pub mod lc0207_course_schedule;
+/// LeetCode 210. 课程表 II（拓扑排序输出）
+pub mod lc0210_course_schedule_ii;
+/// LeetCode 743. 网络延迟时间（Dijkstra 单源最短路）
+pub mod lc0743_network_delay_time;
+/// LeetCode 787. K站中转内最便宜的航班（Bellman-Ford）
+pub mod lc0787_cheapest_flights_within_k_stops;
+/// LeetCode 1584. 连接所有点的最小费用（Prim MST）
+pub mod lc1584_min_cost_to_connect_all_points;
+
 // === 剑指 Offer 专题 ===
 /// 剑指 Offer 10-I. 斐波那契数列
 #[path = "剑指Offer_10_I_斐波那契数列.rs"]
@@ -91,3 +107,13 @@ pub use lc0153_find_minimum_in_rotated_sorted_array::find_min as lc0153_find_min
 pub use lc0072_edit_distance::min_distance as lc0072_min_distance;
 pub use lc0198_house_robber::rob as lc0198_rob;
 // pub use lc0136_single_number::single_number as lc0136_single_number;
+
+// === 数学专题 ===
+/// LeetCode 9. 回文数（数字反转 + 溢出避免）
+pub mod lc0009_palindrome_number;
+/// LeetCode 50. Pow(x, n)（快速幂 / 二进制分解）
+pub mod lc0050_powx_n;
+/// LeetCode 204. 计数质数（埃氏筛）
+pub mod lc0204_count_primes;
+/// LeetCode 96. 不同的二叉搜索树（卡特兰数 DP）
+pub mod lc0096_unique_binary_search_trees;

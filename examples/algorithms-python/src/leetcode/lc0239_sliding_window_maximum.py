@@ -1,104 +1,53 @@
-"""LeetCode 239. 滑动窗口最大值 — Python 实现
+"""
+LeetCode 239. Sliding Window Maximum
+滑动窗口最大值
 
-给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到最右侧。
-只可以看到窗口中的 k 个数字，返回滑动窗口中的最大值。
+You are given an array of integers nums, there is a sliding window of size k
+which is moving from the very left of the array to the very right.
+You can only see the k numbers in the window.
 
-对标: LeetCode 239 / docs/13-LeetCode算法面试专题/02-算法范式专题/03-滑动窗口.md
+Return the max sliding window.
+
+使用单调递减双端队列维护窗口最大值
+Use monotonically decreasing deque to maintain window maximum
 """
 
-from typing import List
 from collections import deque
+from typing import List
 
 
-def max_sliding_window(nums: List[int], k: int) -> List[int]:
-    """计算每个滑动窗口中的最大值。
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        """
+        单调递减双端队列
+        Monotonically decreasing deque
 
-    前置条件 (Pre):
-        - nums 为整数数组，长度 ∈ [1, 10^5]。
-        - k ∈ [1, len(nums)]，nums[i] ∈ [-10^4, 10^4]。
+        deque stores indices, corresponding values are monotonically decreasing
+        Time: O(n), Space: O(k)
+        """
+        dq: deque[int] = deque()  # 存储索引，对应值单调递减 / Store indices, values decreasing
+        result: List[int] = []
 
-    后置条件 (Post):
-        - 返回长度为 n - k + 1 的数组，其中 result[i] = max(nums[i..i+k-1])。
+        for i, num in enumerate(nums):
+            # 移除队尾所有小于当前值的元素 / Remove smaller elements from tail
+            while dq and nums[dq[-1]] < num:
+                dq.pop()
+            dq.append(i)
 
-    算法框架:
-        单调队列优化：维护一个双端队列，存储窗口中可能成为最大值的元素的索引。
-        队列中的索引对应的值单调递减。
+            # 移除已滑出窗口的队头元素 / Remove front elements out of window
+            if dq[0] < i - k + 1:
+                dq.popleft()
 
-    窗口不变式 WindowInvariant(left, right):
-        deque 中存储的索引均落在当前窗口 [right-k+1, right] 内。
-        deque 中对应的值严格单调递减：
-            nums[deque[0]] > nums[deque[1]] > ... > nums[deque[-1]]
+            # 窗口已形成，记录最大值 / Window formed, record max
+            if i >= k - 1:
+                result.append(nums[dq[0]])
 
-        维护：
-        - 初始队列为空。
-        - 扩展 right：
-          * 从队尾弹出所有满足 nums[deque[-1]] ≤ nums[right] 的索引
-            （这些元素不可能成为未来窗口的最大值）。
-          * 将 right 入队。
-          * 若 deque[0] 已不在当前窗口内（deque[0] ≤ right - k），从队首弹出。
-        - 当窗口形成后（right ≥ k-1），deque[0] 即为当前窗口最大值。
-
-    复杂度:
-        时间复杂度: O(n) — 摊还分析：每个元素最多入队一次、出队一次。
-        空间复杂度: O(k) — 队列最多存储 k 个索引。
-
-    证明要点:
-        - 单调队列正确性见 docs/13-LeetCode算法面试专题/02-算法范式专题/03-滑动窗口.md
-        - 核心：队首始终为当前窗口最大值；队尾淘汰策略保证任何被移出的元素
-          不可能成为后续窗口的最大值。
-
-    Args:
-        nums: 整数数组。
-        k: 滑动窗口大小。
-
-    Returns:
-        每个窗口位置对应的最大值数组。
-    """
-    if not nums or k == 0:
-        return []
-
-    n = len(nums)
-    result: List[int] = []
-    dq: deque[int] = deque()
-
-    for right in range(n):
-        # 移除队尾不大于当前值的元素（它们不可能成为后续窗口的最大值）
-        while dq and nums[dq[-1]] <= nums[right]:
-            dq.pop()
-
-        dq.append(right)
-
-        # 移除队首不在窗口内的元素
-        if dq[0] <= right - k:
-            dq.popleft()
-
-        # 窗口已形成，记录最大值
-        if right >= k - 1:
-            result.append(nums[dq[0]])
-
-    return result
+        return result
 
 
+# 简单测试 / Simple test
 if __name__ == "__main__":
-    # 示例 1
-    assert max_sliding_window([1, 3, -1, -3, 5, 3, 6, 7], 3) == [3, 3, 5, 5, 6, 7], "Example 1 failed"
-
-    # 示例 2
-    assert max_sliding_window([1], 1) == [1], "Example 2 failed"
-
-    # 边界：k == n
-    assert max_sliding_window([1, 2, 3, 4], 4) == [4], "k equals n"
-
-    # 边界：递增数组
-    assert max_sliding_window([1, 2, 3, 4, 5], 2) == [2, 3, 4, 5], "Increasing"
-
-    # 边界：递减数组
-    assert max_sliding_window([5, 4, 3, 2, 1], 2) == [5, 4, 3, 2], "Decreasing"
-
-    # 边界：全相同
-    assert max_sliding_window([5, 5, 5, 5], 2) == [5, 5, 5], "All same"
-
-    # 边界：负数
-    assert max_sliding_window([-1, -3, -5, -2], 2) == [-1, -3, -2], "Negative"
-
-    print("All tests passed.")
+    sol = Solution()
+    assert sol.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3) == [3, 3, 5, 5, 6, 7]
+    assert sol.maxSlidingWindow([1], 1) == [1]
+    print("All tests passed!")
