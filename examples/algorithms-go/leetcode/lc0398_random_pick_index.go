@@ -25,22 +25,22 @@ import (
 //   时间: O(n) 每次 Pick
 //   空间: O(1)
 
-// Solution 保存数组
-type Solution struct {
+// RandomPickIndex 保存数组
+type RandomPickIndex struct {
 	nums []int
 	rng  *rand.Rand
 }
 
 // ConstructorRandomPickIndex 初始化结构体
-func ConstructorRandomPickIndex(nums []int) Solution {
-	return Solution{
+func ConstructorRandomPickIndex(nums []int) RandomPickIndex {
+	return RandomPickIndex{
 		nums: nums,
 		rng:  rand.New(rand.NewSource(time.Now().UnixNano())),
 	}
 }
 
 // PickIndex 等概率随机返回 target 的一个索引
-func (this *Solution) PickIndex(target int) int {
+func (this *RandomPickIndex) PickIndex(target int) int {
 	count := 0
 	result := 0
 	for i, num := range this.nums {

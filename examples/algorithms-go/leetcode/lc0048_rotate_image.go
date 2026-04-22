@@ -1,23 +1,16 @@
-// LeetCode 48. Rotate Image
-// https://leetcode.com/problems/rotate-image/
-//
-// Problem: You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
-// You have to rotate the image in-place, which means you have to modify the input 2D matrix directly.
-//
-// Formal specification:
-// - Pre: matrix is n x n, n >= 1
-// - Post: matrix is rotated 90 degrees clockwise in-place
-//
-// Algorithm: Transpose then horizontal flip.
-//   Transpose swaps matrix[i][j] with matrix[j][i].
-//   Horizontal flip swaps matrix[i][j] with matrix[i][n-1-j].
-//   Combined: (i,j) -> (j,i) -> (j,n-1-i).
-// Time: O(n^2), Space: O(1).
-
 package leetcode
 
+// LeetCode 48. 旋转图像
+//
+// 给定一个 n × n 的二维矩阵 matrix，将矩阵顺时针旋转 90 度（原地）。
+//
+// 思路：两步法（转置 + 水平翻转）
+// 1. 转置矩阵：沿主对角线交换元素，matrix[i][j] <-> matrix[j][i]。
+// 2. 水平翻转每一行：matrix[i][j] <-> matrix[i][n-1-j]。
+//
+// 时间复杂度：O(n^2)，空间复杂度：O(1)。
+
 // Rotate 原地顺时针旋转 n × n 矩阵 90 度。
-// 先沿主对角线转置，再对每行进行水平翻转。
 func Rotate(matrix [][]int) {
 	n := len(matrix)
 	if n <= 1 {

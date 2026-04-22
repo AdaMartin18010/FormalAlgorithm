@@ -1,21 +1,29 @@
 package leetcode
 
-// LeetCode 583. Delete Operation for Two Strings
+// LeetCode 583. 两个字符串的删除操作
 //
-// Given two strings word1 and word2, return the minimum number of steps
-// required to make word1 and word2 the same.
+// 给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，
+// 每步可以删除任意一个字符串中的一个字符。
 //
-// In one step, you can delete exactly one character in either string.
+// 思路：
+// 最终相等的字符串是 word1 和 word2 的某个公共子序列。
+// 为了使删除次数最少，应保留最长公共子序列（LCS）。
+// 最小删除步数 = len(word1) + len(word2) - 2 * LCS(word1, word2)
 //
-// Key insight: The minimum deletions = (len(word1) - LCS) + (len(word2) - LCS)
-//                                          = len(word1) + len(word2) - 2*LCS
-//
-// We compute LCS using space-optimized DP.
-//
-// Time: O(m*n), Space: O(min(m,n))
+// LCS 使用空间优化的一维 DP 求解。
+// 时间复杂度：O(m*n)，空间复杂度：O(min(m, n))。
 
-func minDistanceDel(word1 string, word2 string) int {
+// MinDistance 计算使两个单词相同的最小删除步数。
+func MinDistance(word1, word2 string) int {
 	m, n := len(word1), len(word2)
+	if m == 0 {
+		return n
+	}
+	if n == 0 {
+		return m
+	}
+
+	// 确保 word2 是较短的，以优化空间
 	if m < n {
 		word1, word2 = word2, word1
 		m, n = n, m

@@ -22,18 +22,18 @@ import (
 //   shuffle: 时间 O(n)，空间 O(1)（原地交换）
 //   reset:   时间 O(n)，空间 O(n)
 
-// Solution 保存原始数组和当前数组
-type Solution struct {
+// ShuffleArray 保存原始数组和当前数组
+type ShuffleArray struct {
 	original []int
 	nums     []int
 	rng      *rand.Rand
 }
 
 // ConstructorShuffleArray 初始化结构体
-func ConstructorShuffleArray(nums []int) Solution {
+func ConstructorShuffleArray(nums []int) ShuffleArray {
 	original := make([]int, len(nums))
 	copy(original, nums)
-	return Solution{
+	return ShuffleArray{
 		original: original,
 		nums:     nums,
 		rng:      rand.New(rand.NewSource(time.Now().UnixNano())),
@@ -41,7 +41,7 @@ func ConstructorShuffleArray(nums []int) Solution {
 }
 
 // Reset 将数组重置为初始状态并返回
-func (this *Solution) Reset() []int {
+func (this *ShuffleArray) Reset() []int {
 	res := make([]int, len(this.original))
 	copy(res, this.original)
 	this.nums = res
@@ -49,7 +49,7 @@ func (this *Solution) Reset() []int {
 }
 
 // Shuffle 使用 Fisher-Yates 算法打乱数组并返回
-func (this *Solution) Shuffle() []int {
+func (this *ShuffleArray) Shuffle() []int {
 	n := len(this.nums)
 	for i := n - 1; i > 0; i-- {
 		j := this.rng.Intn(i + 1)
