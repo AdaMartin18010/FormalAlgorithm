@@ -8,3 +8,4 @@ import FormalAlgorithm.counting_sort
 import FormalAlgorithm.floyd_warshall
 import FormalAlgorithm.graph_proofs
 import FormalAlgorithm.hott_basics
+import FormalAlgorithm.leetcode.lc0704_binary_search

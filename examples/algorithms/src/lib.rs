@@ -235,6 +235,10 @@ pub mod dancing_links;
 /// 模拟退火算法模块
 pub mod simulated_annealing;
 
+// LeetCode 经典题目模块
+/// LeetCode 算法实现模块
+pub mod leetcode;
+
 // 基础数据结构 (Foundation Data Structures)
 /// 动态数组模块
 pub mod dynamic_array;
