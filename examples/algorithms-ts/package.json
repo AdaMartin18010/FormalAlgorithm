@@ -1,0 +1,24 @@
+{
+  "name": "algorithms-ts",
+  "version": "1.0.0",
+  "description": "TypeScript implementation of core algorithms for the Formal Algorithm Knowledge System",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node dist/tests/all_tests.js",
+    "clean": "if exist dist rd /s /q dist"
+  },
+  "keywords": [
+    "algorithms",
+    "typescript",
+    "data-structures",
+    "formal-methods"
+  ],
+  "author": "Formal Algorithm Working Group",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^5.3.0"
+  }
+}
