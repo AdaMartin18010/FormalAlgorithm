@@ -131,7 +131,7 @@ FormalAlgorithm/
 │   │
 │   └── 致谢.md
 │
-├── 💻 examples/algorithms/          # 代码实现 (1096KB, 80个文件)
+├── 💻 examples/algorithms/          # Rust代码实现 (1096KB, 80个文件)
 │   ├── Cargo.toml                   # Rust项目配置
 │   ├── src/
 │   │   ├── lib.rs                   # 库入口
@@ -206,13 +206,33 @@ FormalAlgorithm/
 │   ├── sorting.c                    # C排序
 │   └── data_structures.c            # C数据结构
 │
+├── 💻 examples/algorithms-ts/       # TypeScript代码实现 ⭐ 新增 (13个文件)
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── README.md
+│   └── src/
+│       ├── index.ts                 # 统一入口
+│       ├── utils.ts                 # 工具与测试基础设施
+│       ├── sorting.ts               # 10种排序算法
+│       ├── data_structures.ts       # 链表、栈、队列、并查集、线段树、树状数组、Trie、跳表
+│       ├── search.ts                # 线性/二分/插值/三分搜索
+│       ├── graph.ts                 # BFS、DFS、最短路径、MST、拓扑排序、强连通分量
+│       ├── dynamic_programming.ts   # 背包、LIS、LCS、零钱、编辑距离、矩阵链乘
+│       ├── string.ts                # KMP、Manacher、Z函数、滚动哈希、AC自动机、后缀数组
+│       ├── number_theory.ts         # GCD、扩展欧几里得、快速幂、素性测试、离散对数
+│       ├── geometry.ts              # 凸包、最近点对、线段相交
+│       ├── tree.ts                  # LCA、树链剖分、重心分解、笛卡尔树
+│       ├── advanced.ts              # FFT、莫队、舞蹈链、模拟退火
+│       └── tests/
+│           └── all_tests.ts         # 统一测试运行器 (72个测试用例)
+│
 └── 📊 项目统计
-    ├── 总文档: 60+
-    ├── 总代码文件: 80个
-    ├── 总代码行数: 15,000+行
-    ├── 总字数: 400,000+字
-    ├── 算法实现: 80+个
-    ├── 数据结构: 30+个
+    ├── 总文档: 100+
+    ├── 总代码文件: 130+个
+    ├── 总代码行数: 20,000+行
+    ├── 总字数: 500,000+字
+    ├── 算法实现: 110+个
+    ├── 数据结构: 45+个
     └── 习题数量: 520+道
 ```
 

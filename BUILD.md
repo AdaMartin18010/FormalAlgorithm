@@ -78,6 +78,21 @@ gcc data_structures.c -o data_structures -O2
 ./data_structures
 ```
 
+### TypeScript代码 ⭐ 新增
+
+```bash
+cd examples/algorithms-ts
+
+# 安装依赖
+npm install
+
+# 编译
+npm run build
+
+# 运行测试
+npm test
+```
+
 ## 目录结构说明
 
 ```
@@ -87,14 +102,27 @@ gcc data_structures.c -o data_structures -O2
 │   ├── 习题库/              # 练习题
 │   └── ...
 │
-└── examples/algorithms/     # 代码示例
-    ├── src/                 # Rust源码
-    │   ├── sorting.rs       # 排序算法
-    │   ├── graph_*.rs       # 图算法
+├── examples/algorithms/     # 代码示例 (Rust/Go/Python/C)
+│   ├── src/                 # Rust源码
+│   │   ├── sorting.rs       # 排序算法
+│   │   ├── graph_*.rs       # 图算法
+│   │   └── ...
+│   ├── *.go                 # Go源码
+│   ├── *.py                 # Python源码
+│   └── *.c                  # C源码
+│
+└── examples/algorithms-ts/  # TypeScript代码示例 ⭐ 新增
+    ├── src/
+    │   ├── index.ts         # 统一入口
+    │   ├── sorting.ts       # 排序算法
+    │   ├── data_structures.ts
+    │   ├── graph.ts
+    │   ├── string.ts
+    │   ├── tests/
+    │   │   └── all_tests.ts # 测试运行器
     │   └── ...
-    ├── *.go                 # Go源码
-    ├── *.py                 # Python源码
-    └── *.c                  # C源码
+    ├── package.json
+    └── tsconfig.json
 ```
 
 ## 依赖要求
@@ -103,12 +131,14 @@ gcc data_structures.c -o data_structures -O2
 - **Go**: 1.20+
 - **Python**: 3.9+
 - **C**: GCC或Clang
+- **TypeScript**: 5.3+ (Node.js 18+)
 
 ## 快速开始
 
 1. **阅读文档**: 从 `docs/README.md` 开始
-2. **运行代码**: 查看 `examples/algorithms/src/lib.rs`
-3. **练习习题**: 查看 `docs/习题库/`
+2. **运行 Rust 代码**: 查看 `examples/algorithms/src/lib.rs`
+3. **运行 TypeScript 代码**: 查看 `examples/algorithms-ts/src/index.ts`
+4. **练习习题**: 查看 `docs/习题库/`
 
 ---
 
