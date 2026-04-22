@@ -10,12 +10,6 @@ package leetcode
 // 时间复杂度：O(n)
 // 空间复杂度：O(h)，h 为树高
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0

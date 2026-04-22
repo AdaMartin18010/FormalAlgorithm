@@ -132,10 +132,14 @@ pub mod lc0005_longest_palindromic_substring;
 pub mod lc0017_letter_combinations;
 /// LeetCode 28. 实现 strStr()（KMP / Sunday）
 pub mod lc0028_implement_strstr;
+/// LeetCode 214. 最短回文串（KMP 前缀函数）
+pub mod lc0214_shortest_palindrome;
 /// LeetCode 516. 最长回文子序列（区间 DP）
 pub mod lc0516_longest_palindromic_subsequence;
 /// LeetCode 583. 两个字符串的删除操作（双串 DP）
 pub mod lc0583_delete_operation_for_two_strings;
+/// LeetCode 647. 回文子串（中心扩展）
+pub mod lc0647_palindromic_substrings;
 /// LeetCode 1143. 最长公共子序列（经典双串 DP）
 pub mod lc1143_longest_common_subsequence;
 

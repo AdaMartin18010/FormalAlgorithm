@@ -13,8 +13,9 @@ package leetcode
 // LCS 使用空间优化的一维 DP 求解。
 // 时间复杂度：O(m*n)，空间复杂度：O(min(m, n))。
 
-// MinDistance 计算使两个单词相同的最小删除步数。
-func MinDistance(word1, word2 string) int {
+// MinDistance583 计算使两个单词相同的最小删除步数。
+// 注：函数名附加题号以区分 lc0072 的 MinDistance（编辑距离）。
+func MinDistance583(word1, word2 string) int {
 	m, n := len(word1), len(word2)
 	if m == 0 {
 		return n
