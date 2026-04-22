@@ -18,6 +18,9 @@ func buildList(vals []int) *ListNode {
 
 // Helper: 链表转 slice
 func listToSlice(head *ListNode) []int {
+	if head == nil {
+		return nil
+	}
 	result := []int{}
 	for head != nil {
 		result = append(result, head.Val)

@@ -25,8 +25,10 @@ pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
         dq.push_back(i);
 
         // 移除已滑出窗口的队头 / Remove front out of window
-        if dq[0] < i + 1 - k {
-            dq.pop_front();
+        if let Some(&front) = dq.front() {
+            if front + k <= i {
+                dq.pop_front();
+            }
         }
 
         // 窗口已形成，记录最大值 / Record max when window formed

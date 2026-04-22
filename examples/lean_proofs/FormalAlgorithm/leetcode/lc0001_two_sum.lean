@@ -16,11 +16,11 @@
 -/
 
 import Mathlib.Data.List.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Basic
+-- import Mathlib.Data.Finset.Basic  -- 暂时禁用，待mathlib修复
+-- import Mathlib.Data.Set.Basic  -- 暂时禁用，待mathlib修复
 import Mathlib.Tactic
 
-open Nat List Set
+open Nat List
 
 -- ============================================================
 -- 1. 问题实例的形式化定义
@@ -79,6 +79,10 @@ def twoSumBruteForce (nums : List Int) (target : Int) : Option (Nat × Nat) :=
       simp_wf
       <;> try omega
 
+/-- 列表安全索引（替代缺失的 List.get?）。 -/
+def listGet? {α : Type} (l : List α) (n : Nat) : Option α :=
+  if h : n < l.length then some (l.get ⟨n, h⟩) else none
+
 /-- 哈希表辅助查找：检查 complement 是否已在已遍历集合中。
     在 Lean 中，我们用列表模拟键值对的查找过程。
     返回 complement 对应的索引（如果存在）。 -/
@@ -107,7 +111,7 @@ def twoSumHash (nums : List Int) (target : Int) : Option (Nat × Nat) :=
       let complement := target - current
       match lookupComplement (List.map Prod.fst seen) complement 0 with
       | some idxInSeen =>
-          match List.get? seen idxInSeen with
+          match listGet? seen idxInSeen with
           | some (_, i) => some (i, j)
           | none => aux (j + 1) ((current, j) :: seen)
       | none => aux (j + 1) ((current, j) :: seen)

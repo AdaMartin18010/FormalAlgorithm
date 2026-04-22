@@ -23,41 +23,70 @@ level: 全级别
 
 此外，部分题目还配备了 **Lean 4 形式化证明**，确保证明的机器可检验性。
 
+## 子目录简介与推荐阅读顺序
+
+本模块共 8 个子目录，覆盖从方法论到实战的完整闭环：
+
+| 序号 | 子目录 | 简介 | 推荐阅读时机 |
+|------|--------|------|--------------|
+| 00 | [00-总览与方法论](00-总览与方法论/) | 专题导论、「四步法」解题框架、复杂度速查与面试沟通模板 | **必读**：开始任何专题前 |
+| 01 | [01-数据结构专题](01-数据结构专题/) | 数组、链表、栈/队列、哈希表、二叉树与 BST、堆、并查集、Trie | 基础夯实阶段 |
+| 02 | [02-算法范式专题](02-算法范式专题/) | 枚举、双指针、滑动窗口、前缀和、二分、分治、贪心、动态规划、回溯、BFS、位运算 | 核心算法阶段 |
+| 03 | [03-数学专题](03-数学专题/) | 数论、组合数学、计算几何、概率与随机算法 | 进阶提升或查漏补缺 |
+| 04 | [04-字符串专题](04-字符串专题/) | 字符串匹配（KMP）、回文问题、字符串动态规划 | 需要强化字符串时 |
+| 05 | [05-图论专题](05-图论专题/) | 遍历、最短路径、拓扑排序、最小生成树 | 图论薄弱时 |
+| 06 | [06-面试专题](06-面试专题/) | 高频 Top 100、剑指 Offer 形式化证明、大厂真题分类 | 面试冲刺阶段 |
+| 99 | [99-附录](99-附录/) | LeetCode 题号全局索引、常见错误清单、多语言代码模板速查 | 随时查阅 |
+
+**标准阅读顺序**：`00` → `01` → `02` → `03~05`（按需） → `06` → `99`（参考）。
+
+---
+
 ## 快速开始指南
 
-### 阅读路线
+### 路径一：刷题路径（Systematic Practice）
+>
+> 目标：系统掌握 LeetCode 高频题，建立完整知识体系。
 
-| 读者背景 | 推荐阅读顺序 |
-|----------|--------------|
-| 算法初学者 | `00-总览与方法论` → `01-数据结构专题` → `02-算法范式专题` |
-| 面试冲刺 | `06-面试专题` → `02-算法范式专题`（按需） |
-| 形式化证明兴趣者 | `00-总览与方法论` → 任意专题中的「形式化证明」章节 → `lean_proofs/` |
-| 多语言实践 | 阅读专题文档 → 对照 `examples/` 下对应语言的实现 |
+1. [专题导论](00-总览与方法论/00-专题导论.md) → 理解模块定位与「四步法」；
+2. [数据结构专题](01-数据结构专题/) → 逐个攻克基础数据结构；
+3. [算法范式专题](02-算法范式专题/) → 深入掌握核心算法思想；
+4. [面试专题](06-面试专题/) → 用高频题与大厂真题检验成果；
+5. [附录代码模板](99-附录/03-多语言代码模板速查.md) → 考前速查。
 
-### 目录结构
+### 路径二：形式化证明路径（Formal Verification）
+>
+> 目标：不仅写出代码，更能严格证明算法正确性。
 
-```
-docs/13-LeetCode算法面试专题/
-├── 00-总览与方法论/          # 3 篇：专题导论、解题四步法、复杂度速查
-├── 01-数据结构专题/            # 9 篇：数组、链表、栈队列、哈希表、二叉树、堆、并查集、Trie
-├── 02-算法范式专题/            # 12 篇：枚举、双指针、滑动窗口、前缀和、二分、分治、贪心、DP、回溯、BFS、位运算
-├── 03-数学专题/               # 5 篇：数论、组合数学、计算几何、概率随机
-├── 04-字符串专题/             # 4 篇：字符串匹配、回文问题、字符串DP
-├── 05-图论专题/               # 5 篇：遍历、最短路径、拓扑排序、最小生成树
-├── 06-面试专题/               # 6 篇：高频 Top 100、剑指 Offer、大厂真题
-└── 99-附录/                  # 3 篇：题号全局索引、常见错误清单、代码模板速查
-```
+1. [解题方法论](00-总览与方法论/01-解题方法论（四步法与形式化思维）.md) → 建立形式化思维；
+2. 任选专题中的「形式化证明」章节（如 [动态规划](02-算法范式专题/08-动态规划.md) 或 [二分查找](02-算法范式专题/05-二分查找.md)）；
+3. 对照 [Lean 4 形式化证明](../../examples/lean_proofs/FormalAlgorithm/leetcode/) 阅读机器可检验的证明；
+4. 尝试为经典题目补充循环不变式或归纳证明。
 
-### 代码示例目录
+### 路径三：面试冲刺路径（Interview Sprint）
+>
+> 目标：在有限时间内最大化面试通过率。
 
-```
-examples/
-├── algorithms/src/leetcode/        # Rust 实现（主仓库）
-├── algorithms-rust/src/leetcode/   # Rust 补充实现
-├── algorithms-python/src/leetcode/ # Python 实现
-├── algorithms-go/leetcode/         # Go 实现
-└── lean_proofs/FormalAlgorithm/leetcode/  # Lean 4 形式化证明
-```
+1. [复杂度速查与面试沟通模板](00-总览与方法论/02-复杂度速查与面试沟通模板.md) → 快速恢复面试状态；
+2. [高频 Top 100](06-面试专题/01-高频Top100-数组与链表.md)、[树与图](06-面试专题/02-高频Top100-树与图.md)、[DP 与贪心](06-面试专题/03-高频Top100-DP与贪心.md) → 精刷核心题；
+3. [大厂真题分类](06-面试专题/05-大厂真题分类（字节-阿里-腾讯-Google）.md) → 了解目标公司考察偏好；
+4. [常见错误清单](99-附录/02-面试常见错误清单.md) → 避开高频失分点。
+
+---
+
+## 代码实现索引
+
+各语言实现入口如下：
+
+| 语言 | 路径 | 说明 |
+|------|------|------|
+| Rust（主仓库） | [`examples/algorithms/src/leetcode/`](../../examples/algorithms/src/leetcode/) | 主要实现语言，71 题 |
+| Rust（补充） | [`examples/algorithms/src/leetcode/`](../../examples/algorithms/src/leetcode/) | 额外 Rust 实现 |
+| Python | [`examples/algorithms-python/src/leetcode/`](../../examples/algorithms-python/src/leetcode/) | 辅助教学语言，代码简洁易读 |
+| Go | [`examples/algorithms-go/leetcode/`](../../examples/algorithms-go/leetcode/) | 工程实践语言，附带单测 |
+| Lean 4 | [`examples/lean_proofs/FormalAlgorithm/leetcode/`](../../examples/lean_proofs/FormalAlgorithm/leetcode/) | 形式化证明，机器可检验 |
+
+> 注：代码文件命名遵循 `lcXXXX_problem_name.ext` 规范，与附录题号索引一一对应。
 
 ## 题号覆盖统计
 
@@ -104,26 +133,40 @@ examples/
 | Go | 60 | 工程实践语言，附带单测 |
 | Lean 4 | 14 | 形式化证明语言，机器可检验 |
 
-## 形式化证明亮点
+## Lean 4 形式化证明索引
 
-以下题目已完成 **Lean 4 形式化证明**，代表本模块在形式化验证方面的核心成果：
+以下题目已完成 **Lean 4 形式化证明**，代表本模块在形式化验证方面的核心成果。证明文件位于 [`examples/lean_proofs/FormalAlgorithm/leetcode/`](../../examples/lean_proofs/FormalAlgorithm/leetcode/)。
 
-| 题号 | 题目名称 | 证明要点 |
-|------|----------|----------|
-| 1 | Two Sum | 解的存在性与唯一性条件 |
-| 3 | Longest Substring Without Repeating Characters | 滑动窗口不变式 |
-| 15 | 3Sum | 双指针正确性 |
-| 21 | Merge Two Sorted Lists | 链表归并的终止性 |
-| 53 | Maximum Subarray | Kadane 算法最优性子结构 |
-| 70 | Climbing Stairs | 斐波那契递推的数学归纳 |
-| 72 | Edit Distance | DP 状态转移正确性 |
-| 104 | Maximum Depth of Binary Tree | 树高定义的递归等价 |
-| 136 | Single Number | 异或运算的交换律与消去律 |
-| 141 | Linked List Cycle | Floyd 判圈算法的正确性 |
-| 198 | House Robber | DP 最优子结构归纳证明 |
-| 200 | Number of Islands | DFS 连通分量计数 |
-| 207 | Course Schedule | 拓扑排序与环检测的等价性 |
-| 704 | Binary Search | 循环不变式与终止性 |
+| 题号 | 题目名称 | 证明要点 | Lean 4 证明文件 |
+|------|----------|----------|----------------|
+| 1 | Two Sum | 解的存在性与唯一性条件 | [`lc0001_two_sum.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0001_two_sum.lean) |
+| 3 | Longest Substring Without Repeating Characters | 滑动窗口不变式 | [`lc0003_longest_substring.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0003_longest_substring.lean) |
+| 15 | 3Sum | 双指针正确性 | [`lc0015_3sum.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0015_3sum.lean) |
+| 21 | Merge Two Sorted Lists | 链表归并的终止性 | [`lc0021_merge_two_sorted_lists.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0021_merge_two_sorted_lists.lean) |
+| 53 | Maximum Subarray | Kadane 算法最优性子结构 | [`lc0053_maximum_subarray.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0053_maximum_subarray.lean) |
+| 70 | Climbing Stairs | 斐波那契递推的数学归纳 | [`lc0070_climbing_stairs.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0070_climbing_stairs.lean) |
+| 72 | Edit Distance | DP 状态转移正确性 | [`lc0072_edit_distance.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0072_edit_distance.lean) |
+| 104 | Maximum Depth of Binary Tree | 树高定义的递归等价 | [`lc0104_maximum_depth_of_binary_tree.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0104_maximum_depth_of_binary_tree.lean) |
+| 136 | Single Number | 异或运算的交换律与消去律 | [`lc0136_single_number.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0136_single_number.lean) |
+| 141 | Linked List Cycle | Floyd 判圈算法的正确性 | [`lc0141_linked_list_cycle.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0141_linked_list_cycle.lean) |
+| 198 | House Robber | DP 最优子结构归纳证明 | [`lc0198_house_robber.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0198_house_robber.lean) |
+| 200 | Number of Islands | DFS 连通分量计数 | [`lc0200_number_of_islands.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0200_number_of_islands.lean) |
+| 207 | Course Schedule | 拓扑排序与环检测的等价性 | [`lc0207_course_schedule.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0207_course_schedule.lean) |
+| 704 | Binary Search | 循环不变式与终止性 | [`lc0704_binary_search.lean`](../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0704_binary_search.lean) |
+
+> 更多证明持续补充中，欢迎参考 [Lean 4 形式化证明目录](../../examples/lean_proofs/FormalAlgorithm/leetcode/) 获取最新进展。
+
+## 与项目其他模块的交叉引用
+
+| 本模块内容 | 关联模块 | 说明 |
+|------------|----------|------|
+| 形式化证明方法 | `03-形式化证明/` | 本模块的「四步法」与循环不变式来源于项目统一的形式化证明体系 |
+| 复杂度分析 | `04-算法复杂度/` | 专题中的复杂度速查表与复杂度理论文档相互补充 |
+| 动态规划理论 | `09-算法理论/01-算法基础/06-动态规划理论-六维补充.md` | 面试专题侧重实战，理论文档提供严格定义与定理证明 |
+| 图算法理论 | `09-算法理论/01-算法基础/05-图算法理论-六维补充.md` | 图论专题的实战题目与理论文档的六维分析形成闭环 |
+| 递归与归纳 | `02-递归理论/` | 动态规划、回溯等范式的正确性证明依赖递归理论 |
+| 类型与逻辑 | `05-类型理论/`、`06-逻辑系统/` | 形式化规约与 Lean 4 证明的底层基础 |
+| 计算模型 | `07-计算模型/` | 复杂度分类与可计算性边界在算法选型中的指导作用 |
 
 ## 与外部资源的对齐表
 

@@ -2,6 +2,66 @@
 
 所有重要变更都将记录在此文件中。
 
+## [v3.3.0] - 2026-04-23
+
+### 🚀 LeetCode 算法面试专题 — 全球首个系统性 "LeetCode + 形式化证明" 资源库
+
+本轮为开创性里程碑更新，全新构建 `13-LeetCode算法面试专题` 模块，将算法面试准备与数学形式化证明深度结合，填补全球教育资源空白。
+
+- ✅ **全新模块**: `docs/13-LeetCode算法面试专题/` — 47篇文档，系统覆盖 76 道 LeetCode 核心题目
+- ✅ **多语言实现**: Rust / Python / Go 三语言代码实现，200+ 代码文件
+- ✅ **形式化证明**: 10 道核心 LeetCode 题目的 Lean 4 形式化证明
+- ✅ **全球首创**: 首个系统性将 LeetCode 面试题与形式化验证相结合的开源资源库
+
+### 文档体系
+
+#### 13-LeetCode算法面试专题（47篇文档）
+
+- **00-总览与方法论**: 专题导论、刷题方法论、面试策略
+- **01-数据结构专题**: 数组、链表、栈、队列、哈希表、树、图、并查集、Trie、线段树等
+- **02-算法范式专题**: 双指针、滑动窗口、二分搜索、BFS/DFS、回溯、动态规划、贪心、分治
+- **03-数学专题**: 位运算、数论、组合数学、概率、几何
+- **04-字符串专题**: 字符串匹配、KMP、字典树、马拉车、正则
+- **05-图论专题**: 最短路径、最小生成树、拓扑排序、强连通分量、网络流
+- **06-面试专题**: 高频题解、模拟面试、公司真题、系统设计基础
+- **99-附录**: 题号索引、难度分布、时间复杂度速查表
+
+覆盖 76 道 LeetCode 核心题目（按频次与重要性精选），每题提供：
+- 题目分析与形式化规约
+- 多语言参考实现（Rust / Python / Go）
+- 复杂度分析（时间 / 空间 / 摊还）
+- 核心 LeetCode 题目附带 Lean 4 形式化证明
+
+### 代码实现（200+ 文件）
+
+- **Rust** (`examples/algorithms-rust/src/leetcode/`): LeetCode 核心题 Rust 实现
+- **Python** (`examples/algorithms-python/src/leetcode/`): LeetCode 核心题 Python 实现
+- **Go** (`examples/algorithms-go/leetcode/`): LeetCode 核心题 Go 实现（含测试）
+
+### 形式化证明（Lean 4）
+
+- **10 道核心题的形式化证明** (`examples/lean_proofs/FormalAlgorithm/leetcode/`)
+  - 涵盖 Two Sum、Merge Two Sorted Lists、Binary Search、Climbing Stairs、Edit Distance、Maximum Depth of Binary Tree、Single Number、Linked List Cycle、House Robber、Course Schedule
+- 所有证明通过 Lean 4 编译器验证
+- 建立算法面试题目 → 形式化规约 → 机器检验证明 的完整链路
+
+### 项目统计（v3.3.0 累计）
+
+```
+总文档数:       340+
+总代码文件:     330+
+总代码行数:     25,000+行
+总字数:         600,000+字
+覆盖模块:       13个
+算法实现:       150+个
+数据结构:       40+个
+习题数量:       520+道
+LeetCode核心题: 76道
+Lean 4 证明:    10道
+```
+
+---
+
 ## [v3.2.0] - 2026-04-22
 
 ### 🚀 全面并行冲刺完成

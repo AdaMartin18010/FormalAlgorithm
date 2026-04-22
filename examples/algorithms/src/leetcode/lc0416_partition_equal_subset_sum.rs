@@ -119,7 +119,7 @@ mod tests {
 
     #[test]
     fn test_odd_sum() {
-        assert!(!can_partition(vec![1, 2, 3])); // sum = 6, actually even
+        assert!(can_partition(vec![1, 2, 3])); // sum = 6, target = 3, [1,2] vs [3]
         assert!(!can_partition(vec![1, 2, 4])); // sum = 7, odd
     }
 

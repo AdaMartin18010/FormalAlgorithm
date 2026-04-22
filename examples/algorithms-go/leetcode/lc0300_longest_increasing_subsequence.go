@@ -10,30 +10,47 @@
 //   输出: 最长严格递增子序列（LIS）的长度
 //
 // 最优解思路:
-//   二分优化：维护数组 tails[k] 表示长度为 k+1 的递增子序列的最小末尾值。
-//   对 nums[i] 在 tails 中二分查找替换位置（lower_bound）。
+//   DP 版本: dp[i] 表示以 nums[i] 结尾的最长递增子序列长度
+//   二分优化: 维护数组 tails[k] 表示长度为 k+1 的递增子序列的最小末尾值
 //
 // 复杂度:
-//   时间: O(n log n)
-//   空间: O(n)
-//
-// 正确性要点:
-//   1. tails 数组是严格递增的，因此可以二分查找
-//   2. 二分优化只能求长度，不能直接输出具体序列
-//   3. lower_bound 找到第一个 >= nums[i] 的位置并替换
+//   DP 时间: O(n^2), 空间: O(n)
+//   二分时间: O(n log n), 空间: O(n)
 
 package leetcode
 
 import "sort"
 
-func lengthOfLIS(nums []int) int {
+// LengthOfLISDP 动态规划版本 O(n^2)
+func LengthOfLISDP(nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	}
+	dp := make([]int, n)
+	maxLen := 1
+	for i := 0; i < n; i++ {
+		dp[i] = 1
+		for j := 0; j < i; j++ {
+			if nums[j] < nums[i] && dp[j]+1 > dp[i] {
+				dp[i] = dp[j] + 1
+			}
+		}
+		if dp[i] > maxLen {
+			maxLen = dp[i]
+		}
+	}
+	return maxLen
+}
+
+// LengthOfLISBinary 二分优化版本 O(n log n)
+func LengthOfLISBinary(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}
 
 	tails := make([]int, 0, len(nums))
 	for _, num := range nums {
-		// 在 tails 中找到第一个 >= num 的位置
 		idx := sort.Search(len(tails), func(i int) bool {
 			return tails[i] >= num
 		})
@@ -50,23 +67,23 @@ func lengthOfLIS(nums []int) int {
 // TestLIS 测试最长递增子序列函数
 func TestLIS() {
 	// 示例 1
-	if lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}) != 4 {
+	if LengthOfLISBinary([]int{10, 9, 2, 5, 3, 7, 101, 18}) != 4 {
 		panic("Test 1 failed")
 	}
 	// 示例 2
-	if lengthOfLIS([]int{0, 1, 0, 3, 2, 3}) != 4 {
+	if LengthOfLISBinary([]int{0, 1, 0, 3, 2, 3}) != 4 {
 		panic("Test 2 failed")
 	}
 	// 示例 3
-	if lengthOfLIS([]int{7, 7, 7, 7, 7, 7, 7}) != 1 {
+	if LengthOfLISBinary([]int{7, 7, 7, 7, 7, 7, 7}) != 1 {
 		panic("Test 3 failed")
 	}
 	// 边界: 空数组
-	if lengthOfLIS([]int{}) != 0 {
+	if LengthOfLISBinary([]int{}) != 0 {
 		panic("Test empty failed")
 	}
 	// 边界: 严格递增
-	if lengthOfLIS([]int{1, 2, 3, 4, 5}) != 5 {
+	if LengthOfLISBinary([]int{1, 2, 3, 4, 5}) != 5 {
 		panic("Test ascending failed")
 	}
 }

@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Python tests
         working-directory: examples/algorithms-python
-        run: python -m pytest tests/ -v
+        run: python -m pytest tests/ src/leetcode/ -v
 
   # Job 2: Go 代码测试
   go-tests:

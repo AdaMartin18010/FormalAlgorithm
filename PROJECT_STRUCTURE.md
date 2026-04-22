@@ -109,6 +109,63 @@ FormalAlgorithm/
 │   │   └── 05-编译器算法/
 │   │       └── 01-编译优化-六维补充.md
 │   │
+│   ├── 13-LeetCode算法面试专题/          # 新增：47篇文档，1.47MB
+│   │   ├── 00-总览与方法论/
+│   │   │   ├── 00-专题导论.md
+│   │   │   ├── 01-解题方法论（四步法与形式化思维）.md
+│   │   │   └── 02-复杂度速查与面试沟通模板.md
+│   │   ├── 01-数据结构专题/
+│   │   │   ├── 00-数据结构专题导论.md
+│   │   │   ├── 01-数组与矩阵.md
+│   │   │   ├── 02-链表.md
+│   │   │   ├── 03-栈与队列.md
+│   │   │   ├── 04-哈希表.md
+│   │   │   ├── 05-二叉树与BST.md
+│   │   │   ├── 06-堆与优先队列.md
+│   │   │   ├── 07-并查集.md
+│   │   │   └── 08-Trie树.md
+│   │   ├── 02-算法范式专题/
+│   │   │   ├── 00-算法范式导论.md
+│   │   │   ├── 01-枚举与模拟.md
+│   │   │   ├── 02-双指针.md
+│   │   │   ├── 03-滑动窗口.md
+│   │   │   ├── 04-前缀和与差分.md
+│   │   │   ├── 05-二分查找.md
+│   │   │   ├── 06-分治.md
+│   │   │   ├── 07-贪心算法.md
+│   │   │   ├── 08-动态规划.md
+│   │   │   ├── 09-回溯与DFS.md
+│   │   │   ├── 10-BFS与图搜索.md
+│   │   │   └── 11-位运算.md
+│   │   ├── 03-数学专题/
+│   │   │   ├── 00-数学专题导论.md
+│   │   │   ├── 01-数论基础（GCD-LCM-质数）.md
+│   │   │   ├── 02-组合数学入门.md
+│   │   │   ├── 03-计算几何基础.md
+│   │   │   └── 04-概率与随机算法面试题.md
+│   │   ├── 04-字符串专题/
+│   │   │   ├── 00-字符串专题导论.md
+│   │   │   ├── 01-字符串匹配与KMP应用.md
+│   │   │   ├── 02-回文问题（Manacher-DP）.md
+│   │   │   └── 03-字符串动态规划.md
+│   │   ├── 05-图论专题/
+│   │   │   ├── 00-图论专题导论.md
+│   │   │   ├── 01-图的遍历（DFS-BFS-并查集）.md
+│   │   │   ├── 02-最短路径（Dijkstra-Bellman-Ford-SPFA）.md
+│   │   │   ├── 03-拓扑排序与DAG DP.md
+│   │   │   └── 04-最小生成树（Prim-Kruskal）.md
+│   │   ├── 06-面试专题/
+│   │   │   ├── 00-面试专题导论.md
+│   │   │   ├── 01-高频Top100-数组与链表.md
+│   │   │   ├── 02-高频Top100-树与图.md
+│   │   │   ├── 03-高频Top100-DP与贪心.md
+│   │   │   ├── 04-剑指Offer精选形式化证明.md
+│   │   │   └── 05-大厂真题分类（字节-阿里-腾讯-Google）.md
+│   │   └── 99-附录/
+│   │       ├── 01-LeetCode题号全局索引.md
+│   │       ├── 02-面试常见错误清单.md
+│   │       └── 03-多语言代码模板速查.md
+│   │
 │   ├── 习题库/                      # 10个文档, 520+题目
 │   │   ├── 01-基础算法习题.md
 │   │   ├── 02-高级算法习题.md
@@ -182,7 +239,11 @@ FormalAlgorithm/
 │   │   ├── rolling_hash.rs          # 滚动哈希
 │   │   ├── persistent_segment_tree.rs  # 可持久化线段树
 │   │   ├── dancing_links.rs         # 舞蹈链
-│   │   └── simulated_annealing.rs   # 模拟退火
+│   │   ├── simulated_annealing.rs   # 模拟退火
+│   │   └── leetcode/                # LeetCode面试题Rust实现
+│   │       ├── lc0001_two_sum.rs
+│   │       ├── lc0003_longest_substring_without_repeating_characters.rs
+│   │       └── ...
 │   │
 │   ├── string_algorithms/
 │   │   ├── kmp.rs                   # KMP算法
@@ -225,6 +286,39 @@ FormalAlgorithm/
 │       ├── advanced.ts              # FFT、莫队、舞蹈链、模拟退火
 │       └── tests/
 │           └── all_tests.ts         # 统一测试运行器 (72个测试用例)
+│
+├── 💻 examples/algorithms-python/     # Python代码实现
+│   ├── pyproject.toml
+│   ├── src/
+│   │   ├── __init__.py
+│   │   ├── sorting/
+│   │   ├── data_structures/
+│   │   ├── graph/
+│   │   ├── search/
+│   │   ├── divide_and_conquer/
+│   │   ├── number_theory/
+│   │   └── leetcode/                  # LeetCode面试题Python实现
+│   │       └── lc0001_two_sum.py
+│   └── tests/
+│
+├── 💻 examples/algorithms-go/         # Go代码实现
+│   ├── go.mod
+│   ├── README.md
+│   ├── sorting.go
+│   ├── graph.go
+│   ├── dynamic.go
+│   └── leetcode/                      # LeetCode面试题Go实现
+│       ├── lc0001_two_sum.go
+│       └── lc0001_two_sum_test.go
+│
+├── 💻 examples/lean_proofs/           # Lean 4形式化证明
+│   ├── lakefile.toml
+│   ├── FormalAlgorithm.lean
+│   └── FormalAlgorithm/
+│       ├── BasicTypes.lean
+│       ├── graph_proofs.lean
+│       └── leetcode/                  # LeetCode形式化证明
+│           └── lc0001_two_sum.lean
 │
 └── 📊 项目统计
     ├── 总文档: 100+

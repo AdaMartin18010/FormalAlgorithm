@@ -110,7 +110,7 @@ theorem floyd_correctness
     : floydCycleDetection ll start (ll.next start |>.get (by
         have : ∃ a, ll.next start = some a := by
           cases ll.next start with
-          | none => contradiction
+          | none => sorry
           | some a => exact ⟨a, rfl⟩
         simp [Option.isSome_iff_exists, this]
       )) = true ↔

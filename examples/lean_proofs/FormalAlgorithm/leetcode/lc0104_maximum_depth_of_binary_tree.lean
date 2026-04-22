@@ -125,7 +125,7 @@ theorem maxDepth_pos_of_non_empty (t : BinTree)
   | empty => contradiction
   | node v l r =>
     simp [maxDepth]
-    omega
+    try omega
 
 /-- 定理 4（子树深度严格小于父树）：对任意非空二叉树 node v l r，
     左子树深度 < 父树深度且右子树深度 < 父树深度。

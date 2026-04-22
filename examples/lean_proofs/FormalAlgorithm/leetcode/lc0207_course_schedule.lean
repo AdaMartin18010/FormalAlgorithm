@@ -14,12 +14,12 @@
   形式化方法见 docs/03-形式化证明/02-Hoare逻辑.md
 -/
 
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Basic
+-- import Mathlib.Data.Finset.Basic  -- 暂时禁用，待mathlib修复
+-- import Mathlib.Data.Set.Basic  -- 暂时禁用，待mathlib修复
 import Mathlib.Order.WellFoundedSet
 import Mathlib.Tactic
 
-open Nat Set Finset
+open Nat
 
 -- ============================================================
 -- 1. 问题实例的形式化定义
@@ -63,7 +63,7 @@ def IsDAG (cs : CourseSchedule) : Prop :=
 def IsTopologicalOrder (cs : CourseSchedule) (order : List Nat) : Prop :=
   order.length = cs.numCourses ∧
   (∀ p ∈ cs.prerequisites,
-    ∃ i j, i < j ∧ order[i]! = p.2 ∧ order[j]! = p.1)
+    ∃ (i j : Nat), i < j ∧ order[i]! = p.2 ∧ order[j]! = p.1)
 
 -- ============================================================
 -- 2. 核心定理：拓扑排序与环检测
@@ -110,6 +110,12 @@ theorem kahn_algorithm_terminates
     : Acc (fun (n m : Nat) => n < m) cs.numCourses := by
   sorry -- TODO: 以剩余节点数为 well-founded 度量，证明严格递减
 
+/-- 列表链式关系（替代缺失的 List.Chain）。 -/
+inductive ListChain {α : Type} (R : α → α → Prop) : List α → Prop where
+  | nil : ListChain R []
+  | singleton (x : α) : ListChain R [x]
+  | cons {x y : α} {ys : List α} : R x y → ListChain R (y :: ys) → ListChain R (x :: y :: ys)
+
 /-- 定理 4（DFS 环检测正确性）：基于 DFS 的三色标记法（白/灰/黑）
     正确检测有向图中的环。
 
@@ -121,7 +127,7 @@ theorem dfs_cycle_detection_correct
     : HasCycle cs ↔
       ∃ (start : Nat) (path : List Nat),
         start < cs.numCourses ∧
-        List.Chain (fun u v => (u, v) ∈ cs.prerequisites) path ∧
+        ListChain (fun u v => (u, v) ∈ cs.prerequisites) path ∧
         path.head? = some start ∧
         path.getLast? = some start := by
   sorry -- TODO: 双向证明，利用 DFS 树边/回边的分类

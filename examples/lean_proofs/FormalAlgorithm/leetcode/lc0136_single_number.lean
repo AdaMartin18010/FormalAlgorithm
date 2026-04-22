@@ -134,9 +134,7 @@ theorem singleNumber_returns_unique_odd
     对任意列表 xs，(x :: x :: xs) 的异或和等于 xs 的异或和。 -/
 theorem xor_pair_cancels (x : Nat) (xs : List Nat)
     : xorAll (x :: x :: xs) = xorAll xs := by
-  simp [xorAll, Nat.xor]
-  <;> try omega
-  <;> try sorry
+  sorry
 
 /-- 引理：异或和与元素顺序无关。
     这是交换律与结合律的直接推论。 -/

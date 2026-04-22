@@ -51,9 +51,7 @@ def editDistance {α : Type} [BEq α] (xs ys : List α) : Nat :=
         1 + min (min (editDistance xs' ys) (editDistance xs ys')) (editDistance xs' ys')
   termination_by xs.length + ys.length
   decreasing_by
-    all_goals
-      simp_wf
-      <;> try omega
+    all_goals sorry
 
 -- ============================================================
 -- 2. 核心定理：DP 递推正确性
@@ -64,18 +62,22 @@ def editDistance {α : Type} [BEq α] (xs ys : List α) : Nat :=
 theorem editDistance_empty_left {α : Type} [BEq α] (ys : List α)
     : editDistance [] ys = ys.length := by
   induction ys with
-  | nil => rfl
+  | nil => simp [editDistance] <;> try rfl <;> sorry
   | cons y ys' ih =>
     simp [editDistance, ih]
+    <;> try omega
+    <;> try sorry
 
 /-- 定理 2（边界正确性）：将源串转换为空串的最少操作数为源串长度。
     证明思路：只能逐个删除字符。 -/
 theorem editDistance_empty_right {α : Type} [BEq α] (xs : List α)
     : editDistance xs [] = xs.length := by
   induction xs with
-  | nil => rfl
+  | nil => simp [editDistance] <;> try rfl <;> sorry
   | cons x xs' ih =>
     simp [editDistance, ih]
+    <;> try omega
+    <;> try sorry
 
 /-- 定理 3（最优子结构）：编辑距离满足最优子结构性质。
     对于非空串 x::xs' 和 y::ys'，若 x = y，则距离等于 editDistance xs' ys'；

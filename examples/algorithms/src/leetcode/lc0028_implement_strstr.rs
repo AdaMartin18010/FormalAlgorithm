@@ -45,7 +45,7 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
             q += 1;
         }
         if q == m {
-            return (i - m + 1) as i32;
+            return (i + 1 - m) as i32;
         }
     }
 

@@ -16,7 +16,7 @@ package leetcode
 //
 // Time: O(m*n), Space: O(min(m,n))
 
-func minDistance(word1 string, word2 string) int {
+func MinDistance(word1 string, word2 string) int {
 	m, n := len(word1), len(word2)
 	// Make word2 the shorter one for space optimization
 	if n > m {
