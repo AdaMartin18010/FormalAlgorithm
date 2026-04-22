@@ -5,59 +5,62 @@ import (
 	"testing"
 )
 
-func TestRotate(t *testing.T) {
-	// 示例 1
-	matrix1 := [][]int{
+func TestRotate3x3(t *testing.T) {
+	m := [][]int{
 		{1, 2, 3},
 		{4, 5, 6},
 		{7, 8, 9},
 	}
-	Rotate(matrix1)
-	expected1 := [][]int{
+	Rotate(m)
+	expected := [][]int{
 		{7, 4, 1},
 		{8, 5, 2},
 		{9, 6, 3},
 	}
-	if !reflect.DeepEqual(matrix1, expected1) {
-		t.Errorf("Rotate example 1 failed: got %v, want %v", matrix1, expected1)
+	if !reflect.DeepEqual(m, expected) {
+		t.Errorf("Rotate 3x3 = %v, want %v", m, expected)
 	}
+}
 
-	// 示例 2
-	matrix2 := [][]int{
+func TestRotate4x4(t *testing.T) {
+	m := [][]int{
 		{5, 1, 9, 11},
 		{2, 4, 8, 10},
 		{13, 3, 6, 7},
 		{15, 14, 12, 16},
 	}
-	Rotate(matrix2)
-	expected2 := [][]int{
+	Rotate(m)
+	expected := [][]int{
 		{15, 13, 2, 5},
 		{14, 3, 4, 1},
 		{12, 6, 8, 9},
 		{16, 7, 10, 11},
 	}
-	if !reflect.DeepEqual(matrix2, expected2) {
-		t.Errorf("Rotate example 2 failed: got %v, want %v", matrix2, expected2)
+	if !reflect.DeepEqual(m, expected) {
+		t.Errorf("Rotate 4x4 = %v, want %v", m, expected)
 	}
+}
 
-	// 边界：单元素
-	matrix3 := [][]int{{42}}
-	Rotate(matrix3)
-	if !reflect.DeepEqual(matrix3, [][]int{{42}}) {
-		t.Errorf("Rotate single element failed: got %v", matrix3)
+func TestRotate1x1(t *testing.T) {
+	m := [][]int{{42}}
+	Rotate(m)
+	expected := [][]int{{42}}
+	if !reflect.DeepEqual(m, expected) {
+		t.Errorf("Rotate 1x1 = %v, want %v", m, expected)
 	}
+}
 
-	// 边界：2x2
-	matrix4 := [][]int{
+func TestRotate2x2(t *testing.T) {
+	m := [][]int{
 		{1, 2},
 		{3, 4},
 	}
-	Rotate(matrix4)
-	expected4 := [][]int{
+	Rotate(m)
+	expected := [][]int{
 		{3, 1},
 		{4, 2},
 	}
-	if !reflect.DeepEqual(matrix4, expected4) {
-		t.Errorf("Rotate 2x2 failed: got %v, want %v", matrix4, expected4)
+	if !reflect.DeepEqual(m, expected) {
+		t.Errorf("Rotate 2x2 = %v, want %v", m, expected)
 	}
 }
