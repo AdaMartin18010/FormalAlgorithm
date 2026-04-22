@@ -64,7 +64,7 @@ func networkDelayTime(times [][]int, n int, k int) int {
 
 	for h.Len() > 0 {
 		item := heap.Pop(h).([2]int)
-		d, u := item[0], item[1]
+		_, u := item[0], item[1]
 		if visited[u] {
 			continue
 		}

@@ -337,9 +337,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/leetcode/lc0127_word_ladder.py`](../../../../examples/algorithms-python/leetcode/lc0127_word_ladder.py)
-- **Rust**: [`examples/algorithms-rust/src/leetcode/lc0127_word_ladder.rs`](../../../../examples/algorithms-rust/src/leetcode/lc0127_word_ladder.rs)
-- **Go**: [`examples/algorithms-go/leetcode/lc0127_word_ladder.go`](../../../../examples/algorithms-go/leetcode/lc0127_word_ladder.go)
+- **Python**: [`examples/algorithms-python/leetcode/lc0127_word_ladder.py`](../../../examples/algorithms-python/leetcode/lc0127_word_ladder.py)
+- **Rust**: [`examples/algorithms-rust/src/leetcode/lc0127_word_ladder.rs`](../../../examples/algorithms-rust/src/leetcode/lc0127_word_ladder.rs)
+- **Go**: [`examples/algorithms-go/leetcode/lc0127_word_ladder.go`](../../../examples/algorithms-go/leetcode/lc0127_word_ladder.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -499,9 +499,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms-rust/src/leetcode/lc0994_rotting_oranges.rs`](../../../../examples/algorithms-rust/src/leetcode/lc0994_rotting_oranges.rs)
-- **Python**: [`examples/algorithms-python/leetcode/lc0994_rotting_oranges.py`](../../../../examples/algorithms-python/leetcode/lc0994_rotting_oranges.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0994_rotting_oranges.go`](../../../../examples/algorithms-go/leetcode/lc0994_rotting_oranges.go)
+- **Rust**: [`examples/algorithms-rust/src/leetcode/lc0994_rotting_oranges.rs`](../../../examples/algorithms-rust/src/leetcode/lc0994_rotting_oranges.rs)
+- **Python**: [`examples/algorithms-python/leetcode/lc0994_rotting_oranges.py`](../../../examples/algorithms-python/leetcode/lc0994_rotting_oranges.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0994_rotting_oranges.go`](../../../examples/algorithms-go/leetcode/lc0994_rotting_oranges.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -1071,12 +1071,12 @@ for s in sources:
 
 - [图算法理论](../../09-算法理论/01-算法基础/05-图算法理论.md) — 图的基本定义、DFS/BFS 理论基础
 - [回溯与 DFS](./09-回溯与DFS.md) — DFS 的详细讨论，与 BFS 的对比
-- [队列与栈](../../03-数据结构/02-线性结构/02-队列.md) — BFS 依赖的核心数据结构
+- 队列与栈 — BFS 依赖的核心数据结构
 
 **后续拓展 / Extensions**:
 
-- [最短路径算法](../04-高级算法专题/02-最短路径.md) — Dijkstra、Bellman-Ford 等加权图最短路径
-- [并查集](../../03-数据结构/05-集合/01-并查集.md) — 连通分量问题的另一种解法
+- 最短路径算法 — Dijkstra、Bellman-Ford 等加权图最短路径
+- 并查集 — 连通分量问题的另一种解法
 - [网络流](../../09-算法理论/01-算法基础/05-图算法理论.md#6-网络流--network-flow) — 图算法的高级应用
 
 ---
@@ -1088,3 +1088,12 @@ for s in sources:
 - [Kahn1962]: Kahn, A. B. (1962). "Topological sorting of large networks." *Communications of the ACM*, 5(11), 558-562.
 - [Lee1961]: Lee, C. Y. (1961). "An algorithm for path connections and its applications." *IRE Transactions on Electronic Computers*, EC-10(3), 346-365.
 - [Pohl1971]: Pohl, I. (1971). "Bi-directional search." *Machine Intelligence*, 6, 127-140.
+
+<!-- 自动添加的代码引用 -->
+- [`lc0127_word_ladder.py`](../../../examples/algorithms-python/src/leetcode/lc0127_word_ladder.py)
+
+<!-- 自动添加的代码引用 -->
+- [`lc0994_rotting_oranges.py`](../../../examples/algorithms-python/src/leetcode/lc0994_rotting_oranges.py)
+
+<!-- 自动添加的代码引用 -->
+- [`lc0127_word_ladder.rs`](../../../examples/algorithms/src/leetcode/lc0127_word_ladder.rs)

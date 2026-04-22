@@ -64,7 +64,7 @@ leetcode_tags: ["math", "number-theory"]
 **上游理论依赖 / Upstream Dependencies**:
 
 - [`09-算法理论/数论算法/数论算法综述.md`](../../09-算法理论/数论算法/数论算法综述.md) — 数论算法的理论综述与扩展内容
-- [`03-形式化证明/01-数学归纳法.md`](../../03-形式化证明/01-数学归纳法.md) — 归纳法在数论证明中的核心应用
+- `03-形式化证明/01-数学归纳法.md` — 归纳法在数论证明中的核心应用
 - [`04-算法复杂度/01-时间复杂度.md`](../../04-算法复杂度/01-时间复杂度.md) — 渐进记号与复杂度分析
 
 **下游应用 / Downstream Applications**:
@@ -270,9 +270,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0204_count_primes.rs`](../../../../examples/algorithms/src/leetcode/lc0204_count_primes.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0204_count_primes.py`](../../../../examples/algorithms-python/src/leetcode/lc0204_count_primes.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0204_count_primes.go`](../../../../examples/algorithms-go/leetcode/lc0204_count_primes.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0204_count_primes.rs`](../../../examples/algorithms/src/leetcode/lc0204_count_primes.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0204_count_primes.py`](../../../examples/algorithms-python/src/leetcode/lc0204_count_primes.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0204_count_primes.go`](../../../examples/algorithms-go/leetcode/lc0204_count_primes.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -334,9 +334,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0009_palindrome_number.rs`](../../../../examples/algorithms/src/leetcode/lc0009_palindrome_number.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0009_palindrome_number.py`](../../../../examples/algorithms-python/src/leetcode/lc0009_palindrome_number.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0009_palindrome_number.go`](../../../../examples/algorithms-go/leetcode/lc0009_palindrome_number.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0009_palindrome_number.rs`](../../../examples/algorithms/src/leetcode/lc0009_palindrome_number.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0009_palindrome_number.py`](../../../examples/algorithms-python/src/leetcode/lc0009_palindrome_number.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0009_palindrome_number.go`](../../../examples/algorithms-go/leetcode/lc0009_palindrome_number.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -395,9 +395,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0050_powx_n.rs`](../../../../examples/algorithms/src/leetcode/lc0050_powx_n.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0050_powx_n.py`](../../../../examples/algorithms-python/src/leetcode/lc0050_powx_n.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0050_powx_n.go`](../../../../examples/algorithms-go/leetcode/lc0050_powx_n.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0050_powx_n.rs`](../../../examples/algorithms/src/leetcode/lc0050_powx_n.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0050_powx_n.py`](../../../examples/algorithms-python/src/leetcode/lc0050_powx_n.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0050_powx_n.go`](../../../examples/algorithms-go/leetcode/lc0050_powx_n.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -474,9 +474,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0372_super_pow.rs`](../../../../examples/algorithms/src/leetcode/lc0372_super_pow.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0372_super_pow.py`](../../../../examples/algorithms-python/src/leetcode/lc0372_super_pow.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0372_super_pow.go`](../../../../examples/algorithms-go/leetcode/lc0372_super_pow.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0372_super_pow.rs`](../../../examples/algorithms/src/leetcode/lc0372_super_pow.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0372_super_pow.py`](../../../examples/algorithms-python/src/leetcode/lc0372_super_pow.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0372_super_pow.go`](../../../examples/algorithms-go/leetcode/lc0372_super_pow.go)
 
 #### 复杂度分析 / Complexity Analysis
 

@@ -54,8 +54,8 @@ leetcode_tags: ["tree", "binary-search-tree", "depth-first-search", "recursion"]
 
 **上游理论依赖 / Upstream Dependencies**:
 - [`09-算法理论/01-算法基础/02-数据结构理论.md`](../../09-算法理论/01-算法基础/02-数据结构理论.md) — 树形结构的理论定义
-- [`02-递归理论/01-递归基础.md`](../../02-递归理论/01-递归基础.md) — 递归定义、结构归纳法
-- [`02-递归理论/02-递归正确性证明.md`](../../02-递归理论/02-递归正确性证明.md) — 递归算法的正确性证明方法
+- `02-递归理论/01-递归基础.md` — 递归定义、结构归纳法
+- `02-递归理论/02-递归正确性证明.md` — 递归算法的正确性证明方法
 
 **下游应用 / Downstream Applications**:
 - `13-LeetCode算法面试专题/02-算法范式专题/05-二分查找.md` — BST 查找是二分查找在树结构上的推广
@@ -187,8 +187,8 @@ while current != null or stack not empty:
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0094_binary_tree_inorder_traversal.py`](../../../../examples/algorithms-python/src/leetcode/lc0094_binary_tree_inorder_traversal.py)
-- **Rust**: [`examples/algorithms/src/leetcode/lc0094_binary_tree_inorder_traversal.rs`](../../../../examples/algorithms/src/leetcode/lc0094_binary_tree_inorder_traversal.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0094_binary_tree_inorder_traversal.py`](../../../examples/algorithms-python/src/leetcode/lc0094_binary_tree_inorder_traversal.py)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0094_binary_tree_inorder_traversal.rs`](../../../examples/algorithms/src/leetcode/lc0094_binary_tree_inorder_traversal.rs)
 
 ```python
 # Python 递归实现
@@ -277,8 +277,8 @@ pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0104_maximum_depth_of_binary_tree.py`](../../../../examples/algorithms-python/src/leetcode/lc0104_maximum_depth_of_binary_tree.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0104_maximum_depth_of_binary_tree.go`](../../../../examples/algorithms-go/leetcode/lc0104_maximum_depth_of_binary_tree.go)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0104_maximum_depth_of_binary_tree.py`](../../../examples/algorithms-python/src/leetcode/lc0104_maximum_depth_of_binary_tree.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0104_maximum_depth_of_binary_tree.go`](../../../examples/algorithms-go/leetcode/lc0104_maximum_depth_of_binary_tree.go)
 
 ```python
 # Python 递归实现
@@ -338,8 +338,8 @@ func maxDepth(root *TreeNode) int {
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0226_invert_binary_tree.py`](../../../../examples/algorithms-python/src/leetcode/lc0226_invert_binary_tree.py)
-- **Rust**: [`examples/algorithms/src/leetcode/lc0226_invert_binary_tree.rs`](../../../../examples/algorithms/src/leetcode/lc0226_invert_binary_tree.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0226_invert_binary_tree.py`](../../../examples/algorithms-python/src/leetcode/lc0226_invert_binary_tree.py)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0226_invert_binary_tree.rs`](../../../examples/algorithms/src/leetcode/lc0226_invert_binary_tree.rs)
 
 ```python
 # Python 递归实现
@@ -409,8 +409,8 @@ pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<Tre
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0236_lowest_common_ancestor.py`](../../../../examples/algorithms-python/src/leetcode/lc0236_lowest_common_ancestor.py)
-- **Rust**: [`examples/algorithms/src/leetcode/lc0236_lowest_common_ancestor.rs`](../../../../examples/algorithms/src/leetcode/lc0236_lowest_common_ancestor.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0236_lowest_common_ancestor.py`](../../../examples/algorithms-python/src/leetcode/lc0236_lowest_common_ancestor.py)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0236_lowest_common_ancestor.rs`](../../../examples/algorithms/src/leetcode/lc0236_lowest_common_ancestor.rs)
 
 ```python
 # Python 递归实现
@@ -754,3 +754,18 @@ def lca(root, p, q):
 - [Knuth 1997]: Knuth, D. E. (1997). *The Art of Computer Programming, Volume 1*. Addison-Wesley.
 - Morris, J. M. (1979). "Traversing Binary Trees Simply and Cheaply." *Information Processing Letters*, 9(5), 197-200.
 - LeetCode 236 官方题解：https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/
+
+<!-- 自动添加的代码引用 -->
+- [`lc0236_lowest_common_ancestor.rs`](../../../examples/algorithms-rust/src/leetcode/lc0236_lowest_common_ancestor.rs)
+
+<!-- 自动添加的代码引用 -->
+- [`lc0104_maximum_depth_of_binary_tree.rs`](../../../examples/algorithms/src/leetcode/lc0104_maximum_depth_of_binary_tree.rs)
+
+<!-- 自动添加的代码引用 -->
+- [`lc0104_maximum_depth_of_binary_tree.lean`](../../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0104_maximum_depth_of_binary_tree.lean)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0102_binary_tree_level_order.py`](../../../examples/algorithms-python/src/leetcode/lc0102_binary_tree_level_order.py)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0102_binary_tree_level_order.rs`](../../../examples/algorithms/src/leetcode/lc0102_binary_tree_level_order.rs)

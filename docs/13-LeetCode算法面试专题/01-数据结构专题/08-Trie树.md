@@ -87,7 +87,7 @@ leetcode_tags: ["trie", "string", "design", "depth-first-search"]
 **上游理论依赖 / Upstream Dependencies**:
 
 - [`09-算法理论/01-算法基础/02-数据结构理论.md`](../../09-算法理论/01-算法基础/02-数据结构理论.md) — 树形结构的理论基础
-- [`02-递归理论/01-递归基础.md`](../../02-递归理论/01-递归基础.md) — 递归遍历与结构归纳法
+- `02-递归理论/01-递归基础.md` — 递归遍历与结构归纳法
 
 **下游应用 / Downstream Applications**:
 

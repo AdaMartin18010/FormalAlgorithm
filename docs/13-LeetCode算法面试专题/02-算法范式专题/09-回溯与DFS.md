@@ -62,7 +62,7 @@ leetcode_tags: ["backtracking", "depth-first-search", "recursion"]
 **上游理论依赖 / Upstream Dependencies**:
 
 - [`09-算法理论/01-算法基础/05-图算法理论.md`](../../09-算法理论/01-算法基础/05-图算法理论.md) — 图的遍历、DFS/BFS 的理论定义与复杂度分析
-- [`02-递归理论/01-递归基础.md`](../../02-递归理论/01-递归基础.md) — 递归的基本框架、终止条件与调用栈
+- `02-递归理论/01-递归基础.md` — 递归的基本框架、终止条件与调用栈
 - [`04-算法复杂度/01-时间复杂度.md`](../../04-算法复杂度/01-时间复杂度.md) — 时间复杂度 $O/\Omega/\Theta$ 的形式化定义与渐进分析
 - [`13-LeetCode算法面试专题/02-算法范式专题/08-动态规划.md`](./08-动态规划.md) — 动态规划与回溯的对比（记忆化搜索的桥梁作用）
 
@@ -321,9 +321,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms-rust/src/leetcode/lc0046_permutations.rs`](../../../../examples/algorithms-rust/src/leetcode/lc0046_permutations.rs)
-- **Python**: [`examples/algorithms-python/leetcode/lc0046_permutations.py`](../../../../examples/algorithms-python/leetcode/lc0046_permutations.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0046_permutations.go`](../../../../examples/algorithms-go/leetcode/lc0046_permutations.go)
+- **Rust**: [`examples/algorithms-rust/src/leetcode/lc0046_permutations.rs`](../../../examples/algorithms-rust/src/leetcode/lc0046_permutations.rs)
+- **Python**: [`examples/algorithms-python/leetcode/lc0046_permutations.py`](../../../examples/algorithms-python/leetcode/lc0046_permutations.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0046_permutations.go`](../../../examples/algorithms-go/leetcode/lc0046_permutations.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -1155,15 +1155,15 @@ $$
 
 **前置知识 / Prerequisites**:
 
-- [递归基础](../../02-递归理论/01-递归基础.md) — 回溯建立在递归框架之上
+- 递归基础 — 回溯建立在递归框架之上
 - [图算法理论](../../09-算法理论/01-算法基础/05-图算法理论.md) — DFS 的理论基础
 - [时间复杂度](../../04-算法复杂度/01-时间复杂度.md) — 复杂度分析基础
 
 **后续拓展 / Extensions**:
 
-- [分支限界](../04-高级算法专题/01-分支限界.md) — 回溯在优化问题上的扩展
+- 分支限界 — 回溯在优化问题上的扩展
 - [动态规划](./08-动态规划.md) — 与回溯互补的算法范式
-- [dancing links / Algorithm X](../../07-计算模型/03-精确覆盖问题.md) — 数独求解的高级算法
+- dancing links / Algorithm X — 数独求解的高级算法
 
 ---
 
@@ -1174,3 +1174,39 @@ $$
 - [Horowitz1978]: Horowitz, E., & Sahni, S. (1978). *Fundamentals of Computer Algorithms*. Computer Science Press.
 - [Golomb1966]: Golomb, S. W., & Baumert, L. D. (1966). "Backtrack Programming." *Journal of the ACM*, 12(4), 516-524.
 - [Russell2009]: Russell, S., & Norvig, P. (2009). *Artificial Intelligence: A Modern Approach* (3rd ed.). Prentice Hall. — CSP 章节
+
+<!-- 自动添加的代码引用 -->
+- [`lc0046_permutations.py`](../../../examples/algorithms-python/src/leetcode/lc0046_permutations.py)
+
+<!-- 自动添加的代码引用 -->
+- [`lc0046_permutations.rs`](../../../examples/algorithms/src/leetcode/lc0046_permutations.rs)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0079_word_search.go`](../../../examples/algorithms-go/leetcode/lc0079_word_search.go)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0051_n_queens.py`](../../../examples/algorithms-python/leetcode/lc0051_n_queens.py)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0037_sudoku_solver.py`](../../../examples/algorithms-python/src/leetcode/lc0037_sudoku_solver.py)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0051_n_queens.py`](../../../examples/algorithms-python/src/leetcode/lc0051_n_queens.py)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0037_sudoku_solver.rs`](../../../examples/algorithms/src/leetcode/lc0037_sudoku_solver.rs)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0051_n_queens.rs`](../../../examples/algorithms/src/leetcode/lc0051_n_queens.rs)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0017_letter_combinations.py`](../../../examples/algorithms-python/src/leetcode/lc0017_letter_combinations.py)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0039_combination_sum.py`](../../../examples/algorithms-python/src/leetcode/lc0039_combination_sum.py)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0017_letter_combinations.rs`](../../../examples/algorithms/src/leetcode/lc0017_letter_combinations.rs)
+
+<!-- 自动补充的代码引用 -->
+- [`lc0039_combination_sum.rs`](../../../examples/algorithms/src/leetcode/lc0039_combination_sum.rs)

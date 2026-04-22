@@ -222,7 +222,7 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc1584_min_cost_to_connect_all_points.rs`](../../../../examples/algorithms/src/leetcode/lc1584_min_cost_to_connect_all_points.rs)
+- **Rust**: [`examples/algorithms/src/leetcode/lc1584_min_cost_to_connect_all_points.rs`](../../../examples/algorithms/src/leetcode/lc1584_min_cost_to_connect_all_points.rs)
 
 #### 复杂度分析 / Complexity Analysis
 

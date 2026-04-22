@@ -8,4 +8,13 @@ import FormalAlgorithm.counting_sort
 import FormalAlgorithm.floyd_warshall
 import FormalAlgorithm.graph_proofs
 import FormalAlgorithm.hott_basics
+import FormalAlgorithm.leetcode.lc0001_two_sum
+import FormalAlgorithm.leetcode.lc0021_merge_two_sorted_lists
+import FormalAlgorithm.leetcode.lc0070_climbing_stairs
+import FormalAlgorithm.leetcode.lc0072_edit_distance
+import FormalAlgorithm.leetcode.lc0104_maximum_depth_of_binary_tree
+import FormalAlgorithm.leetcode.lc0136_single_number
+import FormalAlgorithm.leetcode.lc0141_linked_list_cycle
+import FormalAlgorithm.leetcode.lc0198_house_robber
+import FormalAlgorithm.leetcode.lc0207_course_schedule
 import FormalAlgorithm.leetcode.lc0704_binary_search

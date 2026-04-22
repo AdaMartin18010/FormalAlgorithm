@@ -233,8 +233,8 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0028_implement_strstr.py`](../../../../examples/algorithms-python/src/leetcode/lc0028_implement_strstr.py)
-- **Rust**: [`examples/algorithms/src/leetcode/lc0028_implement_strstr.rs`](../../../../examples/algorithms/src/leetcode/lc0028_implement_strstr.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0028_implement_strstr.py`](../../../examples/algorithms-python/src/leetcode/lc0028_implement_strstr.py)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0028_implement_strstr.rs`](../../../examples/algorithms/src/leetcode/lc0028_implement_strstr.rs)
 
 ```python
 # Python KMP 实现
@@ -342,7 +342,7 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
 
 #### 代码实现 / Code Implementations
 
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0214_shortest_palindrome.py`](../../../../examples/algorithms-python/src/leetcode/lc0214_shortest_palindrome.py)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0214_shortest_palindrome.py`](../../../examples/algorithms-python/src/leetcode/lc0214_shortest_palindrome.py)
 
 ```python
 # Python KMP 实现

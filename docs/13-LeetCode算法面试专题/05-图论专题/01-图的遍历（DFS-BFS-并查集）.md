@@ -100,8 +100,8 @@ level: 中级
 **上游理论依赖 / Upstream Dependencies**:
 
 - [`09-算法理论/01-算法基础/05-图算法理论.md`](../../09-算法理论/01-算法基础/05-图算法理论.md) — 图的基本定义、性质与遍历算法的理论分析
-- [`09-算法理论/03-搜索算法/01-深度优先搜索.md`](../../09-算法理论/03-搜索算法/01-深度优先搜索.md) — DFS 的理论定义、括号定理与复杂度
-- [`09-算法理论/03-搜索算法/03-广度优先搜索.md`](../../09-算法理论/03-搜索算法/03-广度优先搜索.md) — BFS 的理论定义、最短路径性质与循环不变式
+- `09-算法理论/03-搜索算法/01-深度优先搜索.md` — DFS 的理论定义、括号定理与复杂度
+- `09-算法理论/03-搜索算法/03-广度优先搜索.md` — BFS 的理论定义、最短路径性质与循环不变式
 - [`02-算法范式专题/05-二分查找.md`](../02-算法范式专题/05-二分查找.md) — 循环不变式证明方法（三条件法）
 
 **下游应用 / Downstream Applications**:
@@ -225,7 +225,7 @@ BFS(G, s):
 - 空间复杂度: $O(V)$
 - **最短路径定理**: 对于无权图，BFS 发现的 $dist[v]$ 等于从 $s$ 到 $v$ 的最短路径长度。
 
-> 关于 BFS 最短路径性质的详细证明，参见 [`09-算法理论/03-搜索算法/03-广度优先搜索.md`](../../09-算法理论/03-搜索算法/03-广度优先搜索.md)。
+> 关于 BFS 最短路径性质的详细证明，参见 `09-算法理论/03-搜索算法/03-广度优先搜索.md`。
 
 ### 2.3 并查集算法框架
 
@@ -294,9 +294,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0200_number_of_islands.rs`](../../../../examples/algorithms/src/leetcode/lc0200_number_of_islands.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0200_number_of_islands.py`](../../../../examples/algorithms-python/src/leetcode/lc0200_number_of_islands.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0200_number_of_islands.go`](../../../../examples/algorithms-go/leetcode/lc0200_number_of_islands.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0200_number_of_islands.rs`](../../../examples/algorithms/src/leetcode/lc0200_number_of_islands.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0200_number_of_islands.py`](../../../examples/algorithms-python/src/leetcode/lc0200_number_of_islands.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0200_number_of_islands.go`](../../../examples/algorithms-go/leetcode/lc0200_number_of_islands.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -369,8 +369,8 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0133_clone_graph.rs`](../../../../examples/algorithms/src/leetcode/lc0133_clone_graph.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0133_clone_graph.py`](../../../../examples/algorithms-python/src/leetcode/lc0133_clone_graph.py)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0133_clone_graph.rs`](../../../examples/algorithms/src/leetcode/lc0133_clone_graph.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0133_clone_graph.py`](../../../examples/algorithms-python/src/leetcode/lc0133_clone_graph.py)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -438,12 +438,12 @@ $$
 
 **关键洞察**: 将初始所有腐烂橘子同时入队（第 0 层），BFS 的层数即为经过的分钟数。每次从队列取出一个腐烂橘子，将其四邻域的新鲜橘子变为腐烂并入队（层数 +1）。
 
-> 关于多源 BFS 的更多细节，参见 [`09-算法理论/03-搜索算法/03-广度优先搜索.md`](../../09-算法理论/03-搜索算法/03-广度优先搜索.md) §3.2。
+> 关于多源 BFS 的更多细节，参见 `09-算法理论/03-搜索算法/03-广度优先搜索.md` §3.2。
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0994_rotting_oranges.rs`](../../../../examples/algorithms/src/leetcode/lc0994_rotting_oranges.rs)
-- **Go**: [`examples/algorithms-go/leetcode/lc0994_rotting_oranges.go`](../../../../examples/algorithms-go/leetcode/lc0994_rotting_oranges.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0994_rotting_oranges.rs`](../../../examples/algorithms/src/leetcode/lc0994_rotting_oranges.rs)
+- **Go**: [`examples/algorithms-go/leetcode/lc0994_rotting_oranges.go`](../../../examples/algorithms-go/leetcode/lc0994_rotting_oranges.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -531,7 +531,7 @@ $$
 
 **证明 / Proof**:
 
-参见 [`09-算法理论/03-搜索算法/03-广度优先搜索.md`](../../09-算法理论/03-搜索算法/03-广度优先搜索.md) §2.2。核心思路是对距离层次进行归纳：BFS 按距 $s$ 的距离层次依次处理顶点，当顶点 $v$ 首次被发现时，其距离即为最短距离。
+参见 `09-算法理论/03-搜索算法/03-广度优先搜索.md` §2.2。核心思路是对距离层次进行归纳：BFS 按距 $s$ 的距离层次依次处理顶点，当顶点 $v$ 首次被发现时，其距离即为最短距离。
 
 ### 5.3 并查集正确性
 
@@ -740,3 +740,6 @@ visited[node] = new_node
 ---
 
 > 📚 **返回目录**: [LeetCode算法面试专题](../README.md)
+
+<!-- 自动添加的代码引用 -->
+- [`lc0200_number_of_islands.lean`](../../../examples/lean_proofs/FormalAlgorithm/leetcode/lc0200_number_of_islands.lean)

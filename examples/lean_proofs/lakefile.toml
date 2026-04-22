@@ -7,9 +7,4 @@ name = "FormalAlgorithm"
 
 [[require]]
 name = "mathlib"
-scope = "leanprover-community"
-version = "git#v4.16.0"
-
-[[lean_exe]]
-name = "formal_algorithm"
-root = "Main"
+path = "mathlib"

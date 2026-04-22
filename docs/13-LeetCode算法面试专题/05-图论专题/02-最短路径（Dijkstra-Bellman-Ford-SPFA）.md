@@ -63,7 +63,7 @@ level: 中级
 
 **上游理论依赖 / Upstream Dependencies**:
 - [`09-算法理论/01-算法基础/05-图算法理论.md`](../../09-算法理论/01-算法基础/05-图算法理论.md) §3 — 最短路径算法的理论定义、最优子结构与复杂度分析
-- [`09-算法理论/03-搜索算法/03-广度优先搜索.md`](../../09-算法理论/03-搜索算法/03-广度优先搜索.md) — BFS 是无权图最短路径的特例（所有边权为 1）
+- `09-算法理论/03-搜索算法/03-广度优先搜索.md` — BFS 是无权图最短路径的特例（所有边权为 1）
 - [`02-算法范式专题/05-二分查找.md`](../02-算法范式专题/05-二分查找.md) — 贪心策略与循环不变式证明方法
 
 **下游应用 / Downstream Applications**:
@@ -250,9 +250,9 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0743_network_delay_time.rs`](../../../../examples/algorithms/src/leetcode/lc0743_network_delay_time.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0743_network_delay_time.py`](../../../../examples/algorithms-python/src/leetcode/lc0743_network_delay_time.py)
-- **Go**: [`examples/algorithms-go/leetcode/lc0743_network_delay_time.go`](../../../../examples/algorithms-go/leetcode/lc0743_network_delay_time.go)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0743_network_delay_time.rs`](../../../examples/algorithms/src/leetcode/lc0743_network_delay_time.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0743_network_delay_time.py`](../../../examples/algorithms-python/src/leetcode/lc0743_network_delay_time.py)
+- **Go**: [`examples/algorithms-go/leetcode/lc0743_network_delay_time.go`](../../../examples/algorithms-go/leetcode/lc0743_network_delay_time.go)
 
 #### 复杂度分析 / Complexity Analysis
 
@@ -314,8 +314,8 @@ $$
 
 #### 代码实现 / Code Implementations
 
-- **Rust**: [`examples/algorithms/src/leetcode/lc0787_cheapest_flights_within_k_stops.rs`](../../../../examples/algorithms/src/leetcode/lc0787_cheapest_flights_within_k_stops.rs)
-- **Python**: [`examples/algorithms-python/src/leetcode/lc0787_cheapest_flights_within_k_stops.py`](../../../../examples/algorithms-python/src/leetcode/lc0787_cheapest_flights_within_k_stops.py)
+- **Rust**: [`examples/algorithms/src/leetcode/lc0787_cheapest_flights_within_k_stops.rs`](../../../examples/algorithms/src/leetcode/lc0787_cheapest_flights_within_k_stops.rs)
+- **Python**: [`examples/algorithms-python/src/leetcode/lc0787_cheapest_flights_within_k_stops.py`](../../../examples/algorithms-python/src/leetcode/lc0787_cheapest_flights_within_k_stops.py)
 
 #### 复杂度分析 / Complexity Analysis
 

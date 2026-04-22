@@ -254,3 +254,16 @@ FormalAlgorithm/
 ---
 
 **总计**: 60+文档, 80+代码文件, 520+习题, 约2MB知识体系资源
+
+### `docs/13-LeetCode算法面试专题/`
+
+LeetCode 算法面试专题，形式化算法库的核心实战模块。按数据结构、算法范式、数学、字符串、图论、面试实战六大板块系统梳理 LeetCode 高频题。每道题遵循「四步法」框架（形式化规约→算法设计→正确性证明→参考实现），部分题目配备 Lean 4 形式化证明。配套代码分布在 `examples/algorithms/src/leetcode/` (Rust)、`examples/algorithms-python/src/leetcode/` (Python)、`examples/algorithms-go/leetcode/` (Go) 和 `examples/lean_proofs/FormalAlgorithm/leetcode/` (Lean)。
+
+- `00-总览与方法论/` — 专题导论、解题四步法、复杂度速查与面试沟通模板
+- `01-数据结构专题/` — 数组、链表、栈队列、哈希表、二叉树、堆、并查集、Trie
+- `02-算法范式专题/` — 枚举、双指针、滑动窗口、前缀和、二分、分治、贪心、DP、回溯、BFS、位运算
+- `03-数学专题/` — 数论、组合数学、计算几何、概率与随机算法
+- `04-字符串专题/` — 字符串匹配与 KMP、回文问题、字符串动态规划
+- `05-图论专题/` — 遍历、最短路径、拓扑排序、最小生成树
+- `06-面试专题/` — 高频 Top 100、剑指 Offer 精选、大厂真题
+- `99-附录/` — LeetCode 题号全局索引、常见错误清单、多语言代码模板速查
