@@ -129,7 +129,7 @@ export function runGeometryTests(): void {
     "closestPair": () => {
       const pts = [{ x: 2, y: 3 }, { x: 12, y: 30 }, { x: 40, y: 50 }, { x: 5, y: 1 }, { x: 12, y: 10 }];
       const d = closestPair(pts);
-      assertTrue(Math.abs(d - Math.sqrt(425)) < 1e-6);
+      assertTrue(Math.abs(d - Math.sqrt(13)) < 1e-6); // closest: (2,3)-(5,1)
     },
     "segmentsIntersect": () => {
       assertTrue(segmentsIntersect({ x: 0, y: 0 }, { x: 10, y: 10 }, { x: 0, y: 10 }, { x: 10, y: 0 }));

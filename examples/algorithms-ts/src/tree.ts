@@ -201,7 +201,7 @@ export function runTreeTests(): void {
     "HeavyLightDecomposition": () => {
       const adj: TreeAdj = [[1, 2], [3], [], []];
       const hld = new HeavyLightDecomposition(adj, 0);
-      assertEq(hld.getHead(3), 1);
+      assertEq(hld.getHead(3), 0); // 0-1-3 is one heavy path
       assertTrue(hld.getPosition(0) < hld.getPosition(1));
     },
     "centroidDecomposition": () => {

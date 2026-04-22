@@ -254,8 +254,8 @@ function runStringTests() {
         },
         "RollingHash": () => {
             const rh = new RollingHash("hello world");
-            (0, utils_1.assertEq)(rh.getHash(0, 5), rh.getHash(6, 11)); // "hello" vs "world" no
-            (0, utils_1.assertEq)(rh.getHash(0, 5), rh.getHash(0, 5));
+            (0, utils_1.assertEq)(rh.getHash(0, 5), rh.getHash(0, 5)); // same substring same hash
+            (0, utils_1.assertTrue)(rh.getHash(0, 5) !== rh.getHash(6, 11)); // "hello" !== "world"
         },
         "AhoCorasick": () => {
             const ac = new AhoCorasick();

@@ -339,7 +339,7 @@ function runGraphTests() {
         "kosaraju": () => {
             const adj = [[1], [2, 4], [3, 5], [0, 6], [5], [4], [5, 7], [6]];
             const sccs = kosaraju(adj);
-            (0, utils_1.assertEq)(sccs.length, 4);
+            (0, utils_1.assertEq)(sccs.length, 3); // {0,1,2,3}, {4,5}, {6,7}
         },
     });
 }

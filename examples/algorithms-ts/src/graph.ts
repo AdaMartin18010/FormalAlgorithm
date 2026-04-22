@@ -332,7 +332,7 @@ export function runGraphTests(): void {
     "kosaraju": () => {
       const adj: AdjList = [[1], [2, 4], [3, 5], [0, 6], [5], [4], [5, 7], [6]];
       const sccs = kosaraju(adj);
-      assertEq(sccs.length, 4);
+      assertEq(sccs.length, 3); // {0,1,2,3}, {4,5}, {6,7}
     },
   });
 }

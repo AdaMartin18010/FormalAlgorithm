@@ -182,7 +182,7 @@ function runTreeTests() {
         "HeavyLightDecomposition": () => {
             const adj = [[1, 2], [3], [], []];
             const hld = new HeavyLightDecomposition(adj, 0);
-            (0, utils_1.assertEq)(hld.getHead(3), 1);
+            (0, utils_1.assertEq)(hld.getHead(3), 0); // 0-1-3 is one heavy path
             (0, utils_1.assertTrue)(hld.getPosition(0) < hld.getPosition(1));
         },
         "centroidDecomposition": () => {

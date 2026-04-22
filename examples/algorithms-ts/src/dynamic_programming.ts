@@ -136,7 +136,7 @@ export function runDynamicProgrammingTests(): void {
       assertEq(knapsack01([1, 3, 4, 5], [1, 4, 5, 7], 7), 9);
     },
     "unboundedKnapsack": () => {
-      assertEq(unboundedKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7), 10);
+      assertEq(unboundedKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7), 9); // 3+4=7 -> 4+5=9
     },
     "longestIncreasingSubsequence": () => {
       assertEq(longestIncreasingSubsequence([10, 9, 2, 5, 3, 7, 101, 18]), 4);

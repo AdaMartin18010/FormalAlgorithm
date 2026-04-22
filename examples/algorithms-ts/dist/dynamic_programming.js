@@ -150,7 +150,7 @@ function runDynamicProgrammingTests() {
             (0, utils_1.assertEq)(knapsack01([1, 3, 4, 5], [1, 4, 5, 7], 7), 9);
         },
         "unboundedKnapsack": () => {
-            (0, utils_1.assertEq)(unboundedKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7), 10);
+            (0, utils_1.assertEq)(unboundedKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7), 9); // 3+4=7 -> 4+5=9
         },
         "longestIncreasingSubsequence": () => {
             (0, utils_1.assertEq)(longestIncreasingSubsequence([10, 9, 2, 5, 3, 7, 101, 18]), 4);

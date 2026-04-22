@@ -238,8 +238,8 @@ export function runStringTests(): void {
     },
     "RollingHash": () => {
       const rh = new RollingHash("hello world");
-      assertEq(rh.getHash(0, 5), rh.getHash(6, 11)); // "hello" vs "world" no
-      assertEq(rh.getHash(0, 5), rh.getHash(0, 5));
+      assertEq(rh.getHash(0, 5), rh.getHash(0, 5)); // same substring same hash
+      assertTrue(rh.getHash(0, 5) !== rh.getHash(6, 11)); // "hello" !== "world"
     },
     "AhoCorasick": () => {
       const ac = new AhoCorasick();
