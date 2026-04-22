@@ -79,6 +79,7 @@ Aho-Corasick 算法由 Aho 与 Corasick 于 1975 年提出 [Aho & Corasick, 1975
 1. **A. V. Aho, M. J. Corasick**, "Efficient String Matching: An Aid to Bibliographic Search", *Communications of the ACM*, 18(6), 1975.
 2. **T. H. Cormen et al.**, *Introduction to Algorithms*, 3rd ed., MIT Press, 2009.
 3. **S. Wu, U. Manber**, "Fast Text Searching: Allowing Errors", *Communications of the ACM*, 35(10), 1992.
+
 ---
 
 ## 知识导航

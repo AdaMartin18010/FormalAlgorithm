@@ -102,6 +102,7 @@ $$
 1. **R. M. Karp, M. O. Rabin**, "Efficient Randomized Pattern-Matching Algorithms", *IBM Journal of Research and Development*, 31(2), 1987.
 2. **S. Schleimer, D. S. Wilkerson, A. Aiken**, "Winnowing: Local Algorithms for Document Fingerprinting", *SIGMOD*, 2003.
 3. **T. H. Cormen et al.**, *Introduction to Algorithms*, 3rd ed., MIT Press, 2009.
+
 ---
 
 ## 知识导航

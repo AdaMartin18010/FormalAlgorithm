@@ -155,7 +155,9 @@ python scripts/check_wiki_links.py \
 ```
 
 ## 术语一致性检查
+
 ### 术语一致性检查
+
 #### 术语一致性检查
 
 ```bash
@@ -167,7 +169,9 @@ python scripts/check_terminology.py \
 ```
 
 ## 定义差异检测
+
 ### 定义差异检测
+
 #### 定义差异检测
 
 ```bash
@@ -179,6 +183,7 @@ python scripts/check_definition_diff.py \
 ```
 
 ## 3. 质量指标
+
 ### 3. 质量指标
 
 #### 对齐度指标

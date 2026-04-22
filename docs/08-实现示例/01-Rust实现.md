@@ -96,6 +96,9 @@ level: 中级
   - [9.3 动态规划算法实现 / Dynamic Programming Algorithm Implementations](#93-动态规划算法实现--dynamic-programming-algorithm-implementations)
 - [7. 最小可运行Rust工作区与命令](#7-最小可运行rust工作区与命令)
 - [10. 交叉引用与依赖 (Cross References and Dependencies)](#10-交叉引用与依赖-cross-references-and-dependencies)
+- [参考文献](#参考文献)
+- [知识导航](#知识导航)
+- [学习目标](#学习目标)
 
 ---
 
@@ -2136,8 +2139,7 @@ cargo run --bin ga_min
 ## 学习目标
 
 完成本章节后，读者将能够：
+
 1. 理解核心概念与基本原理
 2. 掌握关键定理与证明方法
 3. 应用所学知识解决实际问题
-
-

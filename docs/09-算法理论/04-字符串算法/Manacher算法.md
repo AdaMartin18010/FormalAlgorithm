@@ -91,6 +91,7 @@ $$
 1. **G. Manacher**, "A New Linear-Time On-Line Algorithm for Finding the Smallest Initial Palindrome of a String", *Journal of the ACM*, 22(3), 1975.
 2. **M. Rubinchik, A. M. Shur**, "Eertree: An Efficient Data Structure for Processing Palindromes in Strings", *European Journal of Combinatorics*, 68, 2018.
 3. **D. Gusfield**, *Algorithms on Strings, Trees, and Sequences*, Cambridge University Press, 1997.
+
 ---
 
 ## 知识导航

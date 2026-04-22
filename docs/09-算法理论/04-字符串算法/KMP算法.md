@@ -79,6 +79,7 @@ KMP 算法分为两个阶段：
 
 1. **D. E. Knuth, J. H. Morris, V. R. Pratt**, "Fast Pattern Matching in Strings", *SIAM Journal on Computing*, 6(2), 1977.
 2. **T. H. Cormen et al.**, *Introduction to Algorithms*, 3rd ed., MIT Press, 2009.
+
 ---
 
 ## 知识导航

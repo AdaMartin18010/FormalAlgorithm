@@ -126,6 +126,9 @@ level: 中级
     - [99. Streaming algorithm / 流算法](#99-streaming-algorithm--流算法)
     - [100. Probabilistic method / 概率方法](#100-probabilistic-method--概率方法)
   - [补充完成统计](#补充完成统计)
+  - [参考文献](#参考文献)
+  - [知识导航](#知识导航)
+  - [学习目标](#学习目标)
 
 ---
 
