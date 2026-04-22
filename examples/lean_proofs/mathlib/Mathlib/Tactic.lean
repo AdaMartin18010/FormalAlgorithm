@@ -8,4 +8,3 @@ macro "linarith" "[" _ts:term,* "]" : tactic => `(tactic| omega)
 
 -- aesop is sometimes used; stub it
 macro "aesop" : tactic => `(tactic| simp_all)
-macro "aesop" "(" _args* ")" : tactic => `(tactic| simp_all)

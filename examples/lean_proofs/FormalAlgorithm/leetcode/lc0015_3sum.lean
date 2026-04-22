@@ -81,7 +81,7 @@ def threeSumAlgorithm (nums : List Int) : List (Int × Int × Int) :=
     证明思路：利用排序后的单调性。 -/
 theorem two_pointers_invariant
     (sorted : List Int)
-    (h_sorted : sorted.Sorted (· ≤ ·))
+    (h_sorted : Sorted (· ≤ ·) sorted)
     (target : Int)
     (left right : Nat)
     (h_lr : left < right ∧ right < sorted.length)
@@ -121,7 +121,7 @@ theorem three_sum_no_duplicate
 /-- 引理：排序后的数组中，若 i < j < k，则 sorted[i] ≤ sorted[j] ≤ sorted[k]。 -/
 theorem sorted_triple_order
     (sorted : List Int)
-    (h_sorted : sorted.Sorted (· ≤ ·))
+    (h_sorted : Sorted (· ≤ ·) sorted)
     (i j k : Nat)
     (h_ijk : i < j ∧ j < k ∧ k < sorted.length)
     : sorted.getD i 0 ≤ sorted.getD j 0 ∧ sorted.getD j 0 ≤ sorted.getD k 0 := by

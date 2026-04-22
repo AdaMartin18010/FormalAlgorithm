@@ -32,8 +32,7 @@ def climbStairs : Nat → Nat
   | 1 => 1
   | n + 2 => climbStairs (n + 1) + climbStairs n
 
-/-- 标准斐波那契数列定义（Mathlib 版本）。
-    fib 0 = 0, fib 1 = 1, fib (n+2) = fib (n+1) + fib n。 -/
+-- 标准斐波那契数列定义已从 Mathlib.Data.Nat.Fib.Basic 导入。
 
 -- ============================================================
 -- 2. 核心定理：dp[n] = fib(n+1)

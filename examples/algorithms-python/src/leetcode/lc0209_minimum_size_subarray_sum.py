@@ -93,7 +93,7 @@ if __name__ == "__main__":
     assert min_sub_array_len(10, [1, 2, 3, 4]) == 4, "Whole array exact"
 
     # 边界：最短子数组在末尾
-    assert min_sub_array_len(15, [1, 2, 3, 10, 5]) == 1, "Single large at end"
+    assert min_sub_array_len(15, [1, 2, 3, 10, 5]) == 2, "Two elements at end"
 
     # 大规模测试
     large = [1] * 100000

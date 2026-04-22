@@ -100,7 +100,7 @@ mod tests {
                 left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
                 right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
             }))),
-        }));
+        })));
         assert_eq!(max_depth(root.clone()), 3);
         assert_eq!(max_depth_bfs(root), 3);
     }

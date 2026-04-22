@@ -94,14 +94,26 @@ theorem maxDepth_le_nodeCount (t : BinTree)
     simp [maxDepth, nodeCount]
     have h1 : maxDepth l ≤ nodeCount l := ih_l
     have h2 : maxDepth r ≤ nodeCount r := ih_r
+    have max_le_max {a b c d : Nat} (h1 : a ≤ b) (h2 : c ≤ d) : max a c ≤ max b d := by
+      cases Nat.le_total a c with
+      | inl hac =>
+        have : max a c = c := Nat.max_eq_right hac
+        rw [this]
+        apply Nat.le_trans h2
+        apply Nat.le_max_right
+      | inr hca =>
+        have : max a c = a := Nat.max_eq_left hca
+        rw [this]
+        apply Nat.le_trans h1
+        apply Nat.le_max_left
     have h3 : max (maxDepth l) (maxDepth r) ≤ max (nodeCount l) (nodeCount r) := by
       apply max_le_max
       · linarith
       · linarith
     have h4 : max (nodeCount l) (nodeCount r) ≤ nodeCount l + nodeCount r := by
-      cases max_cases (nodeCount l) (nodeCount r) with
-      | inl h => linarith
-      | inr h => linarith
+      by_cases h : nodeCount l ≤ nodeCount r
+      · rw [Nat.max_eq_right h]; omega
+      · rw [Nat.max_eq_left (Nat.le_of_not_le h)]; omega
     linarith [h3, h4]
 
 /-- 定理 3（深度下界）：对非空二叉树 t，maxDepth t ≥ 1。
@@ -123,13 +135,13 @@ theorem maxDepth_pos_of_non_empty (t : BinTree)
 theorem maxDepth_lt_parent_left (v : Int) (l r : BinTree)
     : maxDepth l < maxDepth (BinTree.node v l r) := by
   simp [maxDepth]
-  have h : maxDepth l ≤ max (maxDepth l) (maxDepth r) := le_max_left _ _
+  have h : maxDepth l ≤ max (maxDepth l) (maxDepth r) := Nat.le_max_left _ _
   omega
 
 theorem maxDepth_lt_parent_right (v : Int) (l r : BinTree)
     : maxDepth r < maxDepth (BinTree.node v l r) := by
   simp [maxDepth]
-  have h : maxDepth r ≤ max (maxDepth l) (maxDepth r) := le_max_right _ _
+  have h : maxDepth r ≤ max (maxDepth l) (maxDepth r) := Nat.le_max_right _ _
   omega
 
 /-- 定理 5（终止性）：maxDepth 对任意有限二叉树必在有限步内终止。
@@ -165,11 +177,11 @@ def IsBalanced (t : BinTree) : Prop :=
   | BinTree.empty => True
   | BinTree.node _ l r =>
     IsBalanced l ∧ IsBalanced r ∧
-    |(maxDepth l : Int) - (maxDepth r : Int)| ≤ 1
+    Int.natAbs ((maxDepth l : Int) - (maxDepth r : Int)) ≤ 1
 
 theorem balanced_tree_height_bound (t : BinTree)
     (h_bal : IsBalanced t)
-    : maxDepth t ≤ 2 * Nat.log 2 (nodeCount t + 1) := by
+    : maxDepth t ≤ 2 * Nat.log2 (nodeCount t + 1) := by
   sorry -- TODO: 利用 AVL/红黑树的高度-节点数关系证明
 
 -- ============================================================

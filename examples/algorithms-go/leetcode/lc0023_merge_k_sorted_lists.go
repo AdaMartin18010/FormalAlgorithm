@@ -5,12 +5,6 @@
 //	docs/13-LeetCode算法面试专题/02-算法范式专题/06-分治.md
 package leetcode
 
-// ListNode 单链表节点。
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // MergeKLists 分治合并 k 个升序链表。
 //
 // 形式化规约：

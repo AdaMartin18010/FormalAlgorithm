@@ -31,7 +31,7 @@ abbrev LinkedList (α : Type) := List α
 
 /-- 列表是非递减有序的。 -/
 def IsSorted {α : Type} [LE α] [DecidableRel (@LE.le α _)] (xs : List α) : Prop :=
-  xs.Sorted (· ≤ ·)
+  Sorted (· ≤ ·) xs
 
 /-- 合并两个有序链表的递归实现。
     对应 LeetCode 21 的标准递归解法。 -/

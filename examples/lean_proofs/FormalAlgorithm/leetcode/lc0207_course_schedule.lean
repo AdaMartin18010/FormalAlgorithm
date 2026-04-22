@@ -121,7 +121,7 @@ theorem dfs_cycle_detection_correct
     : HasCycle cs ↔
       ∃ (start : Nat) (path : List Nat),
         start < cs.numCourses ∧
-        path.Chain' (fun u v => (u, v) ∈ cs.prerequisites) ∧
+        List.Chain (fun u v => (u, v) ∈ cs.prerequisites) path ∧
         path.head? = some start ∧
         path.getLast? = some start := by
   sorry -- TODO: 双向证明，利用 DFS 树边/回边的分类

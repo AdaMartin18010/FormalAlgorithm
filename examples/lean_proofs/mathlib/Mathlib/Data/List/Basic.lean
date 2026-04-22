@@ -2,15 +2,24 @@
 Minimal stub for Mathlib.Data.List.Basic
 -/
 
-namespace List
+export List (Pairwise)
 
 universe u
 variable {α : Type u}
 
--- Sorted is defined in Mathlib.Data.List.Sort, not here
--- but some files import this expecting basic list lemmas
+/-- `Sorted r l` means that `l` is sorted with respect to the relation `r`. -/
+def Sorted (r : α → α → Prop) (l : List α) : Prop :=
+  l.Pairwise r
 
--- getD is available in core as getD? No, let's check.
--- Actually List.getD exists in core Lean 4
+/-- `Chain R l` means that all adjacent elements in `l` satisfy `R`. -/
+inductive Chain (R : α → α → Prop) : List α → Prop
+  | nil : Chain R []
+  | singleton (a : α) : Chain R [a]
+  | cons (a b : α) (l : List α) : R a b → Chain R (b :: l) → Chain R (a :: b :: l)
 
-end List
+/-- Safe list lookup by index, returns `none` if out of bounds. -/
+def get? (xs : List α) (i : Nat) : Option α :=
+  match xs, i with
+  | [], _ => none
+  | x :: _, 0 => some x
+  | _ :: xs', i+1 => get? xs' i

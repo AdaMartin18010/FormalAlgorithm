@@ -5,12 +5,6 @@
 //	docs/13-LeetCode算法面试专题/02-算法范式专题/02-双指针.md
 package leetcode
 
-// ListNode 链表节点定义。
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // HasCycle 判断链表中是否存在环（Floyd 判圈算法）。
 //
 // 形式化规约：

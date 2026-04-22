@@ -113,12 +113,12 @@ def twoSumHash (nums : List Int) (target : Int) : Option (Nat × Nat) :=
       | none => aux (j + 1) ((current, j) :: seen)
     else
       none
+    termination_by nums.length - j
+    decreasing_by
+      all_goals
+        simp_wf
+        <;> try omega
   aux 0 []
-  termination_by nums.length - j
-  decreasing_by
-    all_goals
-      simp_wf
-      <;> try omega
 
 -- ============================================================
 -- 3. 核心定理：哈希表正确性

@@ -1,11 +1,5 @@
 package leetcode
 
-// ListNode 定义链表节点
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // LeetCode 142 - Linked List Cycle II
 // https://leetcode.com/problems/linked-list-cycle-ii/
 //

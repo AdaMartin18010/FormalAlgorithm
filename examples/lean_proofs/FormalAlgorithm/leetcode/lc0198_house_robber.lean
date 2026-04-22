@@ -32,7 +32,7 @@ abbrev MoneyList := List Nat
     这里用索引列表表示选取方案，要求索引严格递增且相邻索引差不小于 2。 -/
 def IsValidPlan (nums : MoneyList) (indices : List Nat) : Prop :=
   indices ⊆ List.range nums.length ∧
-  indices.Sorted (· < ·) ∧
+  Sorted (· < ·) indices ∧
   (∀ i ∈ indices, ∀ j ∈ indices, i < j → j - i ≥ 2)
 
 /-- 方案的总金额。 -/
@@ -104,7 +104,7 @@ theorem dp_is_optimal
 theorem valid_plan_extend
     (nums : MoneyList) (indices : List Nat) (i : Nat)
     (h_valid : IsValidPlan nums indices)
-    (h_not_adj : ∀ j ∈ indices, |(i : Int) - j| ≥ 2)
+    (h_not_adj : ∀ j ∈ indices, Int.natAbs ((i : Int) - j) ≥ 2)
     : IsValidPlan nums (i :: indices) := by
   sorry -- TODO: 验证索引范围、有序性和不相邻条件
 

@@ -42,12 +42,12 @@ def ladder_length(begin_word: str, end_word: str, word_list: List[str]) -> int:
     Returns:
         最短转换序列长度，不存在则返回 0。
     """
+    if begin_word == end_word:
+        return 1
+
     word_set = set(word_list)
     if end_word not in word_set:
         return 0
-
-    if begin_word == end_word:
-        return 1
 
     # 双向 BFS
     begin_visited = {begin_word}

@@ -59,9 +59,9 @@ func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 		if nums1LeftMax <= nums2RightMin && nums2LeftMax <= nums1RightMin {
 			if (m+n)%2 == 1 {
-				return max(nums1LeftMax, nums2LeftMax)
+				return math.Max(nums1LeftMax, nums2LeftMax)
 			}
-			return (max(nums1LeftMax, nums2LeftMax) + min(nums1RightMin, nums2RightMin)) / 2.0
+			return (math.Max(nums1LeftMax, nums2LeftMax) + math.Min(nums1RightMin, nums2RightMin)) / 2.0
 		} else if nums1LeftMax > nums2RightMin {
 			right = i - 1
 		} else {

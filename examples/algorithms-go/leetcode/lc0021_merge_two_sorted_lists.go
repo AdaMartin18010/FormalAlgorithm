@@ -10,11 +10,6 @@ package leetcode
 // 时间复杂度：O(n + m)
 // 空间复杂度：O(1)
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	dummy := &ListNode{Val: 0}
 	tail := dummy

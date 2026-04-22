@@ -117,3 +117,88 @@ pub mod lc0050_powx_n;
 pub mod lc0204_count_primes;
 /// LeetCode 96. 不同的二叉搜索树（卡特兰数 DP）
 pub mod lc0096_unique_binary_search_trees;
+// === 数组与哈希表专题 ===
+/// LeetCode 1. 两数之和（哈希表）
+pub mod lc0001_two_sum;
+/// LeetCode 26. 删除有序数组中的重复项（双指针）
+pub mod lc0026_remove_duplicates;
+/// LeetCode 48. 旋转图像（矩阵转置 + 翻转）
+pub mod lc0048_rotate_image;
+
+// === 字符串专题 ===
+/// LeetCode 5. 最长回文子串（中心扩展 / Manacher）
+pub mod lc0005_longest_palindromic_substring;
+/// LeetCode 17. 电话号码的字母组合（回溯）
+pub mod lc0017_letter_combinations;
+/// LeetCode 28. 实现 strStr()（KMP / Sunday）
+pub mod lc0028_implement_strstr;
+/// LeetCode 516. 最长回文子序列（区间 DP）
+pub mod lc0516_longest_palindromic_subsequence;
+/// LeetCode 583. 两个字符串的删除操作（双串 DP）
+pub mod lc0583_delete_operation_for_two_strings;
+/// LeetCode 1143. 最长公共子序列（经典双串 DP）
+pub mod lc1143_longest_common_subsequence;
+
+// === 栈与队列专题 ===
+/// LeetCode 20. 有效的括号（栈匹配）
+pub mod lc0020_valid_parentheses;
+/// LeetCode 155. 最小栈（辅助栈同步最小值）
+pub mod lc0155_min_stack;
+/// LeetCode 232. 用栈实现队列（双栈模拟）
+pub mod lc0232_implement_queue_using_stacks;
+
+// === 链表专题 ===
+/// LeetCode 141. 环形链表（快慢指针 / Floyd 判环）
+pub mod lc0141_linked_list_cycle;
+/// LeetCode 206. 反转链表（迭代 / 递归）
+pub mod lc0206_reverse_linked_list;
+
+// === 树专题 ===
+/// LeetCode 94. 二叉树的中序遍历（Morris / 栈）
+pub mod lc0094_binary_tree_inorder_traversal;
+/// LeetCode 102. 二叉树的层序遍历（BFS）
+pub mod lc0102_binary_tree_level_order;
+/// LeetCode 104. 二叉树的最大深度（DFS / BFS）
+pub mod lc0104_maximum_depth_of_binary_tree;
+/// LeetCode 226. 翻转二叉树（递归 / 迭代）
+pub mod lc0226_invert_binary_tree;
+/// LeetCode 236. 二叉树的最近公共祖先（DFS / 后序遍历）
+pub mod lc0236_lowest_common_ancestor;
+
+// === 回溯与 DFS 专题 ===
+/// LeetCode 37. 解数独（回溯 + 剪枝）
+pub mod lc0037_sudoku_solver;
+/// LeetCode 39. 组合总和（回溯 + 剪枝）
+pub mod lc0039_combination_sum;
+/// LeetCode 51. N 皇后（排列树回溯）
+pub mod lc0051_n_queens;
+
+// === 动态规划专题 ===
+/// LeetCode 62. 不同路径（组合数学 / DP）
+pub mod lc0062_unique_paths;
+/// LeetCode 70. 爬楼梯（线性 DP / 斐波那契）
+pub mod lc0070_climbing_stairs;
+/// LeetCode 300. 最长递增子序列（DP + 二分优化）
+pub mod lc0300_longest_increasing_subsequence;
+/// LeetCode 312. 戳气球（区间 DP）
+pub mod lc0312_burst_balloons;
+/// LeetCode 416. 分割等和子集（0-1 背包 DP）
+pub mod lc0416_partition_equal_subset_sum;
+
+// === 滑动窗口 / 前缀和专题 ===
+/// LeetCode 209. 长度最小的子数组（滑动窗口 / 前缀和）
+pub mod lc0209_minimum_size_subarray_sum;
+
+// === 数学专题 ===
+/// LeetCode 223. 矩形面积（几何 / 容斥原理）
+pub mod lc0223_rectangle_area;
+/// LeetCode 372. 超级次方（快速幂 / 模运算）
+pub mod lc0372_super_pow;
+/// LeetCode 384. 打乱数组（Fisher-Yates 洗牌）
+pub mod lc0384_shuffle_an_array;
+/// LeetCode 398. 随机数索引（蓄水池抽样）
+pub mod lc0398_random_pick_index;
+/// LeetCode 470. 用 Rand7() 实现 Rand10()（拒绝采样）
+pub mod lc0470_rand10_using_rand7;
+/// LeetCode 587. 安装栅栏（凸包 / Graham 扫描）
+pub mod lc0587_erect_the_fence;

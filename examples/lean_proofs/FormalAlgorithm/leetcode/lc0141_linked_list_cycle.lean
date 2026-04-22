@@ -107,7 +107,13 @@ theorem floyd_correctness
     (ll : LinkedList maxNodes)
     (start : Fin maxNodes)
     (h_start : ll.next start ≠ none)
-    : floydCycleDetection ll start (ll.next start |>.get (by simp [Option.isSome_iff_exists, h_start])) = true ↔
+    : floydCycleDetection ll start (ll.next start |>.get (by
+        have : ∃ a, ll.next start = some a := by
+          cases ll.next start with
+          | none => contradiction
+          | some a => exact ⟨a, rfl⟩
+        simp [Option.isSome_iff_exists, this]
+      )) = true ↔
       HasCycle ll := by
   sorry -- TODO: 结合定理 1 和定理 2 完成双向证明
 
@@ -120,7 +126,7 @@ theorem floyd_correctness
 theorem cycle_meet_after_l_steps
     (L : Nat) (h_L : L > 0)
     : ∃ i : Nat, i > 0 ∧ i % L = 0 ∧ (2 * i) % L = 0 := by
-  use L
+  refine ⟨L, ?_⟩
   constructor
   · exact h_L
   · constructor

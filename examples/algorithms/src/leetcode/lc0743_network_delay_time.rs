@@ -43,7 +43,7 @@ impl Solution {
         dist[k] = 0;
         heap.push(Reverse((0, k)));
 
-        while let Some(Reverse((d, u))) = heap.pop() {
+        while let Some(Reverse((_d, u))) = heap.pop() {
             if visited[u] {
                 continue;
             }
