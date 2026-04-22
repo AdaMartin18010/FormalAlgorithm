@@ -35,7 +35,7 @@
 
 **本轮完成（v3.3.0, 2026-04-23）**：
 
-- ✅ **13-LeetCode算法面试专题**: 全新模块，47篇文档，覆盖76道LeetCode核心题目，全球首个系统性"LeetCode + 形式化证明"资源库
+- ✅ **13-LeetCode算法面试专题**: 全新模块，47篇文档，覆盖83道LeetCode核心题目，全球首个系统性"LeetCode + 形式化证明"资源库
 - ✅ **多语言代码库**: Rust/Python/Go 三语言实现 200+ 代码文件，覆盖LeetCode核心题
 - ✅ **Lean 4 形式化证明**: 10道核心LeetCode题目的形式化证明，开创算法面试与形式化验证交叉领域
 
@@ -70,7 +70,7 @@
   - 快速入口：[`docs/01-基础理论/01-形式化定义.md`](docs/01-基础理论/01-形式化定义.md)
 - **02-递归理论模块**（5个文档，56+引用）🎊 - Week 6完成
   - 快速入口：[`docs/02-递归理论/01-递归函数定义.md`](docs/02-递归理论/01-递归函数定义.md)
-- **13-LeetCode算法面试专题**（47篇文档，76道核心题，Rust/Python/Go三语言实现，10道Lean 4形式化证明）🎊 - v3.3.0新增
+- **13-LeetCode算法面试专题**（49篇文档，83道核心题，Rust/Python/Go三语言实现，14道Lean 4形式化证明）🎊 - v3.3.0新增
   - 快速入口：[`docs/13-LeetCode算法面试专题/00-总览与方法论/00-专题导论.md`](docs/13-LeetCode算法面试专题/00-专题导论.md)
   - 代码实现：`examples/algorithms-rust/src/leetcode/` | `examples/algorithms-python/src/leetcode/` | `examples/algorithms-go/leetcode/`
   - Lean 4 证明：`examples/lean_proofs/FormalAlgorithm/leetcode/`

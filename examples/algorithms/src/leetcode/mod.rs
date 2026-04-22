@@ -72,7 +72,6 @@ pub mod lc1584_min_cost_to_connect_all_points;
 // === 剑指 Offer 专题 ===
 /// 剑指 Offer 10-I. 斐波那契数列
 #[path = "剑指Offer_10_I_斐波那契数列.rs"]
-pub mod jianzhi_offer_10_i_fibonacci;
 
 // === 前缀和与差分专题 ===
 /// LeetCode 560. 和为 K 的子数组（前缀和 + 哈希表）

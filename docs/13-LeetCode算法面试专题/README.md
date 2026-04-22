@@ -80,8 +80,7 @@ level: 全级别
 
 | 语言 | 路径 | 说明 |
 |------|------|------|
-| Rust（主仓库） | [`examples/algorithms/src/leetcode/`](../../examples/algorithms/src/leetcode/) | 主要实现语言，71 题 |
-| Rust（补充） | [`examples/algorithms/src/leetcode/`](../../examples/algorithms/src/leetcode/) | 额外 Rust 实现 |
+| Rust | [`examples/algorithms/src/leetcode/`](../../examples/algorithms/src/leetcode/) | 主要实现语言，73 题 |
 | Python | [`examples/algorithms-python/src/leetcode/`](../../examples/algorithms-python/src/leetcode/) | 辅助教学语言，代码简洁易读 |
 | Go | [`examples/algorithms-go/leetcode/`](../../examples/algorithms-go/leetcode/) | 工程实践语言，附带单测 |
 | Lean 4 | [`examples/lean_proofs/FormalAlgorithm/leetcode/`](../../examples/lean_proofs/FormalAlgorithm/leetcode/) | 形式化证明，机器可检验 |
@@ -90,10 +89,10 @@ level: 全级别
 
 ## 题号覆盖统计
 
-- **索引题号总数**：84
-- **代码实现题号数**：84
-- **文档覆盖题号数**：80
-- **代码+文档完全覆盖**：80
+- **索引题号总数**：147
+- **代码实现题号数**：83
+- **文档覆盖题号数**：143
+- **代码+文档完全覆盖**：79
 - **形式化证明题号数**：14
 
 ### 按难度分布
@@ -128,9 +127,9 @@ level: 全级别
 
 | 语言 | 实现题数 | 说明 |
 |------|----------|------|
-| Rust | 71 | 主要实现语言，包含在 `examples/algorithms/` |
+| Rust | 73 | 主要实现语言，包含在 `examples/algorithms/` |
 | Python | 80 | 辅助教学语言，代码简洁易读 |
-| Go | 60 | 工程实践语言，附带单测 |
+| Go | 66 | 工程实践语言，附带单测 |
 | Lean 4 | 14 | 形式化证明语言，机器可检验 |
 
 ## Lean 4 形式化证明索引

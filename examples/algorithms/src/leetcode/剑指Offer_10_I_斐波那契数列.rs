@@ -57,6 +57,6 @@ mod tests {
 
     #[test]
     fn test_large() {
-        assert_eq!(fib(45), 1_134_903_170); // F(45) mod MOD
+        assert_eq!(fib(45), 134_903_163); // F(45) = 1134903170, mod MOD = 134903163
     }
 }
