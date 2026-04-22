@@ -1,90 +1,90 @@
-"""LeetCode 102. 二叉树的层序遍历 — Python 实现
+"""
+LeetCode 102. Binary Tree Level Order Traversal
+链接: https://leetcode.com/problems/binary-tree-level-order-traversal/
+难度: Medium
 
-给定一个二叉树，返回其节点值的层序遍历（即逐层从左到右）。
+题目描述:
+给你二叉树的根节点 root，返回其节点值的层序遍历。（即逐层地，从左到右访问所有节点）。
 
-对标: LeetCode 102 / docs/13-LeetCode算法面试专题/02-算法范式专题/10-BFS与图搜索.md
+形式化规约:
+  输入: 二叉树根节点 root
+  输出: 按层遍历的节点值列表，每层一个子列表
+
+最优解思路:
+  BFS：用队列维护当前层的所有节点。每次处理一层时，先记录当前队列大小 size，
+  然后恰好弹出 size 个节点（即为当前层所有节点），将它们的子节点入队。
+
+复杂度:
+  时间: O(n)
+  空间: O(w)，w 为最大层宽，最坏 O(n)
+
+正确性要点:
+  1. 通过记录队列大小来区分不同层，避免额外标记
+  2. 这是 BFS 在树结构上的经典应用
 """
 
-from typing import List, Optional
+from typing import Optional, List
 from collections import deque
 
 
 class TreeNode:
-    """二叉树节点定义。"""
-
-    def __init__(self, val: int = 0, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None):
+    def __init__(self, val: int = 0,
+                 left: Optional['TreeNode'] = None,
+                 right: Optional['TreeNode'] = None):
         self.val = val
         self.left = left
         self.right = right
 
 
-def level_order(root: Optional[TreeNode]) -> List[List[int]]:
-    """返回二叉树的层序遍历结果。
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        """
+        BFS 层序遍历。时间 O(n)，空间 O(w)。
+        """
+        if not root:
+            return []
 
-    前置条件 (Pre):
-        - root 为二叉树根节点，或为 None。
-        - 节点值范围为 [-1000, 1000]。
+        result = []
+        queue = deque([root])
 
-    后置条件 (Post):
-        - 返回二维列表，第 i 个列表包含第 i 层所有节点值（从左到右）。
+        while queue:
+            level_size = len(queue)
+            level_vals = []
+            for _ in range(level_size):
+                node = queue.popleft()
+                level_vals.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            result.append(level_vals)
 
-    BFS 层级不变式 (Layer Invariant):
-        处理第 d 层前，队列中恰好包含第 d 层所有节点（从左到右顺序）。
-        处理完成后，队列中恰好包含第 d+1 层所有节点。
+        return result
 
-    复杂度:
-        时间复杂度: O(n) — n 为节点总数，每个节点访问一次。
-        空间复杂度: O(w) — w 为树的最大宽度，即队列最大长度。
 
-    证明要点:
-        - 初始化：队列放入根节点，满足第 0 层不变式。
-        - 保持：处理当前层时，将每个节点的左右子节点依次入队，保证下一层节点顺序正确。
-        - 终止：队列为空时，所有层均已处理完毕。
+def build_tree(vals: list[Optional[int]], index: int = 0) -> Optional[TreeNode]:
+    """按层序列表构建二叉树，None 表示空节点。"""
+    if index >= len(vals) or vals[index] is None:
+        return None
+    root = TreeNode(vals[index])  # type: ignore[arg-type]
+    root.left = build_tree(vals, 2 * index + 1)
+    root.right = build_tree(vals, 2 * index + 2)
+    return root
 
-    Args:
-        root: 二叉树根节点。
 
-    Returns:
-        层序遍历结果。
-    """
-    if root is None:
-        return []
-
-    result: List[List[int]] = []
-    queue = deque([root])
-
-    while queue:
-        level_size = len(queue)
-        level = []
-        for _ in range(level_size):
-            node = queue.popleft()
-            level.append(node.val)
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
-        result.append(level)
-
-    return result
+def test_level_order():
+    sol = Solution()
+    # 示例 1
+    root1 = build_tree([3, 9, 20, None, None, 15, 7])
+    res1 = sol.levelOrder(root1)
+    assert res1 == [[3], [9, 20], [15, 7]], f"Test 1 failed: {res1}"
+    # 示例 2: 空树
+    assert sol.levelOrder(None) == [], "Test 2 failed"
+    # 示例 3: 单节点
+    root3 = build_tree([1])
+    assert sol.levelOrder(root3) == [[1]], "Test 3 failed"
+    print("All tests passed for LC 102 - Binary Tree Level Order Traversal")
 
 
 if __name__ == "__main__":
-    # LeetCode 官方示例
-    # [3, 9, 20, null, null, 15, 7]
-    root = TreeNode(3)
-    root.left = TreeNode(9)
-    root.right = TreeNode(20)
-    root.right.left = TreeNode(15)
-    root.right.right = TreeNode(7)
-    assert level_order(root) == [[3], [9, 20], [15, 7]], "Example 1 failed"
-
-    # 边界条件
-    assert level_order(None) == [], "Empty tree"
-    single = TreeNode(1)
-    assert level_order(single) == [[1]], "Single node"
-
-    # 只有左子树
-    left_only = TreeNode(1, TreeNode(2, TreeNode(3)))
-    assert level_order(left_only) == [[1], [2], [3]], "Left only tree"
-
-    print("All tests passed.")
+    test_level_order()

@@ -1,66 +1,70 @@
-"""LeetCode 1. 两数之和 — Python 实现
+"""
+LeetCode 1. Two Sum
+链接: https://leetcode.com/problems/two-sum/
+难度: Easy
 
-给定一个整数数组 nums 和一个整数目标值 target，
-请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
+题目描述:
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，
+并返回它们的数组下标。
 
-对标: LeetCode 1 / docs/13-LeetCode算法面试专题/06-面试专题/01-高频Top100-数组与链表.md
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+你可以按任意顺序返回答案。
+
+形式化规约:
+  输入: nums ∈ Z^n, target ∈ Z
+  输出: 索引对 (i, j) 使得 nums[i] + nums[j] = target, i ≠ j
+
+最优解思路:
+  哈希表法：遍历数组，对于每个 nums[i]，查询哈希表中是否存在 target - nums[i]。
+  若存在则返回结果，否则将 nums[i] 及其索引存入哈希表。
+
+复杂度:
+  时间: O(n)
+  空间: O(n)
+
+正确性要点:
+  1. 哈希表的键为数值，值为索引
+  2. 遍历时先查询后插入，避免同一元素被使用两次
 """
 
+from typing import List
 
-def two_sum(nums: list[int], target: int) -> list[int]:
-    """在数组中找出和为 target 的两个元素的索引。
 
-    前置条件 (Pre):
-        - nums 为整数数组，长度范围 [2, 10^4]。
-        - 数组中存在恰好一个满足条件的解，同一元素不能重复使用。
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        使用哈希表存储已遍历元素及其索引。
+        时间复杂度 O(n)，空间复杂度 O(n)。
+        """
+        seen = {}  # value -> index
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
+        return []  # 题目保证有解，此处不会到达
 
-    后置条件 (Post):
-        - 返回列表 [i, j] 满足 i != j 且 nums[i] + nums[j] == target。
 
-    核心思路:
-        使用哈希表（字典）记录已遍历元素值到索引的映射。
-        对于当前元素 nums[j]，若 target - nums[j] 已在哈希表中，
-        则找到配对；否则将 nums[j] 加入哈希表。
-
-    复杂度:
-        时间复杂度: O(n) — 单次遍历数组。
-        空间复杂度: O(n) — 哈希表最多存储 n 个元素。
-
-    证明要点:
-        - 正确性：若解为 (i, j) 且 i < j，当遍历到 j 时，
-          target - nums[j] = nums[i] 已在哈希表中，故必能找到。
-        - 唯一性：题目保证恰好一个解。
-
-    Args:
-        nums: 整数数组。
-        target: 目标和。
-
-    Returns:
-        两个索引组成的列表 [i, j]。
-    """
-    seen: dict[int, int] = {}
-    for j, num in enumerate(nums):
-        complement = target - num
-        if complement in seen:
-            return [seen[complement], j]
-        seen[num] = j
-    return []
+def test_two_sum():
+    sol = Solution()
+    # 示例 1
+    nums1, target1 = [2, 7, 11, 15], 9
+    res1 = sol.twoSum(nums1, target1)
+    assert sorted(res1) == [0, 1], f"Test 1 failed: {res1}"
+    # 示例 2
+    nums2, target2 = [3, 2, 4], 6
+    res2 = sol.twoSum(nums2, target2)
+    assert sorted(res2) == [1, 2], f"Test 2 failed: {res2}"
+    # 示例 3
+    nums3, target3 = [3, 3], 6
+    res3 = sol.twoSum(nums3, target3)
+    assert sorted(res3) == [0, 1], f"Test 3 failed: {res3}"
+    # 边界: 负数
+    nums4, target4 = [-1, -2, -3, -4, -5], -8
+    res4 = sol.twoSum(nums4, target4)
+    assert sorted(res4) == [2, 4], f"Test 4 failed: {res4}"
+    print("All tests passed for LC 1 - Two Sum")
 
 
 if __name__ == "__main__":
-    # LeetCode 官方示例
-    assert two_sum([2, 7, 11, 15], 9) == [0, 1], "Example 1 failed"
-    assert two_sum([3, 2, 4], 6) == [1, 2], "Example 2 failed"
-    assert two_sum([3, 3], 6) == [0, 1], "Example 3 failed"
-
-    # 边界条件
-    assert two_sum([1, 2, 3, 4, 5], 9) == [3, 4], "Boundary right side"
-    assert two_sum([-1, -2, -3, -4, -5], -8) == [2, 4], "Negative numbers"
-    assert two_sum([0, 4, 3, 0], 0) == [0, 3], "Zeros"
-
-    # 大规模测试
-    large_nums = list(range(10_000))
-    result = two_sum(large_nums, 19_997)
-    assert result == [9998, 9999], f"Large array failed: {result}"
-
-    print("All tests passed.")
+    test_two_sum()

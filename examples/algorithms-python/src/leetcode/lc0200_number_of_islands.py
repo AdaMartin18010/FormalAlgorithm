@@ -1,123 +1,115 @@
-"""LeetCode 200. 岛屿数量 — Python 实现
+"""
+LeetCode 200. Number of Islands
+链接: https://leetcode.com/problems/number-of-islands/
+难度: Medium
 
-给定一个由 '1'（陆地）和 '0'（水）组成的二维网格，计算岛屿数量。
+题目描述:
+给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
 
-岛屿由相邻的陆地（上下左右）连接而成。
+形式化规约:
+  输入: m × n 网格 grid，grid[i][j] ∈ {'0', '1'}
+  输出: 岛屿数量（由 '1' 组成的四连通区域数）
 
-对标: LeetCode 200 / docs/13-LeetCode算法面试专题/02-算法范式专题/10-BFS与图搜索.md
+最优解思路:
+  DFS：遍历网格，遇到 '1' 时启动 DFS 将该岛屿所有 '1' 标记为 '0'（访问标记），岛屿计数 +1。
+
+复杂度:
+  时间: O(mn)
+  空间: O(mn) 最坏（递归栈）
+
+正确性要点:
+  1. 每个陆地格子恰好被访问一次（访问后立即标记）
+  2. DFS 的递归深度最坏为 O(mn)，极大网格需考虑栈溢出，可改用 BFS
+  3. 四个方向的邻居搜索注意边界检查
 """
 
 from typing import List
-from collections import deque
 
 
-def num_islands(grid: List[List[str]]) -> int:
-    """返回网格中岛屿的数量（BFS 版本）。
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        """
+        DFS 标记法。时间 O(mn)，空间 O(mn)。
+        """
+        if not grid or not grid[0]:
+            return 0
 
-    前置条件 (Pre):
-        - grid 为 m x n 的二维列表，元素为 '0' 或 '1'。
-        - 1 <= m, n <= 300。
+        m, n = len(grid), len(grid[0])
+        count = 0
 
-    后置条件 (Post):
-        - 返回岛屿数量（连通的 '1' 组件数）。
+        def dfs(i: int, j: int) -> None:
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == '0':
+                return
+            grid[i][j] = '0'  # 标记为已访问
+            dfs(i + 1, j)
+            dfs(i - 1, j)
+            dfs(i, j + 1)
+            dfs(i, j - 1)
 
-    BFS 不变式 (Invariant):
-        每次从一个未访问的陆地 '1' 开始 BFS，会将该陆地所在岛屿的所有陆地标记为已访问（改为 '0'）。
-        因此外层循环每次发现 '1' 时，必然是一个新岛屿。
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1':
+                    count += 1
+                    dfs(i, j)
 
-    复杂度:
-        时间复杂度: O(m * n) — 每个单元格最多被访问一次。
-        空间复杂度: O(min(m, n)) — BFS 队列最大长度，最坏情况下为网格短边的长度。
+        return count
 
-    证明要点:
-        - 完备性：BFS 从任意陆地出发，会访问该岛屿所有可达陆地（上下四连通）。
-        - 正确计数：每个岛屿有且仅有一个 BFS 起点（第一个发现的未访问陆地），因此计数准确。
+    def numIslandsBFS(self, grid: List[List[str]]) -> int:
+        """
+        BFS 标记法。时间 O(mn)，空间 O(min(m, n))。
+        适合极大网格，避免递归栈溢出。
+        """
+        if not grid or not grid[0]:
+            return 0
 
-    Args:
-        grid: 由 '0' 和 '1' 组成的二维网格。
+        from collections import deque
 
-    Returns:
-        岛屿数量。
-    """
-    if not grid or not grid[0]:
-        return 0
+        m, n = len(grid), len(grid[0])
+        count = 0
+        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
-    m, n = len(grid), len(grid[0])
-    count = 0
-    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1':
+                    count += 1
+                    queue = deque([(i, j)])
+                    grid[i][j] = '0'
+                    while queue:
+                        x, y = queue.popleft()
+                        for dx, dy in dirs:
+                            nx, ny = x + dx, y + dy
+                            if 0 <= nx < m and 0 <= ny < n and grid[nx][ny] == '1':
+                                grid[nx][ny] = '0'
+                                queue.append((nx, ny))
 
-    def bfs(r: int, c: int) -> None:
-        queue = deque([(r, c)])
-        grid[r][c] = "0"
-        while queue:
-            cr, cc = queue.popleft()
-            for dr, dc in directions:
-                nr, nc = cr + dr, cc + dc
-                if 0 <= nr < m and 0 <= nc < n and grid[nr][nc] == "1":
-                    grid[nr][nc] = "0"
-                    queue.append((nr, nc))
-
-    for r in range(m):
-        for c in range(n):
-            if grid[r][c] == "1":
-                count += 1
-                bfs(r, c)
-
-    return count
-
-
-def num_islands_dfs(grid: List[List[str]]) -> int:
-    """返回网格中岛屿的数量（DFS 版本）。
-
-    复杂度与正确性同 BFS 版本，空间复杂度为 O(m * n)（递归栈）。
-    """
-    if not grid or not grid[0]:
-        return 0
-
-    m, n = len(grid), len(grid[0])
-    count = 0
-
-    def dfs(r: int, c: int) -> None:
-        if r < 0 or r >= m or c < 0 or c >= n or grid[r][c] == "0":
-            return
-        grid[r][c] = "0"
-        dfs(r + 1, c)
-        dfs(r - 1, c)
-        dfs(r, c + 1)
-        dfs(r, c - 1)
-
-    for r in range(m):
-        for c in range(n):
-            if grid[r][c] == "1":
-                count += 1
-                dfs(r, c)
-
-    return count
+        return count
 
 
-if __name__ == "__main__":
-    # LeetCode 官方示例
+def test_num_islands():
+    sol = Solution()
+    # 示例 1
     grid1 = [
         ["1", "1", "1", "1", "0"],
         ["1", "1", "0", "1", "0"],
         ["1", "1", "0", "0", "0"],
-        ["0", "0", "0", "0", "0"],
+        ["0", "0", "0", "0", "0"]
     ]
-    assert num_islands([row[:] for row in grid1]) == 1, "Example 1 BFS failed"
-    assert num_islands_dfs([row[:] for row in grid1]) == 1, "Example 1 DFS failed"
-
+    assert sol.numIslands([row[:] for row in grid1]) == 1, "Test 1 DFS failed"
+    assert sol.numIslandsBFS([row[:] for row in grid1]) == 1, "Test 1 BFS failed"
+    # 示例 2
     grid2 = [
         ["1", "1", "0", "0", "0"],
         ["1", "1", "0", "0", "0"],
         ["0", "0", "1", "0", "0"],
-        ["0", "0", "0", "1", "1"],
+        ["0", "0", "0", "1", "1"]
     ]
-    assert num_islands([row[:] for row in grid2]) == 3, "Example 2 BFS failed"
-    assert num_islands_dfs([row[:] for row in grid2]) == 3, "Example 2 DFS failed"
+    assert sol.numIslands([row[:] for row in grid2]) == 3, "Test 2 DFS failed"
+    assert sol.numIslandsBFS([row[:] for row in grid2]) == 3, "Test 2 BFS failed"
+    # 边界: 空网格
+    assert sol.numIslands([]) == 0, "Test empty failed"
+    print("All tests passed for LC 200 - Number of Islands")
 
-    # 边界条件
-    assert num_islands([["0"]]) == 0, "Single water"
-    assert num_islands([["1"]]) == 1, "Single land"
-    assert num_islands([]) == 0, "Empty grid"
 
-    print("All tests passed.")
+if __name__ == "__main__":
+    test_num_islands()
