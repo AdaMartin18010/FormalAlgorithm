@@ -24,6 +24,7 @@ last_updated: 2026-04-19
 证明助手（Proof Assistant）是基于依赖类型论的软件工具，允许用户构造形式化证明并通过机器验证其正确性。
 
 **核心组成**:
+
 1. **类型论核心**: 基于Martin-Löf或Calculus of Constructions
 2. **证明语言**: 命令式（Coq tactics）或声明式（Agda/Lean直接构造）
 3. **自动化**: 自动证明搜索、决策过程
@@ -54,16 +55,19 @@ last_updated: 2026-04-19
 ### 1.3 变体
 
 **Coq**:
+
 - 最成熟的工业级证明助手
 - 软件基础课程
 - CompCert编译器验证
 
 **Lean**:
+
 - 微软研究院开发
 - mathlib大规模数学库
 - 现代编程语言特性
 
 **Agda**:
+
 - 强调作为编程语言
 - 依赖类型编程
 - Cubical Agda支持HoTT
@@ -117,6 +121,7 @@ last_updated: 2026-04-19
 ```
 
 **归纳原理**:
+
 - 对归纳类型的证明 = 对构造子的模式匹配
 - 递归 = 结构递归（保证停机）
 
@@ -242,6 +247,7 @@ data _≡_ {A : Set} (x : A) : A → Set where
 ### 5.4 高级示例：列表反转
 
 **Coq**:
+
 ```coq
 (* 列表定义 *)
 Inductive list (A : Type) : Type :=
@@ -275,6 +281,7 @@ Qed.
 ```
 
 **Lean 4**:
+
 ```lean
 inductive List (α : Type)
 | nil : List α
@@ -301,12 +308,12 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
 ### 6.1 理解题 (L1-L2)
 
 1. **基本证明** [难度⭐]
-   
+
    用Coq或Agda证明：∀ n, n + 0 = n
-   
+
    <details>
    <summary>解答 (Coq)</summary>
-   
+
    ```coq
    Theorem plus_n_O : forall n, n + 0 = n.
    Proof.
@@ -315,38 +322,38 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
      - simpl. rewrite IHn. reflexivity.
    Qed.
    ```
-   
+
    </details>
 
 2. **列表长度** [难度⭐]
-   
+
    定义列表长度函数并证明：length (app l1 l2) = length l1 + length l2
-   
+
    <details>
    <summary>解答 (Agda)</summary>
-   
+
    ```agda
    length : ∀ {A} → List A → ℕ
    length [] = 0
    length (_ ∷ xs) = 1 + length xs
 
-   length-++ : ∀ {A} (xs ys : List A) → 
+   length-++ : ∀ {A} (xs ys : List A) →
                length (xs ++ ys) ≡ length xs + length ys
    length-++ [] ys = refl
    length-++ (x ∷ xs) ys = cong suc (length-++ xs ys)
    ```
-   
+
    </details>
 
 ### 6.2 应用题 (L3)
 
-3. **树遍历** [难度⭐⭐]
-   
+1. **树遍历** [难度⭐⭐]
+
    定义二叉树和它的中序遍历，证明遍历长度等于节点数。
-   
+
    <details>
    <summary>解答 (Lean)</summary>
-   
+
    ```lean
    inductive Tree (α : Type)
    | leaf : Tree α
@@ -365,22 +372,22 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
    | .node l x r => by
      simp [inorder, size, List.length_append, inorder_length l, inorder_length r]
    ```
-   
+
    </details>
 
 ### 6.3 证明题 (L4-L5)
 
-4. **归纳原理** [难度⭐⭐⭐]
-   
+1. **归纳原理** [难度⭐⭐⭐]
+
    证明：良基归纳原理可以从自然数归纳导出。
-   
+
    <details>
    <summary>解答 (Coq)</summary>
-   
+
    ```coq
    Require Import Wellfounded.
-   
-   Theorem nat_induction_wf : 
+
+   Theorem nat_induction_wf :
      forall P : nat -> Prop,
      P 0 ->
      (forall n, (forall m, m < n -> P m) -> P n) ->
@@ -391,24 +398,24 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
      apply Hstep. exact H.
    Qed.
    ```
-   
+
    </details>
 
-5. **Red-Black树** [难度⭐⭐⭐⭐]
-   
+2. **Red-Black树** [难度⭐⭐⭐⭐]
+
    定义红黑树不变量，证明插入保持平衡。
-   
+
    <details>
    <summary>解答概要</summary>
-   
+
    这是大型证明，通常需要：
    - 定义颜色、树类型
    - 定义平衡不变量（黑高、红节点无红子）
    - 定义插入并修复
    - 分情况证明不变量保持
-   
+
    参考: Coq标准库MSetRBT或Lean的mathlib
-   
+
    </details>
 
 ---
@@ -434,11 +441,13 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
 用Coq证明C编译器正确性。
 
 **规模**:
+
 - ~10万行Coq代码
 - 覆盖C大部分语义
 - 机器生成代码证明正确
 
 **影响**:
+
 - 航空、核能领域使用
 - 证明辅助验证的新标准
 
@@ -469,9 +478,9 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
 
 ### 9.2 在线资源
 
-- **Coq**: https://coq.inria.fr/
-- **Lean**: https://leanprover.github.io/
-- **Agda**: https://agda.readthedocs.io/
+- **Coq**: <https://coq.inria.fr/>
+- **Lean**: <https://leanprover.github.io/>
+- **Agda**: <https://agda.readthedocs.io/>
 
 ---
 
@@ -495,7 +504,8 @@ theorem reverse_involutive : ∀ (l : List α), reverse (reverse l) = l
 
 **标签**: #证明助手 #Coq #Lean #Agda #定理证明
 
-**相关笔记**: 
+**相关笔记**:
+
 - [依赖类型.md](./依赖类型.md)
 - [Curry-Howard对应.md](./Curry-Howard对应.md)
 - [同伦类型论.md](./同伦类型论.md)

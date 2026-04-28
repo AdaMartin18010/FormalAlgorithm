@@ -40,34 +40,64 @@ level: 中级
   - [关键术语与符号 / Glossary](#关键术语与符号--glossary)
   - [目录 / Table of Contents](#目录--table-of-contents)
   - [交叉引用与依赖 / Cross-References and Dependencies](#交叉引用与依赖--cross-references-and-dependencies)
-  - [1. 形式化定义 / Formal Definitions](#1-形式化定义--formal-definitions)
-    - [1.1 DAG 的形式化定义](#11-dag-的形式化定义)
-    - [1.2 拓扑序的形式化定义](#12-拓扑序的形式化定义)
-  - [2. 核心思路与算法框架](#2-核心思路与算法框架--core-ideas-and-algorithm-framework)
-    - [2.1 Kahn 算法（BFS 入度法）](#21-kahn-算法bfs-入度法)
-    - [2.2 DFS 后序逆序法](#22-dfs-后序逆序法)
-    - [2.3 记忆化 DFS = DAG DP](#23-记忆化-dfs--dag-dp)
-  - [3. 经典题目详解](#3-经典题目详解--classic-problem-analysis)
-    - [3.1 LeetCode 207 — 课程表](#31-leetcode-207--课程表)
-    - [3.2 LeetCode 210 — 课程表 II](#32-leetcode-210--课程表-ii)
-    - [3.3 LeetCode 329 — 矩阵中的最长递增路径](#33-leetcode-329--矩阵中的最长递增路径)
-  - [4. 复杂度分析体系](#4-复杂度分析体系--complexity-analysis)
-  - [5. 正确性证明框架](#5-正确性证明框架--correctness-proof-framework)
-  - [6. 思维表征](#6-思维表征--thinking-representations)
-  - [7. 常见错误与反模式](#7-常见错误与反模式--common-mistakes-and-anti-patterns)
-  - [8. 自测问题](#8-自测问题--self-assessment-questions)
-  - [9. 学习目标](#9-学习目标--learning-objectives)
-  - [参考文献](#参考文献--references)
+- [1. 形式化定义 / Formal Definitions](#1-形式化定义--formal-definitions)
+  - [1.1 DAG 的形式化定义](#11-dag-的形式化定义)
+  - [1.2 拓扑序的形式化定义](#12-拓扑序的形式化定义)
+- [2. 核心思路与算法框架 / Core Ideas and Algorithm Framework](#2-核心思路与算法框架--core-ideas-and-algorithm-framework)
+  - [2.1 Kahn 算法（BFS 入度法）](#21-kahn-算法bfs-入度法)
+  - [2.2 DFS 后序逆序法](#22-dfs-后序逆序法)
+  - [2.3 记忆化 DFS = DAG DP](#23-记忆化-dfs--dag-dp)
+- [3. 经典题目详解 / Classic Problem Analysis](#3-经典题目详解--classic-problem-analysis)
+  - [3.1 LeetCode 207 — Course Schedule](#31-leetcode-207--course-schedule)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification)
+    - [核心思路 / Core Idea](#核心思路--core-idea)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis)
+    - [正确性证明 / Correctness Proof](#正确性证明--correctness-proof)
+  - [3.2 LeetCode 210 — Course Schedule II](#32-leetcode-210--course-schedule-ii)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-1)
+    - [核心思路 / Core Idea](#核心思路--core-idea-1)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations-1)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-1)
+  - [3.3 LeetCode 329 — Longest Increasing Path in a Matrix](#33-leetcode-329--longest-increasing-path-in-a-matrix)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-2)
+    - [核心思路 / Core Idea](#核心思路--core-idea-2)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-2)
+    - [正确性证明 / Correctness Proof](#正确性证明--correctness-proof-1)
+- [4. 复杂度分析体系 / Complexity Analysis](#4-复杂度分析体系--complexity-analysis)
+  - [4.1 拓扑排序算法复杂度](#41-拓扑排序算法复杂度)
+  - [4.2 DAG DP 复杂度](#42-dag-dp-复杂度)
+- [5. 正确性证明框架 / Correctness Proof Framework](#5-正确性证明框架--correctness-proof-framework)
+  - [5.1 拓扑排序存在性定理](#51-拓扑排序存在性定理)
+  - [5.2 Kahn 算法正确性证明](#52-kahn-算法正确性证明)
+  - [5.3 记忆化 DFS 与 DAG DP 等价性](#53-记忆化-dfs-与-dag-dp-等价性)
+- [6. 思维表征 / Thinking Representations](#6-思维表征--thinking-representations)
+  - [6.1 概念依赖图](#61-概念依赖图)
+  - [6.2 算法选择决策树](#62-算法选择决策树)
+  - [6.3 多维矩阵对比：Kahn vs DFS 后序](#63-多维矩阵对比kahn-vs-dfs-后序)
+  - [6.4 思维导图：拓扑排序与 DAG DP 体系](#64-思维导图拓扑排序与-dag-dp-体系)
+- [7. 常见错误与反模式 / Common Mistakes and Anti-Patterns](#7-常见错误与反模式--common-mistakes-and-anti-patterns)
+  - [7.1 Kahn 算法未更新入度](#71-kahn-算法未更新入度)
+  - [7.2 DFS 环检测与拓扑排序混淆](#72-dfs-环检测与拓扑排序混淆)
+  - [7.3 DAG DP 未按拓扑序处理](#73-dag-dp-未按拓扑序处理)
+- [8. 自测问题 / Self-Assessment Questions](#8-自测问题--self-assessment-questions)
+  - [问题 1：DAG 的入度为 0 顶点](#问题-1dag-的入度为-0-顶点)
+  - [问题 2：拓扑排序不唯一性](#问题-2拓扑排序不唯一性)
+  - [问题 3：记忆化 DFS 与一般 DFS 的区别](#问题-3记忆化-dfs-与一般-dfs-的区别)
+- [9. 学习目标 / Learning Objectives](#9-学习目标--learning-objectives)
+- [参考文献 / References](#参考文献--references)
 
 ### 交叉引用与依赖 / Cross-References and Dependencies
 
 **上游理论依赖 / Upstream Dependencies**:
+
 - [`09-算法理论/01-算法基础/05-图算法理论.md`](../../09-算法理论/01-算法基础/05-图算法理论.md) §2.3 — 拓扑排序的理论定义与 DFS 性质
 - `09-算法理论/03-搜索算法/01-深度优先搜索.md` — DFS 的括号定理与完成时间
 - `09-算法理论/03-搜索算法/03-广度优先搜索.md` — BFS 的层次遍历性质
 - `05-图论专题/01-图的遍历（DFS-BFS-并查集）.md` — 图遍历基础与三色标记环检测
 
 **下游应用 / Downstream Applications**:
+
 - `05-图论专题/04-最小生成树（Prim-Kruskal）.md` — 某些 MST 变体可用拓扑排序预处理
 - `05-图论专题/02-最短路径（Dijkstra-Bellman-Ford-SPFA）.md` — DAG 上的最短路径可用拓扑排序优化到 $O(V+E)$
 
@@ -113,7 +143,7 @@ Kahn(G):
     in_degree[v] ← 计算所有顶点的入度
     queue ← 所有入度为 0 的顶点
     result ← []
-    
+
     while queue ≠ ∅:
         v ← Dequeue(queue)
         result.append(v)
@@ -121,7 +151,7 @@ Kahn(G):
             in_degree[u] ← in_degree[u] - 1
             if in_degree[u] == 0:
                 Enqueue(queue, u)
-    
+
     if result.length < |V|:
         return "图中存在环"
     return result
@@ -139,11 +169,11 @@ Kahn(G):
 TopologicalSort-DFS(G):
     visited[v] ← false for all v
     stack ← []
-    
+
     for each vertex v ∈ V:
         if not visited[v]:
             DFS-Visit(G, v, visited, stack)
-    
+
     return reverse(stack)
 
 DFS-Visit(G, v, visited, stack):
@@ -166,11 +196,11 @@ DFS-Visit(G, v, visited, stack):
 Memoized-DFS(G, v, memo):
     if memo[v] ≠ undefined:
         return memo[v]
-    
+
     result ← base_case(v)
     for each neighbor u of v:
         result ← combine(result, Memoized-DFS(G, u, memo))
-    
+
     memo[v] ← result
     return result
 ```
@@ -314,12 +344,12 @@ $$
 ```text
 LIP(matrix, i, j, memo):
     if memo[i][j] ≠ 0: return memo[i][j]
-    
+
     max_len ← 1
     for each neighbor (ni, nj) of (i, j):
         if matrix[ni][nj] > matrix[i][j]:
             max_len ← max(max_len, 1 + LIP(matrix, ni, nj, memo))
-    
+
     memo[i][j] ← max_len
     return max_len
 ```
@@ -373,6 +403,7 @@ $$
 ### 4.2 DAG DP 复杂度
 
 对于 DAG $G = (V, E)$，按拓扑序进行动态规划：
+
 - **时间复杂度**: $O(V + E)$（每个顶点和边处理一次）
 - **空间复杂度**: $O(V)$（DP 状态数组）
 
@@ -417,6 +448,7 @@ $$
 **循环不变式 / Loop Invariant**:
 
 在每次循环迭代开始时：
+
 1. 队列中的顶点入度均为 0。
 2. `result` 中已有的顶点构成一个合法的拓扑序前缀。
 3. 剩余未处理的顶点及它们之间的边构成一个 DAG。
@@ -475,16 +507,16 @@ flowchart TD
     Start[有向图问题] --> Q1{需要排序？}
     Q1 -->|是| Q2{图是DAG？}
     Q1 -->|否| Q3{需要最长/短路径？}
-    
+
     Q2 -->|是| A1[拓扑排序<br/>Kahn / DFS]
     Q2 -->|未知| A2[Kahn算法<br/>输出数&lt;V则有环]
-    
+
     Q3 -->|是| Q4{图是DAG？}
     Q3 -->|否| A3[其他算法]
-    
+
     Q4 -->|是| A4[DAG DP<br/>O(V+E)]
     Q4 -->|否| A5[Bellman-Ford<br/>O(VE)]
-    
+
     style A1 fill:#e1f5e1
     style A2 fill:#e1f5e1
     style A4 fill:#e1f5e1
@@ -549,6 +581,7 @@ mindmap
 **错误 / Mistake**: 在 DFS 拓扑排序中，仅使用二色标记（visited/unvisited），无法区分"正在处理"和"已处理完成"的顶点，导致无法正确检测环。
 
 **修复 / Fix**: 使用三色标记：
+
 - 白色 = 未访问
 - 灰色 = 正在处理（当前递归栈中）
 - 黑色 = 已处理完成

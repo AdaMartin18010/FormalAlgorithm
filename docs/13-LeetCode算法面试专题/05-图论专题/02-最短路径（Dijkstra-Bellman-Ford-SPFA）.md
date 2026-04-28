@@ -35,38 +35,67 @@ level: 中级
 
 ### 目录 / Table of Contents
 
-- [最短路径（Dijkstra / Bellman-Ford / SPFA）/ Shortest Path](#最短路径dijkstra--bellman-ford--spfa--shortest-path)
+- [最短路径（Dijkstra / Bellman-Ford / SPFA）/ Shortest Path](#最短路径dijkstra--bellman-ford--spfa-shortest-path)
   - [摘要 / Executive Summary](#摘要--executive-summary)
   - [关键术语与符号 / Glossary](#关键术语与符号--glossary)
   - [目录 / Table of Contents](#目录--table-of-contents)
   - [交叉引用与依赖 / Cross-References and Dependencies](#交叉引用与依赖--cross-references-and-dependencies)
-  - [1. 形式化定义 / Formal Definitions](#1-形式化定义--formal-definitions)
-    - [1.1 最短路径问题实例](#11-最短路径问题实例)
-    - [1.2 松弛操作与三角不等式](#12-松弛操作与三角不等式)
-  - [2. 核心思路与算法框架](#2-核心思路与算法框架--core-ideas-and-algorithm-framework)
-    - [2.1 Dijkstra 算法框架](#21-dijkstra-算法框架)
-    - [2.2 Bellman-Ford 算法框架](#22-bellman-ford-算法框架)
-    - [2.3 SPFA 算法框架](#23-spfa-算法框架)
-  - [3. 经典题目详解](#3-经典题目详解--classic-problem-analysis)
-    - [3.1 LeetCode 743 — 网络延迟时间](#31-leetcode-743--网络延迟时间)
-    - [3.2 LeetCode 787 — K站中转内最便宜的航班](#32-leetcode-787--k站中转内最便宜的航班)
-    - [3.3 LeetCode 1631 — 最小体力消耗路径](#33-leetcode-1631--最小体力消耗路径)
-  - [4. 复杂度分析体系](#4-复杂度分析体系--complexity-analysis)
-  - [5. 正确性证明框架](#5-正确性证明框架--correctness-proof-framework)
-  - [6. 思维表征](#6-思维表征--thinking-representations)
-  - [7. 常见错误与反模式](#7-常见错误与反模式--common-mistakes-and-anti-patterns)
-  - [8. 自测问题](#8-自测问题--self-assessment-questions)
-  - [9. 学习目标](#9-学习目标--learning-objectives)
-  - [参考文献](#参考文献--references)
+- [1. 形式化定义 / Formal Definitions](#1-形式化定义--formal-definitions)
+  - [1.1 最短路径问题实例](#11-最短路径问题实例)
+  - [1.2 松弛操作与三角不等式](#12-松弛操作与三角不等式)
+- [2. 核心思路与算法框架 / Core Ideas and Algorithm Framework](#2-核心思路与算法框架--core-ideas-and-algorithm-framework)
+  - [2.1 Dijkstra 算法框架](#21-dijkstra-算法框架)
+  - [2.2 Bellman-Ford 算法框架](#22-bellman-ford-算法框架)
+  - [2.3 SPFA 算法框架](#23-spfa-算法框架)
+- [3. 经典题目详解 / Classic Problem Analysis](#3-经典题目详解--classic-problem-analysis)
+  - [3.1 LeetCode 743 — Network Delay Time](#31-leetcode-743--network-delay-time)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification)
+    - [核心思路 / Core Idea](#核心思路--core-idea)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis)
+    - [正确性证明 / Correctness Proof](#正确性证明--correctness-proof)
+  - [3.2 LeetCode 787 — Cheapest Flights Within K Stops](#32-leetcode-787--cheapest-flights-within-k-stops)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-1)
+    - [核心思路 / Core Idea](#核心思路--core-idea-1)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations-1)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-1)
+    - [正确性证明 / Correctness Proof](#正确性证明--correctness-proof-1)
+  - [3.3 LeetCode 1631 — Path With Minimum Effort](#33-leetcode-1631--path-with-minimum-effort)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-2)
+    - [核心思路 / Core Idea](#核心思路--core-idea-2)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-2)
+    - [正确性证明 / Correctness Proof](#正确性证明--correctness-proof-2)
+- [4. 复杂度分析体系 / Complexity Analysis](#4-复杂度分析体系--complexity-analysis)
+  - [4.1 算法复杂度总览](#41-算法复杂度总览)
+  - [4.2 算法选择决策](#42-算法选择决策)
+- [5. 正确性证明框架 / Correctness Proof Framework](#5-正确性证明框架--correctness-proof-framework)
+  - [5.1 Dijkstra 正确性证明（贪心选择 + 归纳法）](#51-dijkstra-正确性证明贪心选择--归纳法)
+  - [5.2 Bellman-Ford 负环检测条件](#52-bellman-ford-负环检测条件)
+- [6. 思维表征 / Thinking Representations](#6-思维表征--thinking-representations)
+  - [6.1 概念依赖图](#61-概念依赖图)
+  - [6.2 多维矩阵对比](#62-多维矩阵对比)
+  - [6.3 思维导图：最短路径算法体系](#63-思维导图最短路径算法体系)
+- [7. 常见错误与反模式 / Common Mistakes and Anti-Patterns](#7-常见错误与反模式--common-mistakes-and-anti-patterns)
+  - [7.1 Dijkstra 处理负权边](#71-dijkstra-处理负权边)
+  - [7.2 Bellman-Ford 轮数不足](#72-bellman-ford-轮数不足)
+  - [7.3 SPFA 负环检测条件](#73-spfa-负环检测条件)
+- [8. 自测问题 / Self-Assessment Questions](#8-自测问题--self-assessment-questions)
+  - [问题 1：Dijkstra 与 BFS 的关系](#问题-1dijkstra-与-bfs-的关系)
+  - [问题 2：Bellman-Ford 的 DP 视角](#问题-2bellman-ford-的-dp-视角)
+  - [问题 3：Dijkstra 的贪心最优性](#问题-3dijkstra-的贪心最优性)
+- [9. 学习目标 / Learning Objectives](#9-学习目标--learning-objectives)
+- [参考文献 / References](#参考文献--references)
 
 ### 交叉引用与依赖 / Cross-References and Dependencies
 
 **上游理论依赖 / Upstream Dependencies**:
+
 - [`09-算法理论/01-算法基础/05-图算法理论.md`](../../09-算法理论/01-算法基础/05-图算法理论.md) §3 — 最短路径算法的理论定义、最优子结构与复杂度分析
 - `09-算法理论/03-搜索算法/03-广度优先搜索.md` — BFS 是无权图最短路径的特例（所有边权为 1）
 - [`02-算法范式专题/05-二分查找.md`](../02-算法范式专题/05-二分查找.md) — 贪心策略与循环不变式证明方法
 
 **下游应用 / Downstream Applications**:
+
 - `05-图论专题/04-最小生成树（Prim-Kruskal）.md` — Prim 算法与 Dijkstra 结构相似，目标不同
 - `05-图论专题/03-拓扑排序与DAG DP.md` — DAG 上的最短路径可用拓扑排序优化
 
@@ -244,6 +273,7 @@ $$
 本题是**单源最短路径**的直接应用。由于边权均为正，使用 **Dijkstra 算法**即可。
 
 **算法步骤**:
+
 1. 建图（邻接表）。
 2. 从源点 $k$ 运行 Dijkstra，得到到所有节点的最短距离。
 3. 取所有距离中的最大值。若存在距离为 $\infty$ 的节点，返回 -1。
@@ -307,6 +337,7 @@ $$
 **关键洞察**: Bellman-Ford 的第 $k$ 轮松弛结束后，$dist[v]$ 等于最多使用 $k$ 条边的最短路径。因此只需执行 $K+1$ 轮松弛（而非 $|V|-1$ 轮），即可得到最多 $K$ 次中转的最便宜价格。
 
 **算法步骤**:
+
 1. 初始化 $dist[src] = 0$，其余为 $\infty$。
 2. 进行 $K+1$ 轮松弛（每轮遍历所有边）。
 3. 使用辅助数组防止同轮内的"串联更新"（确保每轮只增加一条边）。
@@ -333,6 +364,7 @@ $$
 **引理 3.2.1** (第 $k$ 轮松弛的不变性): 第 $k$ 轮松弛结束后（$k \geq 0$），$dist[v]$ 等于从 $src$ 到 $v$ 最多使用 $k$ 条边的最短路径长度。
 
 **归纳证明**:
+
 - **基础** ($k = 0$): 仅 $dist[src] = 0$（0 条边），其余为 $\infty$，成立。
 - **归纳假设**: 假设第 $k$ 轮结束后引理成立。
 - **归纳步骤**: 第 $k+1$ 轮松弛边 $(u,v)$ 时，若 $dist[u]$ 是最多 $k$ 条边的最优值，则更新后的 $dist[v] \leq dist[u] + w(u,v)$ 对应一条最多 $k+1$ 条边的路径。取所有入边的最小值，即得最多 $k+1$ 条边的最优值。
@@ -375,6 +407,7 @@ Relax-Max(u, v, w):
 ```
 
 **正确性基础**: Dijkstra 的贪心选择性质依赖于非负权和三角不等式。将"和"替换为"最大值"后，仍有：
+
 - 非负性: $w(u,v) \geq 0$ ✅
 - 三角不等式: $\max(\delta(s,u), w(u,v)) \geq \delta(s,v)$ ✅
 
@@ -431,16 +464,16 @@ flowchart TD
     Start[最短路径问题] --> Q1{边权有负？}
     Q1 -->|否| Q2{需要全源？}
     Q1 -->|是| Q3{需要负环检测？}
-    
+
     Q2 -->|是| A1[Floyd-Warshall<br/>O(V³)]
     Q2 -->|否| A2[Dijkstra<br/>O((V+E) log V)]
-    
+
     Q3 -->|是| Q4{图稀疏？}
     Q3 -->|否| A3[Bellman-Ford<br/>O(VE)]
-    
+
     Q4 -->|是| A4[SPFA<br/>平均 O(E)]
     Q4 -->|否| A3
-    
+
     style A2 fill:#e1f5e1
     style A4 fill:#e1f5e1
 ```

@@ -39,25 +39,68 @@ leetcode_tags: ["tree", "binary-search-tree", "depth-first-search", "recursion"]
   - [关键术语与符号 / Glossary](#关键术语与符号--glossary)
   - [目录 / Table of Contents](#目录--table-of-contents)
   - [交叉引用与依赖 / Cross-References and Dependencies](#交叉引用与依赖--cross-references-and-dependencies)
-  - [1. 形式化定义 / Formal Definitions](#1-形式化定义--formal-definitions)
-  - [2. 核心思路与算法框架](#2-核心思路与算法框架)
-  - [3. 经典题目详解](#3-经典题目详解)
-  - [4. 复杂度分析体系](#4-复杂度分析体系)
-  - [5. 正确性证明框架](#5-正确性证明框架)
-  - [6. 思维表征](#6-思维表征)
-  - [7. 常见错误与反模式](#7-常见错误与反模式)
-  - [8. 自测问题](#8-自测问题)
-  - [9. 学习目标](#9-学习目标)
-  - [参考文献](#参考文献--references)
+- [1. 形式化定义 / Formal Definitions](#1-形式化定义--formal-definitions)
+  - [1.1 二叉树的形式化定义](#11-二叉树的形式化定义)
+  - [1.2 二叉搜索树的形式化定义](#12-二叉搜索树的形式化定义)
+  - [1.3 递归遍历的形式化定义](#13-递归遍历的形式化定义)
+- [2. 核心思路与算法框架](#2-核心思路与算法框架)
+  - [2.1 递归设计模式](#21-递归设计模式)
+  - [2.2 迭代遍历：栈模拟递归](#22-迭代遍历栈模拟递归)
+  - [2.3 LCA 的递归框架](#23-lca-的递归框架)
+- [3. 经典题目详解](#3-经典题目详解)
+  - [3.1 LeetCode 94 — Binary Tree Inorder Traversal](#31-leetcode-94--binary-tree-inorder-traversal)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification)
+    - [核心思路 / Core Idea](#核心思路--core-idea)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis)
+  - [3.2 LeetCode 104 — Maximum Depth of Binary Tree](#32-leetcode-104--maximum-depth-of-binary-tree)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-1)
+    - [核心思路 / Core Idea](#核心思路--core-idea-1)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations-1)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-1)
+  - [3.3 LeetCode 226 — Invert Binary Tree](#33-leetcode-226--invert-binary-tree)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-2)
+    - [核心思路 / Core Idea](#核心思路--core-idea-2)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations-2)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-2)
+  - [3.4 LeetCode 236 — Lowest Common Ancestor of a Binary Tree](#34-leetcode-236--lowest-common-ancestor-of-a-binary-tree)
+    - [形式化规约 / Formal Specification](#形式化规约--formal-specification-3)
+    - [核心思路 / Core Idea](#核心思路--core-idea-3)
+    - [代码实现 / Code Implementations](#代码实现--code-implementations-3)
+    - [复杂度分析 / Complexity Analysis](#复杂度分析--complexity-analysis-3)
+- [4. 复杂度分析体系](#4-复杂度分析体系)
+  - [4.1 二叉树遍历复杂度](#41-二叉树遍历复杂度)
+  - [4.2 BST 操作复杂度](#42-bst-操作复杂度)
+- [5. 正确性证明框架](#5-正确性证明框架)
+  - [5.1 递归遍历的正确性（结构归纳法）](#51-递归遍历的正确性结构归纳法)
+  - [5.2 LCA 算法的正确性证明](#52-lca-算法的正确性证明)
+- [6. 思维表征](#6-思维表征)
+  - [6.1 二叉树概念依赖图](#61-二叉树概念依赖图)
+  - [6.2 递归调用树示例（最大深度）](#62-递归调用树示例最大深度)
+  - [6.3 LCA 递归决策图](#63-lca-递归决策图)
+  - [6.4 公理定理证明树](#64-公理定理证明树)
+- [7. 常见错误与反模式](#7-常见错误与反模式)
+  - [7.1 递归终止条件错误](#71-递归终止条件错误)
+  - [7.2 修改指针后丢失子树](#72-修改指针后丢失子树)
+  - [7.3 混淆树高与节点数](#73-混淆树高与节点数)
+  - [7.4 LCA 中未处理节点自身为祖先的情况](#74-lca-中未处理节点自身为祖先的情况)
+- [8. 自测问题](#8-自测问题)
+  - [问题 1：Morris 遍历的核心思想](#问题-1morris-遍历的核心思想)
+  - [问题 2：BST 的验证](#问题-2bst-的验证)
+  - [问题 3：递归与迭代的选型](#问题-3递归与迭代的选型)
+- [9. 学习目标](#9-学习目标)
+- [参考文献 / References](#参考文献--references)
 
 ### 交叉引用与依赖 / Cross-References and Dependencies
 
 **上游理论依赖 / Upstream Dependencies**:
+
 - [`09-算法理论/01-算法基础/02-数据结构理论.md`](../../09-算法理论/01-算法基础/02-数据结构理论.md) — 树形结构的理论定义
 - `02-递归理论/01-递归基础.md` — 递归定义、结构归纳法
 - `02-递归理论/02-递归正确性证明.md` — 递归算法的正确性证明方法
 
 **下游应用 / Downstream Applications**:
+
 - `13-LeetCode算法面试专题/02-算法范式专题/05-二分查找.md` — BST 查找是二分查找在树结构上的推广
 - `13-LeetCode算法面试专题/05-图论专题/01-图的基本表示.md` — 树是特殊的图
 
@@ -143,6 +186,7 @@ function solve(node):
 递归遍历的隐式调用栈可以显式模拟：
 
 **中序遍历迭代模板**:
+
 ```text
 current = root
 stack = empty
@@ -158,6 +202,7 @@ while current != null or stack not empty:
 ### 2.3 LCA 的递归框架
 
 对于二叉树的 LCA 问题，递归函数返回当前子树中 `p` 和 `q` 的 LCA：
+
 - 若当前节点为 `null` 或等于 `p` 或 `q`，返回当前节点
 - 递归查找左子树和右子树
 - 若左右子树均找到，当前节点即为 LCA
@@ -392,6 +437,7 @@ pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<Tre
 **输出 / Output**: $p$ 和 $q$ 的最近公共祖先节点。
 **前置条件 / Precondition**: $p$ 和 $q$ 均存在于树中，且 $p \neq q$。
 **后置条件 / Postcondition**: 返回节点 $lca$ 满足：
+
 1. $lca$ 是 $p$ 和 $q$ 的公共祖先（$p$ 和 $q$ 均在以 $lca$ 为根的子树中）
 2. $lca$ 的深度最大（即最接近 $p$ 和 $q$）
 
@@ -503,6 +549,7 @@ pub fn lowest_common_ancestor(
 **归纳步骤**: 对节点数为 $n$ 的二叉树，根为 $r$，左子树 $T_L$ 有 $n_L$ 个节点，右子树 $T_R$ 有 $n_R$ 个节点，$n_L + n_R + 1 = n$。
 
 算法执行：
+
 1. 递归中序遍历 $T_L$：由归纳假设，产生 $T_L$ 的左-根-右序列
 2. 访问 $r$：将 $r.val$ 加入序列
 3. 递归中序遍历 $T_R$：由归纳假设，产生 $T_R$ 的左-根-右序列
@@ -526,6 +573,7 @@ pub fn lowest_common_ancestor(
 **情况 A**: $r = p$ 或 $r = q$。此时 $r$ 是其中一个节点的祖先，也是最深的公共祖先（因为另一个节点在子树中），返回 $r$ 正确。
 
 **情况 B**: $r \neq p$ 且 $r \neq q$。递归查找左右子树：
+
 - 若 `left != null && right != null`：$p$ 和 $q$ 分别位于左右子树中。$r$ 是公共祖先，且任何更深的节点不可能同时在两棵子树中，因此 $r$ 是最近公共祖先。正确。
 - 若仅 `left != null`：$p$ 和 $q$ 均在左子树中（或其中之一为 `null` 但题目保证均存在）。由归纳假设，`left` 已经是左子树中的 LCA，返回 `left` 正确。
 - 若仅 `right != null`：对称地，返回 `right` 正确。
@@ -566,7 +614,7 @@ flowchart TD
     L --> LR[...]
     RI --> RL[...]
     RI --> RR[...]
-    
+
     style R fill:#e1f5e1
     style L fill:#fff3cd
     style RI fill:#fff3cd
@@ -586,7 +634,7 @@ flowchart TD
     Q2 -->|否| Q3{left != null?}
     Q3 -->|是| ReturnLeft[返回 left]
     Q3 -->|否| ReturnRight[返回 right]
-    
+
     style ReturnRoot fill:#e1f5e1
     style ReturnNode fill:#e1f5e1
 ```
@@ -604,7 +652,7 @@ flowchart BT
     B2 --> D1[引理: BST 查找路径唯一]
     D1 --> E1[定理: BST 查找 O(h)]
     C4 --> F1[推论: 树中节点距离可计算]
-    
+
     style B1 fill:#e1f5e1
     style B2 fill:#e1f5e1
     style C1 fill:#e1f5e1
@@ -720,6 +768,7 @@ def lca(root, p, q):
 **Q**: 如何判断一棵二叉树是否是 BST？
 
 **A**: 不能仅比较当前节点与左右孩子，需要传递**上下界**约束。对当前节点，其值必须在 $(\text{lower}, \text{upper})$ 范围内：
+
 - 根节点范围为 $(-\infty, +\infty)$
 - 左孩子范围为 $(\text{lower}, \text{node.val})$
 - 右孩子范围为 $(\text{node.val}, \text{upper})$
@@ -731,6 +780,7 @@ def lca(root, p, q):
 **Q**: 二叉树问题中，什么时候应该优先使用递归，什么时候应该优先使用迭代？
 
 **A**:
+
 - **优先递归**: 问题的定义天然递归（如树高、LCA、路径和），且树深不会导致栈溢出（平衡树或节点数 $< 10^4$）
 - **优先迭代**: 树可能退化为链表（深度 $> 10^5$），需要避免栈溢出；或者需要显式控制遍历状态（如 Morris 遍历、颜色标记法）
 
@@ -753,7 +803,7 @@ def lca(root, p, q):
 - [Cormen 2022]: Cormen, T. H., et al. (2022). *Introduction to Algorithms* (4th ed.). MIT Press.
 - [Knuth 1997]: Knuth, D. E. (1997). *The Art of Computer Programming, Volume 1*. Addison-Wesley.
 - Morris, J. M. (1979). "Traversing Binary Trees Simply and Cheaply." *Information Processing Letters*, 9(5), 197-200.
-- LeetCode 236 官方题解：https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/
+- LeetCode 236 官方题解：<https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/>
 
 <!-- 自动添加的代码引用 -->
 - [`lc0236_lowest_common_ancestor.rs`](../../../examples/algorithms-rust/src/leetcode/lc0236_lowest_common_ancestor.rs)
