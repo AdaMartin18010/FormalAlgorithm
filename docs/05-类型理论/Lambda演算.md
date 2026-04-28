@@ -29,7 +29,20 @@ last_updated: 2026-04-21
 
 ## 参考文献
 
-（待补充）
+### 教材 (Textbooks)
+
+- [Barendregt1984] H. P. Barendregt. *The Lambda Calculus: Its Syntax and
+  Semantics*. North-Holland, 1984. ISBN: 978-0444875082
+  （λ演算的权威专著，涵盖语法、语义与元理论）
+- [Pierce2002] B. C. Pierce. *Types and Programming Languages*. MIT Press, 2002.
+  ISBN: 978-0262162098
+  （第5–9章：λ演算基础、简单类型、 curry-Howard 对应）
+
+### 经典论文 (Classic Papers)
+
+- [Church1936] A. Church. "An Unsolvable Problem of Elementary Number Theory."
+  *American Journal of Mathematics*, 58(2), pp. 345–363, 1936.
+  （首次提出 λ 演算，奠定可计算性理论基础）
 
 ## 知识导航
 

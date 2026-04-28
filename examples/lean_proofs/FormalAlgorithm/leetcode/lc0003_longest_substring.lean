@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 8
+Last Audited: 2026-04-29
+Notes: 滑动窗口核心不变式、最优性定理及辅助引理均为 sorry 占位
+-/
+
+/-
   lc0003_longest_substring.lean
   LeetCode 3. 无重复字符的最长子串的形式化证明（Lean 4）
 

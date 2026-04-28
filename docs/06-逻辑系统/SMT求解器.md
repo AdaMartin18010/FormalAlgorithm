@@ -29,7 +29,15 @@ last_updated: 2026-04-21
 
 ## 参考文献
 
-（待补充）
+### 综述与教材 (Surveys & Textbooks)
+
+- [BarrettTinelli2018] C. Barrett and C. Tinelli. "Satisfiability Modulo
+  Theories." In *Handbook of Model Checking*, pp. 305–343. Springer, 2018.
+  DOI: 10.1007/978-3-319-10575-8_11
+  （SMT 求解器与 SMT-LIB 标准的权威综述）
+- [KroeningStrichman2008] D. Kroening and O. Strichman. *Decision Procedures:
+  An Algorithmic Point of View*. Springer, 2008. ISBN: 978-3540741046
+  （第3章：命题逻辑与 SAT；第4章： equality logic 与 uninterpreted functions）
 
 ## 知识导航
 

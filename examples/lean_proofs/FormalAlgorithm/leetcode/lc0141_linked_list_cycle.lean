@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 4
+Last Audited: 2026-04-29
+Notes: 环上模运算相遇引理已证；Floyd 判环相遇定理、无环终止定理、算法正确性双向证明为 sorry 占位
+-/
+
+/-
   lc0141_linked_list_cycle.lean
   LeetCode 141. 环形链表的形式化证明（Lean 4）
 

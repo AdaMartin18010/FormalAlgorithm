@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 4
+Last Audited: 2026-04-29
+Notes: BFS 可达性完备性与访问唯一性定理为 sorry 占位
+-/
+
+/-
   graph_proofs.lean
   图遍历基本性质的形式化证明（Lean 4）
 

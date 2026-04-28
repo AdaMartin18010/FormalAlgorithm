@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 4
+Last Audited: 2026-04-29
+Notes: Kadane 局部最优不变式、全局最优性、局部到全局推导及辅助引理均为 sorry 占位
+-/
+
+/-
   lc0053_maximum_subarray.lean
   LeetCode 53. 最大子数组和的形式化证明（Lean 4）
 

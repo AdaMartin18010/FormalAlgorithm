@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 3
+Last Audited: 2026-04-29
+Notes: 深度上界、子树深度严格小于父树、终止性已证；深度等于最长路径、满二叉树节点数、平衡树高度上界为 sorry 占位
+-/
+
+/-
   lc0104_maximum_depth_of_binary_tree.lean
   LeetCode 104. 二叉树最大深度的形式化证明（Lean 4）
 

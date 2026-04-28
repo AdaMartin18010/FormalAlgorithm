@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 8
+Last Audited: 2026-04-29
+Notes: 异或群公理组合定理、排列不变性已证；自反性、单位元、交换律、结合律、算法正确性、唯一性及辅助引理为 sorry 占位
+-/
+
+/-
   lc0136_single_number.lean
   LeetCode 136. 只出现一次的数字的形式化证明（Lean 4）
 

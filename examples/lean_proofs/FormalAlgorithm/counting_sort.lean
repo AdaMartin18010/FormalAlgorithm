@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 3
+Last Audited: 2026-04-29
+Notes: 有序性与元素计数守恒已证；排列性质（Permutation）与完整正确性定理为 sorry 占位
+-/
+
+/-
   counting_sort.lean
   计数排序正确性的形式化证明（Lean 4）
 

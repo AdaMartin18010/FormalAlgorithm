@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 4
+Last Audited: 2026-04-29
+Notes: seen_indices_lt_j 已证；twoSumHash_finds_solution（存在性）、twoSumHash_result_correct（结果正确性）、twoSumHash_terminates（终止性）为 sorry 占位
+-/
+
+/-
   lc0001_two_sum.lean
   LeetCode 1. 两数之和的形式化证明（Lean 4）
 

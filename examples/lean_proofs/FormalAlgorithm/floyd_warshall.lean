@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 3
+Last Audited: 2026-04-29
+Notes: 核心正确性定理、最短路径权重定义及循环不变式证明均为 sorry 占位
+-/
+
+/-
   floyd_warshall.lean
   Floyd-Warshall 算法最短路径正确性的形式化证明骨架（Lean 4）
 

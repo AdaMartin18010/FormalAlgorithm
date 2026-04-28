@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 6
+Last Audited: 2026-04-29
+Notes: BFS 访问唯一性、连通分量完整性、计数正确性及辅助引理均为 sorry 占位
+-/
+
+/-
   lc0200_number_of_islands.lean
   LeetCode 200. 岛屿数量的形式化证明（Lean 4）
 

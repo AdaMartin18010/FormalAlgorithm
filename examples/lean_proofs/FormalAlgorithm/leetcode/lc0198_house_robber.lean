@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 3
+Last Audited: 2026-04-29
+Notes: 最优子结构、DP 最优性及方案扩展引理均为 sorry 占位
+-/
+
+/-
   lc0198_house_robber.lean
   LeetCode 198. 打家劫舍问题的形式化证明（Lean 4）
 

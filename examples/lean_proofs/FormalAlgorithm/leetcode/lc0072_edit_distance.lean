@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 9
+Last Audited: 2026-04-29
+Notes: 非负性已证；边界正确性、最优子结构、同一性、对称性、三角不等式及终止性证明含 sorry 占位
+-/
+
+/-
   lc0072_edit_distance.lean
   LeetCode 72. 编辑距离的形式化证明（Lean 4）
 

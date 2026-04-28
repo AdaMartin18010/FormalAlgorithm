@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 4
+Last Audited: 2026-04-29
+Notes: 双指针不变式、完备性、去重正确性及辅助引理为 sorry 占位
+-/
+
+/-
   lc0015_3sum.lean
   LeetCode 15. 三数之和的形式化证明（Lean 4）
 

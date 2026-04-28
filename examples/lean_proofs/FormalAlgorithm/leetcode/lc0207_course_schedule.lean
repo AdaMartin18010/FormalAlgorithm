@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 7
+Last Audited: 2026-04-29
+Notes: DAG 拓扑序存在性、拓扑序蕴含无环、Kahn 算法终止性、DFS 环检测正确性及辅助引理为 sorry 占位
+-/
+
+/-
   lc0207_course_schedule.lean
   LeetCode 207. 课程表的形式化证明（Lean 4）
 

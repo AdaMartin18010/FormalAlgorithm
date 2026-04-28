@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: wip
+Sorry Count: 6
+Last Audited: 2026-04-29
+Notes: 存在性（found）、否定性（not found）、终止性、区间递减度量及有序性辅助引理均为 sorry 占位
+-/
+
+/-
   lc0704_binary_search.lean
   LeetCode 704. 二分查找正确性的形式化证明（Lean 4）
 

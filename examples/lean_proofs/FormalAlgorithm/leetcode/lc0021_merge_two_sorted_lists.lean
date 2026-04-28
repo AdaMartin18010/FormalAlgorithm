@@ -1,4 +1,11 @@
 /-
+FormalAlgorithm Lean Proof Status: partial
+Sorry Count: 5
+Last Audited: 2026-04-29
+Notes: 元素守恒定理已证（简化版）；输出有序性、长度守恒、终止性及辅助引理为 sorry 占位
+-/
+
+/-
   lc0021_merge_two_sorted_lists.lean
   LeetCode 21. 合并两个有序链表的形式化证明（Lean 4）
 
