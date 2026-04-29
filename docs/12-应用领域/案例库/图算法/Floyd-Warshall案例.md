@@ -44,7 +44,7 @@ $$dist[k][i][j] = \min(dist[k-1][i][j],\ dist[k-1][i][k] + dist[k-1][k][j])$$
 ## 代码参考
 
 - TypeScript: `examples/algorithms-ts/src/graph.ts` → `floydWarshall()`
-- Rust: `examples/algorithms/src/`（待补充）
+- Rust: `examples/algorithms/src/`[Floyd1962]
 - Go: `examples/algorithms-go/graph.go`
 
 ## 效果评估
@@ -54,3 +54,7 @@ $$dist[k][i][j] = \min(dist[k-1][i][j],\ dist[k-1][i][k] + dist[k-1][k][j])$$
 | 预处理时间（500节点） | ~1.2s |
 | 单次查询 | < 1μs |
 | 内存占用 | 500×500×8B ≈ 2MB |
+
+## 参考文献
+
+[Floyd1962] R. W. Floyd. Algorithm 97: Shortest Path. Communications of the ACM, 5(6):345, 1962.

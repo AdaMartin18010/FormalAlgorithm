@@ -210,7 +210,8 @@ pub fn dna_similarity(seq1: &str, seq2: &str) -> (f64, String) {
 
 ## 参考文献
 
-- 待补充
+- [CLRS2009] T. H. Cormen et al. Introduction to Algorithms (3rd ed.). MIT Press, 2009.
+- [Skiena2008] S. S. Skiena. The Algorithm Design Manual (2nd ed.). Springer, 2008.
 
 ---
 

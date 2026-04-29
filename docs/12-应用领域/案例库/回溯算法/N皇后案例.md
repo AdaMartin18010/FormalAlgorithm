@@ -485,7 +485,9 @@ if __name__ == '__main__':
 
 ## 参考文献
 
-- 待补充
+- [CLRS2009] T. H. Cormen et al. Introduction to Algorithms (3rd ed.). MIT Press, 2009.
+- [Skiena2008] S. S. Skiena. The Algorithm Design Manual (2nd ed.). Springer, 2008.
+- [Mehlhorn2008] K. Mehlhorn and P. Sanders. Algorithms and Data Structures: The Basic Toolbox. Springer, 2008.
 
 ---
 

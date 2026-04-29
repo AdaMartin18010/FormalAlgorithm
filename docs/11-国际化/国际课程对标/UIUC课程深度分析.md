@@ -624,7 +624,10 @@ UIUC 在并行计算领域拥有**超过40年的深厚积累**：
 
 ## 参考文献
 
-- 待补充
+- [CLRS2009] T. H. Cormen et al. Introduction to Algorithms (3rd ed.). MIT Press, 2009.
+- [Sipser2012] M. Sipser. Introduction to the Theory of Computation (3rd ed.). Cengage Learning, 2012.
+- [Pierce2002] B. C. Pierce. Types and Programming Languages. MIT Press, 2002.
+- [Arora2009] S. Arora and B. Barak. Computational Complexity: A Modern Approach. Cambridge University Press, 2009.
 
 ---
 

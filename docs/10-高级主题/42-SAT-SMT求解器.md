@@ -209,7 +209,7 @@ else:
 
 ## 参考文献
 
-- 待补充
+- [BarrettTinelli2018]
 
 ---
 

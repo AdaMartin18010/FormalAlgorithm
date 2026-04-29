@@ -139,7 +139,7 @@ return 匹配结果
 
 ## 参考文献
 
-- 待补充
+- [HopcroftUllman1979]
 
 ---
 
