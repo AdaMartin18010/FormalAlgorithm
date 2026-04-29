@@ -1,3 +1,0 @@
-line1
-$P \rightarrow $Q
-line2

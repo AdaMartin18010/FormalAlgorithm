@@ -1,6 +1,0 @@
-name = "mathlib"
-version = "0.1.0"
-defaultTargets = ["Mathlib"]
-
-[[lean_lib]]
-name = "Mathlib"
