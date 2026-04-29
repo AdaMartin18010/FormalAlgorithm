@@ -16,8 +16,6 @@ pub mod lc0033_search_in_rotated_sorted_array;
 pub mod lc0153_find_minimum_in_rotated_sorted_array;
 
 // === 双指针专题 ===
-/// LeetCode 11. 盛最多水的容器（对撞指针）
-pub mod lc0011_container_with_most_water;
 /// LeetCode 15. 三数之和（对撞指针）
 pub mod lc0015_3sum;
 /// LeetCode 142. 环形链表 II（快慢指针 / Floyd 判环）
@@ -40,18 +38,10 @@ pub mod lc0198_house_robber;
 // === 链表专题 ===
 /// LeetCode 21. 合并两个有序链表（递归 / 迭代）
 pub mod lc0021_merge_two_sorted_lists;
-/// LeetCode 136. 只出现一次的数字（异或群论）
-pub mod lc0136_single_number;
 
 // === 回溯与 DFS 专题 ===
-/// LeetCode 46. 全排列（排列树回溯）
-pub mod lc0046_permutations;
 
 // === BFS 与图搜索专题 ===
-/// LeetCode 127. 单词接龙（双向 BFS）
-pub mod lc0127_word_ladder;
-/// LeetCode 994. 腐烂的橘子（多源 BFS）
-pub mod lc0994_rotting_oranges;
 
 // === 图论专题 ===
 /// LeetCode 133. 克隆图（DFS/BFS + 哈希映射）
@@ -92,8 +82,6 @@ pub mod lc0004_median_of_two_sorted_arrays;
 // === 贪心算法专题 ===
 /// LeetCode 455. 分发饼干（贪心 + 排序）
 pub mod lc0455_assign_cookies;
-/// LeetCode 55. 跳跃游戏（贪心可达性）
-pub mod lc0055_jump_game;
 /// LeetCode 45. 跳跃游戏 II（贪心最少步数）
 pub mod lc0045_jump_game_ii;
 /// LeetCode 435. 无重叠区间（贪心区间调度）
@@ -165,8 +153,6 @@ pub mod lc0102_binary_tree_level_order;
 pub mod lc0104_maximum_depth_of_binary_tree;
 /// LeetCode 226. 翻转二叉树（递归 / 迭代）
 pub mod lc0226_invert_binary_tree;
-/// LeetCode 236. 二叉树的最近公共祖先（DFS / 后序遍历）
-pub mod lc0236_lowest_common_ancestor;
 
 // === 回溯与 DFS 专题 ===
 /// LeetCode 37. 解数独（回溯 + 剪枝）
@@ -179,8 +165,6 @@ pub mod lc0051_n_queens;
 // === 动态规划专题 ===
 /// LeetCode 62. 不同路径（组合数学 / DP）
 pub mod lc0062_unique_paths;
-/// LeetCode 70. 爬楼梯（线性 DP / 斐波那契）
-pub mod lc0070_climbing_stairs;
 /// LeetCode 300. 最长递增子序列（DP + 二分优化）
 pub mod lc0300_longest_increasing_subsequence;
 /// LeetCode 312. 戳气球（区间 DP）
