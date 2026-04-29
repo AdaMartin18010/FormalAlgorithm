@@ -12,7 +12,9 @@
 
 ## 核心概念
 
-（待补充）
+
+CAP定理（Brewer定理）指出分布式系统不可能同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition Tolerance）三个性质。核心概念包括：CP系统、AP系统、最终一致性、BASE理论、PACELC扩展等。
+
 
 ## 知识导航
 

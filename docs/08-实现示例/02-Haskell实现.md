@@ -1441,7 +1441,8 @@ postorder (Node x left right) = postorder left ++ postorder right ++ [x]
 
 ## 参考文献
 
-- 待补充
+- [PeytonJones2003] S. Peyton Jones. Haskell 98 Language and Libraries: The Revised Report. Cambridge University Press, 2003.
+- [Lipovaca2011] M. Lipovača. Learn You a Haskell for Great Good! No Starch Press, 2011.
 
 ---
 

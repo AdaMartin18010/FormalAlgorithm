@@ -1490,7 +1490,8 @@ where
 
 ## 参考文献
 
-- 待补充
+- [Lean4] L. de Moura and S. Ullrich. The Lean 4 Theorem Prover and Programming Language. CADE-28, 2021.
+- [SoftwareFoundations] B. Pierce et al. Software Foundations. https://softwarefoundations.cis.upenn.edu, 2024.
 
 ---
 

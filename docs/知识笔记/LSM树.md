@@ -12,7 +12,9 @@
 
 ## 核心概念
 
-（待补充）
+
+LSM树（Log-Structured Merge-Tree）是一种针对写密集型工作负载优化的键值存储数据结构。核心概念包括：MemTable、SSTable、分层合并（Leveled/Tiered Compaction）、布隆过滤器、写放大与读放大权衡等。
+
 
 ## 知识导航
 

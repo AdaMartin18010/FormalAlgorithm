@@ -236,7 +236,7 @@ flowchart TB
 
 ## 参考文献
 
-- 待补充
+- [CLRS2009] T. H. Cormen et al. Introduction to Algorithms (3rd ed.). MIT Press, 2009.
 
 ---
 
