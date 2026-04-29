@@ -8,7 +8,7 @@
 use std::cmp::Ordering;
 use std::collections::BinaryHeap;
 
-use crate::bellman_ford::bellman_ford;
+use super::bellman_ford::bellman_ford;
 use crate::AlgorithmError;
 
 /// Johnson 算法结果

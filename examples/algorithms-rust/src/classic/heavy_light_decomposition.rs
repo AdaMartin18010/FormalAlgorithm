@@ -22,7 +22,7 @@
 //!
 //! 对标: 竞赛编程标准数据结构
 
-use crate::segment_tree::SegmentTree;
+use super::segment_tree::SegmentTree;
 
 /// 树链剖分结构
 pub struct HeavyLightDecomposition {

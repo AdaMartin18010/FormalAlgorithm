@@ -3,7 +3,7 @@
 //! 求解两两互素模数下的同余方程组。
 //! 对标: CLRS Chapter 31.5
 
-use crate::extended_euclidean::extended_gcd;
+use super::extended_euclidean::extended_gcd;
 
 /// 中国剩余定理
 ///

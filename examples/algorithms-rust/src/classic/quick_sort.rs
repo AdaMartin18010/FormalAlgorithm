@@ -285,7 +285,7 @@ fn intro_sort_internal<T: Ord>(arr: &mut [T], low: usize, high: usize, depth_lim
     
     if depth_limit == 0 {
         // 使用堆排序
-        crate::heap_sort::heap_sort(&mut arr[low..=high]);
+        super::heap_sort::heap_sort(&mut arr[low..=high]);
         return;
     }
     

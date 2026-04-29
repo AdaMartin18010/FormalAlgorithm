@@ -31,6 +31,8 @@ FormalAlgorithm/
 │   ├── 支持性资源目录
 │   └── 项目治理目录
 ├── 💻 examples/                      # 多语言代码实现（~2,400 文件）
+│   ├── by-algorithm/                 # 按算法组织的 Rosetta Code 模式（LeetCode + 经典算法）
+│   ├── algorithms-<语言>/            # 按语言组织的工程模式（经典算法 + 项目配置）
 ├── 🛠️ scripts/                       # 项目脚本（~20 个）
 ├── 🔧 tools/                         # 维护工具（~20 个）
 ├── 📦 release/                       # 版本发布
@@ -170,6 +172,19 @@ FormalAlgorithm/
 
 ### 💻 `examples/` — 多语言代码实现
 
+> **双轨组织模式**（自 v3.4.0 起）：
+> - **按算法组织**（`by-algorithm/`）：Rosetta Code 模式，便于横向对比同一算法在不同语言中的实现
+> - **按语言组织**（`algorithms-<语言>/`）：工程模式，便于独立构建、测试和部署
+
+#### 按算法组织（`examples/by-algorithm/`）
+
+| 目录 | 说明 |
+|------|------|
+| `by-algorithm/lcXXXX/` | LeetCode 题目实现（83 题），每个目录含 `rust/`, `python/`, `go/` 等子目录 |
+| `by-algorithm/classic/` | 经典算法实现（排序、图论、数据结构等），按主题分类 |
+
+#### 按语言组织（`examples/algorithms-<语言>/`）
+
 | 目录 | 语言/技术 | 说明 |
 |------|----------|------|
 | `examples/algorithms/` | Rust（原始实现） | 项目最早的 Rust 算法库，涵盖排序、图论、字符串、数据结构、数论、几何及 LeetCode 题解。 |
@@ -183,7 +198,7 @@ FormalAlgorithm/
 | `examples/algorithms-js/` | JavaScript | JavaScript 算法实现。 |
 | `examples/lean_proofs/` | Lean 4 | 形式化证明项目，含基础类型定义、图论证明及 LeetCode 题解的形式化验证。 |
 
-> **配套关系**：`docs/13-LeetCode算法面试专题/` 中的题目在 `examples/` 的多个语言目录中均有对应参考实现，部分题目在 `examples/lean_proofs/` 中配有 Lean 4 形式化证明。
+> **配套关系**：`docs/13-LeetCode算法面试专题/` 中的题目在 `examples/by-algorithm/lcXXXX/` 的多个语言子目录中均有对应参考实现，部分题目在 `examples/lean_proofs/` 中配有 Lean 4 形式化证明。
 
 ---
 
@@ -233,13 +248,13 @@ FormalAlgorithm/
 
 1. **入门**：`docs/01-基础理论/` → `docs/01-算法基础/` → `docs/习题库/`
 2. **进阶**：`docs/09-算法理论/` → `docs/10-高级主题/` → `docs/实战案例/`
-3. **面试实战**：`docs/13-LeetCode算法面试专题/` → `examples/algorithms-*/leetcode/`
+3. **面试实战**：`docs/13-LeetCode算法面试专题/` → `examples/by-algorithm/lcXXXX/`
 4. **研究深入**：`docs/03-形式化证明/` → `examples/lean_proofs/` → `docs/习题库/10-研究级开放问题.md`
 
 ### 贡献者入口
 
 - **文档改进**：参考 `docs/项目维护/` 中的规范模板 → 修改 `docs/` 对应模块 → 通过 `scripts/` 运行完整性检查
-- **代码实现**：遵循 `docs/08-实现示例/` 的跨语言规范 → 在 `examples/algorithms-<语言>/` 中补充实现 → 确保配套测试通过
+- **代码实现**：遵循 `docs/08-实现示例/` 的跨语言规范 → 在 `examples/by-algorithm/`（LeetCode）或 `examples/algorithms-<语言>/`（经典算法）中补充实现 → 确保配套测试通过
 - **质量审核**：使用 `tools/` 中的链接检查与引用检查工具 → 提交审核报告至 `docs/质量报告/`
 
 ---
