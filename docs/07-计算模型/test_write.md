@@ -1,8 +1,0 @@
----
-title: test write
-concepts: ["图灵机", "λ演算", "自动机", "量子计算", "细胞自动机"]
-level: 中级
-last_updated: 2026-04-21
----
-
-test

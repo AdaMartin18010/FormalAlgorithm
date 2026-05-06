@@ -2126,7 +2126,7 @@ cargo run --bin ga_min
 
 ## 参考文献
 
-- [Rust] The Rust Programming Language. https://doc.rust-lang.org/book/
+- [Rust] The Rust Programming Language. <https://doc.rust-lang.org/book/>
 - [Klabnik2019] S. Klabnik and C. Nichols. The Rust Programming Language (2nd ed.). No Starch Press, 2019.
 
 ---

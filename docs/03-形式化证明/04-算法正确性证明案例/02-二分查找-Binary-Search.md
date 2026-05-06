@@ -26,6 +26,7 @@ diataxis: reference
 如果目标值存在，返回其下标；否则返回 -1。
 
 约束：
+
 - 数组已按升序排列
 - $1 \leq |\text{nums}| \leq 10^4$
 

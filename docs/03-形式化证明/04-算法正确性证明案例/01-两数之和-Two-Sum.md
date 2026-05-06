@@ -24,6 +24,7 @@ diataxis: reference
 给定一个整数数组 `nums` 和一个整数目标值 `target`，请你在该数组中找出**和为目标值**的两个整数，并返回它们的数组下标。
 
 约束：
+
 - 每种输入只会对应一个答案
 - 同一个元素不能使用两遍
 - 答案可以按任意顺序返回
@@ -78,6 +79,7 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 > $I(i) \triangleq \forall j < i.\ \text{map}[\text{nums}[j]] = j \land \forall j < k < i.\ \text{nums}[j] + \text{nums}[k] \neq \text{target}$
 
 **文字表述**：
+
 1. 哈希表中准确记录了所有已遍历元素的下标映射
 2. 在已遍历的前缀 $[0, i)$ 中，不存在任何一对元素的和等于target
 
@@ -126,10 +128,12 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 ## 四、复杂度分析 / Complexity Analysis
 
 **时间复杂度 O(n)**：
+
 - 单次遍历数组，每次哈希表操作平均 O(1)
 - 总时间：$n$ 次迭代 $\times$ O(1) = O(n)
 
 **空间复杂度 O(n)**：
+
 - 最坏情况下哈希表存储 $n-1$ 个元素
 - 总空间：O(n)
 
